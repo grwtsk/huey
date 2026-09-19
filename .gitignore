@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+private/
+sources/raw/
+sources/restricted/
+.local/
+build/
+dist/
