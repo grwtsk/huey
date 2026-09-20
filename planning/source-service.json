@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "author_instruction": "https://github.com/grwtsk/huey/issues/16#issuecomment-5746275749",
+  "reader_origin": "https://grwtsk.com",
+  "owners": {
+    "source_service": "grwtsk/noeaaeue-kernel",
+    "reader_ui": "grwtsk/neurology",
+    "coverage": "grwtsk/huey"
+  },
+  "binding": null,
+  "dependencies": [
+    {
+      "stage": "real_source_admission",
+      "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/135"
+    },
+    {
+      "stage": "contract",
+      "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/136"
+    },
+    {
+      "stage": "storage",
+      "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/137"
+    },
+    {
+      "stage": "search",
+      "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/138"
+    },
+    {
+      "stage": "reader_ui",
+      "issue": "https://github.com/grwtsk/neurology/issues/87"
+    },
+    {
+      "stage": "end_to_end",
+      "issue": "https://github.com/grwtsk/neurology/issues/88"
+    }
+  ]
+}
