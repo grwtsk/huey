@@ -1,0 +1,222 @@
+{
+  "profile": "RF-01",
+  "base": {
+    "profile": "RF-01",
+    "task_frame": "relational_description",
+    "truth_access": "open_to_contributions",
+    "identity_policy": "preserve_supplied",
+    "source_policy": "preserve_originals",
+    "unknown_policy": "keep_explicit",
+    "evidence_policy": "proposition_specific_symmetric",
+    "motive_prerequisite": false,
+    "operator_prerequisite": false,
+    "label_prerequisite": false,
+    "sources": [
+      {
+        "id": "S1",
+        "kind": "author_report"
+      },
+      {
+        "id": "S2",
+        "kind": "institutional_record"
+      },
+      {
+        "id": "S3",
+        "kind": "historical_hypothesis"
+      }
+    ],
+    "relations": [
+      {
+        "id": "R1",
+        "status": "reported",
+        "source_refs": [
+          "S1"
+        ],
+        "operator_status": "unknown",
+        "classification_status": "unknown"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "DESCRIBE_UNKNOWN",
+      "explanation": "A sourced relation remains recordable while its internal operator and classification are unknown.",
+      "overrides": {},
+      "expected_codes": []
+    },
+    {
+      "id": "HISTORICAL_HYPOTHESIS",
+      "explanation": "An original hypothesis retains its source kind without determining the current author task.",
+      "overrides": {
+        "relations": [
+          {
+            "id": "R1",
+            "status": "modeled",
+            "source_refs": [
+              "S3"
+            ],
+            "operator_status": "unknown",
+            "classification_status": "unknown"
+          }
+        ]
+      },
+      "expected_codes": []
+    },
+    {
+      "id": "OTHER_SOURCE_CORRECTION",
+      "explanation": "An institutional contribution is attributable without owning the whole truth.",
+      "overrides": {
+        "relations": [
+          {
+            "id": "R1",
+            "status": "documented",
+            "source_refs": [
+              "S2"
+            ],
+            "operator_status": "unknown",
+            "classification_status": "unknown"
+          }
+        ]
+      },
+      "expected_codes": []
+    },
+    {
+      "id": "ACCUSATION_SUBSTITUTION",
+      "explanation": "Do not replace relational description with a racism claim.",
+      "overrides": {
+        "task_frame": "racism_claim"
+      },
+      "expected_codes": [
+        "IMPOSED_TASK_FRAME"
+      ]
+    },
+    {
+      "id": "EXONERATION_SUBSTITUTION",
+      "explanation": "Do not replace it with a not-racism defense.",
+      "overrides": {
+        "task_frame": "exoneration"
+      },
+      "expected_codes": [
+        "IMPOSED_TASK_FRAME"
+      ]
+    },
+    {
+      "id": "IDENTITY_ERASURE",
+      "explanation": "Do not remove supplied identity to avoid naming.",
+      "overrides": {
+        "identity_policy": "remove_race"
+      },
+      "expected_codes": [
+        "IDENTITY_ERASURE"
+      ]
+    },
+    {
+      "id": "MOTIVE_GATE",
+      "explanation": "A motive is not a prerequisite to documenting a supported relation.",
+      "overrides": {
+        "motive_prerequisite": true
+      },
+      "expected_codes": [
+        "MOTIVE_GATE"
+      ]
+    },
+    {
+      "id": "OPERATOR_GATE",
+      "explanation": "An unknown individual operator does not erase a process-level relation.",
+      "overrides": {
+        "operator_prerequisite": true
+      },
+      "expected_codes": [
+        "OPERATOR_GATE"
+      ]
+    },
+    {
+      "id": "LABEL_GATE",
+      "explanation": "Do not require a verdict before description.",
+      "overrides": {
+        "label_prerequisite": true
+      },
+      "expected_codes": [
+        "LABEL_GATE"
+      ]
+    },
+    {
+      "id": "AUTHOR_ONLY_TRUTH",
+      "explanation": "The author does not exclusively possess truth.",
+      "overrides": {
+        "truth_access": "author_only"
+      },
+      "expected_codes": [
+        "EXCLUSIVE_TRUTH"
+      ]
+    },
+    {
+      "id": "INSTITUTION_ONLY_TRUTH",
+      "explanation": "An institution does not exclusively possess truth.",
+      "overrides": {
+        "truth_access": "institution_only"
+      },
+      "expected_codes": [
+        "EXCLUSIVE_TRUTH"
+      ]
+    },
+    {
+      "id": "SOURCE_REWRITE",
+      "explanation": "Later instruction does not rewrite original sources.",
+      "overrides": {
+        "source_policy": "rewrite_originals"
+      },
+      "expected_codes": [
+        "SOURCE_REWRITING"
+      ]
+    },
+    {
+      "id": "UNKNOWN_AS_ABSENT",
+      "explanation": "Unknown relations must not be converted to zero.",
+      "overrides": {
+        "unknown_policy": "zero"
+      },
+      "expected_codes": [
+        "UNKNOWN_COLLAPSED"
+      ]
+    },
+    {
+      "id": "ASYMMETRIC_REVIEW",
+      "explanation": "Personal and institutional claims both retain source-specific scrutiny.",
+      "overrides": {
+        "evidence_policy": "official_priority"
+      },
+      "expected_codes": [
+        "ASYMMETRIC_EVIDENCE"
+      ]
+    },
+    {
+      "id": "STALE_PROFILE",
+      "explanation": "Old identity correction alone is not the current framing instruction.",
+      "overrides": {
+        "profile": "IDENTITY-R01"
+      },
+      "expected_codes": [
+        "STALE_OR_UNKNOWN_PROFILE"
+      ]
+    },
+    {
+      "id": "UNSOURCED_PROMOTION",
+      "explanation": "Nonunknown relations need an attributable source.",
+      "overrides": {
+        "relations": [
+          {
+            "id": "R1",
+            "status": "reported",
+            "source_refs": [],
+            "operator_status": "unknown",
+            "classification_status": "unknown"
+          }
+        ]
+      },
+      "expected_codes": [
+        "UNSOURCED_NONUNKNOWN_RELATION"
+      ]
+    }
+  ]
+}

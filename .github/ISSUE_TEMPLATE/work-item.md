@@ -21,3 +21,12 @@ Still-ready work: ...
 
 ## Completion receipt
 One PR, inspected head SHA, test commands/results, merge result if complete, unresolved blockers and next task. Work completion is not human acceptance or release. Use `Closes` only for complete work issues, never human gates.
+
+## RF-01 framing review
+- [ ] The actual task remains relational description, not an imposed racism claim or defense.
+- [ ] Supplied identities, source status and unknown links remain visible; motive, operator and label are not description prerequisites.
+- [ ] Original sources remain unchanged; current derivatives and superseded review notes have exact lineage.
+- [ ] Contributions can correct the record without giving author or institution exclusive truth.
+- [ ] Limited automated checks and the actual semantic reread are reported separately; no guarantee or human approval is inferred.
+
+Read `planning/relational-framing.md` and #98–#100. The author has already supplied this correction.
