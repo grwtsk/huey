@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scope": "partial_active_work_not_full_backlog",
+  "stages": [
+    {"id": "book.scaffold", "issue": "https://github.com/grwtsk/huey/issues/17", "kind": "work", "depends_on": []},
+    {"id": "intake.ui.prepare", "issue": "https://github.com/grwtsk/neurology/issues/91", "kind": "work", "depends_on": []},
+    {"id": "intake.auth.prepare", "issue": "https://github.com/grwtsk/neurology/issues/92", "kind": "work", "depends_on": []},
+    {"id": "intake.receipt.prepare", "issue": "https://github.com/grwtsk/neurology/issues/94", "kind": "work", "depends_on": []},
+    {"id": "intake.transport.prepare", "issue": "https://github.com/grwtsk/neurology/issues/89", "kind": "work", "depends_on": []},
+    {"id": "source.contract.prepare", "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/136", "kind": "work", "depends_on": []},
+    {"id": "source.storage.prepare", "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/137", "kind": "work", "depends_on": ["source.contract.prepare"]},
+    {"id": "source.integration", "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/137", "kind": "external", "depends_on": ["source.storage.prepare"]},
+    {"id": "intake.integration", "issue": "https://github.com/grwtsk/neurology/issues/95", "kind": "external", "depends_on": ["intake.ui.prepare", "intake.auth.prepare", "intake.receipt.prepare", "intake.transport.prepare", "source.integration"]},
+    {"id": "intake.local.verify", "issue": "https://github.com/grwtsk/neurology/issues/95", "kind": "work", "depends_on": ["intake.integration"]},
+    {"id": "owner.enrollment.verify", "issue": "https://github.com/grwtsk/neurology/issues/92", "kind": "external", "depends_on": ["intake.auth.prepare"]},
+    {"id": "owner.enroll", "issue": "https://github.com/grwtsk/neurology/issues/93", "kind": "human", "depends_on": ["owner.enrollment.verify"]},
+    {"id": "source.lifecycle", "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/135", "kind": "human", "depends_on": []},
+    {"id": "source.scope", "issue": "https://github.com/grwtsk/huey/issues/2", "kind": "human", "depends_on": ["source.contract.prepare", "privacy.prepare"]},
+    {"id": "privacy.prepare", "issue": "https://github.com/grwtsk/neurology/issues/102", "kind": "work", "depends_on": []},
+    {"id": "google.adapter.prepare", "issue": "https://github.com/grwtsk/neurology/issues/104", "kind": "work", "depends_on": []},
+    {"id": "google.crypto.prepare", "issue": "https://github.com/grwtsk/noeaaeue-kernel/issues/145", "kind": "work", "depends_on": []},
+    {"id": "google.backup.verify", "issue": "https://github.com/grwtsk/neurology/issues/104", "kind": "work", "depends_on": ["google.adapter.prepare", "google.crypto.prepare", "source.integration"]},
+    {"id": "google.profile.verify", "issue": "https://github.com/grwtsk/neurology/issues/102", "kind": "external", "depends_on": ["privacy.prepare", "google.backup.verify"]},
+    {"id": "google.account", "issue": "https://github.com/grwtsk/neurology/issues/103", "kind": "human", "depends_on": ["google.profile.verify"]},
+    {"id": "google.activate", "issue": "https://github.com/grwtsk/neurology/issues/104", "kind": "external", "depends_on": ["google.account", "source.lifecycle", "source.scope"]},
+    {"id": "attention.prepare", "issue": "https://github.com/grwtsk/neurology/issues/109", "kind": "work", "depends_on": []},
+    {"id": "attention.coverage", "issue": "https://github.com/grwtsk/neurology/issues/109", "kind": "external", "depends_on": ["attention.prepare"]},
+    {"id": "attention.recipients", "issue": "https://github.com/grwtsk/neurology/issues/110", "kind": "human", "depends_on": ["attention.coverage"]},
+    {"id": "attention.activate", "issue": "https://github.com/grwtsk/neurology/issues/109", "kind": "external", "depends_on": ["attention.recipients", "source.scope"]}
+  ]
+}

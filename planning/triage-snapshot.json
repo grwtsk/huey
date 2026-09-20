@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "c1eac1727b7a30012bef66c2e11baa7c03e145d2684a7c567266e7fb4469dba1",
+  "observed_at": "2026-09-20T02:27:13Z",
+  "issues": [
+    {
+      "ref": "https://github.com/grwtsk/huey/issues/17",
+      "state": "open",
+      "updated_at": "2026-09-19T23:16:13Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/huey/issues/2",
+      "state": "open",
+      "updated_at": "2026-09-20T02:08:00Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/102",
+      "state": "open",
+      "updated_at": "2026-09-20T01:51:49Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/103",
+      "state": "open",
+      "updated_at": "2026-09-20T01:52:03Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/104",
+      "state": "open",
+      "updated_at": "2026-09-20T01:52:41Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/109",
+      "state": "open",
+      "updated_at": "2026-09-20T02:08:18Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/110",
+      "state": "open",
+      "updated_at": "2026-09-20T01:55:37Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/89",
+      "state": "open",
+      "updated_at": "2026-09-20T01:21:25Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/91",
+      "state": "open",
+      "updated_at": "2026-09-20T01:15:58Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/92",
+      "state": "open",
+      "updated_at": "2026-09-20T01:22:25Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/93",
+      "state": "open",
+      "updated_at": "2026-09-20T01:16:31Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/94",
+      "state": "open",
+      "updated_at": "2026-09-20T01:16:53Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/neurology/issues/95",
+      "state": "open",
+      "updated_at": "2026-09-20T01:17:08Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/noeaaeue-kernel/issues/135",
+      "state": "open",
+      "updated_at": "2026-09-20T02:07:48Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/noeaaeue-kernel/issues/136",
+      "state": "open",
+      "updated_at": "2026-09-20T01:21:37Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/noeaaeue-kernel/issues/137",
+      "state": "open",
+      "updated_at": "2026-09-20T00:55:28Z"
+    },
+    {
+      "ref": "https://github.com/grwtsk/noeaaeue-kernel/issues/145",
+      "state": "open",
+      "updated_at": "2026-09-20T01:52:21Z"
+    }
+  ],
+  "pr_collections": [
+    {
+      "repository": "grwtsk/huey",
+      "coverage": "complete",
+      "open": []
+    },
+    {
+      "repository": "grwtsk/neurology",
+      "coverage": "complete",
+      "open": []
+    },
+    {
+      "repository": "grwtsk/noeaaeue-kernel",
+      "coverage": "complete",
+      "open": []
+    }
+  ],
+  "work_receipts": []
+}
