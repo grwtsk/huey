@@ -26,3 +26,15 @@ No manuscript passages, literary anchors or private records are stored here by t
 Read [RF-01](planning/relational-framing.md) and the [resume instruction](planning/framing-resume.md) before drafting from earlier packets. The author describes the geometry of people, identity, evidence and decisions, not a claim of racism or a defense against that label. Original sources retain their words; current derivatives preserve the later clarification. [Issue #98](https://github.com/grwtsk/huey/issues/98) governs the correction, [#99](https://github.com/grwtsk/huey/issues/99) its workflow checks, and [#100](https://github.com/grwtsk/huey/issues/100) its manuscript repairs.
 
 Local checks for the bounded declaration/scanner tool are documented in RF-01. They do not guarantee semantic fidelity. The [coverage register](planning/framing-coverage.json) records actual issue/PR correction references, not a live completion service. No new public manuscript permission is implied.
+
+## Lexical and conceptual research
+
+[LG-01](research/lexical-geometry/README.md) maps race, is, -ism, -ist, racism and racist across lexical history, grammar, philosophy, social theory, identity and normative frameworks. Its [source register](research/lexical-geometry/sources.md), [structured atlas](research/lexical-geometry/atlas.json) and [continuing coverage](research/lexical-geometry/coverage.md) preserve actual access, attributed disagreements and unresolved work. The atlas is public-source research, not a classification of the book's participants. See [#102](https://github.com/grwtsk/huey/issues/102) and [#103](https://github.com/grwtsk/huey/issues/103).
+
+```sh
+python3 scripts/lexical_geometry.py validate
+python3 scripts/lexical_geometry.py check
+python3 -m unittest discover -s tests -p 'test_lexical_geometry.py' -v
+```
+
+These are local integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. No source service, private corpus or hosted workflow is activated.
