@@ -1,0 +1,49 @@
+{
+  "profile": "experiential-seeds",
+  "version": 1,
+  "capture_issue": 107,
+  "interpretation": "Inventory only; private title/scope mapping remains in the author conversation.",
+  "ordering": "enumeration_not_chronology_or_placement",
+  "entries": [
+    {
+      "id": "EX-01",
+      "issue": 108,
+      "label_status": "supplied_title",
+      "stage": "seed_captured_not_drafted",
+      "chapter": null,
+      "movement": null,
+      "word_budget": null,
+      "source_binding": null
+    },
+    {
+      "id": "EX-02",
+      "issue": 109,
+      "label_status": "supplied_title",
+      "stage": "seed_captured_not_drafted",
+      "chapter": null,
+      "movement": null,
+      "word_budget": null,
+      "source_binding": null
+    },
+    {
+      "id": "EX-03",
+      "issue": 110,
+      "label_status": "descriptive_reference_not_final_title",
+      "stage": "seed_captured_not_drafted",
+      "chapter": null,
+      "movement": null,
+      "word_budget": null,
+      "source_binding": null
+    },
+    {
+      "id": "EX-04",
+      "issue": 111,
+      "label_status": "descriptive_reference_not_final_title",
+      "stage": "seed_captured_not_drafted",
+      "chapter": null,
+      "movement": null,
+      "word_budget": null,
+      "source_binding": null
+    }
+  ]
+}
