@@ -1,6 +1,6 @@
 {
   "profile": "experiential-seeds",
-  "version": 1,
+  "version": 2,
   "capture_issue": 107,
   "interpretation": "Inventory only; private title/scope mapping remains in the author conversation.",
   "ordering": "enumeration_not_chronology_or_placement",
@@ -44,6 +44,19 @@
       "movement": null,
       "word_budget": null,
       "source_binding": null
+    },
+    {
+      "id": "EX-05",
+      "issue": 113,
+      "label_status": "descriptive_reference_not_final_title",
+      "stage": "seed_captured_not_drafted",
+      "chapter": null,
+      "movement": null,
+      "word_budget": null,
+      "source_binding": null
     }
+  ],
+  "extension_issues": [
+    113
   ]
 }
