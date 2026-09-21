@@ -1,0 +1,62 @@
+{
+  "profile": "CAP-01",
+  "work_issue": 105,
+  "chapter_issue": 51,
+  "framing": "RF-01",
+  "source_status": "explicit_author_supplied",
+  "source_surface": "existing_author_conversation",
+  "source_payload_public": false,
+  "private_fingerprints_public": false,
+  "placement_instruction": "settled_author_direction",
+  "prose_status": "candidate_not_accepted",
+  "position": {
+    "movement": "Interlude",
+    "chapter": 15,
+    "section": "last",
+    "reader_question": "last_prose_of_section",
+    "following": "Excursion: Edna",
+    "intervening_adult_prose": false
+  },
+  "preceding_chapters_complete": false,
+  "full_chapter_15_complete": false,
+  "reader_answer": "not_supplied",
+  "silence_or_denial_as_proof": false,
+  "self_attribution_policy": "preserve_not_impose_or_euphemize",
+  "third_party_classification_from_self_report": false,
+  "confession_is_absolution": false,
+  "partner_as_exonerating_evidence": false,
+  "all_harms_equivalent": false,
+  "historical_source_rewrite": false,
+  "ending_anchor_unchanged": true,
+  "PR_01_unchanged": true,
+  "citation_location": [
+    "earlier_context_if_retained",
+    "separate_reference_notes"
+  ],
+  "external_source_ids": [
+    "CD01",
+    "CD02",
+    "CD03",
+    "CD04",
+    "CD05",
+    "CD06"
+  ],
+  "later_integration_issues": [
+    18,
+    21,
+    50,
+    51,
+    52,
+    54,
+    55,
+    56,
+    65,
+    66
+  ],
+  "later_acceptance_issues": [
+    11,
+    12
+  ],
+  "public_private_text_gate": 2,
+  "semantic_review_required": true
+}

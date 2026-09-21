@@ -29,6 +29,17 @@ supersession notice. New testimony is not merely hypothetical because it is newl
 recorded or literary; institutional records are not automatically the whole truth.
 Do not turn an agent's recurring caution into the narrator's invented self-rebuke.
 
+### Explicit author-supplied self-attribution — #105
+
+The author has subsequently supplied his own confession and directed its use as
+the final section of Chapter 15, immediately before the existing excursion.
+RF-01 prohibits imposed framing, not this actual self-description. Preserve its
+source and scope; do not euphemize it, infer another person's thoughts, manufacture
+absolution, or prescribe the reader's reply. Read `planning/capstone-placement.md`
+and its cited research comparison. The reader question ends the section; the
+movement break and complete excursion follow, with no extra adult explanation.
+The existing terminal narrative sentence, PR-01 and public-source boundary remain.
+
 ## One response, one pull request
 
 Select one ready, bounded issue. Open one PR or resume an unfinished PR if a new one
