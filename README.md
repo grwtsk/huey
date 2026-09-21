@@ -38,3 +38,7 @@ python3 -m unittest discover -s tests -p 'test_lexical_geometry.py' -v
 ```
 
 These are local integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. No source service, private corpus or hosted workflow is activated.
+
+## Author-supplied capstone
+
+The [placement contract](planning/capstone-placement.md) records the author's concluding self-examination and open reader address at the end of Chapter 15, immediately before the existing excursion. The [Smith/antiracist comparison](research/lexical-geometry/confession-reader-dialogue.md) cites the distinct public sources. RF-01 protects actual self-attribution as well as protection from imposed labels; it is not a prohibition on the author's supplied words. The private source and proposed prose are not posted here. Full-chapter integration remains #51.

@@ -35,3 +35,16 @@ source/access scope and the continuing research queue under #103. Metadata is no
 an inspected argument, and an abstract is not the full text. No dictionary or
 scholarly proposal replaces RF-01 or the author's supplied identity and testimony.
 This public research does not alter private prose or satisfy its acceptance gates.
+
+## Later explicit self-attribution — CAP-01 / #105
+
+Read [capstone-placement.md](capstone-placement.md) before drafting the close.
+The author has now supplied his own confession and an open reader question.
+RF-01 prohibits an agent-imposed frame, not this explicit source. Preserve it
+without changing it into an accusation against others or automatic absolution.
+Place the final section at the end of Chapter 15, then the movement break and
+the complete existing excursion; no extra adult paragraph follows the question.
+The [cited comparison](../research/lexical-geometry/confession-reader-dialogue.md)
+is contextual research, not the author's memory or an authority over his words.
+Full Chapter 15 is not yet assembled; use the private candidate as a reserved
+insertion, not as a completed replacement of the preceding chapters.

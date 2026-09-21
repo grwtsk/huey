@@ -109,3 +109,20 @@ client, evidence that every future issue is covered, or proof of faithful prose.
 Refresh live state before consequential work. #98/#100 remain open for the remaining
 whole-book, derivative and cross-format review. No current prose acceptance or
 public source grant is supplied by this contract.
+
+## Explicit self-attribution is not imposed framing — #105
+
+The latest author instruction supplies a first-person confession and its location
+immediately before the closing excursion. Receive this source under the same
+provenance discipline as other supplied statements. RF-01 is not a ban on chosen
+self-description, and it must not force this statement back into uncertainty or
+a euphemism merely because it contains a classification. Its author, referent and
+scope are explicit; the global descriptive task and other people's accounts stay
+separate. Nothing retroactively changes the earlier source record.
+
+See [capstone-placement.md](capstone-placement.md). The source remains in the
+author conversation; the revised insertion is proposed prose. Its question is
+addressed to a free reader, not answered for that reader. Recognition and love
+do not automatically cancel the account being given, and confession does not
+complete repair by declaration. These are source-aware editorial requirements,
+not a classifier or evidence about a third party.
