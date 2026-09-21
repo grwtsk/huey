@@ -25,3 +25,13 @@ The earlier triage graph/snapshot is partial and time-bound. It does not encode
 current manuscript acceptance or all later issues. Refresh live issue/PR state,
 respect the one-response/one-PR workflow, and report actual local checks. No
 private source transfer, deployment, notification or publication is authorized.
+
+## Lexical research handoff
+
+Use [LG-01](../research/lexical-geometry/README.md) for the five requested word
+forms and racist. Source summaries, grammatical analyses and competing definitions
+are distinct; a suffix does not silently determine a case label. Read the exact
+source/access scope and the continuing research queue under #103. Metadata is not
+an inspected argument, and an abstract is not the full text. No dictionary or
+scholarly proposal replaces RF-01 or the author's supplied identity and testimony.
+This public research does not alter private prose or satisfy its acceptance gates.
