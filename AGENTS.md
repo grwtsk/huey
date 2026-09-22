@@ -3,6 +3,27 @@
 Author: R.A. Jacob Martone (@grwtsk). Before work, read the live master issue #1,
 latest applicable author instructions and `planning/framing-resume.md`.
 
+## Pre-release promotion gate — 2026-09-22
+
+The author's instruction in #310 establishes `pre-release` as the long-lived
+staging branch. Read `planning/pre-release.md` before opening or merging a PR.
+New work branches normally target `pre-release`; evidence and manuscript changes
+reach `main` only through a promotion PR with an exact-version journalistic review
+record. This narrows earlier permission to merge locally checked work: software
+checks or public-copy approval alone do not clear evidence for promotion.
+
+Account for every material changed assertion and exhibit, including contrary
+material, source status, representation limits and remaining blockers. Use the
+review template and link the actual human editorial decision; never invent it or
+post an APPROVE review on the human's behalf. Keep uncleared work staged. An
+accurately attributed recollection is not thereby an independently proved event.
+RF-01, existing scoped disclosure grants and PR-01 remain operative.
+
+Both branches are public. Creating `pre-release` authorizes no new private-source
+upload, outside contact, replication, auto-merge, deployment or edition release.
+Inherited main content is not retrospectively certified. This is a manual editorial
+gate; native GitHub enforcement remains tracked in #311, not claimed as installed.
+
 ## RF-01: preserve the actual task
 
 The author's current task describes the geometry: people, supplied identities,

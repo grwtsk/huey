@@ -11,6 +11,14 @@ Every new relevant commit must include: **Disclaimer: Working draft; claim verif
 
 Production work is tracked in [the master issue](https://github.com/grwtsk/huey/issues/1). Read [AGENTS.md](AGENTS.md) before issue-driven work. One response opens one bounded pull request; completed, checked work may merge under the author's recorded instruction. Manuscript acceptance and release remain separate.
 
+## Pre-release and evidence review
+
+Work branches → [`pre-release`](https://github.com/grwtsk/huey/tree/pre-release) → journalistic-integrity review → promotion pull request → `main`.
+
+The [promotion policy](planning/pre-release.md) and [review-record template](planning/pre-release-review.template.md) require claim-to-source tracking, a recorded disposition for contrary evidence and material uncertainty, appropriate response opportunities, disclosure checks and actual human editorial clearance of the exact proposed content. Uncleared material stays staged; a passing software check is not an evidence verdict.
+
+**Both branches are public.** Existing source-disclosure restrictions still apply. Content already on `main`, including the previously checked-in chapter, retains its existing status and is not retrospectively certified. This setup adds a manual editorial gate; server-side required-review enforcement remains [administration task #311](https://github.com/grwtsk/huey/issues/311). No automatic merge, replication or publication workflow is enabled. Setup is tracked in [#310](https://github.com/grwtsk/huey/issues/310).
+
 ## Middle-book chapter
 
 [Baptism in the Color of Rain](manuscript/02-interlude/baptism-in-the-color-of-rain.md) is checked in at the author's explicit direction, with only the first `netch` changed to `netch asheba`. The [working contents](manuscript/README.md) place this added chapter in the Interlude, between *The Ring of Umber* and *The Possibility of a Feather*. [Check-in #308](https://github.com/grwtsk/huey/issues/308) and the [placement record](planning/writing/baptism-in-the-color-of-rain.json) record this chapter-specific public-copy scope. Other private manuscript and raw clinical records remain outside this grant; the broader development and release work remain separate.
