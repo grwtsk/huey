@@ -13,13 +13,23 @@
 </head>
 <body>
   <a class="skip-link" href="#book">Skip to the book</a>
-  <header class="reader-controls" aria-label="Reading and listening controls">
+  <header class="reader-title" aria-label="Current chapter">
+    <p id="current-title" class="current-title"></p>
+  </header>
+  <nav id="chapter-index" class="chapter-index" aria-label="Chapter index"><ol id="chapter-list"></ol></nav>
+  <main id="book" class="book" tabindex="-1" aria-busy="true">
+    <h1 class="sr-only">Huey: how to make skin color.</h1>
+    <div id="chapters"></div>
+  </main>
+  <footer class="reader-controls" aria-label="Reading and listening controls">
+    <p id="status" role="status" aria-live="polite" class="status"></p>
+    <div class="controls-row">
     <div class="transport">
       <button id="play" class="primary-button" type="button" disabled><span id="play-symbol" aria-hidden="true">▶</span><span id="play-label">Play</span></button>
       <button id="stop" type="button" disabled>Stop</button>
       <span id="current-location" class="location" aria-label="Reading position">—</span>
     </div>
-    <span id="current-title" class="current-title"></span>
+    <span id="chapter-timer" class="chapter-timer" aria-live="off">—</span>
     <details id="options" class="options">
       <summary>Listening options</summary>
       <div class="options-panel">
@@ -32,22 +42,22 @@
         <p class="help">On-device voices only by default. Online voices may send book text to the browser’s speech provider. This option is not remembered.</p>
         <p class="help">VoiceOver and other screen readers can read the page independently. Keep browser playback stopped to avoid two voices. Resuming playback may repeat the last word or short phrase.</p>
         <p id="voice-status" class="help"></p>
+        <p id="progress-help" class="help">The bottom edge seeks within this chapter. Drag or use the arrow keys, Home and End. Times are estimates; seeking while paused stays paused.</p>
+        <div class="copy-details">
+          <p class="eyebrow">Pre-release · reading copy</p>
+          <p id="author" class="author">R.A. Jacob Martone</p>
+          <p id="availability" class="availability">Loading the admitted manuscript…</p>
+          <p id="notice" class="notice"></p>
+          <p class="reading-hint">Paragraph numbers open evidence and references. The chapter index is beside the scrollbar.</p>
+        </div>
       </div>
     </details>
-  </header>
-  <p id="status" role="status" aria-live="polite" class="status"></p>
-  <nav id="chapter-index" class="chapter-index" aria-label="Chapter index"><ol id="chapter-list"></ol></nav>
-  <main id="book" class="book" tabindex="-1" aria-busy="true">
-    <header class="book-header">
-      <p class="eyebrow">Pre-release · reading copy</p>
-      <h1>Huey: how to make skin color.</h1>
-      <p id="author" class="author">R.A. Jacob Martone</p>
-      <p id="availability" class="availability">Loading the admitted manuscript…</p>
-      <p id="notice" class="notice"></p>
-      <p class="reading-hint">Paragraph numbers in the left margin open their evidence and references. The chapter index is beside the scrollbar.</p>
-    </header>
-    <div id="chapters"></div>
-  </main>
+    </div>
+    <div class="chapter-scrubber">
+      <div class="chapter-progress-track" aria-hidden="true"><span class="chapter-progress-fill"></span></div>
+      <input id="chapter-progress" type="range" min="0" max="1000" step="1" value="0" disabled aria-label="Seek within chapter" aria-describedby="progress-help">
+    </div>
+  </footer>
   <dialog id="evidence-dialog" aria-labelledby="dialog-title">
     <div class="dialog-top"><h2 id="dialog-title">Evidence and references</h2><button id="close-dialog" type="button">Close</button></div>
     <div id="dialog-body"></div>
