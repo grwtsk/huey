@@ -5,6 +5,10 @@
 
 Public copies were expressly approved in [SOC-PUBLIC-01](../../planning/standard-of-care/AUTHORIZATION.md). Raw clinical records and unrelated private material are not included. Original neurology files and the live Reader gate are unchanged.
 
+## Individual reports and safeguards
+
+[The incident/departure register](../../planning/standard-of-care/incident-register/index.md) now gives **112 individually addressable entries their own issues (#194–305)**. It distinguishes **43 reported departures, 40 unresolved safeguards, 14 investigative questions, 10 clinical review questions and 5 context/consequence entries**. These are not 112 proven breaches or independent incidents. Read [scope and counting rules](../../planning/standard-of-care/incident-register/README.md). Registration proceeds now; additional [evidence intake](../../planning/standard-of-care/incident-register/evidence-intake.md) follows under #307. Remaining source-unit reconciliation is explicit in #306/#145, not a request that the author prove or retell his account before it is recorded.
+
 ## Read the corpus
 
 [Conversation context](context/README.md) preserves the progression from pain-limited function, through medical hypotheses and corrections, to standards, burden and trust. It distinguishes exact user statements, assistant-prepared synthesis and proposed literary drafts; it is not an automated full transcript.
