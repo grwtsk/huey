@@ -19,6 +19,16 @@ Every new commit affecting this research must include:
 
 Commit messages must also identify affected issues and actual checks. This prospective requirement does not authorize rewriting older history.
 
+## Recovered care-and-law work — Huey, not the neurology site
+
+Both editorial passes mistakenly placed in `grwtsk/neurology` have been rebuilt in [the Huey care-law corpus](planning/standard-of-care/care-law/README.md) on [development PR #122](https://github.com/grwtsk/huey/pull/122). The [complete cumulative prose](planning/standard-of-care/care-law/revision.md), 41 source records, 34 detailed review schedules, ten prior edit records and validator are checked in here. All 256 prose units have Huey issue ownership; they remain distinct from the 188 initial SOC evidence targets.
+
+[Correction #177](https://github.com/grwtsk/huey/issues/177) records the complete old-to-Huey issue map and cleanup. [Book integration #186](https://github.com/grwtsk/huey/issues/186) connects the recovered material to the existing chapters, notes and appendix work. Its 17 section mappings are candidate joins, not a claim that the private manuscript or protected ending was rewritten. Source-origin links never redirect the destination of this work. Read the scoped [AGENTS.md](planning/standard-of-care/care-law/AGENTS.md) before continuing.
+
+```sh
+python3 planning/standard-of-care/care-law/verify.py --output-dir /tmp/huey-care-law
+```
+
 Production work is tracked in [the master issue](https://github.com/grwtsk/huey/issues/1). Read [AGENTS.md](AGENTS.md) before issue-driven work. One response opens one bounded pull request; completed, checked work may merge under the author's recorded instruction. Manuscript acceptance and release remain separate.
 
 ## Source catalog and coverage
