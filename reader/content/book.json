@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "title": "Huey: how to make skin color.",
+  "author": "R.A. Jacob Martone",
+  "notice": "Working manuscript. Claim verification incomplete. This reading copy contains only the chapters admitted below; it is not the complete book.",
+  "chapters": [
+    {
+      "id": "C01",
+      "label": "1",
+      "title": "The Feather",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/37"
+    },
+    {
+      "id": "C02",
+      "label": "2",
+      "title": "A Life Already Under Way",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/38"
+    },
+    {
+      "id": "C03",
+      "label": "3",
+      "title": "The Room",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/39"
+    },
+    {
+      "id": "C04",
+      "label": "4",
+      "title": "The Other Person in the Room",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/40"
+    },
+    {
+      "id": "C05",
+      "label": "5",
+      "title": "The Note That Arrived First",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/41"
+    },
+    {
+      "id": "C06",
+      "label": "6",
+      "title": "One Physician, Two Chairs",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/42"
+    },
+    {
+      "id": "C07",
+      "label": "7",
+      "title": "A Page of My Own",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/43"
+    },
+    {
+      "id": "C08",
+      "label": "8",
+      "title": "The Ring of Umber",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/44"
+    },
+    {
+      "id": "C08A",
+      "label": "8A",
+      "title": "Baptism in the Color of Rain",
+      "movement": "Interlude",
+      "status": "admitted",
+      "workIssue": "https://github.com/grwtsk/huey/issues/308",
+      "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+      "blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+      "revision": "d04c4c5910f762be7111911ce754ef19853e981b",
+      "admission": "https://github.com/grwtsk/huey/issues/308",
+      "mappingIssue": "https://github.com/grwtsk/huey/issues/314"
+    },
+    {
+      "id": "C09",
+      "label": "9",
+      "title": "The Possibility of a Feather",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/45"
+    },
+    {
+      "id": "C10",
+      "label": "10",
+      "title": "The Instruments Already in the Room",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/46"
+    },
+    {
+      "id": "C11",
+      "label": "11",
+      "title": "Insufficiently Examined",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/47"
+    },
+    {
+      "id": "C12",
+      "label": "12",
+      "title": "The Human Cost",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/48"
+    },
+    {
+      "id": "C13",
+      "label": "13",
+      "title": "Four Chambers",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/49"
+    },
+    {
+      "id": "C14",
+      "label": "14",
+      "title": "Under the Pantocrator",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/50"
+    },
+    {
+      "id": "C15",
+      "label": "15",
+      "title": "A Different Last Page",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/51"
+    },
+    {
+      "id": "EX",
+      "label": "E",
+      "title": "Edna",
+      "movement": "Excursion: Edna",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/52"
+    }
+  ]
+}

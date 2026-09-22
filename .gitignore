@@ -9,3 +9,6 @@ sources/restricted/
 .local/
 build/
 dist/
+node_modules/
+reader/generated-public/
+reader/test-results/
