@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Huey: how to make skin color.</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="module" src="./src/main.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#book">Skip to the book</a>
+  <header class="reader-controls" aria-label="Reading and listening controls">
+    <div class="transport">
+      <button id="play" class="primary-button" type="button" disabled><span id="play-symbol" aria-hidden="true">▶</span><span id="play-label">Play</span></button>
+      <button id="stop" type="button" disabled>Stop</button>
+      <span id="current-location" class="location" aria-label="Reading position">—</span>
+    </div>
+    <span id="current-title" class="current-title"></span>
+    <details id="options" class="options">
+      <summary>Listening options</summary>
+      <div class="options-panel">
+        <label for="voice">Voice</label>
+        <select id="voice"><option>No voices loaded</option></select>
+        <label for="rate">Reading speed <output id="rate-value">1.0×</output></label>
+        <input id="rate" type="range" min="0.6" max="1.8" step="0.1" value="1">
+        <label class="check"><input id="follow" type="checkbox">Follow the spoken paragraph</label>
+        <label class="check"><input id="remote-voices" type="checkbox">Allow browser-provided online voices</label>
+        <p class="help">On-device voices only by default. Online voices may send book text to the browser’s speech provider. This option is not remembered.</p>
+        <p class="help">VoiceOver and other screen readers can read the page independently. Keep browser playback stopped to avoid two voices. Resuming playback may repeat the last word or short phrase.</p>
+        <p id="voice-status" class="help"></p>
+      </div>
+    </details>
+  </header>
+  <p id="status" role="status" aria-live="polite" class="status"></p>
+  <nav id="chapter-index" class="chapter-index" aria-label="Chapter index"><ol id="chapter-list"></ol></nav>
+  <main id="book" class="book" tabindex="-1" aria-busy="true">
+    <header class="book-header">
+      <p class="eyebrow">Pre-release · reading copy</p>
+      <h1>Huey: how to make skin color.</h1>
+      <p id="author" class="author">R.A. Jacob Martone</p>
+      <p id="availability" class="availability">Loading the admitted manuscript…</p>
+      <p id="notice" class="notice"></p>
+      <p class="reading-hint">Paragraph numbers in the left margin open their evidence and references. The chapter index is beside the scrollbar.</p>
+    </header>
+    <div id="chapters"></div>
+  </main>
+  <dialog id="evidence-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-top"><h2 id="dialog-title">Evidence and references</h2><button id="close-dialog" type="button">Close</button></div>
+    <div id="dialog-body"></div>
+  </dialog>
+  <noscript><p>This reader requires JavaScript. The admitted text is also available as Markdown in the repository’s manuscript directory.</p></noscript>
+</body>
+</html>
