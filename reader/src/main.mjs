@@ -1,4 +1,4 @@
-import { Narrator, voiceKey } from './speech.mjs';
+import { Narrator, voiceKey, ChapterTimeline, formatTime } from './speech.mjs';
 import { paragraphHashRoute, paragraphId, parseRoute, safeUrl } from './text.mjs';
 
 const $ = id => document.getElementById(id);
@@ -26,6 +26,7 @@ let book, chapters, sourceMap;
 let activeIndex = 0, paragraphNodes = [], positions = [], items = [];
 let lastSpeaking = null, raf = 0;
 let returnFocus = null;
+let timeline = null, scrub = null;
 const dialog = $('evidence-dialog');
 const narrator = new Narrator({
   synth: window.speechSynthesis,
@@ -45,13 +46,85 @@ const narrator = new Narrator({
     lastSpeaking?.setAttribute('data-speaking', 'true');
     if ($('follow').checked) lastSpeaking?.scrollIntoView({ block: 'center', behavior: 'auto' });
     showPosition();
-  }
+  },
+  onPosition() { showPosition(); }
 });
 
-function showPosition() {
-  const current = items[narrator.state === 'playing' ? narrator.index : activeIndex];
-  if (current) $('current-location').textContent = current.label;
+function playbackCursor() {
+  return ['playing', 'paused', 'ended'].includes(narrator.state)
+    ? { index: narrator.index, offset: narrator.boundary }
+    : { index: activeIndex, offset: 0 };
 }
+function paintPosition(position) {
+  if (!position) return;
+  const item = items[position.index];
+  $('current-location').textContent = item.label;
+  $('chapter-timer').textContent = `≈ ${formatTime(position.elapsed)} / ${formatTime(position.duration)}`;
+  $('chapter-timer').title = 'Estimated position / chapter duration at 180 words per minute, adjusted for reading speed. Not measured audio time.';
+  const slider = $('chapter-progress');
+  slider.disabled = false;
+  slider.value = String(Math.round(position.ratio * 1000));
+  slider.setAttribute('aria-valuetext', `Chapter ${chapters.get(position.chapterId).label}, ${Math.round(position.ratio * 100)} percent; estimated ${formatTime(position.elapsed)} of ${formatTime(position.duration)}`);
+  document.documentElement.style.setProperty('--progress', String(position.ratio));
+  $('current-title').textContent = chapters.get(position.chapterId).title;
+  for (const a of document.querySelectorAll('.chapter-link')) {
+    if (a.dataset.chapter === position.chapterId) a.setAttribute('aria-current', 'location');
+    else a.removeAttribute('aria-current');
+  }
+}
+function showPosition() {
+  if (!timeline || scrub) return;
+  const cursor = playbackCursor();
+  paintPosition(timeline.position(cursor.index, cursor.offset, narrator.rate));
+}
+function beginScrub() {
+  if (scrub || !timeline || !items.length) return;
+  const origin = playbackCursor();
+  scrub = { chapterId: items[origin.index].chapterId, origin, resume: narrator.state === 'playing', ratio: Number($('chapter-progress').value) / 1000 };
+  if (scrub.resume) narrator.pause();
+}
+function previewScrub() {
+  // Save the new native range value before beginScrub pauses the speech engine.
+  const ratio = Number($('chapter-progress').value) / 1000;
+  beginScrub();
+  if (!scrub) return;
+  scrub.ratio = ratio;
+  const target = timeline.seek(scrub.chapterId, ratio);
+  const position = timeline.position(target.index, target.offset, narrator.rate);
+  // The pointer follows the requested fraction; release snaps to a whole word.
+  paintPosition({ ...position, ratio, elapsed: position.duration * ratio });
+}
+function commitScrub() {
+  if (!scrub) return;
+  const pending = scrub;
+  const target = timeline.seek(pending.chapterId, pending.ratio);
+  scrub = null;
+  activeIndex = target.index;
+  narrator.seek(target.index, target.offset, { resume: pending.resume, end: target.end });
+  document.getElementById(items[target.index].id)?.scrollIntoView({ block: 'start', behavior: 'auto' });
+  showPosition();
+}
+function cancelScrub() {
+  if (!scrub) return;
+  const { origin } = scrub;
+  scrub = null;
+  narrator.seek(origin.index, origin.offset); // Cancellation leaves playback paused.
+  showPosition();
+}
+const chapterProgress = $('chapter-progress');
+chapterProgress.addEventListener('pointerdown', event => {
+  beginScrub();
+  chapterProgress.setPointerCapture(event.pointerId);
+});
+chapterProgress.addEventListener('input', previewScrub);
+chapterProgress.addEventListener('change', commitScrub);
+chapterProgress.addEventListener('pointerup', commitScrub);
+chapterProgress.addEventListener('pointercancel', cancelScrub);
+chapterProgress.addEventListener('lostpointercapture', commitScrub);
+chapterProgress.addEventListener('blur', commitScrub);
+chapterProgress.addEventListener('keydown', event => {
+  if (event.key === 'Escape') { event.preventDefault(); cancelScrub(); }
+});
 function refreshVoices() {
   const voices = narrator.voices;
   const selected = narrator.voice;
@@ -75,10 +148,12 @@ function configureSpeech() {
   narrator.configure({ rate, voice: $('voice').value, allowRemote: $('remote-voices').checked });
   $('rate-value').textContent = `${rate.toFixed(1)}×`;
   refreshVoices();
+  showPosition();
 }
 $('play').addEventListener('click', () => {
   if (narrator.state === 'playing') narrator.pause();
   else if (narrator.state === 'paused') narrator.play();
+  else if (narrator.state === 'ended') narrator.play(timeline.chapters.get(items[narrator.index].chapterId).entries[0].index);
   else narrator.play(activeIndex);
 });
 $('stop').addEventListener('click', () => narrator.stop());
@@ -91,7 +166,7 @@ window.addEventListener('focus', refreshVoices);
 window.addEventListener('pagehide', () => narrator.stop());
 window.addEventListener('keydown', event => {
   if (event.key === 'Escape') $('options').open = false;
-  if (['PageDown', 'PageUp', 'Home', 'End'].includes(event.key)) $('follow').checked = false;
+  if (event.target !== chapterProgress && ['PageDown', 'PageUp', 'Home', 'End'].includes(event.key)) $('follow').checked = false;
 });
 for (const name of ['wheel', 'touchmove']) window.addEventListener(name, () => { $('follow').checked = false; }, { passive: true });
 document.addEventListener('click', event => { if (!$('options').contains(event.target)) $('options').open = false; });
@@ -99,16 +174,11 @@ document.addEventListener('click', event => { if (!$('options').contains(event.t
 function setActive(index) {
   if (!items[index]) return;
   activeIndex = index;
-  const current = items[index];
-  for (const a of document.querySelectorAll('.chapter-link')) {
-    if (a.dataset.chapter === current.chapterId) a.setAttribute('aria-current', 'location');
-    else a.removeAttribute('aria-current');
-  }
-  $('current-title').textContent = chapters.get(current.chapterId).title;
   showPosition();
 }
 function measure() {
-  document.documentElement.style.setProperty('--header-height', `${document.querySelector('.reader-controls').offsetHeight}px`);
+  document.documentElement.style.setProperty('--header-height', `${document.querySelector('.reader-title').offsetHeight}px`);
+  document.documentElement.style.setProperty('--footer-height', `${document.querySelector('.reader-controls').offsetHeight}px`);
   positions = paragraphNodes.map(p => p.getBoundingClientRect().top + window.scrollY);
   trackScroll();
 }
@@ -117,16 +187,19 @@ function trackScroll() {
   raf = requestAnimationFrame(() => {
     raf = 0;
     if (!positions.length || dialog.open) return;
-    const point = window.scrollY + document.querySelector('.reader-controls').offsetHeight + 45;
+    const point = window.scrollY + document.querySelector('.reader-title').offsetHeight + 45;
     let lo = 0, hi = positions.length - 1;
     while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (positions[mid] <= point) lo = mid; else hi = mid - 1; }
     setActive(lo);
-    const total = document.documentElement.scrollHeight - innerHeight;
-    document.documentElement.style.setProperty('--progress', String(total > 0 ? Math.min(1, window.scrollY / total) : 0));
   });
 }
 window.addEventListener('scroll', trackScroll, { passive: true });
 window.addEventListener('resize', measure);
+if (window.ResizeObserver) {
+  const observer = new ResizeObserver(measure);
+  observer.observe(document.querySelector('.reader-title'));
+  observer.observe(document.querySelector('.reader-controls'));
+}
 
 function render() {
   const admitted = book.chapters.filter(c => c.status === 'admitted');
@@ -152,8 +225,7 @@ function render() {
     const section = el('section', 'chapter');
     section.id = `chapter-${chapter.id}`;
     section.setAttribute('aria-labelledby', `title-${chapter.id}`);
-    const header = el('header', 'chapter-header');
-    header.append(el('p', 'eyebrow', `${chapter.movement} · Chapter ${chapter.label}`));
+    const header = el('header', 'chapter-header sr-only');
     const title = el('h2', '', chapter.title); title.id = `title-${chapter.id}`;
     header.append(title); section.append(header);
     const paragraphBlocks = chapter.blocks.filter(b => b.type === 'paragraph');
@@ -173,6 +245,7 @@ function render() {
     }
     $('chapters').append(section);
   }
+  timeline = new ChapterTimeline(items);
   narrator.setItems(items);
   setActive(0);
   $('book').setAttribute('aria-busy', 'false');
