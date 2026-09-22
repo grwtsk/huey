@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "repository": "grwtsk/huey",
+  "namespace": "HUEY-CARELAW-01",
+  "development_pr": 122,
+  "integration_issue": 186,
+  "status": "candidate-joins-not-applied",
+  "basis": "Existing Huey master #1 chapter plan and standards program #125; recovered prose is input, not a replacement book or website article.",
+  "limits": "Read exact current manuscript spans before applying edits. Preserve RF-01, supplied opening, three movements and the protected closing. No extra epilogue or replacement of the supplied Chapter 15 capstone. Public transfer covers the recovered editorial work, not unrelated private manuscript or raw records.",
+  "sections": [
+    {"section":"Begin with the person; retain the distinction","chapters":[3,4,6],"chapter_issues":[39,40,42],"soc_issues":[127,129,143],"role":"Retain the person, event, witness and later inherited responsibilities in their actual chronology."},
+    {"section":"A trustworthy chronology includes the difficult dates","chapters":[7],"chapter_issues":[43],"soc_issues":[127,145],"role":"Source chronology and differing request versions; detailed object/receipt questions also belong in appendix #57."},
+    {"section":"Care should not need a lawyer to become audible","chapters":[10,12],"chapter_issues":[46,48],"soc_issues":[139,141,142,160,162,163],"role":"Clinical tools, institutional resources, displaced patient work and the case for an effective low-burden response."},
+    {"section":"Two tracks, neither permitted to erase the other","chapters":[6,13],"chapter_issues":[42,49],"soc_issues":[139,140,169,170],"role":"Distinguish accepted clinical responsibility from competent fact-finding and adjudication."},
+    {"section":"Make the clinical pathway real","chapters":[10],"chapter_issues":[46],"soc_issues":[138,139,140,148,155,165],"role":"Communication, understanding, consent, preparation and actually usable encounters."},
+    {"section":"Read the notice precisely before asking it to change","chapters":[7,11],"chapter_issues":[43,47],"soc_issues":[127,138,142,168],"role":"Preserve the original notice's wording, offers, alternatives and unresolved institutional decisions."},
+    {"section":"A refusal needs the analysis appropriate to its actual basis","chapters":[11,13],"chapter_issues":[47,49],"soc_issues":[138,140,142,148,168],"role":"Use the actual authority and its limits; detailed legal references also belong in notes #56."},
+    {"section":"What must be investigated","chapters":[3,4,5,6,13],"chapter_issues":[39,40,41,42,49],"soc_issues":[127,129,139,140,142],"role":"Keep each factual question tied to its evidence, competing account, knowledge and responsible review function."},
+    {"section":"The record must retain both its sources and its disputes","chapters":[5,7],"chapter_issues":[41,43],"soc_issues":[127,140,145,166],"role":"Source attribution, copying, original correspondence and item-specific correction; detailed procedures in notes/appendices."},
+    {"section":"Precise law, competent investigation","chapters":[13],"chapter_issues":[49],"soc_issues":[140,151,170],"role":"Separate authority types and legal predicates; retain source-specific legal questions without turning the narrator into a prosecutor."},
+    {"section":"Institutional responsibility has an address and a decision-maker","chapters":[10,11],"chapter_issues":[46,47],"soc_issues":[138,139,142,167,169,170],"role":"Locate the institution's published commitments, resource paths, decision-makers and unavailable policy text."},
+    {"section":"The limits of a treating role do not erase other roles","chapters":[6,13],"chapter_issues":[42,49],"soc_issues":[139,140,142,156,169],"role":"Preserve clinical relevance while distinguishing ethics advice, grievance review, investigation and legal judgment."},
+    {"section":"Make responsibility traceable","chapters":[10,13],"chapter_issues":[46,49],"soc_issues":[139,142,168,169,174],"role":"Accepted handoff, reasoned refusal, interim continuity and an observable next step."},
+    {"section":"Show where damage can propagate—and where it can stop","chapters":[12],"chapter_issues":[48],"soc_issues":[141,143,160,161,162,163,164,172,173],"role":"Reported consequences, causal-link evidence, alternative causes and distinct burdens without double counting."},
+    {"section":"Follow the decision until the patient reaches an answer","chapters":[10,12,13],"chapter_issues":[46,48,49],"soc_issues":[139,141,169,174],"role":"Bounded institutional work and comparison of feasible effective repairs, not guaranteed savings."},
+    {"section":"Trust, the common good, and the exit from the circle","chapters":[14],"chapter_issues":[50],"soc_issues":[143,144,171,174,175],"role":"Correspondence with existing Atlas principles; identify authorial definitions/metaphor without invented theological judgments."},
+    {"section":"An answer that changes the conditions of care","chapters":[11,13],"chapter_issues":[47,49],"soc_issues":[138,139,142,143,169,174],"role":"Concrete care/routing requests and correctable evidence before the reserved close, never appended after it."}
+  ],
+  "back_matter_issues": [56,57,58],
+  "review_gates": [55,65,66],
+  "claim_disposition": "Every C001–C256 unit is retained as recoverable editorial input and assigned through its section to candidate chapter and evidence work. No unit is declared already applied to the private manuscript. Compound-clause and apparatus review remains open under #145/#186."
+}
