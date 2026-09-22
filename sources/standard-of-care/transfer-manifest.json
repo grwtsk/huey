@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "approval_id": "SOC-PUBLIC-01",
+  "approval_status": "granted",
+  "destination_repository": "grwtsk/huey",
+  "destination_branch": "writing/55-development-r01",
+  "source_repository": "grwtsk/neurology",
+  "source_commit": "c920e426b8b6753b9f4bacf019e48010e57918c2",
+  "source_articles_tree": "7085c0805d3ad87732f04d15b8060338a0fceb21",
+  "source_originals_modified": false,
+  "raw_clinical_records_included": false,
+  "copy_types": {
+    "authored-text-export": "Complete current.source.originalText field transcribed beneath a separate repository notice; not a whole presentation-JSON copy. Automatic byte comparison of all prose exports has not been performed.",
+    "normalized-complete-json": "Entire parsed source model with compact JSON formatting; original byte formatting differs.",
+    "pending-ancillary": "Inventoried ancillary content not copied by this pass; no new approval is requested for already approved scope."
+  },
+  "summary": {
+    "complete_authored_prose_exports": 12,
+    "complete_atlas_models": 1,
+    "atlas_principles": 23,
+    "ancillary_files_pending": 8,
+    "full_presentation_json_transfer_complete": false,
+    "atomic_claim_review_complete": false,
+    "automated_full_conversation_export_complete": false
+  },
+  "prose_exports": [
+    {"id":"before-the-examination-the-patient-who-arrived-at-stanford","source_blob":"e62be5f820ac1d8e255c500ba5ae1a420143867a","destination":"neurology-text/before-the-examination-the-patient-who-arrived-at-stanford.md","copy_commit":"08dc56d8bbbd299c0403d67b1304c0160d870c78","verification_issues":[127,129,140,145,176]},
+    {"id":"january-24-2019-the-origin-point","source_blob":"ebecb97d4bd32769fb7c1ebecbaf4e374309ffdc","destination":"neurology-text/january-24-2019-the-origin-point.md","copy_commit":"693cf6d3f1cf19d025aa0739beafd7725a7efc16","verification_issues":[127,129,131,140,143,145,176]},
+    {"id":"what-must-be-explained-evidence-witnesses-and-the-honest-mistake-hypothesis","source_blob":"44e4e6edc6bee8f398973faf8a695b01a793a451","destination":"neurology-text/what-must-be-explained-evidence-witnesses-and-the-honest-mistake-hypothesis.md","copy_commit":"d8e70375c1803ed262444a83ea74bd0bb2b4c4c7","verification_issues":[127,129,140,144,145,176]},
+    {"id":"from-stanford-to-ucsf-the-transfer-was-part-of-the-history","source_blob":"949fa0ade99a77345591c8ad1efbdda099aa9179","destination":"neurology-text/from-stanford-to-ucsf-the-transfer-was-part-of-the-history.md","copy_commit":"3485c1729c6de186aea28d6b0481ee82577017c5","verification_issues":[127,138,139,140,143,145,176]},
+    {"id":"writing-as-the-act-of-care","source_blob":"613bf6f189fef0ba6f615450f1c6727066af61cd","destination":"neurology-text/writing-as-the-act-of-care.md","copy_commit":"6c194bed8a13394b018d753172cd044ec5190ebe","verification_issues":[127,131,138,145,176]},
+    {"id":"when-care-becomes-the-threat","source_blob":"9b6a1107944a8e6c0d7373b43117f829dc033294","destination":"neurology-text/when-care-becomes-the-threat.md","copy_commit":"fc9bc90bb88019e75fd03534272017f3fad0b35a","verification_issues":[127,129,131,138,139,140,143,145,176]},
+    {"id":"the-unordinary-test-of-goodness","source_blob":"fc3c3b8fa9c79acc869d0ec066c417e0b7882345","destination":"neurology-text/the-unordinary-test-of-goodness.md","copy_commit":"067e72eb8630b403cd1bfdb77cf1882104bb7bd6","verification_issues":[138,139,142,143,144,145,176]},
+    {"id":"his-test-is-his-my-persistence-is-mine","source_blob":"c262a2e9857b01c867c58f0f8614a7331cb67094","destination":"neurology-text/his-test-is-his-my-persistence-is-mine.md","copy_commit":"c75f078f2b745920ef020604a2de4eb038d98701","verification_issues":[139,143,144,145,176]},
+    {"id":"awareness-and-the-social-contract","source_blob":"15d658407a47830a32d6d5b2a18c0a283683ae77","destination":"neurology-text/awareness-and-the-social-contract.md","copy_commit":"2064e7cc1dccef84c5cfa09ecdd3da2fef1d26d8","verification_issues":[131,138,140,144,145,176]},
+    {"id":"communication-changed-risk","source_blob":"4427c6d9ef74e7b67acc521b773dad586b056143","destination":"neurology-text/communication-changed-risk.md","copy_commit":"7b5820a96d3a003fd7dc48b8ad9ec24bffe91071","verification_issues":[127,129,131,138,139,145,176]},
+    {"id":"worse-than-a-rapist","source_blob":"a864487b8cee74ab7562d66480e3133368820e28","destination":"neurology-text/worse-than-a-rapist.md","copy_commit":"062e5f3a0f29eaeeee7f60c17cfd35ee9a0231d1","verification_issues":[127,140,142,143,144,145,176]},
+    {"id":"medicine-worthy-of-its-laurels","source_blob":"4468d52d93333833c3d5e1b8c14b9220e3030114","destination":"neurology-text/medicine-worthy-of-its-laurels.md","copy_commit":"f17eb24d41def551884617fd3e09845fffb738fb","verification_issues":[127,129,131,138,139,140,143,144,145,176]}
+  ],
+  "prose_source_path_rule": "content/articles/{id}.json",
+  "prose_source_field": "current.source.originalText",
+  "atlas": {
+    "source_path": "content/articles/atlas.json",
+    "source_blob": "8f5460b47fb5413ac3f603f2cf876f1e1bb2fa87",
+    "source_bytes": 43534,
+    "destination": "neurology-current/content/articles/atlas.json",
+    "destination_blob": "f0060ba32231f6f08399ea174dc279dc2556ecff",
+    "destination_bytes": 26471,
+    "copy_commit": "e0a59ed1f025978adcce3c95c553d794de05157e",
+    "copy_type": "normalized-complete-json",
+    "source_reconstruction_git_hash_matched": true,
+    "remote_compact_git_hash_matched": true,
+    "semantic_support_verified": false,
+    "verification_issues": [144,145,176]
+  },
+  "pending_ancillary": [
+    {"source_path":"content/articles/discipline-and-punish.json","source_blob":"17aab6ab4008a2b2873aae0b9adc5c6b177c9d7f","kind":"quote","verification_issue":145},
+    {"source_path":"content/articles/neurology-cannot-undo-the-harm.json","source_blob":"2eab197970746ee67d97bcd0c7bf3d25f6a6125e","kind":"quote","verification_issue":145},
+    {"source_path":"content/articles/on-dignity.json","source_blob":"75c80e06a66bb8edf9d9972d5c1fd3003f1d1616","kind":"quote","verification_issue":145},
+    {"source_path":"content/articles/i-bledsoe-i-bled-so.json","source_blob":"b120e14daf7731e4ec12dcd7603d9a90bdac28f1","kind":"artwork-record","verification_issue":145},
+    {"source_path":"content/articles/ethics-authority-positive-change.json","source_blob":"dfd8a2bbca2ea8d653b962400b918f3fab86fb13","kind":"structured-architecture","verification_issue":145},
+    {"source_path":"content/articles/images/i-bled-so.png","source_blob":"e47598b1b80fd9dc6e34110ad5a16635d7e3b514","kind":"image","verification_issue":145},
+    {"source_path":"content/authority-quotes.json","source_blob":"69f35715a28dc800250959ee2a19cf67bfa91e90","kind":"shared-authority-metadata","verification_issue":144},
+    {"source_path":"content/site.json","source_blob":"16b7edd3a92f5e34de821756ad0a165822481d50","kind":"shared-collection-metadata","verification_issue":145}
+  ],
+  "conversation": {
+    "context_dossier": "context/thread-dossier.md",
+    "dossier_kind": "historical-assistant-synthesis-with-exact-user-instructions",
+    "trust_draft": "context/the-trust-i-had-already-given.md",
+    "trust_draft_export_change": "Chat-only citations replaced with explicit source-review leads; prose preserved.",
+    "full_automated_transcript": false,
+    "raw_attachments_copied": false,
+    "verification_issues": [127,145,176]
+  },
+  "limitations": [
+    "No complete presentation-unit import or semantic evidence audit is claimed.",
+    "Original website-relative links remain source text; use the Markdown index for GitHub navigation.",
+    "Manual prose exports have not all received an automated source-byte comparison.",
+    "Older dossier statements about permission and copy status are historical; SOC-PUBLIC-01 and this manifest supersede them within scope.",
+    "No site deployment, gate change, clinical action, external contact or edition release occurred."
+  ]
+}

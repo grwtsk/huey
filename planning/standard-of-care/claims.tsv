@@ -1,0 +1,189 @@
+claim_id	target	verification_issue	support_level
+SOC-C001	Captured conversation scope and completeness	127	integrity
+SOC-C002	User, assistant, draft and correction attribution	127	integrity
+SOC-C003	Attachment bytes, page counts and extraction accuracy	127	integrity
+SOC-C004	Document dates versus delivery and receipt dates	127	integrity
+SOC-C005	Recipient copies versus independent sources	127	integrity
+SOC-C006	Laboratory quotations versus original dated reports	127	integrity
+SOC-C007	Contemporaneous notes actually located and their content	127	integrity
+SOC-C008	Historical chat citation tokens and source resolution	127	integrity
+SOC-C009	Available and missing source scope	127	integrity
+SOC-C010	Customary practice	128	primary-source
+SOC-C011	Evaluative criterion or model	128	primary-source
+SOC-C012	Minimum acceptable performance	128	primary-source
+SOC-C013	Professional standard of care	128	primary-source
+SOC-C014	Specialist comparator and actual circumstances	128	primary-source
+SOC-C015	Internal procedure and resource constraint	128	primary-source
+SOC-C016	Binding law versus ethical guidance	128	primary-source
+SOC-C017	Gold-standard benchmark	128	primary-source
+SOC-C018	Uniform method versus effective participation	128	primary-source
+SOC-C019	Standard English and credibility	128	primary-source
+SOC-C020	Measurement traceability and fitness for purpose	128	primary-source
+SOC-C021	Civil, clear-and-convincing and criminal proof thresholds	128	primary-source
+SOC-C022	Double-standard definition and application	128	primary-source
+SOC-C023	Standard of living, value and efficiency usages	128	primary-source
+SOC-C024	Banner, structural support and musical-standard senses	128	primary-source
+SOC-C025	Reported ability to stand despite severe pain	129	attribution
+SOC-C026	Endurance, repeatability, recovery and assistance versus brief movement	129	substantial
+SOC-C027	Pain-form marking and the patient's explanation	129	attribution
+SOC-C028	Actual psychiatric inference from the marking and its basis	129	substantial
+SOC-C029	Diagnosed condition versus a new explanatory inference	129	substantial
+SOC-C030	Longitudinal function dates, coverage, devices and computations	129	substantial
+SOC-C031	Clinic and ordinary-life samples and their conditions	129	substantial
+SOC-C032	Relief and investigation questions unresolved in the available record	129	substantial
+SOC-C033	Chronic outpatient versus acute inpatient clot prevention	130	substantial
+SOC-C034	Anticoagulant indications and risks	130	substantial
+SOC-C035	Mechanical compression indications and contraindications	130	substantial
+SOC-C036	Individualized repositioning versus a fixed two-hour rule	130	substantial
+SOC-C037	Pressure-redistributing foam versus universally mandated dynamic surfaces	130	substantial
+SOC-C038	Skin, shear, heel protection and assistance	130	substantial
+SOC-C039	Range-of-motion and rehabilitation frequency and safety	130	substantial
+SOC-C040	Pain assessment and relief as conditions of tolerable prevention	130	substantial
+SOC-C041	Trauma treatment versus trauma-informed conduct of care	131	primary-source
+SOC-C042	Named PTSD psychotherapy evidence and terminology	131	primary-source
+SOC-C043	Physical disability and proposed replacement with Somatic Experiencing	131	substantial
+SOC-C044	Pacing, fatigue and treatment-burden evidence	131	primary-source
+SOC-C045	Predictability, explanation, pause signals and grounding	131	primary-source
+SOC-C046	Palliative care, hospice, primary palliative work and specialist teams	131	primary-source
+SOC-C047	Whether a named organizational model is universally mandated	131	substantial
+SOC-C048	Home or telehealth suitability versus expressed preferences	131	primary-source
+SOC-C049	Dual-purpose rationale versus demonstrated symptom benefit	132	substantial
+SOC-C050	Duloxetine indications and rigid muscle tone	132	substantial
+SOC-C051	Dopamine-blocking risks in the relevant movement disorder	132	substantial
+SOC-C052	Pimavanserin approved indication and limits	132	substantial
+SOC-C053	Quetiapine evidence and risks in the relevant setting	132	substantial
+SOC-C054	Benzodiazepines for PTSD versus other neurological indications	132	substantial
+SOC-C055	Sedation, respiratory, swallowing and interaction risks	132	substantial
+SOC-C056	Medication reconciliation, response review and follow-up responsibility	132	substantial
+SOC-C057	Correct gene symbol versus a different similarly named transporter	133	substantial
+SOC-C058	Exact transcript, variant notation, zygosity and report date	133	substantial
+SOC-C059	Reported neurological variant classification and interpretation	133	substantial
+SOC-C060	Uncertain variant status and what it does not diagnose	133	substantial
+SOC-C061	Separate mitochondrial finding and measured tissue fraction	133	substantial
+SOC-C062	Variant pathogenicity versus expression and symptom causation	133	substantial
+SOC-C063	Gene-level renal association versus a particular variant	133	substantial
+SOC-C064	Counseling, correlation and further-testing recommendations in reports	133	primary-source
+SOC-C065	Actual receipt, review, referral and follow-up	133	substantial
+SOC-C066	Current reclassification, reanalysis policy and any actual update	133	primary-source
+SOC-C067	Whether a proposed named metabolic protocol is an established guideline	134	substantial
+SOC-C068	Evidence for the proposed ATP and ion-transport causal chain	134	substantial
+SOC-C069	Drug-specific precautions versus a universal mitochondrial toxin list	134	substantial
+SOC-C070	Condition-specific valproate restrictions	134	substantial
+SOC-C071	Coenzyme Q10 evidence and recommendations	134	substantial
+SOC-C072	Carnitine indications and deficiency assessment	134	substantial
+SOC-C073	Serum, ionized and intracellular magnesium measures and limitations	134	substantial
+SOC-C074	Whether evidence mandates a particular assay or supplement regimen	134	substantial
+SOC-C075	Reported joint laxity versus a diagnosed connective-tissue disorder	135	substantial
+SOC-C076	Instability, subluxation and tissue-fragility claims	135	substantial
+SOC-C077	Handling, transfer and neutral-support recommendations	135	substantial
+SOC-C078	Device-specific indications and risks	135	substantial
+SOC-C079	Passive zero-resistance rule versus individualized stabilization	135	substantial
+SOC-C080	Claimed relation between hypermobility, bone calcium and stones	135	substantial
+SOC-C081	Actual stone counts, procedures and composition	136	substantial
+SOC-C082	Serum and urine tests and renal tubular diagnoses	136	substantial
+SOC-C083	Formation versus passage, bleeding and other pain	136	substantial
+SOC-C084	Urine-volume targets versus color as a proxy	136	substantial
+SOC-C085	Fluid advice with swallowing, renal and other constraints	136	substantial
+SOC-C086	Stone-specific pH and over-alkalinization	136	substantial
+SOC-C087	Potassium citrate indications and safety monitoring	136	substantial
+SOC-C088	Mobile ultrasound and X-ray sensitivity and limits	136	substantial
+SOC-C089	Obstruction, infection, absent urination and uncontrolled-pain escalation	136	substantial
+SOC-C090	Actual availability and suitability of home services	136	substantial
+SOC-C091	Exact cholesterol medication, dose and exposure history	137	substantial
+SOC-C092	Stopping dates and what changed afterward	137	substantial
+SOC-C093	Activity and event timing	137	substantial
+SOC-C094	Concurrent hydration, diet, medications and stone burden	137	substantial
+SOC-C095	Scope of a claimed long-term elimination dataset	137	substantial
+SOC-C096	Muscle injury and rhabdomyolysis versus nephrolithiasis	137	substantial
+SOC-C097	Calcium, phosphate and myoglobin mechanisms and the proposed causal chain	137	substantial
+SOC-C098	Protective, null and adverse association studies and their limits	137	substantial
+SOC-C099	Adverse-reaction documentation versus allergy or class exclusion	137	substantial
+SOC-C100	Independently measured improvement and remaining questions	137	substantial
+SOC-C101	Communication need beyond speech output	138	attribution
+SOC-C102	Timing and scope of accommodation notice	138	substantial
+SOC-C103	Measures actually offered	138	substantial
+SOC-C104	Measures declined and reasons given	138	substantial
+SOC-C105	Applicable disability-access rules, versions and limits	138	primary-source
+SOC-C106	Effective exchange versus nominal channel availability	138	primary-source
+SOC-C107	Written questions, processing and qualification requests	138	attribution
+SOC-C108	Interface accessibility versus account continuity	138	substantial
+SOC-C109	Actual portal restriction terms and cross-service effects	138	substantial
+SOC-C110	In-person preference and limits of telehealth substitution	138	attribution
+SOC-C111	Support-person role versus institutional responsibility	138	primary-source
+SOC-C112	Actual policy responsibility and escalation routes	138	substantial
+SOC-C113	Actual referral order and purpose	139	substantial
+SOC-C114	Recipient acceptance or triage	139	substantial
+SOC-C115	Access failure and notice to the referring service	139	substantial
+SOC-C116	Actual response and alternatives offered	139	substantial
+SOC-C117	Interim responsibility and unresolved symptoms	139	substantial
+SOC-C118	Consultation, referral and continuity authorities and limits	139	primary-source
+SOC-C119	Durable longitudinal coordination available or missing	139	substantial
+SOC-C120	Individual decisions versus institutional constraints	139	substantial
+SOC-C121	Confirmed routing, receipt and completion rather than transmission alone	139	substantial
+SOC-C122	Actual consent and communication sequence and ability to pause	140	substantial
+SOC-C123	Signature, attendance and non-interruption versus authorization	140	substantial
+SOC-C124	Informed-consent duties and applicable exceptions	140	primary-source
+SOC-C125	Disputed note contents and independently attributed witnesses	140	substantial
+SOC-C126	Original observation versus inherited assertion	140	substantial
+SOC-C127	Amendment, addendum and disagreement rights and predicates	140	primary-source
+SOC-C128	Preservation requests versus entitlement to receive every audit log	140	primary-source
+SOC-C129	Dates, scope and disposition of institutional or regulatory inquiries	140	substantial
+SOC-C130	Knowledge, intent, acts and causal elements of retained legal theories	140	substantial
+SOC-C131	Clinical relevance versus adjudicative role	140	substantial
+SOC-C132	Legitimate privacy, privilege and confidentiality boundaries	140	primary-source
+SOC-C133	Actual human decisions about disclosure, contact, waiver and release	140	substantial
+SOC-C134	Tasks actually performed by patient and support person	141	attribution
+SOC-C135	Ordinary participation versus substituted institutional work	141	substantial
+SOC-C136	Sequence from access failure to corrective correspondence	141	substantial
+SOC-C137	Illness complexity versus process-generated complexity	141	substantial
+SOC-C138	Reported or measured hours, frequency and opportunity costs	141	substantial
+SOC-C139	Hypothetical labor models versus observed costs	141	substantial
+SOC-C140	Wage benchmark year, geography and assumptions	141	substantial
+SOC-C141	Reduced total work versus shifting work to the patient	141	substantial
+SOC-C142	Family, vocation, worship and attention effects as attributed testimony	141	attribution
+SOC-C143	Treatment-burden guidance and its jurisdiction	141	substantial
+SOC-C144	Actual assignment of corrective responsibility and burden reduction	141	substantial
+SOC-C145	Institutional value definitions and versions	142	primary-source
+SOC-C146	Professional and patient responsibilities in actual ethical sources	142	primary-source
+SOC-C147	Criticism and disagreement versus independently regulable conduct	142	substantial
+SOC-C148	Exact care conditions and decision provenance	142	substantial
+SOC-C149	Patient-rights statements about complaints, access and coordination	142	primary-source
+SOC-C150	Specified unequal application of shared standards	142	substantial
+SOC-C151	Review actually performed and its scope	142	substantial
+SOC-C152	Legitimate safety or confidentiality limits and counterevidence	142	substantial
+SOC-C153	Institutional representations versus demonstrated performance	142	substantial
+SOC-C154	Author's stated lifetime of trust in physicians	143	attribution
+SOC-C155	Care chronology before defensive scrutiny	143	substantial
+SOC-C156	Reported suffering and continued participation attempts	143	attribution
+SOC-C157	Communication needs and timing of notice	143	substantial
+SOC-C158	Specific barriers, their control and possible modifications	143	substantial
+SOC-C159	Disability, institutional process and later protective limits	143	substantial
+SOC-C160	Actual responses or unresolved questions after notice	143	substantial
+SOC-C161	Clinician-side institutional constraints	143	substantial
+SOC-C162	Later vigilance as response versus assumed original cause	143	attribution
+SOC-C163	Proposed trust-rebuilding actions and whether they occurred	143	substantial
+SOC-C164	Exact current atlas and work identity	144	primary-source
+SOC-C165	Stable principle identifiers and complete inventory	144	primary-source
+SOC-C166	Existence of article-unit targets	144	primary-source
+SOC-C167	Whether a cited unit supports its correspondence	144	substantial
+SOC-C168	Medical-ethical source attributions	144	primary-source
+SOC-C169	Spiritual and tradition source attributions	144	primary-source
+SOC-C170	Cross-faith resonance versus doctrinal equivalence	144	primary-source
+SOC-C171	Quotation accuracy, context and translation	144	primary-source
+SOC-C172	Moral witness versus eyewitness evidence	144	primary-source
+SOC-C173	Compassion or mercy versus evidence and exoneration	144	primary-source
+SOC-C174	Forgiveness versus reconciliation and restored trust	144	primary-source
+SOC-C175	Autonomy versus abandonment or ownership	144	primary-source
+SOC-C176	Hope and opportunity to answer versus promised outcomes	144	primary-source
+SOC-C177	Correction versus compelled confession	144	primary-source
+SOC-C178	Distinct statuses of guidance, law, analogy and authorial synthesis	144	primary-source
+SOC-C179	Completeness of selected corpus inventory	145	integrity
+SOC-C180	Exact source versions pinned in a restricted manifest	145	integrity
+SOC-C181	Stable work, unit and principle identifiers after transfer	145	integrity
+SOC-C182	Destination bytes matching selected source bytes	145	integrity
+SOC-C183	Source originals remaining intact	145	integrity
+SOC-C184	Destination access matching the author's scoped grant	145	integrity
+SOC-C185	Every source unit receiving a reviewed disposition	145	integrity
+SOC-C186	Every factual assertion linked to an exact proposition and verification issue	145	integrity
+SOC-C187	Source references resolving to supporting passages	145	integrity
+SOC-C188	Downstream chapter and reference dependencies reflecting dispositions	145	integrity

@@ -1,52 +1,40 @@
 # Standards, care burden and trust
 
-Program [#125](https://github.com/grwtsk/huey/issues/125); transfer [#126](https://github.com/grwtsk/huey/issues/126); existing source permission [#2](https://github.com/grwtsk/huey/issues/2). Development continues in [PR #122](https://github.com/grwtsk/huey/pull/122).
+> [!WARNING]
+> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Read the evidence and dispositions in the linked issues. Permission to publish working sources is not factual endorsement or acceptance of a finished edition.
 
-## Actual state
+## Approval is resolved
 
-51 issues were created: one program, one transfer task, 19 verification tasks (#127-#145), and 30 argument tasks (#146-#175). The 188 entries are initial evidence targets, not verified facts. Full source-unit extraction and semantic support review remain open in #145. Compound targets must be split when the actual source sentences are audited. No automated complete conversation export is claimed.
+The author expressly approved public copies of this discussion, the Atlas and the specified essay collection. [SOC-PUBLIC-01](approval.json), [authorization scope](AUTHORIZATION.md) and [issue #2's receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544) preserve the instruction. Do not ask again or make evidence-review completion a new publication-permission gate. Raw clinical records/PDFs and unrelated private material remain excluded; site access, the protected book ending, edition acceptance and outside actions are unchanged.
 
-The registry covers pain-limited function; prevention and relief; trauma-informed access; coordinated care; genetic and medication hypotheses and corrections; meanings of standard; patient and support-person workload; institutional accountability; prior trust; and the origin of communication barriers. The requested atlas and essay transfer remains a separate source task.
+## Source copies and claims
 
-No private essay, medical record, manuscript passage, private path or source fingerprint is committed here. The source collection is private/Reader-gated; Huey is public. #2 must resolve the specific public-copy exception before #126 can place those texts in public Git. The already selected gated source architecture is not reopened. No original was deleted, no source service was deployed and no medical or legal action was taken.
+Browse the [working corpus](../../sources/standard-of-care/README.md): complete structured Atlas, twelve authored prose exports, the Standard and Trust conversation drafts, and the earlier context dossier. A prose export is not a whole presentation-JSON copy. The Atlas preserves all parsed values with compact formatting. Original source files are unchanged. Pending ancillary material and representation limits are explicit in the transfer and context manifests.
 
-## Reading the registry
+[Master #125](https://github.com/grwtsk/huey/issues/125) links **30 argument issues (#146–#175)** and **19 initial verification issues (#127–#145)**. [registry.json](registry.json) preserves their stable connections. [claims.tsv](claims.tsv) names **188 initial evidence targets**, each with its verification issue and support level. **111 need substantial support**, coordinated through [#176](https://github.com/grwtsk/huey/issues/176). [support-policy.json](support-policy.json) defines the levels.
 
-`registry.json` declares its column meanings. A verification row identifies its actual issue and an inclusive range of initial claim numbers. Combine the prefix `SOC-C` with a three-digit number to obtain the stable target ID. Each target's exact question, required evidence, counterevidence search and closure conditions are in its linked issue body. An argument row gives its issue, normative reasoning ID, verification issues and claim-number ranges. Expand those ranges to recover both forward and reverse dependencies.
+Substantial support identifies work needed for complex causal, clinical, legal, historical institutional or quantitative claims, not a conclusion that a claim is false. Unflagged claims are not automatically true. First-person experience remains attributed testimony. Normative arguments and metaphors need reasoning/provenance review rather than fabricated empirical proof.
 
-Every target has exactly one verification owner. The references are textual/planning dependencies, not native GitHub dependency objects. Verification blocks factual clearance of the linked passage, not preserving testimony or preparing a draft. The ledger must grow when actual source-unit review discovers additional propositions or arguments.
+Every further atomic proposition discovered must get a stable child ID and covering verification issue. Preserve exact words, speaker, source/version/locator, evidence, counterevidence, applicable date/population/jurisdiction and limits. Split compound targets before factual clearance. [#145](https://github.com/grwtsk/huey/issues/145) remains open for this work; the initial index is not a finished sentence audit.
 
-## Argument map
+The registry's `source_permission_issue: 2` points to the recorded authority, not a current blocker for SOC-PUBLIC-01. C180's historical reference to a restricted manifest concerns source-version identity; the new grant permits the specified public manifest. Private clinical-record locators remain excluded.
 
-| Arguments | Issue range | Work |
-|---|---|---|
-| SOC-A01-A06 | #146-#151 | Custom, professional circumstances, accessibility, language, measurement and proof |
-| SOC-A07-A14 | #152-#159 | Pain-limited function, relief/prevention, interpretation, trauma, coordination, medication, genetics and renal inquiry |
-| SOC-A15-A19 | #160-#164 | Professional substitution, family roles, process-generated complexity, transferred costs and usable life |
-| SOC-A20-A25 | #165-#170 | Agency, records, reciprocal standards, continuity conditions, actual institutional action and decision-level review |
-| SOC-A26-A30 | #171-#175 | Prior trust, endurance, origins of barriers, repair of trust and moral/atlas standards |
+## Notices and local checks
 
-## Evidence contract
+Every new relevant commit must include:
 
-A target identifies a proposition to investigate, not an accepted conclusion. All begin open/unverified. A later exact claim record must identify speaker/source, date/version, restricted locator, type, available evidence, missing evidence, counterevidence, applicability and disposition. Testimony, independent observation, institutional text, inference, hypothesis, clinical guidance, law, ethical argument and adjudication remain distinct. This is not a hierarchy privileging institutional speech.
+    Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.
 
-Normative arguments use SOC-N identifiers and require reasoning review, not fabricated empirical citations. Preserve unsupported and superseded source wording with correction lineage on the restricted surface. A hash is not truth, a citation is not automatic support, and issue closure is not human consent or manuscript acceptance. Do not require a patient to prove a causal theory before preserving the patient's account.
-
-## Next stages
-
-Complete #127 source reconciliation and #126 restricted preparation. Resolve only the narrow disclosure question in #2. Read all selected atlas and essay units under #145, including nested paragraphs, tables, quotations, captions, footnotes and authority dependencies. Check the existence of an atlas edge separately from whether its target supports the proposition.
-
-Complete each verification with a bounded disposition and retain unresolved items. Integrate the arguments through #124 into the existing narrative rather than append disconnected supplements. Preserve RF-01, original source wording, the three movements and the protected closing. No new retelling requirement or implied author approval is created.
-
-## Local checks
-
-Run:
+Use [the commit template](../../.gitmessage), [claim issue template](../../.github/ISSUE_TEMPLATE/claim-verification.md), and [notice policy](DISCLAIMER.md). No installed hook or hosted enforcement is claimed. Older history is not rewritten.
 
 ```sh
 python3 planning/standard-of-care/check_registry.py
-python3 -m unittest discover -s planning/standard-of-care -p 'test_registry.py' -v
+python3 planning/standard-of-care/check_support.py --message-file .gitmessage
+python3 -m unittest discover -s planning/standard-of-care -p 'test_*.py' -v
 ```
 
-The ten synthetic tests check identifiers, claim coverage, link ownership, missing/duplicate claims, undeclared completion and a limited source-locator tripwire. They do not verify medical or legal truth, source authorship, disclosure permission or full semantic coverage.
+The actual local stage passed **24 tests**, including coverage/routing, duplicate or missing claims, false verification promotion, reopened approval, removed exclusions and missing commit notices. The tested claim data, support checker/tests, approval and policy blobs matched the GitHub tree. This was not a full checkout, full repository suite, hosted CI, clinical/legal verification, or exhaustive semantic review. The concurrent `care-law/` work was preserved unchanged, not represented as newly tested by this pass.
 
-These additions were tested as an isolated new-file payload, not a full repository checkout. The existing repository suite and hosted Actions were not run. No local check closes an evidence issue or a human decision.
+The reconstructed Atlas matched its original source Git hash before normalization; the remote compact blob matched the local compact JSON. That establishes integrity of the representation, not support for every linked proposition. The manual prose exports have not all received an automated byte comparison.
+
+Continue through existing draft [PR #122](https://github.com/grwtsk/huey/pull/122), #124's editorial passes and #145/#176's evidence review. Preserve RF-01, original source status, competing evidence and the author's agency. No repeated approval or retelling obligation is imposed.
