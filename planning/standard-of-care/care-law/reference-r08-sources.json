@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "repository": "grwtsk/huey",
+  "work_id": "HUEY-CL08",
+  "date": "2026-09-22",
+  "scope": "Public source inspections only; no individual case finding.",
+  "sources": [
+    {
+      "id": "W01",
+      "title": "28 CFR 35.160 — Communications",
+      "url": "https://www.ecfr.gov/current/title-28/chapter-I/part-35/subpart-E/section-35.160",
+      "locator": "(a)–(c), especially (b)(2); displayed currency September 21, 2026.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W02",
+      "title": "28 CFR 36.303 — Auxiliary aids and services",
+      "url": "https://www.ecfr.gov/current/title-28/chapter-I/part-36/subpart-C/section-36.303",
+      "locator": "(a), (c)(1), (h); displayed currency September 18, 2026.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W03",
+      "title": "45 CFR 84.77 — Effective communication",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-84/subpart-H/section-84.77",
+      "locator": "(a)(1), (b)(1)–(2), (c); displayed currency September 18, 2026.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W04",
+      "title": "45 CFR 84.72 — Personal devices and services",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-84/subpart-G/section-84.72",
+      "locator": "Personal devices and services limitation; read with 84.77.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W05",
+      "title": "45 CFR 84.84 — Web and mobile requirements",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-84",
+      "locator": "§84.84(a)–(b), amendment note; full-part rendering read after individual section CAPTCHA; displayed currency September 21, 2026.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Rule text, not a whole-interface audit or retroactive 2019 standard. Actual recipient and applicable terms must be established.",
+      "case_finding": false
+    },
+    {
+      "id": "W06",
+      "title": "HHS announces one-year web/mobile compliance extension",
+      "url": "https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html",
+      "locator": "May 7, 2026 announcement: 15-employee division and May 2027/2028 dates.",
+      "kind": "agency-announcement",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Announcement corroborates the regulatory dates; it is not a substitute for the operative rule.",
+      "case_finding": false
+    },
+    {
+      "id": "W07",
+      "title": "HHS detailed Section 504 fact sheet",
+      "url": "https://www.hhs.gov/civil-rights/for-individuals/disability/section-504-rehabilitation-act-of-1973/ocr-detailed-504-fact-sheet/index.html",
+      "locator": "Web/mobile section revised-timeline paragraph and preexisting-social-media subsection.",
+      "kind": "agency-guidance",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "The inspected summary says 50 or more employees in one revised-timeline sentence, while the rule and announcement use 15. Some exception discussion retains older dates. Record the discrepancy; do not use it to override the regulation.",
+      "case_finding": false
+    },
+    {
+      "id": "W08",
+      "title": "28 CFR 35.139 — Direct threat",
+      "url": "https://www.ecfr.gov/current/title-28/chapter-I/part-35/subpart-B/section-35.139",
+      "locator": "(a)–(b): risk to others, individual assessment, objective evidence, mitigation.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W09",
+      "title": "28 CFR 35.134 — Retaliation or coercion",
+      "url": "https://www.ecfr.gov/current/title-28/chapter-I/part-35/subpart-B/section-35.134",
+      "locator": "(a)–(b), including stated public/private-entity language; identify actual scope and protected conduct.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W10",
+      "title": "UCSF Interim Policy 700-15",
+      "url": "https://policies.ucsf.edu/policy/700-15",
+      "locator": "Policy items 12–14; patient authority, resource escalation, complaint routes; references to policy 1.01.10.",
+      "kind": "institutional-policy",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current published policy, not proof of an assigned reviewer or historical policy version. The separately linked login-protected policy was not obtained.",
+      "case_finding": false
+    },
+    {
+      "id": "W11",
+      "title": "UCSF Patient Rights and Responsibilities",
+      "url": "https://www.ucsfhealth.org/patients-visitors/your-hospital-stay/patient-rights-and-responsibilities",
+      "locator": "Raising concerns/complaints and patient responsibilities.",
+      "kind": "institutional-policy",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Published commitments and responsibilities, not automatic proof of retaliation or applicable remedy.",
+      "case_finding": false
+    },
+    {
+      "id": "W12",
+      "title": "UCSF Mission and Values",
+      "url": "https://www.ucsf.edu/about/mission-and-values",
+      "locator": "Values: Professionalism and Integrity definitions.",
+      "kind": "institutional-values",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Published values, not legal elements or case findings.",
+      "case_finding": false
+    },
+    {
+      "id": "W13",
+      "title": "45 CFR 164.526 — Amendment",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164",
+      "locator": "§164.526(a)–(d), especially (b)(2); full-part rendering read after individual-section CAPTCHA.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Amendment clock and procedure differ from access, correspondence preservation and requested institutional reply. Actual request and receipt remain to be established.",
+      "case_finding": false
+    },
+    {
+      "id": "W14",
+      "title": "California Business and Professions Code 2262",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=2262.",
+      "locator": "Section text: false-record creation or alteration with fraudulent intent; unprofessional conduct.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W15",
+      "title": "California Penal Code 11160",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=11160.",
+      "locator": "(a)–(b), (d)–(g): practitioner, service, injury/suspicion, reporting procedure, individual duty.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W16",
+      "title": "California WIC 15610.23",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=WIC&sectionNum=15610.23.",
+      "locator": "(a)–(b): dependent-adult definition; operative-date amendment note.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W17",
+      "title": "California WIC 15630",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=WIC&sectionNum=15630.",
+      "locator": "(a), (b)(1), (b)(3), (f), (h): reporting and settings; cumulative exception; no new duty to investigate in (b)(3)(B).",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Setting-specific rules and cumulative exceptions must be applied to actual facts. Do not infer a continuing offense or limitation extension from continuing consequences.",
+      "case_finding": false
+    },
+    {
+      "id": "W18",
+      "title": "California Penal Code 11162.7 — interaction of regimes",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=11162.7.",
+      "locator": "Exact provision invoked in D03 §20; individual and article retrieval attempts failed.",
+      "kind": "primary-law",
+      "inspection": "retrieval-failed",
+      "access_date": "2026-09-22",
+      "limit": "No fresh primary-text verification obtained. Preserve D03 as the attributed invocation; interaction of reporting regimes remains a specific #182 verification task.",
+      "case_finding": false
+    },
+    {
+      "id": "W19",
+      "title": "California Penal Code 32",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=32.",
+      "locator": "Completed felony, specified knowledge, harboring/concealing/aiding and intent to avoid specified consequences.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Elements checked in statutory text; controlling case-law application, underlying felony, actual assistance, knowledge and intent remain unresolved.",
+      "case_finding": false
+    },
+    {
+      "id": "W20",
+      "title": "California Penal Code 135",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=135.",
+      "locator": "Knowing material is about to be produced; willful destruction/erasure/concealment; intent; misdemeanor.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Current text checked; actual entity, facts, event-date law, defenses and remedy remain unadjudicated.",
+      "case_finding": false
+    },
+    {
+      "id": "W21",
+      "title": "California Code of Civil Procedure 340.5",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=340.5.",
+      "locator": "Professional-negligence limitation periods and specified tolling provisions.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "No individual deadline, accrual, timeliness or exception is determined here; historical text and controlling decisions remain necessary.",
+      "case_finding": false
+    },
+    {
+      "id": "W22",
+      "title": "California Government Code 911.2",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=911.2.",
+      "locator": "Specified claim-presentation periods and accrual references.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Actual public entity, cause, presentation requirement, exceptions and accrual must be established; no automatic application to every provider.",
+      "case_finding": false
+    },
+    {
+      "id": "W23",
+      "title": "42 CFR 482.13 — Hospital patient rights",
+      "url": "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-B/section-482.13",
+      "locator": "(a)(2)(ii)–(iii): grievance process time frames and written decision contents.",
+      "kind": "primary-law",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Hospital-condition coverage must be established for the clinic and grievance. No universal seven-day deadline is asserted.",
+      "case_finding": false
+    },
+    {
+      "id": "W24",
+      "title": "AMA Opinion 1.1.3 — Patient Rights",
+      "url": "https://code-medical-ethics.ama-assn.org/ethics-opinions/patient-rights",
+      "locator": "Respect, questions, informed decisions and continuity.",
+      "kind": "professional-ethics",
+      "inspection": "read-2026-09-22",
+      "access_date": "2026-09-22",
+      "limit": "Professional ethical guidance, not legislation or an adjudication about a particular encounter.",
+      "case_finding": false
+    }
+  ]
+}
