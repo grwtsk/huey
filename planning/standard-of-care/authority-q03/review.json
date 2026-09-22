@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "id": "SOC-Q03",
+  "repository": "grwtsk/huey",
+  "approval": "SOC-PUBLIC-01",
+  "checked_at_utc": "2026-09-22T06:52:46+00:00",
+  "source": {
+    "path": "sources/standard-of-care/neurology-current/content/authority-quotes.json",
+    "repository": "grwtsk/neurology",
+    "commit": "c920e426b8b6753b9f4bacf019e48010e57918c2",
+    "git_blob": "69f35715a28dc800250959ee2a19cf67bfa91e90",
+    "bytes": 15994,
+    "lines": 351,
+    "reconstruction": "Complete connected-source reads in two non-overlapping ranges; original indentation reconstructed and Git blob identity matched.",
+    "originals_modified": false
+  },
+  "scope": "One complete source register; twelve citation/text inspections with access limits, not a complete Atlas or case-fact audit.",
+  "observations": [
+    {
+      "id": "Q03-R01",
+      "quote_id": "quote-wma-cordoba",
+      "text_result": "matched-sentence",
+      "version_result": "supported-as-described",
+      "pinpoint": "Preamble, second paragraph; surrounding paragraphs and recommendations 1–6",
+      "observation": "The quoted sentence matches. The declaration connects trust, patient-directed decisions and professional independence; its recommendations also address administrative interference.",
+      "limits": "Professional declaration, not case evidence. The surrounding text permits either party to end the relationship and calls for assistance with transfer; it does not establish compulsory indefinite treatment by one physician.",
+      "attempts": [
+        {
+          "url": "https://www.wma.net/policies-post/wma-declaration-of-cordoba-on-patient-physician-relationship/",
+          "result": "read",
+          "scope": "Preamble, second paragraph; surrounding paragraphs and recommendations 1–6"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R02",
+      "quote_id": "quote-un-udhr-dignity",
+      "text_result": "index-excerpt-only",
+      "version_result": "not-applicable",
+      "pinpoint": "Article 1; official UN search excerpt at /en/node/124305",
+      "observation": "The official-domain search excerpt reproduces the quoted sentence and the following sentence. Direct retrieval of the original page and two official alternative pages returned HTTP 403.",
+      "limits": "Text is supported only by an indexed official excerpt in this pass, not an inspected full primary page. Do not mark full-context or domestic enforceability review complete.",
+      "attempts": [
+        {
+          "url": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+          "result": "http-403",
+          "scope": "Article 1; official UN search excerpt at /en/node/124305"
+        },
+        {
+          "url": "https://www.ohchr.org/en/human-rights/universal-declaration/translations/english",
+          "result": "http-403",
+          "scope": "No document body retrieved"
+        },
+        {
+          "url": "https://www.un.org/en/node/124305",
+          "result": "index-excerpt",
+          "scope": "Article 1 in official-domain search result"
+        },
+        {
+          "url": "https://www.un.org/en/node/124305",
+          "result": "http-403",
+          "scope": "Direct follow-up returned no document body"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R03",
+      "quote_id": "quote-doj-equal-access",
+      "text_result": "matched-excerpt",
+      "version_result": "not-applicable",
+      "pinpoint": "Part 1, Services and Facilities; Part 2, companion/assistance, direct address, additional time and staff-safety questions",
+      "observation": "The excerpt matches. The guidance addresses reasonable modifications and their limitations, assistance without requiring a companion, direct communication with the patient, and trained staff/equipment.",
+      "limits": "Federal technical assistance, last-updated label June 26, 2020. It is not an adjudication of these encounters, a substitute for current governing regulations, or a claim that the physician personally must perform every support task.",
+      "attempts": [
+        {
+          "url": "https://www.ada.gov/resources/medical-care-mobility/",
+          "result": "read",
+          "scope": "Part 1, Services and Facilities; Part 2, companion/assistance, direct address, additional time and staff-safety questions"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R04",
+      "quote_id": "quote-988-heard-cared",
+      "text_result": "matched-sentence",
+      "version_result": "not-applicable",
+      "pinpoint": "Homepage: Get in Touch; What to Expect; opening support description",
+      "observation": "The quote matches. The homepage states round-the-clock availability, free conversations and confidentiality, and describes emotional distress beyond suicidality.",
+      "limits": "Those are published service descriptions, not a demonstrated encounter, guaranteed availability for this individual, absolute secrecy or anonymity. Geographic reach, specific Deaf/Hard-of-Hearing modalities and confidentiality exceptions remain separate unchecked details.",
+      "attempts": [
+        {
+          "url": "https://988lifeline.org/",
+          "result": "read",
+          "scope": "Homepage: Get in Touch; What to Expect; opening support description"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R05",
+      "quote_id": "quote-christian-truth",
+      "text_result": "matched-verse",
+      "version_result": "supported-as-described",
+      "pinpoint": "1 Corinthians 13:6, KJV; complete chapter 13, especially verses 4–7 and 13",
+      "observation": "The wording including the semicolon matches. The named KJV chapter uses charity; the register describes its theme as love. Preserve the translation and distinguish explanatory gloss from quoted text.",
+      "limits": "A spiritual correspondence, not a medical rule, evidence of a disputed event, or a demand that this patient endure harm.",
+      "attempts": [
+        {
+          "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+13%3A6&version=KJV",
+          "result": "read",
+          "scope": "1 Corinthians 13:6, KJV; complete chapter 13, especially verses 4–7 and 13"
+        },
+        {
+          "url": "https://www.biblegateway.com/passage/?search=1%20Corinthians%2013&version=KJV",
+          "result": "read",
+          "scope": "Complete KJV chapter 13"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R06",
+      "quote_id": "quote-jewish-neighbor",
+      "text_result": "not-verified",
+      "version_result": "unverified",
+      "pinpoint": "Leviticus 19:18, requested JPS 1985 edition",
+      "observation": "The version-selected URL and targeted text API were unavailable. The plain verse page loaded only a reader shell without verse text. A community sheet was a lead, not an authoritative edition check.",
+      "limits": "Exact punctuation, complete verse, edition and attribution remain unverified. Do not silently replace JPS 1985 with another translation or treat search familiarity as completed source inspection.",
+      "attempts": [
+        {
+          "url": "https://www.sefaria.org/Leviticus.19.18?lang=bi&ven=english%7CTanakh%3A_The_Holy_Scriptures%2C_published_by_JPS",
+          "result": "unavailable",
+          "scope": "Leviticus 19:18, requested JPS 1985 edition"
+        },
+        {
+          "url": "https://www.sefaria.org/Leviticus.19.18",
+          "result": "reader-shell",
+          "scope": "No verse or edition text exposed"
+        },
+        {
+          "url": "https://www.sefaria.org/api/texts/Leviticus.19.18?context=0&commentary=0&ven=Tanakh%3A%20The%20Holy%20Scriptures%2C%20published%20by%20JPS",
+          "result": "unavailable",
+          "scope": "No text response"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R07",
+      "quote_id": "quote-islam-preserve-life",
+      "text_result": "matched-excerpt",
+      "version_result": "unverified",
+      "pinpoint": "Surah 5:32, displayed English verse at /al-maidah/32",
+      "observation": "The quoted clause matches the displayed English text. The full verse frames the ordinance for the Children of Israel and contains surrounding qualifications that the register acknowledges.",
+      "limits": "The extracted page did not display the translator credit. The specific Clear Quran/Khattab credit remains unverified in this pass; do not replace it or assert equivalence among traditions.",
+      "attempts": [
+        {
+          "url": "https://quran.com/5/32",
+          "result": "read",
+          "scope": "Surah 5:32, displayed English verse at /al-maidah/32"
+        },
+        {
+          "url": "https://quran.com/al-maidah/32",
+          "result": "read",
+          "scope": "Displayed English verse including surrounding context"
+        },
+        {
+          "url": "https://quran.com/5/32?translations=131",
+          "result": "unavailable",
+          "scope": "Requested translation-specific view did not load"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R08",
+      "quote_id": "quote-buddhist-non-hatred",
+      "text_result": "matched-excerpt",
+      "version_result": "supported-as-described",
+      "pinpoint": "Dhammapada, Yamakavagga verse 5; header, verses 3–6, copyright/reuse notice",
+      "observation": "The quoted two sentences match the beginning of verse 5. The third sentence remains outside the excerpt. The page credits Acharya Buddharakkhita and identifies the Buddhist Publication Society source.",
+      "limits": "Its non-retaliation context is not a factual acquittal or legal waiver. The modern translation carries a reuse notice; this reading does not clear edition rights or make the full work public domain.",
+      "attempts": [
+        {
+          "url": "https://www.accesstoinsight.org/tipitaka/kn/dhp/dhp.01.budd.html",
+          "result": "read",
+          "scope": "Dhammapada, Yamakavagga verse 5; header, verses 3–6, copyright/reuse notice"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R09",
+      "quote_id": "quote-wma-geneva-dignity",
+      "text_result": "matched-sentence",
+      "version_result": "citation-version-qualified",
+      "pinpoint": "Linked document: item 3; adopted declaration: third pledge sentence",
+      "observation": "The quote matches the linked document and the separately inspected adopted declaration. The original link is labelled Proposed Revision and For Consideration, not simply the canonical adopted-text page.",
+      "limits": "Keep the original URL and historical source metadata. Use the adopted declaration as a separately recorded preferred citation in new prose. Matching words do not erase the version distinction or prove a particular physician took or breached this pledge.",
+      "attempts": [
+        {
+          "url": "https://www.wma.net/policies-post/wma-declaration-of-geneva/decl-of-geneva-v-2017/",
+          "result": "read",
+          "scope": "Linked document: item 3; adopted declaration: third pledge sentence"
+        },
+        {
+          "url": "https://www.wma.net/policies-post/wma-declaration-of-geneva/",
+          "result": "read",
+          "scope": "Adoption/amendment history through October 2017 and full pledge"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R10",
+      "quote_id": "quote-un-crpd-health",
+      "text_result": "index-excerpt-only",
+      "version_result": "not-applicable",
+      "pinpoint": "Article 25; official UN Adopted Articles search excerpt",
+      "observation": "The original UN page, OHCHR instrument page and alternate UN full text returned HTTP 403. An official-domain Adopted Articles search excerpt contains the quoted opening language.",
+      "limits": "Do not substitute the similarly titled working draft for the adopted instrument. Full provision/context and jurisdiction-specific implementation remain open; no individual legal entitlement is decided here.",
+      "attempts": [
+        {
+          "url": "https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-25-health.html",
+          "result": "http-403",
+          "scope": "Article 25; official UN Adopted Articles search excerpt"
+        },
+        {
+          "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-persons-disabilities",
+          "result": "http-403",
+          "scope": "No instrument body retrieved"
+        },
+        {
+          "url": "https://www.un.org/esa/socdev/enable/rights/convtexte.htm",
+          "result": "http-403",
+          "scope": "No full text retrieved"
+        },
+        {
+          "url": "https://www.un.org/esa/socdev/enable/rights/ahc8adart.htm",
+          "result": "index-excerpt",
+          "scope": "Official Adopted Articles result, Article 25 opening and (a)–(c)"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R11",
+      "quote_id": "quote-ama-patient-rights",
+      "text_result": "matched-item",
+      "version_result": "not-applicable",
+      "pinpoint": "Opinion 1.1.3, introductory paragraphs and rights 1–9",
+      "observation": "Right 1 matches. The opening assigns advocacy to physicians; right 9 addresses cooperation in coordination and notice plus reasonable assistance when indicated care would otherwise be discontinued.",
+      "limits": "Professional ethical guidance, not a finding about any named provider or a rule of indefinite treatment. The opening also recognizes patient candor and participation; preserve the reciprocal context.",
+      "attempts": [
+        {
+          "url": "https://code-medical-ethics.ama-assn.org/ethics-opinions/patient-rights",
+          "result": "read",
+          "scope": "Opinion 1.1.3, introductory paragraphs and rights 1–9"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    },
+    {
+      "id": "Q03-R12",
+      "quote_id": "quote-who-health-right",
+      "text_result": "matched-excerpt",
+      "version_result": "not-applicable",
+      "pinpoint": "Constitution page: Principles, second principle and surrounding principles",
+      "observation": "The quoted beginning matches. The source sentence continues with nondiscrimination language; other principles address public cooperation and governmental responsibility.",
+      "limits": "The highest attainable standard is not quoted here as a promise of a cure, one specific treatment, or automatically enforceable domestic relief. Keep the omitted continuation visible in the source note.",
+      "attempts": [
+        {
+          "url": "https://www.who.int/about/governance/constitution",
+          "result": "read",
+          "scope": "Constitution page: Principles, second principle and surrounding principles"
+        }
+      ],
+      "verification_issue": 192,
+      "relationship_issue": 144
+    }
+  ],
+  "default_relationship_state": "unreviewed-correspondence",
+  "raw_clinical_records_published": false,
+  "manuscript_status": "candidate-only",
+  "factual_clearance": false
+}
