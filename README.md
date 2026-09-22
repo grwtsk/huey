@@ -1,14 +1,21 @@
 # Huey: how to make skin color.
 
+> [!WARNING]
+> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This repository includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. Inclusion, a citation, a commit, an issue closure or a passing software test does not independently verify a claim. Some received medical assertions are unsupported or superseded. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Read the linked verification issues for evidence, limitations, counterevidence and corrections. Public-copy approval is not factual endorsement or acceptance of a finished edition.
+
 R.A. Jacob Martone
+
+**Public-copy approval is recorded; do not ask again.** The author expressly approved the specified standard-of-care discussion, atlas and essay collection in [issue #2's decision receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544). [Program #125](https://github.com/grwtsk/huey/issues/125), [transfer #126](https://github.com/grwtsk/huey/issues/126), [corpus audit #145](https://github.com/grwtsk/huey/issues/145), and [substantial-support queue #176](https://github.com/grwtsk/huey/issues/176) distinguish source copying from factual review. Browse the [approved working corpus on the existing development branch](https://github.com/grwtsk/huey/tree/writing/55-development-r01/sources/standard-of-care) and [PR #122](https://github.com/grwtsk/huey/pull/122). Raw clinical PDFs/records and unrelated private material remain excluded. The live Reader gate and the book's protected ending are unchanged.
+
+Every new relevant commit must include: **Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.** Do not rewrite old commit history to backdate this requirement. Earlier infrastructure descriptions below apply outside the explicitly approved corpus; they do not reopen this permission decision.
 
 Production work is tracked in [the master issue](https://github.com/grwtsk/huey/issues/1). Read [AGENTS.md](AGENTS.md) before issue-driven work. One response opens one bounded pull request; completed, checked work may merge under the author's recorded instruction. Manuscript acceptance and release remain separate.
 
 ## Source catalog and coverage
 
-The author selected a kernel-managed durable source volume with a Reader-gated catalog/search on grwtsk.com. This repository carries only the [link-planning contract](planning/source-catalog-contract.md), [metadata aliases](sources/catalog.yaml), [service handoff](planning/source-service.json), and [source-to-book coverage ledger](planning/source-coverage.md). It does not duplicate the original corpus or implement reader permissions.
+The author selected a kernel-managed durable source volume with a Reader-gated catalog/search on grwtsk.com. For sources outside the scoped public-copy approval above, this repository carries the [link-planning contract](planning/source-catalog-contract.md), [metadata aliases](sources/catalog.yaml), [service handoff](planning/source-service.json), and [source-to-book coverage ledger](planning/source-coverage.md). These infrastructure files do not duplicate the original corpus or implement reader permissions.
 
-The service endpoint and all source bindings are currently pending. No working search route, ingested record, actual reader grant or deployment is claimed. Follow [issue #16](https://github.com/grwtsk/huey/issues/16) and its cross-repository blockers. [Issue #2](https://github.com/grwtsk/huey/issues/2) retains the remaining source-admission and disclosure boundaries; the custody architecture itself is no longer unselected.
+The service endpoint and its source bindings are currently pending. No working gated search route, ingested clinical record, actual reader grant or deployment is claimed. Follow [issue #16](https://github.com/grwtsk/huey/issues/16) and its cross-repository blockers. [Issue #2](https://github.com/grwtsk/huey/issues/2) retains remaining source-admission and disclosure boundaries outside SOC-PUBLIC-01; the custody architecture itself is no longer unselected.
 
 ```sh
 python3 -m pip install -r requirements-checks.txt
@@ -19,13 +26,13 @@ python3 scripts/catalog.py check
 
 `python3 scripts/catalog.py render` prints the deterministic ledger. `python3 scripts/catalog.py link A01` returns a pending result until inspected service/alias bindings exist. These commands do not query a service, grant access or publish content.
 
-No manuscript passages, literary anchors or private records are stored here by these infrastructure changes.
+No manuscript passages, literary anchors or private records were stored by those earlier infrastructure changes. The later approved SOC source copies are separately identified above.
 
 ## Current framing correction
 
 Read [RF-01](planning/relational-framing.md) and the [resume instruction](planning/framing-resume.md) before drafting from earlier packets. The author describes the geometry of people, identity, evidence and decisions, not a claim of racism or a defense against that label. Original sources retain their words; current derivatives preserve the later clarification. [Issue #98](https://github.com/grwtsk/huey/issues/98) governs the correction, [#99](https://github.com/grwtsk/huey/issues/99) its workflow checks, and [#100](https://github.com/grwtsk/huey/issues/100) its manuscript repairs.
 
-Local checks for the bounded declaration/scanner tool are documented in RF-01. They do not guarantee semantic fidelity. The [coverage register](planning/framing-coverage.json) records actual issue/PR correction references, not a live completion service. No new public manuscript permission is implied.
+Local checks for the bounded declaration/scanner tool are documented in RF-01. They do not guarantee semantic fidelity. The [coverage register](planning/framing-coverage.json) records actual issue/PR correction references, not a live completion service. No public manuscript permission beyond the actual scoped grant is implied.
 
 ## Lexical and conceptual research
 
@@ -37,8 +44,8 @@ python3 scripts/lexical_geometry.py check
 python3 -m unittest discover -s tests -p 'test_lexical_geometry.py' -v
 ```
 
-These are local integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. No source service, private corpus or hosted workflow is activated.
+These are local integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. No source service or hosted workflow is activated.
 
 ## Author-supplied capstone
 
-The [placement contract](planning/capstone-placement.md) records the author's concluding self-examination and open reader address at the end of Chapter 15, immediately before the existing excursion. The [Smith/antiracist comparison](research/lexical-geometry/confession-reader-dialogue.md) cites the distinct public sources. RF-01 protects actual self-attribution as well as protection from imposed labels; it is not a prohibition on the author's supplied words. The private source and proposed prose are not posted here. Full-chapter integration remains #51.
+The [placement contract](planning/capstone-placement.md) records the author's concluding self-examination and open reader address at the end of Chapter 15, immediately before the existing excursion. The [Smith/antiracist comparison](research/lexical-geometry/confession-reader-dialogue.md) cites the distinct public sources. RF-01 protects actual self-attribution as well as protection from imposed labels; it is not a prohibition on the author's supplied words. The private capstone source and proposed prose are not part of the SOC public-copy scope. Full-chapter integration remains #51.
