@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "repository": "grwtsk/huey",
+  "work_id": "HUEY-CL12",
+  "issues": [
+    183,
+    184,
+    324,
+    325,
+    327
+  ],
+  "status": "framework-complete-case-application-open",
+  "scope": "Published authority and bounded institutional/economic framework; no finding of receipt, breach, liability, cost, jurisdiction, or remedy.",
+  "notice_states": [
+    "authored",
+    "recorded",
+    "routed",
+    "delivered_or_available",
+    "received",
+    "accessible",
+    "reviewed",
+    "understood_or_reasonable_opportunity",
+    "acknowledged",
+    "agreed_or_authorized"
+  ],
+  "sources": [
+    {
+      "id": "I01",
+      "name": "September 17 patient-authored response",
+      "type": "patient-source",
+      "url": null,
+      "locator": "pp.6-8: upstream burden; clinical-versus-investigative roles; independent routing; requested responsible office/route/reference fields",
+      "limit": "Establishes the patient's statement and requests, not actual institutional receipt, acceptance, review, authority or outcome."
+    },
+    {
+      "id": "I02",
+      "name": "UCSF Interim Policy 700-15",
+      "type": "institutional-policy",
+      "url": "https://policies.ucsf.edu/policy/700-15",
+      "locator": "Purpose; financial responsibility; §12 patient/companion programmatic access; patient complaint routes",
+      "limit": "Current public policy; does not prove historical applicability or patient-specific implementation. Linked 1.01.10 text is not established by this source."
+    },
+    {
+      "id": "I03",
+      "name": "UCSF Patient Rights and Responsibilities",
+      "type": "institutional-policy",
+      "url": "https://www.ucsfhealth.org/patients-visitors/your-hospital-stay/patient-rights-and-responsibilities",
+      "locator": "rights to information, participation, privacy, complaints; patient responsibilities",
+      "limit": "Public institutional commitment; not proof that a particular complaint was received or resolved."
+    },
+    {
+      "id": "I04",
+      "name": "UCSF Patient Relations",
+      "type": "institutional-route",
+      "url": "https://www.ucsfhealth.org/patients-visitors/support-services/patient-relations",
+      "locator": "unresolved concerns, feedback, outside organizations, accessibility",
+      "limit": "Published route; does not establish an actual case, assignment, investigation or outcome."
+    },
+    {
+      "id": "I05",
+      "name": "UCSF Accessibility Resources",
+      "type": "institutional-route",
+      "url": "https://www.ucsfhealth.org/patients-visitors/support-services/accessibility-resources",
+      "locator": "requesting accommodations; barrier reporting; Patient Relations",
+      "limit": "Published resource route; not a determination that any requested method is reasonable or required."
+    },
+    {
+      "id": "I06",
+      "name": "UC Regents Bylaw 22",
+      "type": "governance",
+      "url": "https://regents.universityofcalifornia.edu/governance/bylaws/bl22.html",
+      "locator": "Board authority/delegation and reserved powers",
+      "limit": "System governance source; does not establish patient-specific Regents involvement."
+    },
+    {
+      "id": "I07",
+      "name": "UC Regents Bylaw 31",
+      "type": "governance",
+      "url": "https://regents.universityofcalifornia.edu/governance/bylaws/bl31.html",
+      "locator": "Chancellor campus executive, organization, administration, operation and financial management",
+      "limit": "Campus authority source; does not establish that the Chancellor controlled or reviewed a particular clinical decision."
+    },
+    {
+      "id": "I08",
+      "name": "UC Regents Bylaw 24 / Health Services Committee",
+      "type": "governance",
+      "url": "https://regents.universityofcalifornia.edu/governance/bylaws/bl24.html",
+      "locator": "Health Services Committee strategic direction/oversight for UC Health",
+      "limit": "Strategic oversight does not create an automatic obligation to present or decide an individual patient matter."
+    },
+    {
+      "id": "I09",
+      "name": "UC BFB BUS-10",
+      "type": "financial-policy",
+      "url": "https://policy.ucop.edu/doc/3410183",
+      "locator": "financial stewardship; clear reporting lines; accountability/delegation principles",
+      "limit": "Financial-transaction accountability policy, not a general clinical standard of care or patient grievance procedure."
+    },
+    {
+      "id": "I10",
+      "name": "Medical Board of California complaint guide",
+      "type": "regulatory-route",
+      "url": "https://www.mbc.ca.gov/Resources/brochures/Complaints.aspx",
+      "locator": "mission, jurisdiction, complaint types, limits, investigation/discipline",
+      "limit": "Board cannot provide medical care or malpractice compensation; complaint receipt is not proof of violation."
+    },
+    {
+      "id": "I11",
+      "name": "Medical Board enforcement process",
+      "type": "regulatory-process",
+      "url": "https://www.mbc.ca.gov/Enforcement/",
+      "locator": "jurisdictional screening; investigation; citation/fine; Attorney General referral",
+      "limit": "Administrative enforcement process; does not itself adjudicate civil damages or guarantee criminal referral."
+    },
+    {
+      "id": "I12",
+      "name": "California Civil Rights Department — state-funded programs",
+      "type": "state-civil-rights",
+      "url": "https://calcivilrights.ca.gov/statefundedprograms/",
+      "locator": "state-funded programs; disability; reasonable accommodation/access",
+      "limit": "Coverage depends on the law CRD enforces and the actual parties/activity; not every health-care dispute is within CRD jurisdiction."
+    },
+    {
+      "id": "I13",
+      "name": "California Civil Rights Department complaint process",
+      "type": "state-civil-rights",
+      "url": "https://calcivilrights.ca.gov/complaintprocess/",
+      "locator": "intake, jurisdictional screening, investigation, dispute resolution, possible litigation",
+      "limit": "Acceptance for investigation is not a merits finding; remedies and deadlines depend on the governing law."
+    },
+    {
+      "id": "I14",
+      "name": "California Department of Public Health — facility complaints",
+      "type": "facility-regulation",
+      "url": "https://www.cdph.ca.gov/Programs/CHCQ/LCP/Pages/FileAComplaint.aspx",
+      "locator": "CHCQ/Licensing and Certification oversight and health-care facility complaints",
+      "limit": "Applies only to facilities/providers within CDPH's licensing/certification purview; not physician licensure or civil damages."
+    }
+  ],
+  "levels": [
+    {
+      "id": "L1",
+      "level": "UCSF / UCSF Health",
+      "authority": [
+        "I02",
+        "I03",
+        "I04",
+        "I05"
+      ],
+      "actual_functions": [
+        "clinical care and continuity within treating services",
+        "patient accommodation assessment through treating department/inpatient unit and/or Patient Relations",
+        "patient complaint/grievance routing",
+        "accessibility aids/services and barrier reporting",
+        "local records/privacy/safety functions where separately assigned"
+      ],
+      "excluded_functions": [
+        "criminal adjudication",
+        "Medical Board discipline",
+        "civil damages adjudication",
+        "automatic entitlement to every requested mechanism"
+      ],
+      "claimed_undertaking": "Patient requests traceable assignment, accessible current care and independent institutional routing.",
+      "case_evidence": [
+        "I01"
+      ],
+      "contrary_or_limit": "Published routes do not establish which office received, accepted or completed any patient-specific task.",
+      "internal_cost_categories": [
+        "clinical/staff time",
+        "Patient Relations/accessibility work",
+        "records/privacy/safety review",
+        "coordination/rework"
+      ],
+      "potentially_shifted_costs": [
+        "patient/support-person coordination",
+        "repeated history/correction",
+        "delay",
+        "outside complaint preparation"
+      ],
+      "repair": "Identify accepted task owner, limit, next step and handoff; keep current care parallel to allegation review.",
+      "forum": "Treating service; Patient Relations/accessibility and other UCSF functions actually assigned by policy.",
+      "unresolved": [
+        "actual decision provenance",
+        "actual routing/receipt",
+        "case identifiers",
+        "policy 1.01.10 operative text/version",
+        "delivered accommodation/effectiveness"
+      ],
+      "notice_application": "EHR or portal presence alone does not prove review, understanding or agreement absent evidence/rule.",
+      "narrative_destination": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "id": "L2",
+      "level": "University of California",
+      "authority": [
+        "I06",
+        "I07",
+        "I08",
+        "I09"
+      ],
+      "actual_functions": [
+        "Regents governance and delegated powers",
+        "President system administration",
+        "Chancellor campus administration/operations/financial management",
+        "Health Services Committee strategic oversight of UC Health",
+        "financial-transaction accountability under BUS-10"
+      ],
+      "excluded_functions": [
+        "automatic first-line patient grievance handling",
+        "automatic control of an individual clinical decision",
+        "Medical Board licensing/discipline",
+        "automatic UC-wide liability from campus affiliation"
+      ],
+      "claimed_undertaking": "System/campus governance should make actual delegation and escalation visible where invoked.",
+      "case_evidence": [],
+      "contrary_or_limit": "No source in this packet establishes patient-specific Regents, UCOP, Health Services Committee or Chancellor review.",
+      "internal_cost_categories": [
+        "system governance/oversight when actually engaged",
+        "central resource escalation where policy applies",
+        "cross-campus/system coordination"
+      ],
+      "potentially_shifted_costs": [
+        "coordination imposed on campus/patient if actual system boundary is unclear"
+      ],
+      "repair": "Escalate only when actual delegated authority or policy requires it; record acceptance rather than copying higher offices reflexively.",
+      "forum": "Regents/President/Chancellor/system functions only within actual delegated authority.",
+      "unresolved": [
+        "whether any system-level function participated",
+        "which policy delegated patient-specific authority",
+        "whether any campus resource escalation was invoked"
+      ],
+      "notice_application": "A copy to a UC-level body does not establish review or system responsibility without routing/authority evidence.",
+      "narrative_destination": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "id": "L3",
+      "level": "Medical Board of California",
+      "authority": [
+        "I10",
+        "I11"
+      ],
+      "actual_functions": [
+        "license and regulate physicians within jurisdiction",
+        "screen complaints",
+        "investigate qualifying complaints",
+        "use medical consultants where applicable",
+        "discipline/cite/fine or refer formal disciplinary matters through the statutory process"
+      ],
+      "excluded_functions": [
+        "ongoing patient care",
+        "UCSF accommodation implementation",
+        "hospital grievance coordination",
+        "civil malpractice compensation",
+        "automatic criminal adjudication"
+      ],
+      "claimed_undertaking": "A regulator can examine physician conduct without becoming the treating service.",
+      "case_evidence": [],
+      "contrary_or_limit": "This matrix does not establish the status, merits, timeliness or outcome of any complaint.",
+      "internal_cost_categories": [
+        "public investigative/administrative work when a complaint is actually accepted",
+        "licensee response/professional review"
+      ],
+      "potentially_shifted_costs": [
+        "patient evidence assembly",
+        "duplicate explanation if institutional records/routing are incomplete"
+      ],
+      "repair": "Use the Board for issues within its statutory physician-regulation mandate while continuing clinical-access work elsewhere.",
+      "forum": "Medical Board; Attorney General/administrative hearing if the Board's process reaches formal discipline.",
+      "unresolved": [
+        "actual complaint status",
+        "record/evidence reviewed",
+        "statutory timeliness/exceptions",
+        "final disposition"
+      ],
+      "notice_application": "Complaint filing/receipt is not a finding; investigation referral is not discipline; discipline requires its own process.",
+      "narrative_destination": [
+        "C13",
+        "back-matter"
+      ]
+    },
+    {
+      "id": "L4",
+      "level": "California distributed public architecture",
+      "authority": [
+        "I12",
+        "I13",
+        "I14"
+      ],
+      "actual_functions": [
+        "CRD enforcement of covered civil-rights laws including state-funded-program discrimination",
+        "CRD investigation/resolution/litigation where jurisdiction and evidence support it",
+        "CDPH/CHCQ facility licensing/certification oversight and facility complaints",
+        "other courts/law-enforcement/prosecutorial functions only under their own authority"
+      ],
+      "excluded_functions": [
+        "one centralized state case manager",
+        "automatic cross-agency notice",
+        "automatic merits finding from intake",
+        "automatic substitution for physician licensing, clinical care or civil/criminal courts"
+      ],
+      "claimed_undertaking": "State architecture should be mapped by actual jurisdiction, not collapsed into one generic 'state' actor.",
+      "case_evidence": [],
+      "contrary_or_limit": "A sequence of legitimate jurisdictional limits can create transaction cost without itself establishing illegality.",
+      "internal_cost_categories": [
+        "agency intake/investigation/enforcement when actually invoked",
+        "facility oversight",
+        "civil-rights process"
+      ],
+      "potentially_shifted_costs": [
+        "patient jurisdiction research",
+        "multiple submissions",
+        "delay and duplicated evidence packaging across noninterchangeable forums"
+      ],
+      "repair": "Identify the correct forum once per proposition, preserve routing/notice state, and avoid making the patient re-prove jurisdiction at every handoff.",
+      "forum": "CRD or CDPH where their jurisdiction applies; other state legal forums remain #184 work.",
+      "unresolved": [
+        "entity/activity coverage",
+        "event-date law",
+        "limitations/exhaustion",
+        "remedy",
+        "actual agency receipt or action"
+      ],
+      "notice_application": "Acceptance for investigation is not a merits finding, and one agency's receipt is not presumed notice to another.",
+      "narrative_destination": [
+        "C13",
+        "C14",
+        "back-matter"
+      ]
+    }
+  ],
+  "closure": {
+    "framework_complete": true,
+    "case_application_complete": false,
+    "remaining": [
+      "actual routing and notice-state evidence",
+      "patient-specific authority/acceptance",
+      "historical policy applicability",
+      "jurisdiction and deadline analysis",
+      "cost evidence beyond modeled scenarios"
+    ]
+  }
+}
