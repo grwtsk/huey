@@ -125,7 +125,7 @@ class ReaderTests(unittest.TestCase):
     def test_01_actual_text_and_accessible_structure(self):
         self.assertEqual(self.page.locator('.paragraph').count(), 260)
         self.assertEqual(self.page.locator('.chapter').count(), 1)
-        self.assertEqual(self.page.locator('.chapter-link').count(), 17)
+        self.assertEqual(self.page.locator('.chapter-link').count(), 19)
         self.assertIn('netch asheba', self.page.locator('.prose').nth(3).inner_text())
         self.assertEqual(self.page.locator('.paragraph-number').first.inner_text(), '8A:1')
         self.assertEqual(self.page.locator('.paragraph-number').last.inner_text(), '8A:260')

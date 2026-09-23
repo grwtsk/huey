@@ -16,6 +16,28 @@ The envelopes sum to 80,000–114,000. They are planning bands, not chapter quot
 
 Relative to the earlier 24,000 / 31,400 / approximately 600 plan, expansion capacity is approximately 7,000–19,000 words in the Preamble and 17,000–39,000 in the Interlude, while the Excursion remains fixed.
 
+
+## Experiential spacing inside the expanded architecture
+
+The author has resolved the high-level relationship among the five registered experiential pieces without expanding their prose here:
+
+- three of the five are already captured within **C08A, Baptism in the Color of Rain**;
+- one remaining piece is a detailed account of the author's mother's death;
+- one remaining piece is a detailed account of the author's rape.
+
+The two remaining pieces now have stable structural slots but no imposed literary titles:
+
+| Stable ID | Working placement | Working descriptor | Status |
+|---|---|---|---|
+| C02A | after C02, Preamble | mother's death | structural placeholder only |
+| C12A | after C12, Interlude | rape | structural placeholder only |
+
+Their governing relation is **C02A → distance → C08A → distance → C12A**. “Reflection” here is an editorial spacing relation only. It does not assert equivalence, causation, symmetry, diagnosis, or that one trauma exists to explain another.
+
+The source-neutral EX-01–EX-05 inventory does not publicly identify which exact EX IDs correspond to the two remaining slots. That reconciliation must use the private register; it must not be inferred from titles, profile information, or likely chronology.
+
+C08A remains one chapter rather than being split into three duplicate experiential entries. C02A and C12A remain comment-only until source-grounded prose is separately admitted. The C15 → movement break → Edna close is unchanged.
+
 ## Canonical source rule
 
 All prose-bearing book source lives under **manuscript/** and is Markdown. Stable paths exist before prose is admitted so chapter work can grow without moving the book around in Git.

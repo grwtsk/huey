@@ -52,6 +52,18 @@
       "include": false
     },
     {
+      "id": "C02A",
+      "movement": "preamble",
+      "title": "Untitled experiential chapter — mother's death",
+      "title_status": "working_descriptor_not_final_title",
+      "path": "manuscript/01-preamble/02a-mothers-death.md",
+      "status": "planned",
+      "include": false,
+      "structural_role": "distant_reflection_of_C08A",
+      "work_issue": 322,
+      "source_mapping_status": "pending_private_EX_reconciliation"
+    },
+    {
       "id": "C03",
       "movement": "preamble",
       "title": "The Room",
@@ -140,6 +152,18 @@
       "include": false
     },
     {
+      "id": "C12A",
+      "movement": "interlude",
+      "title": "Untitled experiential chapter — rape",
+      "title_status": "working_descriptor_not_final_title",
+      "path": "manuscript/02-interlude/12a-rape.md",
+      "status": "planned",
+      "include": false,
+      "structural_role": "distant_reflection_of_C08A",
+      "work_issue": 322,
+      "source_mapping_status": "pending_private_EX_reconciliation"
+    },
+    {
       "id": "C13",
       "movement": "interlude",
       "title": "Four Chambers",
@@ -171,5 +195,28 @@
       "status": "planned",
       "include": false
     }
-  ]
+  ],
+  "experiential_structure": {
+    "registered_experiences": 5,
+    "captured_in_C08A": 3,
+    "remaining_insertion_slots": [
+      {
+        "id": "C02A",
+        "working_descriptor": "mother's death",
+        "final_title_supplied": false,
+        "relation_to_C08A": "distant_reflection",
+        "exact_EX_id": null
+      },
+      {
+        "id": "C12A",
+        "working_descriptor": "rape",
+        "final_title_supplied": false,
+        "relation_to_C08A": "distant_reflection",
+        "exact_EX_id": null
+      }
+    ],
+    "ordering_relation": "C02A -> distance -> C08A -> distance -> C12A",
+    "ex_id_reconciliation": "pending_private_register_reconciliation",
+    "nonclaim": "The structure does not assert equivalence, causal explanation, or symmetry among the experiences."
+  }
 }
