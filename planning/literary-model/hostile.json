@@ -1,0 +1,233 @@
+{
+  "model": "huey-literary-model/1",
+  "cases": [
+    {
+      "name": "duplicate-stable-id",
+      "error": "DUPLICATE_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",13,"id"],"value":"he_aa865119-f8f6-4127-a42b-c382b020e4e0"}
+      ]
+    },
+    {
+      "name": "equal-word-occurrence-collapse",
+      "error": "OWNERSHIP",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",11,"state","spans",1,"id"],"value":"he_aa865119-f8f6-4127-a42b-c382b020e4e0"}
+      ]
+    },
+    {
+      "name": "equal-grapheme-occurrence-collapse",
+      "error": "OWNERSHIP",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",13,"state","spans",0,"id"],"value":"he_7014f9ae-ed0b-496f-a1b8-842c471e9570"}
+      ]
+    },
+    {
+      "name": "two-owning-parents",
+      "error": "OWNERSHIP",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",8,"state","children"],"value":["he_4190caf4-732c-4db1-8c71-35129beb7a44"]}
+      ]
+    },
+    {
+      "name": "malformed-version",
+      "error": "VERSION_FORMAT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"version"],"value":"hev1:xyz"}
+      ]
+    },
+    {
+      "name": "stale-version",
+      "error": "VERSION_MISMATCH",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"state","text"],"value":"the the?"}
+      ]
+    },
+    {
+      "name": "ordinal-is-not-identity",
+      "error": "ENTITY_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"id"],"value":"p0001"}
+      ]
+    },
+    {
+      "name": "path-is-not-identity",
+      "error": "ENTITY_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"id"],"value":"manuscript/chapter.md"}
+      ]
+    },
+    {
+      "name": "route-is-not-identity",
+      "error": "ENTITY_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"id"],"value":"/huey/chapter/1"}
+      ]
+    },
+    {
+      "name": "combining-cluster-split",
+      "error": "GRAPHEME_BOUNDARY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","spans",0,"end"],"value":1}
+      ]
+    },
+    {
+      "name": "emoji-cluster-split",
+      "error": "GRAPHEME_BOUNDARY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","spans",1,"end"],"value":5}
+      ]
+    },
+    {
+      "name": "code-unit-surrogate-split",
+      "error": "GRAPHEME_BOUNDARY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","spans",1,"end"],"value":4}
+      ]
+    },
+    {
+      "name": "missing-presence",
+      "error": "SHAPE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",3,"state"],"value":{"optional":true,"children":[]}}
+      ]
+    },
+    {
+      "name": "required-matter-omitted",
+      "error": "PRESENCE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",4,"state","optional"],"value":false}
+      ]
+    },
+    {
+      "name": "pending-with-represented-content",
+      "error": "PRESENCE_CONTENT",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",3,"state","children"],"value":["he_4190caf4-732c-4db1-8c71-35129beb7a44"]}
+      ]
+    },
+    {
+      "name": "unknown-reference",
+      "error": "DANGLING_REFERENCE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",8,"state","children"],"value":["he_66c7126c-6096-40a5-97ee-ad63c9c5f055"]}
+      ]
+    },
+    {
+      "name": "ownership-cycle",
+      "error": "CONTAINMENT_CYCLE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":[]},
+        {"path":["snapshots",0,"entities",7,"state","children"],"value":["he_43bdf1c6-8b89-4c73-80fa-3c29f4827955"]},
+        {"path":["snapshots",0,"entities",8,"state","children"],"value":["he_4bb0a1a4-c4d3-40bc-aa68-c5528297804e"]}
+      ]
+    },
+    {
+      "name": "page-is-not-chapter",
+      "error": "CONTAINMENT_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":["he_c24d3bad-e0e6-44d3-a893-c1e863cea4ec"]}
+      ]
+    },
+    {
+      "name": "kind-reused-across-snapshots",
+      "error": "KIND_CHANGED",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",1,"entities",9,"kind"],"value":"Sentence"}
+      ]
+    },
+    {
+      "name": "multi-cluster-grapheme",
+      "error": "GRAPHEME_COUNT",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",17,"state","text"],"value":"ab"},
+        {"path":["snapshots",0,"entities",10,"state","spans"],"value":[]}
+      ]
+    },
+    {
+      "name": "unpaired-surrogate",
+      "error": "UNICODE_SCALAR",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","text"],"value":"\ud800"}
+      ]
+    },
+    {
+      "name": "unknown-lineage-state",
+      "error": "LINEAGE_ENDPOINT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"from",0,"version"],"value":"hev1:0000000000000000000000000000000000000000000000000000000000000000"}
+      ]
+    },
+    {
+      "name": "same-state-is-not-revision",
+      "error": "LINEAGE_CONTEXT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",3,"lineage",0,"to",0],"value":{"id":"he_4190caf4-732c-4db1-8c71-35129beb7a44","version":"hev1:cc47e0ec03bed06830656a721fc7a0558e510e3a58da002ba14737e3b4f89003"}}
+      ]
+    },
+    {
+      "name": "lineage-wrong-snapshot",
+      "error": "LINEAGE_CONTEXT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"beforeSnapshot"],"value":"revised"}
+      ]
+    },
+    {
+      "name": "non-string-lineage-version",
+      "error": "ENDPOINT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"from",0,"version"],"value":["hev1:cc47e0ec03bed06830656a721fc7a0558e510e3a58da002ba14737e3b4f89003"]}
+      ]
+    },
+    {
+      "name": "non-string-entity-kind",
+      "error": "ENTITY_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",0,"kind"],"value":["Work"]}
+      ]
+    },
+    {
+      "name": "unchanged-root-is-not-move",
+      "error": "LINEAGE_MOVE",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"from"],"value":[{"id":"he_aed237e0-3a5c-40a8-9c0b-f35eedc42efe","version":"hev1:229758578e1df78f36c605ad9b52b596ef9769bd6a05c65c4d04b56012b47268"}]},
+        {"path":["snapshots",2,"lineage",0,"to"],"value":[{"id":"he_aed237e0-3a5c-40a8-9c0b-f35eedc42efe","version":"hev1:229758578e1df78f36c605ad9b52b596ef9769bd6a05c65c4d04b56012b47268"}]}
+      ]
+    },
+    {
+      "name": "revision-is-not-move",
+      "error": "LINEAGE",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",3,"lineage",0,"kind"],"value":"move"}
+      ]
+    }
+  ]
+}
