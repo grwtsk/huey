@@ -26,7 +26,8 @@
       "url": "https://www.bls.gov/ooh/healthcare/physicians-and-surgeons.htm",
       "date_basis": "May 2025",
       "value": 275930,
-      "unit": "median annual wage"
+      "unit": "median annual wage",
+      "limit": "National all-physicians occupational wage benchmark; not a neurologist, academic, UCSF, billing, or marginal-cost figure."
     },
     {
       "id": "E03",
@@ -34,7 +35,8 @@
       "url": "https://www.bls.gov/ooh/healthcare/registered-nurses.htm",
       "date_basis": "May 2025",
       "value": 100220,
-      "unit": "hospital median annual wage"
+      "unit": "hospital median annual wage",
+      "limit": "Hospital-industry RN median wage; not UCSF payroll, a specific nurse's compensation, or a role-specific benefit rate."
     },
     {
       "id": "E04",
@@ -42,7 +44,8 @@
       "url": "https://www.bls.gov/ooh/management/medical-and-health-services-managers.htm",
       "date_basis": "May 2025",
       "value": 133580,
-      "unit": "hospital median annual wage"
+      "unit": "hospital median annual wage",
+      "limit": "Hospital-industry management median wage; broad proxy, not UCSF clinic-management payroll or marginal cost."
     },
     {
       "id": "E05",
@@ -50,7 +53,8 @@
       "url": "https://www.bls.gov/ooh/healthcare/medical-records-and-health-information-technicians.htm",
       "date_basis": "May 2025",
       "value": 59120,
-      "unit": "hospital median annual wage"
+      "unit": "hospital median annual wage",
+      "limit": "Hospital-industry medical-records median wage; not a UCSF HIM payroll record."
     },
     {
       "id": "E06",
@@ -58,7 +62,8 @@
       "url": "https://www.bls.gov/ooh/business-and-financial/compliance-officers.htm",
       "date_basis": "May 2025",
       "value": 72580,
-      "unit": "healthcare and social assistance median annual wage"
+      "unit": "healthcare and social assistance median annual wage",
+      "limit": "Health-care/social-assistance compliance-officer median wage; Patient Relations/ADA use is an explicit proxy and not a UCSF role valuation."
     },
     {
       "id": "E07",
@@ -66,7 +71,8 @@
       "url": "https://www.bls.gov/ooh/legal/lawyers.htm",
       "date_basis": "May 2025",
       "value": 159670,
-      "unit": "median annual wage"
+      "unit": "median annual wage",
+      "limit": "National lawyer median wage; not in-house UCSF counsel compensation, outside-counsel billing, or legal expense actually incurred."
     },
     {
       "id": "E08",
@@ -74,7 +80,8 @@
       "url": "https://www.bls.gov/ooh/office-and-administrative-support/",
       "date_basis": "May 2025",
       "value": 47450,
-      "unit": "occupation-group median annual wage"
+      "unit": "occupation-group median annual wage",
+      "limit": "Broad office/administrative-support occupational median; not UCSF scheduling payroll."
     },
     {
       "id": "E09",
@@ -82,7 +89,8 @@
       "url": "https://www.bls.gov/ooh/",
       "date_basis": "May 2025",
       "value": 50980,
-      "unit": "median annual wage"
+      "unit": "median annual wage",
+      "limit": "National all-occupations median wage used only as an illustrative patient/support-person opportunity-cost proxy; unpaid family labor is not observed by OEWS."
     },
     {
       "id": "E10",
