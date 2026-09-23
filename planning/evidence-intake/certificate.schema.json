@@ -312,7 +312,7 @@
           ]
         },
         "source_authenticated": {
-          "type": false
+          "type": "boolean"
         },
         "public_disclosure_reviewed": {
           "type": "boolean"
