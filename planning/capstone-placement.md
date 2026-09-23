@@ -47,6 +47,18 @@ The existing direct reader question remains the **last prose of Chapter 15** and
 
 Political/context sources are recorded separately in [language-power-sources.json](../research/lexical-geometry/language-power-sources.json). They are contextual evidence for the language/power argument, not original case evidence. The final evidence phase under #326 must recheck every retained political assertion against the exact version and preserve materially qualifying context.
 
+
+## C15 prototype R01
+
+The author has requested a readable prototype of the full last chapter. [Prototype R01](writing/c15-prototype-r01.md) now assembles the publicly available C15 structure into a continuous literary draft: prospective correspondence and unanswered fields, record/provenance responsibility, the existing capstone's role, the societal language braid, and the final turn toward the reader.
+
+The prototype deliberately contains two opaque anchors rather than manufacturing or exposing private source text:
+
+- `[EXISTING AUTHOR-SUPPLIED CONFESSION — SOURCE-PRESERVED AND UNCHANGED IN FINAL ASSEMBLY]`
+- `[EXISTING DIRECT READER QUESTION — UNCHANGED]`
+
+It therefore demonstrates rhythm, placement and thematic integration without claiming to be the byte-for-byte private current Chapter 15. The canonical manuscript file remains unchanged. Exact reassembly must use the authorized private confession and final question, preserve their source/change lineage, then receive #11/#12 review.
+
 ## Honest progress and review
 
 The supplied source and placement instruction are present. The capstone candidate is not the complete Chapter 15, and Chapters 13–14 are not made complete by reserving it. Do not append it to the through-Chapter-12 reading copy and call that a continuous manuscript. #51/#54/#55 retain integration work; #56 receives the source notes.

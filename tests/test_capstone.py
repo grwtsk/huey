@@ -133,6 +133,17 @@ class CapstoneTests(unittest.TestCase):
                        'That is the social responsibility of confession.']:
             self.assertIn(phrase, braid)
 
+    def test_c15_prototype_preserves_private_anchors_and_is_noncanonical(self):
+        proto = (ROOT / 'planning/writing/c15-prototype-r01.md').read_text()
+        info = self.plan['prototype_r01']
+        self.assertEqual(info['status'], 'public_noncanonical_chapter_prototype')
+        self.assertIs(info['canonical_manuscript_changed'], False)
+        self.assertIs(info['private_confession_reproduced'], False)
+        self.assertIs(info['private_reader_question_reproduced'], False)
+        self.assertIn(info['private_confession_anchor'], proto)
+        self.assertTrue(proto.rstrip().endswith(info['private_reader_question_anchor']))
+        self.assertNotIn('## Application notes', proto)
+
     def test_handoffs_link_current_contract(self):
         for name in ['AGENTS.md', 'planning/framing-resume.md', 'planning/relational-framing.md']:
             self.assertIn('capstone-placement.md', (ROOT/name).read_text())

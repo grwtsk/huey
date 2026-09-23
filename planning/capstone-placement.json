@@ -85,5 +85,28 @@
     "LP03",
     "LP04",
     "LP05"
-  ]
+  ],
+  "prototype_r01": {
+    "work_issue": 332,
+    "status": "public_noncanonical_chapter_prototype",
+    "path": "planning/writing/c15-prototype-r01.md",
+    "title": "A Different Last Page",
+    "basis": [
+      "C15-D01 public progress record and issue #51",
+      "CAP-01 capstone placement contract",
+      "societal-language braid #332",
+      "LP01-LP05 contextual source record"
+    ],
+    "private_confession_reproduced": false,
+    "private_reader_question_reproduced": false,
+    "private_confession_anchor": "[EXISTING AUTHOR-SUPPLIED CONFESSION — SOURCE-PRESERVED AND UNCHANGED IN FINAL ASSEMBLY]",
+    "private_reader_question_anchor": "[EXISTING DIRECT READER QUESTION — UNCHANGED]",
+    "canonical_manuscript_changed": false,
+    "prose_status": "prototype_for_author_and_full_sequence_review",
+    "exact_private_reassembly_required": true,
+    "acceptance_issues": [
+      11,
+      12
+    ]
+  }
 }
