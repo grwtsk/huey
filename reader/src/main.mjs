@@ -220,13 +220,17 @@ function render() {
     const dot = el('span', 'chapter-dot'); dot.setAttribute('aria-hidden', 'true');
     a.append(label, dot); li.append(a); list.append(li);
   }
+  let visibleMovement = null;
   for (const [chapterIndex, chapter] of book.chapters.entries()) {
     if (chapter.status !== 'admitted') continue;
     const section = el('section', 'chapter');
     section.id = `chapter-${chapter.id}`;
+    section.dataset.chapter = chapter.id;
     section.setAttribute('aria-labelledby', `title-${chapter.id}`);
-    const header = el('header', 'chapter-header sr-only');
-    const title = el('h2', '', chapter.title); title.id = `title-${chapter.id}`;
+    if (chapter.movement !== visibleMovement) section.append(el('p', 'movement', chapter.movement));
+    visibleMovement = chapter.movement;
+    const header = el('header', 'chapter-header');
+    const title = el('h2', 'chapter-title', `${chapter.label}. ${chapter.title}`); title.id = `title-${chapter.id}`;
     header.append(title); section.append(header);
     const paragraphBlocks = chapter.blocks.filter(b => b.type === 'paragraph');
     for (const block of chapter.blocks) {
@@ -303,6 +307,7 @@ function showEvidence(chapter, p) {
   openDialog(`Evidence · ${p.label}`);
   const body = $('dialog-body');
   body.append(el('p', 'help', chapter.title), el('blockquote', '', p.text));
+  body.append(el('p', 'help', 'Local edits on this page do not alter the admitted source wording, evidence mapping, or source rights.'));
   const state = p.evidence.coverage;
   body.append(el('p', 'collection-state', state === 'complete'
     ? 'Claim mapping recorded as complete. Mapping coverage is not a finding that every claim is verified.'
