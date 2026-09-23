@@ -51,12 +51,39 @@
     55,
     56,
     65,
-    66
+    66,
+    332
   ],
   "later_acceptance_issues": [
     11,
     12
   ],
   "public_private_text_gate": 2,
-  "semantic_review_required": true
+  "semantic_review_required": true,
+  "societal_language_braid": {
+    "work_issue": 332,
+    "status": "author_directed_candidate_not_accepted",
+    "public_candidate": "planning/writing/c15-societal-language-braid.md",
+    "source_record": "research/lexical-geometry/language-power-sources.json",
+    "strands": [
+      "naming_suffix_words",
+      "entrusted_power_amplifies_language",
+      "societal_confession_returns_to_narrator"
+    ],
+    "final_reader_question_public": false,
+    "final_reader_question_changed": false,
+    "reader_answer_added": false,
+    "political_endorsement": false,
+    "political_fitness_judgment": false,
+    "election_prediction": false,
+    "legal_verdict_from_rhetoric": false,
+    "final_sequence_preserved": true
+  },
+  "societal_source_ids": [
+    "LP01",
+    "LP02",
+    "LP03",
+    "LP04",
+    "LP05"
+  ]
 }

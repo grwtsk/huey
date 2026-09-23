@@ -100,6 +100,39 @@ class CapstoneTests(unittest.TestCase):
         atlas = json.loads((ROOT/'research/lexical-geometry/atlas.json').read_text())
         self.assertIsNone(atlas['case_classification'])
 
+    def test_societal_language_braid_preserves_private_final_question(self):
+        braid = (ROOT / 'planning/writing/c15-societal-language-braid.md').read_text()
+        self.assertIn('[EXISTING DIRECT READER QUESTION — UNCHANGED]', braid)
+        self.assertNotIn('Are you a racist?', braid)
+        social = self.plan['societal_language_braid']
+        self.assertIs(social['final_reader_question_public'], False)
+        self.assertIs(social['final_reader_question_changed'], False)
+        self.assertIs(social['reader_answer_added'], False)
+        self.assertIs(social['final_sequence_preserved'], True)
+
+    def test_societal_language_sources_are_context_not_case_evidence(self):
+        source_path = ROOT / 'research/lexical-geometry/language-power-sources.json'
+        data = json.loads(source_path.read_text())
+        self.assertIs(data['original_case_evidence'], False)
+        self.assertEqual({x['id'] for x in data['sources']}, set(self.plan['societal_source_ids']))
+        self.assertEqual(len(data['sources']), 5)
+        for row in data['sources']:
+            u = urlsplit(row['url'])
+            self.assertEqual(u.scheme, 'https')
+            self.assertTrue(row['supports'])
+            self.assertTrue(row['limits'])
+            self.assertLessEqual(len(row['quotation_used'].split()), 10)
+
+    def test_societal_braid_is_not_political_verdict_or_prediction(self):
+        social = self.plan['societal_language_braid']
+        for key in ['political_endorsement', 'political_fitness_judgment',
+                    'election_prediction', 'legal_verdict_from_rhetoric']:
+            self.assertIs(social[key], False)
+        braid = (ROOT / social['public_candidate']).read_text()
+        for phrase in ['The label is cached.', 'authority is an amplifier',
+                       'That is the social responsibility of confession.']:
+            self.assertIn(phrase, braid)
+
     def test_handoffs_link_current_contract(self):
         for name in ['AGENTS.md', 'planning/framing-resume.md', 'planning/relational-framing.md']:
             self.assertIn('capstone-placement.md', (ROOT/name).read_text())

@@ -32,6 +32,21 @@ The public comparison separates Smith's invitation to a reader, Kendi's use of c
 
 The private packet contains an exact visible-message capture, a proposed insertion, a paragraph map and explicit editorial decisions. Uncertain wording receives a stated normalization proposal, not an invented biography. No additional retelling or new HUMAN issue is required to prepare it. Exact new sentences remain reviewable under #11; ending presentation remains #12.
 
+
+## Societal responsibility braid — #332
+
+The author now directs the final confession to widen from personal self-attribution into the societal responsibility of language before it reaches the already-settled direct reader question.
+
+This is **not** a new chapter or a political epilogue. Apply the public [braid candidate](writing/c15-societal-language-braid.md) as three returns inside the confession:
+
+1. **Naming:** words carrying `-ism` and `-ist` are examined as consequential classifications whose definitions, evidence, provenance and human referents must remain attached.
+2. **Entrusted power:** current political examples test the same reciprocity applied elsewhere in the book—language used by people holding amplified public authority remains free but consequential. Preserve material context and do not convert examples into an electoral recommendation, fitness judgment or legal verdict.
+3. **Societal confession:** return the rule to the narrator. Grave words used in Huey remain subject to evidence, source status, correction and distinction among testimony, metaphor, analysis and adjudication. Confession begins custody; it does not supply absolution.
+
+The existing direct reader question remains the **last prose of Chapter 15** and stays private on this planning surface. No adult prose follows it. Movement break and complete Excursion: Edna remain immediate.
+
+Political/context sources are recorded separately in [language-power-sources.json](../research/lexical-geometry/language-power-sources.json). They are contextual evidence for the language/power argument, not original case evidence. The final evidence phase under #326 must recheck every retained political assertion against the exact version and preserve materially qualifying context.
+
 ## Honest progress and review
 
 The supplied source and placement instruction are present. The capstone candidate is not the complete Chapter 15, and Chapters 13–14 are not made complete by reserving it. Do not append it to the through-Chapter-12 reading copy and call that a continuous manuscript. #51/#54/#55 retain integration work; #56 receives the source notes.
