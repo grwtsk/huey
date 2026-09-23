@@ -6,9 +6,11 @@ Author: R.A. Jacob Martone.
 
 ## Working chapter order
 
-The author's latest instruction adds **Baptism in the Color of Rain** in the middle of the book. It occupies the central insertion between existing C08 and C09 in the Interlude. `C08A` is a stable insertion ID, not final printed numbering. The original fifteen chapter IDs and their order are retained; the added chapter is not a replacement. The three movements and the existing closing sequence are unchanged.
+The original fifteen chapter IDs retain their order. The working structure now has three stable insertion IDs: **C02A**, **C08A**, and **C12A**. C08A is the admitted middle-book chapter **Baptism in the Color of Rain**. C02A and C12A are structural placeholders only: the author has identified their subjects as the death of his mother and his rape, respectively, but has supplied no final literary title or public manuscript prose for either slot.
 
-This index adds one authorized public chapter to the sequence recorded in [master issue #1](https://github.com/grwtsk/huey/issues/1). Links for other chapters point to their work issues, not to nonexistent public manuscript files. This is a working-order manifest, not a claim that the complete manuscript has been assembled in Git.
+The author has also clarified that three of the five previously registered experiential pieces are already captured within C08A. They are not duplicated as extra chapter slots. The two remaining experiences stand at meaningful distance from C08A and reflect it without being made equivalent to it or used as automatic causal explanations. The working relation is **C02A → distance → C08A → distance → C12A**. Exact EX-01–EX-05 identity reconciliation remains pending against the private register rather than being guessed from the source-neutral public inventory.
+
+This index records structure, not acceptance of unwritten prose. C08A retains its existing public admission; the two new insertion files are comment-only placeholders. The three movements and the protected C15 → movement break → Edna closing sequence remain unchanged.
 
 ### Preamble
 
@@ -16,6 +18,7 @@ This index adds one authorized public chapter to the sequence recorded in [maste
 |---|---|---|
 | C01 | The Feather | [#37](https://github.com/grwtsk/huey/issues/37) |
 | C02 | A Life Already Under Way | [#38](https://github.com/grwtsk/huey/issues/38) |
+| C02A | *Untitled experiential chapter — mother's death* (working descriptor) | [#322](https://github.com/grwtsk/huey/issues/322) |
 | C03 | The Room | [#39](https://github.com/grwtsk/huey/issues/39) |
 | C04 | The Other Person in the Room | [#40](https://github.com/grwtsk/huey/issues/40) |
 | C05 | The Note That Arrived First | [#41](https://github.com/grwtsk/huey/issues/41) |
@@ -32,9 +35,12 @@ This index adds one authorized public chapter to the sequence recorded in [maste
 | C10 | The Instruments Already in the Room | [#46](https://github.com/grwtsk/huey/issues/46) |
 | C11 | Insufficiently Examined | [#47](https://github.com/grwtsk/huey/issues/47) |
 | C12 | The Human Cost | [#48](https://github.com/grwtsk/huey/issues/48) |
+| C12A | *Untitled experiential chapter — rape* (working descriptor) | [#322](https://github.com/grwtsk/huey/issues/322) |
 | C13 | Four Chambers | [#49](https://github.com/grwtsk/huey/issues/49) |
 | C14 | Under the Pantocrator | [#50](https://github.com/grwtsk/huey/issues/50) |
 | C15 | A Different Last Page | [#51](https://github.com/grwtsk/huey/issues/51) |
+
+The C02A and C12A labels above are working descriptors, not literary titles. Their placement is structural and remains reviewable when source-grounded drafts exist.
 
 ### Excursion: Edna
 

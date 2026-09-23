@@ -1,9 +1,9 @@
 {
   "profile": "experiential-seeds",
-  "version": 2,
+  "version": 3,
   "capture_issue": 107,
-  "interpretation": "Inventory only; private title/scope mapping remains in the author conversation.",
-  "ordering": "enumeration_not_chronology_or_placement",
+  "interpretation": "Five registered experiences; three are already captured in C08A and two remaining untitled chapter slots are structurally reserved. Exact EX-ID reconciliation remains private/pending.",
+  "ordering": "public_EX_enumeration_not_chronology; manuscript_structure_resolved_without_EX_id_guessing",
   "entries": [
     {
       "id": "EX-01",
@@ -58,5 +58,39 @@
   ],
   "extension_issues": [
     113
-  ]
+  ],
+  "structure_resolution": {
+    "issue": 322,
+    "captured_in_C08A_count": 3,
+    "captured_in_C08A_exact_EX_ids": null,
+    "remaining": [
+      {
+        "chapter_id": "C02A",
+        "movement": "preamble",
+        "placement": "after_C02",
+        "working_descriptor": "mother's death",
+        "final_title_supplied": false,
+        "exact_EX_id": null,
+        "relation_to_C08A": "distant_reflection"
+      },
+      {
+        "chapter_id": "C12A",
+        "movement": "interlude",
+        "placement": "after_C12",
+        "working_descriptor": "rape",
+        "final_title_supplied": false,
+        "exact_EX_id": null,
+        "relation_to_C08A": "distant_reflection"
+      }
+    ],
+    "relation": "C02A -> distance -> C08A -> distance -> C12A",
+    "nonclaims": [
+      "not_equivalence",
+      "not_causal_explanation",
+      "not_symmetry",
+      "not_diagnosis",
+      "not_final_title"
+    ],
+    "exact_EX_id_reconciliation": "pending_private_register_reconciliation"
+  }
 }

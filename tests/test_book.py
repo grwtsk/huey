@@ -37,6 +37,21 @@ class BookSourceTests(unittest.TestCase):
         for item in held:
             self.assertNotIn(f"<!-- BEGIN {item['id']} ", emitted)
 
+    def test_experiential_insertions_preserve_distance_and_do_not_guess_ex_ids(self):
+        manifest = book.load_manifest()
+        ids = [item["id"] for item in manifest["items"]]
+        self.assertEqual(19, len(ids))
+        self.assertEqual("C02A", ids[ids.index("C02") + 1])
+        self.assertEqual("C08A", ids[ids.index("C08") + 1])
+        self.assertEqual("C12A", ids[ids.index("C12") + 1])
+        self.assertGreater(ids.index("C08A") - ids.index("C02A"), 1)
+        self.assertGreater(ids.index("C12A") - ids.index("C08A"), 1)
+        structure = manifest["experiential_structure"]
+        self.assertEqual(5, structure["registered_experiences"])
+        self.assertEqual(3, structure["captured_in_C08A"])
+        self.assertEqual("pending_private_register_reconciliation", structure["ex_id_reconciliation"])
+        self.assertTrue(all(slot["exact_EX_id"] is None for slot in structure["remaining_insertion_slots"]))
+
     def test_count_report_is_machine_readable(self):
         report = book.count_report()
         encoded = json.dumps(report)

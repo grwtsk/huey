@@ -21,6 +21,14 @@
       "workIssue": "https://github.com/grwtsk/huey/issues/38"
     },
     {
+      "id": "C02A",
+      "label": "2A",
+      "title": "Untitled experiential chapter — mother's death",
+      "movement": "Preamble",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/322"
+    },
+    {
       "id": "C03",
       "label": "3",
       "title": "The Room",
@@ -112,6 +120,14 @@
       "movement": "Interlude",
       "status": "unavailable",
       "workIssue": "https://github.com/grwtsk/huey/issues/48"
+    },
+    {
+      "id": "C12A",
+      "label": "12A",
+      "title": "Untitled experiential chapter — rape",
+      "movement": "Interlude",
+      "status": "unavailable",
+      "workIssue": "https://github.com/grwtsk/huey/issues/322"
     },
     {
       "id": "C13",

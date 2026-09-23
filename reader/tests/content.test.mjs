@@ -9,7 +9,7 @@ import { parseMarkdown, inlineTokens, safeUrl, speechChunks, parseRoute, paragra
 const book = await compileBook();
 const chapter = book.chapters.find(c => c.id === 'C08A');
 test('admitted bytes: one unchanged chapter, complete 260 paragraph surface', () => {
-  assert.equal(book.chapters.length, 17);
+  assert.equal(book.chapters.length, 19);
   assert.equal(book.chapters.filter(c => c.status === 'admitted').length, 1);
   assert.equal(chapter.paragraphCount, 260);
   assert.equal(chapter.blocks.filter(b => b.type === 'break').length, 8);
