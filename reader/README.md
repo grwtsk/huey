@@ -1,10 +1,42 @@
-# Reading and listening interface
+# Reading and editing interface
 
-> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** The interface exposes the
-> verification status of the admitted text; it does not certify its claims.
-> Not medical/legal advice or adjudicated findings.
+> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** The interface exposes only
+> admitted public manuscript bytes and their recorded verification status. It does
+> not certify the book's claims. Local edits do not alter the admitted source.
 
-Author: R.A. Jacob Martone. Implementation: #313. Branch: `pre-release` only.
+Author: R.A. Jacob Martone. Staging branch: `pre-release` only.
+
+## Current experience
+
+The current author-directed pass is a minimal full-text editor built on the reader's
+source-bound content pipeline. The manuscript itself provides orientation: there is
+no persistent chapter rail, no fixed current-chapter title or mobile title chip,
+and no sphere. The page retains a centered serif reading column, opposite-margin
+paragraph/evidence references and a passive three-pixel reading-progress edge.
+
+The fixed bottom toolbar intentionally contains only seven primary controls:
+
+`Aa · B · I · U · color · link · light/dark`
+
+`Aa` opens compact Selection and Document typography controls. Color opens compact
+Text and Document color controls. Selection-level size is stored as a relative
+`em` relation and selection color as an OKLab displacement from the document
+foreground, so later document changes preserve local hierarchy rather than freezing
+local pixels/RGB values. Document foreground and background remain a related pair;
+light/dark exchanges their roles. Global palette changes use a gradual OKLab
+transition and preserve readable rendered contrast.
+
+The browser's native selection and caret are the editing geometry. The admitted
+book DOM is locally `contenteditable`; formatting and prose edits are in-memory
+presentation changes. Reloading restores the admitted source. No local edit updates
+Markdown, evidence, source rights, claim dispositions, publication state or Git.
+Paragraph evidence links always open the pinned admitted wording and state this
+boundary explicitly.
+
+The current pre-release allowlist still admits only **C08A, Baptism in the Color of
+Rain**. Other chapter prose is not reconstructed or imported from private writing
+packets merely to fill the interface. The layout automatically renders additional
+chapters if they are later admitted by the existing content contract.
 
 ## Run locally
 
@@ -18,131 +50,61 @@ npm run dev
 
 Open `http://127.0.0.1:5173`. `npm run build` prepares a static Vite bundle in
 `reader/dist`; `npm run preview` serves that bundle at `http://127.0.0.1:4173`.
-These commands do not deploy a site. The development server is bound to loopback;
+These commands do not deploy a site. The development server is loopback-only and
 its root is `reader`, not the whole repository. No credentials or API keys are used.
 
-Vite is pinned to 8.1.0. **A resolved lockfile is not yet available:** this
-implementation environment could not reach the npm registry. The first successful
-installation must produce a lockfile for inspection and a separate staging commit
-under #315. Do not claim reproducible transitive dependencies or use `npm ci` until
-that lockfile exists. No dependency audit or completed Vite build is claimed here.
-
-## Reading layout
-
-Admitted chapters render consecutively in one centered, serif column. Paragraph
-numbers in the opposite margin use the established chapter labels, such as `8A:1`.
-Headings and scene separators do not consume paragraph numbers. The manuscript
-itself is not modified, and paragraph IDs are version-bound rather than presented
-as final print numbering.
-
-The chapter index stays at the right edge beside the scrollbar. Inactive entries
-are gray dots; hover or keyboard focus reveals their chapter titles. The current
-chapter title stays expanded as the reading position changes. On narrow screens,
-its expanded title moves to a bottom-right chip so the prose keeps usable width.
-The dots remain available for touch and keyboard navigation. Missing chapters have
-hollow dots and open an availability notice, not fabricated narrative.
-
-The included copy contains the complete, unchanged **Baptism in the Color of Rain**
-(C08A): **260 paragraphs and eight scene breaks**. Its first `netch asheba` and later
-`netch` are preserved. Other chapters are listed from the working order but have no
-public manuscript payload here. See #308/#309 and `manuscript/README.md`. Adding
-other private chapters is not authorized merely by installing this reader.
-
-## Browser narration and VoiceOver
-
-Play starts at the visible paragraph. Pause, Resume and Stop operate on a bounded
-utterance queue; speech advances through the actual prose, not paragraph numbers,
-UI notices, evidence panels or index labels. Long paragraphs are split without
-losing text. Cancelled/stale events cannot restart a stopped queue. Narration stops
-at an unavailable chapter instead of silently jumping across a gap.
-
-Listening options select the voice and speed (0.6–1.8×). Only voices the browser
-reports as on-device are eligible by default. Online voices require an explicit,
-non-persisted opt-in and may send text to the browser's speech provider. There is
-no application-operated speech service, microphone request, voice cloning,
-analytics, external font request or autoplay. Browser voice classification is not
-an independent audit of an operating system or vendor.
-
-Pause cancels the current utterance, keeping the last reported word boundary.
-Resume can repeat the last word, or the current short phrase when the engine does
-not report boundaries. Voice or speed changes pause playback. Optional following
-scrolls to the spoken paragraph; manual scrolling turns following off. Opening an
-evidence collection pauses playback and does not automatically resume it.
-
-Apple **VoiceOver is a separate screen reader**, not an API this page switches on.
-The interface uses semantic headings, navigation, links, labeled controls and a
-keyboard-operable dialog for VoiceOver and other assistive technology. Leave the
-browser player stopped when using the screen reader's own continuous reading to
-avoid competing speech. Actual native VoiceOver and audible speech verification
-remain #315; headless mock events are not an audio test.
+Vite remains pinned to 8.1.0. A resolved lockfile is not yet established in the
+recorded environment; #315 retains dependency/runtime verification. Do not claim
+reproducible transitive dependencies or use `npm ci` until the lockfile has been
+created and reviewed.
 
 ## Paragraph evidence collections
 
-A margin number opens a collection, not merely a scroll anchor. Its address has
-the form `#evidence/C08A/1/<chapter-git-blob>`. The collection contains the exact
-paragraph, claim-level records, supporting/contrary/context relationships, source
-locators, additional references, review limits and a separate source-of-wording
-link pinned to a Git commit and line range. It includes a paragraph permalink,
-copyable evidence link and Read from here. Escape/Close returns focus to the
-originating link. Reloading an evidence link reopens its collection.
+An opposite-margin paragraph reference opens the source/evidence collection for the
+admitted source paragraph. Its address remains version-bound. The collection uses
+the exact admitted paragraph, claim-level records, supporting/contrary/context
+relationships, source locators and source-of-wording link. A local edit visible in
+the editor does not rewrite that collection.
 
-**All current C08A claim mappings are pending.** The reader displays that fact for
-every paragraph. It does not manufacture sources, call the manuscript independent
-corroboration, or interpret an empty claim array as evidence that no claims exist.
-#314 tracks the complete claim-to-evidence mapping. The data model and renderer
-already support populated collections; missing research is not hidden by the UI.
+All current C08A claim mappings remain pending unless the evidence ledger says
+otherwise. An empty claim array is not represented as evidence that no claims or
+sources exist. #314 owns substantive mapping work.
 
-`content/book.json` is the explicit admission/version allowlist.
-`content/evidence.json` is the public claim/source ledger. See
-[the data contract](content/README.md). `npm run content` validates them and creates
-`reader/generated-public/data/book.json`. A changed chapter hash, stale annotation,
-unknown source, unsafe link or unexpected field fails the build. A failed refresh
-removes the old generated JSON so it cannot masquerade as the new copy.
+`content/book.json` remains the explicit admission/version allowlist and
+`content/evidence.json` the public claim/source ledger. `npm run content` validates
+them and creates `reader/generated-public/data/book.json`. Changed chapter bytes,
+stale annotations, unknown sources, unsafe links or unexpected fields fail the
+build rather than silently substituting content.
 
 Both Git branches are public. Restricted sources remain outside client bundles,
 source maps, public folders and screenshots. Restricted metadata may use approved
 opaque IDs, but this implementation does not activate an authenticated evidence
-service or invent access links. A source link is only an outbound reference; the
-reader does not fetch external evidence automatically.
+service or fetch external evidence automatically.
+
+## Narration status
+
+The browser SpeechSynthesis module and its unit tests remain in the repository, but
+the author-directed minimal editor pass deliberately removes Play/Stop, voice,
+rate, chapter-location and seek controls from the persistent interface. Narration
+UI/runtime integration can be reconsidered after the editor/reading layout is
+settled. #315 continues to track real Vite/Safari/macOS VoiceOver/system-voice
+verification; a source module or mocked event is not audible output.
 
 ## Checks and known limits
 
 ```sh
 npm test
 npm run content
-python reader/tests/browser_test.py
+HUEY_READER_MEMORY=1 python reader/tests/browser_test.py
 ```
 
-The Python browser tests require Playwright and Chromium. Set
-`HUEY_READER_BROWSER` to a Chromium executable when needed. In an environment that
-cannot navigate to localhost, `HUEY_READER_MEMORY=1 python
-reader/tests/browser_test.py` tests the DOM with an in-memory loader. That mode
-inlines the same client modules, mocks content transport and speech, and performs
-no HTTP/Vite or audible-output verification. Synthetic multi-chapter fixtures are
-test-only and do not become book content.
+The browser test can run in memory when localhost navigation is unavailable. That
+mode tests the exact HTML/CSS/client modules against the generated content but does
+not establish Vite HTTP serving, native speech, VoiceOver, physical touch or other
+browser engines. Run the real Vite build/server and native assistive checks when
+the environment permits them.
 
-The initial pass ran 29 Node tests and ten in-memory Chromium tests. They cover
-source fidelity, numbering, stale references, unsafe links, evidence-schema
-failures, speech cancellation/queueing, focus handling, chapter navigation, actual
-single-chapter and synthetic multi-chapter rendering, and widths of 320–1440 px.
-Screenshots were inspected separately. Some navigation timing and focus issues
-were corrected before the successful rerun. This is not a WCAG certification.
-
-Actual `npm install` failed with registry DNS `EAI_AGAIN`; `npm run build` reached
-the content prebuild but could not launch the absent Vite executable. Chromium
-localhost navigation was blocked by this environment's administrator policy.
-The repository-wide Python suite was not run: this was a partial, blob-verified
-source workspace, not a complete checkout. Remaining runtime/native checks are
-#315. No hosted Actions, public deployment, main promotion or release occurred.
-
-## Technical references
-
-- [Vite installation and Node requirements](https://vite.dev/guide/)
-- [Vite 8.1 announcement](https://vite.dev/blog/announcing-vite8-1)
-- [Browser speech synthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
-- [Available voices and delayed voice loading](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices)
-- [Local versus remote voices](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/localService)
-- [VoiceOver web commands](https://support.apple.com/en-lb/guide/voiceover/vo27972/mac)
-
-These implementation references are distinct from evidence for the book. The
-journalistic promotion policy in `planning/pre-release.md` remains unchanged.
+Software checks establish source fidelity and implemented interaction properties;
+they do not establish literary quality, factual truth, rights, accessibility
+certification or finished-edition acceptance. No deployment, main promotion,
+external contact, source replication or release follows from staging this reader.
