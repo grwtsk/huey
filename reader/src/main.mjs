@@ -307,6 +307,7 @@ function showEvidence(chapter, p) {
   openDialog(`Evidence · ${p.label}`);
   const body = $('dialog-body');
   body.append(el('p', 'help', chapter.title), el('blockquote', '', p.text));
+  body.append(el('p', 'help', 'Local edits on this page do not alter the admitted source wording, evidence mapping, or source rights.'));
   const state = p.evidence.coverage;
   body.append(el('p', 'collection-state', state === 'complete'
     ? 'Claim mapping recorded as complete. Mapping coverage is not a finding that every claim is verified.'
