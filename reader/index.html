@@ -10,58 +10,57 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./src/style.css">
   <script type="module" src="./src/main.mjs"></script>
+  <script type="module" src="./src/editor.mjs"></script>
 </head>
 <body>
   <a class="skip-link" href="#book">Skip to the book</a>
-  <header class="reader-title" aria-label="Current chapter">
-    <p id="current-title" class="current-title"></p>
-  </header>
-  <nav id="chapter-index" class="chapter-index" aria-label="Chapter index"><ol id="chapter-list"></ol></nav>
-  <main id="book" class="book" tabindex="-1" aria-busy="true">
-    <h1 class="sr-only">Huey: how to make skin color.</h1>
-    <div id="chapters"></div>
-  </main>
-  <footer class="reader-controls" aria-label="Reading and listening controls">
-    <p id="status" role="status" aria-live="polite" class="status"></p>
-    <div class="controls-row">
-    <div class="transport">
-      <button id="play" class="primary-button" type="button" disabled><span id="play-symbol" aria-hidden="true">▶</span><span id="play-label">Play</span></button>
+
+  <!-- Compatibility hosts for the existing pre-release reader runtime. They are
+       intentionally absent from the presentation after the current author correction. -->
+  <div class="legacy-reader" hidden>
+    <header class="reader-title"><p id="current-title"></p></header>
+    <nav id="chapter-index"><ol id="chapter-list"></ol></nav>
+    <footer class="reader-controls">
+      <p id="status" role="status" aria-live="polite"></p>
+      <button id="play" type="button" disabled><span id="play-symbol">▶</span><span id="play-label">Play</span></button>
       <button id="stop" type="button" disabled>Stop</button>
-      <span id="current-location" class="location" aria-label="Reading position">—</span>
-    </div>
-    <span id="chapter-timer" class="chapter-timer" aria-live="off">—</span>
-    <details id="options" class="options">
-      <summary>Listening options</summary>
-      <div class="options-panel">
-        <label for="voice">Voice</label>
+      <span id="current-location">—</span><span id="chapter-timer">—</span>
+      <details id="options"><summary>Listening options</summary><div>
         <select id="voice"><option>No voices loaded</option></select>
-        <label for="rate">Reading speed <output id="rate-value">1.0×</output></label>
-        <input id="rate" type="range" min="0.6" max="1.8" step="0.1" value="1">
-        <label class="check"><input id="follow" type="checkbox">Follow the spoken paragraph</label>
-        <label class="check"><input id="remote-voices" type="checkbox">Allow browser-provided online voices</label>
-        <p class="help">On-device voices only by default. Online voices may send book text to the browser’s speech provider. This option is not remembered.</p>
-        <p class="help">VoiceOver and other screen readers can read the page independently. Keep browser playback stopped to avoid two voices. Resuming playback may repeat the last word or short phrase.</p>
-        <p id="voice-status" class="help"></p>
-        <p id="progress-help" class="help">The bottom edge seeks within this chapter. Drag or use the arrow keys, Home and End. Times are estimates; seeking while paused stays paused.</p>
-        <div class="copy-details">
-          <p class="eyebrow">Pre-release · reading copy</p>
-          <p id="author" class="author">R.A. Jacob Martone</p>
-          <p id="availability" class="availability">Loading the admitted manuscript…</p>
-          <p id="notice" class="notice"></p>
-          <p class="reading-hint">Paragraph numbers open evidence and references. The chapter index is beside the scrollbar.</p>
-        </div>
-      </div>
-    </details>
-    </div>
-    <div class="chapter-scrubber">
-      <div class="chapter-progress-track" aria-hidden="true"><span class="chapter-progress-fill"></span></div>
-      <input id="chapter-progress" type="range" min="0" max="1000" step="1" value="0" disabled aria-label="Seek within chapter" aria-describedby="progress-help">
-    </div>
-  </footer>
-  <dialog id="evidence-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-top"><h2 id="dialog-title">Evidence and references</h2><button id="close-dialog" type="button">Close</button></div>
-    <div id="dialog-body"></div>
-  </dialog>
-  <noscript><p>This reader requires JavaScript. The admitted text is also available as Markdown in the repository’s manuscript directory.</p></noscript>
+        <output id="rate-value">1.0×</output><input id="rate" type="range" min="0.6" max="1.8" step="0.1" value="1">
+        <input id="follow" type="checkbox"><input id="remote-voices" type="checkbox">
+        <p id="voice-status"></p><p id="progress-help"></p><p id="author"></p><p id="availability"></p><p id="notice"></p>
+      </div></details>
+      <div class="chapter-progress-track"><span id="chapter-progress-fill"></span></div>
+      <input id="chapter-progress" type="range" min="0" max="1000" step="1" value="0" disabled>
+    </footer>
+  </div>
+
+  <main id="book" class="book" tabindex="-1" aria-busy="true"></main>
+
+  <div id="editor-bar" role="toolbar" aria-label="Text formatting">
+    <button id="typography" type="button" aria-label="Typography" aria-expanded="false" aria-controls="type-pop" title="Typography"><span class="aa" aria-hidden="true">Aa</span></button>
+    <button id="bold" type="button" aria-label="Bold" title="Bold"><strong aria-hidden="true">B</strong></button>
+    <button id="italic" type="button" aria-label="Italic" title="Italic"><em aria-hidden="true">I</em></button>
+    <button id="underline" type="button" aria-label="Underline" title="Underline"><span class="underline" aria-hidden="true">U</span></button>
+    <button id="color-menu" type="button" aria-label="Color" aria-expanded="false" aria-controls="color-pop" title="Color"><span id="color-swatch" aria-hidden="true"></span></button>
+    <button id="link" type="button" aria-label="Link selection" title="Link selection"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg></button>
+    <button id="theme" type="button" aria-label="Use dark presentation" title="Light / dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg></button>
+    <div class="editor-progress" aria-hidden="true"><span></span></div>
+  </div>
+
+  <div id="type-pop" class="tool-pop" role="dialog" aria-label="Typography" hidden>
+    <section><h2>Selection</h2><div class="compact-row"><button id="local-minus" type="button" aria-label="Make selection smaller">−</button><output id="local-size">100%</output><button id="local-plus" type="button" aria-label="Make selection larger">+</button></div><label>Typeface<select id="local-family"><option value="inherit">Inherit</option><option value="serif">Serif</option><option value="sans">Sans</option><option value="mono">Mono</option></select></label></section>
+    <section><h2>Document</h2><div class="compact-row"><button id="doc-minus" type="button" aria-label="Make document type smaller">−</button><output id="doc-size">20px</output><button id="doc-plus" type="button" aria-label="Make document type larger">+</button></div><label>Body typeface<select id="doc-family"><option value="serif">Serif</option><option value="sans">Sans</option><option value="mono">Mono</option></select></label></section>
+  </div>
+
+  <div id="color-pop" class="tool-pop" role="dialog" aria-label="Color" hidden>
+    <section><h2>Text</h2><label class="picker-row"><span>Relative to foreground</span><input id="local-color" type="color" value="#1e1e1e"></label></section>
+    <section><h2>Document</h2><label class="picker-row"><span>Foreground</span><input id="document-color" type="color" value="#1e1e1e"></label><p class="pop-note">Background keeps its relationship to the foreground. Light and dark exchange the pair.</p></section>
+  </div>
+
+  <dialog id="evidence-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><h2 id="dialog-title">Evidence and references</h2><button id="close-dialog" type="button">Close</button></div><div id="dialog-body"></div></dialog>
+  <p id="editor-status" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript><p>This reader requires JavaScript. The admitted text is also available as Markdown in the repository manuscript directory.</p></noscript>
 </body>
 </html>
