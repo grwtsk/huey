@@ -2,13 +2,21 @@
   "name": "huey-workspace",
   "private": true,
   "type": "module",
-  "workspaces": ["reader"],
-  "engines": {"node": "^22.12.0 || >=24.0.0"},
+  "workspaces": [
+    "reader"
+  ],
+  "engines": {
+    "node": "^22.12.0 || >=24.0.0"
+  },
   "scripts": {
     "dev": "npm run dev --workspace @huey/reader",
     "build": "npm run build --workspace @huey/reader",
     "preview": "npm run preview --workspace @huey/reader",
     "test": "node --test reader/tests/*.test.mjs",
-    "content": "node reader/scripts/content.mjs"
+    "content": "node reader/scripts/content.mjs",
+    "book:check": "python3 scripts/book.py validate",
+    "book:list": "python3 scripts/book.py list",
+    "book:count": "python3 scripts/book.py count",
+    "book:md": "python3 scripts/book.py emit"
   }
 }

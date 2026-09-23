@@ -45,3 +45,9 @@ The complete existing excursion remains the narrative close under [#52](https://
 The chapter file preserves the immediately preceding conversation's complete woven chapter, combining *Baptism in the Color of Rain* and *After August*. Only the first `netch` becomes `netch asheba`, retaining italics. The later `netch`, all other narrative words, paragraph breaks and eight section breaks remain unchanged. No byline, editorial warning or placement note has been inserted into the narrative itself.
 
 The author's explicit GitHub instruction authorizes public transfer of this chapter version to grwtsk/huey. The [placement record](../planning/writing/baptism-in-the-color-of-rain.json) records the scope and content identity. It does not authorize copying other private chapters or raw clinical records, activate replication or deployment, or accept the remainder of the manuscript. Full-book assembly and measured spoken runtime remain under [#55](https://github.com/grwtsk/huey/issues/55) and [#62](https://github.com/grwtsk/huey/issues/62).
+
+## Canonical Markdown source and expansion envelope
+
+The canonical prose root is `manuscript/`. `book.yaml` defines ordered stable IDs and build admission; planned chapter paths contain comments only until prose is actually admitted. The narrative-body planning target is **80,000–114,000 words**: Preamble 31,000–43,000; Interlude 48,400–70,400; the supplied short Excursion remains approximately 600 and is not expansion filler.
+
+Use `python3 scripts/book.py validate`, `list`, `count`, or `emit` (also exposed through the root npm scripts). LaTeX, HTML and reader pipelines should consume the same emitted Markdown rather than maintain parallel prose copies. Public `certificates/` contains derived certificates only; raw evidence remains outside public Git under the existing private-source boundary. See [the structural plan](../planning/word-target-and-source-architecture.md).

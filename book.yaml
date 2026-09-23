@@ -1,0 +1,175 @@
+{
+  "schema": "huey.book.v1",
+  "title": "Huey: how to make skin color.",
+  "author": "R.A. Jacob Martone",
+  "canonical_source_root": "manuscript",
+  "word_target": {
+    "scope": "narrative_body",
+    "min": 80000,
+    "max": 114000,
+    "movement_envelopes": {
+      "preamble": {
+        "min": 31000,
+        "max": 43000
+      },
+      "interlude": {
+        "min": 48400,
+        "max": 70400
+      },
+      "excursion": {
+        "min": 600,
+        "max": 600,
+        "policy": "preserve_supplied_short_close"
+      }
+    }
+  },
+  "source_policy": {
+    "source_format": "markdown",
+    "generated_outputs_are_canonical": false,
+    "raw_evidence_in_public_repository": false,
+    "certificate_root": "certificates",
+    "generated_output_roots": [
+      "build",
+      "dist",
+      "reader/generated-public"
+    ]
+  },
+  "items": [
+    {
+      "id": "C01",
+      "movement": "preamble",
+      "title": "The Feather",
+      "path": "manuscript/01-preamble/01-the-feather.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C02",
+      "movement": "preamble",
+      "title": "A Life Already Under Way",
+      "path": "manuscript/01-preamble/02-a-life-already-under-way.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C03",
+      "movement": "preamble",
+      "title": "The Room",
+      "path": "manuscript/01-preamble/03-the-room.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C04",
+      "movement": "preamble",
+      "title": "The Other Person in the Room",
+      "path": "manuscript/01-preamble/04-the-other-person-in-the-room.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C05",
+      "movement": "preamble",
+      "title": "The Note That Arrived First",
+      "path": "manuscript/01-preamble/05-the-note-that-arrived-first.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C06",
+      "movement": "preamble",
+      "title": "One Physician, Two Chairs",
+      "path": "manuscript/01-preamble/06-one-physician-two-chairs.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C07",
+      "movement": "preamble",
+      "title": "A Page of My Own",
+      "path": "manuscript/01-preamble/07-a-page-of-my-own.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C08",
+      "movement": "interlude",
+      "title": "The Ring of Umber",
+      "path": "manuscript/02-interlude/08-the-ring-of-umber.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C08A",
+      "movement": "interlude",
+      "title": "Baptism in the Color of Rain",
+      "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+      "status": "staged_public",
+      "include": true
+    },
+    {
+      "id": "C09",
+      "movement": "interlude",
+      "title": "The Possibility of a Feather",
+      "path": "manuscript/02-interlude/09-the-possibility-of-a-feather.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C10",
+      "movement": "interlude",
+      "title": "The Instruments Already in the Room",
+      "path": "manuscript/02-interlude/10-the-instruments-already-in-the-room.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C11",
+      "movement": "interlude",
+      "title": "Insufficiently Examined",
+      "path": "manuscript/02-interlude/11-insufficiently-examined.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C12",
+      "movement": "interlude",
+      "title": "The Human Cost",
+      "path": "manuscript/02-interlude/12-the-human-cost.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C13",
+      "movement": "interlude",
+      "title": "Four Chambers",
+      "path": "manuscript/02-interlude/13-four-chambers.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C14",
+      "movement": "interlude",
+      "title": "Under the Pantocrator",
+      "path": "manuscript/02-interlude/14-under-the-pantocrator.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "C15",
+      "movement": "interlude",
+      "title": "A Different Last Page",
+      "path": "manuscript/02-interlude/15-a-different-last-page.md",
+      "status": "planned",
+      "include": false
+    },
+    {
+      "id": "E01",
+      "movement": "excursion",
+      "title": "Edna",
+      "path": "manuscript/03-excursion/edna.md",
+      "status": "planned",
+      "include": false
+    }
+  ]
+}
