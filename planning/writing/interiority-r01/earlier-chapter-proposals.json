@@ -1,0 +1,119 @@
+[
+  {
+    "id": "I01",
+    "chapter": "2. A Life Already Under Way",
+    "before": "I have supplied examples of my research, art, and reasoning when trying to explain the difference between what I can think and what I can rapidly express. But I do not want the book to arrange those examples as an examination I must pass before the reader owes me attention. A person who has never written a program or made an argument this way is entitled to be heard too. My work belongs here because it was mine, and because making things occupied parts of my life that were not always occupied by explaining my condition.\n\nThe maker was already there. He had sufficient things to do, and difficult work of his own choosing. He could give time to something because he wanted it to exist. That is a use of time I recognize beneath the lists of professional capacities: the freedom to become absorbed in making something whose purpose is not to explain why I should be heard.",
+    "after": "I have supplied examples of my research, art, and reasoning when trying to explain the difference between what I can think and what I can rapidly express. Those examples also belong to a life in which making things had purposes of its own. I could become absorbed in work I had chosen, give time to something because I wanted it to exist, and discover what I was doing by staying with it.\n\nThe maker was already there. He is not only there, in the earlier part of the story. Thought continues beyond what I can immediately report; sometimes, by remaining with it, I become aware of a design that has been continuing without a sentence ready to describe it. The work is still mine. It is not a qualification for care. It is one of the things I want care to leave me free to do.",
+    "reason": "Keep the maker alive in the present, not merely as a lost credential. Render the author’s supplied long-planning introspection as proposed first-person reflection, not a universal theory of unconscious cognition.",
+    "source": [
+      "Older extracted Chapter 2, maker paragraphs",
+      "Project conversation: Long Term Planning Insight, September 3, 2026; author states planning continues before conscious report and deep, non-impulsive thought brings awareness"
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/38",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I02",
+    "chapter": "3. The Room",
+    "before": "My sentence was severe because the experience I was trying to report was severe. I do not improve its accuracy by pretending it was the language of a neurological examination. Nor do I preserve it by translating it into a complete diagnosis after the fact. It belongs first to the patient who said it, before it becomes material for anyone else's explanation.",
+    "after": "My sentence was severe because the experience I was trying to report was severe. It was not a diagnosis. It was what I could say of what was happening to me, and those words belonged to the room before they belonged to anyone else's explanation.",
+    "reason": "Retain the difference between a report and a diagnosis without staging an imagined temptation to falsify the account. This does not change the surrounding causal qualifications.",
+    "source": [
+      "Older extracted Chapter 3, report of new pain and delayed expression; adjacent paragraphs explicitly retain uncertainty about biological explanation"
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/39",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I03",
+    "chapter": "3. The Room",
+    "before": "The distinction between what I was experiencing and what I could promptly communicate became part of the event itself. I was not merely trying to find a better adjective for pain. My account also describes an encounter becoming so overwhelming that I could not rapidly turn awareness into deliberate speech or effective interruption.\n\nI have experienced that separation before. I have written about earlier trauma because it helps me describe it, not because each earlier event has to be reenacted here. I can remain conscious of what is happening while my ability to act deliberately falls behind it. Awareness does not necessarily arrive outside me at the same speed at which an event reaches me.\n\nIt is difficult to describe without making it sound as though there were two neatly separated people: one fully capable inside, another simply failing to carry his instructions. I was one person. The difficulty belonged to the passage from what I knew was happening to what I could make happen in response. Under severe overwhelm, automatic behavior could precede the recovery of that deliberate control.",
+    "after": "The difficulty was no longer only in finding words for pain. I was conscious of what was happening, but I could not quickly turn that awareness into speech or make it interrupt the encounter. The room continued while I was still trying to find a deliberate way to act within it.\n\nI had known that separation during earlier trauma. I do not have to bring those scenes into this one to recognize it: an event can reach me before my response can reach anyone else. I remain there through the interval. Knowing what is happening does not, by itself, give me the means to stop it.\n\nI was one person, caught in that difficulty. Automatic behavior could come before I recovered deliberate control. What might be visible from outside and what I was able to choose were not the same account.",
+    "reason": "Render temporal asymmetry from inside the reported experience. Do not split the narrator into a perfect internal mind and a merely defective body, or invent additional actions or dialogue.",
+    "source": [
+      "Older extracted Chapter 3, awareness and overwhelm paragraphs",
+      "Patient-authored encounter account: mental presence and rapid outward agency differ; reported sequence and encounter-specific consent scope. Private retrieval coordinates omitted."
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/39",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I04",
+    "chapter": "3. The Room",
+    "before": "This is how I have described January 24: hostility first, then impaired deliberate control, then unwanted physical contact before I had recovered enough expressive agency to interrupt effectively. The ordering matters. I am not saying that merely feeling distressed automatically removes consent from every medical encounter. I am saying what I have reported about mine.",
+    "after": "This is how I have described January 24: hostility first, then impaired deliberate control, then unwanted physical contact before I had recovered enough expressive agency to interrupt effectively. That is the sequence I report, not a rule that distress automatically removes consent from every medical encounter.",
+    "reason": "Keep the case-specific allegation and the substantive limit intact while reducing repeated defensive explanation. The following direct statement of nonconsent remains unchanged.",
+    "source": [
+      "Older extracted Chapter 3; author’s reported encounter-specific nonconsent, not categorical trauma doctrine"
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/39",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I05",
+    "chapter": "7. A Page of My Own",
+    "before": "The offer of more time also needs to meet a particular difficulty. As I explained in my response, I may need time to understand and consolidate an answer, not only pronounce one. A question I can reread may help differently.",
+    "after": "The offer of more time also needs to meet the difficulty that is actually present. Sometimes the answer has formed and my speech cannot carry it quickly enough. At other times I need to understand the question, remain with it, and let an answer take shape. A question I can reread stays with me through that work. It does not have to be recovered from a conversation that has already moved on.",
+    "reason": "Distinguish difficulty delivering a formed answer from the need for deliberation and consolidation. Avoid implying that every delayed response conceals a fully formed answer.",
+    "source": [
+      "Older extracted Chapter 7, explicit consolidation and rereading needs",
+      "Already admitted Baptism chapter, formed words and difficult delivery",
+      "Project written-first accommodation request: substantial written communication, paced exchange, structured questions"
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/43",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I06",
+    "chapter": "12. The Human Cost",
+    "before": "I could assign hours to the pages. The result would be another unsupported record. I have accounts of what the writing required from me, but not a complete time sheet from which to calculate its cost. Some of the labor has already appeared in this book: finding the source, checking the date, separating a request from an action, and changing a sentence when the evidence will not carry it.",
+    "after": "I have no complete time sheet for those pages. I have accounts of what the writing required from me: finding the source, checking the date, separating a request from an action, returning to a sentence until it says neither more nor less than I can support. The absence of a measured total leaves the hours uncounted. It does not give them back.",
+    "reason": "Keep the absence of measured duration explicit without making the narrator rehearse an invented intention to falsify a time sheet.",
+    "source": [
+      "Older extracted Chapter 12, unmeasured composition time and enumerated work"
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/48",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I07",
+    "chapter": "12. The Human Cost",
+    "before": "There is also the work of returning to what the sentence describes. In my earlier record-entry statement, I wrote that trying to give the account could bring back more than a recollection. I did not need another institution to open the subject for it to become present again. The document I was trying to make usable could itself require more of me than I could give at once.\n\nA period in which I cannot continue does not appear as a paragraph. Neither does it turn the unfinished paragraph into an adequate account. The work waits, and the question with it. I do not have to invent a missed celebration or a particular abandoned afternoon to describe the consequence. The portion of a day available for something else has become the portion needed to return.",
+    "after": "There is also the return to what the sentence describes. In my earlier record-entry statement, I wrote that I did not merely remember it when I tried to give the account. I saw it, heard it, felt it. I was trying to make a record of the experience, and the work of making it brought the experience near again. Writing gave me a way to say what speech had not carried. It did not place me beyond the reach of what I was saying.\n\nWhen I have to stop, the stopping leaves no paragraph. The unfinished sentence remains where I left it, though I have already spent something of myself reaching that point. To continue, I must come back to it. That return belongs to the cost of the account, even when the finished page gives the reader no reason to pause.",
+    "reason": "Use the author’s already supplied sensory account without inventing a new flashback scene. Make the limits of writing-as-access visible without declaring writing either inherently healing or inherently harmful.",
+    "source": [
+      "Older extracted Chapter 12, return to the experience and interrupted writing",
+      "Patient-authored record-entry statement: seeing, hearing and feeling during attempted testimony; record production reopens the injury. Private filename and retrieval coordinates omitted."
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/48",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  },
+  {
+    "id": "I08",
+    "chapter": "12. The Human Cost",
+    "before": "The page in front of the reader is one use of that desire. Unlike a request for correction, it can remain with a thought long enough to ask what the corrected life would be for. It can return to family, making, worship or rest without offering them as exhibits. Their place in my life did not originate in the need to prove that something had been lost.",
+    "after": "The page in front of the reader is one use of that desire. Unlike a request for correction, it can remain with a thought long enough to ask what life beyond the work of correction might hold. It can return to family, making, worship or rest without offering them as exhibits. Their place in my life did not originate in the need to prove that something had been lost.",
+    "reason": "Correct the object of correction: the record may need repair; the life is not an erroneous entry. Keep the existing return to ordinary purposes.",
+    "source": [
+      "Older extracted Chapter 12, closing reflection on life beyond record work"
+    ],
+    "status": "Public revision proposal; not applied to latest full manuscript; factual review and author acceptance remain separate",
+    "previous_status": "Proposed literary wording; private review only; not applied to latest full manuscript",
+    "reconciliation_issue": "https://github.com/grwtsk/huey/issues/48",
+    "provenance_issue": "https://github.com/grwtsk/huey/issues/18"
+  }
+]
