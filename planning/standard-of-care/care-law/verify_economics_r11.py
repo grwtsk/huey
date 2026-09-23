@@ -18,6 +18,7 @@ def check(model: dict) -> dict:
     assert model["work_id"]=="HUEY-CL11"
     assert model["status"]=="reference-economic-audit-not-manuscript-acceptance"
     assert len(model["sources"])==15
+    assert all(s.get("limit") for s in model["sources"])
     assert sum(x["hours"] for x in model["assumptions"]["review_role_hours"])==28
     assert model["assumptions"]["patient_hours"]+model["assumptions"]["support_person_hours"]==33
     r=compute(model); e=model["expected_rounded"]
