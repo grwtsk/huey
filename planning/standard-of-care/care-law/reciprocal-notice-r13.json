@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "repository": "grwtsk/huey",
+  "work_id": "HUEY-CL13",
+  "issues": [
+    180,
+    181,
+    183,
+    184,
+    187,
+    324,
+    325
+  ],
+  "status": "case-matrix-partial-evidence-open",
+  "scope": "Case-specific notice-state matrix from supplied documents; not legal sufficiency, breach, waiver, estoppel, consent or liability.",
+  "notice_states": [
+    "authored",
+    "recorded",
+    "routed",
+    "delivered_or_available",
+    "received",
+    "accessible",
+    "reviewed",
+    "understood_or_reasonable_opportunity",
+    "acknowledged",
+    "agreed_or_authorized"
+  ],
+  "evidence_statuses": [
+    "supported_by_source_object",
+    "reported_in_patient_source",
+    "supported_by_other_party_source",
+    "unknown",
+    "not_established",
+    "expressly_disputed",
+    "not_applicable"
+  ],
+  "sources": [
+    {
+      "id": "N01S",
+      "name": "August 4 follow-up account of July 7 delivery",
+      "type": "patient-source",
+      "locator": "Aug. 4 pp.1: reports July 7 hand-delivery, spouse witness, delivery logged, and no attributable confirmation/record location/clinical response",
+      "limit": "Patient-authored account; delivery log and exact July 7 object not present in supplied corpus."
+    },
+    {
+      "id": "N02S",
+      "name": "Record Entry Request dated July 26",
+      "type": "patient-source-object",
+      "locator": "p.1 date/title; pp.7-8 future communication requests",
+      "limit": "Known supplied object; relationship to July 7 reported delivery unresolved."
+    },
+    {
+      "id": "N03S",
+      "name": "August 4 follow-up",
+      "type": "patient-source-object",
+      "locator": "p.1 states 'I am sending this shorter follow-up by certified mail'",
+      "limit": "Statement of dispatch method is not certified-mail receipt or institutional acknowledgment."
+    },
+    {
+      "id": "N04S",
+      "name": "September 9 clinic notice",
+      "type": "institutional-source-object",
+      "locator": "3-page image source; conditions, communication processes, accommodations, role limits, emergency direction, 60-day agreement and signature/MyChart alternatives",
+      "limit": "Document does not identify individual drafter/approver; legal effect and policy predicates remain separate questions."
+    },
+    {
+      "id": "N04A",
+      "name": "September 17 patient acknowledgment of September 9 notice",
+      "type": "patient-source",
+      "locator": "pp.1-2: 'received and reviewed'; refuses supplied acknowledgment; distinguishes receipt/review from blanket assent",
+      "limit": "Supports patient receipt/review/acknowledgment, not agreement with disputed conditions or institutional acceptance of qualified assent."
+    },
+    {
+      "id": "N05S",
+      "name": "September 10 preservation/amendment letter",
+      "type": "patient-source-object",
+      "locator": "pp.1-2: third formal written effort; copies for independent routing; preservation separate from item-specific correction",
+      "limit": "Authored object and intended routing; no dispatch/receipt/review proof in supplied text."
+    },
+    {
+      "id": "N06S",
+      "name": "September 17 response source family",
+      "type": "patient-source-object",
+      "locator": "Bledsoe copy pp.1-2,7-9; headed VIA CERTIFIED MAIL; separate addressees; independent routing request and requested responsible-office/case fields",
+      "limit": "Heading and addressed copies do not establish mailing receipts, delivery, office review, case creation or action."
+    }
+  ],
+  "communications": [
+    {
+      "id": "N01",
+      "document": "Reported July 7 hand-delivered patient statement",
+      "direction": "patient_to_institution",
+      "document_date": "reported 2026-07-07 delivery; exact object date unknown",
+      "author": "R.A. Jacob Martone (reported)",
+      "intended_recipient": "Dr. Ian Bledsoe / medical record",
+      "channel": "reported hand delivery",
+      "source_ids": [
+        "N01S"
+      ],
+      "states": {
+        "authored": {
+          "status": "reported_in_patient_source",
+          "basis": "August 4 describes a patient-authored statement."
+        },
+        "recorded": {
+          "status": "unknown",
+          "basis": "August 4 reports no attributable confirmation of entry/location."
+        },
+        "routed": {
+          "status": "reported_in_patient_source",
+          "basis": "Reported hand-delivered for entry into medical record; post-delivery routing unknown."
+        },
+        "delivered_or_available": {
+          "status": "reported_in_patient_source",
+          "basis": "August 4 reports hand-delivery, spouse witness, delivery logged; log not supplied."
+        },
+        "received": {
+          "status": "not_established",
+          "basis": "No independent recipient acknowledgment supplied."
+        },
+        "accessible": {
+          "status": "unknown",
+          "basis": "Record location/accessibility not identified."
+        },
+        "reviewed": {
+          "status": "unknown",
+          "basis": "No attributable review evidence in supplied corpus."
+        },
+        "understood_or_reasonable_opportunity": {
+          "status": "unknown",
+          "basis": "No review/response evidence."
+        },
+        "acknowledged": {
+          "status": "not_established",
+          "basis": "August 4 expressly reports no attributable confirmation."
+        },
+        "agreed_or_authorized": {
+          "status": "not_applicable",
+          "basis": "Submission requested record/care actions; agreement is not the relevant state."
+        }
+      },
+      "asserted_consequence": "Institutional notice of patient account and requested record entry/care safeguards.",
+      "strongest_supported_conclusion": "reported delivered; exact version, record state, recipient receipt and review unresolved",
+      "contrary_or_unknown": "Exact July 7 object and delivery log absent; later July 26 object cannot be substituted without evidence.",
+      "next_evidence": [
+        "exact delivered copy",
+        "delivery/intake log",
+        "record import/location",
+        "recipient acknowledgment/review evidence"
+      ]
+    },
+    {
+      "id": "N02",
+      "document": "Record Entry Request dated July 26",
+      "direction": "patient_to_institution",
+      "document_date": "2026-07-26",
+      "author": "R.A. Jacob Martone",
+      "intended_recipient": "Dr. Ian Bledsoe; requested record entry",
+      "channel": "not established for this object",
+      "source_ids": [
+        "N02S"
+      ],
+      "states": {
+        "authored": {
+          "status": "supported_by_source_object",
+          "basis": "Supplied dated document."
+        },
+        "recorded": {
+          "status": "unknown",
+          "basis": "No institution-side record entry evidence supplied."
+        },
+        "routed": {
+          "status": "unknown",
+          "basis": "Document requests routing/preservation but route not established."
+        },
+        "delivered_or_available": {
+          "status": "unknown",
+          "basis": "No dispatch/delivery evidence tied to this exact object."
+        },
+        "received": {
+          "status": "unknown",
+          "basis": "No acknowledgment tied to this exact object."
+        },
+        "accessible": {
+          "status": "unknown",
+          "basis": "No record location/usability evidence."
+        },
+        "reviewed": {
+          "status": "unknown",
+          "basis": "No review evidence."
+        },
+        "understood_or_reasonable_opportunity": {
+          "status": "unknown",
+          "basis": "No review evidence."
+        },
+        "acknowledged": {
+          "status": "unknown",
+          "basis": "No response specifically tied to this exact object."
+        },
+        "agreed_or_authorized": {
+          "status": "not_applicable",
+          "basis": "Requested actions; no institutional agreement evidenced."
+        }
+      },
+      "asserted_consequence": "Patient-authored record, consent and preservation requests.",
+      "strongest_supported_conclusion": "authored",
+      "contrary_or_unknown": "Relationship to July 7 reported statement unresolved.",
+      "next_evidence": [
+        "version history/export metadata",
+        "dispatch record",
+        "record import/location",
+        "recipient response"
+      ]
+    },
+    {
+      "id": "N03",
+      "document": "August 4 follow-up",
+      "direction": "patient_to_institution",
+      "document_date": "2026-08-04",
+      "author": "R.A. Jacob Martone",
+      "intended_recipient": "Dr. Ian Bledsoe",
+      "channel": "patient source states certified mail",
+      "source_ids": [
+        "N01S",
+        "N03S"
+      ],
+      "states": {
+        "authored": {
+          "status": "supported_by_source_object",
+          "basis": "Supplied dated document."
+        },
+        "recorded": {
+          "status": "unknown",
+          "basis": "No record location supplied."
+        },
+        "routed": {
+          "status": "reported_in_patient_source",
+          "basis": "Addressed to Dr. Bledsoe and states certified-mail sending."
+        },
+        "delivered_or_available": {
+          "status": "not_established",
+          "basis": "No certified-mail receipt/tracking supplied."
+        },
+        "received": {
+          "status": "unknown",
+          "basis": "No recipient acknowledgment supplied."
+        },
+        "accessible": {
+          "status": "unknown",
+          "basis": "No institution-side access evidence."
+        },
+        "reviewed": {
+          "status": "unknown",
+          "basis": "No attributable review evidence."
+        },
+        "understood_or_reasonable_opportunity": {
+          "status": "unknown",
+          "basis": "No review/response evidence."
+        },
+        "acknowledged": {
+          "status": "unknown",
+          "basis": "No attributable response in supplied corpus."
+        },
+        "agreed_or_authorized": {
+          "status": "not_applicable",
+          "basis": "Letter requested preservation, explanation and care; agreement not established."
+        }
+      },
+      "asserted_consequence": "Follow-up notice, preservation request and request for clinical response.",
+      "strongest_supported_conclusion": "authored; stated certified-mail dispatch",
+      "contrary_or_unknown": "Statement of sending is not proof of delivery or review.",
+      "next_evidence": [
+        "certified-mail receipt/tracking",
+        "institutional scan/import event",
+        "record location",
+        "response/review record"
+      ]
+    },
+    {
+      "id": "N04",
+      "document": "September 9 Notice of Behavioral Expectations and Conditions for Continued Care",
+      "direction": "institution_to_patient",
+      "document_date": "2026-09-09",
+      "author": "UCSF Movement Disorder & Neuromodulation Center (institutional sender); individual drafter/approver unknown",
+      "intended_recipient": "R.A. Jacob Martone",
+      "channel": "letter; exact dispatch channel not established by image alone",
+      "source_ids": [
+        "N04S",
+        "N04A"
+      ],
+      "states": {
+        "authored": {
+          "status": "supported_by_other_party_source",
+          "basis": "Institutional document exists in Center's name."
+        },
+        "recorded": {
+          "status": "unknown",
+          "basis": "Institutional record location not established here."
+        },
+        "routed": {
+          "status": "supported_by_other_party_source",
+          "basis": "Directed to patient as clinic notice."
+        },
+        "delivered_or_available": {
+          "status": "supported_by_other_party_source",
+          "basis": "Patient later expressly states receipt."
+        },
+        "received": {
+          "status": "supported_by_other_party_source",
+          "basis": "September 17: 'I have received and reviewed'."
+        },
+        "accessible": {
+          "status": "supported_by_other_party_source",
+          "basis": "This specific document was sufficiently available for substantive review; no inference about general MyChart accessibility."
+        },
+        "reviewed": {
+          "status": "supported_by_other_party_source",
+          "basis": "September 17 expressly acknowledges review."
+        },
+        "understood_or_reasonable_opportunity": {
+          "status": "supported_by_other_party_source",
+          "basis": "Detailed response shows engagement; however patient identifies material ambiguity, so complete/unambiguous understanding is not inferred."
+        },
+        "acknowledged": {
+          "status": "supported_by_other_party_source",
+          "basis": "September 17 expressly acknowledges receipt/review."
+        },
+        "agreed_or_authorized": {
+          "status": "expressly_disputed",
+          "basis": "Patient refuses supplied acknowledgment/blanket assent while asserting prospective compliance with legitimate requirements; MyChart agreement not established."
+        }
+      },
+      "asserted_consequence": "Agreement within 60 days of letter date as condition of continued care; signature or MyChart message permitted.",
+      "strongest_supported_conclusion": "received, reviewed and acknowledged; blanket agreement not established",
+      "contrary_or_unknown": "Individual authorship/approval, institutional treatment of qualified assent and exact applicable discharge policy remain unresolved.",
+      "next_evidence": [
+        "institutional authorship/approval provenance",
+        "policy invoked",
+        "authorized interpretation of qualified assent",
+        "any MyChart agreement/response"
+      ]
+    },
+    {
+      "id": "N05",
+      "document": "September 10 preservation/amendment letter",
+      "direction": "patient_to_institution",
+      "document_date": "2026-09-10",
+      "author": "R.A. Jacob Martone",
+      "intended_recipient": "Dr. Ian Bledsoe; copies requested for independent routing",
+      "channel": "not established in supplied text",
+      "source_ids": [
+        "N05S"
+      ],
+      "states": {
+        "authored": {
+          "status": "supported_by_source_object",
+          "basis": "Supplied dated 43-page document."
+        },
+        "recorded": {
+          "status": "unknown",
+          "basis": "No institution-side record location supplied."
+        },
+        "routed": {
+          "status": "reported_in_patient_source",
+          "basis": "Document lists copies for independent routing; actual routing not proved."
+        },
+        "delivered_or_available": {
+          "status": "unknown",
+          "basis": "No dispatch/delivery evidence supplied."
+        },
+        "received": {
+          "status": "unknown",
+          "basis": "No recipient acknowledgment supplied."
+        },
+        "accessible": {
+          "status": "unknown",
+          "basis": "No recipient access/usability evidence."
+        },
+        "reviewed": {
+          "status": "unknown",
+          "basis": "No review evidence."
+        },
+        "understood_or_reasonable_opportunity": {
+          "status": "unknown",
+          "basis": "No review evidence."
+        },
+        "acknowledged": {
+          "status": "unknown",
+          "basis": "No response tied to this letter supplied."
+        },
+        "agreed_or_authorized": {
+          "status": "not_applicable",
+          "basis": "Letter requests preservation/correction/review; institutional acceptance not evidenced."
+        }
+      },
+      "asserted_consequence": "Third formal written effort; preservation, item-specific correction and independent review requests.",
+      "strongest_supported_conclusion": "authored; intended routing identified",
+      "contrary_or_unknown": "Calling it third effort is author sequence testimony, not proof prior two were received/reviewed.",
+      "next_evidence": [
+        "dispatch record",
+        "delivery/receipt",
+        "record location",
+        "routing events",
+        "review/response"
+      ]
+    },
+    {
+      "id": "N06",
+      "document": "September 17 response source family",
+      "direction": "patient_to_institution",
+      "document_date": "2026-09-17",
+      "author": "R.A. Jacob Martone",
+      "intended_recipient": "separately addressed clinic physicians; requested routing to HIM, Patient Relations, ADA/504/OPHD, Clinical Ethics, Ethics/Compliance and other functions",
+      "channel": "document represented as via certified mail",
+      "source_ids": [
+        "N06S"
+      ],
+      "states": {
+        "authored": {
+          "status": "supported_by_source_object",
+          "basis": "Multiple separately addressed supplied copies."
+        },
+        "recorded": {
+          "status": "unknown",
+          "basis": "No institution-side record location supplied."
+        },
+        "routed": {
+          "status": "reported_in_patient_source",
+          "basis": "Copies/request identify intended recipients/functions; actual institutional routing not established."
+        },
+        "delivered_or_available": {
+          "status": "not_established",
+          "basis": "Certified-mail heading is not delivery receipt."
+        },
+        "received": {
+          "status": "unknown",
+          "basis": "No recipient receipt/acknowledgment supplied."
+        },
+        "accessible": {
+          "status": "unknown",
+          "basis": "No recipient access/usability evidence."
+        },
+        "reviewed": {
+          "status": "unknown",
+          "basis": "No recipient review evidence supplied."
+        },
+        "understood_or_reasonable_opportunity": {
+          "status": "unknown",
+          "basis": "No review evidence."
+        },
+        "acknowledged": {
+          "status": "unknown",
+          "basis": "No institution response supplied."
+        },
+        "agreed_or_authorized": {
+          "status": "not_applicable",
+          "basis": "The letter requests actions/clarifications; institutional acceptance not evidenced."
+        }
+      },
+      "asserted_consequence": "Qualified response to N04; independent routing, current-care/access, record-fidelity and review requests.",
+      "strongest_supported_conclusion": "authored; certified-mail transmission represented; intended routing identified",
+      "contrary_or_unknown": "No mailing receipts, delivery confirmations, case numbers, office acknowledgments or review records in supplied corpus.",
+      "next_evidence": [
+        "mail receipts/tracking by recipient",
+        "institutional intake/scan data",
+        "case/reference numbers",
+        "office acknowledgments",
+        "materials-reviewed record"
+      ]
+    }
+  ],
+  "comparison": {
+    "institution_to_patient_strongest": "N04 reaches received/reviewed/acknowledged through patient-authored response; agreement remains disputed.",
+    "patient_to_institution_strongest": "N01 is reported delivered, N03/N06 represent certified-mail transmission, but comparable institution-side review/acknowledgment evidence is not presently supplied.",
+    "limit": "This is an evidentiary asymmetry in the current corpus, not by itself an unlawful notice asymmetry or proof that no institutional review occurred."
+  },
+  "closure": {
+    "case_matrix_created": true,
+    "legal_sufficiency_resolved": false,
+    "july_identity_resolved": false,
+    "recipient_specific_delivery_resolved": false,
+    "institution_review_resolved": false,
+    "qualified_assent_status_resolved": false
+  }
+}
