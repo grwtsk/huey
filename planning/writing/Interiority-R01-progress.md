@@ -1,5 +1,13 @@
 # Interiority-R01 — bounded literary pass
 
+## Follow-up: companion added at the author's instruction
+
+The author subsequently instructed: “Pleas add this to the repo.” The [editorial pass and exact proposal records](interiority-r01/README.md) are now added to this same work branch and PR #319. The current disclosure scope and checks are recorded there.
+
+The earlier statements below that the companion remains conversation-only, or that this branch contains no earlier-chapter prose, are historical and superseded for those specified files only. No older full-book snapshot, raw evidence or unrelated private source is uploaded. The earlier-chapter proposals remain unapplied to the latest manuscript. The existing chapter revision is unchanged by this follow-up; the PR remains draft/unmerged against `pre-release`.
+
+## Original pass receipt — historical
+
 R.A. Jacob Martone's September 22, 2026 request directs a pass on inner life and the effects of medical trauma. This is a proposed revision, not author acceptance or a clinical assessment. Refs #66, #55, #308 and #310.
 
 Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.
