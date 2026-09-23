@@ -14,7 +14,7 @@ CERT=EVID/"certificates"
 INDEX=EVID/"index.tsv"
 CLASSES={"PUBLIC_OPEN","PUBLIC_ALREADY_DISCLOSED","PRIVATE_RAW_PUBLIC_DERIVATIVE","PRIVATE_SENSITIVE"}
 REL={"supports","contradicts","limits","context","duplicate","same_source_family","supersedes","provenance_only","unresolved"}
-PRIVATE_FORBIDDEN=("private_repository","private_path","raw_salt","original_filename","credential","token")
+PRIVATE_FORBIDDEN_KEYS={"private_repository_name","private_repository_path","private_path","original_filename","private_raw_sha256","raw_salt_hex","transcript_salt_hex","credential","credentials","token","tokens"}
 
 def fail(msg):
     raise ValueError(msg)
@@ -39,8 +39,16 @@ def main()->int:
         if raw=="private_repository":
             if integ["mode"]!="private_salted_commitment" or integ.get("raw_sha256") is not None: fail(f"private hash leak {eid}")
             if not re.fullmatch(r"[0-9a-f]{64}",integ.get("public_commitment") or ""): fail(f"bad commitment {eid}")
-            for word in PRIVATE_FORBIDDEN:
-                if word in serialized: fail(f"forbidden private field token {word} in {eid}")
+            def walk_keys(obj):
+                if isinstance(obj, dict):
+                    for key, value in obj.items():
+                        yield key
+                        yield from walk_keys(value)
+                elif isinstance(obj, list):
+                    for value in obj:
+                        yield from walk_keys(value)
+            leaked=PRIVATE_FORBIDDEN_KEYS & set(walk_keys(c))
+            if leaked: fail(f"forbidden private field(s) {sorted(leaked)} in {eid}")
         elif raw=="huey_public":
             if integ["mode"]!="public_sha256": fail(f"public mode {eid}")
             digest=integ.get("raw_sha256") or ""
