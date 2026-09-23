@@ -1,22 +1,55 @@
 # Reader implementation scope
 
-Follow root AGENTS and `planning/pre-release.md`. Target `pre-release`; do not
-promote the reader or manuscript to main as a side effect of UI work.
+Follow root `AGENTS.md` and `planning/pre-release.md`. Target `pre-release`; do
+not promote the reader or manuscript to `main` as a side effect of UI work.
 
-Preserve the canonical manuscript bytes. All served text must pass the explicit
-content allowlist and digest checks. Missing chapters/claims remain missing;
-no private-source discovery, upload, invented narration or evidence certification.
+## Current author correction — minimal full-text editor
+
+The active author instruction supersedes the earlier reader requirement for a
+persistent gray-dot chapter rail and fixed current-chapter title. The reader now
+uses the manuscript itself for orientation and the browser selection/caret as the
+local editing instrument.
+
+Keep:
+
+- admitted prose in a centered serif reading column;
+- opposite-margin paragraph/evidence references;
+- a passive three-pixel reading-progress edge;
+- one thin bottom toolbar with exactly the primary editing controls `Aa`, bold,
+  italic, underline, color, link, and light/dark;
+- typography and color details in compact popovers rather than duplicated global
+  and local controls;
+- local type/color as relations to the document basis so global changes preserve
+  local hierarchy;
+- the document foreground/background as one related palette whose roles exchange
+  across light/dark presentation.
+
+Do not restore a persistent chapter rail, top chapter-title bar/chip, sphere,
+reader transport, location readout, or permanently expanded global-scope controls
+without a later author instruction. The dormant speech implementation can remain
+source-tested, but narration UI/runtime integration is deferred from this layout
+pass rather than presented as working chrome.
+
+## Source and access boundary
+
+Preserve canonical manuscript bytes. All served text must pass the explicit
+content allowlist and digest checks. Missing chapters/claims remain missing; no
+private-source discovery, upload, invented narration or evidence certification.
 No raw medical files, secrets, protected ending previews, analytics, external
 fonts, deployment configuration or replication activation belong in this app.
 
-Keep the prose in a centered serif column, gray-dot chapter rail and opposite
-paragraph-evidence margin. Provide keyboard/touch access wherever hover is used.
-Do not add a brand. Browser SpeechSynthesis is not programmatic Apple VoiceOver.
-No autoplay or hidden online TTS fallback; local-voice classification is reported
-by the browser, not independently verified by the application.
+Local browser edits are a presentation/drafting layer only. They must not mutate
+canonical manuscript bytes, evidence mappings, admission records, permissions or
+publication state. Paragraph evidence collections continue to show the pinned
+admitted wording and must make the local/source distinction explicit.
+
+Use semantic controls, native selection and keyboard/touch access. Do not add a
+brand or a how-to panel merely to explain the controls. Native forced colors and
+reduced-motion preferences remain user-agent authority boundaries.
 
 Run Node tests, content generation, actual Vite build when dependencies are
 available, and browser checks. Distinguish in-memory/mocked tests from HTTP,
 real OS voices and native screen-reader testing. Record actual limitations.
 #314 owns substantive claim mapping; #315 owns outstanding dependency/runtime
-and native browser checks. Neither is resolved by a successful software test.
+and native narration checks. Neither is resolved by a successful editor/layout
+test.
