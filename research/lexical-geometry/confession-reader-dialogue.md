@@ -34,6 +34,19 @@ The following is editorial synthesis. These writers have not jointly endorsed it
 
 The author has now supplied his own self-attribution. RF-01 prohibits the assistant from inventing it, not the author from making it. Keeping this new statement does not retroactively turn previous narration into a categorical accusation or make one person's inner experience evidence of another's thoughts. Neither does the research require a euphemistic replacement of the actual self-description. The source, the theory and the proposed adaptation remain three distinct records.
 
+
+## Societal responsibility: classification, authority and confession
+
+The author's later instruction under [#332](https://github.com/grwtsk/huey/issues/332) widens the capstone without moving it. The confession now has to ask what happens when serious classification words move through society and through institutions with unequal power.
+
+The editorial rule is reciprocal rather than partisan. A consequential label can be necessary, supported and morally important; it can also become a shortcut that outruns its definition and evidence. The `-ism` / `-ist` morphology does not decide which is which. Preserve the underlying act, relation, source, scope, dispute and human referent.
+
+The public [language/power source record](language-power-sources.json) supplies current political examples because presidential speech makes amplification unusually visible. It preserves both the President's claim that hostile rhetoric used against him can be dangerous and examples of his own use of ridicule and ideological labels. The January 6 transcript is retained with both the “fight like hell” and “peacefully and patriotically” language. These examples test reciprocity; they do not establish motive, fitness, election outcome, unlawful incitement or any other legal conclusion.
+
+The literary movement must return to the narrator. Huey's own grave words remain subject to the same custody: supported words should not be euphemized for comfort; unsupported words should not be strengthened for effect. The societal extension therefore deepens rather than replaces the original capstone's anti-absolution rule. Confession creates responsibility for what a declaration does next.
+
+The final reader question remains private and unchanged. Do not insert political citations, a prescribed answer or an adult explanatory sentence after it.
+
 ## Placement and citations
 
 The [placement contract](../../planning/capstone-placement.md) puts the concluding self-examination at the end of Chapter 15. The open reader question is its last prose. The movement break and complete existing excursion follow immediately. Do not insert a scholarly discussion, additional adult answer, glossary or explanatory bridge between them.

@@ -1,0 +1,77 @@
+{
+  "profile": "CAP-LANG-01",
+  "work_issue": 332,
+  "chapter_issue": 51,
+  "purpose": "Current public examples for the societal responsibility of language braid; contextual evidence, not case evidence or political endorsement.",
+  "original_case_evidence": false,
+  "political_neutrality": "Examples test reciprocity and power-of-language claims; no electoral recommendation, fitness judgment, motive inference or causal finding.",
+  "sources": [
+    {
+      "id": "LP01",
+      "type": "primary_official_summary",
+      "speaker": "Donald J. Trump",
+      "title": "President Trump on 60 Minutes: “There Was Tremendous Camaraderie”",
+      "publication": "The White House",
+      "publication_date": "2026-04-27",
+      "url": "https://www.whitehouse.gov/releases/2026/04/president-trump-on-60-minutes-there-was-tremendous-camaraderie/",
+      "locator": "Top moments, political violence bullet",
+      "supports": "Trump publicly described Democratic hate speech as dangerous for the country.",
+      "limits": "White House-produced summary of an interview; use for the President's quoted position, not as independent proof about causes of political violence.",
+      "quotation_used": "the hate speech of the Democrats"
+    },
+    {
+      "id": "LP02",
+      "type": "transcript",
+      "speaker": "Donald J. Trump",
+      "title": "Donald Trump remarks with Mark Rutte",
+      "publication": "Roll Call Factbase",
+      "publication_date": "2026-06-24",
+      "url": "https://rollcall.com/factbase/trump/transcript/donald-trump-remarks-mark-rutte-nato-june-24-2026/",
+      "locator": "00:27:38–00:28:01",
+      "supports": "Trump used the term Dumocrats and said Democrats were dumb.",
+      "limits": "Transcript supports wording; it does not establish effects, motive or audience interpretation.",
+      "quotation_used": "Dumocrats"
+    },
+    {
+      "id": "LP03",
+      "type": "wire_report",
+      "speaker": "Reuters reporting",
+      "title": "Republicans seize on Michigan progressives' wins, but party is split on socialism message",
+      "publication": "Reuters",
+      "publication_date": "2026-08-05",
+      "url": "https://www.reuters.com/legal/government/republicans-seize-michigan-progressives-wins-party-is-split-socialism-message-2026-08-05/",
+      "locator": "Article discussion of Trump labels and interviews with competitive House campaigns",
+      "supports": "Trump used Communist/Socialist labels against named Democratic/progressive candidates; Republican campaigns differed on use of the socialism message.",
+      "limits": "Campaign-strategy reporting; does not establish that the labels accurately describe any candidate's ideology.",
+      "quotation_used": "Communist loser"
+    },
+    {
+      "id": "LP04",
+      "type": "wire_report",
+      "speaker": "Reuters reporting with quoted Trump posts and White House response",
+      "title": "Trump says 'seditious' Democrats urging US troops to refuse illegal orders should face death",
+      "publication": "Reuters",
+      "publication_date": "2025-11-20",
+      "url": "https://www.reuters.com/world/us/trump-says-democrats-who-told-us-military-refuse-illegal-orders-deserve-death-2025-11-20/",
+      "locator": "Trump posts and White House clarification",
+      "supports": "Trump called six Democratic lawmakers traitors, described their conduct as seditious and potentially punishable by death; White House later said he was not seeking their execution.",
+      "limits": "Preserve the lawmakers' underlying message and the White House clarification; article does not establish that rhetoric caused later violence.",
+      "quotation_used": "SEDITIOUS BEHAVIOR, punishable by DEATH!"
+    },
+    {
+      "id": "LP05",
+      "type": "primary_transcript",
+      "speaker": "Donald J. Trump",
+      "title": "Remarks to Supporters Prior to the Storming of the United States Capitol",
+      "publication": "The American Presidency Project, UC Santa Barbara",
+      "publication_date": "2021-01-06",
+      "url": "https://www.presidency.ucsb.edu/documents/remarks-supporters-prior-the-storming-the-united-states-capitol",
+      "locator": "Closing portion and earlier march instruction",
+      "supports": "The same speech included both fight-like-hell language and an instruction to march peacefully and patriotically.",
+      "limits": "Transcript establishes wording and context, not a standalone legal conclusion about intent, causation or liability.",
+      "quotation_used": "fight like hell"
+    }
+  ],
+  "use_rule": "Retain both supporting and materially qualifying context. These sources illustrate language/power reciprocity and do not determine the book's private final reader question or any election choice.",
+  "final_reader_question_public": false
+}
