@@ -2,9 +2,9 @@
 
 Read-only audit of grwtsk/huey at pre-release `0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e`, 2026-09-24 UTC. Read root/reader instructions, pre-release and framing resume, live master #1, disclosure #2, front-matter #34/#36/#7/#13, #332, relevant PRs, tree and content compiler. This source audit imported no prose and searched no private store. The associated engineering PR adds metadata/code only; its issue-graph changes are documented separately.
 
-## Current source structure
+## Audited source structure at the pinned revision
 
-`book.yaml` has 19 ordered literary slots: Preamble C01 C02 C02A C03 C04 C05 C06 C07; Interlude C08 C08A C09 C10 C11 C12 C12A C13 C14 C15; Excursion E01. All paths exist. C08A is full admitted working prose. The other 18 files contain comments only. Missing narrative bytes do not mean omitted chapters or no private candidate exists. C02A/C12A are untitled structural slots; final titles and public prose are not supplied. Three experiences already captured in C08A must not be duplicated as extra chapters.
+At the audited revision, `book.yaml` had 19 ordered literary slots: Preamble C01 C02 C02A C03 C04 C05 C06 C07; Interlude C08 C08A C09 C10 C11 C12 C12A C13 C14 C15; Excursion E01. All paths exist. C08A is full admitted working prose. The other 18 files contain comments only. Missing narrative bytes do not mean omitted chapters or no private candidate exists. C02A/C12A are untitled structural slots; final titles and public prose are not supplied. Three experiences already captured in C08A must not be duplicated as extra chapters.
 
 `manuscript/unplaced/the-place-beneath-pain.md` is complete publicly staged working prose, outside book.yaml. PR #346 records explicit as-is public transfer; canonical placement remains open under #344/#345. Preserve the file and its own stable identity; expose it through editorial workspace membership, not a fourth Movement or automatic C14 replacement.
 
@@ -22,7 +22,7 @@ Other open chapter and movement PRs #83–#95, #97, #117/#118/#120/#121 contain 
 
 ## Exact references
 
-[registry.json](registry.json) contains 34 metadata-only source records with exact commit/path/blob, role, scope-reference URL and known chapter targets. It includes current manuscript and C15 files, PR #319 candidates, SOC literary-source files, indices, and three later public analytical inputs: `economics-r11.md`, `institutional-economics-r12.md`, and `reciprocal-notice-r13.md`. Those three are models/matrices, not completed chapters. The [pinned care-law directory](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law) retains access to their supporting apparatus. Public integration-r03–r10 files are receipts/indices; their actual narrative/reference prose remains private. A source link is not automatic adoption or authority for additional material. Only public object hashes were recorded.
+At the audited revision, [registry.json](registry.json) contained 34 metadata-only source records with exact commit/path/blob, role, scope-reference URL and known chapter targets. It includes current manuscript and C15 files, PR #319 candidates, SOC literary-source files, indices, and three later public analytical inputs: `economics-r11.md`, `institutional-economics-r12.md`, and `reciprocal-notice-r13.md`. Those three are models/matrices, not completed chapters. The [pinned care-law directory](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law) retains access to their supporting apparatus. Public integration-r03–r10 files are receipts/indices; their actual narrative/reference prose remains private. A source link is not automatic adoption or authority for additional material. Only public object hashes were recorded.
 
 Public scope references (not authenticated authority capabilities):
 - Current C08A: https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575 and #308.
@@ -31,6 +31,10 @@ Public scope references (not authenticated authority capabilities):
 - C15 prototype: https://github.com/grwtsk/huey/issues/332#issuecomment-5790493315.
 - Interiority candidates: https://github.com/grwtsk/huey/pull/319 plus its pinned companion README.
 - SOC corpus: https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544.
+
+## Post-audit staged additions — #378
+
+The author's 2026-09-24 instruction adds C14A, *On the Eve of the Last su[p, p′, p″, p‴, …]er*, and C14B, *Orange After the End*, after C14 and before C15. The current staged registry therefore has 21 body slots and 36 public source records, with `public-35` and `public-36` pinning the two new canonical working files. This is a later additive change to the working inventory, not a rewrite of the source conditions observed at the pinned audit revision. The protected C15 → movement break → Edna close remains unchanged.
 
 ## Reader/evidence boundary
 
