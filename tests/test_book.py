@@ -40,10 +40,13 @@ class BookSourceTests(unittest.TestCase):
     def test_experiential_insertions_preserve_distance_and_do_not_guess_ex_ids(self):
         manifest = book.load_manifest()
         ids = [item["id"] for item in manifest["items"]]
-        self.assertEqual(19, len(ids))
+        self.assertEqual(21, len(ids))
         self.assertEqual("C02A", ids[ids.index("C02") + 1])
         self.assertEqual("C08A", ids[ids.index("C08") + 1])
         self.assertEqual("C12A", ids[ids.index("C12") + 1])
+        self.assertEqual("C14A", ids[ids.index("C14") + 1])
+        self.assertEqual("C14B", ids[ids.index("C14A") + 1])
+        self.assertEqual("C15", ids[ids.index("C14B") + 1])
         self.assertGreater(ids.index("C08A") - ids.index("C02A"), 1)
         self.assertGreater(ids.index("C12A") - ids.index("C08A"), 1)
         structure = manifest["experiential_structure"]
