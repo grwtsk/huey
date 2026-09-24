@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Huey Private Evidence Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "classification",
+    "original",
+    "custody",
+    "sensitivity",
+    "transcription",
+    "description",
+    "commitments",
+    "relationships",
+    "history"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "classification": {
+      "enum": [
+        "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+        "PRIVATE_SENSITIVE",
+        "QUARANTINE_REVIEW"
+      ]
+    },
+    "original": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "filename",
+        "mime_type",
+        "bytes",
+        "sha256",
+        "intake_date_utc",
+        "acquisition_channel"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "mime_type": {
+          "type": "string"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "intake_date_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "acquisition_channel": {
+          "type": "string"
+        },
+        "displayed_dates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metadata": {
+          "type": "object"
+        }
+      }
+    },
+    "custody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "path",
+        "repository_verified_private"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "repository_verified_private": {
+          "const": true
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "sensitivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "triggers",
+        "public_exposure_basis",
+        "analysis",
+        "existence_safe_to_disclose"
+      ],
+      "properties": {
+        "triggers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "public_exposure_basis": {
+          "type": "string"
+        },
+        "analysis": {
+          "type": "string"
+        },
+        "existence_safe_to_disclose": {
+          "type": "boolean"
+        },
+        "rights_or_privilege_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "transcription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verbatim_path",
+        "verbatim_sha256",
+        "status"
+      ],
+      "properties": {
+        "verbatim_path": {
+          "type": "string"
+        },
+        "verbatim_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "normalized_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "normalized_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "status": {
+          "type": "string"
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_path",
+        "full_sha256"
+      ],
+      "properties": {
+        "full_path": {
+          "type": "string"
+        },
+        "full_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "public_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "commitments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain_separator",
+        "raw_salt_hex",
+        "raw_public_commitment"
+      ],
+      "properties": {
+        "domain_separator": {
+          "const": "HUEY-EVIDENCE-COMMIT-v1"
+        },
+        "raw_salt_hex": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "raw_public_commitment": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "transcript_salt_hex": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "transcript_public_commitment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

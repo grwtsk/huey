@@ -38,6 +38,17 @@ The [promotion policy](planning/pre-release.md) and [review-record template](pla
 
 **Both branches are public.** Existing source-disclosure restrictions still apply. Content already on `main`, including the previously checked-in chapter, retains its existing status and is not retrospectively certified. This setup adds a manual editorial gate; server-side required-review enforcement remains [administration task #311](https://github.com/grwtsk/huey/issues/311). No automatic merge, replication or publication workflow is enabled. Setup is tracked in [#310](https://github.com/grwtsk/huey/issues/310).
 
+## Branch consolidation and evidence intake
+
+The [staging consolidation register](planning/consolidation/README.md) preserves
+public historical branch records, identifies unmerged corpus work and notes the
+existing claim/evidence references. Historical progress is not current prose or
+acceptance. The [evidence-intake protocol](planning/evidence-intake/README.md) and
+[vault handoff](planning/consolidation/vault-handoff.md) provide a tested boundary
+for reviewed public certificates from private capture. Raw restricted evidence
+stays in the vault. New evidence still needs source, claim and contrary-material
+review before any promotion; no background watch or live service is implied.
+
 ## Literary entity model
 
 Huey is now directed toward a **complete working book editor**, with a separate

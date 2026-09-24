@@ -12,7 +12,7 @@ changes. A newer run cancels superseded work for the same PR or branch.
 | Reader (Node 24.0.0) | Same checks at the second declared engine floor. |
 | Reader (Node 22.23.2) | Same checks plus dependency installation and actual Vite build. |
 | Literary model and editorial inventory | `npm run test:model`, `npm run test:inventory`, `npm run test:pages`, `npm run test:routes`, alias continuity against the PR base/previous staging head, full registered public-object coverage, selected-source page materialization and deterministic emission. |
-| Python repository checks and whitespace | Python 3.12.14 with `requirements-checks.txt`, full unittest discovery, book/catalog/framing/lexical checks and changed-file whitespace. |
+| Python repository checks and whitespace | Python 3.12.14 with `requirements-checks.txt`, full unittest discovery, book/catalog/framing/lexical checks, historical consolidation, public evidence certificate/index checks and changed-file whitespace. |
 
 The literary-model job pins Node 22.23.2, which exposes Unicode 17.0. The validator
 fails on a mismatched segmentation runtime. It remains a separate gate from the
@@ -62,3 +62,10 @@ or an accessibility certification. The existing admitted editor/evidence browser
 suite also runs over loopback HTTP. Ordinary reader builds assert that the
 editorial `traversal.json` and `paragraphs.json` payloads are absent. Neither build
 is uploaded or deployed.
+
+The repository job validates the selectively consolidated historical records and
+the public evidence index/certificates, with synthetic hostile cases in normal
+unittest discovery. It never queries the private vault. Cross-repository vault
+export/reverse-receipt checks are separately reported local synthetic checks,
+not part of hosted CI. Schema conformity, hashes and a claimed review field
+cannot establish disclosure permission, authentic testimony or evidentiary truth.
