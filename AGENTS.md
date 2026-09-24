@@ -61,6 +61,39 @@ and its cited research comparison. The reader question ends the section; the
 movement break and complete excursion follow, with no extra adult explanation.
 The existing terminal narrative sentence, PR-01 and public-source boundary remain.
 
+## Human-system contract — governing book grammar
+
+Read [`planning/access-philosophy.md`](planning/access-philosophy.md) before
+substantive manuscript, editorial-system, reader, evidence, presentation or
+publication work.
+
+The Hs-derived access philosophy is not confined to the reader interface. It is
+Huey's underlying contract between a human and any system that receives,
+represents, constrains, assists, records, classifies, routes, treats, judges,
+preserves or publishes human action. The interface is one specialization. The
+book itself must **permute the contract** across its existing human/system
+relations without flattening those systems into moral equivalents.
+
+For manuscript work, treat the contract as a deep grammar rather than a phrase to
+repeat. Track, where relevant, the concrete human, the mediating system, channel,
+authority, burden, durable record, evidence status and route of correction. A new
+chapter or revision should transform at least one of those coordinates rather
+than merely substitute new nouns for the same argument. Preserve the three
+movements: Preamble establishes the human close to the immediate machinery;
+Interlude follows propagation across larger or linked systems; Excursion: Edna
+returns to child-scale human relation without an adult explanatory coda or any
+preview of PR-01's protected wording.
+
+The contract also governs production itself. Do not let publication admission
+erase literary existence, let inaccessible/private material become "nothing",
+let repeated source text become independent corroboration, let an editing or
+presentation operation silently become evidence/source/publication mutation, or
+let a software check become a truth/consent verdict.
+
+This direction does not copy Hs's sphere, 144×144 mark, WebGL chrome, `/apple`
+routing example or superseded intensity control into Huey. Those are Hs-specific
+manifestations. Huey inherits the human-system invariants.
+
 ## One response, one pull request
 
 Select one ready, bounded issue. Open one PR or resume an unfinished PR if a new one
