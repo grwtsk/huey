@@ -159,6 +159,10 @@ jobs:
           python3 scripts/book.py validate
           python3 scripts/catalog.py validate
           python3 scripts/catalog.py check
+      - name: Historical consolidation and public evidence boundary
+        run: |
+          python3 scripts/consolidation.py
+          python3 planning/evidence-intake/verify_public_evidence.py
       - name: Framing declarations and lexical research consistency
         run: |
           python3 scripts/framing.py cases planning/framing-cases.json

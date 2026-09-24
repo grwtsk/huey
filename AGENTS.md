@@ -129,6 +129,27 @@ response or the terminal line. Foreshadow only indirectly through established
 color, naming, child-scale inquiry, mixture, surface, light and relation motifs.
 Literal checks are insufficient without source-aware semantic review.
 
+## Evidence intake and branch consolidation
+
+For new evidence, read `planning/evidence-intake/README.md` and its linked
+`policy.json` and `CODEX-WORKER.md` before placing bytes in Git. The existing
+private vault owns restricted raw intake; for those objects Huey receives only
+an explicitly reviewed public certificate and permitted derivatives. Follow
+`planning/consolidation/vault-handoff.md` for the
+capture/export/reverse-receipt boundary. Preserve the exact certificate schema
+used by that bridge; do not substitute an assumed live source service.
+
+Before public staging, classify the whole object including hidden metadata.
+Ambiguity stays private/quarantined; missing private configuration never causes
+public fallback. A certificate, reference to permission, or checksum does not
+authenticate a source, grant authority, establish support or clear a claim.
+Record supporting, contrary, limiting and contextual relationships separately.
+New counterevidence reopens the affected review rather than rewriting testimony.
+
+`planning/consolidation/README.md` identifies the historical branch receipts.
+Their old task, title, policy, status and test statements are dated provenance,
+not current instructions or fresh verification. Read current rules first.
+
 ## Local verification and truthful completion
 
 Local-first verification is primary. Hosted Actions quota/billing unavailability
