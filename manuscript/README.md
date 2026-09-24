@@ -48,7 +48,7 @@ C14A and C14B preserve the protected closing architecture by appearing after C14
 
 ### Excursion: Edna
 
-The complete existing excursion remains the narrative close under [#52](https://github.com/grwtsk/huey/issues/52). No closing text is reproduced or changed by this check-in.
+The complete existing excursion remains the narrative close under [#52](https://github.com/grwtsk/huey/issues/52). Under [#380](https://github.com/grwtsk/huey/issues/380), the public E01 file now carries only the exact author-directed classroom-question delta in its final-scene location; the surrounding supplied excursion, its existing response, and its terminal sentence remain on the protected source surface and are not reconstructed here.
 
 ## Chapter source and exact edit
 
