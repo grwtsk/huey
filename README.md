@@ -35,8 +35,8 @@ the output and no private source is retrieved.
 
 The [initial editorial ReadingPage assembly](planning/editorial-pages/README.md)
 adds a persisted sequence for every known slot and separate unplaced pages. Its
-bounded compiler materializes the two current working manuscript sources; other
-candidate/support sources remain explicit references. `npm run test:pages` checks
+bounded compiler materializes the four current canonical/unplaced working manuscript sources;
+other candidate/support sources remain explicit references. `npm run test:pages` checks
 the parser, identity sidecar and assembly on a Unicode-17 runtime. Generated page
 output may contain authorized public prose and remains derived from Markdown.
 The existing served reader is unchanged.
@@ -64,6 +64,10 @@ required-review protection or supply human editorial clearance.
 ## Middle-book chapter
 
 [Baptism in the Color of Rain](manuscript/02-interlude/baptism-in-the-color-of-rain.md) is checked in at the author's explicit direction, with only the first `netch` changed to `netch asheba`. The [working contents](manuscript/README.md) place this added chapter in the Interlude, between *The Ring of Umber* and *The Possibility of a Feather*. [Check-in #308](https://github.com/grwtsk/huey/issues/308) and the [placement record](planning/writing/baptism-in-the-color-of-rain.json) record this chapter-specific public-copy scope. Other private manuscript and raw clinical records remain outside this grant; the broader development and release work remain separate.
+
+## Late-Interlude chapters
+
+[On the Eve of the Last su[p, p′, p″, p‴, …]er](manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md) and [Orange After the End](manuscript/02-interlude/14b-orange-after-the-end.md) are staged public working chapters under the author's explicit [#378](https://github.com/grwtsk/huey/issues/378) instruction. They are placed after C14 and before C15 so the protected C15 → movement break → Edna close remains unchanged. Their check-in is not evidence clearance, reader admission, promotion to `main`, or finished-edition release.
 
 ## Source catalog and coverage
 
