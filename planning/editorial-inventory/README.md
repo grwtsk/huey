@@ -21,8 +21,8 @@ node --test tests/editorial-inventory.test.mjs
 ```
 
 The commands operate locally and never fetch source stores or mutate manuscript.
-The registry allocates 52 opaque UUID v4 EntityIDs once: seven literary containers
-and 45 known literary units. IDs follow #348; they are not regenerated from a
+The registry allocates 54 opaque UUID v4 EntityIDs once: seven literary containers
+and 47 known literary units. IDs follow #348; they are not regenerated from a
 title, path, order, source hash or legacy chapter label. The registry is a small
 identity/state sidecar, not a production allocator or a second prose master.
 Retain IDs when metadata, paths, placement or inscription changes. A later
@@ -134,14 +134,14 @@ breaks remain later typesetting under #60/#61; they cannot redefine identity.
 ## Source audit and compatibility
 
 The [source audit](source-audit.md) records the exact inspected staging and public
-branch revisions. The registry pins 34 public source/candidate/resource artifacts
+branch revisions. The registry pins 36 public source/candidate/resource artifacts
 with their recorded `scopeRefs`. These links preserve provenance;
 they do not authenticate authorship, accept a proposal or grant further access.
 No source prose is embedded in generated output. Missing Git objects on another
 client are explicitly unavailable there; the tool performs no network retrieval.
 
-The current canonical tree has nineteen body slots: one full C08A file and
-eighteen comment-only files. It also has one unplaced chapter. Public partial
+The current canonical tree has twenty-one body slots: three full working files (C08A,
+C14A, and C14B) and eighteen comment-only files. It also has one unplaced chapter. Public partial
 candidates and authorized branch resources remain separately identified. The
 inventory is complete for the declared manifest/tree boundary, not every possible
 source, every private revision, or an already assembled complete book.
