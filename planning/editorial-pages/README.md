@@ -93,7 +93,7 @@ those decisions and acceptance gates.
 ## Materialized and referenced sources
 
 This increment materializes the inventory's four current canonical/unplaced public
-sources: C08A, C14A, C14B, and The Place Beneath Pain. They yield 269, 827, 613,
+sources: C08A, C14A, C14B, and The Place Beneath Pain. They yield 269, 827, 603,
 and 212 source blocks, respectively. The remaining thirty-two candidate/support
 artifacts stay explicitly referenced from the workspace and inventory with their
 existing roles, exact pins and scope references. They are not silently adopted as canonical prose or used to
@@ -101,7 +101,7 @@ fill the other chapters. A candidate's availability can coexist with a canonical
 placeholder and a restricted unmaterialized remainder.
 
 The committed plan contains 151 ordered ReadingPages and 14 unplaced pages,
-1,921 source blocks (1,869 Paragraphs and 52 generic Blocks), and 2,140 entity
+1,911 source blocks (1,859 Paragraphs and 52 generic Blocks), and 2,130 entity
 records including the existing 54 inventory entities. These counts
 describe the present source checkpoint, not final pagination or completeness.
 
