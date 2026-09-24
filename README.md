@@ -1,4 +1,4 @@
-# Huey: how to make skin color.
+# Huey
 
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This repository includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. Inclusion, a citation, a commit, an issue closure or a passing software test does not independently verify a claim. Some received medical assertions are unsupported or superseded. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Read the linked verification issues for evidence, limitations, counterevidence and corrections. Public-copy approval is not factual endorsement or acceptance of a finished edition.
