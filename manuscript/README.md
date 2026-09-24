@@ -1,4 +1,4 @@
-# Huey: how to make skin color.
+# Huey
 
 Author: R.A. Jacob Martone.
 
