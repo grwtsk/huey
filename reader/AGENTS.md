@@ -32,8 +32,17 @@ pass rather than presented as working chrome.
 
 ## Source and access boundary
 
-Preserve canonical manuscript bytes. All served text must pass the explicit
-content allowlist and digest checks. Missing chapters/claims remain missing; no
+The later complete-working-editor direction (#347/#370) separates editorial
+existence from publication admission. The [editorial inventory](../planning/editorial-inventory/README.md)
+may account for all authorized public working material, partial/unplaced content
+and explicit unavailable slots. The admission-only rules below govern the current
+publication compiler and served projection; they must not make non-admitted
+literary units disappear from the future editor. This inventory foundation does
+not yet change served content or implement the editor migration (#364).
+
+Preserve canonical manuscript bytes. Text served by the existing publication
+projection must pass its explicit content allowlist and digest checks. Missing
+chapters/claims remain missing in that projection; no
 private-source discovery, upload, invented narration or evidence certification.
 No raw medical files, secrets, protected ending previews, analytics, external
 fonts, deployment configuration or replication activation belong in this app.

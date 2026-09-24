@@ -6,6 +6,13 @@
 
 Author: R.A. Jacob Martone. Staging branch: `pre-release` only.
 
+The current architecture direction is a complete working book editor with an
+independently governed publication projection. The [editorial inventory](../planning/editorial-inventory/README.md)
+now records the whole known skeleton and authorized partial/unplaced material,
+including content that is not reader-admitted. This foundational metadata is not
+yet wired into the UI below. #370/#349 own whole-book page assembly; #364 owns
+the later migration. Source authorization still applies to every projection.
+
 ## Current experience
 
 The current author-directed pass is a minimal full-text editor built on the reader's

@@ -298,6 +298,19 @@ valid endpoint, checksum or lineage declaration.
 
 ## Compatibility with the inspected repository
 
+**Later direction, 2026-09-23:** the [complete editorial inventory](editorial-inventory/README.md)
+now distinguishes editorial existence from reader admission under #347/#370.
+Authorized public working and unplaced material can be known to the editor even
+when the publication projection excludes it. The table below is the historical
+#348 compatibility checkpoint, not a rule restricting editorial inventory to
+admitted prose. Its source-permission and separate publication checks remain.
+
+A ReadingPage is an authored/editorial navigation unit; it is neither a viewport
+nor a physical TypesetPage. Later typesetting follows responsive rendering without
+redefining literary identity. EditorialWorkspace/Unplaced are projection groups,
+not added literary kinds or a fourth Movement. This clarification changes no
+`huey-literary-model/1` hashed-state semantics or historical versions.
+
 Inspected staging base: `1f5171cf5df9114e1edec18f193c904e6a51f2f8`. This table
 describes actual files at that base, not an assumption that an open PR is merged.
 
@@ -363,3 +376,10 @@ has additional kernel locality coordination. Actual front-matter content remains
 with #34/#36/#7 and acceptance with #13. All implementations #349–#368, main
 promotion, deployment and release remain outside this PR. No continuation is
 scheduled.
+
+The preceding handoff is historical. #348 is now complete via PR #369. The later
+author direction places scoped #353 ingestion and #370 whole-book inventory/page
+assembly before #349's front-matter integration, then #350 routes. Inventory
+preparation proceeds without waiting for exhaustive lexical refinement. The live
+issues and editorial-inventory contract define the current staged dependency
+boundaries; this does not implement or complete those later issues.

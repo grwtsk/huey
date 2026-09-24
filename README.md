@@ -21,6 +21,18 @@ The [promotion policy](planning/pre-release.md) and [review-record template](pla
 
 ## Literary entity model
 
+Huey is now directed toward a **complete working book editor**, with a separate
+publication/reader projection. The [editorial inventory foundation](planning/editorial-inventory/README.md)
+accounts for known body, front/back and unplaced material, including explicit
+unavailable slots and authorized public candidates. Publication admission does
+not determine literary existence. This metadata foundation does not yet replace
+the current reader UI or assemble ReadingPages; follow #370 and #349.
+
+`npm run inventory:check` validates coverage and source references;
+`npm run --silent inventory:emit` prints the derived machine-readable inventory;
+`npm run test:inventory` runs its deterministic checks. No prose is copied into
+the output and no private source is retrieved.
+
 The [v1 literary entity contract](planning/literary-entity-model.md) defines stable
 identity, exact entity versions, occurrences and reading projections for
 [#348](https://github.com/grwtsk/huey/issues/348). Its synthetic fixtures and
