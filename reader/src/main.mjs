@@ -236,8 +236,9 @@ function render() {
     for (const block of chapter.blocks) {
       if (block.type === 'break') { section.append(el('hr')); continue; }
       if (block.type === 'heading') { const h = el(`h${block.level}`); appendInline(h, block.tokens); section.append(h); continue; }
-      const row = el('div', 'paragraph'); row.id = block.id;
+      const row = el('div', 'paragraph reader-paragraph'); row.id = block.id;
       const number = el('a', 'paragraph-number', block.label);
+      number.contentEditable = 'false';
       number.href = paragraphHashRoute('evidence', chapter.id, block.number, chapter.blob);
       number.setAttribute('aria-label', `Evidence and references for chapter ${chapter.label}, paragraph ${block.number}`);
       number.setAttribute('aria-haspopup', 'dialog');

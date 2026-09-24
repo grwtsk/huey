@@ -28,6 +28,11 @@
     "test:pages": "npm run pages:check && node --test tests/editorial-markdown.test.mjs tests/editorial-pages.test.mjs tests/editorial-front-matter.test.mjs",
     "routes:check": "node scripts/editorial_routes.mjs check",
     "routes:emit": "node scripts/editorial_routes.mjs emit",
-    "test:routes": "npm run routes:check && node --test tests/editorial-routes.test.mjs"
+    "test:routes": "npm run routes:check && node --test tests/editorial-routes.test.mjs",
+    "traversal:check": "node scripts/editorial_traversal.mjs check",
+    "traversal:generate": "node scripts/editorial_traversal.mjs generate",
+    "test:traversal": "npm run traversal:check && node --test tests/editorial-traversal.test.mjs",
+    "dev:editorial": "npm run traversal:generate && npm run dev --workspace @huey/reader -- --mode editorial",
+    "build:editorial": "npm run traversal:generate && npm run build --workspace @huey/reader -- --mode editorial"
   }
 }

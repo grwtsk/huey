@@ -50,3 +50,11 @@ For local reproduction, run the commands in the workflow with its stated runtime
 and source objects. Workflow syntax can additionally be checked with
 `actionlint .github/workflows/checks.yml`. Report that separately from an actual
 GitHub-hosted run.
+
+The literary-model job also tests the derived editorial traversal payload, builds
+the explicit editorial mode, and checks that build over loopback HTTP with
+Playwright 1.58.0 Chromium. This includes history, deep links, input cancellation
+and browser accessibility properties; it is not native VoiceOver/physical touch
+or an accessibility certification. The existing admitted editor/evidence browser
+suite also runs over loopback HTTP. Ordinary reader builds assert that the
+editorial payload is absent. Neither build is uploaded or deployed.

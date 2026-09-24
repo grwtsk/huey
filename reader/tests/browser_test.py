@@ -113,7 +113,7 @@ class ReaderTests(unittest.TestCase):
         self.assertTrue(self.page.locator(".legacy-reader").is_hidden())
         self.assertEqual(self.page.locator(".book-title").inner_text(), "Huey: how to make skin color.")
         self.assertEqual(self.page.locator(".chapter-title").inner_text(), "8A. Baptism in the Color of Rain")
-        self.assertEqual(self.page.locator(".movement").inner_text(), "Interlude")
+        self.assertEqual(self.page.locator(".movement").text_content(), "Interlude")
 
     def test_02_toolbar_is_exactly_seven_primary_controls(self):
         buttons = self.page.locator("#editor-bar > button")
