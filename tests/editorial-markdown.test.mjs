@@ -76,6 +76,16 @@ test('a presentation-only markup edit does not change paragraph inscription stat
   assert.notDeepEqual(emphasized.presentation, strong.presentation);
 });
 
+test('bounded LaTeX display and inline math preserve exact source mapping', () => {
+  const source = '# Math\n\nA value \\(w_n\\) remains.\n\n\\[\nY=F(B,S,U,R)\n\\]\n';
+  const blocks = parseEditorialMarkdown(source);
+  assert.deepEqual(blocks.map(block => block.kind), ['Block', 'Paragraph', 'Block']);
+  assert.equal(blocks[1].state.text, 'A value w_n remains.');
+  assert.deepEqual(blocks[1].presentation, [{ type: 'latex-inline', start: 8, end: 11 }]);
+  assert.equal(blocks[2].state.format, 'latex-display');
+  assert.equal(source.slice(blocks[2].source.start, blocks[2].source.end), blocks[2].state.text);
+});
+
 test('empty and comment-only files do not manufacture prose', () => {
   assert.deepEqual(parseEditorialMarkdown(' \n\t\r\n'), []);
   const blocks = parseEditorialMarkdown('<!-- unresolved -->\n');
