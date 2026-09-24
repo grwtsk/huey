@@ -91,6 +91,11 @@ test('assembly is an exact validated model snapshot with front/body/back order',
   assert.equal(out.schema, 'huey.editorial-assembly.v1');
   assert.equal(out.modelValidation, 'validated-snapshot');
   assert.deepEqual(out.readingOrder, data.plan.readingOrder);
+  assert.equal(out.frontMatter.entryPageId, out.readingOrder[0]);
+  assert.equal(out.frontMatter.firstBodyPageId, out.readingOrder[1]);
+  assert.deepEqual(out.frontMatter.pages, [{ pageId: out.readingOrder[0],
+    pageVersion: record(out, out.readingOrder[0]).version, matterUnitIds: [id(8)] }]);
+  assert.equal(out.frontMatter.matterUnits[0].presence, 'pending');
   const order = out.readingOrder.map(pageId => data.plan.pages.find(page => page.id === pageId).slot);
   assert.deepEqual([...new Set(order)], ['front-title', 'C01', 'C02', 'C03', 'back-note']);
   assert.deepEqual(record(out, id(3)).state.children, [id(5), id(6), id(7)]);

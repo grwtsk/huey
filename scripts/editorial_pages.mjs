@@ -4,6 +4,7 @@ import { dirname, resolve, relative, isAbsolute, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadInventory, gitBlob, safePath } from './editorial_inventory.mjs';
 import { parseEditorialMarkdown } from './editorial_markdown.mjs';
+import { buildFrontMatter } from './editorial_front_matter.mjs';
 import { profile, seal, validateBundle } from './literary_model.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -188,7 +189,7 @@ export function buildAssembly({ inventory, plan, sourceTexts }) {
   if (!unmaterializedEntities.length) validateBundle({ model: profile.model, snapshots: [
     { name: 'editorial-assembly', entities: entityRecords, routes: [], annotations: [], lineage: [] },
   ] });
-  return {
+  const assembly = {
     schema: 'huey.editorial-assembly.v1', model: profile.model, parser: PARSER,
     representation: 'derived-from-authorized-markdown; not a prose master or publication decision',
     modelValidation, inventory, entityRecords, unmaterializedEntities, sourceMappings,
@@ -196,6 +197,7 @@ export function buildAssembly({ inventory, plan, sourceTexts }) {
     workspace: { unplacedPages: [...plan.unplacedOrder], sourceRefs: inventory.sources.filter(source => !c.selected.includes(source))
       .map(source => ({ sourceKey: source.key, role: source.role, targets: source.targets, access: source.access, materialization: 'reference-only; ingestion-deferred' })) },
   };
+  return { ...assembly, frontMatter: buildFrontMatter(assembly) };
 }
 
 function workingTexts(root, inventory) {
@@ -236,7 +238,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     } else {
       const assembly = loadAssembly();
       if (command === 'emit') process.stdout.write(`${JSON.stringify(assembly, null, 2)}\n`);
-      else console.log(`Editorial pages checked: ${assembly.readingOrder.length} ordered pages; ${assembly.workspace.unplacedPages.length} unplaced pages; ${assembly.sourceMappings.length} materialized blocks; ${assembly.unmaterializedEntities.length} unavailable blocks; ${assembly.modelValidation}. Not complete manuscript or acceptance.`);
+      else console.log(`Editorial pages checked: ${assembly.readingOrder.length} ordered pages (${assembly.frontMatter.pages.length} front pages); ${assembly.workspace.unplacedPages.length} unplaced pages; ${assembly.sourceMappings.length} materialized blocks; ${assembly.unmaterializedEntities.length} unavailable blocks; ${assembly.modelValidation}. Not complete manuscript or acceptance.`);
     }
   } catch (error) {
     console.error(error.message);
