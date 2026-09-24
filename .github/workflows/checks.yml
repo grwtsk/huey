@@ -1,0 +1,128 @@
+name: Huey checks
+
+on:
+  pull_request:
+    branches: [pre-release]
+  push:
+    branches: [pre-release]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: huey-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  reader:
+    name: Reader (Node ${{ matrix.node }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        # Test both declared engine floors; only the pinned current runtime builds.
+        node: ['22.12.0', '24.0.0', '22.23.2']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - name: Reader tests
+        run: npm test
+      - name: Generate admitted reader content
+        run: npm run content
+      - name: Install build dependencies without creating a lockfile
+        if: matrix.node == '22.23.2'
+        # No reviewed lockfile exists yet; do not claim reproducible resolution.
+        run: npm install --package-lock=false --no-audit --no-fund
+      - name: Build reader
+        if: matrix.node == '22.23.2'
+        run: npm run build
+      - name: Verify generated content did not change tracked inputs
+        run: git diff --exit-code
+
+  literary-model:
+    name: Literary model and editorial inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          # This separate gate requires Unicode 17; package.json still supports
+          # older Node runtimes for the reader suite.
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - name: Check segmentation runtime and literary model
+        run: |
+          node -p 'JSON.stringify({node: process.version, icu: process.versions.icu, unicode: process.versions.unicode})'
+          npm run test:model
+      - name: Fetch exact inventoried public working revisions
+        # Source scope is recorded in planning/editorial-inventory/source-audit.md.
+        # Keep these pins explicit; do not discover private stores or live PR tips.
+        run: |
+          git fetch --no-tags https://github.com/grwtsk/huey.git \
+            5e936adb132d22d8f0d5c41799591896535abd21 \
+            ff0499bd341de12a31b355b79867b547f19d9b16
+      - name: Editorial inventory tests
+        run: npm run test:inventory
+      - name: Verify complete public-object coverage and deterministic inventory
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { loadInventory, serializeInventory } from './scripts/editorial_inventory.mjs';
+          const inventory = loadInventory();
+          assert.ok(inventory.sources.length > 0, 'Expected registered public sources');
+          assert.ok(inventory.sources.every(source => source.access === 'available'),
+            'Hosted reproduction requires every registered public source object');
+          assert.equal(serializeInventory(inventory), serializeInventory(loadInventory()));
+          console.log(`${inventory.sources.length} public source references available; inventory deterministic. Restricted remainder is not materialized.`);
+          JS
+
+  repository:
+    name: Python repository checks and whitespace
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12.14'
+      - name: Install pinned check dependencies
+        run: python3 -m pip install -r requirements-checks.txt
+      - name: Full Python suite
+        run: python3 -m unittest discover -s tests -v
+      - name: Book and catalog consistency
+        run: |
+          python3 scripts/book.py validate
+          python3 scripts/catalog.py validate
+          python3 scripts/catalog.py check
+      - name: Framing declarations and lexical research consistency
+        run: |
+          python3 scripts/framing.py cases planning/framing-cases.json
+          python3 scripts/framing.py check planning/framing-handoff.example.json
+          python3 scripts/lexical_geometry.py validate
+          python3 scripts/lexical_geometry.py check
+      - name: Changed-file whitespace
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ "$BASE_SHA" =~ ^[0-9a-f]{40}$ && "$BASE_SHA" != 0000000000000000000000000000000000000000 ]]; then
+            git diff --check "$BASE_SHA" HEAD
+          else
+            git show --format= --check HEAD
+          fi

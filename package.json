@@ -19,6 +19,9 @@
     "book:check": "python3 scripts/book.py validate",
     "book:list": "python3 scripts/book.py list",
     "book:count": "python3 scripts/book.py count",
-    "book:md": "python3 scripts/book.py emit"
+    "book:md": "python3 scripts/book.py emit",
+    "inventory:check": "node scripts/editorial_inventory.mjs check",
+    "inventory:emit": "node scripts/editorial_inventory.mjs emit",
+    "test:inventory": "npm run inventory:check && node --test tests/editorial-inventory.test.mjs"
   }
 }
