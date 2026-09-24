@@ -46,6 +46,8 @@ The C02A and C12A labels above are working descriptors, not literary titles. The
 
 C14A and C14B preserve the protected closing architecture by appearing after C14 and before C15. Their public check-in records the author's current instruction to add these exact working chapters to the repository; evidence review, reader admission, main-branch promotion, and finished-edition release remain separate gates.
 
+The public working draft at `sources/author-correspondence/draft-safety-response-care-construction.md` is now an explicit developmental hinge into the final constructive movement. Its existence is not independent proof of any allegation it preserves. The controlling connection is narrower: whether a disclosed suicide risk produced an identifiable clinical response, and whether the system equipped the treating physician to provide, obtain, coordinate, or escalate that response. See `planning/safety-response-pivot.md`. The hinge turns from preservation toward construction and care without altering the protected C15 → movement break → Edna close.
+
 ### Excursion: Edna
 
 The complete existing excursion remains the narrative close under [#52](https://github.com/grwtsk/huey/issues/52). Under [#380](https://github.com/grwtsk/huey/issues/380), the public E01 file now carries only the exact author-directed classroom-question delta in its final-scene location; the surrounding supplied excursion, its existing response, and its terminal sentence remain on the protected source surface and are not reconstructed here.
