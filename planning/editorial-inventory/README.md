@@ -134,14 +134,15 @@ breaks remain later typesetting under #60/#61; they cannot redefine identity.
 ## Source audit and compatibility
 
 The [source audit](source-audit.md) records the exact inspected staging and public
-branch revisions. The registry pins 36 public source/candidate/resource artifacts
+branch revisions. The registry pins 37 public source/candidate/resource artifacts
 with their recorded `scopeRefs`. These links preserve provenance;
 they do not authenticate authorship, accept a proposal or grant further access.
 No source prose is embedded in generated output. Missing Git objects on another
 client are explicitly unavailable there; the tool performs no network retrieval.
 
 The current canonical tree has twenty-one body slots: three full working files (C08A,
-C14A, and C14B) and eighteen comment-only files. It also has one unplaced chapter. Public partial
+C14A, and C14B), one partial public E01/Edna source, and seventeen comment-only
+files. It also has one unplaced chapter. Public partial
 candidates and authorized branch resources remain separately identified. The
 inventory is complete for the declared manifest/tree boundary, not every possible
 source, every private revision, or an already assembled complete book.
