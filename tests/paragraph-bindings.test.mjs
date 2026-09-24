@@ -186,9 +186,9 @@ test('current public C08A binds all 260 exact occurrences; staged and unplaced p
   assert.ok(out.bindings.every(row => row.chapterId === 'C08A' && row.chapterBlob === 'e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1'));
   assert.equal(new Set(out.bindings.map(row => row.entityId)).size, 260);
   const unbound = assembly.entityRecords.filter(entity => entity.kind === 'Paragraph' && !out.bindings.some(row => row.entityId === entity.id));
-  assert.equal(unbound.length, 1599);
+  assert.equal(unbound.length, 1600);
   const separateKeys = assembly.inventory.sources
-    .filter(source => source.role === 'unplaced' || ['C14A', 'C14B'].includes(source.targets[0]))
+    .filter(source => source.role === 'unplaced' || ['C14A', 'C14B', 'E01'].includes(source.targets[0]))
     .map(source => source.key);
   assert.ok(unbound.every(entity => assembly.sourceMappings.some(mapping => mapping.entityId === entity.id && separateKeys.includes(mapping.sourceKey))));
   assert.deepEqual(await loadParagraphBindings(), out);
