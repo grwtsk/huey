@@ -1,7 +1,7 @@
 # Reading and editing interface
 
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** The interface exposes only
-> admitted public manuscript bytes and their recorded verification status. It does
+> authorized material in the selected projection and its recorded status. It does
 > not certify the book's claims. Local edits do not alter the admitted source.
 
 Author: R.A. Jacob Martone. Staging branch: `pre-release` only.
@@ -9,9 +9,12 @@ Author: R.A. Jacob Martone. Staging branch: `pre-release` only.
 The current architecture direction is a complete working book editor with an
 independently governed publication projection. The [editorial inventory](../planning/editorial-inventory/README.md)
 now records the whole known skeleton and authorized partial/unplaced material,
-including content that is not reader-admitted. This foundational metadata is not
-yet wired into the UI below. #370/#349 own whole-book page assembly; #364 owns
-the later migration. Source authorization still applies to every projection.
+including content that is not reader-admitted. An opt-in [editorial traversal](../planning/editorial-pages/traversal.md) now renders
+the persisted complete page sequence at `/huey`, including explicit placeholders
+and a separate Unplaced sequence. This view is read-only while #364 retains the
+editable migration. The default `/` experience below remains the independently
+admitted editable copy. #370/#353 ingestion/reconciliation remain open. Source
+authorization still applies to every projection.
 
 ## Current experience
 
@@ -115,3 +118,13 @@ Software checks establish source fidelity and implemented interaction properties
 they do not establish literary quality, factual truth, rights, accessibility
 certification or finished-edition acceptance. No deployment, main promotion,
 external contact, source replication or release follows from staging this reader.
+
+## Editorial traversal
+
+Use `npm run dev:editorial` on the assembly runtime (Unicode 17; tested Node
+22.23.2), then open `/huey`. `npm run build:editorial` builds that explicit
+projection locally; ordinary `npm run build` excludes its text payload. Previous/Next
+links are native keyboard/touch controls; Alt+PageUp/PageDown also navigate.
+At an edge, a fresh Alt press followed by continued outward scrolling may turn
+one page. Ordinary scrolling never turns pages. Read the [traversal contract](../planning/editorial-pages/traversal.md)
+for thresholds, source boundaries, exact-version limits and browser checks.

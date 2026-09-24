@@ -2,9 +2,10 @@
 
 [#350](https://github.com/grwtsk/huey/issues/350) freezes addresses and metadata
 resolution over the complete editorial sequence. It consumes the #349 front-matter
-contract. The current browser remains on its existing admitted-content/hash-route
-implementation; this increment does not install a router, redirect an origin,
-fetch private sources or activate navigation UI.
+contract. The default browser view retains its admitted-content/hash-route implementation.
+The later [#351 traversal adapter](../editorial-pages/traversal.md) consumes this
+grammar in an opt-in editorial build, without redirecting an origin or fetching
+private sources.
 
 ## Addresses and canonicalization
 
@@ -149,8 +150,10 @@ scrolling or focus changes. #351/#364 must implement this history contract:
 - Unknown, denied or unavailable destinations are explicit outcomes, not a reason
   to rewrite history to the first admitted chapter.
 
-Actual browser history integration remains unimplemented. Pure tests establish
-only the absence of resolver side effects, not browser/native conformance.
+The #351 adapter implements page-level browser history in the opt-in editorial
+view. Paragraph focus and legacy evidence reconciliation remain #352/#364. Pure
+resolver tests establish only the absence of side effects; separate real HTTP
+Chromium checks exercise the traversal adapter with their stated native limits.
 
 Existing `#chapter/{legacy-id}`, `#read/{legacy-id}/{ordinal}/{Git-blob}` and
 `#evidence/{legacy-id}/{ordinal}/{Git-blob}` routes and the `#book` anchor retain
