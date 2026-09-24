@@ -82,6 +82,8 @@ jobs:
         run: npm run test:inventory
       - name: Editorial ReadingPage assembly tests
         run: npm run test:pages
+      - name: Explicit source correspondence and stable identity reconciliation
+        run: npm run test:reconcile
       - name: Editorial route integration tests
         run: npm run test:routes
       - name: Editorial traversal payload tests

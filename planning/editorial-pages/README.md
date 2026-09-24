@@ -55,6 +55,12 @@ normal compilation does not infer a move, allocate replacements or silently
 repartition. A reviewed reconciliation retains IDs of continuing occurrences.
 Splits, joins and replacements need their own lineage treatment under #368.
 
+The [explicit source correspondence API](reconciliation.md) now checks a bounded
+reconciliation proposal for ordinary revisions and file relocation: exact before
+versions, complete existing-ID/range assignments and unchanged page memberships.
+It produces reviewable metadata only. Normal compilation still fails on drift;
+it never calls the reconciler or silently chooses occurrence continuity.
+
 Materialized Block and Paragraph states receive real `EntityVersion` values from
 the existing model. Source mappings remain version-bound provenance. A path or
 source-offset change alone does not redefine inscription. An ordinary text

@@ -36,6 +36,7 @@
     "build:editorial": "npm run traversal:generate && npm run paragraphs:generate && npm run build --workspace @huey/reader -- --mode editorial",
     "paragraphs:check": "node scripts/paragraph_bindings.mjs check",
     "paragraphs:generate": "node scripts/paragraph_bindings.mjs generate",
-    "test:paragraphs": "npm run paragraphs:check && node --test tests/paragraph-bindings.test.mjs"
+    "test:paragraphs": "npm run paragraphs:check && node --test tests/paragraph-bindings.test.mjs",
+    "test:reconcile": "node --test tests/editorial-reconcile.test.mjs"
   }
 }
