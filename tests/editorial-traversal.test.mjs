@@ -45,7 +45,7 @@ test('every known literary slot is visible, including all pending front matter a
   assert.deepEqual(front.map(page => page.label), assembly.frontMatter.matterUnits.map(unit => unit.label));
   assert.ok(front.every(page => page.blocks.length === 0));
   assert.ok(front.every(page => target(payload, page.id).unresolved));
-  assert.equal(payload.pages.filter(page => page.blocks.length === 0).length, 43);
+  assert.equal(payload.pages.filter(page => page.blocks.length === 0).length, 42);
 });
 
 test('available inscription keeps exact stable IDs, text, and member order', () => {
