@@ -22,13 +22,13 @@ const denyRead = (object, key) => Object.defineProperty(object, key, {
   configurable: true, enumerable: true, get() { throw new Error(`Forbidden read: ${key}`); },
 });
 
-test('all 74 persisted pages remain in their 60-page book and 14-page unplaced sequences', () => {
+test('all 165 persisted pages remain in their 151-page book and 14-page unplaced sequences', () => {
   assert.equal(payload.schema, 'huey.editorial-traversal.v1');
   assert.deepEqual(payload.readingOrder, assembly.readingOrder);
   assert.deepEqual(payload.unplacedOrder, assembly.workspace.unplacedPages);
-  assert.equal(payload.readingOrder.length, 60);
+  assert.equal(payload.readingOrder.length, 151);
   assert.equal(payload.unplacedOrder.length, 14);
-  assert.equal(payload.pages.length, 74);
+  assert.equal(payload.pages.length, 165);
   assert.deepEqual(payload.pages.map(page => page.id), [...payload.readingOrder, ...payload.unplacedOrder]);
   assert.ok(payload.unplacedOrder.every(id => !payload.readingOrder.includes(id)));
   assert.deepEqual(project(assembly), payload, 'derivation has no clock, allocator, or layout dependency');
@@ -37,7 +37,7 @@ test('all 74 persisted pages remain in their 60-page book and 14-page unplaced s
 
 test('every known literary slot is visible, including all pending front matter at the beginning', () => {
   const projectedSlots = new Set(payload.pages.flatMap(page => target(payload, page.id).slotIds));
-  assert.equal(projectedSlots.size, 45);
+  assert.equal(projectedSlots.size, 47);
   assert.deepEqual([...projectedSlots].sort(), assembly.inventory.slots.map(slot => slot.entityId).sort());
   assert.equal(payload.routes.entryPageId, payload.readingOrder[0]);
   assert.equal(payload.routes.entryPageId, assembly.frontMatter.entryPageId);
@@ -50,8 +50,8 @@ test('every known literary slot is visible, including all pending front matter a
 
 test('available inscription keeps exact stable IDs, text, and member order', () => {
   const materialized = blocks(payload);
-  assert.equal(materialized.length, 481);
-  assert.equal(materialized.filter(block => block.kind === 'Paragraph').length, 471);
+  assert.equal(materialized.length, 1911);
+  assert.equal(materialized.filter(block => block.kind === 'Paragraph').length, 1859);
   assert.equal(new Set(materialized.map(block => block.id)).size, materialized.length);
   for (const page of payload.pages) {
     if (target(payload, page.id).access !== 'available') continue;

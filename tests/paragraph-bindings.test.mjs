@@ -176,7 +176,7 @@ for (const [name, mutate] of hostile) test(`fails closed: ${name}`, () => {
   assert.throws(() => bind(data), /PARAGRAPH_BINDINGS:/);
 });
 
-test('current public C08A binds all 260 exact occurrences; 211 unplaced paragraphs stay separate', async () => {
+test('current public C08A binds all 260 exact occurrences; staged and unplaced paragraphs stay separate', async () => {
   const assembly = loadAssembly(), book = await compileBook(), sourceTexts = {};
   for (const source of assembly.inventory.sources) {
     if (source.role === 'canonical' && source.access === 'available') sourceTexts[source.key] = readFileSync(new URL(`../${source.path}`, import.meta.url), 'utf8');
@@ -186,9 +186,11 @@ test('current public C08A binds all 260 exact occurrences; 211 unplaced paragrap
   assert.ok(out.bindings.every(row => row.chapterId === 'C08A' && row.chapterBlob === 'e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1'));
   assert.equal(new Set(out.bindings.map(row => row.entityId)).size, 260);
   const unbound = assembly.entityRecords.filter(entity => entity.kind === 'Paragraph' && !out.bindings.some(row => row.entityId === entity.id));
-  assert.equal(unbound.length, 211);
-  const unplacedKeys = assembly.inventory.sources.filter(source => source.role === 'unplaced').map(source => source.key);
-  assert.ok(unbound.every(entity => assembly.sourceMappings.some(mapping => mapping.entityId === entity.id && unplacedKeys.includes(mapping.sourceKey))));
+  assert.equal(unbound.length, 1599);
+  const separateKeys = assembly.inventory.sources
+    .filter(source => source.role === 'unplaced' || ['C14A', 'C14B'].includes(source.targets[0]))
+    .map(source => source.key);
+  assert.ok(unbound.every(entity => assembly.sourceMappings.some(mapping => mapping.entityId === entity.id && separateKeys.includes(mapping.sourceKey))));
   assert.deepEqual(await loadParagraphBindings(), out);
   assert.ok(book.chapters.find(chapter => chapter.id === 'C08A').blocks.filter(block => block.type === 'paragraph')
     .every(paragraph => paragraph.evidence.coverage === 'pending' && paragraph.evidence.claims.length === 0));

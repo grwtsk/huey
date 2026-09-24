@@ -76,6 +76,16 @@ test('a presentation-only markup edit does not change paragraph inscription stat
   assert.notDeepEqual(emphasized.presentation, strong.presentation);
 });
 
+test('bounded LaTeX display and inline math preserve exact source mapping', () => {
+  const source = '# Math\n\nA value \\(w_n\\) remains.\n\n\\[\nY=F(B,S,U,R)\n\\]\n';
+  const blocks = parseEditorialMarkdown(source);
+  assert.deepEqual(blocks.map(block => block.kind), ['Block', 'Paragraph', 'Block']);
+  assert.equal(blocks[1].state.text, 'A value w_n remains.');
+  assert.deepEqual(blocks[1].presentation, [{ type: 'latex-inline', start: 8, end: 11 }]);
+  assert.equal(blocks[2].state.format, 'latex-display');
+  assert.equal(source.slice(blocks[2].source.start, blocks[2].source.end), blocks[2].state.text);
+});
+
 test('empty and comment-only files do not manufacture prose', () => {
   assert.deepEqual(parseEditorialMarkdown(' \n\t\r\n'), []);
   const blocks = parseEditorialMarkdown('<!-- unresolved -->\n');
@@ -121,6 +131,8 @@ test('invalid text and bare CR fail without including manuscript bytes in diagno
 test('current selected public manuscripts parse without copying their prose into fixtures', () => {
   const selected = [
     ['manuscript/02-interlude/baptism-in-the-color-of-rain.md', 260, 9],
+    ['manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md', 786, 41],
+    ['manuscript/02-interlude/14b-orange-after-the-end.md', 602, 1],
     ['manuscript/unplaced/the-place-beneath-pain.md', 211, 1],
   ];
   for (const [path, paragraphs, other] of selected) {
