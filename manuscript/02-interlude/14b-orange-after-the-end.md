@@ -1050,26 +1050,6 @@ Not because orange was hiding unchanged inside either channel.
 
 Because relation produces another color.
 
-Perhaps that was always the answer Huey was approaching.
-
-How do you make skin color?
-
-Not from one color.
-
-Not from one person.
-
-Not from purity.
-
-From relation.
-
-From inheritance.
-
-From light striking matter and returning altered.
-
-From what enters and what is reflected.
-
-From provenance becoming appearance.
-
 The future may work the same way.
 
 Humanity need not remain the only intelligence in order for humanity to persist.
