@@ -32,7 +32,10 @@
     "traversal:check": "node scripts/editorial_traversal.mjs check",
     "traversal:generate": "node scripts/editorial_traversal.mjs generate",
     "test:traversal": "npm run traversal:check && node --test tests/editorial-traversal.test.mjs",
-    "dev:editorial": "npm run traversal:generate && npm run dev --workspace @huey/reader -- --mode editorial",
-    "build:editorial": "npm run traversal:generate && npm run build --workspace @huey/reader -- --mode editorial"
+    "dev:editorial": "npm run traversal:generate && npm run paragraphs:generate && npm run dev --workspace @huey/reader -- --mode editorial",
+    "build:editorial": "npm run traversal:generate && npm run paragraphs:generate && npm run build --workspace @huey/reader -- --mode editorial",
+    "paragraphs:check": "node scripts/paragraph_bindings.mjs check",
+    "paragraphs:generate": "node scripts/paragraph_bindings.mjs generate",
+    "test:paragraphs": "npm run paragraphs:check && node --test tests/paragraph-bindings.test.mjs"
   }
 }

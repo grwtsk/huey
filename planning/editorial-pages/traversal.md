@@ -6,7 +6,8 @@ a **read-only traversal of the working book**. The existing admitted editable co
 and its exact evidence hash routes remain at `/`. This bounded step implements
 navigation; it does not migrate drafting, evidence mappings or editorial operations.
 Keeping the traversal read-only avoids discarding unsaved local edits when changing
-pages. #352 owns paragraph focus/permalink runtime; #364 owns editor migration.
+pages. The [#352 adapter](../routes/paragraphs.md) adds paragraph focus/permalink
+runtime; #364 owns editor migration.
 
 ## Selected order and content
 
@@ -60,7 +61,8 @@ pagination, source admission or manuscript acceptance follows from navigation.
   Deliberate navigation focuses the new heading and starts at its top.
 - Restricted, unavailable, unresolved and exact-version-miss pages stay in order.
   Their text is not substituted. Unknown/non-page routes display an explicit
-  outcome, never the first admitted chapter or an arbitrarily selected page.
+  outcome. The #352 adapter resolves Paragraph routes to current page context,
+  requiring a choice when ambiguous; it never selects the first admitted chapter.
 - An exact ReadingPage version pins local membership, not its descendants' past
   prose. A matching page version displays a notice that descendants are from the
   selected current snapshot. Missing exact page versions display no prose.
@@ -130,7 +132,7 @@ emulation are not macOS VoiceOver, physical touch/trackpad, Safari/Firefox or fu
 accessibility certification. Exact local and hosted results belong in the PR
 receipt; no unrun native check is implied by this contract.
 
-#352 is the next consumer for paragraph runtime. #370/#353 ingestion/reconciliation,
+#352 extends this traversal with paragraph runtime. #370/#353 ingestion/reconciliation,
 #364 complete editable migration, #367 origin/deployment and later typesetting stay
 open. No private store, kernel authority/runtime, main promotion or release is
 activated here.

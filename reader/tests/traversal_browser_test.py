@@ -192,7 +192,14 @@ class TraversalBrowserTests(unittest.TestCase):
         self.assertEqual(self.page.locator("[data-entity-id]").evaluate_all("nodes => nodes.map(node => node.dataset.entityId)"), expected)
         self.assertFalse(self.page.locator("#book").evaluate("node => node.isContentEditable"))
         self.assertEqual(self.page.locator(".paragraph-number").count(), 0)
-        self.assertEqual(self.page.locator('a[href^="/huey/paragraph/"]').count(), 0)
+        paragraphs = [block for block in self.pages[self.materialized]["blocks"] if block["kind"] == "Paragraph"]
+        self.assertEqual(self.page.locator('a[href^="/huey/paragraph/"]').count(), 2 * len(paragraphs))
+        for paragraph in paragraphs:
+            row = self.page.locator(f'#{paragraph["id"]}').locator("..")
+            expect(row.get_by_role("link", name="Current link", exact=True)).to_have_attribute(
+                "href", f'/huey/paragraph/{paragraph["id"]}')
+            self.assertTrue(row.get_by_role("link", name="Exact wording", exact=True).get_attribute("href").startswith(
+                f'/huey/paragraph/{paragraph["id"]}/v/hev1:'))
 
     def test_09_native_keyboard_links_focus_and_shortcuts(self):
         self.open()

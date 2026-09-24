@@ -128,3 +128,18 @@ links are native keyboard/touch controls; Alt+PageUp/PageDown also navigate.
 At an edge, a fresh Alt press followed by continued outward scrolling may turn
 one page. Ordinary scrolling never turns pages. Read the [traversal contract](../planning/editorial-pages/traversal.md)
 for thresholds, source boundaries, exact-version limits and browser checks.
+
+Each materialized editorial paragraph also has a stable **Current link** and an
+**Exact wording** link. These retain paragraph identity when page membership
+changes; a paragraph projected on multiple pages asks for a reading context.
+Exact links never substitute a different current version. Where exact source
+reconciliation exists, an Evidence link opens the existing pinned admitted
+collection, which provides stable editorial links back in this explicit mode.
+Unplaced material stays addressable without invented evidence mappings.
+
+Read the [paragraph contract](../planning/routes/paragraphs.md) for current/exact
+semantics, move/split/retirement behavior and evidence boundaries. Run
+`npm run test:paragraphs` for the source bridge and
+`HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 python3 reader/tests/paragraph_browser_test.py`
+against the built preview with Playwright installed. Ordinary publication builds
+exclude both editorial traversal and paragraph-binding data.

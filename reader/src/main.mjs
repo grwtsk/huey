@@ -1,5 +1,6 @@
 import { Narrator, voiceKey, ChapterTimeline, formatTime } from './speech.mjs';
 import { paragraphHashRoute, paragraphId, parseRoute, safeUrl } from './text.mjs';
+import { validateParagraphBindings, findLegacyBinding, paragraphLinks } from './paragraphs.mjs';
 
 const $ = id => document.getElementById(id);
 function el(tag, className, text) {
@@ -22,7 +23,11 @@ function appendInline(node, tokens) {
   }
 }
 
-let book, chapters, sourceMap;
+let book, chapters, sourceMap, stableParagraphBindings = null;
+export function enableStableParagraphLinks(value) {
+  stableParagraphBindings = validateParagraphBindings(value);
+  if (book && parseRoute(location.hash).kind === 'evidence') applyRoute();
+}
 let activeIndex = 0, paragraphNodes = [], positions = [], items = [];
 let lastSpeaking = null, raf = 0;
 let returnFocus = null;
@@ -365,7 +370,18 @@ function showEvidence(chapter, p) {
   });
   const anchor = el('a', '', 'Paragraph permalink');
   anchor.href = paragraphHashRoute('read', chapter.id, p.number, chapter.blob);
-  actions.append(read, copy, anchor); body.append(actions);
+  actions.append(read, copy, anchor);
+  if (stableParagraphBindings) {
+    const binding = findLegacyBinding(stableParagraphBindings, { chapterId: chapter.id,
+      chapterBlob: chapter.blob, ordinal: p.number, rawSha256: p.sha256 });
+    if (binding) {
+      const paths = paragraphLinks({ id: binding.entityId, version: binding.entityVersion });
+      for (const [label, path] of [['Current editorial paragraph', paths.current], ['Exact editorial wording', paths.exact]]) {
+        const a = el('a', '', label); a.href = path; actions.append(a);
+      }
+    }
+  }
+  body.append(actions);
 }
 function applyRoute() {
   if (!book || location.hash === '#book') return;

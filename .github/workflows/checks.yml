@@ -48,6 +48,7 @@ jobs:
         run: |
           npm run build
           test ! -e reader/dist/data/traversal.json
+          test ! -e reader/dist/data/paragraphs.json
       - name: Verify generated content did not change tracked inputs
         run: git diff --exit-code
 
@@ -85,6 +86,8 @@ jobs:
         run: npm run test:routes
       - name: Editorial traversal payload tests
         run: npm run test:traversal
+      - name: Exact paragraph evidence-link reconciliation
+        run: npm run test:paragraphs
       - name: Install editorial build dependencies
         run: npm install --package-lock=false --no-audit --no-fund
       - name: Build explicit editorial projection
@@ -94,7 +97,7 @@ jobs:
           python3 -m venv /tmp/huey-browser-venv
           /tmp/huey-browser-venv/bin/python -m pip install playwright==1.58.0
           /tmp/huey-browser-venv/bin/python -m playwright install --with-deps chromium
-      - name: Browser traversal over the actual editorial build
+      - name: Browser traversal and paragraph links over the actual editorial build
         run: |
           npm run preview > /tmp/huey-preview.log 2>&1 &
           PREVIEW_PID=$!
@@ -104,6 +107,7 @@ jobs:
             sleep 1
           done
           HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/traversal_browser_test.py
+          HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/paragraph_browser_test.py
       - name: Existing admitted editor and evidence browser checks
         run: /tmp/huey-browser-venv/bin/python reader/tests/browser_test.py
       - name: Route alias continuity against the previous projection
