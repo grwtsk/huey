@@ -35,7 +35,7 @@ the output and no private source is retrieved.
 
 The [initial editorial ReadingPage assembly](planning/editorial-pages/README.md)
 adds a persisted sequence for every known slot and separate unplaced pages. Its
-bounded compiler materializes the four current canonical/unplaced working manuscript sources;
+bounded compiler materializes the five current canonical/unplaced working manuscript sources;
 other candidate/support sources remain explicit references. `npm run test:pages` checks
 the parser, identity sidecar and assembly on a Unicode-17 runtime. Generated page
 output may contain authorized public prose and remains derived from Markdown.
@@ -68,6 +68,10 @@ required-review protection or supply human editorial clearance.
 ## Late-Interlude chapters
 
 [On the Eve of the Last su[p, p′, p″, p‴, …]er](manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md) and [Orange After the End](manuscript/02-interlude/14b-orange-after-the-end.md) are staged public working chapters under the author's explicit [#378](https://github.com/grwtsk/huey/issues/378) instruction. They are placed after C14 and before C15 so the protected C15 → movement break → Edna close remains unchanged. Their check-in is not evidence clearance, reader admission, promotion to `main`, or finished-edition release.
+
+## Closing excursion reveal
+
+The active book title is **Huey**. Under [#380](https://github.com/grwtsk/huey/issues/380), the exact classroom question is reserved for its single authorized occurrence inside the final Edna excursion. Earlier prose and metadata may foreshadow it only indirectly; the surrounding supplied excursion remains protected and is not reconstructed by this staging change.
 
 ## Source catalog and coverage
 
