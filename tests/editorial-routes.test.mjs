@@ -25,11 +25,11 @@ const denyRead = (object, key) => Object.defineProperty(object, key, {
 
 test('all existing literary and page IDs remain addressable without allocation', () => {
   const expected = [...assembly.entityRecords, ...assembly.unmaterializedEntities].map(row => row.id).sort();
-  assert.equal(expected.length, 2130);
+  assert.equal(expected.length, 2134);
   assert.deepEqual(catalog.targets.map(row => row.id).sort(), expected);
   assert.equal(catalog.slots.length, 47);
   assert.equal(catalog.targets.filter(row => row.kind === 'ReadingPage').length, 165);
-  assert.equal(catalog.targets.filter(row => row.kind === 'Paragraph').length, 1859);
+  assert.equal(catalog.targets.filter(row => row.kind === 'Paragraph').length, 1860);
   assert.deepEqual(project(assembly), catalog, 'derivation is deterministic');
 });
 
