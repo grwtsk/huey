@@ -71,9 +71,9 @@ member paragraphs. This increment provides no operation queue or boundary UI.
 
 ## Whole-work sequence and unplaced workspace
 
-Every one of the inventory's 45 slots has a page representation. The canonical
+Every one of the inventory's 47 slots has a page representation. The canonical
 sequence begins with fifteen pending front-matter units, continues through the
-nineteen body slots in `book.yaml` order, and ends with ten separate back-matter
+twenty-one body slots in `book.yaml` order, and ends with ten separate back-matter
 units. The unplaced chapter has its own page sequence outside that reading order.
 Pending matter is visible without inventing its prose or deciding its omission.
 
@@ -92,17 +92,17 @@ those decisions and acceptance gates.
 
 ## Materialized and referenced sources
 
-This increment materializes the inventory's two current canonical/unplaced public
-sources: C08A and The Place Beneath Pain. They yield 269 and 212 source blocks,
-respectively. The remaining thirty-two candidate/support artifacts stay explicitly
-referenced from the workspace and inventory with their existing roles, exact pins
-and scope references. They are not silently adopted as canonical prose or used to
+This increment materializes the inventory's four current canonical/unplaced public
+sources: C08A, C14A, C14B, and The Place Beneath Pain. They yield 269, 827, 613,
+and 212 source blocks, respectively. The remaining thirty-two candidate/support
+artifacts stay explicitly referenced from the workspace and inventory with their
+existing roles, exact pins and scope references. They are not silently adopted as canonical prose or used to
 fill the other chapters. A candidate's availability can coexist with a canonical
 placeholder and a restricted unmaterialized remainder.
 
-The committed starting plan contains 60 ordered ReadingPages and 14 unplaced
-pages, 481 source blocks (471 Paragraphs and ten heading/separator Blocks), and
-607 entity records including the existing 52 inventory entities. These counts
+The committed plan contains 151 ordered ReadingPages and 14 unplaced pages,
+1,921 source blocks (1,869 Paragraphs and 52 generic Blocks), and 2,140 entity
+records including the existing 54 inventory entities. These counts
 describe the present source checkpoint, not final pagination or completeness.
 
 Source selection follows the inventory's explicit canonical/unplaced roles and
