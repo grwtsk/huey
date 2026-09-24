@@ -111,7 +111,7 @@ class ReaderTests(unittest.TestCase):
         self.assertEqual(self.page.locator(".paragraph-number").first.inner_text(), "8A:1")
         self.assertEqual(self.page.locator(".paragraph-number").last.inner_text(), "8A:260")
         self.assertTrue(self.page.locator(".legacy-reader").is_hidden())
-        self.assertEqual(self.page.locator(".book-title").inner_text(), "Huey: how to make skin color.")
+        self.assertEqual(self.page.locator(".book-title").inner_text(), "Huey")
         self.assertEqual(self.page.locator(".chapter-title").inner_text(), "8A. Baptism in the Color of Rain")
         self.assertEqual(self.page.locator(".movement").text_content(), "Interlude")
 
