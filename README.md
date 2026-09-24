@@ -33,6 +33,14 @@ the current reader UI or assemble ReadingPages; follow #370 and #349.
 `npm run test:inventory` runs its deterministic checks. No prose is copied into
 the output and no private source is retrieved.
 
+The [initial editorial ReadingPage assembly](planning/editorial-pages/README.md)
+adds a persisted sequence for every known slot and separate unplaced pages. Its
+bounded compiler materializes the two current working manuscript sources; other
+candidate/support sources remain explicit references. `npm run test:pages` checks
+the parser, identity sidecar and assembly on a Unicode-17 runtime. Generated page
+output may contain authorized public prose and remains derived from Markdown.
+The existing served reader is unchanged.
+
 The [v1 literary entity contract](planning/literary-entity-model.md) defines stable
 identity, exact entity versions, occurrences and reading projections for
 [#348](https://github.com/grwtsk/huey/issues/348). Its synthetic fixtures and
