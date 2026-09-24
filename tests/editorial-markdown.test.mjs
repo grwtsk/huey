@@ -131,6 +131,8 @@ test('invalid text and bare CR fail without including manuscript bytes in diagno
 test('current selected public manuscripts parse without copying their prose into fixtures', () => {
   const selected = [
     ['manuscript/02-interlude/baptism-in-the-color-of-rain.md', 260, 9],
+    ['manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md', 786, 41],
+    ['manuscript/02-interlude/14b-orange-after-the-end.md', 612, 1],
     ['manuscript/unplaced/the-place-beneath-pain.md', 211, 1],
   ];
   for (const [path, paragraphs, other] of selected) {
