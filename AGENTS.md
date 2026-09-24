@@ -121,11 +121,13 @@ close; do not pad it or move it earlier. The supplied terminal sentence stays la
 No invented cure, verdict, apology or compelled forgiveness; reference matter is
 separate, not an explanatory epilogue.
 
-PR-01 protects the withheld question and the title's mechanism across prose, notes,
-indexes, descriptions, previews, accessibility text and public planning. Do not
-supply, paraphrase, reconstruct, explain or tease the reserved response/final line.
-The complete authorized title may appear in actual title fields. Literal checks
-are insufficient without source-aware semantic review.
+PR-01 now protects the exact classroom question until its single authorized
+occurrence inside the final Excursion: Edna. The current book title is **Huey**.
+Outside that final excursion, do not quote, paraphrase, substantially reconstruct,
+explain, index, preview, alt-text or metadata-expose the question, its reserved
+response or the terminal line. Foreshadow only indirectly through established
+color, naming, child-scale inquiry, mixture, surface, light and relation motifs.
+Literal checks are insufficient without source-aware semantic review.
 
 ## Local verification and truthful completion
 
