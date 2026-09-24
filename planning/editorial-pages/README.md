@@ -141,8 +141,10 @@ as plain Paragraph inscription. A later refinement cannot silently change an
 existing Block's kind to Paragraph under the same ID.
 
 The bounded parser supports blank-separated paragraphs, ATX headings, thematic
-breaks, standalone comment blocks, simple emphasis/strong/code spans and HTTPS
-links. LF and internal CRLF are preserved without Unicode normalization. Lists,
+breaks, standalone comment blocks, simple emphasis/strong/code spans, HTTPS
+links, bounded `\\(...\\)` inline LaTeX presentation, and raw `\\[...\\]`
+display-LaTeX Blocks. LF and internal CRLF are preserved without Unicode
+normalization. Lists,
 tables, blockquotes, fences, embedded HTML, nested/unsupported inline markup and
 hard-break syntax fail explicitly. Heading and separator Blocks retain raw
 Markdown; Paragraph states contain inscription with supported delimiters removed.
