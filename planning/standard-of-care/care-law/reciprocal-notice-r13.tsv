@@ -1,0 +1,41 @@
+unit	communication	direction	issue	state_or_type	proposition
+HUEY-CL13-U001	N01	patient_to_institution	187	provenance	August 4 reports a July 7 hand-delivered patient statement, but the exact delivered object is unresolved.
+HUEY-CL13-U002	N01	patient_to_institution	325	delivery	July 7 delivery is patient-reported and said to have been witnessed/logged; the independent log is not supplied.
+HUEY-CL13-U003	N01	patient_to_institution	181	record	August 4 reports no attributable confirmation of complete record entry or location.
+HUEY-CL13-U004	N01	patient_to_institution	325	review	No supplied evidence establishes recipient review or understanding of N01.
+HUEY-CL13-U005	N02	patient_to_institution	187	provenance	The supplied Record Entry Request is dated July 26 and cannot silently be identified as the July 7 object.
+HUEY-CL13-U006	N02	patient_to_institution	325	state	For N02 the current corpus establishes authorship, not dispatch, receipt or review.
+HUEY-CL13-U007	N03	patient_to_institution	325	dispatch	The August 4 source states that it is being sent by certified mail.
+HUEY-CL13-U008	N03	patient_to_institution	325	limit	A statement of certified-mail sending is not a certified-mail receipt or proof of institutional review.
+HUEY-CL13-U009	N04	institution_to_patient	180	document	The September 9 notice is an institutional source object dated September 9.
+HUEY-CL13-U010	N04	institution_to_patient	180	condition	The notice requires agreement within 60 days of the letter date as a condition of continued care.
+HUEY-CL13-U011	N04	institution_to_patient	180	alternative	The notice permits agreement either by signature or by MyChart message.
+HUEY-CL13-U012	N04	institution_to_patient	325	receipt	The September 17 response expressly states that the patient received and reviewed N04.
+HUEY-CL13-U013	N04	institution_to_patient	325	acknowledgment	The September 17 response acknowledges receipt/review and substantively addresses the notice.
+HUEY-CL13-U014	N04	institution_to_patient	324	limit	Receipt/review does not establish blanket assent to factual characterizations, accommodation determinations or undefined conditions.
+HUEY-CL13-U015	N04	institution_to_patient	180	agreement	The patient refuses the supplied acknowledgment while asserting compliance with legitimate prospective requirements.
+HUEY-CL13-U016	N04	institution_to_patient	325	unknown	Institutional acceptance or rejection of qualified assent remains unknown.
+HUEY-CL13-U017	N04	institution_to_patient	183	provenance	Individual drafter/approver roles for the institution-issued notice remain unresolved.
+HUEY-CL13-U018	N05	patient_to_institution	187	chronology	The September 10 source calls itself the third formal written effort and asks preservation alongside two prior submissions.
+HUEY-CL13-U019	N05	patient_to_institution	325	limit	The third-effort characterization does not prove receipt or review of the earlier two submissions.
+HUEY-CL13-U020	N05	patient_to_institution	181	distinction	N05 separately requests complete-letter preservation and item-specific amendment/addendum processes.
+HUEY-CL13-U021	N05	patient_to_institution	325	state	Current supplied evidence establishes N05 authorship and intended routing, not dispatch/receipt/review.
+HUEY-CL13-U022	N06	patient_to_institution	325	document	The September 17 source family is headed VIA CERTIFIED MAIL and includes separately addressed copies.
+HUEY-CL13-U023	N06	patient_to_institution	183	routing	N06 requests routing to HIM, Patient Relations, ADA/504/OPHD, Clinical Ethics, Ethics/Compliance and other functions.
+HUEY-CL13-U024	N06	patient_to_institution	183	request	N06 asks for responsible office, direct route, referral date and case/reference number where one exists.
+HUEY-CL13-U025	N06	patient_to_institution	325	limit	Certified-mail headings and addressed copies do not establish actual mailing, delivery, receipt, review or case creation.
+HUEY-CL13-U026	N06	patient_to_institution	325	source-independence	Multiple recipient-addressed copies are one substantive source family, not independent corroboration of underlying events.
+HUEY-CL13-U027	ALL	bidirectional	324	comparison	The corpus directly supports patient receipt/review of N04 but lacks comparable institution-side review evidence for N01-N03/N05-N06.
+HUEY-CL13-U028	ALL	bidirectional	324	limit	That difference is evidentiary before it is legal and may reflect missing records, routing, unacknowledged review or nondelivery.
+HUEY-CL13-U029	ALL	bidirectional	325	method	Notice states must not be promoted merely because promotion favors the sender.
+HUEY-CL13-U030	ALL	bidirectional	325	method	A stronger notice consequence requires its own evidence or specifically applicable rule.
+HUEY-CL13-U031	ALL	bidirectional	325	method	Delivery receipts do not by themselves prove comprehension or agreement.
+HUEY-CL13-U032	ALL	bidirectional	325	method	Absence of a read receipt does not prove nonreview.
+HUEY-CL13-U033	ALL	bidirectional	181	method	Record presence, record location and substantive review are separate states.
+HUEY-CL13-U034	ALL	bidirectional	180	method	Accessibility of one specific received letter does not establish general portal/channel accessibility.
+HUEY-CL13-U035	ALL	bidirectional	187	method	Hashes or exact bytes identify objects but do not establish dispatch, receipt, comprehension or approval.
+HUEY-CL13-U036	ALL	bidirectional	183	method	Intended routing does not equal accepted institutional responsibility.
+HUEY-CL13-U037	ALL	bidirectional	184	legal-status	Reciprocal Effective Notice remains a normative/legal-policy principle until context-specific law supplies a rule.
+HUEY-CL13-U038	ALL	bidirectional	184	legal-limit	Do not generalize one notice doctrine across consent, grievances, HIPAA, portals, withdrawal or litigation.
+HUEY-CL13-U039	ALL	bidirectional	325	evidence	Next evidence includes mailing receipts, intake/import data, routing metadata, acknowledgments and materials-reviewed records.
+HUEY-CL13-U040	ALL	bidirectional	325	status	The case matrix is partial; July identity, recipient-specific delivery, institutional review and qualified-assent status remain open.

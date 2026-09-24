@@ -1,0 +1,41 @@
+unit	type	issue	sources	proposition
+HUEY-CL11-U001	source-scope	30	E01-E12	Economic benchmarks must distinguish wages, compensation, employer cost and opportunity cost.
+HUEY-CL11-U002	attribution	141	patient-source	The September 17 response describes burden as generated upstream and appearing downstream in patient writing.
+HUEY-CL11-U003	limit	141	patient-source	That account is not a time sheet or institutional accounting record.
+HUEY-CL11-U004	correction	30	legacy-model,E01-E12	The former $4,110 mature-dispute figure is a scenario, not an observed national average or UCSF cost.
+HUEY-CL11-U005	correction	30	E07	BLS reports lawyer wages; calling the $159,670 figure compensation was imprecise.
+HUEY-CL11-U006	calculation	30	E01,E09	$50,980 / 2,080 = $24.51 per modeled patient/support-person hour.
+HUEY-CL11-U007	limit	141	E01,E09	OEWS does not observe unpaid family labor; the $24.51 value is a proxy.
+HUEY-CL11-U008	calculation	30	E10	June 2026 health-care/social-assistance total compensation to wages ratio is about 1.4213.
+HUEY-CL11-U009	limit	30	E10	The ECEC ratio is a broad sensitivity factor, not a UCSF payroll or role-specific load.
+HUEY-CL11-U010	calculation	30	E02-E09	The 28-hour BLS wage-only role mix is $1,911.93.
+HUEY-CL11-U011	calculation	30	E09	The 33-hour patient/support-person proxy is $808.82.
+HUEY-CL11-U012	calculation	30	E01-E12	The wage-only combined mature-dispute scenario is $2,720.75.
+HUEY-CL11-U013	calculation	30	E10-E12	Academic all-work physician value plus broad load sensitivity yields $3,231.61 combined.
+HUEY-CL11-U014	calculation	30	E10-E12	Academic direct-care physician opportunity value plus broad load sensitivity yields $3,960.73 combined.
+HUEY-CL11-U015	calculation	30	E10-E12	San Francisco direct-care high-side sensitivity yields $4,219.55 combined.
+HUEY-CL11-U016	interpretation	30	legacy-model,E01-E12	The former $4,110 result lies inside a high-side sensitivity range but is not the preferred central estimate.
+HUEY-CL11-U017	calculation	30	E11,E12	Doximity plus AMA yields separate all-work and direct-care opportunity values, not payroll wages.
+HUEY-CL11-U018	limit	30	E11,E12	Doximity and AMA populations are not a UCSF neurology payroll/time study.
+HUEY-CL11-U019	calculation	30	E05,E08,E10-E12	The minimal recurring academic prevention scenario is about $8.96-$9.09.
+HUEY-CL11-U020	calculation	30	E05,E08,E10-E12	The San Francisco prevention sensitivity is about $10.54-$10.67 per recurring encounter.
+HUEY-CL11-U021	limit	30	E11,E12	About ten dollars is an order-of-magnitude scenario, not a universal accommodation price.
+HUEY-CL11-U022	calculation	30	model	At 42 hypothetical cycles the patient/support-person hours are 1,386.
+HUEY-CL11-U023	calculation	30	model	The 42-cycle combined sensitivity spans about $114,272-$177,221 under the listed valuation bases.
+HUEY-CL11-U024	limit	30	model	Forty-two cycles are not asserted as the historical count in this patient's care.
+HUEY-CL11-U025	calculation	30	model	At 480 hypothetical cycles the patient/support-person hours are 15,840.
+HUEY-CL11-U026	calculation	30	model	The 480-cycle combined sensitivity spans about $1.31M-$2.03M.
+HUEY-CL11-U027	limit	30	model	The forty-year scenario is a stress test, not a forecast or damages calculation.
+HUEY-CL11-U028	model	30	E13	The 2018 hospital model estimated 671,440 fewer adverse events and $6.8B annual savings.
+HUEY-CL11-U029	limit	30	E13	The Hurtig model uses hospital populations and older national inputs; it is not outpatient-neurology ROI.
+HUEY-CL11-U030	historical	30	E14	CDC/NCHS estimated about 15M annual office neurology visits in 2015-2016.
+HUEY-CL11-U031	limit	30	E14	The 15M visit count is historical, not a current 2026 denominator.
+HUEY-CL11-U032	limit	30	legacy-model	The former 5%, 10%, 20%, 0.1% and 1% rates were assumptions, not prevalence estimates.
+HUEY-CL11-U033	guidance	141	E15	NICE treats treatment burden and coordination burden as legitimate clinical subjects.
+HUEY-CL11-U034	limit	141	E15	NICE NG56 is UK guidance, not California/UCSF law.
+HUEY-CL11-U035	argument	185	patient-source	A cost can be shifted outside an institutional ledger without disappearing.
+HUEY-CL11-U036	method	141	patient-source	Each burden-transfer arrow must identify the task, actor, evidence, duplication, delay and feasible interruption.
+HUEY-CL11-U037	method	141	patient-source	Illness work, ordinary participation and correctable process-generated work must remain distinct.
+HUEY-CL11-U038	limit	141	patient-source	Family, vocation, worship, recovery time and usable attention remain attributed lived loss, not wage-denominated damages.
+HUEY-CL11-U039	institutional	327	E01-E15	Institutional economics must keep UCSF, UC, regulators and California functions noninterchangeable.
+HUEY-CL11-U040	status	326	E01-E15	This pass improves economic evidence; it does not close the whole-book evidence phase or accept manuscript prose.

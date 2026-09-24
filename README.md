@@ -1,13 +1,33 @@
 # Huey
 
 > [!WARNING]
-> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This repository includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. Inclusion, a citation, a commit, an issue closure or a passing software test does not independently verify a claim. Some received medical assertions are unsupported or superseded. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Read the linked verification issues for evidence, limitations, counterevidence and corrections. Public-copy approval is not factual endorsement or acceptance of a finished edition.
+> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This repository contains attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. Inclusion, a citation, a commit, an issue closure or a passing software test does not independently verify a claim. Some received medical assertions are unsupported or superseded. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Consult the linked verification issues for evidence, limitations, counterevidence and corrections. Publication approval is not factual endorsement or acceptance of a finished edition.
 
 R.A. Jacob Martone
 
-**Public-copy approval is recorded; do not ask again.** The author expressly approved the specified standard-of-care discussion, atlas and essay collection in [issue #2's decision receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544). [Program #125](https://github.com/grwtsk/huey/issues/125), [transfer #126](https://github.com/grwtsk/huey/issues/126), [corpus audit #145](https://github.com/grwtsk/huey/issues/145), and [substantial-support queue #176](https://github.com/grwtsk/huey/issues/176) distinguish source copying from factual review. Browse the [approved working corpus on the existing development branch](https://github.com/grwtsk/huey/tree/writing/55-development-r01/sources/standard-of-care) and [PR #122](https://github.com/grwtsk/huey/pull/122). Raw clinical PDFs/records and unrelated private material remain excluded. The live Reader gate and the book's protected ending are unchanged.
+## Approved standard-of-care discussion, atlas and essays
 
-Every new relevant commit must include: **Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.** Do not rewrite old commit history to backdate this requirement. Earlier infrastructure descriptions below apply outside the explicitly approved corpus; they do not reopen this permission decision.
+The author has **expressly approved public copies of the specified discussion, atlas and essay collection** in this repository. [The approval is recorded in issue #2](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544). Do not ask for this permission again. Raw clinical PDFs/records and unrelated private material remain excluded; the live website's Reader gate and the broader source-custody architecture are unchanged.
+
+[Program and argument index #125](https://github.com/grwtsk/huey/issues/125) links the 30 initial argument issues and 19 verification issues covering 188 initial evidence targets. [Substantial-support queue #176](https://github.com/grwtsk/huey/issues/176) tracks causal, clinical, legal, historical, quantitative and cross-authority claims needing deeper support. [Transfer #126](https://github.com/grwtsk/huey/issues/126) and [full-corpus audit #145](https://github.com/grwtsk/huey/issues/145) distinguish copies actually made from remaining extraction, citation and semantic review. An initial target index is not an exhaustive sentence audit.
+
+Approved material is placed under [`sources/standard-of-care/`](sources/standard-of-care/); tracking is under [`planning/standard-of-care/`](planning/standard-of-care/). Original prose, source-text exports, summaries, hypotheses and corrections must remain separately identified. An exported essay is not a byte-for-byte copy of its containing presentation JSON. First-person experience is preserved as attributed testimony rather than made contingent on proof of a broader causal inference.
+
+Every new commit affecting this research must include:
+
+> Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.
+
+Commit messages must also identify affected issues and actual checks. This prospective requirement does not authorize rewriting older history.
+
+## Recovered care-and-law work — Huey, not the neurology site
+
+Both editorial passes mistakenly placed in `grwtsk/neurology` have been rebuilt in [the Huey care-law corpus](planning/standard-of-care/care-law/README.md) on [development PR #122](https://github.com/grwtsk/huey/pull/122). The [complete cumulative prose](planning/standard-of-care/care-law/revision.md), 41 source records, 34 detailed review schedules, ten prior edit records and validator are checked in here. All 256 prose units have Huey issue ownership; they remain distinct from the 188 initial SOC evidence targets.
+
+[Correction #177](https://github.com/grwtsk/huey/issues/177) records the complete old-to-Huey issue map and cleanup. [Book integration #186](https://github.com/grwtsk/huey/issues/186) connects the recovered material to the existing chapters, notes and appendix work. Its 17 section mappings are candidate joins, not a claim that the private manuscript or protected ending was rewritten. Source-origin links never redirect the destination of this work. Read the scoped [AGENTS.md](planning/standard-of-care/care-law/AGENTS.md) before continuing.
+
+```sh
+python3 planning/standard-of-care/care-law/verify.py --output-dir /tmp/huey-care-law
+```
 
 Production work is tracked in [the master issue](https://github.com/grwtsk/huey/issues/1). Read [AGENTS.md](AGENTS.md) before issue-driven work. One response opens one bounded pull request; completed, checked work may merge under the author's recorded instruction. Manuscript acceptance and release remain separate.
 
@@ -75,9 +95,9 @@ The active book title is **Huey**. Under [#380](https://github.com/grwtsk/huey/i
 
 ## Source catalog and coverage
 
-The author selected a kernel-managed durable source volume with a Reader-gated catalog/search on grwtsk.com. For sources outside the scoped public-copy approval above, this repository carries the [link-planning contract](planning/source-catalog-contract.md), [metadata aliases](sources/catalog.yaml), [service handoff](planning/source-service.json), and [source-to-book coverage ledger](planning/source-coverage.md). These infrastructure files do not duplicate the original corpus or implement reader permissions.
+For sources outside the specific approval above, the author selected a kernel-managed durable source volume with a Reader-gated catalog/search on grwtsk.com. The [link-planning contract](planning/source-catalog-contract.md), [metadata aliases](sources/catalog.yaml), [service handoff](planning/source-service.json), and [source-to-book coverage ledger](planning/source-coverage.md) do not implement reader permissions.
 
-The service endpoint and its source bindings are currently pending. No working gated search route, ingested clinical record, actual reader grant or deployment is claimed. Follow [issue #16](https://github.com/grwtsk/huey/issues/16) and its cross-repository blockers. [Issue #2](https://github.com/grwtsk/huey/issues/2) retains remaining source-admission and disclosure boundaries outside SOC-PUBLIC-01; the custody architecture itself is no longer unselected.
+The service endpoint and its source bindings are currently pending. No working gated search route, ingested clinical record, actual reader grant or deployment is claimed. Follow [issue #16](https://github.com/grwtsk/huey/issues/16) and its cross-repository blockers. [Issue #2](https://github.com/grwtsk/huey/issues/2) retains source-admission boundaries outside the explicitly approved SOC corpus; it no longer blocks this specified public-copy operation.
 
 ```sh
 python3 -m pip install -r requirements-checks.txt
@@ -88,7 +108,7 @@ python3 scripts/catalog.py check
 
 `python3 scripts/catalog.py render` prints the deterministic ledger. `python3 scripts/catalog.py link A01` returns a pending result until inspected service/alias bindings exist. These commands do not query a service, grant access or publish content.
 
-No manuscript passages, literary anchors or private records were stored by those earlier infrastructure changes. The later approved SOC source copies are separately identified above.
+The earlier infrastructure changes did not store manuscript passages, literary anchors or private records. The later SOC source-copy approval is a distinct, scoped change, not a claim that every source has been admitted.
 
 ## Current framing correction
 
@@ -110,4 +130,4 @@ These are integrity checks, not a substitute for reading or a claim that all per
 
 ## Author-supplied capstone
 
-The [placement contract](planning/capstone-placement.md) records the author's concluding self-examination and open reader address at the end of Chapter 15, immediately before the existing excursion. The [Smith/antiracist comparison](research/lexical-geometry/confession-reader-dialogue.md) cites the distinct public sources. RF-01 protects actual self-attribution as well as protection from imposed labels; it is not a prohibition on the author's supplied words. The private capstone source and proposed prose are not part of the SOC public-copy scope. Full-chapter integration remains #51.
+The [placement contract](planning/capstone-placement.md) records the author's concluding self-examination and open reader address at the end of Chapter 15, immediately before the existing excursion. The [Smith/antiracist comparison](research/lexical-geometry/confession-reader-dialogue.md) cites the distinct public sources. RF-01 protects actual self-attribution as well as protection from imposed labels; it is not a prohibition on the author's supplied words. The private capstone source and proposed prose are not within the SOC transfer grant. Full-chapter integration remains #51.

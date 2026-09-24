@@ -1,0 +1,115 @@
+{
+  "repository": "grwtsk/huey",
+  "work_id": "HUEY-CL10",
+  "review_date": "2026-09-22",
+  "sources": [
+    {
+      "id": "W01",
+      "title": "ASHA Practice Portal: Dysarthria in Adults",
+      "url": "https://www.asha.org/Practice-Portal/Clinical-Topics/Dysarthria-in-Adults/",
+      "kind": "professional-guidance",
+      "locator": "Overview; Dysarthria Assessment; additional language/cognitive-communication assessment.",
+      "inspection": "page-sections-read",
+      "limit": "Professional guidance, not an individual assessment or proof that cognition is either impaired or intact.",
+      "doi": null,
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W02",
+      "title": "Borrie SA, Lansford KL, Barrett TS. Generalized Adaptation to Dysarthric Speech. JSLHR 60 (2017):3110–3117.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5945074/",
+      "kind": "primary-experiment",
+      "locator": "Method: Listener Participants, procedure and File Analysis; Discussion and Future Directions.",
+      "inspection": "full-text-sections-read",
+      "limit": "Recorded phrase task; no live clinical encounter, capacity outcome, patient-specific trial or established durability.",
+      "doi": "10.1044/2017_JSLHR-S-17-0127",
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W03",
+      "title": "Fletcher AR, Potts MW, Borrie SA. Educational Information Improves Listener Attitudes Toward People With Dysarthria Secondary to Parkinson’s Disease. AJSLP 32 (2023):1099–1109.",
+      "url": "https://pubs.asha.org/doi/10.1044/2022_AJSLP-22-00234",
+      "kind": "primary-experiment",
+      "locator": "Publisher abstract and metadata; PMC10473394 indexed Discussion. Online 7 March; issue 4 May 2023.",
+      "inspection": "abstract-and-indexed-discussion-read",
+      "limit": "Direct PMC fetch encountered a browser check. Complete Methods/tables were not inspected; no new effect-size estimate or clinical generalization.",
+      "doi": "10.1044/2022_AJSLP-22-00234",
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W04",
+      "title": "Goyal T, Hasty BN, Bereknyei Merrell S, Gold CA. Understanding barriers to goals of care communication for neurology trainees. Neurology 93 (2019):362–366.",
+      "url": "https://www.neurology.org/doi/10.1212/WNL.0000000000007975",
+      "kind": "primary-qualitative",
+      "locator": "Publisher indexed full text: Methods, Results, Discussion. Online 19 August 2019.",
+      "inspection": "indexed-full-text-read",
+      "limit": "Initial direct fetch failed. Resident focus groups, not patient outcomes or demonstrated coaching efficacy. No table-specific detail used.",
+      "doi": "10.1212/WNL.0000000000007975",
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W05",
+      "title": "Goddu AP et al. Do Words Matter? Stigmatizing Language and the Transmission of Bias in the Medical Record. JGIM 33 (2018):685–691.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5910343/",
+      "kind": "primary-vignette-experiment",
+      "locator": "Indexed Abstract, Results and Discussion; publisher abstract and change history also inspected.",
+      "inspection": "indexed-sections-and-publisher-preview-read",
+      "limit": "Not a complete Methods read. Direct PMC fetch hit a browser check; actual medication administration was not measured. Use W06 for corrected values.",
+      "doi": "10.1007/s11606-017-4289-2",
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W06",
+      "title": "Goddu AP et al. Published correction to Do Words Matter. JGIM 34 (2019):164; online 18 October 2018.",
+      "url": "https://link.springer.com/article/10.1007/s11606-017-4289-2",
+      "kind": "primary-correction",
+      "locator": "Publisher Change history, 18 October 2018; correction record PMID 30338470. Corrigendum DOI 10.1007/s11606-018-4583-7.",
+      "inspection": "publisher-change-history-and-correction-record-read",
+      "limit": "Correction page metadata was accessible but body unavailable there. Main article change history supplies the corrected pairs; old abstract values are not controlling.",
+      "doi": "10.1007/s11606-018-4583-7",
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W07",
+      "title": "Bartlett G et al. Impact of patient communication problems on the risk of preventable adverse events in acute care settings. CMAJ 178 (2008):1555–1562.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2396356/",
+      "kind": "primary-observational",
+      "locator": "Abstract; Methods: chart sampling, adverse-event assessment, patient characteristics; Interpretation limitations.",
+      "inspection": "full-text-prose-read",
+      "limit": "PDF and image-table retrieval failed; the reported estimate here comes from the abstract, not an unseen table. Not an intervention test.",
+      "doi": "10.1503/cmaj.070690",
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W08",
+      "title": "45 CFR 84.77: General communication requirements",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-84/subpart-H/section-84.77",
+      "kind": "regulation",
+      "locator": "84.77(a)(1), (b)(1)–(2), (c)(1)–(3); eCFR title currency 18 September 2026.",
+      "inspection": "operative-text-read",
+      "limit": "Covered recipient/activity, relevant facts, applicable exceptions and event-date law require separate review. Not retroactively applied to 2019.",
+      "doi": null,
+      "review_date": "2026-09-22",
+      "case_finding": false
+    },
+    {
+      "id": "W09",
+      "title": "VA National Center for PTSD: Trauma-informed Care for Health Care Workers",
+      "url": "https://www.ptsd.va.gov/professional/treat/care/tic_healthcare_workers.asp",
+      "kind": "agency-guidance",
+      "locator": "Table 1: universal trauma precautions; attribution and documentation suggestions.",
+      "inspection": "page-and-html-table-read",
+      "limit": "Practice suggestions, not an individual outcome trial, retrospective incapacity determination or legal verdict.",
+      "doi": null,
+      "review_date": "2026-09-22",
+      "case_finding": false
+    }
+  ]
+}

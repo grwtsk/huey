@@ -1,0 +1,93 @@
+{
+  "repository": "grwtsk/huey",
+  "work_id": "HUEY-CL09",
+  "date": "2026-09-22",
+  "sources": [
+    {
+      "id": "W01",
+      "title": "Apple: Manage Health data on your iPhone, iPad, or Apple Watch",
+      "url": "https://support.apple.com/en-us/108779",
+      "locator": "About Health data; How Health handles data from multiple sources; View and prioritize your data sources. Published September 14, 2026.",
+      "inspection": "primary-page-read",
+      "limit": "Current documentation is not a reconstruction of the user's historical devices, priorities or settings.",
+      "kind": "primary-documentation",
+      "case_finding": false
+    },
+    {
+      "id": "W02",
+      "title": "Apple HealthKit: stepCount",
+      "url": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/stepcount",
+      "locator": "Type Property and Discussion: count units, cumulative samples.",
+      "inspection": "indexed-primary-text-read",
+      "limit": "Direct HTML was JavaScript-only and Markdown fetch failed; search returned the official indexed Discussion. Do not label this a fully rendered page or historical-version check.",
+      "kind": "primary-documentation",
+      "case_finding": false
+    },
+    {
+      "id": "W03",
+      "title": "Apple HealthKit: distanceWalkingRunning",
+      "url": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/distancewalkingrunning",
+      "locator": "Type Property and Discussion: length units, cumulative samples.",
+      "inspection": "indexed-primary-text-read",
+      "limit": "Direct HTML was JavaScript-only and Markdown fetch failed; official indexed text supplies the cited type definition.",
+      "kind": "primary-documentation",
+      "case_finding": false
+    },
+    {
+      "id": "W04",
+      "title": "Apple HealthKit: Executing Statistics Collection Queries",
+      "url": "https://developer.apple.com/documentation/healthkit/executing-statistics-collection-queries",
+      "locator": "Overview: intervals and anchors; results handling: sumQuantity() returns nil for intervals without samples.",
+      "inspection": "indexed-primary-text-read",
+      "limit": "Official indexed text read; direct page/Markdown access failed. Query behavior does not identify historical query settings or actual missingness.",
+      "kind": "primary-documentation",
+      "case_finding": false
+    },
+    {
+      "id": "W05",
+      "title": "Apple HealthKit: HKStatisticsQueryDescriptor",
+      "url": "https://developer.apple.com/documentation/healthkit/hkstatisticsquerydescriptor",
+      "locator": "Overview and options property: snapshot results, selected statistic and multiple-source handling.",
+      "inspection": "indexed-primary-text-read",
+      "limit": "Official indexed text read; no device query or merge algorithm was executed.",
+      "kind": "primary-documentation",
+      "case_finding": false
+    },
+    {
+      "id": "W06",
+      "title": "Apple HealthKit: distanceWheelchair",
+      "url": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/distancewheelchair",
+      "locator": "Type Property and Discussion.",
+      "inspection": "indexed-primary-text-read",
+      "limit": "A separate quantity type exists; no claim that this user's devices recorded it or that a missing quantity shows immobility.",
+      "kind": "primary-documentation",
+      "case_finding": false
+    },
+    {
+      "id": "W07",
+      "title": "Shah et al. (2025), Clinic vs. daily life gait characteristics in patients with spinocerebellar ataxia",
+      "url": "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2025.1590150/full",
+      "locator": "Frontiers in Digital Health 7:1590150, DOI 10.3389/fdgth.2025.1590150; Abstract; Methods; Results demographics and Table 2; Discussion; disclosure statements. PDF pp. 1–4 and 7 as parsed.",
+      "inspection": "publisher-html-and-pdf-text-read",
+      "limit": "PDF page 1 was rendered; screenshots for pp. 3–4 failed. HTML tables and PDF text were available. No participant data, supplemental analysis or author clarification was obtained.",
+      "kind": "primary-research",
+      "case_finding": false
+    }
+  ],
+  "source_discrepancies": [
+    {
+      "id": "SD03",
+      "owner": 320,
+      "source": "W07",
+      "field": "subtype label",
+      "status": "primary-source-internal-discrepancy-open"
+    },
+    {
+      "id": "SD04",
+      "owner": 320,
+      "source": "W07",
+      "field": "AUC metric labels",
+      "status": "primary-source-internal-discrepancy-open"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+unit	level	type	issue	sources	proposition
+HUEY-CL12-U001	L1	authority	183	I02	UCSF policy assigns patient accommodation responsibility to treating clinical care department/inpatient unit and/or Patient Relations.
+HUEY-CL12-U002	L1	authority	183	I02	UCSF policy provides financial escalation paths for qualifying accommodation/barrier-removal work.
+HUEY-CL12-U003	L1	policy	142	I03	UCSF publicly states patients may complain without compromising quality or future access to care.
+HUEY-CL12-U004	L1	route	183	I04,I05	Patient Relations and care-team/accessibility routes are published for unresolved concerns and accommodations.
+HUEY-CL12-U005	L1	attribution	183	I01	The patient requests direct verifiable routing to independent institutional functions.
+HUEY-CL12-U006	L1	limit	183	I01-I05	Published routes do not prove patient-specific receipt, review, assignment or completion.
+HUEY-CL12-U007	L1	economic	327	I01-I05	A local workload reduction can shift work to another UCSF function or to the patient rather than reduce total work.
+HUEY-CL12-U008	L1	repair	183	I01-I05	Test a single coordinating entry point that identifies distinct accepted owners without making one person perform every function.
+HUEY-CL12-U009	L1	notice	325	I01-I05	Record or portal presence alone does not establish review, understanding or agreement absent evidence or a governing rule.
+HUEY-CL12-U010	L1	unknown	183	I01-I05	Actual decision provenance, routing, case identifiers and delivered accommodation remain open.
+HUEY-CL12-U011	L2	authority	327	I06	Regents hold University governance authority and delegate operations subject to reserved powers.
+HUEY-CL12-U012	L2	authority	327	I07	Chancellors are responsible for campus organization, administration, operations and financial management within University policy/budget.
+HUEY-CL12-U013	L2	authority	327	I08	The Health Services Committee has strategic direction and oversight concerning UC Health.
+HUEY-CL12-U014	L2	financial-policy	327	I09	BUS-10 requires clear financial-accountability lines and qualified/authorized delegation.
+HUEY-CL12-U015	L2	limit	327	I06-I09	These governance sources do not establish that UCOP, Regents, HSC or the Chancellor reviewed this patient's matter.
+HUEY-CL12-U016	L2	limit	327	I09	BUS-10 is a financial-transaction accountability policy, not a general clinical standard of care.
+HUEY-CL12-U017	L2	economic	327	I06-I09	System scale can reduce or increase coordination cost depending on actual delegation; affiliation alone establishes neither.
+HUEY-CL12-U018	L2	repair	327	I06-I09	Escalate to UC-level authority only when policy/delegation actually assigns a system role.
+HUEY-CL12-U019	L2	notice	325	I06-I09	Copying a UC-level office does not establish review or responsibility without routing and authority evidence.
+HUEY-CL12-U020	L2	unknown	327	I06-I09	Actual UC system involvement in the patient-specific decisions remains unestablished.
+HUEY-CL12-U021	L3	authority	183	I10,I11	The Medical Board licenses/regulates physicians, screens complaints, investigates and disciplines within its jurisdiction.
+HUEY-CL12-U022	L3	process	184	I10,I11	Board complaint stages distinguish screening, investigation, lesser enforcement, Attorney General referral and discipline.
+HUEY-CL12-U023	L3	limit	183	I10	The Board states it cannot provide medical care or malpractice compensation.
+HUEY-CL12-U024	L3	limit	184	I10,I11	Complaint receipt, investigation or referral is not an adjudicated violation.
+HUEY-CL12-U025	L3	economic	327	I10,I11	Regulatory investigation can reduce information asymmetry but also consumes public, professional and patient resources.
+HUEY-CL12-U026	L3	repair	183	I10,I11	Keep professional-regulation work parallel to care/access rather than making regulatory completion a condition of treatment.
+HUEY-CL12-U027	L3	notice	325	I10,I11	A filed complaint does not establish a disciplinary finding; each process state remains distinct.
+HUEY-CL12-U028	L3	unknown	184	I10,I11	Complaint status, timeliness, evidence and disposition remain case-specific and unresolved here.
+HUEY-CL12-U029	L4	authority	184	I12,I13	CRD enforces covered civil-rights laws for state-funded programs and investigates qualifying complaints.
+HUEY-CL12-U030	L4	authority	184	I14	CDPH/CHCQ regulates health-care facilities/providers within its licensing/certification purview and investigates complaints.
+HUEY-CL12-U031	L4	limit	184	I12-I14	California is not one centralized health-care dispute office; agency jurisdictions remain distinct.
+HUEY-CL12-U032	L4	limit	325	I12-I14	Receipt or jurisdictional acceptance by one state agency does not establish merits or notice to another agency.
+HUEY-CL12-U033	L4	economic	327	I12-I14	Jurisdictional fragmentation can create transaction costs without itself proving illegality.
+HUEY-CL12-U034	L4	repair	327	I12-I14	Identify the correct forum once per proposition and preserve routing evidence to reduce repetitive jurisdiction work.
+HUEY-CL12-U035	L4	unknown	184	I12-I14	Coverage, event-date law, deadlines, exhaustion and remedies remain proposition-specific.
+HUEY-CL12-U036	ALL	notice	324	I01-I14	Use the ten-state notice ladder bidirectionally; do not promote record presence into review, understanding or agreement without support.
+HUEY-CL12-U037	ALL	method	327	I01-I14	Assign responsibility only from actual authority, not affiliation or rhetorical severity.
+HUEY-CL12-U038	ALL	method	185	I01-I14	Keep internal work, shifted labor, duplication, delay, lived loss and damages as different cost categories.
+HUEY-CL12-U039	ALL	argument	327	I01-I14	Visible ownership, limits and handoffs can reduce coordination burden; whether a particular failure was avoidable requires evidence.
+HUEY-CL12-U040	ALL	status	326	I01-I14	Framework completion does not equal patient-specific application, whole-book evidence completion or manuscript acceptance.

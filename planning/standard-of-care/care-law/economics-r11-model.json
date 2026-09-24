@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "repository": "grwtsk/huey",
+  "work_id": "HUEY-CL11",
+  "issues": [
+    30,
+    141,
+    185,
+    326,
+    327
+  ],
+  "status": "reference-economic-audit-not-manuscript-acceptance",
+  "scope": "Transparent scenarios only; not observed UCSF costs, damages, forecasts, prevalence estimates, or findings of avoidability.",
+  "sources": [
+    {
+      "id": "E01",
+      "name": "BLS OEWS May 2025 Survey Methods",
+      "url": "https://www.bls.gov/oes/methods_25.pdf",
+      "date_basis": "May 2025",
+      "use": "2,080-hour annual/hourly conversion",
+      "limit": "OEWS excludes self-employed and unpaid family workers; annual conversions need not equal actual hours worked."
+    },
+    {
+      "id": "E02",
+      "name": "BLS Physicians and Surgeons",
+      "url": "https://www.bls.gov/ooh/healthcare/physicians-and-surgeons.htm",
+      "date_basis": "May 2025",
+      "value": 275930,
+      "unit": "median annual wage",
+      "limit": "National all-physicians occupational wage benchmark; not a neurologist, academic, UCSF, billing, or marginal-cost figure."
+    },
+    {
+      "id": "E03",
+      "name": "BLS Registered Nurses",
+      "url": "https://www.bls.gov/ooh/healthcare/registered-nurses.htm",
+      "date_basis": "May 2025",
+      "value": 100220,
+      "unit": "hospital median annual wage",
+      "limit": "Hospital-industry RN median wage; not UCSF payroll, a specific nurse's compensation, or a role-specific benefit rate."
+    },
+    {
+      "id": "E04",
+      "name": "BLS Medical and Health Services Managers",
+      "url": "https://www.bls.gov/ooh/management/medical-and-health-services-managers.htm",
+      "date_basis": "May 2025",
+      "value": 133580,
+      "unit": "hospital median annual wage",
+      "limit": "Hospital-industry management median wage; broad proxy, not UCSF clinic-management payroll or marginal cost."
+    },
+    {
+      "id": "E05",
+      "name": "BLS Medical Records Specialists",
+      "url": "https://www.bls.gov/ooh/healthcare/medical-records-and-health-information-technicians.htm",
+      "date_basis": "May 2025",
+      "value": 59120,
+      "unit": "hospital median annual wage",
+      "limit": "Hospital-industry medical-records median wage; not a UCSF HIM payroll record."
+    },
+    {
+      "id": "E06",
+      "name": "BLS Compliance Officers",
+      "url": "https://www.bls.gov/ooh/business-and-financial/compliance-officers.htm",
+      "date_basis": "May 2025",
+      "value": 72580,
+      "unit": "healthcare and social assistance median annual wage",
+      "limit": "Health-care/social-assistance compliance-officer median wage; Patient Relations/ADA use is an explicit proxy and not a UCSF role valuation."
+    },
+    {
+      "id": "E07",
+      "name": "BLS Lawyers",
+      "url": "https://www.bls.gov/ooh/legal/lawyers.htm",
+      "date_basis": "May 2025",
+      "value": 159670,
+      "unit": "median annual wage",
+      "limit": "National lawyer median wage; not in-house UCSF counsel compensation, outside-counsel billing, or legal expense actually incurred."
+    },
+    {
+      "id": "E08",
+      "name": "BLS Office and Administrative Support Occupations",
+      "url": "https://www.bls.gov/ooh/office-and-administrative-support/",
+      "date_basis": "May 2025",
+      "value": 47450,
+      "unit": "occupation-group median annual wage",
+      "limit": "Broad office/administrative-support occupational median; not UCSF scheduling payroll."
+    },
+    {
+      "id": "E09",
+      "name": "BLS All Occupations",
+      "url": "https://www.bls.gov/ooh/",
+      "date_basis": "May 2025",
+      "value": 50980,
+      "unit": "median annual wage",
+      "limit": "National all-occupations median wage used only as an illustrative patient/support-person opportunity-cost proxy; unpaid family labor is not observed by OEWS."
+    },
+    {
+      "id": "E10",
+      "name": "BLS Employer Costs for Employee Compensation",
+      "url": "https://www.bls.gov/charts/employer-costs-for-employee-compensation/costs-by-industry.htm",
+      "date_basis": "June 2026",
+      "wages_per_hour": 35.13,
+      "benefits_per_hour": 14.8,
+      "unit": "health care and social assistance broad industry average",
+      "limit": "Not UCSF-specific and not role-specific."
+    },
+    {
+      "id": "E11",
+      "name": "Doximity 2026 Physician Compensation Report",
+      "url": "https://www.doximity.com/reports/physician-compensation-report/2026",
+      "date_basis": "2025 survey data",
+      "neurology": 371087,
+      "academic": 389591,
+      "san_francisco": 462806,
+      "unit": "average annual compensation",
+      "limit": "Compensation, not wage; specialty, practice-setting, and metro figures are separate populations."
+    },
+    {
+      "id": "E12",
+      "name": "AMA physician time-spend reporting",
+      "url": "https://www.ama-assn.org/practice-management/physician-health/doctors-work-fewer-hours-ehr-still-follows-them-home",
+      "date_basis": "2024",
+      "total_hours_per_week": 57.8,
+      "direct_patient_care_hours_per_week": 27.2,
+      "unit": "reported average hours",
+      "limit": "Not neurology-specific and not a UCSF time study."
+    },
+    {
+      "id": "E13",
+      "name": "Hurtig, Alper & Berkowitz",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6402813/",
+      "date_basis": "2018 publication",
+      "estimated_ae_reduction": 671440,
+      "estimated_annual_savings": 6800000000,
+      "unit": "hospital model",
+      "limit": "Uses older hospital/adverse-event inputs; not outpatient-neurology ROI."
+    },
+    {
+      "id": "E14",
+      "name": "CDC/NCHS Neurology Fact Sheet",
+      "url": "https://archive.cdc.gov/www_cdc_gov/nchs/data/namcs/factsheets/NAMCS-2015-16-Neurology-508.pdf",
+      "date_basis": "2015-2016",
+      "annual_visits": 15000000,
+      "unit": "estimated annual office visits to nonfederally employed office-based neurologists",
+      "limit": "Historical scale, not current 2026 denominator."
+    },
+    {
+      "id": "E15",
+      "name": "NICE NG56",
+      "url": "https://www.nice.org.uk/guidance/ng56/chapter/recommendations",
+      "date_basis": "published 2016; current page inspected 2026",
+      "unit": "UK clinical guidance",
+      "limit": "Treatment-burden concept, not California/UCSF legal standard."
+    }
+  ],
+  "assumptions": {
+    "oews_hours_per_year": 2080,
+    "review_role_hours": [
+      {
+        "role": "Treating physician",
+        "hours": 3,
+        "wage_source": "E02",
+        "clinical_capacity_eligible": true
+      },
+      {
+        "role": "Peer physician / medical director",
+        "hours": 2,
+        "wage_source": "E02",
+        "clinical_capacity_eligible": true
+      },
+      {
+        "role": "RN / clinical staff",
+        "hours": 2,
+        "wage_source": "E03"
+      },
+      {
+        "role": "Clinic management",
+        "hours": 3,
+        "wage_source": "E04"
+      },
+      {
+        "role": "Health Information Management",
+        "hours": 3,
+        "wage_source": "E05"
+      },
+      {
+        "role": "Patient Relations / ADA-504 work",
+        "hours": 4,
+        "wage_source": "E06",
+        "proxy": true
+      },
+      {
+        "role": "Compliance / risk",
+        "hours": 4,
+        "wage_source": "E06"
+      },
+      {
+        "role": "In-house legal",
+        "hours": 4,
+        "wage_source": "E07"
+      },
+      {
+        "role": "Ethics / medical-staff review",
+        "hours": 2,
+        "wage_source": "E02",
+        "clinical_capacity_eligible": false,
+        "proxy": true
+      },
+      {
+        "role": "Scheduling / administrative handling",
+        "hours": 1,
+        "wage_source": "E08"
+      }
+    ],
+    "patient_hours": 25,
+    "support_person_hours": 8,
+    "patient_support_hourly_proxy_source": "E09",
+    "broad_employer_load_source": "E10",
+    "prevention": {
+      "one_time_physician_minutes": 3,
+      "recurring_physician_seconds": 110,
+      "recurring_staff_minutes": 1,
+      "physician_source": "E11",
+      "physician_hours_source": "E12",
+      "staff_low_source": "E08",
+      "staff_high_source": "E05"
+    },
+    "sensitivity_cycles": {
+      "seven_year_example": 42,
+      "forty_year_monthly_example": 480
+    }
+  },
+  "expected_rounded": {
+    "all_occupations_hourly_proxy": 24.51,
+    "healthcare_employer_load_ratio": 1.4213,
+    "legacy_hours": {
+      "institutional": 28,
+      "patient_support": 33,
+      "total": 61
+    },
+    "review_wage_only": {
+      "institutional": 1911.93,
+      "patient_support": 808.82,
+      "combined": 2720.75
+    },
+    "review_academic_all_work_loaded": {
+      "institutional": 2422.79,
+      "patient_support": 808.82,
+      "combined": 3231.61
+    },
+    "review_academic_direct_loaded": {
+      "institutional": 3151.91,
+      "patient_support": 808.82,
+      "combined": 3960.73
+    },
+    "review_sf_direct_loaded": {
+      "institutional": 3410.73,
+      "patient_support": 808.82,
+      "combined": 4219.55
+    },
+    "prevention_academic": {
+      "one_time_note": 13.77,
+      "recurring_low": 8.96,
+      "recurring_high": 9.09,
+      "forty_year_12_low": 4313.03,
+      "forty_year_12_high": 4376.83
+    },
+    "prevention_sf": {
+      "one_time_note": 16.36,
+      "recurring_low": 10.54,
+      "recurring_high": 10.67,
+      "forty_year_12_low": 5074.83,
+      "forty_year_12_high": 5138.62
+    },
+    "forty_two_cycle": {
+      "wage_only": 114271.5,
+      "academic_all_work_loaded": 135727.51,
+      "academic_direct_loaded": 166350.64,
+      "sf_direct_loaded": 177221.08,
+      "patient_support_hours": 1386
+    },
+    "four_hundred_eighty_cycle": {
+      "wage_only": 1305960,
+      "academic_all_work_loaded": 1551171.59,
+      "academic_direct_loaded": 1901150.2,
+      "sf_direct_loaded": 2025383.8,
+      "patient_support_hours": 15840
+    }
+  }
+}

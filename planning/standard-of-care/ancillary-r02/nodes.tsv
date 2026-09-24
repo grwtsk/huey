@@ -1,0 +1,60 @@
+source	pointer	id	type	claim_ids	verification_issue
+audio	/article	discipline-and-punish	audio	ANC-C001,ANC-C005,ANC-C021	189
+audio	/article/relations/0	u-000471	related_to		189
+audio	/article/relations/1	relation-audio-atlas	related_to		189
+audio	/current/document/units/0	u-000468	audio	ANC-C028	189
+audio	/current/document/units/0/attribution/0	u-000465	paragraph		189
+audio	/current/document/units/0/attribution/0/content/0	u-000466	link		189
+audio	/current/document/units/0/attribution/0/content/2	u-000467	link		189
+audio	/current/document/units/0/caption/0	u-000469	paragraph	ANC-C028	189
+audio	/current/document/units/0/credit/0	u-000470	paragraph		189
+audio	/current/document/units/1	u-000463	paragraph		189
+audio	/current/document/units/1/content/1	u-000464	link		189
+audio	/current/assets/0	asset-audio	soundcloud	ANC-C022,ANC-C023	189
+harm	/article	neurology-cannot-undo-the-harm	article	ANC-C010,ANC-C011	189
+harm	/current/document/units/0	u-001019	blockquote		189
+harm	/current/document/units/0/units/0	u-001020	paragraph		189
+harm	/current/document/units/0/attribution/0	u-001021	paragraph		189
+dignity	/article	on-dignity	quote	ANC-C006,ANC-C007,ANC-C008,ANC-C009	189
+dignity	/current/document/units/0	u-001022	paragraph	ANC-C053	189
+dignity	/current/document/units/0/content/1	atlas-link-dignity	link	ANC-C053	189
+painting	/article	i-bledsoe-i-bled-so	image	ANC-C013,ANC-C014,ANC-C029,ANC-C030	189
+painting	/article/relations/0	relation-art-writing	related_to		189
+painting	/article/relations/1	relation-art-atlas	related_to		189
+painting	/current/document/units/0	u-000740	figure	ANC-C034,ANC-C035,ANC-C036,ANC-C037,ANC-C038,ANC-C039,ANC-C040,ANC-C041	189
+painting	/current/document/units/0/caption/0	u-000741	paragraph		189
+painting	/current/document/units/0/credit/0	u-000742	paragraph		189
+painting	/current/assets/0	asset-image	image	ANC-C042	189
+site	/sections/0	factual-prologue	metadata	ANC-C054,ANC-C055,ANC-C056,ANC-C057	190
+site	/sections/0/heading	u-001754	heading		190
+site	/sections/0/description/units/0	u-001755	paragraph	ANC-C054,ANC-C055,ANC-C056,ANC-C057	190
+site	/sections/1	essays	metadata		190
+site	/sections/1/heading	u-001756	heading		190
+site	/sections/2	artwork-and-sound	metadata		190
+site	/sections/2/heading	u-001757	heading		190
+site	/access_page/document/units/0	u-001758	paragraph	ANC-C058,ANC-C059,ANC-C060	190
+site	/access_page/terms/units/0	u-001759	paragraph	ANC-C069	190
+site	/access_page/terms/units/0/content/1	u-001760	link		190
+site	/restricted_notice/document/units/0	u-001761	paragraph	ANC-C061	190
+site	/discovery/closed_description/units/0	u-6c4e812f	paragraph	ANC-C062	190
+site	/home/units/0	u-001747	prose	ANC-C063,ANC-C064,ANC-C065,ANC-C066	190
+site	/home/units/0/units/0	u-001748	paragraph	ANC-C063	190
+site	/home/units/0/units/1	u-001749	paragraph	ANC-C064,ANC-C065	190
+site	/home/units/0/units/2	u-001750	paragraph	ANC-C066	190
+site	/home/units/1	u-3f0a8c11	paragraph		190
+site	/home/units/2	u-5bd2a4e7	list	ANC-C067,ANC-C068	190
+site	/home/units/2/items/0	u-5bd2a4e7-i1	metadata		190
+site	/home/units/2/items/0/units/0	u-5bd2a4e7-p1	paragraph		190
+site	/home/units/2/items/0/units/0/content/0	u-5bd2a4e7-l1	link		190
+site	/home/units/2/items/1	u-5bd2a4e7-i2	metadata		190
+site	/home/units/2/items/1/units/0	u-5bd2a4e7-p2	paragraph		190
+site	/home/units/2/items/1/units/0/content/0	u-5bd2a4e7-l2	link		190
+site	/home/units/2/items/2	u-5bd2a4e7-i3	metadata	ANC-C067	190
+site	/home/units/2/items/2/units/0	u-5bd2a4e7-p3	paragraph	ANC-C067	190
+site	/home/units/2/items/2/units/0/content/0	u-5bd2a4e7-l3	link		190
+site	/home/units/2/items/3	u-5bd2a4e7-i4	metadata	ANC-C068	190
+site	/home/units/2/items/3/units/0	u-5bd2a4e7-p4	paragraph	ANC-C068	190
+site	/home/units/2/items/3/units/0/content/0	u-5bd2a4e7-l4	link		190
+site	/home/units/3	u-001751	collection		190
+site	/home/units/4	u-001752	collection		190
+site	/home/units/5	u-001753	collection		190

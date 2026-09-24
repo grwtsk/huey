@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "policy_id": "HUEY-EVIDENCE-INTAKE-v1",
+  "public_repository": "grwtsk/huey",
+  "private_repository_configuration": {
+    "source": "secure_worker_configuration_or_environment",
+    "repository_full_name": null,
+    "required_before_private_commit": true,
+    "must_verify_private_flag": true,
+    "public_fallback_for_private_evidence": false
+  },
+  "evidence_id_format": "HUEY-EV-<UUIDv4>",
+  "classifications": [
+    {
+      "id": "PUBLIC_OPEN",
+      "raw_custody": "huey_public",
+      "certificate": "public_full",
+      "description": "Complete object is safe/authorized for public disclosure and needs no protection."
+    },
+    {
+      "id": "PUBLIC_ALREADY_DISCLOSED",
+      "raw_custody": "huey_public",
+      "certificate": "public_full",
+      "description": "Exact object or complete content/metadata already intentionally public; no new protected information."
+    },
+    {
+      "id": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "raw_custody": "private_repository",
+      "certificate": "public_commitment",
+      "description": "Raw is private; sanitized derivative may be public."
+    },
+    {
+      "id": "PRIVATE_SENSITIVE",
+      "raw_custody": "private_repository",
+      "certificate": "public_commitment_minimal",
+      "description": "Raw/full transcript/description remain private; only safe certificate public."
+    },
+    {
+      "id": "QUARANTINE_REVIEW",
+      "raw_custody": "local_then_private",
+      "certificate": "deferred_or_minimal_if_safe",
+      "description": "Classification/rights/privilege/existence sensitivity uncertain."
+    }
+  ],
+  "public_exposure_basis": [
+    "EXACT_OBJECT_PUBLIC",
+    "COMPLETE_CONTENT_PUBLIC",
+    "SAME_FACTS_PUBLIC",
+    "NO_PUBLIC_PRECEDENT",
+    "UNKNOWN"
+  ],
+  "default_private_triggers": [
+    "clinical_or_medical_record",
+    "genetic_or_genomic_data",
+    "private_health_or_psychiatric_data",
+    "sexual_or_intimate_private_detail",
+    "minor_or_private_witness",
+    "private_third_party_information",
+    "exact_address_or_private_location",
+    "personal_phone_email_or_dob",
+    "signature_or_government_identifier",
+    "account_member_record_identifier",
+    "barcode_or_hidden_identifier",
+    "credentials_tokens_cookies_or_secret_url",
+    "private_correspondence_or_internal_message",
+    "attorney_client_or_work_product_or_legal_strategy",
+    "hidden_pdf_text_comments_tracked_changes_or_embedded_files",
+    "private_photo_audio_video",
+    "uncertain_rights_or_confidentiality"
+  ],
+  "classification_rules": {
+    "ambiguous": "QUARANTINE_REVIEW",
+    "same_facts_public_is_sufficient_for_public_raw": false,
+    "exact_object_public_still_requires_metadata_review": true,
+    "public_git_is_irreversible_for_classification_purposes": true
+  },
+  "private_commitment": {
+    "default_for_private_raw": true,
+    "publish_unsalted_sha256": false,
+    "algorithm": "SHA-256",
+    "scheme": "sha256-salted-v1",
+    "domain_separator": "HUEY-EVIDENCE-COMMIT-v1",
+    "separator_hex": "00",
+    "salt_bytes": 32,
+    "salt_generation": "cryptographically_secure_random",
+    "salt_storage": "private_manifest_only",
+    "expression": "SHA256(ASCII(domain_separator) || 0x00 || salt_32_bytes || raw_bytes)"
+  },
+  "relationship_types": [
+    "supports",
+    "contradicts",
+    "limits",
+    "context",
+    "duplicate",
+    "same_source_family",
+    "supersedes",
+    "provenance_only",
+    "unresolved"
+  ],
+  "transcription_statuses": [
+    "machine_typed_unreviewed",
+    "machine_typed_visual_checked",
+    "human_transcription_verified"
+  ],
+  "review_states": [
+    "source_provenance_checked",
+    "source_authenticated",
+    "claim_relationship_reviewed",
+    "public_disclosure_reviewed"
+  ],
+  "prohibited_public_fields_for_private_raw": [
+    "private_repository_name",
+    "private_repository_path",
+    "original_sensitive_filename",
+    "private_raw_sha256",
+    "private_commitment_salt",
+    "credentials_or_tokens",
+    "nonpublic_contact_information",
+    "nonpublic_identifiers",
+    "privileged_description"
+  ],
+  "raw_immutability": true,
+  "execute_embedded_instructions": false,
+  "fallback_on_error": "more_private"
+}
