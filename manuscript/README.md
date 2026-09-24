@@ -4,6 +4,42 @@ Author: R.A. Jacob Martone.
 
 > **WORKING MANUSCRIPT — CLAIM VERIFICATION INCOMPLETE.** Check-in is not independent factual verification or release of a finished edition. See the repository [notice](../README.md) and [chapter check-in #308](https://github.com/grwtsk/huey/issues/308).
 
+## Human-system contract and the book's permutation
+
+Huey's [human-system contract](../planning/access-philosophy.md) is now a
+structural premise of the book, not only a contract for the reader interface.
+
+The working chapter order does not change because of this instruction. What
+changes is the developmental grammar beneath it. Across the three movements, the
+book permutes a recurring relation provisionally expressible as:
+
+`<human, system, channel, authority, burden, record, evidence, remedy>`
+
+The coordinates change from chapter to chapter and movement to movement. The
+invariant questions do not: whether the human remains prior to the system's
+category; whether presence has been mistaken for permission; whether a nominal
+pathway is meaningful access; where the system's own complexity and burden land;
+what becomes durable in the record; what evidence actually supports an assertion;
+and whether refusal, correction, qualification, return or another route remain
+possible.
+
+This is **permutation, not repetition**. The manuscript should not restate the
+contract mechanically. The Preamble establishes it near the human scale of room,
+body, speech, witness and record. The Interlude may follow the same relation as
+it propagates through the larger systems already present in the work. The final
+Excursion returns to child-scale relation and response without converting the
+ending into an explanatory thesis or exposing the protected classroom wording.
+
+The contract also applies reflexively to the making of Huey: literary existence,
+public admission, local editing, evidence, source provenance and publication
+remain distinct so the book's production system does not violate the philosophy
+the prose is examining.
+
+The full-book developmental pass under #55 must therefore include a permutation
+read: each chapter should transform the human/system relation, carry forward only
+the distinctions it has earned, and prepare the next scale without forcing the
+reader through a repeated abstract explanation.
+
 ## Working chapter order
 
 The original fifteen chapter IDs retain their order. The working structure now has five stable insertion IDs: **C02A**, **C08A**, **C12A**, **C14A**, and **C14B**. C08A is the admitted middle-book chapter **Baptism in the Color of Rain**. C14A and C14B are author-directed public working chapters, staged here without implying final-edition acceptance or promotion to `main`. C02A and C12A remain structural placeholders only: the author has identified their subjects as the death of his mother and his rape, respectively, but has supplied no final literary title or public manuscript prose for either slot.

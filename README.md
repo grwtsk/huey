@@ -11,6 +11,25 @@ Every new relevant commit must include: **Disclaimer: Working draft; claim verif
 
 Production work is tracked in [the master issue](https://github.com/grwtsk/huey/issues/1). Read [AGENTS.md](AGENTS.md) before issue-driven work. One response opens one bounded pull request; completed, checked work may merge under the author's recorded instruction. Manuscript acceptance and release remain separate.
 
+## Human-system contract
+
+Huey now treats the Hs-derived philosophy of access as a
+[Human–System Contract](planning/access-philosophy.md), not merely as reader UI
+guidance. The contract begins from the human rather than the system's category and
+governs any system that receives, represents, constrains, assists, records,
+classifies, routes, preserves or publishes human action.
+
+The manuscript [permutes that contract](manuscript/README.md) across its existing
+three-movement architecture: the system, channel, scale, authority, burden,
+record, evidence and remedy can change while the underlying questions of agency,
+access, permission, provenance and correction remain. This is a developmental
+grammar, not a requirement to repeat the same thesis in every chapter.
+
+The same contract applies reflexively to Huey's production architecture.
+Editorial existence, publication admission, local editing, evidence, provenance
+and release remain distinct so that the system making the book does not silently
+acquire authority that the book denies to systems within its argument.
+
 ## Pre-release and evidence review
 
 Work branches → [`pre-release`](https://github.com/grwtsk/huey/tree/pre-release) → journalistic-integrity review → promotion pull request → `main`.
