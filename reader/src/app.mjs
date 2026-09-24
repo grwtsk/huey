@@ -3,6 +3,12 @@
 if (location.pathname === '/huey' || location.pathname.startsWith('/huey/')) {
   await import('./traversal-browser.mjs');
 } else {
-  await import('./main.mjs');
+  const reader = await import('./main.mjs');
   await import('./editor.mjs');
+  if (import.meta.env?.MODE === 'editorial') {
+    try {
+      const response = await fetch('/data/paragraphs.json', { cache: 'no-store', credentials: 'omit' });
+      if (response.ok) reader.enableStableParagraphLinks(await response.json());
+    } catch { /* Existing admitted evidence remains usable without a reconciled bridge. */ }
+  }
 }

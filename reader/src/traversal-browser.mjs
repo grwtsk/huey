@@ -1,5 +1,7 @@
 import { createTraversal, EdgeIntent } from './traversal.mjs';
 import { formatEntityRoute } from './routes.mjs';
+import { resolveParagraphLocation, paragraphLinks, validateParagraphBindings, lookupEvidenceBinding } from './paragraphs.mjs';
+import { paragraphHashRoute } from './text.mjs';
 
 const node = (tag, text, className = '') => {
   const element = document.createElement(tag);
@@ -16,7 +18,7 @@ const skip = node('a', 'Skip to the page', 'skip-link'); skip.href = '#book';
 // The admitted editable DOM and its runtime are never started on this surface.
 // Traversal is read-only until the separate editor/draft migration preserves edits.
 document.body.replaceChildren(skip, main, live);
-let traversal, pages, current, composing = false, pointerDown = false, wheelArmed = false;
+let traversal, pages, current, projection, targets, bindings = null, paragraphLocation = null, composing = false, pointerDown = false, wheelArmed = false;
 const edges = { previous: new EdgeIntent(), next: new EdgeIntent() };
 const cancel = () => { wheelArmed = false; Object.values(edges).forEach(edge => edge.cancel()); };
 const atEdge = direction => direction === 'previous' ? scrollY <= 2
@@ -63,15 +65,32 @@ const outcome = {
   'version-unavailable': 'The requested exact state is unavailable. Current text has not been substituted.',
   unresolved: 'This part of the work remains unresolved.'
 };
-function render({ focus = false, resetScroll = false } = {}) {
+function render({ focus = false, resetScroll = false, fromHistory = false } = {}) {
   cancel();
   current = traversal.locate(address());
+  paragraphLocation = resolveParagraphLocation(address(), projection, history.state?.hueyParagraphPage ?? null);
+  if (paragraphLocation.status === 'located') {
+    const matches = pages.get(paragraphLocation.selectedPageId)?.blocks
+      .filter(block => block.id === paragraphLocation.paragraphId) ?? [];
+    if (matches.length !== 1 || matches[0].kind !== 'Paragraph') {
+      // Metadata alone cannot stand in for the requested materialized occurrence.
+      paragraphLocation = { ...paragraphLocation, status: 'unavailable', selectedPageId: null,
+        sequence: null, index: null, previous: null, next: null };
+    }
+  }
+  if (paragraphLocation.status !== 'not-paragraph') {
+    current = { ...current, pageId: paragraphLocation.selectedPageId,
+      sequence: paragraphLocation.sequence, index: paragraphLocation.index,
+      previous: paragraphLocation.previous, next: paragraphLocation.next };
+  }
   const r = current.resolution;
   if (r.redirectTo) history.replaceState(history.state, '', r.redirectTo);
   const page = current.pageId ? pages.get(current.pageId) : null;
   main.replaceChildren();
   main.dataset.pageId = current.pageId ?? '';
   main.dataset.outcome = r.status;
+  main.dataset.paragraphId = paragraphLocation.paragraphId ?? '';
+  main.dataset.paragraphLocation = paragraphLocation.status;
   main.append(node('p', 'Editorial traversal · read-only working copy', 'traversal-notice'));
   main.append(node('p', 'Working draft — claim verification incomplete.', 'traversal-notice'));
   if (page) main.append(edgeLink('previous', current.previous));
@@ -79,11 +98,29 @@ function render({ focus = false, resetScroll = false } = {}) {
   main.append(heading);
   if (current.sequence === 'unplaced') main.append(node('p', 'Unplaced material · outside the book sequence', 'movement'));
   if (outcome[r.status]) main.append(node('p', outcome[r.status], 'page-outcome'));
-  if (!page && r.entityId) main.append(node('p', 'This entity is known. Page selection and paragraph focus are not connected in this traversal view.'));
+  if (paragraphLocation.status === 'ambiguous') {
+    main.append(node('p', 'This paragraph appears on more than one page, or its previous page choice is no longer available. Choose its reading context.'));
+    const choices = node('div', undefined, 'paragraph-page-choices');
+    for (const id of paragraphLocation.candidates) {
+      const position = traversal.locate(pathFor(id));
+      const choice = node('button', `Show in ${position.sequence === 'book' ? 'book' : 'unplaced'} page ${position.index + 1}`);
+      choice.type = 'button'; choice.dataset.pageChoice = id; choices.append(choice);
+    }
+    main.append(choices);
+  } else if (paragraphLocation.status === 'unprojected') {
+    main.append(node('p', 'This paragraph is known but is not in the current page projection. No replacement or successor is inferred.'));
+  } else if (paragraphLocation.status === 'unavailable' && !outcome[r.status]) {
+    main.append(node('p', 'No current reading page for this paragraph can materialize here.'));
+  } else if (!page && r.entityId && r.kind !== 'Paragraph') {
+    main.append(node('p', 'This entity is known. Select a ReadingPage or Paragraph to read it.'));
+  }
   if (page && r.status === 'resolved') {
     if (!page.blocks.length) main.append(node('p', 'No selected prose is materialized on this page.', 'page-outcome'));
     // Exact page versions pin local membership only, not historical descendant text.
-    if (r.requestedVersion) main.append(node('p', 'Exact page membership; text below is the selected current descendant state.', 'traversal-notice'));
+    if (r.requestedVersion) main.append(node('p', r.kind === 'Paragraph'
+      ? 'Exact paragraph wording; surrounding text is from the selected current page.'
+      : 'Exact page membership; text below is the selected current descendant state.', 'traversal-notice'));
+    let paragraphNumber = 0;
     for (const block of page.blocks) {
       let element;
       if (block.kind === 'Paragraph') element = node('p', block.text, 'prose traversal-paragraph');
@@ -91,7 +128,30 @@ function render({ focus = false, resetScroll = false } = {}) {
       else if (block.format === 'markdown-heading') element = node('h2', block.text.replace(/^ {0,3}#{1,6}[ \t]+/, ''));
       else element = node('pre', block.text, 'traversal-source-note');
       element.dataset.entityId = block.id;
-      main.append(element);
+      if (block.kind === 'Paragraph') {
+        paragraphNumber += 1;
+        element.id = block.id; element.tabIndex = -1;
+        const row = node('div', undefined, 'traversal-paragraph-row');
+        const links = node('nav', undefined, 'paragraph-links');
+        links.setAttribute('aria-label', `Links for paragraph ${paragraphNumber}`);
+        const version = targets.get(block.id)?.version;
+        if (version) {
+          const paths = paragraphLinks({ id: block.id, version });
+          for (const [label, path] of [['Current link', paths.current], ['Exact wording', paths.exact]]) {
+            const a = node('a', label); a.href = path; a.dataset.pageAddress = path; links.append(a);
+          }
+          const binding = bindings && lookupEvidenceBinding(bindings, { entityId: block.id, entityVersion: version });
+          if (binding) {
+            const evidence = node('a', 'Evidence');
+            evidence.href = '/' + paragraphHashRoute('evidence', binding.chapterId, binding.ordinal, binding.chapterBlob);
+            evidence.setAttribute('aria-label', `Evidence for paragraph ${paragraphNumber}, pinned admitted wording`);
+            links.append(evidence);
+          } else if (block.id === paragraphLocation.paragraphId) {
+            links.append(node('span', bindings ? 'No exact admitted evidence collection is mapped.' : 'Evidence-link reconciliation is unavailable.'));
+          }
+        }
+        row.append(element, links); main.append(row);
+      } else main.append(element);
     }
   }
   if (r.slots?.length) main.append(states(r.slots));
@@ -102,10 +162,23 @@ function render({ focus = false, resetScroll = false } = {}) {
   const admitted = node('a', 'Admitted reading copy'); admitted.href = '/'; links.append(admitted);
   main.append(links);
   document.title = `${page?.label ?? 'Route outcome'} · Huey`;
-  live.textContent = `${page?.label ?? 'Route outcome'}. ${r.status === 'resolved' ? 'Page available.' : outcome[r.status] ?? r.status}`;
-  if (focus) heading.focus({ preventScroll: true });
-  // No scroll or push on popstate: native history owns its restoration.
-  if (resetScroll) window.scrollTo({ top: 0, behavior: 'instant' });
+  const paragraphStatus = {
+    ambiguous: 'Choose a reading page for this paragraph.',
+    unprojected: 'Paragraph known, with no current reading page.',
+    unavailable: 'Paragraph or its reading context is unavailable.',
+    located: 'Paragraph focused on its selected reading page.'
+  }[paragraphLocation.status];
+  live.textContent = `${page?.label ?? 'Route outcome'}. ${outcome[r.status] ?? paragraphStatus ?? (page ? 'Page available.' : 'Entity available.')}`;
+  const subject = paragraphLocation.status === 'located' ? document.getElementById(paragraphLocation.paragraphId) : null;
+  if (subject) {
+    subject.classList.add('permalink-target');
+    // Deep links focus the exact occurrence; history retains its native scroll restoration.
+    subject.focus({ preventScroll: true });
+    if (!fromHistory) subject.scrollIntoView({ block: 'center', behavior: 'instant' });
+  } else {
+    if (focus) heading.focus({ preventScroll: true });
+    if (resetScroll) window.scrollTo({ top: 0, behavior: 'instant' });
+  }
 }
 function navigate(path) {
   if (traversal.locate(path).resolution.status === 'invalid-route') return;
@@ -114,12 +187,17 @@ function navigate(path) {
   render({ focus: true, resetScroll: true });
 }
 main.addEventListener('click', event => {
+  const choice = event.target.closest('button[data-page-choice]');
+  if (choice && paragraphLocation?.candidates.includes(choice.dataset.pageChoice)) {
+    history.replaceState({ ...history.state, hueyParagraphPage: choice.dataset.pageChoice }, '', address());
+    render({ focus: true }); return;
+  }
   const a = event.target.closest('a[data-page-address]');
   if (!a || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault(); navigate(a.dataset.pageAddress);
 });
 skip.addEventListener('click', event => { event.preventDefault(); main.focus(); });
-window.addEventListener('popstate', () => traversal && render({ focus: true }));
+window.addEventListener('popstate', () => traversal && render({ focus: true, fromHistory: true }));
 window.addEventListener('keydown', event => {
   if (event.key === 'Escape') cancel();
   if (event.key === 'Alt' && !event.repeat && !event.ctrlKey && !event.metaKey && !event.shiftKey && current && !blocked(event.target)) {
@@ -159,7 +237,14 @@ try {
   if (!response.ok || !response.headers.get('Content-Type')?.includes('application/json')) throw new Error('Unavailable');
   const payload = await response.json();
   if (payload.schema !== 'huey.editorial-traversal.v1') throw new Error('Unsupported');
+  projection = payload;
   traversal = createTraversal(payload);
+  targets = new Map(payload.routes.targets.map(target => [target.id, target]));
+  try {
+    const response = await fetch('/data/paragraphs.json', { cache: 'no-store', credentials: 'omit' });
+    if (!response.ok) throw new Error('Unavailable');
+    bindings = validateParagraphBindings(await response.json());
+  } catch { bindings = null; }
   pages = new Map(payload.pages.map(page => [page.id, page]));
   const ids = [...traversal.readingOrder, ...traversal.unplacedOrder];
   if (pages.size !== ids.length || !ids.every(id => pages.has(id))) throw new Error('Incomplete');

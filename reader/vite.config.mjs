@@ -12,16 +12,16 @@ export default ({ mode }) => ({
   plugins: mode === 'editorial' ? [{
     name: 'huey-editorial-traversal',
     configureServer(server) {
-      server.middlewares.use('/data/traversal.json', (req, res) => {
+      for (const filename of ['traversal.json', 'paragraphs.json']) server.middlewares.use(`/data/${filename}`, (req, res) => {
         if (req.method !== 'GET' && req.method !== 'HEAD') { res.statusCode = 405; res.end(); return; }
         res.setHeader('Content-Type', 'application/json');
         res.setHeader('Cache-Control', 'no-store');
-        res.end(req.method === 'HEAD' ? undefined : readFileSync(new URL('./generated-editorial/data/traversal.json', import.meta.url)));
+        res.end(req.method === 'HEAD' ? undefined : readFileSync(new URL(`./generated-editorial/data/${filename}`, import.meta.url)));
       });
     },
     generateBundle() {
-      this.emitFile({ type: 'asset', fileName: 'data/traversal.json',
-        source: readFileSync(new URL('./generated-editorial/data/traversal.json', import.meta.url)) });
+      for (const filename of ['traversal.json', 'paragraphs.json']) this.emitFile({ type: 'asset', fileName: `data/${filename}`,
+        source: readFileSync(new URL(`./generated-editorial/data/${filename}`, import.meta.url)) });
     }
   }] : [],
   server: {

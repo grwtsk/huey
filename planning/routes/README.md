@@ -151,14 +151,16 @@ scrolling or focus changes. #351/#364 must implement this history contract:
   to rewrite history to the first admitted chapter.
 
 The #351 adapter implements page-level browser history in the opt-in editorial
-view. Paragraph focus and legacy evidence reconciliation remain #352/#364. Pure
+view. The [#352 paragraph adapter](paragraphs.md) adds current/exact paragraph
+focus, explicit page-context choice and exact legacy evidence-link reconciliation.
+The complete editable migration remains #364. Pure
 resolver tests establish only the absence of side effects; separate real HTTP
 Chromium checks exercise the traversal adapter with their stated native limits.
 
 Existing `#chapter/{legacy-id}`, `#read/{legacy-id}/{ordinal}/{Git-blob}` and
 `#evidence/{legacy-id}/{ordinal}/{Git-blob}` routes and the `#book` anchor retain
 their existing reader behavior. Their 40-hex Git blob is **not** EntityVersion;
-their ordinal is **not** stable paragraph identity. #352/#364 must reconcile exact
+their ordinal is **not** stable paragraph identity. The #352 adapter reconciles exact
 legacy chapter/blob/ordinal/raw-paragraph-hash references explicitly. No hash route
 is imported as an alias here, and `E01` is not silently equated with reader `EX`.
 
