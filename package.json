@@ -25,6 +25,9 @@
     "test:inventory": "npm run inventory:check && node --test tests/editorial-inventory.test.mjs",
     "pages:check": "node scripts/editorial_pages.mjs check",
     "pages:emit": "node scripts/editorial_pages.mjs emit",
-    "test:pages": "npm run pages:check && node --test tests/editorial-markdown.test.mjs tests/editorial-pages.test.mjs tests/editorial-front-matter.test.mjs"
+    "test:pages": "npm run pages:check && node --test tests/editorial-markdown.test.mjs tests/editorial-pages.test.mjs tests/editorial-front-matter.test.mjs",
+    "routes:check": "node scripts/editorial_routes.mjs check",
+    "routes:emit": "node scripts/editorial_routes.mjs emit",
+    "test:routes": "npm run routes:check && node --test tests/editorial-routes.test.mjs"
   }
 }

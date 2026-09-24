@@ -79,6 +79,12 @@ jobs:
         run: npm run test:inventory
       - name: Editorial ReadingPage assembly tests
         run: npm run test:pages
+      - name: Editorial route integration tests
+        run: npm run test:routes
+      - name: Route alias continuity against the previous projection
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: npm run routes:check -- "$BASE_SHA"
       - name: Verify complete public-object coverage and deterministic inventory
         run: |
           node --input-type=module <<'JS'
