@@ -78,7 +78,8 @@ explicit canonical front/back source mapping when authorized files exist. Synthe
 present and partial MatterUnit graphs test this consumer interface; they do not
 claim that the current source loader can already ingest future front Markdown.
 
-#350 consumes entry, front-page and body-transition IDs for routes; #351/#352
+The [#350 route contract](../routes/README.md) consumes entry, front-page and
+body-transition IDs; #351/#352
 consume the complete sequence and stable entities later. #366 can project contents
 from these references without printed page numbers. #364 will connect the editor
 while preserving the independent publication projection. The browser UI and its
