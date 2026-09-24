@@ -180,6 +180,24 @@
       "include": false
     },
     {
+      "id": "C14A",
+      "movement": "interlude",
+      "title": "On the Eve of the Last su[p, p′, p″, p‴, …]er",
+      "path": "manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md",
+      "status": "staged_public",
+      "include": true,
+      "work_issue": 378
+    },
+    {
+      "id": "C14B",
+      "movement": "interlude",
+      "title": "Orange After the End",
+      "path": "manuscript/02-interlude/14b-orange-after-the-end.md",
+      "status": "staged_public",
+      "include": true,
+      "work_issue": 378
+    },
+    {
       "id": "C15",
       "movement": "interlude",
       "title": "A Different Last Page",
