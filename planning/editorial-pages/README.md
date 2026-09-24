@@ -28,6 +28,10 @@ with schema `huey.editorial-pages.v1` and parser profile
 ranges, page memberships and order, never a second copy of the manuscript.
 The derived assembly uses `huey.editorial-assembly.v1` and the existing
 [`huey-literary-model/1`](../literary-entity-model.md) identity/version contract.
+Its additive `frontMatter` field supplies the
+[#349 front-matter contract](front-matter.md): first-page identity, the complete
+front prefix, projected MatterUnits and the transition to Body. It preserves
+pending slots independently of publication admission.
 
 ## Persisted identity, mapping and boundaries
 
@@ -162,9 +166,9 @@ hyphenation and final physical pagination remain later work.
 ## Remaining work and limits of checks
 
 #370 remains open for remaining whole-book source assembly; #353 remains open
-for deeper ingestion and exact mapping/reconciliation work. #349 can consume the
-front-first sequence contract without making pending content decisions. #350
-can subsequently bind routes, and #364 can integrate the editor while preserving
+for deeper ingestion and exact mapping/reconciliation work. The #349 front-matter
+integration exposes the front-first entry contract without making pending content
+decisions. #350 can bind routes, and #364 can integrate the editor while preserving
 its independent publication projection. These are dependency interfaces, not
 claims that their implementations or acceptance criteria are complete.
 
