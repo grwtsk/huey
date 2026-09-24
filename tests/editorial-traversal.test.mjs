@@ -50,8 +50,8 @@ test('every known literary slot is visible, including all pending front matter a
 
 test('available inscription keeps exact stable IDs, text, and member order', () => {
   const materialized = blocks(payload);
-  assert.equal(materialized.length, 1911);
-  assert.equal(materialized.filter(block => block.kind === 'Paragraph').length, 1859);
+  assert.equal(materialized.length, 1915);
+  assert.equal(materialized.filter(block => block.kind === 'Paragraph').length, 1860);
   assert.equal(new Set(materialized.map(block => block.id)).size, materialized.length);
   for (const page of payload.pages) {
     if (target(payload, page.id).access !== 'available') continue;
