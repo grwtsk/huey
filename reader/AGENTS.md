@@ -30,24 +30,26 @@ without a later author instruction. The dormant speech implementation can remain
 source-tested, but narration UI/runtime integration is deferred from this layout
 pass rather than presented as working chrome.
 
-## Access philosophy — Hs import
+## Human-system contract — reader specialization
 
-Read [the Huey access contract](../planning/access-philosophy.md) before changing
-reader/editor interaction or presentation. It carries the Hs principle that the
-interface belongs to the person using it: presence is not permission,
-accessibility is a property of the reachable material rather than a warning after
-failure, equivalent input must carry equivalent agency, density is the combined
-burden of content and design, and advisory resistance must have a concrete reason
-and yield when a permitted human choice remains.
+Read [the Human–System Contract](../planning/access-philosophy.md) before changing
+reader/editor interaction or presentation. The contract governs the whole book;
+the reader is one concrete system in which its invariants must hold.
+
+The reader specialization retains the Hs principles that presence is not
+permission, accessibility is a property of the reachable material rather than a
+warning after failure, equivalent input carries equivalent agency, density is the
+combined burden of content and design, and advisory resistance must have a
+concrete reason and yield when a permitted human choice remains.
 
 Do not copy Hs's literal sphere, resting mark, WebGL interaction, `/apple`
 routing example, or superseded separate intensity control into Huey. Huey's
-current minimal reader remains the presentation surface. Apply the imported
-principles to that surface: no dexterity tests, no hidden second effects, no
-permission inferred from hover/dwell/cache/silence, no color-only meaning, no
-density reduction that deletes qualifications, no fallback that loses state or
-agency, and no conflation of local edit, navigation, evidence, source amendment
-or publication. #357's Edna palette is one material instance of this contract.
+current minimal reader remains the presentation surface. Apply the contract to
+that surface: no dexterity tests, no hidden second effects, no permission inferred
+from hover/dwell/cache/silence, no color-only meaning, no density reduction that
+deletes qualifications, no fallback that loses state or agency, and no conflation
+of local edit, navigation, evidence, source amendment or publication. #357's Edna
+palette is one material instance of the broader human-system contract.
 
 ## Source and access boundary
 
