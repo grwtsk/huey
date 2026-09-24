@@ -48,6 +48,11 @@ model checks and reports them as passed. `npm run model:check` runs just the
 read-only fixture checker. Passing the reader suite alone does not validate the
 literary model.
 
+[Hosted repository checks](.github/README.md) run the reader, literary model,
+editorial inventory and Python checks on PRs targeting `pre-release` and staging
+pushes. Actual GitHub job statuses complement local receipts; they do not install
+required-review protection or supply human editorial clearance.
+
 ## Middle-book chapter
 
 [Baptism in the Color of Rain](manuscript/02-interlude/baptism-in-the-color-of-rain.md) is checked in at the author's explicit direction, with only the first `netch` changed to `netch asheba`. The [working contents](manuscript/README.md) place this added chapter in the Interlude, between *The Ring of Umber* and *The Possibility of a Feather*. [Check-in #308](https://github.com/grwtsk/huey/issues/308) and the [placement record](planning/writing/baptism-in-the-color-of-rain.json) record this chapter-specific public-copy scope. Other private manuscript and raw clinical records remain outside this grant; the broader development and release work remain separate.
@@ -85,7 +90,7 @@ python3 scripts/lexical_geometry.py check
 python3 -m unittest discover -s tests -p 'test_lexical_geometry.py' -v
 ```
 
-These are local integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. No source service or hosted workflow is activated.
+These are integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. The hosted workflow also runs them; no source service is activated.
 
 ## Author-supplied capstone
 

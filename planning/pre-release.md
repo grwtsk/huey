@@ -151,7 +151,10 @@ Until that task is complete, follow this review policy manually; do not claim
 GitHub will reject every uncleared merge. Software checks establish only what they
 test. A hash identifies bytes; a green check or owner-account comment does not
 authenticate a human editorial decision. No auto-merge or truth-scoring system is
-activated. Local-first checks remain primary; no hosted Actions spending is added.
+activated. Local-first checks remain primary. The original policy setup added no
+hosted Actions spending. The author's later explicit request adds
+[hosted repository checks](../.github/README.md) for staging work, without changing
+billing settings or making software results an editorial promotion decision.
 
 New counterevidence after promotion reopens the affected claim/review, with a
 visible correction and scoped follow-up PR. Do not hide a substantive correction
