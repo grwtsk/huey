@@ -28,6 +28,14 @@ read-only checks are the foundation for #347's later implementation. Markdown,
 the current reader and source admission remain unchanged; this model does not
 establish manuscript acceptance, factual truth or kernel authority.
 
+`npm test` runs the reader suite across the declared Node engine range. Model
+changes additionally require `npm run test:model`, the separate fixture and test
+gate for a runtime exposing Unicode 17.0 (checked locally with Node 22.23.2).
+That gate fails explicitly on a different Unicode runtime; it never skips the
+model checks and reports them as passed. `npm run model:check` runs just the
+read-only fixture checker. Passing the reader suite alone does not validate the
+literary model.
+
 ## Middle-book chapter
 
 [Baptism in the Color of Rain](manuscript/02-interlude/baptism-in-the-color-of-rain.md) is checked in at the author's explicit direction, with only the first `netch` changed to `netch asheba`. The [working contents](manuscript/README.md) place this added chapter in the Interlude, between *The Ring of Umber* and *The Possibility of a Feather*. [Check-in #308](https://github.com/grwtsk/huey/issues/308) and the [placement record](planning/writing/baptism-in-the-color-of-rain.json) record this chapter-specific public-copy scope. Other private manuscript and raw clinical records remain outside this grant; the broader development and release work remain separate.

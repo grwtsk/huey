@@ -21,13 +21,65 @@ test('profile includes required literary kinds, annotations and reserved interfa
 test('committed synthetic examples and hostile recipes validate deterministically', () => {
   const result = validateBundle(examples);
   assert.equal(result.snapshots, 6);
-  assert.equal(result.exactStates, 26);
+  assert.equal(result.exactStates, 27);
   assert.equal(validateHostile(examples, hostile), hostile.cases.length);
   assert.deepEqual(validateBundle(examples), result);
 });
 
 for (const recipe of hostile.cases) test(`rejects hostile case: ${recipe.name}`, () => {
   assert.throws(() => validateBundle(hostileBundle(examples, recipe)), { code: recipe.error });
+});
+
+test('represented Body ownership goes through a Movement without redefining paragraphs', () => {
+  assert.deepEqual(profile.entityKinds.Body.children, ['Movement']);
+  const body = baseline.entities.find(item => item.kind === 'Body');
+  assert.equal(body.state.children.length, 1, 'the fixture is a partial synthetic work');
+  const movement = baseline.entities.find(item => item.id === body.state.children[0]);
+  assert.equal(movement.kind, 'Movement');
+  assert.ok(movement.state.children.includes(parent('baseline').id));
+  for (const name of ['reordered', 'moved', 'revised', 'route-changed', 'page-changed']) {
+    assert.deepEqual(entity(name, movement.id), movement);
+  }
+});
+
+test('partial snapshots allow unplaced roots and a single detached matter container of each kind', () => {
+  const kinds = ['Work', 'FrontMatter', 'Body', 'BackMatter', 'Movement', 'Chapter', 'Section', 'Block', 'Paragraph'];
+  const ids = [
+    'he_fd36cdf1-2363-49c6-8866-39e36fcc2302',
+    'he_45535453-c913-49d5-97f9-878b0bf25d5d',
+    'he_eb93e3be-4a5d-4267-a22f-a343a40158a8',
+    'he_31a67972-2db6-439d-8f47-31680fc65c50',
+    'he_c7f71cf4-1772-4401-a46e-0e8a6f793853',
+    'he_b26625be-6d8d-4d7e-9a1e-267d9e3d42b4',
+    'he_6542ae90-0719-407b-a2c4-10d2ba64fd59',
+    'he_6d934764-2624-40e7-9546-c8b4c42cbc88',
+    'he_0e983c95-116a-401c-b3c7-4142471a13e2',
+  ];
+  const entities = kinds.map((kind, index) => seal({
+    id: ids[index],
+    kind,
+    state: kind === 'Paragraph' ? { text: 'Synthetic unplaced paragraph', spans: [] }
+      : kind === 'Block' ? { format: 'plain', text: 'Synthetic unplaced block' } : { children: [] },
+  }));
+  const partial = { model: profile.model, snapshots: [{ name: 'partial', entities, routes: [], annotations: [], lineage: [] }] };
+  assert.equal(validateBundle(partial).exactStates, kinds.length);
+  for (const kind of ['Work', 'FrontMatter', 'Body', 'BackMatter']) assert.equal(profile.entityKinds[kind].maxPerSnapshot, 1);
+  assert.equal(profile.entityKinds.Movement.maxPerSnapshot, 3);
+  partial.snapshots[0].entities = entities.filter(item => !['Work', 'FrontMatter', 'Body', 'BackMatter'].includes(item.kind));
+  assert.equal(validateBundle(partial).exactStates, 5, 'missing containers are not invented or treated as omitted');
+  const movementIds = [
+    'he_b8f6f0d5-239a-4729-9ab0-7648db8b3598',
+    'he_4cba1297-eefd-4b88-a508-49a123f72779',
+    'he_63dd94ac-dc0d-488f-90c9-fb86b6c9c40c',
+  ];
+  for (let count = 0; count <= 3; count++) {
+    const movements = Array.from({ length: count }, (_, index) => seal({
+      id: movementIds[index], kind: 'Movement', state: { children: [] },
+    }));
+    const body = seal({ ...entities.find(item => item.kind === 'Body'), state: { children: movements.map(item => item.id) } });
+    partial.snapshots[0].entities = [body, ...movements];
+    assert.equal(validateBundle(partial).exactStates, count + 1, `${count} represented movements is a valid partial structure`);
+  }
 });
 
 test('equal lexical and grapheme values retain separate occurrence identities', () => {

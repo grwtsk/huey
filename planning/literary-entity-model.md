@@ -179,6 +179,18 @@ references, prohibited parent/child kinds and ownership cycles are invalid.
 Unplaced entities may remain roots; an incomplete fixture does not pretend to be
 a complete book. No owner or order is inferred from file enumeration or names.
 
+A snapshot describes one Huey work, with at most one Work, FrontMatter, Body and
+BackMatter record each. This cardinality includes detached roots: a second Body
+does not become valid by leaving it unowned. A Body owns only Movement entities;
+chapters, sections, blocks and paragraphs cannot bypass that division by attaching
+directly to Body. Incomplete or unplaced literary entities may remain roots until
+their actual placement is represented. This is not a provisional ownership edge.
+At most three Movement records may be represented, including detached ones.
+Incomplete snapshots may contain fewer; this does not authorize a reduced or
+different complete-book structure. The existing three-movement architecture
+remains controlling; the fixture's partial representation does not establish a
+complete or accepted book or authenticate movement names and placements.
+
 The machine-readable profile supplies the permitted containment pairs for this
 bounded fixture. It is not a demand that every work have every optional level or
 that every paragraph already have sentence/lexical/grapheme decomposition.
@@ -219,8 +231,10 @@ profiles are described in [UAX #29, revision 47](https://www.unicode.org/reports
 The checker uses `Intl.Segmenter` with grapheme granularity, requires the fixture
 profile's Unicode 17.0 runtime, and reports Node, ICU and Unicode versions. A
 different Unicode runtime produces an explicit unsupported-runtime result; this
-does not change the current reader's engine requirements. Its checks do not implement a
-new Unicode segmenter or certify all scripts, IMEs, browser selection behaviors or
+requirement applies to the dedicated `npm run test:model` and `npm run model:check`
+commands. The root `npm test` runs the reader suite and retains its existing Node
+engine range. It does not run or certify the model gate. These checks do not
+implement a new Unicode segmenter or certify all scripts, IMEs, browser selection behaviors or
 accessibility. Pinning and testing production segmentation across runtimes belongs
 to #353/#365; a changed segmentation policy cannot silently reissue occurrence IDs.
 
@@ -311,14 +325,23 @@ kernel admission, manuscript admission or evidence coverage.
 The fixture CLI reads trusted repository JSON using `JSON.parse`; duplicate JSON
 object keys are unsupported and must not be supplied. Duplicate entity records
 and duplicate ownership are separately rejected. This is not a hostile network
-ingestion endpoint or a generic JSON Schema validator. Run from the repository root
-with a Node runtime exposing Unicode 17.0:
+ingestion endpoint or a generic JSON Schema validator. Model changes require both
+the ordinary reader suite and the dedicated model gate. From the repository root:
 
 ```sh
-npm run model:check
-node --test tests/literary-model.test.mjs
+# Reader suite: the declared ^22.12.0 || >=24.0.0 Node range.
 npm test
+# Model fixtures and invariant tests: a runtime exposing Unicode 17.0.
+npm run test:model
+# Fixture-only check, also requiring Unicode 17.0.
+npm run model:check
 ```
+
+The dedicated gate keeps the exact segmentation requirement explicit without
+excluding otherwise supported reader runtimes. It first checks the complete
+fixture profile, then runs all model tests. On a mismatched Unicode runtime it
+fails with `SEGMENTATION_RUNTIME`; no model test is silently skipped or counted
+as passed. A passing `npm test` alone is not model conformance.
 
 Run the read-only fixture checker, its deterministic Node tests, the full existing
 Python suite, existing reader tests, catalog/book checks, content generation,

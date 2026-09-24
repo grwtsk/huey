@@ -77,7 +77,7 @@ export function validateBundle(bundle) {
     shape(snapshot, ['name', 'entities', 'routes', 'annotations', 'lineage'], 'snapshot');
     check(typeof snapshot.name === 'string' && snapshot.name.length > 0 && !names.has(snapshot.name), 'SNAPSHOT_NAME', 'duplicate or invalid snapshot name');
     names.add(snapshot.name);
-    const entities = new Map(), owners = new Map(), edges = new Map();
+    const entities = new Map(), owners = new Map(), edges = new Map(), kindCounts = new Map();
     for (const entity of list(snapshot.entities, 'entities')) {
       shape(entity, ['id', 'kind', 'state', 'version'], 'entity');
       check(object(entity.state), 'SHAPE', 'entity state object required');
@@ -94,6 +94,13 @@ export function validateBundle(bundle) {
       check(!records.has(key) || records.get(key) === state, 'VERSION_REDEFINED', key);
       records.set(key, state);
       entities.set(entity.id, entity);
+      kindCounts.set(entity.kind, (kindCounts.get(entity.kind) ?? 0) + 1);
+    }
+    // A snapshot represents at most one Huey work. Unplaced roots count too;
+    // detaching a second matter container cannot bypass the cardinality rule.
+    for (const [kind, count] of kindCounts) {
+      const maximum = profile.entityKinds[kind].maxPerSnapshot;
+      check(maximum === undefined || count <= maximum, 'ENTITY_CARDINALITY', `${kind}: at most ${maximum} per snapshot`);
     }
     const resolve = id => {
       check(typeof id === 'string' && entities.has(id), 'DANGLING_REFERENCE', String(id));
