@@ -22,9 +22,9 @@ Other open chapter and movement PRs #83–#95, #97, #117/#118/#120/#121 contain 
 
 ## Exact references
 
-[registry.json](registry.json) contains 34 metadata-only source records with exact commit/path/blob, role, authority URL and known chapter targets. It includes current manuscript and C15 files, PR #319 candidates, SOC literary-source files, indices, and three later public analytical inputs: `economics-r11.md`, `institutional-economics-r12.md`, and `reciprocal-notice-r13.md`. Those three are models/matrices, not completed chapters. The [pinned care-law directory](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law) retains access to their supporting apparatus. Public integration-r03–r10 files are receipts/indices; their actual narrative/reference prose remains private. A source link is not automatic adoption or authority for additional material. Only public object hashes were recorded.
+[registry.json](registry.json) contains 34 metadata-only source records with exact commit/path/blob, role, scope-reference URL and known chapter targets. It includes current manuscript and C15 files, PR #319 candidates, SOC literary-source files, indices, and three later public analytical inputs: `economics-r11.md`, `institutional-economics-r12.md`, and `reciprocal-notice-r13.md`. Those three are models/matrices, not completed chapters. The [pinned care-law directory](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law) retains access to their supporting apparatus. Public integration-r03–r10 files are receipts/indices; their actual narrative/reference prose remains private. A source link is not automatic adoption or authority for additional material. Only public object hashes were recorded.
 
-Important public authority receipts:
+Public scope references (not authenticated authority capabilities):
 - Current C08A: https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575 and #308.
 - Unplaced chapter: https://github.com/grwtsk/huey/pull/346.
 - C15 braid: https://github.com/grwtsk/huey/issues/332#issuecomment-5790403521.

@@ -8,18 +8,18 @@ import { buildInventory, contentState, gitBlob, loadInventory, serializeInventor
 
 const id = n => `he_00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
 const revision = 'a'.repeat(40);
-const authority = ['https://github.com/grwtsk/huey/issues/2#issuecomment-123'];
+const scopeRefs = ['https://github.com/grwtsk/huey/issues/2#issuecomment-123'];
 const chapter = '# Synthetic chapter\n\nEqual words: the the.\n';
 const unplaced = '# Synthetic unplaced\n\nA working fragment.\n';
 const makeSlot = (key, group, n, changes = {}) => ({
   key, entityId: id(n), kind: ['front', 'back'].includes(group) ? 'MatterUnit' : 'Chapter',
   group, label: group === 'book' ? null : `Synthetic ${key}`,
   optional: ['front', 'back'].includes(group) ? true : null,
-  presence: 'present', publication: 'working', unmaterializedAccess: null,
+  presence: 'present', publicationAnnotation: { label: 'working', authoritative: false }, unmaterializedAccess: null,
   sources: [], issues: [347], omissionRef: null, ...changes,
 });
 const makeSource = (key, path, text, role, targets, extent = 'full') => ({
-  key, role, extent, revision, path, blob: gitBlob(text), authority, targets,
+  key, role, extent, revision, path, blob: gitBlob(text), scopeRefs, targets,
 });
 
 function fixture() {
@@ -29,7 +29,7 @@ function fixture() {
       containers: { work: id(1), front: id(2), body: id(3), back: id(4), movements: { preamble: id(5), interlude: id(6), excursion: id(7) } },
       slots: [
         makeSlot('front-title', 'front', 8, { presence: 'pending', unmaterializedAccess: 'unavailable-on-this-client' }),
-        makeSlot('C01', 'book', 9, { sources: ['canonical'], publication: 'admitted' }),
+        makeSlot('C01', 'book', 9, { sources: ['canonical'], publicationAnnotation: { label: 'staged', authoritative: false } }),
         makeSlot('C02', 'book', 10, { sources: ['candidate'], unmaterializedAccess: 'restricted' }),
         makeSlot('C03', 'book', 11, { unmaterializedAccess: 'restricted' }),
         makeSlot('back-note', 'back', 12, { presence: 'pending' }),
@@ -71,13 +71,39 @@ test('publication admission does not determine existence, IDs, ownership or orde
   const input = fixture(), before = buildInventory(input);
   input.book.items.forEach(item => item.include = !item.include);
   input.reader.chapters = [];
-  input.registry.slots.forEach(row => row.publication = 'held');
+  input.registry.slots.forEach(row => row.publicationAnnotation.label = 'held');
   const after = buildInventory(input);
   assert.deepEqual(after.slots.map(row => row.entityId), before.slots.map(row => row.entityId));
   assert.deepEqual(after.ownership, before.ownership);
   assert.equal(slot(after, 'C02').editorialMaterialization, 'partial');
   assert.equal(slot(after, 'C02').access, 'available');
   assert.equal(slot(after, 'C02').unmaterializedAccess, 'restricted');
+});
+
+test('publication annotations cannot supply or overwrite reader admission', () => {
+  const input = fixture(), before = buildInventory(input);
+  input.registry.slots.find(row => row.key === 'C01').publicationAnnotation.label = 'held';
+  const held = buildInventory(input);
+  assert.deepEqual(slot(held, 'C01').publicationAnnotation, { label: 'held', authoritative: false });
+  assert.equal(slot(held, 'C01').observedReaderAdmission, 'admitted');
+  input.reader.chapters[0].status = 'unavailable';
+  const after = buildInventory(input);
+  assert.equal(slot(after, 'C01').observedReaderAdmission, 'unavailable');
+  assert.deepEqual(slot(after, 'C01').publicationAnnotation, slot(held, 'C01').publicationAnnotation);
+  assert.deepEqual(after.ownership, before.ownership);
+  assert.deepEqual(after.slots.map(row => [row.entityId, row.presence, row.editorialMaterialization, row.access]),
+    before.slots.map(row => [row.entityId, row.presence, row.editorialMaterialization, row.access]));
+});
+
+test('scope links remain references and output carries no authority or bare publication fields', () => {
+  const input = fixture(), before = buildInventory(input);
+  input.registry.sources[0].scopeRefs = ['https://github.com/grwtsk/huey/pull/123'];
+  const after = buildInventory(input);
+  assert.deepEqual(after.sources[0].scopeRefs, input.registry.sources[0].scopeRefs);
+  assert.equal(after.sources[0].access, before.sources[0].access);
+  assert.deepEqual(after.slots, before.slots);
+  assert.ok(after.sources.every(source => !Object.hasOwn(source, 'authority')));
+  assert.ok(after.slots.every(row => !Object.hasOwn(row, 'publication') && row.publicationAnnotation.authoritative === false));
 });
 
 test('a missing file retains its stable identity and is never inferred omitted', () => {
@@ -94,7 +120,7 @@ test('a missing file retains its stable identity and is never inferred omitted',
 test('pending, absent and explicitly omitted optional matter remain distinct', () => {
   const input = fixture();
   input.registry.slots[0].presence = 'omitted';
-  input.registry.slots[0].omissionRef = authority[0];
+  input.registry.slots[0].omissionRef = scopeRefs[0];
   input.registry.slots[4].presence = 'absent';
   const output = buildInventory(input);
   assert.equal(slot(output, 'front-title').presence, 'omitted');
@@ -164,7 +190,7 @@ test('deterministic output and a separate metadata digest', () => {
   const input = fixture();
   assert.equal(serializeInventory(buildInventory(input)), serializeInventory(buildInventory(structuredClone(input))));
   assert.match(buildInventory(input).inventoryDigest, /^sha256:[0-9a-f]{64}$/);
-  const before = buildInventory(input); input.registry.slots[0].publication = 'held';
+  const before = buildInventory(input); input.registry.slots[0].publicationAnnotation.label = 'held';
   assert.notEqual(buildInventory(input).inventoryDigest, before.inventoryDigest);
   assert.equal(buildInventory(input).slots[0].entityId, before.slots[0].entityId);
 });
@@ -184,9 +210,20 @@ const hostile = [
   ['route identity', x => x.registry.slots[1].entityId = '/huey/1', /EntityID/],
   ['path identity', x => x.registry.slots[1].entityId = 'manuscript/01.md', /EntityID/],
   ['missing presence', x => delete x.registry.slots[1].presence, /missing or unknown/],
-  ['collapsed state enum', x => x.registry.slots[1].publication = 'restricted', /publication/],
+  ['collapsed state enum', x => x.registry.slots[1].publicationAnnotation.label = 'restricted', /publication/],
+  ['legacy publication replaces annotation', x => { x.registry.slots[1].publication = 'cleared'; delete x.registry.slots[1].publicationAnnotation; }, /missing or unknown/],
+  ['legacy publication alongside annotation', x => x.registry.slots[1].publication = 'admitted', /missing or unknown/],
+  ['bare publication annotation', x => x.registry.slots[1].publicationAnnotation = 'working', /must be an object/],
+  ['missing non-authoritative marker', x => delete x.registry.slots[1].publicationAnnotation.authoritative, /missing or unknown/],
+  ['asserted publication authority', x => x.registry.slots[1].publicationAnnotation.authoritative = true, /non-authoritative publication/],
+  ['string false publication authority', x => x.registry.slots[1].publicationAnnotation.authoritative = 'false', /non-authoritative publication/],
+  ['admission as editorial annotation', x => x.registry.slots[1].publicationAnnotation.label = 'admitted', /non-authoritative publication/],
+  ['clearance as editorial annotation', x => x.registry.slots[1].publicationAnnotation.label = 'cleared', /non-authoritative publication/],
+  ['fabricated annotation decision binding', x => x.registry.slots[1].publicationAnnotation.decision = scopeRefs[0], /missing or unknown/],
+  ['clearance disguised as reader admission', x => x.reader.chapters[0].status = 'cleared', /invalid reader admission observation/],
+  ['ambiguous reader admission', x => x.reader.chapters.push({ id: 'C01', status: 'unavailable' }), /ambiguous reader admission observation/],
   ['omission without decision', x => x.registry.slots[0].presence = 'omitted', /omission/],
-  ['required matter omitted', x => { x.registry.slots[0].optional = false; x.registry.slots[0].presence = 'omitted'; x.registry.slots[0].omissionRef = authority[0]; }, /omission/],
+  ['required matter omitted', x => { x.registry.slots[0].optional = false; x.registry.slots[0].presence = 'omitted'; x.registry.slots[0].omissionRef = scopeRefs[0]; }, /omission/],
   ['unknown tracked manuscript', x => x.trackedPaths.push('manuscript/unknown.md'), /unclassified/],
   ['duplicate manuscript ownership', x => x.book.items[1].path = x.book.items[0].path, /duplicate book/],
   ['fourth movement', x => x.registry.containers.movements.unplaced = id(19), /missing or unknown/],
@@ -202,7 +239,11 @@ const hostile = [
   ['known restricted source prefix', x => x.registry.sources[0].path = 'sources/restricted/secret.md', /unsafe/],
   ['raw source prefix', x => x.registry.sources[0].path = 'sources/raw/secret.md', /unsafe/],
   ['pending matter linked to content', x => { x.registry.slots[0].sources = ['candidate']; x.registry.sources[1].targets.push('front-title'); }, /nonpresent matter/],
-  ['unscoped authority', x => x.registry.sources[0].authority = [], /authority/],
+  ['missing scope references', x => x.registry.sources[0].scopeRefs = [], /scope reference/],
+  ['legacy authority replaces scope references', x => { x.registry.sources[0].authority = scopeRefs; delete x.registry.sources[0].scopeRefs; }, /missing or unknown/],
+  ['legacy authority alongside scope references', x => x.registry.sources[0].authority = scopeRefs, /missing or unknown/],
+  ['scalar scope reference', x => x.registry.sources[0].scopeRefs = scopeRefs[0], /must be an array/],
+  ['capability-shaped scope reference', x => x.registry.sources[0].scopeRefs = [{ kind: 'Grant', url: scopeRefs[0] }], /scope reference/],
   ['unpinned revision', x => x.registry.sources[0].revision = 'main', /unpinned/],
   ['array-valued basis revision', x => x.registry.basisRevision = [revision], /malformed basis/],
   ['array-valued source revision', x => x.registry.sources[0].revision = [revision], /unpinned/],

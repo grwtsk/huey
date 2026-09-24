@@ -49,7 +49,30 @@ into omission. Untracked files are outside this public-source inventory.
 | Literary presence | `present`, `pending`, `omitted`, `absent`. A known body division is present even when its prose cannot materialize. Pending optional matter is not an omission decision. |
 | Editorial materialization | `full`, `partial`, `placeholder`, `unplaced`, `unavailable`. Derived from the represented sources and their availability; full means a full selected working artifact, not finished/accepted prose. Candidate fragments do not complete the canonical chapter. |
 | Access/materialization | `available`, `restricted`, `unavailable-on-this-client`. Available public fragments can coexist with restricted unmaterialized remainder; `unmaterializedAccess` preserves that second fact. These are descriptive observations, not a permission engine. |
-| Publication | `working`, `staged`, `admitted`, `held`, `cleared`. Explicit scoped annotations, not an ordered completion score. Existing reader admission is reported separately and continues to govern only its publication projection. |
+| Publication annotation | `publicationAnnotation: {label, authoritative: false}`. The descriptive label is only `working`, `staged` or `held`; it grants nothing. Reader admission is observed separately, and human clearance is not represented by this inventory. |
+
+`publicationAnnotation` is explicitly non-authoritative editorial metadata. Its
+exact shape and boolean `false` marker are required; `admitted` and `cleared`
+are rejected as labels. C08A is labeled `staged` here, while its separate
+`observedReaderAdmission` remains `admitted` from `reader/content/book.json`.
+Changing an annotation cannot change that observation or an entity's existence.
+The observation reports only a manifest value (`admitted`, `unavailable`, or
+`not-listed` when absent); it does not independently validate permission, source
+bytes or evidence clearance. The existing publication compiler keeps those
+checks. Actual human clearance requires the separately governed exact-version
+review; this inventory cannot create or represent that decision.
+
+Each public source's `scopeRefs` lists issue/PR pointers to the recorded scope.
+A URL, agent transcription or matching digest is not an authenticated Instruction,
+Grant or authority capability. The checker validates reference shape and local
+artifact identity, not the authenticity or sufficiency of permission. Consumers
+must not convert these references or publication annotations into authorization.
+Source-aware review of the underlying instruction and revocation context remains
+necessary; no permission engine or Construct authority bridge is implemented.
+
+The unmerged v1 draft now rejects the earlier `source.authority` and bare
+`publication` fields, including when supplied alongside their replacements. This
+pre-merge correction changes no EntityID, source pin or literary EntityVersion.
 
 All actual optional units remain pending. No omission is invented. The checker
 requires an explicit omission reference for an optional unit recorded as omitted;
@@ -112,7 +135,7 @@ breaks remain later typesetting under #60/#61; they cannot redefine identity.
 
 The [source audit](source-audit.md) records the exact inspected staging and public
 branch revisions. The registry pins 34 public source/candidate/resource artifacts
-with their recorded authorization references. These links preserve provenance;
+with their recorded `scopeRefs`. These links preserve provenance;
 they do not authenticate authorship, accept a proposal or grant further access.
 No source prose is embedded in generated output. Missing Git objects on another
 client are explicitly unavailable there; the tool performs no network retrieval.

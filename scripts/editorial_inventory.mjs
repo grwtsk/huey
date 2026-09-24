@@ -10,7 +10,7 @@ const SHA = /^[0-9a-f]{40}$/;
 const sha = value => typeof value === 'string' && SHA.test(value);
 const MOVEMENTS = ['preamble', 'interlude', 'excursion'];
 const PRESENCE = ['present', 'pending', 'omitted', 'absent'];
-const PUBLICATION = ['working', 'staged', 'admitted', 'held', 'cleared'];
+const PUBLICATION_LABELS = ['working', 'staged', 'held'];
 const REGISTRY = 'huey.editorial-registry.v1';
 const fail = message => { throw new Error(`EDITORIAL_INVENTORY: ${message}`); };
 const requireThat = (condition, message) => { if (!condition) fail(message); };
@@ -60,7 +60,7 @@ export function validateRegistry(registry) {
   requireThat(unique(slots.map(s => s.key)), 'duplicate slot key');
   requireThat(unique(sources.map(s => s.key)), 'duplicate source key');
   for (const slot of slots) {
-    shape(slot, ['key', 'entityId', 'kind', 'group', 'label', 'optional', 'presence', 'publication', 'unmaterializedAccess', 'sources', 'issues', 'omissionRef'], 'slot');
+    shape(slot, ['key', 'entityId', 'kind', 'group', 'label', 'optional', 'presence', 'publicationAnnotation', 'unmaterializedAccess', 'sources', 'issues', 'omissionRef'], 'slot');
     ids.push(slot.entityId);
     requireThat(key(slot.key), 'malformed slot key');
     requireThat(['book', 'front', 'back', 'unplaced'].includes(slot.group), `invalid group for ${slot.key}`);
@@ -70,7 +70,8 @@ export function validateRegistry(registry) {
     requireThat(['Chapter', 'ChapterPart', 'Section', 'Block', 'Paragraph', 'MatterUnit'].includes(slot.kind), `invalid slot kind for ${slot.key}`);
     requireThat(slot.group === 'book' ? slot.label === null : nonempty(slot.label), `invalid label for ${slot.key}`);
     requireThat(PRESENCE.includes(slot.presence), `invalid presence for ${slot.key}`);
-    requireThat(PUBLICATION.includes(slot.publication), `invalid publication for ${slot.key}`);
+    shape(slot.publicationAnnotation, ['label', 'authoritative'], 'publication annotation');
+    requireThat(PUBLICATION_LABELS.includes(slot.publicationAnnotation.label) && slot.publicationAnnotation.authoritative === false, `invalid non-authoritative publication annotation for ${slot.key}`);
     requireThat([null, 'restricted', 'unavailable-on-this-client'].includes(slot.unmaterializedAccess), `invalid unmaterialized access for ${slot.key}`);
     requireThat(slot.presence === 'omitted' ? slot.optional === true && publicReference(slot.omissionRef) : slot.omissionRef === null, `omission needs optional matter and a scoped decision reference: ${slot.key}`);
     requireThat(unique(list(slot.sources, 'slot sources')) && slot.sources.every(key), `invalid source references for ${slot.key}`);
@@ -83,11 +84,12 @@ export function validateRegistry(registry) {
   const sourceByKey = new Map(sources.map(source => [source.key, source]));
   const pins = [];
   for (const source of sources) {
-    shape(source, ['key', 'role', 'extent', 'revision', 'path', 'blob', 'authority', 'targets'], 'source');
+    shape(source, ['key', 'role', 'extent', 'revision', 'path', 'blob', 'scopeRefs', 'targets'], 'source');
     requireThat(key(source.key) && ['canonical', 'candidate', 'unplaced', 'support'].includes(source.role), 'invalid source key or role');
     requireThat(['full', 'partial'].includes(source.extent), `invalid extent for ${source.key}`);
     requireThat(sha(source.revision) && sha(source.blob) && safePath(source.path), `unsafe or unpinned source: ${source.key}`);
-    requireThat(list(source.authority, 'source authority').length > 0 && source.authority.every(publicReference), `missing public authority reference for ${source.key}`);
+    // These are scope pointers, never authenticated Instruction/Grant capabilities.
+    requireThat(list(source.scopeRefs, 'source scope references').length > 0 && source.scopeRefs.every(publicReference), `missing public scope reference for ${source.key}`);
     requireThat(unique(list(source.targets, 'source targets')), `duplicate source targets for ${source.key}`);
     requireThat(source.role === 'support' ? source.targets.length === 0 : source.targets.length > 0, `invalid targets for ${source.key}`);
     requireThat(!['canonical', 'unplaced'].includes(source.role) || source.targets.length === 1, `source has ambiguous canonical parentage: ${source.key}`);
@@ -139,6 +141,8 @@ export function buildInventory({ registry, book, reader, trackedPaths, files, so
   const items = validateCoverage(registry, book, trackedPaths);
   requireThat(plain(files) && plain(sourceAvailability), 'missing inspection maps');
   requireThat(Array.isArray(reader?.chapters), 'invalid reader manifest');
+  requireThat(reader.chapters.every(chapter => plain(chapter) && key(chapter.id) && ['admitted', 'unavailable'].includes(chapter.status)), 'invalid reader admission observation');
+  requireThat(unique(reader.chapters.map(chapter => chapter.id)), 'ambiguous reader admission observation');
   const sources = registry.sources.map(source => {
     requireThat(typeof sourceAvailability[source.key] === 'boolean', `source availability missing: ${source.key}`);
     return { ...source, access: sourceAvailability[source.key] ? 'available' : 'unavailable-on-this-client' };
@@ -172,7 +176,7 @@ export function buildInventory({ registry, book, reader, trackedPaths, files, so
       key: slot.key, entityId: slot.entityId, entityVersion: null, kind: slot.kind,
       group: slot.group, label: item?.title ?? slot.label, presence: slot.presence,
       editorialMaterialization, access, unmaterializedAccess: slot.unmaterializedAccess,
-      publication: slot.publication, observedReaderAdmission: observed?.status ?? 'not-listed',
+      publicationAnnotation: { ...slot.publicationAnnotation }, observedReaderAdmission: observed?.status ?? 'not-listed',
       optional: slot.optional, omissionRef: slot.omissionRef,
       canonicalPath: path, canonicalState: state, sources: slot.sources, issues: slot.issues,
     };
