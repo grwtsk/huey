@@ -4,7 +4,7 @@ Status: structural pre-release plan under #17. No manuscript prose is expanded b
 
 ## Expansion envelope
 
-The narrative-body target is now **80,000–114,000 words**. This supersedes the older approximate 56,000-word planning allocation as a word-count target only. It does not change the title, the three-movement order, the stable chapter identities, PR-01, the protected closing, source permissions, acceptance gates, or release status.
+The narrative-body target is now **80,000–114,000 words**. This supersedes the older approximate 56,000-word planning allocation as a word-count target only. That word-target decision did not itself change the title, the three-movement order, stable chapter identities, PR-01, the protected closing, source permissions, acceptance gates, or release status. A later author instruction under #380 separately retitles the work **Huey** and moves the exact classroom reveal to the final Edna excursion while requiring only indirect foreshadowing beforehand.
 
 | Movement | Planning envelope | Expansion posture |
 |---|---:|---|

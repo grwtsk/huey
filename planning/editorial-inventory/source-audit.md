@@ -34,7 +34,7 @@ Public scope references (not authenticated authority capabilities):
 
 ## Post-audit staged additions — #378
 
-The author's 2026-09-24 instruction adds C14A, *On the Eve of the Last su[p, p′, p″, p‴, …]er*, and C14B, *Orange After the End*, after C14 and before C15. The current staged registry therefore has 21 body slots and 36 public source records, with `public-35` and `public-36` pinning the two new canonical working files. This is a later additive change to the working inventory, not a rewrite of the source conditions observed at the pinned audit revision. The protected C15 → movement break → Edna close remains unchanged.
+The author's 2026-09-24 instruction adds C14A, *On the Eve of the Last su[p, p′, p″, p‴, …]er*, and C14B, *Orange After the End*, after C14 and before C15. A later author instruction under #380 retitles the work **Huey** and admits a partial public E01/Edna delta containing the newly authorized classroom reveal while the rest of the supplied excursion remains protected. The current staged registry therefore has 21 body slots and 37 public source records, with `public-35`, `public-36`, and `public-37` pinning those staged canonical working sources. These are later additive changes to the working inventory, not rewrites of the source conditions observed at the pinned audit revision. The C15 → movement break → Edna close remains unchanged.
 
 ## Reader/evidence boundary
 

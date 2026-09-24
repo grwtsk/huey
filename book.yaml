@@ -1,6 +1,6 @@
 {
   "schema": "huey.book.v1",
-  "title": "Huey: how to make skin color.",
+  "title": "Huey",
   "author": "R.A. Jacob Martone",
   "canonical_source_root": "manuscript",
   "word_target": {
@@ -210,8 +210,10 @@
       "movement": "excursion",
       "title": "Edna",
       "path": "manuscript/03-excursion/edna.md",
-      "status": "planned",
-      "include": false
+      "status": "staged_public_partial",
+      "include": false,
+      "work_issue": 380,
+      "source_mapping_status": "partial_public_delta_full_excursion_protected"
     }
   ],
   "experiential_structure": {
