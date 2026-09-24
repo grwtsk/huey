@@ -11,7 +11,7 @@ changes. A newer run cancels superseded work for the same PR or branch.
 | Reader (Node 22.12.0) | `npm test`, content generation, tracked-file drift; first declared Node engine floor. |
 | Reader (Node 24.0.0) | Same checks at the second declared engine floor. |
 | Reader (Node 22.23.2) | Same checks plus dependency installation and actual Vite build. |
-| Literary model and editorial inventory | `npm run test:model`, `npm run test:inventory`, full registered public-object coverage and deterministic emission. |
+| Literary model and editorial inventory | `npm run test:model`, `npm run test:inventory`, `npm run test:pages`, full registered public-object coverage, selected-source page materialization and deterministic emission. |
 | Python repository checks and whitespace | Python 3.12.14 with `requirements-checks.txt`, full unittest discovery, book/catalog/framing/lexical checks and changed-file whitespace. |
 
 The literary-model job pins Node 22.23.2, which exposes Unicode 17.0. The validator

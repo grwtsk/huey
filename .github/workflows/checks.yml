@@ -77,6 +77,8 @@ jobs:
             ff0499bd341de12a31b355b79867b547f19d9b16
       - name: Editorial inventory tests
         run: npm run test:inventory
+      - name: Editorial ReadingPage assembly tests
+        run: npm run test:pages
       - name: Verify complete public-object coverage and deterministic inventory
         run: |
           node --input-type=module <<'JS'
@@ -88,6 +90,17 @@ jobs:
             'Hosted reproduction requires every registered public source object');
           assert.equal(serializeInventory(inventory), serializeInventory(loadInventory()));
           console.log(`${inventory.sources.length} public source references available; inventory deterministic. Restricted remainder is not materialized.`);
+          JS
+      - name: Verify complete selected-source page materialization
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { loadAssembly } from './scripts/editorial_pages.mjs';
+          const assembly = loadAssembly();
+          assert.equal(assembly.modelValidation, 'validated-snapshot');
+          assert.equal(assembly.unmaterializedEntities.length, 0);
+          assert.deepEqual(assembly, loadAssembly());
+          console.log(`${assembly.readingOrder.length} ordered pages; ${assembly.workspace.unplacedPages.length} unplaced pages; selected public sources materialized deterministically.`);
           JS
 
   repository:

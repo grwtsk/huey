@@ -22,6 +22,9 @@
     "book:md": "python3 scripts/book.py emit",
     "inventory:check": "node scripts/editorial_inventory.mjs check",
     "inventory:emit": "node scripts/editorial_inventory.mjs emit",
-    "test:inventory": "npm run inventory:check && node --test tests/editorial-inventory.test.mjs"
+    "test:inventory": "npm run inventory:check && node --test tests/editorial-inventory.test.mjs",
+    "pages:check": "node scripts/editorial_pages.mjs check",
+    "pages:emit": "node scripts/editorial_pages.mjs emit",
+    "test:pages": "npm run pages:check && node --test tests/editorial-markdown.test.mjs tests/editorial-pages.test.mjs"
   }
 }
