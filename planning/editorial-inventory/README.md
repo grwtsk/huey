@@ -37,8 +37,7 @@ identities and source mappings before paragraph editing can rely on this graph.
 `book.yaml` remains authoritative for current body order, movement, legacy labels
 and canonical Markdown paths. The checker requires exact coverage of its items,
 including `include: false` items. It also requires classification of every tracked
-manuscript Markdown file. Explicit support paths are the six existing structural
-READMEs; any new manuscript file must be accounted for before the check passes.
+manuscript Markdown file. Explicit support paths include the existing structural READMEs plus `manuscript/flow/README.md`; any new manuscript file must be accounted for before the check passes.
 Missing files remain known slots, with visible unavailable state. They never turn
 into omission. Untracked files are outside this public-source inventory.
 
@@ -140,9 +139,9 @@ they do not authenticate authorship, accept a proposal or grant further access.
 No source prose is embedded in generated output. Missing Git objects on another
 client are explicitly unavailable there; the tool performs no network retrieval.
 
-The current canonical tree has twenty-one body slots: three full working files (C08A,
+The current canonical working projection has twenty-one body slots: three full working files (C08A,
 C14A, and C14B), one partial public E01/Edna source, and seventeen comment-only
-files. It also has one unplaced chapter. Public partial
+files. It also has one unplaced chapter and a pre-partition flow support surface. The body-slot order is a working projection under #404, not a final table of contents. Public partial
 candidates and authorized branch resources remain separately identified. The
 inventory is complete for the declared manifest/tree boundary, not every possible
 source, every private revision, or an already assembled complete book.
