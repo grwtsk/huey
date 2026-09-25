@@ -47,14 +47,16 @@ test('/huey selects the pending first page without skipping to admitted prose', 
   assert.notEqual(result.entityId, paragraphPage.id);
 });
 
-test('all fifteen front-matter units and their page aliases survive pending access', () => {
+test('all fifteen front-matter units and their page aliases preserve their recorded presence', () => {
   const slots = catalog.slots.filter(row => row.group === 'front');
   assert.equal(slots.length, 15);
   assert.deepEqual(slots.map(row => row.id), assembly.frontMatter.matterUnits.map(row => row.entityId));
   for (const slot of slots) {
     const item = target(catalog, slot.id);
     assert.equal(item.kind, 'MatterUnit');
-    assert.equal(slot.presence, 'pending');
+    const sourceSlot = assembly.inventory.slots.find(row => row.entityId === slot.id);
+    assert.equal(slot.presence, sourceSlot.presence);
+    assert.equal(slot.presence, sourceSlot.key === 'front-preface' ? 'present' : 'pending');
     assert.equal(item.pageIds.length, 1);
     assert.ok(assembly.readingOrder.slice(0, 15).includes(item.pageIds[0]));
     assert.equal(resolveRouteAddress(route(item), catalog).entityId, slot.id);

@@ -122,6 +122,21 @@ function validateCoverage(registry, book, trackedPaths) {
     requireThat(source.length === 1 && source[0].path.startsWith('manuscript/unplaced/'), `unplaced slot needs one manuscript source: ${slot.key}`);
     declared.push(source[0].path);
   }
+  // Staged front/back matter may be an explicitly pinned reference before its
+  // prose is selected for assembly. Classifying that tracked path neither
+  // promotes the candidate to canonical nor reads or renders its inscription.
+  for (const source of registry.sources) {
+    const targets = source.targets.map(key => registry.slots.find(slot => slot.key === key));
+    const matterPath = /^manuscript\/(front|back)\//.test(source.path);
+    const matterTarget = targets.some(slot => slot.kind === 'MatterUnit' && ['front', 'back'].includes(slot.group));
+    if (!matterPath && !(source.path.startsWith('manuscript/') && matterTarget)) continue;
+    requireThat(source.role === 'candidate' && targets.length === 1
+      && targets[0].kind === 'MatterUnit' && ['front', 'back'].includes(targets[0].group)
+      && targets[0].presence === 'present'
+      && new RegExp(`^manuscript/${targets[0].group}/[a-z0-9][a-z0-9-]*\\.md$`).test(source.path),
+    `invalid front/back manuscript reference: ${source.key}`);
+    declared.push(source.path);
+  }
   requireThat(unique(declared), 'manuscript path has ambiguous classification');
   requireThat(list(trackedPaths, 'tracked paths').every(path => safePath(path) && path.startsWith('manuscript/') && path.endsWith('.md')), 'unsafe tracked manuscript path');
   requireThat(unique(trackedPaths), 'duplicate tracked manuscript path');

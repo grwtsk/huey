@@ -35,7 +35,7 @@ test('all 165 persisted pages remain in their 151-page book and 14-page unplaced
   assert.deepEqual(loadTraversalPayload(), payload, 'loader selects the same checked inputs');
 });
 
-test('every known literary slot is visible, including all pending front matter at the beginning', () => {
+test('every known literary slot is visible, including pending front matter and the uncompiled preface reference', () => {
   const projectedSlots = new Set(payload.pages.flatMap(page => target(payload, page.id).slotIds));
   assert.equal(projectedSlots.size, 47);
   assert.deepEqual([...projectedSlots].sort(), assembly.inventory.slots.map(slot => slot.entityId).sort());
@@ -44,7 +44,13 @@ test('every known literary slot is visible, including all pending front matter a
   const front = payload.pages.slice(0, 15);
   assert.deepEqual(front.map(page => page.label), assembly.frontMatter.matterUnits.map(unit => unit.label));
   assert.ok(front.every(page => page.blocks.length === 0));
-  assert.ok(front.every(page => target(payload, page.id).unresolved));
+  const preface = assembly.inventory.slots.find(slot => slot.key === 'front-preface');
+  const prefacePage = front.find(page => target(payload, page.id).slotIds.includes(preface.entityId));
+  assert.equal(target(payload, prefacePage.id).unresolved, false, 'only reference metadata resolves');
+  assert.equal(preface.editorialMaterialization, 'partial');
+  assert.deepEqual(prefacePage.blocks, [], 'available source reference does not load preface inscription');
+  assert.equal(front.filter(page => page.id !== prefacePage.id).length, 14);
+  assert.ok(front.filter(page => page.id !== prefacePage.id).every(page => target(payload, page.id).unresolved));
   assert.equal(payload.pages.filter(page => page.blocks.length === 0).length, 42);
 });
 

@@ -1,0 +1,241 @@
+{
+  "schema": "huey.soc-core.v1",
+  "basisRevision": "26447f857fbf85e5a28b0b3367a414533262d89f",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/126",
+    "https://github.com/grwtsk/huey/issues/127",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176"
+  ],
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "newEvidenceReceived": false,
+  "substantiveVerificationPerformed": false,
+  "fullCorpusTransferComplete": false,
+  "atomicClaimReviewComplete": false,
+  "authorityFromReferences": false,
+  "notice": "This is a selective public working-source copy from the pinned PR, not manuscript admission, new evidence intake, source authentication, completed corpus coverage or substantive verification. Scope references locate the recorded instruction; URLs and declared approval fields do not authenticate or grant authority. Original representation limits remain operative.",
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/claim-verification.md",
+      "sourceBlob": "3cee7a0b1d80085dae6aa9710b814d45167a7ca4",
+      "stagedBlob": "3cee7a0b1d80085dae6aa9710b814d45167a7ca4",
+      "representation": "exact"
+    },
+    {
+      "path": ".gitmessage",
+      "sourceBlob": "9fdd1a55a6a0cdaaf61b95266a20943af4c696b3",
+      "stagedBlob": "9fdd1a55a6a0cdaaf61b95266a20943af4c696b3",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/AUTHORIZATION.md",
+      "sourceBlob": "e6f040d701a4e6abba01b3821facb07ce027ccd0",
+      "stagedBlob": "e6f040d701a4e6abba01b3821facb07ce027ccd0",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/DISCLAIMER.md",
+      "sourceBlob": "9599299b52343e7c71ce3e24c0e8892ea4339124",
+      "stagedBlob": "9599299b52343e7c71ce3e24c0e8892ea4339124",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "stagedBlob": "faff3cdb745e34523821e7c14dbce007f14ec77e",
+      "representation": "adapted-navigation"
+    },
+    {
+      "path": "planning/standard-of-care/approval.json",
+      "sourceBlob": "25a275ead999d920e5ce175891efd61c8ba18250",
+      "stagedBlob": "25a275ead999d920e5ce175891efd61c8ba18250",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/check_registry.py",
+      "sourceBlob": "071a46904cfa1733e240ff638ac767cb43cc4750",
+      "stagedBlob": "071a46904cfa1733e240ff638ac767cb43cc4750",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/check_support.py",
+      "sourceBlob": "7364bcfb364fba7108536eb86b4cfb3aff99cb3e",
+      "stagedBlob": "7364bcfb364fba7108536eb86b4cfb3aff99cb3e",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/claims.tsv",
+      "sourceBlob": "f5a0a2e7b02dad2f94288c0d1b877bd4216db94e",
+      "stagedBlob": "f5a0a2e7b02dad2f94288c0d1b877bd4216db94e",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/registry.json",
+      "sourceBlob": "769a0d9d30d8b24118d439e0cbd6f8934c5d728c",
+      "stagedBlob": "769a0d9d30d8b24118d439e0cbd6f8934c5d728c",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/support-policy.json",
+      "sourceBlob": "50543afdc87979f99ae5c020d24946adca394457",
+      "stagedBlob": "50543afdc87979f99ae5c020d24946adca394457",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/test_registry.py",
+      "sourceBlob": "87dfba4de18c72c81f36109b4ae014120d2621f3",
+      "stagedBlob": "87dfba4de18c72c81f36109b4ae014120d2621f3",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/test_support.py",
+      "sourceBlob": "f0fb437b22fb7b1f0d3868d03a1cac43e01eabf6",
+      "stagedBlob": "f0fb437b22fb7b1f0d3868d03a1cac43e01eabf6",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/AGENTS.md",
+      "sourceBlob": "10a83128a3315cd90cbd34bc2aa8d10b18d4f015",
+      "stagedBlob": "10a83128a3315cd90cbd34bc2aa8d10b18d4f015",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "stagedBlob": "c85a13efa6b02ed1de0c2d8aea58ab958d97e4ee",
+      "representation": "adapted-navigation"
+    },
+    {
+      "path": "sources/standard-of-care/context/README.md",
+      "sourceBlob": "f6dcf35473b68634883deb3c72ef8852fd32ab4d",
+      "stagedBlob": "f6dcf35473b68634883deb3c72ef8852fd32ab4d",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/context/manifest.json",
+      "sourceBlob": "ec13de6baeedc20ac4548df25a24779f707b989d",
+      "stagedBlob": "ec13de6baeedc20ac4548df25a24779f707b989d",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/context/standard.md",
+      "sourceBlob": "235591b166ca520ee6a767ef789775c11a8f7d36",
+      "stagedBlob": "235591b166ca520ee6a767ef789775c11a8f7d36",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/context/the-trust-i-had-already-given.md",
+      "sourceBlob": "dea9aff84a148d85959356e82390fa986719c66c",
+      "stagedBlob": "dea9aff84a148d85959356e82390fa986719c66c",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/context/thread-dossier.md",
+      "sourceBlob": "b1fe3fe10f05034c4d43e999ea184f6d3b2fb517",
+      "stagedBlob": "b1fe3fe10f05034c4d43e999ea184f6d3b2fb517",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/README.md",
+      "sourceBlob": "b1557a3e0ee9ce60fd7e0264d1f4ee66bffc40d3",
+      "stagedBlob": "b1557a3e0ee9ce60fd7e0264d1f4ee66bffc40d3",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/articles/atlas.json",
+      "sourceBlob": "f0060ba32231f6f08399ea174dc279dc2556ecff",
+      "stagedBlob": "f0060ba32231f6f08399ea174dc279dc2556ecff",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/README.md",
+      "sourceBlob": "7fbc787babfcaee734b56977dd68fa8656e811ad",
+      "stagedBlob": "7fbc787babfcaee734b56977dd68fa8656e811ad",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/awareness-and-the-social-contract.md",
+      "sourceBlob": "66ada2cc0b193f9ad90511a34465f1d2fe85f6a4",
+      "stagedBlob": "66ada2cc0b193f9ad90511a34465f1d2fe85f6a4",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/before-the-examination-the-patient-who-arrived-at-stanford.md",
+      "sourceBlob": "4c64a6c699129e6ae96b25ad36cf600545346ea8",
+      "stagedBlob": "4c64a6c699129e6ae96b25ad36cf600545346ea8",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/communication-changed-risk.md",
+      "sourceBlob": "2b80501728777f87ada72180972cdbbe453597ef",
+      "stagedBlob": "2b80501728777f87ada72180972cdbbe453597ef",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/from-stanford-to-ucsf-the-transfer-was-part-of-the-history.md",
+      "sourceBlob": "51cb89235f6f8b8d704677e482384edb9e924d3f",
+      "stagedBlob": "51cb89235f6f8b8d704677e482384edb9e924d3f",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/his-test-is-his-my-persistence-is-mine.md",
+      "sourceBlob": "523dba7662ee6c00962e2480fc5730bde2496e99",
+      "stagedBlob": "523dba7662ee6c00962e2480fc5730bde2496e99",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/january-24-2019-the-origin-point.md",
+      "sourceBlob": "7f137cd5477e6091021b8831a7d85250d83a3f40",
+      "stagedBlob": "7f137cd5477e6091021b8831a7d85250d83a3f40",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/medicine-worthy-of-its-laurels.md",
+      "sourceBlob": "8dc31ba05b48e32754c672e8e1b38f078d79b2aa",
+      "stagedBlob": "8dc31ba05b48e32754c672e8e1b38f078d79b2aa",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/the-unordinary-test-of-goodness.md",
+      "sourceBlob": "dafcb68a2eed3a37181738b6852a5b2c8d350f43",
+      "stagedBlob": "dafcb68a2eed3a37181738b6852a5b2c8d350f43",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/what-must-be-explained-evidence-witnesses-and-the-honest-mistake-hypothesis.md",
+      "sourceBlob": "37d5ef7cb80f571a74ba95e5eecf3bb0ef0955f1",
+      "stagedBlob": "37d5ef7cb80f571a74ba95e5eecf3bb0ef0955f1",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/when-care-becomes-the-threat.md",
+      "sourceBlob": "6f8c7e7594c486267acdc62812d4b077faccf80a",
+      "stagedBlob": "6f8c7e7594c486267acdc62812d4b077faccf80a",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/worse-than-a-rapist.md",
+      "sourceBlob": "641f3ac14e8fb4a9622ec77f49bf6781689998f7",
+      "stagedBlob": "641f3ac14e8fb4a9622ec77f49bf6781689998f7",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-text/writing-as-the-act-of-care.md",
+      "sourceBlob": "0912ed8d49013843361c55fb38ed6250915618c8",
+      "stagedBlob": "0912ed8d49013843361c55fb38ed6250915618c8",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/transfer-manifest.json",
+      "sourceBlob": "72a3b30aa3741936ea400c6fd46c7ee7fca30387",
+      "stagedBlob": "72a3b30aa3741936ea400c6fd46c7ee7fca30387",
+      "representation": "exact"
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # Evidence references retained during consolidation
 
+Update under #406: the [core corpus](../../sources/standard-of-care/README.md)
+and [initial claim apparatus](../standard-of-care/README.md) are now selected for
+staging through [soc-core.md](soc-core.md). The dated audit below still describes
+the earlier #384 increment; later incident/care-law/ancillary/authority layers
+remain pinned on #122. No support disposition is promoted by the new copies.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake
