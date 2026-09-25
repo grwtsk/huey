@@ -28,6 +28,22 @@ The fixed bottom toolbar intentionally contains only seven primary controls:
 
 `Aa · B · I · U · color · link · light/dark`
 
+### Visual reference pass — #419
+
+The current visual system takes a bounded cue from the author-supplied *Seasons of
+You* cover reference without reproducing that template. The useful grammar is the
+relationship among a deep desaturated green field, warm parchment/sand typography,
+a light display serif, a small italic connective role, tracked sans metadata, and
+large areas of negative space.
+
+Huey translates those relationships rather than the source assets. No embedded
+reference fonts are copied or redistributed; the editor uses only local/system font
+stacks. The document palette remains relational and editable: light and dark
+presentations exchange a warm parchment/deep-green pair, while display and muted
+tones are derived from the active pair so author color changes do not leave fixed
+decorative colors behind. This pass changes presentation only; it does not admit
+new manuscript, source, evidence or publication state.
+
 `Aa` opens compact Selection and Document typography controls. Color opens compact
 Text and Document color controls. Selection-level size is stored as a relative
 `em` relation and selection color as an OKLab displacement from the document
