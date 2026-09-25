@@ -20,7 +20,7 @@ Privacy/provenance note: where the legacy source says that names or sensitive de
 
 From Sunrise to Sunset: Reflections on the Quiet
 Transformation of a Journey Between Two Worlds
-We’re currently only able to fulfill limited orders due to a technical issue. We’re working to fix it as 
+We’re currently only able to fulfill limited orders due to a technical issue. We’re working to fix it as
 soon as possible. Thank you for your patience!
 ×
 
@@ -28,22 +28,22 @@ soon as possible. Thank you for your patience!
 
 "The feeling remains that God is on the journey, too."
 — Saint Teresa of Ávila
-You are seated at a booth in a cozy diner in Missoula, Montana. The smell of coffee and fresh pie fills the air. The 
-vinyl seat beneath you creaks as you shift, your fingers tracing the worn edge of an old leather-bound notebook you 
+You are seated at a booth in a cozy diner in Missoula, Montana. The smell of coffee and fresh pie fills the air. The
+vinyl seat beneath you creaks as you shift, your fingers tracing the worn edge of an old leather-bound notebook you
 found tucked under a stack of menus by the counter.
 >LOOK AT NOTEBOOK
-The notebook’s cover is cracked and faded, its corners bent from years of handling. You feel the weight of it in your 
+The notebook’s cover is cracked and faded, its corners bent from years of handling. You feel the weight of it in your
 hands, heavier than just a book. You wonder how long it’s been sitting here, forgotten.
 >OPEN NOTEBOOK
-You flip open the cover. The pages are yellowed with time, filled with delicate, looping handwriting. It’s the story of 
-Margaret Anne Thompson, written in a day’s worth of reflections. You realize she sat in this very cafe from sunrise to 
+You flip open the cover. The pages are yellowed with time, filled with delicate, looping handwriting. It’s the story of
+Margaret Anne Thompson, written in a day’s worth of reflections. You realize she sat in this very cafe from sunrise to
 sunset, contemplating her journey and the changing world around her.
 >READ FIRST PAGE
-Her words spill out, raw and thoughtful: "The day started slow, like the town itself, giving me time to breathe..." Her 
-essay compares the conservative town she left behind in Georgia with the ease of Missoula, a town seemingly 
+Her words spill out, raw and thoughtful: "The day started slow, like the town itself, giving me time to breathe..." Her
+essay compares the conservative town she left behind in Georgia with the ease of Missoula, a town seemingly
 untouched by the rush of modern life.
 >WHAT WILL YOU DO?
-The essay lies open before you, inviting you to discover more of Margaret’s reflections and the conversations she had 
+The essay lies open before you, inviting you to discover more of Margaret’s reflections and the conversations she had
 during her long day in this diner.
 
 <PARSED TEXT FOR PAGE: 3 / 7>
@@ -135,10 +135,10 @@ a world that tells us we have to keep up, fit in, conform? And how many more liv
 find a way to rise together, to slow down, and make room for everyone, like this town did?
 Missoula had shown me that it was possible, that maybe, just maybe, we didn’t have to do it alone.
 Dear Reader,
-I’ve spent my life walking down difficult roads, and now my daughter stands at the edge of a darkness that I fear she 
-won’t come back from. This story isn’t just mine—it’s one that reflects the struggles of many. We’re all trying to find 
-our way in a world that feels like it’s unraveling. I’m asking you to share this journey, not to focus on the hardship, 
-but to remind others that there’s strength in coming together. Let’s lift each other up before more are left behind in 
+I’ve spent my life walking down difficult roads, and now my daughter stands at the edge of a darkness that I fear she
+won’t come back from. This story isn’t just mine—it’s one that reflects the struggles of many. We’re all trying to find
+our way in a world that feels like it’s unraveling. I’m asking you to share this journey, not to focus on the hardship,
+but to remind others that there’s strength in coming together. Let’s lift each other up before more are left behind in
 the shadows.
 Warmly,
 Margaret Anne Thompson
@@ -146,27 +146,27 @@ Margaret Anne Thompson
 <PARSED TEXT FOR PAGE: 6 / 7>
 
 Thank you kindly.
-If you’ve found a notebook, wish to return one, or feel inspired to contribute with oranges, crayons, or both, 
-we would be truly grateful to hear from you. Every story shared on orangeyouglad.org adds to a greater 
-tapestry of humanity, connecting Fresno’s Radio Park to the wider world. These are the voices of real people, 
-with sensitive details thoughtfully adjusted to protect their privacy. Your support is essential in helping us 
+If you’ve found a notebook, wish to return one, or feel inspired to contribute with oranges, crayons, or both,
+we would be truly grateful to hear from you. Every story shared on orangeyouglad.org adds to a greater
+tapestry of humanity, connecting Fresno’s Radio Park to the wider world. These are the voices of real people,
+with sensitive details thoughtfully adjusted to protect their privacy. Your support is essential in helping us
 capture the essence of humanity and inspire meaningful change.
 We warmly invite you to reach out: jacob@orangeyouglad.org
-A heartfelt thank you to our Fresno community—partners, volunteers, and neighbors—for your continued 
-support. If you’d like to join me in person, I’m at Radio Park every Wednesday around noon for about an hour. 
-Please leave your cameras at home and bring along essentials for our local folks: a large waterproof pack 
-with 3 Fresno-grown oranges, 1.5L of water, baby wipes, a few pairs of socks, $2 for FAX bus fare, a good book, 
-a warm blanket, travel-sized toiletries, non-perishable snacks, a reusable water bottle, and a $24 gift card to 
-Sam’s (across the street). Altogether, the supplies should come to about $87—a small effort that can make a 
+A heartfelt thank you to our Fresno community—partners, volunteers, and neighbors—for your continued
+support. If you’d like to join me in person, I’m at Radio Park every Wednesday around noon for about an hour.
+Please leave your cameras at home and bring along essentials for our local folks: a large waterproof pack
+with 3 Fresno-grown oranges, 1.5L of water, baby wipes, a few pairs of socks, $2 for FAX bus fare, a good book,
+a warm blanket, travel-sized toiletries, non-perishable snacks, a reusable water bottle, and a $24 gift card to
+Sam’s (across the street). Altogether, the supplies should come to about $87—a small effort that can make a
 big difference right here in our neighborhood.
-Please wait in front of the church, and if you come, be sure to wear an orange t-shirt. I’ll gather the supplies 
-and chat for a few minutes (at my discretion) in exchange for each set you bring, with a limit of 24 sets. 
-Additionally, volunteering opportunities are limited to [0], and we prioritize social service and health 
-workers, followed by parks. Only after every individual has unfettered access to their basic human dignity 
-and civil rights do we involve police, except in cases where that cause is diminished. As through charity, we 
+Please wait in front of the church, and if you come, be sure to wear an orange t-shirt. I’ll gather the supplies
+and chat for a few minutes (at my discretion) in exchange for each set you bring, with a limit of 24 sets.
+Additionally, volunteering opportunities are limited to [0], and we prioritize social service and health
+workers, followed by parks. Only after every individual has unfettered access to their basic human dignity
+and civil rights do we involve police, except in cases where that cause is diminished. As through charity, we
 are permitted silence.
-However, I am willing to meet with any law enforcement official, provided they are accompanied by a lawyer 
-trained to the standards set forth by the ADA, with a templated WCAG and user-centered design principled 
+However, I am willing to meet with any law enforcement official, provided they are accompanied by a lawyer
+trained to the standards set forth by the ADA, with a templated WCAG and user-centered design principled
 approach.
 The Unyielding Journey Along
 the Endless Road Between Who
