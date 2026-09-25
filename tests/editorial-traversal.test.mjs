@@ -35,16 +35,22 @@ test('all 165 persisted pages remain in their 151-page book and 14-page unplaced
   assert.deepEqual(loadTraversalPayload(), payload, 'loader selects the same checked inputs');
 });
 
-test('every known literary slot is visible, including all pending front matter at the beginning', () => {
+test('every known literary slot is visible, including mixed pending and staged front matter at the beginning', () => {
   const projectedSlots = new Set(payload.pages.flatMap(page => target(payload, page.id).slotIds));
+  const preface = assembly.inventory.slots.find(row => row.key === 'front-preface');
   assert.equal(projectedSlots.size, 47);
+  assert.ok(preface);
   assert.deepEqual([...projectedSlots].sort(), assembly.inventory.slots.map(slot => slot.entityId).sort());
   assert.equal(payload.routes.entryPageId, payload.readingOrder[0]);
   assert.equal(payload.routes.entryPageId, assembly.frontMatter.entryPageId);
   const front = payload.pages.slice(0, 15);
   assert.deepEqual(front.map(page => page.label), assembly.frontMatter.matterUnits.map(unit => unit.label));
   assert.ok(front.every(page => page.blocks.length === 0));
-  assert.ok(front.every(page => target(payload, page.id).unresolved));
+  for (const page of front) {
+    const routeTarget = target(payload, page.id);
+    const isPreface = routeTarget.slotIds.includes(preface.entityId);
+    assert.equal(routeTarget.unresolved, !isPreface);
+  }
   assert.equal(payload.pages.filter(page => page.blocks.length === 0).length, 42);
 });
 

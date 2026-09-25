@@ -117,6 +117,12 @@ function validateCoverage(registry, book, trackedPaths) {
   const bookSlots = registry.slots.filter(slot => slot.group === 'book');
   requireThat(bookSlots.length === items.length && bookSlots.every(slot => items.some(item => item.id === slot.key)), 'book slots do not exactly cover book.yaml');
   const declared = [...items.map(item => item.path), ...registry.supportPaths];
+  for (const source of registry.sources.filter(source => ['canonical', 'candidate'].includes(source.role) && !items.some(item => item.id === source.targets[0]))) {
+    const slot = registry.slots.find(slot => slot.key === source.targets[0]);
+    requireThat(slot && ['front', 'back'].includes(slot.group), `non-book manuscript source needs front/back matter slot: ${source.key}`);
+    requireThat(source.path.startsWith(`manuscript/${slot.group}/`), `matter source path disagrees with slot group: ${source.key}`);
+    declared.push(source.path);
+  }
   for (const slot of registry.slots.filter(slot => slot.group === 'unplaced')) {
     const source = registry.sources.filter(source => source.role === 'unplaced' && source.targets.includes(slot.key));
     requireThat(source.length === 1 && source[0].path.startsWith('manuscript/unplaced/'), `unplaced slot needs one manuscript source: ${slot.key}`);
@@ -129,7 +135,13 @@ function validateCoverage(registry, book, trackedPaths) {
   for (const path of registry.supportPaths) requireThat(trackedPaths.includes(path), `untracked support path: ${path}`);
   for (const source of registry.sources.filter(source => source.role === 'canonical')) {
     const item = items.find(item => item.id === source.targets[0]);
-    requireThat(item && item.path === source.path, `canonical source differs from book path: ${source.key}`);
+    if (item) {
+      requireThat(item.path === source.path, `canonical source differs from book path: ${source.key}`);
+      continue;
+    }
+    const slot = registry.slots.find(slot => slot.key === source.targets[0]);
+    requireThat(slot && ['front', 'back'].includes(slot.group), `canonical source has no book or matter slot: ${source.key}`);
+    requireThat(source.path.startsWith(`manuscript/${slot.group}/`), `canonical matter source differs from slot group: ${source.key}`);
   }
   return items;
 }
@@ -229,7 +241,10 @@ export function loadInventory(root = ROOT) {
   const trackedPaths = git(root, ['ls-files', '-z', '--', 'manuscript']).split('\0').filter(path => path.endsWith('.md'));
   validateCoverage(registry, book, trackedPaths); // Unknown files are never opened.
   const files = {};
-  const paths = [...book.items.map(item => item.path), ...registry.sources.filter(source => source.role === 'unplaced').map(source => source.path)];
+  const paths = [...new Set([
+    ...book.items.map(item => item.path),
+    ...registry.sources.filter(source => ['canonical', 'unplaced'].includes(source.role)).map(source => source.path),
+  ])];
   for (const path of paths) files[path] = trackedPaths.includes(path) ? inspectPublicFile(root, path) : null;
   const sourceAvailability = {};
   for (const source of registry.sources) {
