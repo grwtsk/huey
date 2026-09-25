@@ -1,94 +1,1469 @@
 {
   "schema": "huey.editorial-registry.v1",
   "basisRevision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e",
-  "containers": {"work": "he_7c1d378b-6154-4863-95f1-e73a737731fa", "front": "he_4f58a042-ebde-4161-a3fe-73d44b67b899", "body": "he_ad3ed956-9103-462f-85b8-50f37c13e791", "back": "he_6f1d30c7-8193-4e4b-98ee-6d621706e74a", "movements": {"preamble": "he_2f3c2a30-f51f-4fc9-a613-fc309b3e2a5d", "interlude": "he_bbda99b5-ad6e-4fad-86de-f0e1e0ef8fce", "excursion": "he_141c10ae-a39f-46dc-be6c-1909e0b329ca"}},
+  "containers": {
+    "work": "he_7c1d378b-6154-4863-95f1-e73a737731fa",
+    "front": "he_4f58a042-ebde-4161-a3fe-73d44b67b899",
+    "body": "he_ad3ed956-9103-462f-85b8-50f37c13e791",
+    "back": "he_6f1d30c7-8193-4e4b-98ee-6d621706e74a",
+    "movements": {
+      "preamble": "he_2f3c2a30-f51f-4fc9-a613-fc309b3e2a5d",
+      "interlude": "he_bbda99b5-ad6e-4fad-86de-f0e1e0ef8fce",
+      "excursion": "he_141c10ae-a39f-46dc-be6c-1909e0b329ca"
+    }
+  },
   "slots": [
-    {"key": "front-half-title","entityId": "he_21429d39-2ee8-4173-8156-12cce9daee02","kind": "MatterUnit","group": "front","label": "Half-title","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [34,13],"omissionRef": null},
-    {"key": "front-frontispiece","entityId": "he_c0277ad8-e929-452d-aa41-d0bacd75b548","kind": "MatterUnit","group": "front","label": "Frontispiece","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [36,13],"omissionRef": null},
-    {"key": "front-title","entityId": "he_ec94cf6d-d549-4d50-8f78-7aa954ca2ac3","kind": "MatterUnit","group": "front","label": "Title","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [34,13],"omissionRef": null},
-    {"key": "front-copyright","entityId": "he_8014b45f-733c-454a-9da4-ef43ce66b9d3","kind": "MatterUnit","group": "front","label": "Copyright / edition","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [34,6,13],"omissionRef": null},
-    {"key": "front-dedication","entityId": "he_eb80f89b-a53a-41b9-b78c-b79e9f7882ec","kind": "MatterUnit","group": "front","label": "Dedication","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [7,13],"omissionRef": null},
-    {"key": "front-epigraph","entityId": "he_60071f18-672d-40b5-ab46-d3c613c24a8e","kind": "MatterUnit","group": "front","label": "Epigraph","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [7,13],"omissionRef": null},
-    {"key": "front-contents","entityId": "he_d13830ba-ed1f-4bb6-9564-c915c1765be7","kind": "MatterUnit","group": "front","label": "Contents","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [36,13],"omissionRef": null},
-    {"key": "front-list-of-figures","entityId": "he_d36b2f2c-423e-4fa3-8a00-205b0cf33d5f","kind": "MatterUnit","group": "front","label": "List of figures","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [36,13],"omissionRef": null},
-    {"key": "front-list-of-tables","entityId": "he_2af0fca2-690c-4a10-980e-f5d891f45fce","kind": "MatterUnit","group": "front","label": "List of tables","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [36,13],"omissionRef": null},
-    {"key": "front-foreword","entityId": "he_acbd2f8c-d708-48e1-b189-716fbbddab0a","kind": "MatterUnit","group": "front","label": "Foreword","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [7,36,13],"omissionRef": null},
-    {"key": "front-preface","entityId": "he_715292cf-9c17-4707-abad-df8c3de7b737","kind": "MatterUnit","group": "front","label": "Preface","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [36,13],"omissionRef": null},
-    {"key": "front-acknowledgments","entityId": "he_6ca07867-7511-4704-8a81-72952482e118","kind": "MatterUnit","group": "front","label": "Acknowledgments","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [7,59,13],"omissionRef": null},
-    {"key": "front-introduction","entityId": "he_5c981d5b-35f8-4466-ae2a-5aa2cac7ae5b","kind": "MatterUnit","group": "front","label": "Introduction","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [36,13],"omissionRef": null},
-    {"key": "front-author-source-note","entityId": "he_e8e52407-b9be-4421-9251-b5bb6fa3a10a","kind": "MatterUnit","group": "front","label": "Author / source note","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [35,13],"omissionRef": null},
-    {"key": "front-content-advisory","entityId": "he_fc252d30-4cf9-413d-8606-be61c523f278","kind": "MatterUnit","group": "front","label": "Content advisory","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [35,13],"omissionRef": null},
-    {"key": "C01","entityId": "he_691f99fa-fb98-4a4e-a05c-124913e827a6","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [37,2],"omissionRef": null},
-    {"key": "C02","entityId": "he_639a19d5-b157-407c-ad75-49e8e3d91629","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": ["public-06","public-07"],"issues": [38,2],"omissionRef": null},
-    {"key": "C02A","entityId": "he_621f98a7-71f5-4459-99a8-67796c7d162e","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [328,2],"omissionRef": null},
-    {"key": "C03","entityId": "he_e7053ccc-323d-40b2-9b80-b4b7497d8e4a","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": ["public-06","public-07"],"issues": [39,2],"omissionRef": null},
-    {"key": "C04","entityId": "he_b94b76d1-98e3-40ee-a279-92fe2b04399d","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [40,2],"omissionRef": null},
-    {"key": "C05","entityId": "he_d138f203-ac49-437a-8c05-e7ee7cc4d7c2","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [41,2],"omissionRef": null},
-    {"key": "C06","entityId": "he_4f477bae-5841-41da-be12-3021a2cb3fe0","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [42,2],"omissionRef": null},
-    {"key": "C07","entityId": "he_39c3a6c0-4af3-4b50-97a9-666bfb92b8fb","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": ["public-06","public-07"],"issues": [43,2],"omissionRef": null},
-    {"key": "C08","entityId": "he_05daaa10-f60b-4cf8-b86a-5ee8a0a9e232","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [44,2],"omissionRef": null},
-    {"key": "C08A","entityId": "he_14ff11f9-8b32-476b-a931-9debc2d40f76","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "staged","authoritative": false},"unmaterializedAccess": null,"sources": ["public-01","public-05"],"issues": [308,2],"omissionRef": null},
-    {"key": "C09","entityId": "he_7e7a25c5-2263-4993-b597-c1ccf9279c6e","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [45,2],"omissionRef": null},
-    {"key": "C10","entityId": "he_fc113853-837d-493a-a041-882d5a4c125f","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [46,2],"omissionRef": null},
-    {"key": "C11","entityId": "he_9af82b1f-c63c-4af8-8fa0-1df30f63328c","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [47,2],"omissionRef": null},
-    {"key": "C12","entityId": "he_4f5ab168-71e6-495c-9590-49634dcd6b63","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": ["public-06","public-07"],"issues": [48,2],"omissionRef": null},
-    {"key": "C12A","entityId": "he_0dfa0c92-b67c-49e5-86a4-99924c5f3bcf","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [329,2],"omissionRef": null},
-    {"key": "C13","entityId": "he_fc2473c5-813d-4bf1-8173-e35ff3e942d4","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [49,2],"omissionRef": null},
-    {"key": "C14","entityId": "he_861849b3-7f6b-488e-9bf8-ba331ec84b39","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [50,2],"omissionRef": null},
-    {"key": "C14A","entityId": "he_29679c08-71fd-49be-8ac8-d20b44b9e297","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "staged","authoritative": false},"unmaterializedAccess": null,"sources": ["public-35"],"issues": [378,2],"omissionRef": null},
-    {"key": "C14B","entityId": "he_202e327d-164e-4483-9fcc-bd3531e2a54a","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "staged","authoritative": false},"unmaterializedAccess": null,"sources": ["public-36"],"issues": [378,2],"omissionRef": null},
-    {"key": "C15","entityId": "he_45655f49-467b-41f5-9836-92a8dedcb22c","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": ["public-03","public-04"],"issues": [51,2],"omissionRef": null},
-    {"key": "E01","entityId": "he_b0f95d46-4f4c-4412-af8d-074707b83ff5","kind": "Chapter","group": "book","label": null,"optional": null,"presence": "present","publicationAnnotation": {"label": "staged","authoritative": false},"unmaterializedAccess": "restricted","sources": ["public-37"],"issues": [52,380,2],"omissionRef": null},
-    {"key": "back-notes","entityId": "he_e41eabe2-b298-4da4-880f-c0d3eda56b58","kind": "MatterUnit","group": "back","label": "Chapter endnotes","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "restricted","sources": [],"issues": [56,13],"omissionRef": null},
-    {"key": "back-bibliography","entityId": "he_fa38a782-ff60-4b85-8bb1-a2763b913b8d","kind": "MatterUnit","group": "back","label": "Bibliography","optional": false,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [56,13],"omissionRef": null},
-    {"key": "back-chronology","entityId": "he_13c33e89-eb2a-4f7c-b202-fe736e67a678","kind": "MatterUnit","group": "back","label": "Chronology","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [57,13],"omissionRef": null},
-    {"key": "back-method-appendices","entityId": "he_2660afd0-916d-48f6-8966-687a0dc98b01","kind": "MatterUnit","group": "back","label": "Method appendices","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [57,13],"omissionRef": null},
-    {"key": "back-glossary","entityId": "he_5c0ad235-ddb0-4dd4-8dcb-0a01c0b4bb8c","kind": "MatterUnit","group": "back","label": "Glossary","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [58,13],"omissionRef": null},
-    {"key": "back-index","entityId": "he_79b8d3c3-734d-454d-a302-704e69d5499c","kind": "MatterUnit","group": "back","label": "Index","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [58,13],"omissionRef": null},
-    {"key": "back-author-information","entityId": "he_4a0fe62e-4b34-49b0-a586-70cc04b3d5e7","kind": "MatterUnit","group": "back","label": "Author information","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [59,13],"omissionRef": null},
-    {"key": "back-contributor-information","entityId": "he_a37c2099-da9c-4dd3-b68d-292b23e8597f","kind": "MatterUnit","group": "back","label": "Contributor information","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [59,13],"omissionRef": null},
-    {"key": "back-permissions","entityId": "he_6ae67f4a-d9a7-4c64-b446-fa9a2fe50ceb","kind": "MatterUnit","group": "back","label": "Permissions","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [32,6,13],"omissionRef": null},
-    {"key": "back-colophon","entityId": "he_e9ae75a7-ff9a-453b-ace0-487f5405b3fb","kind": "MatterUnit","group": "back","label": "Colophon","optional": true,"presence": "pending","publicationAnnotation": {"label": "working","authoritative": false},"unmaterializedAccess": "unavailable-on-this-client","sources": [],"issues": [59,13],"omissionRef": null},
-    {"key": "place-beneath-pain","entityId": "he_ba55cdc2-2267-496f-b3c6-f6e1299721e2","kind": "Chapter","group": "unplaced","label": "The Place Beneath Pain","optional": null,"presence": "present","publicationAnnotation": {"label": "staged","authoritative": false},"unmaterializedAccess": null,"sources": ["public-02"],"issues": [344,345],"omissionRef": null}
+    {
+      "key": "front-half-title",
+      "entityId": "he_21429d39-2ee8-4173-8156-12cce9daee02",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Half-title",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        34,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-frontispiece",
+      "entityId": "he_c0277ad8-e929-452d-aa41-d0bacd75b548",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Frontispiece",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-title",
+      "entityId": "he_ec94cf6d-d549-4d50-8f78-7aa954ca2ac3",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Title",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        34,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-copyright",
+      "entityId": "he_8014b45f-733c-454a-9da4-ef43ce66b9d3",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Copyright / edition",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        34,
+        6,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-dedication",
+      "entityId": "he_eb80f89b-a53a-41b9-b78c-b79e9f7882ec",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Dedication",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        7,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-epigraph",
+      "entityId": "he_60071f18-672d-40b5-ab46-d3c613c24a8e",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Epigraph",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        7,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-contents",
+      "entityId": "he_d13830ba-ed1f-4bb6-9564-c915c1765be7",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Contents",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-list-of-figures",
+      "entityId": "he_d36b2f2c-423e-4fa3-8a00-205b0cf33d5f",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "List of figures",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-list-of-tables",
+      "entityId": "he_2af0fca2-690c-4a10-980e-f5d891f45fce",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "List of tables",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-foreword",
+      "entityId": "he_acbd2f8c-d708-48e1-b189-716fbbddab0a",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Foreword",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        7,
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-preface",
+      "entityId": "he_715292cf-9c17-4707-abad-df8c3de7b737",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Preface",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-acknowledgments",
+      "entityId": "he_6ca07867-7511-4704-8a81-72952482e118",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Acknowledgments",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        7,
+        59,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-introduction",
+      "entityId": "he_5c981d5b-35f8-4466-ae2a-5aa2cac7ae5b",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Introduction",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        36,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-author-source-note",
+      "entityId": "he_e8e52407-b9be-4421-9251-b5bb6fa3a10a",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Author / source note",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        35,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "front-content-advisory",
+      "entityId": "he_fc252d30-4cf9-413d-8606-be61c523f278",
+      "kind": "MatterUnit",
+      "group": "front",
+      "label": "Content advisory",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        35,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C01",
+      "entityId": "he_691f99fa-fb98-4a4e-a05c-124913e827a6",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        37,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C02",
+      "entityId": "he_639a19d5-b157-407c-ad75-49e8e3d91629",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [
+        "public-06",
+        "public-07"
+      ],
+      "issues": [
+        38,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C02A",
+      "entityId": "he_621f98a7-71f5-4459-99a8-67796c7d162e",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        328,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C03",
+      "entityId": "he_e7053ccc-323d-40b2-9b80-b4b7497d8e4a",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [
+        "public-06",
+        "public-07"
+      ],
+      "issues": [
+        39,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C04",
+      "entityId": "he_b94b76d1-98e3-40ee-a279-92fe2b04399d",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        40,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C05",
+      "entityId": "he_d138f203-ac49-437a-8c05-e7ee7cc4d7c2",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        41,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C06",
+      "entityId": "he_4f477bae-5841-41da-be12-3021a2cb3fe0",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        42,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C07",
+      "entityId": "he_39c3a6c0-4af3-4b50-97a9-666bfb92b8fb",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [
+        "public-06",
+        "public-07"
+      ],
+      "issues": [
+        43,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C08",
+      "entityId": "he_05daaa10-f60b-4cf8-b86a-5ee8a0a9e232",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        44,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C08A",
+      "entityId": "he_14ff11f9-8b32-476b-a931-9debc2d40f76",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "staged",
+        "authoritative": false
+      },
+      "unmaterializedAccess": null,
+      "sources": [
+        "public-01",
+        "public-05"
+      ],
+      "issues": [
+        308,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C09",
+      "entityId": "he_7e7a25c5-2263-4993-b597-c1ccf9279c6e",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        45,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C10",
+      "entityId": "he_fc113853-837d-493a-a041-882d5a4c125f",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        46,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C11",
+      "entityId": "he_9af82b1f-c63c-4af8-8fa0-1df30f63328c",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        47,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C12",
+      "entityId": "he_4f5ab168-71e6-495c-9590-49634dcd6b63",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [
+        "public-06",
+        "public-07"
+      ],
+      "issues": [
+        48,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C12A",
+      "entityId": "he_0dfa0c92-b67c-49e5-86a4-99924c5f3bcf",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        329,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C13",
+      "entityId": "he_fc2473c5-813d-4bf1-8173-e35ff3e942d4",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        49,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C14",
+      "entityId": "he_861849b3-7f6b-488e-9bf8-ba331ec84b39",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        50,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C14A",
+      "entityId": "he_29679c08-71fd-49be-8ac8-d20b44b9e297",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "staged",
+        "authoritative": false
+      },
+      "unmaterializedAccess": null,
+      "sources": [
+        "public-35"
+      ],
+      "issues": [
+        378,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C14B",
+      "entityId": "he_202e327d-164e-4483-9fcc-bd3531e2a54a",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "staged",
+        "authoritative": false
+      },
+      "unmaterializedAccess": null,
+      "sources": [
+        "public-36"
+      ],
+      "issues": [
+        378,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "C15",
+      "entityId": "he_45655f49-467b-41f5-9836-92a8dedcb22c",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [
+        "public-03",
+        "public-04"
+      ],
+      "issues": [
+        51,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "E01",
+      "entityId": "he_b0f95d46-4f4c-4412-af8d-074707b83ff5",
+      "kind": "Chapter",
+      "group": "book",
+      "label": null,
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "staged",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [
+        "public-37"
+      ],
+      "issues": [
+        52,
+        380,
+        2
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-notes",
+      "entityId": "he_e41eabe2-b298-4da4-880f-c0d3eda56b58",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Chapter endnotes",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "restricted",
+      "sources": [],
+      "issues": [
+        56,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-bibliography",
+      "entityId": "he_fa38a782-ff60-4b85-8bb1-a2763b913b8d",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Bibliography",
+      "optional": false,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        56,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-chronology",
+      "entityId": "he_13c33e89-eb2a-4f7c-b202-fe736e67a678",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Chronology",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        57,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-method-appendices",
+      "entityId": "he_2660afd0-916d-48f6-8966-687a0dc98b01",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Method appendices",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        57,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-glossary",
+      "entityId": "he_5c0ad235-ddb0-4dd4-8dcb-0a01c0b4bb8c",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Glossary",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        58,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-index",
+      "entityId": "he_79b8d3c3-734d-454d-a302-704e69d5499c",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Index",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        58,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-author-information",
+      "entityId": "he_4a0fe62e-4b34-49b0-a586-70cc04b3d5e7",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Author information",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        59,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-contributor-information",
+      "entityId": "he_a37c2099-da9c-4dd3-b68d-292b23e8597f",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Contributor information",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        59,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-permissions",
+      "entityId": "he_6ae67f4a-d9a7-4c64-b446-fa9a2fe50ceb",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Permissions",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        32,
+        6,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "back-colophon",
+      "entityId": "he_e9ae75a7-ff9a-453b-ace0-487f5405b3fb",
+      "kind": "MatterUnit",
+      "group": "back",
+      "label": "Colophon",
+      "optional": true,
+      "presence": "pending",
+      "publicationAnnotation": {
+        "label": "working",
+        "authoritative": false
+      },
+      "unmaterializedAccess": "unavailable-on-this-client",
+      "sources": [],
+      "issues": [
+        59,
+        13
+      ],
+      "omissionRef": null
+    },
+    {
+      "key": "place-beneath-pain",
+      "entityId": "he_ba55cdc2-2267-496f-b3c6-f6e1299721e2",
+      "kind": "Chapter",
+      "group": "unplaced",
+      "label": "The Place Beneath Pain",
+      "optional": null,
+      "presence": "present",
+      "publicationAnnotation": {
+        "label": "staged",
+        "authoritative": false
+      },
+      "unmaterializedAccess": null,
+      "sources": [
+        "public-02"
+      ],
+      "issues": [
+        344,
+        345
+      ],
+      "omissionRef": null
+    }
   ],
   "sources": [
-    {"key": "public-01","role": "canonical","extent": "full","revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e","path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md","blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575"],"targets": ["C08A"]},
-    {"key": "public-02","role": "unplaced","extent": "full","revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e","path": "manuscript/unplaced/the-place-beneath-pain.md","blob": "5dba3b70153cbbe108c9575a7b4e7bed07c67e28","scopeRefs": ["https://github.com/grwtsk/huey/pull/346"],"targets": ["place-beneath-pain"]},
-    {"key": "public-03","role": "candidate","extent": "partial","revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e","path": "planning/writing/c15-prototype-r01.md","blob": "6e2b041d15d02381c700460bc888f1efa35aeea9","scopeRefs": ["https://github.com/grwtsk/huey/issues/332#issuecomment-5790493315"],"targets": ["C15"]},
-    {"key": "public-04","role": "candidate","extent": "partial","revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e","path": "planning/writing/c15-societal-language-braid.md","blob": "6bdbed0e2f51f19bc4e9a5526f4ee73ffabd63a3","scopeRefs": ["https://github.com/grwtsk/huey/issues/332#issuecomment-5790403521"],"targets": ["C15"]},
-    {"key": "public-05","role": "candidate","extent": "full","revision": "5e936adb132d22d8f0d5c41799591896535abd21","path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md","blob": "f35bb801fd6e1c74a087990f78582ef4d6a5f0c3","scopeRefs": ["https://github.com/grwtsk/huey/pull/319"],"targets": ["C08A"]},
-    {"key": "public-06","role": "candidate","extent": "partial","revision": "5e936adb132d22d8f0d5c41799591896535abd21","path": "planning/writing/interiority-r01/earlier-chapter-proposals.json","blob": "4bbb35d3a1d96e02fee01febe1aae11d647a414d","scopeRefs": ["https://github.com/grwtsk/huey/pull/319"],"targets": ["C02","C03","C07","C12"]},
-    {"key": "public-07","role": "candidate","extent": "partial","revision": "5e936adb132d22d8f0d5c41799591896535abd21","path": "planning/writing/interiority-r01/huey-interiority-pass.md","blob": "7063a8ee1eaca6be30e4947c63cafb91e15455f6","scopeRefs": ["https://github.com/grwtsk/huey/pull/319"],"targets": ["C02","C03","C07","C12"]},
-    {"key": "public-08","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/context/standard.md","blob": "235591b166ca520ee6a767ef789775c11a8f7d36","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-09","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/context/the-trust-i-had-already-given.md","blob": "dea9aff84a148d85959356e82390fa986719c66c","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-10","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/context/thread-dossier.md","blob": "b1fe3fe10f05034c4d43e999ea184f6d3b2fb517","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-11","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/awareness-and-the-social-contract.md","blob": "66ada2cc0b193f9ad90511a34465f1d2fe85f6a4","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-12","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/before-the-examination-the-patient-who-arrived-at-stanford.md","blob": "4c64a6c699129e6ae96b25ad36cf600545346ea8","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-13","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/communication-changed-risk.md","blob": "2b80501728777f87ada72180972cdbbe453597ef","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-14","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/from-stanford-to-ucsf-the-transfer-was-part-of-the-history.md","blob": "51cb89235f6f8b8d704677e482384edb9e924d3f","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-15","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/his-test-is-his-my-persistence-is-mine.md","blob": "523dba7662ee6c00962e2480fc5730bde2496e99","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-16","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/january-24-2019-the-origin-point.md","blob": "7f137cd5477e6091021b8831a7d85250d83a3f40","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-17","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/medicine-worthy-of-its-laurels.md","blob": "8dc31ba05b48e32754c672e8e1b38f078d79b2aa","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-18","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/the-unordinary-test-of-goodness.md","blob": "dafcb68a2eed3a37181738b6852a5b2c8d350f43","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-19","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/what-must-be-explained-evidence-witnesses-and-the-honest-mistake-hypothesis.md","blob": "37d5ef7cb80f571a74ba95e5eecf3bb0ef0955f1","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-20","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/when-care-becomes-the-threat.md","blob": "6f8c7e7594c486267acdc62812d4b077faccf80a","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-21","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/worse-than-a-rapist.md","blob": "641f3ac14e8fb4a9622ec77f49bf6781689998f7","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-22","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-text/writing-as-the-act-of-care.md","blob": "0912ed8d49013843361c55fb38ed6250915618c8","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-23","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/ancillary-r02/argument-draft.md","blob": "67426c44ad2c9d2eceed30abe19ca2081aa8c136","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-24","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/authority-q03/argument-draft.md","blob": "547fe80c68a05b345df322c34e928a9b78ab373d","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-25","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/care-law/revision.md","blob": "64f4d21a930f2710cbef844e2d8becc87ecc27a2","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-26","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/transfer-manifest.json","blob": "72a3b30aa3741936ea400c6fd46c7ee7fca30387","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-27","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/transfer-r02.json","blob": "58d03675db0d138a0664914056e688f30e1a722f","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-28","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/transfer-q03.json","blob": "8720d1c4190e2c4a7cdaa578605f409099e9ab34","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-29","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/context/manifest.json","blob": "ec13de6baeedc20ac4548df25a24779f707b989d","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-30","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "sources/standard-of-care/neurology-current/content/articles/atlas.json","blob": "f0060ba32231f6f08399ea174dc279dc2556ecff","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-31","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/care-law/book-integration.json","blob": "51d97df010caf666c2ed64fb4bf311784f46648d","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-32","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/care-law/economics-r11.md","blob": "649cd4a95ab6f44dd90be45e445450a1a2a70ea0","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-33","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/care-law/institutional-economics-r12.md","blob": "c77dbf0f69cc84f7595178e36e8636c7446e8979","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-34","role": "support","extent": "full","revision": "ff0499bd341de12a31b355b79867b547f19d9b16","path": "planning/standard-of-care/care-law/reciprocal-notice-r13.md","blob": "b7ccf3d14cebc5787a02bf5dafa9fa21c6c5db37","scopeRefs": ["https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"],"targets": []},
-    {"key": "public-35","role": "canonical","extent": "full","revision": "e71889afd32903300e555c4aa8cbaa390c18767a","path": "manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md","blob": "3f30b37048d5fe792c27f580eaa51cb50d7e464d","scopeRefs": ["https://github.com/grwtsk/huey/issues/378"],"targets": ["C14A"]},
-    {"key": "public-36","role": "canonical","extent": "full","revision": "cfb7082ffab6ef5e238dd8830b95810c13e120e1","path": "manuscript/02-interlude/14b-orange-after-the-end.md","blob": "b586ba457b7a71f91cd8f0f9d896698b88e02ca3","scopeRefs": ["https://github.com/grwtsk/huey/issues/378"],"targets": ["C14B"]},
-    {"key": "public-37","role": "canonical","extent": "partial","revision": "c3d6966b8d5b7ae83233018ae3f4e4509aa3c567","path": "manuscript/03-excursion/edna.md","blob": "949e2c2c7c14978143b0d97cf9a79e6efe6bbf49","scopeRefs": ["https://github.com/grwtsk/huey/issues/380"],"targets": ["E01"]}
+    {
+      "key": "public-01",
+      "role": "canonical",
+      "extent": "full",
+      "revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e",
+      "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+      "blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575"
+      ],
+      "targets": [
+        "C08A"
+      ]
+    },
+    {
+      "key": "public-02",
+      "role": "unplaced",
+      "extent": "full",
+      "revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e",
+      "path": "manuscript/unplaced/the-place-beneath-pain.md",
+      "blob": "5dba3b70153cbbe108c9575a7b4e7bed07c67e28",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/pull/346"
+      ],
+      "targets": [
+        "place-beneath-pain"
+      ]
+    },
+    {
+      "key": "public-03",
+      "role": "candidate",
+      "extent": "partial",
+      "revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e",
+      "path": "planning/writing/c15-prototype-r01.md",
+      "blob": "6e2b041d15d02381c700460bc888f1efa35aeea9",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/332#issuecomment-5790493315"
+      ],
+      "targets": [
+        "C15"
+      ]
+    },
+    {
+      "key": "public-04",
+      "role": "candidate",
+      "extent": "partial",
+      "revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e",
+      "path": "planning/writing/c15-societal-language-braid.md",
+      "blob": "6bdbed0e2f51f19bc4e9a5526f4ee73ffabd63a3",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/332#issuecomment-5790403521"
+      ],
+      "targets": [
+        "C15"
+      ]
+    },
+    {
+      "key": "public-05",
+      "role": "candidate",
+      "extent": "full",
+      "revision": "5e936adb132d22d8f0d5c41799591896535abd21",
+      "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+      "blob": "f35bb801fd6e1c74a087990f78582ef4d6a5f0c3",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/pull/319"
+      ],
+      "targets": [
+        "C08A"
+      ]
+    },
+    {
+      "key": "public-06",
+      "role": "candidate",
+      "extent": "partial",
+      "revision": "5e936adb132d22d8f0d5c41799591896535abd21",
+      "path": "planning/writing/interiority-r01/earlier-chapter-proposals.json",
+      "blob": "4bbb35d3a1d96e02fee01febe1aae11d647a414d",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/pull/319"
+      ],
+      "targets": [
+        "C02",
+        "C03",
+        "C07",
+        "C12"
+      ]
+    },
+    {
+      "key": "public-07",
+      "role": "candidate",
+      "extent": "partial",
+      "revision": "5e936adb132d22d8f0d5c41799591896535abd21",
+      "path": "planning/writing/interiority-r01/huey-interiority-pass.md",
+      "blob": "7063a8ee1eaca6be30e4947c63cafb91e15455f6",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/pull/319"
+      ],
+      "targets": [
+        "C02",
+        "C03",
+        "C07",
+        "C12"
+      ]
+    },
+    {
+      "key": "public-08",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/context/standard.md",
+      "blob": "235591b166ca520ee6a767ef789775c11a8f7d36",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-09",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/context/the-trust-i-had-already-given.md",
+      "blob": "dea9aff84a148d85959356e82390fa986719c66c",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-10",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/context/thread-dossier.md",
+      "blob": "b1fe3fe10f05034c4d43e999ea184f6d3b2fb517",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-11",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/awareness-and-the-social-contract.md",
+      "blob": "66ada2cc0b193f9ad90511a34465f1d2fe85f6a4",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-12",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/before-the-examination-the-patient-who-arrived-at-stanford.md",
+      "blob": "4c64a6c699129e6ae96b25ad36cf600545346ea8",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-13",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/communication-changed-risk.md",
+      "blob": "2b80501728777f87ada72180972cdbbe453597ef",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-14",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/from-stanford-to-ucsf-the-transfer-was-part-of-the-history.md",
+      "blob": "51cb89235f6f8b8d704677e482384edb9e924d3f",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-15",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/his-test-is-his-my-persistence-is-mine.md",
+      "blob": "523dba7662ee6c00962e2480fc5730bde2496e99",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-16",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/january-24-2019-the-origin-point.md",
+      "blob": "7f137cd5477e6091021b8831a7d85250d83a3f40",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-17",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/medicine-worthy-of-its-laurels.md",
+      "blob": "8dc31ba05b48e32754c672e8e1b38f078d79b2aa",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-18",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/the-unordinary-test-of-goodness.md",
+      "blob": "dafcb68a2eed3a37181738b6852a5b2c8d350f43",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-19",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/what-must-be-explained-evidence-witnesses-and-the-honest-mistake-hypothesis.md",
+      "blob": "37d5ef7cb80f571a74ba95e5eecf3bb0ef0955f1",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-20",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/when-care-becomes-the-threat.md",
+      "blob": "6f8c7e7594c486267acdc62812d4b077faccf80a",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-21",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/worse-than-a-rapist.md",
+      "blob": "641f3ac14e8fb4a9622ec77f49bf6781689998f7",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-22",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-text/writing-as-the-act-of-care.md",
+      "blob": "0912ed8d49013843361c55fb38ed6250915618c8",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-23",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/ancillary-r02/argument-draft.md",
+      "blob": "67426c44ad2c9d2eceed30abe19ca2081aa8c136",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-24",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/authority-q03/argument-draft.md",
+      "blob": "547fe80c68a05b345df322c34e928a9b78ab373d",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-25",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/care-law/revision.md",
+      "blob": "64f4d21a930f2710cbef844e2d8becc87ecc27a2",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-26",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/transfer-manifest.json",
+      "blob": "72a3b30aa3741936ea400c6fd46c7ee7fca30387",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-27",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/transfer-r02.json",
+      "blob": "58d03675db0d138a0664914056e688f30e1a722f",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-28",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/transfer-q03.json",
+      "blob": "8720d1c4190e2c4a7cdaa578605f409099e9ab34",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-29",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/context/manifest.json",
+      "blob": "ec13de6baeedc20ac4548df25a24779f707b989d",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-30",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "sources/standard-of-care/neurology-current/content/articles/atlas.json",
+      "blob": "f0060ba32231f6f08399ea174dc279dc2556ecff",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-31",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/care-law/book-integration.json",
+      "blob": "51d97df010caf666c2ed64fb4bf311784f46648d",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-32",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/care-law/economics-r11.md",
+      "blob": "649cd4a95ab6f44dd90be45e445450a1a2a70ea0",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-33",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/care-law/institutional-economics-r12.md",
+      "blob": "c77dbf0f69cc84f7595178e36e8636c7446e8979",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-34",
+      "role": "support",
+      "extent": "full",
+      "revision": "ff0499bd341de12a31b355b79867b547f19d9b16",
+      "path": "planning/standard-of-care/care-law/reciprocal-notice-r13.md",
+      "blob": "b7ccf3d14cebc5787a02bf5dafa9fa21c6c5db37",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544"
+      ],
+      "targets": []
+    },
+    {
+      "key": "public-35",
+      "role": "canonical",
+      "extent": "full",
+      "revision": "e71889afd32903300e555c4aa8cbaa390c18767a",
+      "path": "manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md",
+      "blob": "3f30b37048d5fe792c27f580eaa51cb50d7e464d",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/378"
+      ],
+      "targets": [
+        "C14A"
+      ]
+    },
+    {
+      "key": "public-36",
+      "role": "canonical",
+      "extent": "full",
+      "revision": "cfb7082ffab6ef5e238dd8830b95810c13e120e1",
+      "path": "manuscript/02-interlude/14b-orange-after-the-end.md",
+      "blob": "b586ba457b7a71f91cd8f0f9d896698b88e02ca3",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/378"
+      ],
+      "targets": [
+        "C14B"
+      ]
+    },
+    {
+      "key": "public-37",
+      "role": "canonical",
+      "extent": "partial",
+      "revision": "c3d6966b8d5b7ae83233018ae3f4e4509aa3c567",
+      "path": "manuscript/03-excursion/edna.md",
+      "blob": "949e2c2c7c14978143b0d97cf9a79e6efe6bbf49",
+      "scopeRefs": [
+        "https://github.com/grwtsk/huey/issues/380"
+      ],
+      "targets": [
+        "E01"
+      ]
+    }
   ],
-  "supportPaths": ["manuscript/01-preamble/README.md", "manuscript/02-interlude/README.md", "manuscript/03-excursion/README.md", "manuscript/README.md", "manuscript/back/README.md", "manuscript/front/README.md"]
+  "supportPaths": [
+    "manuscript/01-preamble/README.md",
+    "manuscript/02-interlude/README.md",
+    "manuscript/03-excursion/README.md",
+    "manuscript/README.md",
+    "manuscript/back/README.md",
+    "manuscript/front/README.md",
+    "manuscript/flow/README.md"
+  ]
 }
