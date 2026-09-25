@@ -169,6 +169,25 @@ test('unapplied public supporting corpus is visible as workspace resources', () 
   assert.equal(output.slots.length, 6);
 });
 
+test('pre-partition manuscript flow is classified as a support resource rather than a chapter', () => {
+  const input = fixture();
+  input.registry.sources.push(makeSource('flow-resource', 'manuscript/flow/example.md', 'Synthetic flow', 'support', []));
+  input.sourceAvailability['flow-resource'] = true;
+  input.trackedPaths.push('manuscript/flow/example.md');
+  const output = buildInventory(input);
+  assert.deepEqual(output.editorialWorkspace.resources, ['flow-resource']);
+  assert.equal(output.slots.length, 6);
+  assert.ok(!output.slots.some(row => row.key === 'flow-resource'));
+});
+
+test('manuscript support resources cannot escape the flow namespace', () => {
+  const input = fixture();
+  input.registry.sources.push(makeSource('bad-flow-resource', 'manuscript/elsewhere.md', 'Synthetic flow', 'support', []));
+  input.sourceAvailability['bad-flow-resource'] = true;
+  input.trackedPaths.push('manuscript/elsewhere.md');
+  assert.throws(() => buildInventory(input), /manuscript support source must live under manuscript\/flow/);
+});
+
 test('unavailable public Git artifacts stay inventoried without fake availability', () => {
   const input = fixture(); input.sourceAvailability.candidate = false;
   const output = buildInventory(input);

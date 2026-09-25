@@ -123,6 +123,10 @@ function validateCoverage(registry, book, trackedPaths) {
     requireThat(source.path.startsWith(`manuscript/${slot.group}/`), `matter source path disagrees with slot group: ${source.key}`);
     declared.push(source.path);
   }
+  for (const source of registry.sources.filter(source => source.role === 'support' && source.path.startsWith('manuscript/'))) {
+    requireThat(source.path.startsWith('manuscript/flow/'), `manuscript support source must live under manuscript/flow/: ${source.key}`);
+    declared.push(source.path);
+  }
   for (const slot of registry.slots.filter(slot => slot.group === 'unplaced')) {
     const source = registry.sources.filter(source => source.role === 'unplaced' && source.targets.includes(slot.key));
     requireThat(source.length === 1 && source[0].path.startsWith('manuscript/unplaced/'), `unplaced slot needs one manuscript source: ${slot.key}`);
