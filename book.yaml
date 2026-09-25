@@ -3,26 +3,6 @@
   "title": "Huey",
   "author": "R.A. Jacob Martone",
   "canonical_source_root": "manuscript",
-  "word_target": {
-    "scope": "narrative_body",
-    "min": 80000,
-    "max": 114000,
-    "movement_envelopes": {
-      "preamble": {
-        "min": 31000,
-        "max": 43000
-      },
-      "interlude": {
-        "min": 48400,
-        "max": 70400
-      },
-      "excursion": {
-        "min": 600,
-        "max": 600,
-        "policy": "preserve_supplied_short_close"
-      }
-    }
-  },
   "source_policy": {
     "source_format": "markdown",
     "generated_outputs_are_canonical": false,
@@ -41,7 +21,9 @@
       "title": "The Feather",
       "path": "manuscript/01-preamble/01-the-feather.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C02",
@@ -49,7 +31,9 @@
       "title": "A Life Already Under Way",
       "path": "manuscript/01-preamble/02-a-life-already-under-way.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C02A",
@@ -61,7 +45,8 @@
       "include": false,
       "structural_role": "distant_reflection_of_C08A",
       "work_issue": 322,
-      "source_mapping_status": "pending_private_EX_reconciliation"
+      "source_mapping_status": "pending_private_EX_reconciliation",
+      "order_status": "working_projection_not_final"
     },
     {
       "id": "C03",
@@ -69,7 +54,9 @@
       "title": "The Room",
       "path": "manuscript/01-preamble/03-the-room.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C04",
@@ -77,7 +64,9 @@
       "title": "The Other Person in the Room",
       "path": "manuscript/01-preamble/04-the-other-person-in-the-room.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C05",
@@ -85,7 +74,9 @@
       "title": "The Note That Arrived First",
       "path": "manuscript/01-preamble/05-the-note-that-arrived-first.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C06",
@@ -93,7 +84,9 @@
       "title": "One Physician, Two Chairs",
       "path": "manuscript/01-preamble/06-one-physician-two-chairs.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C07",
@@ -101,7 +94,9 @@
       "title": "A Page of My Own",
       "path": "manuscript/01-preamble/07-a-page-of-my-own.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C08",
@@ -109,7 +104,9 @@
       "title": "The Ring of Umber",
       "path": "manuscript/02-interlude/08-the-ring-of-umber.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C08A",
@@ -117,7 +114,9 @@
       "title": "Baptism in the Color of Rain",
       "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
       "status": "staged_public",
-      "include": true
+      "include": true,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C09",
@@ -125,7 +124,9 @@
       "title": "The Possibility of a Feather",
       "path": "manuscript/02-interlude/09-the-possibility-of-a-feather.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C10",
@@ -133,7 +134,9 @@
       "title": "The Instruments Already in the Room",
       "path": "manuscript/02-interlude/10-the-instruments-already-in-the-room.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C11",
@@ -141,7 +144,9 @@
       "title": "Insufficiently Examined",
       "path": "manuscript/02-interlude/11-insufficiently-examined.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C12",
@@ -149,7 +154,9 @@
       "title": "The Human Cost",
       "path": "manuscript/02-interlude/12-the-human-cost.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C12A",
@@ -161,7 +168,8 @@
       "include": false,
       "structural_role": "distant_reflection_of_C08A",
       "work_issue": 322,
-      "source_mapping_status": "pending_private_EX_reconciliation"
+      "source_mapping_status": "pending_private_EX_reconciliation",
+      "order_status": "working_projection_not_final"
     },
     {
       "id": "C13",
@@ -169,7 +177,9 @@
       "title": "Four Chambers",
       "path": "manuscript/02-interlude/13-four-chambers.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C14",
@@ -177,7 +187,9 @@
       "title": "Under the Pantocrator",
       "path": "manuscript/02-interlude/14-under-the-pantocrator.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C14A",
@@ -186,7 +198,9 @@
       "path": "manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md",
       "status": "staged_public",
       "include": true,
-      "work_issue": 378
+      "work_issue": 378,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C14B",
@@ -195,7 +209,9 @@
       "path": "manuscript/02-interlude/14b-orange-after-the-end.md",
       "status": "staged_public",
       "include": true,
-      "work_issue": 378
+      "work_issue": 378,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "C15",
@@ -203,7 +219,9 @@
       "title": "A Different Last Page",
       "path": "manuscript/02-interlude/15-a-different-last-page.md",
       "status": "planned",
-      "include": false
+      "include": false,
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     },
     {
       "id": "E01",
@@ -213,7 +231,9 @@
       "status": "staged_public_partial",
       "include": false,
       "work_issue": 380,
-      "source_mapping_status": "partial_public_delta_full_excursion_protected"
+      "source_mapping_status": "partial_public_delta_full_excursion_protected",
+      "order_status": "working_projection_not_final",
+      "title_status": "working_title_not_final"
     }
   ],
   "experiential_structure": {
@@ -237,6 +257,26 @@
     ],
     "ordering_relation": "C02A -> distance -> C08A -> distance -> C12A",
     "ex_id_reconciliation": "pending_private_register_reconciliation",
-    "nonclaim": "The structure does not assert equivalence, causal explanation, or symmetry among the experiences."
+    "nonclaim": "The structure does not assert equivalence, causal explanation, or symmetry among the experiences.",
+    "ordering_relation_status": "working_spacing_relation_not_final_chapter_order"
+  },
+  "word_horizon": {
+    "scope": "narrative_body",
+    "approximate_words": 120000,
+    "binding": false,
+    "policy": "scale_horizon_not_goal_quota_cap_deadline_or_release_criterion",
+    "note": "Word count is an observation of scale. Necessary content may grow beyond or remain below this horizon; padding is prohibited."
+  },
+  "composition_policy": {
+    "mode": "world_first_flow_then_argument_cuts",
+    "chapter_order_status": "working_projection_not_final",
+    "chapter_title_status": "working_projection_not_final",
+    "current_projection_authority": "planning_only",
+    "flow_root": "manuscript/flow",
+    "centerpiece_id": "C08A",
+    "centerpiece_role": "baptism_centered_mixing_chamber",
+    "final_partition_issue": 402,
+    "architecture_issue": 404,
+    "nonclaim": "Current chapter numbers, order, titles, paths and boundaries are working editorial projections, not final literary identity."
   }
 }
