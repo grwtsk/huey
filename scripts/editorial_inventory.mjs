@@ -117,9 +117,9 @@ function validateCoverage(registry, book, trackedPaths) {
   const bookSlots = registry.slots.filter(slot => slot.group === 'book');
   requireThat(bookSlots.length === items.length && bookSlots.every(slot => items.some(item => item.id === slot.key)), 'book slots do not exactly cover book.yaml');
   const declared = [...items.map(item => item.path), ...registry.supportPaths];
-  for (const source of registry.sources.filter(source => source.role === 'canonical' && !items.some(item => item.id === source.targets[0]))) {
+  for (const source of registry.sources.filter(source => ['canonical', 'candidate'].includes(source.role) && !items.some(item => item.id === source.targets[0]))) {
     const slot = registry.slots.find(slot => slot.key === source.targets[0]);
-    requireThat(slot && ['front', 'back'].includes(slot.group), `non-book canonical source needs front/back matter slot: ${source.key}`);
+    requireThat(slot && ['front', 'back'].includes(slot.group), `non-book manuscript source needs front/back matter slot: ${source.key}`);
     requireThat(source.path.startsWith(`manuscript/${slot.group}/`), `matter source path disagrees with slot group: ${source.key}`);
     declared.push(source.path);
   }
