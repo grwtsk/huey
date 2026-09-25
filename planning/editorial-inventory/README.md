@@ -37,8 +37,7 @@ identities and source mappings before paragraph editing can rely on this graph.
 `book.yaml` remains authoritative for current body order, movement, legacy labels
 and canonical Markdown paths. The checker requires exact coverage of its items,
 including `include: false` items. It also requires classification of every tracked
-manuscript Markdown file. Explicit support paths are the six existing structural
-READMEs; any new manuscript file must be accounted for before the check passes.
+manuscript Markdown file. Explicit support paths include the existing structural READMEs plus `manuscript/flow/README.md`; any new manuscript file must be accounted for before the check passes.
 Missing files remain known slots, with visible unavailable state. They never turn
 into omission. Untracked files are outside this public-source inventory.
 
@@ -74,7 +73,7 @@ The unmerged v1 draft now rejects the earlier `source.authority` and bare
 `publication` fields, including when supplied alongside their replacements. This
 pre-merge correction changes no EntityID, source pin or literary EntityVersion.
 
-All actual optional units remain pending. No omission is invented. The checker
+Optional matter remains explicitly governed. The Preface is now staged/present under #397/PR #403; other optional units remain pending unless separately recorded. No omission is invented. The checker
 requires an explicit omission reference for an optional unit recorded as omitted;
 it cannot authenticate the human decision behind that reference. A missing source
 does not supply one. Public source metadata is strict and allowlisted; restricted
@@ -93,10 +92,11 @@ The derived structure is Work -> FrontMatter, Body, BackMatter, with **Body ->
 Movement -> Chapter** for every manifest slot. The movements remain Preamble,
 Interlude and Excursion: Edna, in that order. There is no fourth movement.
 
-Front matter has fifteen pending units in a provisional editorial order, starting
+Front matter has fifteen units in a provisional editorial order, starting
 with half-title, then frontispiece if selected, title, copyright, dedication,
 epigraph, contents, figure/table lists, foreword, preface, acknowledgments,
-introduction, and the source-note/advisory slots. This is a preparation sequence,
+introduction, and the source-note/advisory slots. The Preface is staged/present;
+the remaining units retain their separately recorded states. This is a preparation sequence,
 not approved pagination or a new content decision. Acknowledgments is one optional
 unit with provisional front placement; #7/#59/#13 can change its placement while
 retaining its identity. Ten separately marked back-matter units cover the known
@@ -134,23 +134,24 @@ breaks remain later typesetting under #60/#61; they cannot redefine identity.
 ## Source audit and compatibility
 
 The [source audit](source-audit.md) records the exact inspected staging and public
-branch revisions. The registry pins 37 public source/candidate/resource artifacts
+branch revisions. The registry pins 38 public source/candidate/resource artifacts
 with their recorded `scopeRefs`. These links preserve provenance;
 they do not authenticate authorship, accept a proposal or grant further access.
 No source prose is embedded in generated output. Missing Git objects on another
 client are explicitly unavailable there; the tool performs no network retrieval.
 
-The current canonical tree has twenty-one body slots: three full working files (C08A,
+The current canonical working projection has twenty-one body slots: three full working files (C08A,
 C14A, and C14B), one partial public E01/Edna source, and seventeen comment-only
-files. It also has one unplaced chapter. Public partial
+files. It also has one unplaced chapter and a pre-partition flow support surface. The body-slot order is a working projection under #404, not a final table of contents. Public partial
 candidates and authorized branch resources remain separately identified. The
 inventory is complete for the declared manifest/tree boundary, not every possible
 source, every private revision, or an already assembled complete book.
 
-Current canonical-file checking covers manifest chapters and the unplaced
-manuscript. Front/back units have no prose files at this checkpoint. #349 must
-extend their explicit source mapping when such files are introduced; adding a
-file without classifying it fails coverage rather than silently ingesting it.
+Current canonical-file checking covers manifest chapters, the unplaced manuscript,
+and explicitly sourced front/back matter. The staged Preface is the first front-matter
+prose file classified through this path. #349 remains responsible for broader
+front-matter integration; adding a file without classifying it fails coverage rather
+than silently ingesting it.
 
 The existing `reader/scripts/content.mjs`, `reader/content/book.json` and evidence
 ledger are unchanged. C08A's pinned admission, 260 positional paragraph records

@@ -1,7 +1,9 @@
 # SOC core consolidation into staging
 
 Work: [#406](https://github.com/grwtsk/huey/issues/406), following #384/#385.
-Inspected staging base: `26447f857fbf85e5a28b0b3367a414533262d89f`.
+Initial inspected staging base: `26447f857fbf85e5a28b0b3367a414533262d89f`.
+Integrated concurrent staging: `353a5a74cb01621e9117f63dc75482106d816b08` (#405).
+The manifest retains the initial audit basis as historical provenance.
 Selected public source: PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The author's current request selects
 one bounded consolidation of the authorized corpus and claim apparatus.
@@ -76,23 +78,19 @@ metadata do not override them. The source layer is not a second canonical
 manuscript; candidate chapter joins remain proposals. Existing literary IDs,
 source pins and reading order are retained, not recalculated from these copies.
 
-## Narrow preface baseline correction
+## Concurrent staging reconciliation
 
-Before this work, #403 had added `manuscript/front/preface.md` to staging without
-classifying it in the inventory. The unchanged base failed `npm run test:inventory`
-with `unclassified tracked manuscript`. This PR registers that already authorized
-public file as a pinned, full **candidate reference** on the existing front-preface
-MatterUnit. Coverage now permits an explicitly targeted front/back MatterUnit
-candidate under its matching manuscript directory; unregistered paths, ambiguous
-classifications, wrong groups, chapter targets and implicit ingestion stay invalid.
+The initial #403 base failed `npm run test:inventory` because its new preface file
+was not classified. While this consolidation was prepared, #405 independently
+registered that source and introduced the world-first composition policy. The
+ordinary merge retains #405's inventory, compiler and route/traversal tests;
+this corpus PR adds no separate preface registration or ingestion behavior.
 
-The preface's stable EntityID and existing ReadingPage remain unchanged. Presence
-is `present` and source access is available; working publication metadata remains
-non-authoritative. The derived inventory describes an available uncompiled
-reference, not fully rendered prose. The page still has no selected source or
-paragraph mappings. This is coverage repair only: no preface text, page plan,
-reader admission, compiler ingestion or final front-matter acceptance changes.
-Selection and materialization remain later #349/#353/#370 work.
+The preface remains a candidate reference with its existing EntityID and
+ReadingPage. Its source is available but no preface paragraph mappings or selected
+page inscription are introduced. The merged world/flow policy, working chapter
+projections and approximate scale horizon are preserved. The corpus remains a
+source layer, not an automatic allocation of testimony into chapters.
 
 ## Deferred work and promotion
 

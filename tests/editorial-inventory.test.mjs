@@ -55,64 +55,6 @@ function fixture() {
 }
 const slot = (inventory, key) => inventory.slots.find(row => row.key === key);
 
-function matterReference(group = 'front') {
-  const input = fixture();
-  const target = input.registry.slots.find(row => row.group === group);
-  target.presence = 'present'; target.unmaterializedAccess = null;
-  target.sources.push('matter-working');
-  const source = makeSource('matter-working', `manuscript/${group}/synthetic-note.md`,
-    'Synthetic available working matter.', 'candidate', [target.key], 'full');
-  input.registry.sources.push(source);
-  input.trackedPaths.push(source.path);
-  input.sourceAvailability['matter-working'] = true;
-  return { input, target, source };
-}
-
-for (const group of ['front', 'back']) test(`pinned ${group} matter remains an available reference without prose ingestion or admission`, () => {
-  const { input, target, source } = matterReference(group);
-  Object.defineProperty(input.files, source.path, { get() { throw new Error('Reference prose must not be read'); } });
-  const output = buildInventory(input), projected = slot(output, target.key);
-  assert.equal(projected.entityId, target.entityId);
-  assert.equal(projected.presence, 'present');
-  assert.equal(projected.access, 'available');
-  assert.equal(projected.editorialMaterialization, 'partial');
-  assert.equal(projected.canonicalPath, null);
-  assert.equal(projected.canonicalState, 'not-assigned');
-  assert.equal(projected.entityVersion, null);
-  assert.equal(projected.observedReaderAdmission, 'not-listed');
-  assert.deepEqual(projected.publicationAnnotation, { label: 'working', authoritative: false });
-  assert.equal(output.sources.find(row => row.key === source.key).role, 'candidate');
-  assert.equal(output.coverage.bookSlots, 3);
-});
-
-test('unavailable front-matter reference does not manufacture working prose', () => {
-  const { input, target } = matterReference();
-  input.sourceAvailability['matter-working'] = false;
-  const projected = slot(buildInventory(input), target.key);
-  assert.equal(projected.entityId, target.entityId);
-  assert.equal(projected.presence, 'present');
-  assert.equal(projected.access, 'unavailable-on-this-client');
-  assert.equal(projected.editorialMaterialization, 'placeholder');
-});
-
-test('unregistered front-matter manuscript stays rejected', () => {
-  const input = fixture(); input.trackedPaths.push('manuscript/front/unknown.md');
-  assert.throws(() => buildInventory(input), /unclassified tracked manuscript/);
-});
-
-for (const [name, mutate] of [
-  ['chapter target', ({ input, target, source }) => { target.sources = []; source.targets = ['C02']; input.registry.slots.find(row => row.key === 'C02').sources.push(source.key); }],
-  ['opposite matter group', ({ input, target, source }) => { target.sources = []; const next = input.registry.slots.find(row => row.group === 'back'); next.presence = 'present'; next.sources.push(source.key); source.targets = [next.key]; }],
-  ['body path', ({ source }) => source.path = 'manuscript/01-preamble/extra.md'],
-  ['nested matter path', ({ source }) => source.path = 'manuscript/front/nested/extra.md'],
-  ['non-Markdown path', ({ source }) => source.path = 'manuscript/front/extra.json'],
-  ['canonical ingestion role', ({ source }) => source.role = 'canonical'],
-  ['multiple matter targets', ({ input, source }) => { const next = input.registry.slots.find(row => row.group === 'back'); next.presence = 'present'; next.sources.push(source.key); source.targets.push(next.key); }],
-]) test(`front/back coverage rejects ${name}`, () => {
-  const data = matterReference(); mutate(data);
-  assert.throws(() => buildInventory(data.input), /invalid front\/back manuscript reference/);
-});
-
 test('complete metadata projection includes front, all book slots, back and unplaced', () => {
   const output = buildInventory(fixture());
   assert.deepEqual(output.slots.map(row => row.key), ['front-title', 'C01', 'C02', 'C03', 'back-note', 'unplaced-one']);
