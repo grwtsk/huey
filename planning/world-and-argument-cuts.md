@@ -1,9 +1,9 @@
 # World-first composition and argument cuts
 
-Author: R.A. Jacob Martone  
-Program: #396  
-Architecture: #404  
-Centerpiece flow: #398  
+Author: R.A. Jacob Martone
+Program: #396
+Architecture: #404
+Centerpiece flow: #398
 Later partition: #402
 
 Status: structural pre-release planning. This document does not establish final chapter titles, final order, final length, manuscript acceptance, evidence clearance, or release.
