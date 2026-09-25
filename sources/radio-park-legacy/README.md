@@ -1,8 +1,8 @@
 # Legacy Radio Park source corpus
 
-Program: [#410](https://github.com/grwtsk/huey/issues/410)  
-Composition: [#398](https://github.com/grwtsk/huey/issues/398), [#404](https://github.com/grwtsk/huey/issues/404)  
-Later partition: [#402](https://github.com/grwtsk/huey/issues/402)  
+Program: [#410](https://github.com/grwtsk/huey/issues/410)
+Composition: [#398](https://github.com/grwtsk/huey/issues/398), [#404](https://github.com/grwtsk/huey/issues/404)
+Later partition: [#402](https://github.com/grwtsk/huey/issues/402)
 Source custody: [#2](https://github.com/grwtsk/huey/issues/2)
 
 ## Status
