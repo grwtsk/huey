@@ -106,8 +106,10 @@ reference/packaging categories. Back matter is not an explanatory epilogue.
 ownership. The workspace references the independent EntityID of **The Place
 Beneath Pain** and the authorized supporting resources. Canonical placement is
 still #344/#345; moving the chapter later preserves that ID. Source essays,
-matrices, indices and unapplied proposals are resources, not extra chapters or
-automatically adopted passages. The inventory does not destructively move files.
+matrices, indices, unapplied proposals and pre-partition flow drafts are resources,
+not extra chapters or automatically adopted passages. A flow draft may later become
+an unplaced literary entity or be partitioned into chapter material, but that move
+requires explicit lineage rather than changing the meaning of the resource in place. The inventory does not destructively move files.
 
 ## ReadingPages come next; typesetting comes later
 
@@ -134,7 +136,7 @@ breaks remain later typesetting under #60/#61; they cannot redefine identity.
 ## Source audit and compatibility
 
 The [source audit](source-audit.md) records the exact inspected staging and public
-branch revisions. The registry pins 38 public source/candidate/resource artifacts
+branch revisions. The registry pins 39 public source/candidate/resource artifacts
 with their recorded `scopeRefs`. These links preserve provenance;
 they do not authenticate authorship, accept a proposal or grant further access.
 No source prose is embedded in generated output. Missing Git objects on another
@@ -142,13 +144,13 @@ client are explicitly unavailable there; the tool performs no network retrieval.
 
 The current canonical working projection has twenty-one body slots: three full working files (C08A,
 C14A, and C14B), one partial public E01/Edna source, and seventeen comment-only
-files. It also has one unplaced chapter and a pre-partition flow support surface. The body-slot order is a working projection under #404, not a final table of contents. Public partial
+files. It also has one unplaced chapter and a pre-partition flow support surface. The first staged prose resource on that surface is **On Ezekiel — A Reflection of Grace in Radio Park** under #408. The body-slot order is a working projection under #404, not a final table of contents. Public partial
 candidates and authorized branch resources remain separately identified. The
 inventory is complete for the declared manifest/tree boundary, not every possible
 source, every private revision, or an already assembled complete book.
 
 Current canonical-file checking covers manifest chapters, the unplaced manuscript,
-and explicitly sourced front/back matter. The staged Preface is the first front-matter
+explicitly sourced front/back matter, and pinned manuscript flow resources. The staged Preface is the first front-matter
 prose file classified through this path. #349 remains responsible for broader
 front-matter integration; adding a file without classifying it fails coverage rather
 than silently ingesting it.
