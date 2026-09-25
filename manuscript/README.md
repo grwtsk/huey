@@ -4,6 +4,12 @@ Author: R.A. Jacob Martone.
 
 > **WORKING MANUSCRIPT — CLAIM VERIFICATION INCOMPLETE.** Check-in is not independent factual verification or release of a finished edition. See the repository [notice](../README.md) and [chapter check-in #308](https://github.com/grwtsk/huey/issues/308).
 
+## Front matter
+
+The current working Preface is [**The Distance That Must Remain**](front/preface.md), staged under [#397](https://github.com/grwtsk/huey/issues/397). Front matter remains outside the narrative-body word target and its staging does not constitute final front-matter acceptance.
+
+The rank-three structural recentering program is tracked in [#396](https://github.com/grwtsk/huey/issues/396), with C08A **Baptism in the Color of Rain** designated as the compositional mixing chamber. The existing three movements and protected C15 → Edna close remain in force while continuous-flow composition and later partitioning are developed under the child issues.
+
 ## Working chapter order
 
 The original fifteen chapter IDs retain their order. The working structure now has five stable insertion IDs: **C02A**, **C08A**, **C12A**, **C14A**, and **C14B**. C08A is the admitted middle-book chapter **Baptism in the Color of Rain**. C14A and C14B are author-directed public working chapters, staged here without implying final-edition acceptance or promotion to `main`. C02A and C12A remain structural placeholders only: the author has identified their subjects as the death of his mother and his rape, respectively, but has supplied no final literary title or public manuscript prose for either slot.
