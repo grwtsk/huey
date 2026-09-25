@@ -83,7 +83,7 @@ Human gates #2–#14 remain separate for source disclosure, material memory choi
 participants, exact sensitive passages, rights, optional matter, voice, outside
 contact, movement acceptance, closing, packaging and release. Do not invent memory,
 consent, authorship, rights, findings, professional credentials, contact or spending.
-Do not ask again for settled title, structure, runtime or RF-01 instructions.
+Do not ask again for the settled book title, protected closing, or RF-01 instructions. Chapter titles, chapter order, chapter count and internal boundaries are **not settled** under #404; treat them as working projections. The existing spoken-runtime target is separately governed and must be reconciled with the evolving manuscript rather than assumed from an old word count.
 
 For a genuinely new consequential choice, use the narrowest existing human issue
 or open one assigned to `grwtsk`. Retrieve available information first, ask one
@@ -115,11 +115,36 @@ uncertainty and attribution. No invented dialogue, recollection, another person'
 thoughts, clinical findings or unobserved transmission. The author can supply new
 recognition; a prior prohibition on invention cannot suppress that supplied source.
 
-Preamble, Interlude and Excursion: Edna remain the three movements. Supplied anchors
-open their assigned movements once. The complete short excursion is the narrative
-close; do not pad it or move it earlier. The supplied terminal sentence stays last.
-No invented cure, verdict, apology or compelled forgiveness; reference matter is
-separate, not an explanatory epilogue.
+Preamble, Interlude and Excursion: Edna remain the current three movements. Supplied
+anchors open their assigned movements once. The complete short excursion is the
+narrative close; do not pad it or move it earlier. The supplied terminal sentence
+stays last. No invented cure, verdict, apology or compelled forgiveness; reference
+matter is separate, not an explanatory epilogue.
+
+### World-first composition and mutable chapter projection — #404
+
+Read `planning/world-and-argument-cuts.md` before assigning new prose to a chapter.
+Current chapter numbers, titles, order, paths and boundaries are working editorial
+projections, not final literary identity. Preserve their history, but do not make
+new material fit an inherited chapter merely because the chapter already exists.
+
+Publicly admitted material may first enter `manuscript/flow/` without a final
+chapter assignment. The composition sequence is **world → flow → argument cuts →
+partition → reading order**. C08A, *Baptism in the Color of Rain*, is the current
+mixing chamber, not a frozen numerical midpoint. Chapter cuts should eventually be
+made around arguments that become perceptible through experience, with counterpressure,
+provenance and source status preserved.
+
+The current approximately 120,000-word figure is a nonbinding scale horizon, not a
+quota, cap, minimum, deadline, or completion condition. Do not pad toward it or cut
+necessary complexity merely to remain under it. A file path or working heading may
+serve as a locator without becoming a permanent title.
+
+Huey's moral world may contain care and harm, mercy and accountability, beauty and
+violence, competence and failure in the same human or institutional field. Do not
+flatten whole persons into embodiments of good or evil. Naming a harmful act clearly
+does not require erasing the person's remaining humanity; naming care does not acquit
+unrelated harm.
 
 PR-01 now protects the exact classroom question until its single authorized
 occurrence inside the final Excursion: Edna. The current book title is **Huey**.
