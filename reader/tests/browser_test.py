@@ -210,5 +210,48 @@ class ReaderTests(unittest.TestCase):
     def test_10_screenshot(self):
         self.page.screenshot(path=str(ROOT / "test-results/minimal-editor.png"), full_page=False)
 
+    def test_11_reference_influence_is_tokenized_local_and_accessible(self):
+        tokens = self.page.evaluate("""() => {
+          const root = getComputedStyle(document.documentElement);
+          const movement = getComputedStyle(document.querySelector('.movement'));
+          const title = getComputedStyle(document.querySelector('.book-title'));
+          return {
+            surface: root.getPropertyValue('--surface').trim(),
+            ink: root.getPropertyValue('--ink').trim(),
+            display: root.getPropertyValue('--display-ink').trim(),
+            displayFamily: root.getPropertyValue('--font-display').trim(),
+            movementStyle: movement.fontStyle,
+            movementTransform: movement.textTransform,
+            titleWeight: title.fontWeight,
+          };
+        }""")
+        self.assertEqual(tokens["surface"], "rgb(242 232 219)")
+        self.assertEqual(tokens["ink"], "rgb(51 58 54)")
+        self.assertTrue(tokens["display"])
+        self.assertIn("Baskerville", tokens["displayFamily"])
+        self.assertEqual(tokens["movementStyle"], "italic")
+        self.assertEqual(tokens["movementTransform"], "none")
+        self.assertEqual(tokens["titleWeight"], "400")
+        self.assertGreaterEqual(self.page.evaluate("HueyEditor.palette().contrast"), 4.5)
+
+        css = (ROOT / "src/style.css").read_text()
+        self.assertNotIn("@font-face", css)
+        self.assertNotIn("TheSeasons-Light", css)
+        self.assertNotIn("Moderat-Light", css)
+
+    def test_12_dark_presentation_approaches_reference_field_without_losing_contrast(self):
+        self.page.evaluate("HueyEditor.toggleTheme()")
+        state = self.page.evaluate("""() => {
+          const root = getComputedStyle(document.documentElement);
+          return {
+            surface: root.getPropertyValue('--surface').trim(),
+            ink: root.getPropertyValue('--ink').trim(),
+            contrast: HueyEditor.palette().contrast,
+          };
+        }""")
+        self.assertEqual(state["surface"], "rgb(51 58 54)")
+        self.assertGreaterEqual(state["contrast"], 4.5)
+        self.assertNotEqual(state["ink"], state["surface"])
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
