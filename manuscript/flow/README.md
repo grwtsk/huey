@@ -2,8 +2,8 @@
 
 This directory is the public working surface for Huey material that belongs to the developing world of the book but does not yet have a final chapter, title, order or boundary.
 
-Governing architecture: [#404](https://github.com/grwtsk/huey/issues/404).  
-Centerpiece composition: [#398](https://github.com/grwtsk/huey/issues/398).  
+Governing architecture: [#404](https://github.com/grwtsk/huey/issues/404).
+Centerpiece composition: [#398](https://github.com/grwtsk/huey/issues/398).
 Later partition: [#402](https://github.com/grwtsk/huey/issues/402).
 
 ## Contract
