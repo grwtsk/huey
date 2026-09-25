@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "approval": "SOC-PUBLIC-01",
+  "public_copy_approved": true,
+  "automated_verbatim_chat_export": false,
+  "raw_clinical_attachments_included": false,
+  "files": [
+    {"path":"thread-dossier.md","representation":"historical-assistant-synthesis-with-exact-user-instructions","old_permission_and_transfer_status":"superseded within scope by SOC-PUBLIC-01 and the current transfer manifest","verification_issues":[127,145,176]},
+    {"path":"standard.md","representation":"complete-assistant-conversation-draft-prose","adaptation":"Original chat/file/web citation apparatus replaced with 31 explicit source-review leads. No new factual verification claimed.","verification_issues":[127,128,138,139,140,141,142,143,144,145,176]},
+    {"path":"the-trust-i-had-already-given.md","representation":"complete-assistant-conversation-draft-prose","adaptation":"Five chat-only citations replaced with explicit source-review leads. No new factual verification claimed.","verification_issues":[127,138,139,141,143,145,176]}
+  ],
+  "remaining": "Earlier clinical-summary messages and preceding assistant essays are preserved in thematic synthesis, not as a complete verbatim export. All citation and atomic-claim clearance remains open under the listed issues."
+}

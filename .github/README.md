@@ -69,3 +69,10 @@ unittest discovery. It never queries the private vault. Cross-repository vault
 export/reverse-receipt checks are separately reported local synthetic checks,
 not part of hosted CI. Schema conformity, hashes and a claimed review field
 cannot establish disclosure permission, authentic testimony or evidentiary truth.
+
+The repository job also checks the selected SOC core copy manifest and the
+initial claim/support register. Its original 24 tests live under
+`planning/standard-of-care`, so the workflow runs that discovery explicitly in
+addition to the root suite. These checks preserve source and claim status; they
+do not repeat original-source extraction, authenticate recorded permission, or
+perform factual/clinical/legal review.
