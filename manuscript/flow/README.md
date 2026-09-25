@@ -27,4 +27,4 @@ The current scale horizon is approximately 120,000 words, nonbinding. Add what t
 
 ## Current flow drafts
 
-- [On Ezekiel — A Reflection of Grace in Radio Park](on-ezekiel-radio-park.md) — staged under [#408](https://github.com/grwtsk/huey/issues/408). Scripture is carried by allusion rather than direct block quotation; the file remains pre-partition and unassigned to a final chapter.
+- [On Ezekiel — A Reflection of Grace in Radio Park](on-ezekiel-radio-park.md) — staged under [#408](https://github.com/grwtsk/huey/issues/408) and pinned in the editorial inventory as `public-39`. Scripture is carried by allusion rather than direct block quotation; the file remains pre-partition and unassigned to a final chapter.
