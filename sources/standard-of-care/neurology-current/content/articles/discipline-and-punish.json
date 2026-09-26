@@ -1,0 +1,159 @@
+{
+  "article": {
+    "id": "discipline-and-punish",
+    "type": "audio",
+    "title": "Discipline And Punish",
+    "author": "R.A. Jacob Martone",
+    "visibility": "public",
+    "slug": "discipline-and-punish",
+    "section": "artwork-and-sound",
+    "section_order": 2,
+    "published_at": "2026-09-16T00:19:57.564Z",
+    "updated_at": "2026-09-16T00:19:57.564Z",
+    "status": "published",
+    "toc": false,
+    "aliases": [],
+    "relations": [
+      {
+        "id": "u-000471",
+        "type": "related_to",
+        "target": "january-24-2019-the-origin-point",
+        "label": "Related factual entry"
+      },
+      {
+        "id": "relation-audio-atlas",
+        "type": "related_to",
+        "target": "atlas",
+        "label": "Ethical Atlas"
+      }
+    ],
+    "duration": null
+  },
+  "current": {
+    "documentDate": null,
+    "eventDate": "2019-01-24",
+    "category": "Composition",
+    "description": "Discipline And Punish, from Violence: a composition by R.A. Jacob Martone responding to his experience of January 24, 2019.",
+    "source": {
+      "originalFilename": "audio-publication-request.txt",
+      "originalText": "Create another template for audio. Use it to express the being Disciplined and Punished for it. Here is the embed. It is from an album called \"Violence\" to describe the experience on January 24th 2019. (I composed)\n\nSoundCloud embed supplied by the author:\n<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay; encrypted-media\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A800481031&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true\"></iframe>\nRA: https://soundcloud.com/soundofset\nDiscipline And Punish: https://soundcloud.com/soundofset/discipline-and-punish",
+      "metadata": {
+        "kind": "author-supplied-audio-embed",
+        "notes": "Caption and contextual link prepared at the author's request. Escaped embed markup normalized into structured SoundCloud metadata. January 24, 2019 is the described event date, not an inferred composition date. The recording remains hosted by SoundCloud; the source repository contains its reference, not the audio file."
+      }
+    },
+    "document": {
+      "units": [
+        {
+          "id": "u-000468",
+          "type": "audio",
+          "asset": "asset-audio",
+          "attribution": [
+            {
+              "id": "u-000465",
+              "type": "paragraph",
+              "role": "attribution",
+              "content": [
+                {
+                  "id": "u-000466",
+                  "type": "link",
+                  "href": "https://soundcloud.com/soundofset",
+                  "newWindow": true,
+                  "content": [
+                    {
+                      "type": "text",
+                      "value": "RA"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " · "
+                },
+                {
+                  "id": "u-000467",
+                  "type": "link",
+                  "href": "https://soundcloud.com/soundofset/discipline-and-punish",
+                  "newWindow": true,
+                  "content": [
+                    {
+                      "type": "text",
+                      "value": "Discipline And Punish on SoundCloud"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "caption": [
+            {
+              "id": "u-000469",
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "From Violence, composed in response to my experience of January 24, 2019. A reaction in sound to being disciplined and punished for it."
+                }
+              ]
+            }
+          ],
+          "credit": [
+            {
+              "id": "u-000470",
+              "type": "paragraph",
+              "role": "credit",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "Composed by R.A. Jacob Martone."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u-000463",
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "This composition accompanies "
+            },
+            {
+              "id": "u-000464",
+              "type": "link",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "January 24, 2019: The Origin Point"
+                }
+              ],
+              "target": {
+                "work": "january-24-2019-the-origin-point"
+              }
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    "assets": [
+      {
+        "id": "asset-audio",
+        "type": "soundcloud",
+        "provider": "soundcloud",
+        "trackId": "800481031",
+        "url": "https://soundcloud.com/soundofset/discipline-and-punish",
+        "artistName": "RA",
+        "artistUrl": "https://soundcloud.com/soundofset",
+        "album": "Violence"
+      }
+    ],
+    "attachments": {
+      "units": []
+    }
+  }
+}

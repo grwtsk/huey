@@ -1,0 +1,25 @@
+source	pointer	exact_json	issue	disposition
+audio	/current/document/units/0/attribution/0/content/0/content/0/value	"""RA"""	189	repeated-source-attribution-not-independent-corroboration
+audio	/current/document/units/0/attribution/0/content/1/value	""" · """	189	typographic-separator-not-an-evidentiary-claim
+audio	/current/document/units/0/attribution/0/content/2/content/0/value	"""Discipline And Punish on SoundCloud"""	189	source-label-or-navigation-instruction-not-verified-destination
+audio	/current/document/units/0/credit/0/content/0/value	"""Composed by R.A. Jacob Martone."""	189	repeated-source-attribution-not-independent-corroboration
+audio	/current/document/units/1/content/0/value	"""This composition accompanies """	189	source-label-or-navigation-instruction-not-verified-destination
+audio	/current/document/units/1/content/1/content/0/value	"""January 24, 2019: The Origin Point"""	189	source-label-or-navigation-instruction-not-verified-destination
+audio	/current/document/units/1/content/2/value	"""."""	189	typographic-separator-not-an-evidentiary-claim
+harm	/current/description	"""A reflection on neurological care, trauma, and the enduring consequences of harm."""	189	source-editorial-description-not-tested-service-or-clinical-result
+harm	/current/document/units/0/attribution/0/content/0/value	"""— R.A. Jacob Martone"""	189	repeated-source-attribution-not-independent-corroboration
+dignity	/current/source/metadata/sourceNote	"""Author-supplied quotation and attribution."""	189	inherited-attribution-label-not-independent-authentication
+painting	/current/document/units/0/credit/0/content/0/value	"""R.A. Jacob Martone"""	189	repeated-source-attribution-not-independent-corroboration
+site	/sections/0/heading/content/0/value	"""Factual Prologue"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/sections/1/heading/content/0/value	"""Essays"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/sections/2/heading/content/0/value	"""Artwork & Sound"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/cover/description	"""A patient-authored publication and resource about difficult care, evidence, ethics, accessibility, suffering, medical authority, and the improvement of medicine."""	190	source-editorial-description-not-tested-service-or-clinical-result
+site	/access_page/terms/units/0/content/1/content/0/value	"""terms of use"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/access_page/terms/units/0/content/2/value	""" before continuing."""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/home/units/1/content/0/value	"""Start with a path that matches what you need:"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/home/units/2/items/0/units/0/content/0/content/0/value	"""For patients"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/home/units/2/items/0/units/0/content/1/value	""" — communication, dignity, records, accommodations, agency, and preparing for difficult care."""	190	source-editorial-description-not-tested-service-or-clinical-result
+site	/home/units/2/items/1/units/0/content/0/content/0/value	"""For clinicians"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/home/units/2/items/1/units/0/content/1/value	""" — uncertainty, consultation, record provenance, disability access, trauma-informed care, repair, and institutional learning."""	190	source-editorial-description-not-tested-service-or-clinical-result
+site	/home/units/2/items/2/units/0/content/0/content/0/value	"""Cross-authority sources"""	190	source-label-or-navigation-instruction-not-verified-destination
+site	/home/units/2/items/3/units/0/content/0/content/0/value	"""Support in a crisis"""	190	source-label-or-navigation-instruction-not-verified-destination

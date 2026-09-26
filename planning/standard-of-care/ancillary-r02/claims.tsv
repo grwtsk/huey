@@ -1,0 +1,71 @@
+id	source	pointer	exact_json	kind	issue	support	disposition
+ANC-C001	audio	/article/type	"""audio"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C002	audio	/current/category	"""Composition"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C003	audio	/current/eventDate	"""2019-01-24"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C004	audio	/current/documentDate	null	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C005	audio	/article/duration	null	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C006	dignity	/article/templateOnly	true	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C007	dignity	/article/status	"""preview"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C008	dignity	/article/published_at	null	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C009	dignity	/article/updated_at	null	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C010	harm	/article/type	"""article"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C011	harm	/article/visibility	"""restricted"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C012	harm	/current/source/metadata/type	"""author-authored quotation"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C013	painting	/article/type	"""image"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C014	painting	/article/medium	"""painting"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C015	painting	/current/documentDate	null	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C016	site	/name	"""GRWTSK"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C017	site	/repository	"""https://github.com/grwtsk/neurology"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C018	site	/access	"""reader"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C019	site	/release/status	"""beta"""	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C020	site	/release/initial_release	null	source-metadata	188	artifact	source-field-confirmed-only
+ANC-C021	audio	/article/author	"""R.A. Jacob Martone"""	attribution	189	provenance	author-attribution-preserved
+ANC-C022	audio	/current/assets/0/album	"""Violence"""	attribution	189	provenance	source-attribution-not-recording-inspection
+ANC-C023	audio	/current/assets/0/trackId	"""800481031"""	media-reference	189	provenance	reference-preserved-media-not-inspected
+ANC-C024	audio	/current/source/originalText	"""(I composed)"""	author-testimony	189	provenance	author-report-not-independent-authentication
+ANC-C025	audio	/current/description	"""responding to his experience of January 24, 2019."""	author-testimony	189	provenance	reported-purpose-not-clinical-causation
+ANC-C026	audio	/current/source/metadata/notes	"""January 24, 2019 is the described event date, not an inferred composition date."""	source-qualification	188	artifact	source-qualification-confirmed
+ANC-C027	audio	/current/source/metadata/notes	"""The recording remains hosted by SoundCloud; the source repository contains its reference, not the audio file."""	media-availability	189	substantial	reference-confirmed-current-hosting-unverified
+ANC-C028	audio	/current/document/units/0/caption/0/content/0/value	"""A reaction in sound to being disciplined and punished for it."""	author-expression	189	provenance	caption-expression-not-proof-of-wrongdoing
+ANC-C029	painting	/article/title	"""I BLED SO"""	attribution	189	provenance	source-title-preserved-no-diagnostic-inference
+ANC-C030	painting	/article/author	"""R.A. Jacob Martone"""	attribution	189	provenance	author-attribution-preserved
+ANC-C031	painting	/current/source/metadata/sourceNote	"""Caption prepared with editorial assistance as a means of communication."""	editorial-provenance	189	provenance	source-provenance-preserved
+ANC-C032	painting	/current/source/metadata/sourceNote	"""No creation date was supplied."""	source-qualification	188	artifact	source-qualification-confirmed-not-dated-from-upload
+ANC-C033	painting	/current/description	"""A reaction painting that gives visible form to pain, using image and texture as a means of communication."""	author-expression	189	reasoning	expressive-purpose-preserved-not-treatment-effect
+ANC-C034	painting	/current/document/units/0/alt	"""monochrome painting"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C035	painting	/current/document/units/0/alt	"""textured paper"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C036	painting	/current/document/units/0/alt	"""brushed gray frame"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C037	painting	/current/document/units/0/alt	"""broad light mat"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C038	painting	/current/document/units/0/alt	"""dense black painted form"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C039	painting	/current/document/units/0/alt	"""pale gray wash"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C040	painting	/current/document/units/0/alt	"""inverted lettering above"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C041	painting	/current/document/units/0/alt	"""RA signature near the lower right"""	visual-description	189	substantial	image-not-yet-inspected
+ANC-C042	painting	/current/assets/0/sourcePath	"""images/i-bled-so.png"""	media-reference	189	artifact	source-reference-preserved-asset-still-pending
+ANC-C043	harm	/current/source/originalText	"""Neurology cannot undo the harm done in the pursuit of knowledge"""	normative-aphorism	189	reasoning	not-a-universal-clinical-prognosis
+ANC-C044	harm	/current/source/originalText	"""it can refuse to repeat it"""	normative-aphorism	144	reasoning	normative-possibility-not-predicted-conduct
+ANC-C045	harm	/current/source/originalText	"""making their dignity, rather than its authority, the measure of progress."""	normative-criterion	175	reasoning	reasoning-retained-not-empirical-metric
+ANC-C046	harm	/current/source/metadata/author	"""R.A. Jacob Martone"""	attribution	189	provenance	author-attribution-preserved
+ANC-C047	dignity	/current/source/originalText	"""Neurology’s darkest chapters are not its destiny."""	normative-aphorism	189	reasoning	normative-wording-not-diagnosis-or-legal-verdict
+ANC-C048	dignity	/current/source/originalText	"""No discovery excuses cruelty."""	normative-aphorism	189	reasoning	normative-wording-not-diagnosis-or-legal-verdict
+ANC-C049	dignity	/current/source/originalText	"""No title outranks consent."""	normative-aphorism	189	reasoning	normative-wording-not-diagnosis-or-legal-verdict
+ANC-C050	dignity	/current/source/originalText	"""A failing voice is not an absent mind."""	normative-aphorism	189	reasoning	normative-wording-not-diagnosis-or-legal-verdict
+ANC-C051	dignity	/current/source/originalText	"""Measure progress not only by what medicine treats, but by whom it hears."""	normative-aphorism	189	reasoning	normative-wording-not-diagnosis-or-legal-verdict
+ANC-C052	dignity	/current/source/metadata/author	"""R.A. Jacob Martone"""	attribution	189	provenance	author-attribution-preserved
+ANC-C053	dignity	/current/document/units/0/content/1/target/unit	"""atlas-heading-dignity"""	generated-anchor	190	provenance	renderer-mapping-not-yet-inspected
+ANC-C054	site	/sections/0/description/units/0/content/0/value	"""The factual prologue distinguishes lived experience, eyewitness testimony, documentary evidence, disputed findings, and later interpretation."""	editorial-method	190	reasoning	declared-method-not-full-corpus-certification
+ANC-C055	site	/sections/0/description/units/0/content/0/value	"""Adjudication may determine what a lawful authority concludes from that evidence; it does not determine whether an experience occurred."""	editorial-method	190	reasoning	declared-method-not-full-corpus-certification
+ANC-C056	site	/sections/0/description/units/0/content/0/value	"""Readers are not asked to accept an attribution of responsibility without examination."""	editorial-method	190	reasoning	declared-method-not-full-corpus-certification
+ANC-C057	site	/sections/0/description/units/0/content/0/value	"""Competing accounts should be tested against the same record."""	editorial-method	190	reasoning	declared-method-not-full-corpus-certification
+ANC-C058	site	/access_page/document/units/0/content/0/value	"""Reader access protects restricted editorial and source material during beta"""	operational-claim	190	substantial	source-claim-only-no-live-system-test
+ANC-C059	site	/access_page/document/units/0/content/0/value	"""the public patient, clinician, source, and crisis-resource pages remain open."""	operational-claim	190	substantial	source-claim-only-no-live-system-test
+ANC-C060	site	/access_page/document/units/0/content/0/value	"""Possession of a code does not identify the reader."""	operational-claim	190	substantial	source-claim-only-no-live-system-test
+ANC-C061	site	/restricted_notice/document/units/0/content/0/value	"""permission to read or download restricted material does not grant permission to redistribute it."""	historical-permission-notice	190	provenance	source-notice-preserved-SOC-PUBLIC-01-governs-approved-Huey-copy
+ANC-C062	site	/discovery/closed_description/units/0/content/0/value	"""Public patient, clinician, cross-authority, crisis-support, terms, and access pages remain available without a grant."""	operational-claim	190	substantial	source-claim-only-routes-not-tested
+ANC-C063	site	/home/units/0/units/0/content/0/value	"""It brings together factual context, essays, artwork, sound, an Atlas of ethical principles, and practical resource paths"""	collection-description	190	provenance	source-description-not-complete-import-status
+ANC-C064	site	/home/units/0/units/1/content/0/value	"""The reader is not asked to accept a disputed conclusion in advance."""	editorial-method	190	reasoning	declared-method-not-full-corpus-certification
+ANC-C065	site	/home/units/0/units/1/content/0/value	"""the Atlas and ethics architecture connect those questions to medical ethics, human rights, spiritual practice, disability access, and systems of care."""	cross-authority-description	144	substantial	mapping-and-primary-authority-support-still-pending
+ANC-C066	site	/home/units/0/units/2/content/0/value	"""Suffering does not need to be enlarged into crisis to deserve careful attention."""	normative-criterion	175	reasoning	normative-principle-not-current-clinical-assessment
+ANC-C067	site	/home/units/2/items/2/units/0/content/1/value	"""verified quotations and provenance across professional ethics, human rights, law, crisis support, and spiritual traditions."""	verification-claim	144	substantial	inherited-verified-label-not-new-verification
+ANC-C068	site	/home/units/2/items/3/units/0/content/1/value	"""immediate U.S. and international resource paths without treating all suffering as crisis."""	resource-availability	190	substantial	source-description-not-availability-verification
+ANC-C069	site	/access_page/terms/units/0/content/0/value	"""Restricted access is a distribution boundary, not a claim about any reader or person described."""	editorial-method	190	reasoning	historical-source-notice-not-Huey-configuration
+ANC-C070	harm	/current/source/metadata/sourceNote	"""Author-approved text supplied for the initial publication."""	approval-provenance	189	provenance	inherited-approval-label-not-independent-permission-proof

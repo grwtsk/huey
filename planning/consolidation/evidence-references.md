@@ -6,6 +6,12 @@ staging through [soc-core.md](soc-core.md). The dated audit below still describe
 the earlier #384 increment; later incident/care-law/ancillary/authority layers
 remain pinned on #122. No support disposition is promoted by the new copies.
 
+Update under #421: the [ancillary pair](soc-ancillary.md) preserves 70 `ANC-C`
+claims, 16 substantial-support requirements, exact JSON pointers and their review
+owners. These are distinct from the 188 core targets. A media reference is not a
+copied/inspected image or recording; a source's verification/publication label is
+not an evidence clearance. The historical audit below remains unchanged.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake

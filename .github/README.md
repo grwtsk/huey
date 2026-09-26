@@ -76,3 +76,9 @@ initial claim/support register. Its original 24 tests live under
 addition to the root suite. These checks preserve source and claim status; they
 do not repeat original-source extraction, authenticate recorded permission, or
 perform factual/clinical/legal review.
+
+The SOC coverage check also requires the exact 15-file ancillary addition; it
+does not exempt the new directory from review. The job separately runs its pinned
+historical verifier without exports and discovers its 18 tests explicitly.
+Source-copy hashes, 70 ANC claim routes and retained support/status fields do not
+establish image/audio inspection, external citation truth or source-service access.

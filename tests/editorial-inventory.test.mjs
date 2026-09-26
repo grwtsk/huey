@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { buildInventory, contentState, gitBlob, loadInventory, serializeInventory } from '../scripts/editorial_inventory.mjs';
@@ -178,6 +178,34 @@ test('pre-partition manuscript flow is classified as a support resource rather t
   assert.deepEqual(output.editorialWorkspace.resources, ['flow-resource']);
   assert.equal(output.slots.length, 6);
   assert.ok(!output.slots.some(row => row.key === 'flow-resource'));
+});
+
+test('both newly tracked flow resources remain outside ownership and order without reading prose', () => {
+  const registry = JSON.parse(readFileSync(new URL('../planning/editorial-inventory/registry.json', import.meta.url), 'utf8'));
+  const paths = ['manuscript/flow/the-brightness.md', 'manuscript/flow/the-words-i-was-asked-to-remember.md'];
+  const input = fixture(), before = buildInventory(input);
+  const resources = paths.map(path => {
+    const matches = registry.sources.filter(source => source.path === path);
+    assert.equal(matches.length, 1, `exactly one reference for ${path}`);
+    const source = structuredClone(matches[0]);
+    assert.equal(source.role, 'support');
+    assert.equal(source.extent, 'partial');
+    assert.deepEqual(source.targets, []);
+    input.registry.sources.push(source);
+    input.trackedPaths.push(path);
+    input.sourceAvailability[source.key] = true;
+    Object.defineProperty(input.files, path, { get() { throw new Error('Flow prose must not be read'); } });
+    return source;
+  });
+  const after = buildInventory(input);
+  assert.deepEqual(after.editorialWorkspace.resources, resources.map(source => source.key));
+  assert.deepEqual(after.ownership, before.ownership);
+  assert.deepEqual(after.slots, before.slots);
+  assert.deepEqual(after.sources.slice(-2), resources.map(source => ({ ...source, access: 'available' })));
+  for (const source of resources) {
+    const missingReference = { ...input, registry: { ...input.registry, sources: input.registry.sources.filter(row => row.key !== source.key) } };
+    assert.throws(() => buildInventory(missingReference), error => error.message === `EDITORIAL_INVENTORY: unclassified tracked manuscript: ${source.path}`);
+  }
 });
 
 test('manuscript support resources cannot escape the flow namespace', () => {

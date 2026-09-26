@@ -7,6 +7,7 @@ permission. Git byte pins do not establish faithful original source extraction.
 """
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -15,6 +16,9 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+_ancillary_spec = importlib.util.spec_from_file_location('huey_soc_ancillary', Path(__file__).with_name('soc_ancillary.py'))
+ancillary = importlib.util.module_from_spec(_ancillary_spec)
+_ancillary_spec.loader.exec_module(ancillary)
 MANIFEST = 'planning/consolidation/soc-core.json'
 # Frozen reviewed import selection; extending it requires another scoped review.
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -210,6 +214,8 @@ def verify(root=ROOT, source_objects=False):
         listed = git(root, 'ls-files', '-z', '--cached', '--others', '--exclude-standard', '--', *SCOPES)
         paths = {path.decode() for path in listed.split(b'\0') if path}
         expected = {path for path in EXPECTED if any(path.startswith(scope + '/') for scope in SCOPES)}
+        # A fixed separately validated slice, never an arbitrary path exemption.
+        expected |= set(ancillary.EXPECTED)
         require(paths == expected, 'source-tree-coverage')
         data = {}
         for row in value['files']:
@@ -223,6 +229,10 @@ def verify(root=ROOT, source_objects=False):
                 if row['representation'] == 'exact':
                     require(original == raw, 'original-byte-drift')
         validate_membership(data)
+        try:
+            ancillary_result = ancillary.verify(root, source_objects=source_objects)
+        except ancillary.Invalid as error:
+            raise Invalid('ancillary-' + str(error)) from None
         # Execute only the reviewed, byte-pinned existing local checker.
         environment = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
         command = [sys.executable, str(root / 'planning/standard-of-care/check_support.py'),
@@ -239,10 +249,14 @@ def verify(root=ROOT, source_objects=False):
         raise
     except (OSError, UnicodeError, ValueError, TypeError, KeyError, IndexError):
         raise Invalid('unreadable-or-malformed-input') from None
-    return {'files': 36, 'exact_copies': 34, 'adapted_navigation_files': 2,
-            'original_git_objects_checked': 36 if source_objects else 0,
+    return {'files': 51, 'core_files': 36, 'ancillary_files': 15,
+            'exact_copies': 49, 'adapted_navigation_files': 2,
+            'original_git_objects_checked': 51 if source_objects else 0,
+            'prior_navigation_objects_checked': ancillary_result['prior_navigation_objects_checked'],
             'authored_text_exports': 12, 'atlas_principles': 23,
             'initial_claim_targets': 188, 'substantial_support_targets': 111,
+            'ancillary_claim_targets': ancillary_result['scoped_claims'],
+            'ancillary_substantial_support_targets': ancillary_result['substantial_support_targets'],
             'limits': LIMITS}
 
 

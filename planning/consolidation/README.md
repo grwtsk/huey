@@ -1,9 +1,10 @@
 # Staging consolidation — working records, not acceptance
 
-The next bounded increment is [SOC core consolidation](soc-core.md), under #406:
-the authorized core source copies and initial claim apparatus from PR #122.
-The register below remains the dated #384 audit; it is not relabeled as a new
-inspection or a claim that the entire development branch has merged.
+[SOC core consolidation](soc-core.md), #406/#407, is staged. The next scoped
+addition is the [ancillary source/review pair](soc-ancillary.md), #421: five source
+JSON records and their existing claim/disposition apparatus from PR #122.
+The register below remains the dated #384 audit; neither later increment claims
+that the entire development branch has merged or that its claims are verified.
 
 Work: [#384](https://github.com/grwtsk/huey/issues/384). Inspected staging base:
 `ab501a00c167f6d85de59e4e22920dd3e2c5b546`, 2026-09-24. The author directed
