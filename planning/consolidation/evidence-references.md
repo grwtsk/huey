@@ -31,6 +31,21 @@ No new evidence ID, certificate, live issue-body snapshot or paragraph binding
 is created. Use these existing entry IDs for separately reviewed relationships
 through the current intake/vault boundary; #306/#307 retain their distinct work.
 
+Update under #427: the [initial care-law core](soc-care-law.md) preserves 256
+`HUEY-CARELAW-01` prose units, [41 source records](../standard-of-care/care-law/sources.json)
+and [34 review schedules](../standard-of-care/care-law/review.json). Exact locators,
+observations, competing explanations, evidence needs and competent-review
+functions remain attached to their existing Huey owners. Thirty-nine sources are
+cited directly by prose; S38 is catalogue-only, while S40 is linked through review
+R30. Five descriptions refer to original documents that are not copied or opened.
+The historical inspection labels preserve S13's failed recheck and S39's access
+result without policy contents. All 115 added/edited units have detailed review
+links; the other 141 retain deeper review as open work. This is coverage of the
+packet's unit scheme, not complete atomization or verified support. Neither these
+IDs nor the existing source fingerprints become evidence certificates or current
+reader bindings. New evidence must receive a separately reviewed relationship
+through the current intake/vault protocol.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake

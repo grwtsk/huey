@@ -1,4 +1,4 @@
-"""Pinned registration and navigation tests; no source or findings certification."""
+"""Pinned care-law recovery boundaries; no fresh source research or adjudication."""
 import copy
 import importlib.util
 import json
@@ -11,13 +11,13 @@ import unittest
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('soc_incident', ROOT / 'scripts/soc_incident.py')
+spec = importlib.util.spec_from_file_location('soc_care_law', ROOT / 'scripts/soc_care_law.py')
 checker = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(checker)
 SENTINEL = 'SYNTHETIC_PRIVATE_SENTINEL'
 
 
-class SocIncidentTests(unittest.TestCase):
+class SocCareLawTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
@@ -29,8 +29,8 @@ class SocIncidentTests(unittest.TestCase):
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)
         self.manifest = json.loads((self.root / checker.MANIFEST).read_text())
-        self.data = {p: json.loads((self.root / p).read_text())
-                     for p in checker.EXPECTED if p.endswith('.json')}
+        self.raw = {p: (self.root / p).read_bytes() for p in checker.EXPECTED}
+        self.data = {p: json.loads(raw) for p, raw in self.raw.items() if p.endswith('.json')}
 
     def save(self):
         (self.root / checker.MANIFEST).write_text(json.dumps(self.manifest, indent=2) + '\n')
@@ -45,33 +45,31 @@ class SocIncidentTests(unittest.TestCase):
         if reason:
             self.assertEqual(message, reason)
 
-    def test_registration_counts_and_source_reference_counts_are_distinct(self):
-        # No documentary originals or referenced prose are in this fixture.
+    def test_copy_and_historical_counts_are_distinct_from_findings(self):
         result = checker.verify(self.root)
-        self.assertEqual(result['files'], 9)
-        self.assertEqual(result['registered_entries'], 112)
-        self.assertEqual(result['registration_classes'], {'R': 43, 'S': 40, 'Q': 14, 'C': 10, 'X': 5})
-        self.assertEqual(result['declared_source_aliases'], 21)
-        self.assertEqual(result['used_source_aliases'], 11)
-        self.assertEqual(result['already_staged_source_references'], 15)
-        self.assertEqual(result['descriptive_source_references'], 6)
-        self.assertEqual(result['finding_status'], 'not-determined')
-        self.assertEqual(result['new_collection_status'], 'planned-not-started')
-        self.assertEqual(result['original_git_objects_checked'], 0)
+        expected = {'files': 8, 'exact_copies': 8, 'prose_units': 256, 'declared_sources': 41,
+                    'prose_source_references': 39, 'review_rows': 34, 'candidate_section_joins': 17,
+                    'historical_edited_units': 10, 'historical_added_units': 105,
+                    'historical_detailed_review_units': 115, 'retained_units_with_deeper_review_open': 141,
+                    'inherited_negative_cases': 21, 'exports_written': 0, 'original_git_objects_checked': 0}
+        for key, value in expected.items():
+            self.assertEqual(result[key], value)
+        self.assertEqual(result['historical_inspection_states'], checker.INSPECTIONS)
         self.assertIn('no source-location access', result['limits'])
+        self.assertIn('not independent events or verified findings', result['limits'])
 
     def test_missing_duplicate_unselected_and_unknown_manifest_fields_reject(self):
         baseline = copy.deepcopy(self.manifest)
         for mutate in [lambda d: d['files'].pop(),
                        lambda d: d['files'].__setitem__(-1, copy.deepcopy(d['files'][0])),
-                       lambda d: d['files'][0].update(path='sources/standard-of-care/raw/' + SENTINEL),
+                       lambda d: d['files'][0].update(path='../' + SENTINEL),
                        lambda d: d.update(approved=True)]:
             self.manifest = copy.deepcopy(baseline)
             mutate(self.manifest)
             self.save()
             self.rejects()
 
-    def test_basis_source_and_scope_pins_cannot_drift(self):
+    def test_source_basis_and_scope_pins_cannot_drift(self):
         baseline = copy.deepcopy(self.manifest)
         for mutate in [lambda d: d.update(basisRevision='0' * 40),
                        lambda d: d.update(sourceCommit='0' * 40),
@@ -81,7 +79,7 @@ class SocIncidentTests(unittest.TestCase):
             self.save()
             self.rejects()
 
-    def test_collection_findings_admission_or_authority_flags_reject(self):
+    def test_findings_adoption_research_or_authority_flags_reject(self):
         baseline = copy.deepcopy(self.manifest)
         for key, expected in checker.FLAGS.items():
             self.manifest = copy.deepcopy(baseline)
@@ -89,8 +87,8 @@ class SocIncidentTests(unittest.TestCase):
             self.save()
             self.rejects('completion-or-authority-claim')
 
-    def test_register_source_locations_and_executable_bytes_cannot_be_rebound(self):
-        for name in ['register.json', 'sources.json', 'verify.py']:
+    def test_source_review_prose_and_verifier_cannot_change_or_rebind(self):
+        for name in ['sources.json', 'review.json', 'revision.md', 'verify.py']:
             path = checker.REVIEW + name
             target = self.root / path
             original = target.read_bytes()
@@ -113,14 +111,14 @@ class SocIncidentTests(unittest.TestCase):
             self.save()
             self.rejects('predecessor-pin')
 
-    def test_historical_authority_receipt_cannot_be_rewritten(self):
+    def test_historical_incident_receipt_cannot_be_rewritten(self):
         path = self.root / checker.PREDECESSOR['path']
         value = json.loads(path.read_text())
         value['navigationChanges'][0]['stagedBlob'] = 'a' * 40
         path.write_text(json.dumps(value))
         self.rejects('predecessor-byte-drift')
 
-    def test_navigation_cannot_skip_predecessor_or_adapt_register(self):
+    def test_navigation_cannot_skip_predecessor_or_adapt_prose(self):
         baseline = copy.deepcopy(self.manifest)
         for field in ['sourceBlob', 'priorStagedBlob']:
             self.manifest = copy.deepcopy(baseline)
@@ -128,40 +126,57 @@ class SocIncidentTests(unittest.TestCase):
             self.save()
             self.rejects('navigation-prior-pin')
         self.manifest = copy.deepcopy(baseline)
-        self.manifest['navigationChanges'][0]['path'] = checker.REVIEW + 'register.json'
+        self.manifest['navigationChanges'][0]['path'] = checker.REVIEW + 'revision.md'
         self.save()
         self.rejects('navigation-selection')
 
-    def test_historical_navigation_receipt_cannot_be_rewritten(self):
-        self.manifest['navigationChanges'][0]['stagedBlob'] = 'a' * 40
-        self.save()
-        self.rejects('historical-receipt-drift')
+    def test_current_navigation_requires_endpoint_and_core_agreement(self):
+        row = self.manifest['navigationChanges'][0]
+        path = self.root / row['path']
+        original = path.read_bytes()
+        path.write_bytes(original + b' ')
+        self.rejects('navigation-byte-drift')
+        path.write_bytes(original)
+        core_path = self.root / checker.CORE_MANIFEST
+        core = json.loads(core_path.read_text())
+        next(r for r in core['files'] if r['path'] == row['path'])['stagedBlob'] = 'a' * 40
+        core_path.write_text(json.dumps(core))
+        self.rejects('navigation-core-pin')
 
-    def test_standalone_checks_historical_receipt_not_current_navigation(self):
-        result = checker.verify(self.root)
-        self.assertTrue(result['historical_navigation_receipt'])
-        self.assertIn('for current navigation', result['limits'])
-        for path in checker.NAVIGATION:
-            (self.root / path).unlink()
-        (self.root / checker.CORE_MANIFEST).unlink()
-        self.assertEqual(checker.verify(self.root), result)
-
-    def test_historical_receipt_and_alias_membership_remain_incomplete(self):
+    def test_historical_dates_access_failures_and_adoption_limits_remain(self):
         changes = [
-            lambda d: d[checker.REVIEW + 'register.json'].update(finding_status='proven'),
-            lambda d: d[checker.REVIEW + 'register.json'].update(all_incidents_enumerated=True),
-            lambda d: d[checker.REVIEW + 'checks.json'].update(new_external_evidence_collection='received'),
-            lambda d: d[checker.REVIEW + 'checks.json'].update(full_repository_suite='passed'),
-            lambda d: d[checker.REVIEW + 'sources.json']['sources'].pop('JUL26'),
-            lambda d: d[checker.REVIEW + 'register.json']['entries'][0].__setitem__(3, SENTINEL),
+            lambda d: d[checker.REVIEW + 'sources.json'].update(review_date='2099-01-01'),
+            lambda d: d[checker.REVIEW + 'sources.json']['sources'][13].update(inspection='read-this-pass'),
+            lambda d: d[checker.REVIEW + 'sources.json']['sources'][39].update(inspection='read-this-pass'),
+            lambda d: d[checker.REVIEW + 'review.json'].update(raw_sources_included=True),
+            lambda d: d[checker.REVIEW + 'review.json'].update(external_contact_performed=True),
+            lambda d: d[checker.REVIEW + 'review.json']['review_rows'][0].update(institutional_status='opened'),
+            lambda d: d[checker.REVIEW + 'book-integration.json'].update(status='applied'),
+            lambda d: d[checker.REVIEW + 'lineage.json']['checks'].update(prose_text_changes_on_repository_correction=1),
         ]
         for mutate in changes:
             data = copy.deepcopy(self.data)
             mutate(data)
             self.rejects(action=lambda: checker.validate_metadata(data))
 
-    def test_missing_predecessor_and_symlink_components_reject_before_execution(self):
-        path = self.root / checker.PREDECESSOR['path']
+    def test_recovery_functions_preserve_candidate_joins_and_source_limits(self):
+        for name, mutate in [
+            ('book-integration.json', lambda d: d['sections'].pop()),
+            ('book-integration.json', lambda d: d['sections'][0].update(chapters=[16])),
+            ('sources.json', lambda d: d['sources'][13].update(inspection='read-this-pass')),
+            ('lineage.json', lambda d: d['pass_two_text_changes'].pop()),
+        ]:
+            data = copy.deepcopy(self.data)
+            mutate(data[checker.REVIEW + name])
+            self.rejects('inherited-recovery-check', lambda: checker.inspect_packet(self.raw, data))
+
+    def test_no_unpinned_executable_is_loaded(self):
+        raw = dict(self.raw)
+        raw[checker.REVIEW + 'verify.py'] = b'raise RuntimeError("' + SENTINEL.encode() + b'")'
+        self.rejects('verifier-byte-drift', lambda: checker.inspect_packet(raw, self.data))
+
+    def test_missing_file_and_symlink_components_reject_before_execution(self):
+        path = self.root / (checker.REVIEW + 'sources.json')
         original = path.read_bytes()
         path.unlink()
         self.rejects('unreadable-or-malformed-input')
@@ -170,11 +185,11 @@ class SocIncidentTests(unittest.TestCase):
         moved = self.root / SENTINEL
         folder.rename(moved)
         folder.symlink_to(moved, target_is_directory=True)
-        with patch.object(checker.subprocess, 'run') as run:
+        with patch.object(checker, 'inspect_packet') as inspect:
             self.rejects('unreadable-or-malformed-input')
-            run.assert_not_called()
+            inspect.assert_not_called()
 
-    def test_duplicate_and_nonfinite_json_do_not_echo_input(self):
+    def test_duplicate_nonfinite_and_malformed_json_do_not_echo_input(self):
         path = self.root / checker.MANIFEST
         for raw in [f'{{"x":"{SENTINEL}","x":2}}', '{"x":NaN}', '{']:
             path.write_text(raw)
@@ -184,13 +199,21 @@ class SocIncidentTests(unittest.TestCase):
         subprocess.run(['git', 'init', '-q', str(self.root)], check=True, capture_output=True)
         self.rejects('git-input-unavailable', lambda: checker.verify(self.root, source_objects=True))
 
-    def test_no_export_override_or_selected_byte_changes(self):
+    def test_no_source_locators_external_repositories_or_exports_are_opened(self):
+        # Fixture holds just eight packet files and three receipts/navigation inputs.
+        # The public/external/source-origin locators remain documentary strings.
         before = {p: (self.root / p).read_bytes() for p in self.paths}
-        checker.verify(self.root)
+        with patch.object(checker, 'read', wraps=checker.read) as read:
+            checker.verify(self.root)
+        self.assertEqual(set(call.args[1] for call in read.call_args_list), set(self.paths))
         self.assertEqual(before, {p: (self.root / p).read_bytes() for p in self.paths})
+        self.assertEqual({p.relative_to(self.root).as_posix() for p in self.root.rglob('*') if p.is_file()},
+                         set(self.paths))
         self.assertFalse(list(self.root.rglob('__pycache__')))
+
+    def test_wrapper_offers_no_root_override_or_export_destination(self):
         for option in ['--root', '--output-dir']:
-            result = subprocess.run([sys.executable, str(ROOT / 'scripts/soc_incident.py'),
+            result = subprocess.run([sys.executable, str(ROOT / 'scripts/soc_care_law.py'),
                                      option, str(self.root / 'forbidden')], capture_output=True, text=True)
             self.assertEqual(result.returncode, 2)
             self.assertFalse((self.root / 'forbidden').exists())

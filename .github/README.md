@@ -95,3 +95,12 @@ the incident wrapper, original verifier and its 16 inherited tests explicitly.
 The 112 entry/issue links and classifications are index consistency, not verified
 encounters or findings. Source aliases are never a request to fetch private
 objects, and no live issue-body or evidence review is performed by this job.
+
+The initial care-law increment requires eight exact files and preserves the
+incident receipt as historical. Its wrapper runs the pinned verifier's in-memory
+structural inspection and all 21 invalid mutations without exporting prose.
+The cumulative selection is 77 files, with no care-law directory exemption.
+Source inspection labels and the original verifier's fixed partial-checkout
+limitation are historical; fresh execution results belong to each run. These
+checks do not retrieve external authorities, access the private packets required
+by later R03–R13 verifiers, activate candidate joins or establish source support.

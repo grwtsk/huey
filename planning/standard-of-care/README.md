@@ -3,7 +3,25 @@
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
 
-## Incident/departure consolidation update — #425
+## Recovered care-law core — #427
+
+The [care-law consolidation](../consolidation/soc-care-law.md) preserves the
+original eight-file [recovery packet](care-law/README.md): 256 prose units in
+`HUEY-CARELAW-01`, 41 source records, 34 review schedules, ten before/after edits
+and 17 candidate section joins. These counts describe different kinds of record;
+they are not a total of verified facts or additions to the SOC/ANC/Q03/incident
+counts. Sources, contrary material, questions and incomplete review remain linked.
+
+The packet's inspection labels, test statements and operational directions are
+historical. Current staging policy governs this bounded copy; #122 remains draft.
+Its initial `candidate-joins-not-applied` map does not deny the later private
+integration work recorded in #186. Those later receipts remain a separate slice,
+and #404 governs today's mutable chapter projections. Nothing here applies prose,
+creates a ReadingPage or provides manuscript acceptance. #178–#187/#145/#176
+retain their remaining review work. The exact incident manifest remains unchanged;
+the new care-law receipt extends its navigation lineage.
+
+## Incident/departure consolidation — #425
 
 The [SOC-I01 apparatus](../consolidation/soc-incident.md) preserves nine exact
 files and [112 individually addressable entries](incident-register/index.md):
@@ -70,8 +88,9 @@ twelve text exports, three context artifacts and normalized Atlas in staging.
 selected paths, adapted navigation and deferred layers. Source bytes and claim
 rows remain those of public PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
-care-law work remains outside these consolidations. The ancillary, authority and
-incident additions are explicit and separately pinned under #421/#423/#425.
+later care-law integration/reference work remains outside these consolidations.
+The ancillary, authority, incident and initial care-law additions are explicit
+and separately pinned under #421/#423/#425/#427.
 
 ## Claim and argument coverage
 

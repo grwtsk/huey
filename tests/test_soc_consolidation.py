@@ -26,7 +26,8 @@ class SocConsolidationTests(unittest.TestCase):
         for relative in [checker.MANIFEST, *checker.EXPECTED,
                          checker.ancillary.MANIFEST, *checker.ancillary.EXPECTED,
                          checker.authority.MANIFEST, *checker.authority.EXPECTED,
-                         checker.incident.MANIFEST, *checker.incident.EXPECTED]:
+                         checker.incident.MANIFEST, *checker.incident.EXPECTED,
+                         checker.care_law.MANIFEST, *checker.care_law.EXPECTED]:
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)
@@ -49,15 +50,20 @@ class SocConsolidationTests(unittest.TestCase):
 
     def test_current_copy_and_claim_route_counts(self):
         result = checker.verify(self.root)
-        self.assertEqual(result['files'], 69)
+        self.assertEqual(result['files'], 77)
         self.assertEqual(result['core_files'], 36)
         self.assertEqual(result['ancillary_files'], 15)
         self.assertEqual(result['authority_files'], 9)
         self.assertEqual(result['incident_files'], 9)
+        self.assertEqual(result['care_law_files'], 8)
+        self.assertEqual(result['care_law_prose_units'], 256)
+        self.assertEqual(result['care_law_declared_sources'], 41)
+        self.assertEqual(result['care_law_review_rows'], 34)
+        self.assertEqual(result['care_law_candidate_joins'], 17)
         self.assertEqual(result['registered_incident_entries'], 112)
         self.assertEqual(result['incident_declared_source_aliases'], 21)
         self.assertEqual(result['incident_used_source_aliases'], 11)
-        self.assertEqual(result['exact_copies'], 67)
+        self.assertEqual(result['exact_copies'], 75)
         self.assertEqual(result['adapted_navigation_files'], 2)
         self.assertEqual(result['initial_claim_targets'], 188)
         self.assertEqual(result['substantial_support_targets'], 111)
@@ -146,6 +152,16 @@ class SocConsolidationTests(unittest.TestCase):
         path.write_bytes(path.read_bytes() + b' ')
         self.rejects('incident-staged-byte-drift')
 
+    def test_core_requires_care_law_manifest_and_rejects_changed_review(self):
+        manifest = self.root / checker.care_law.MANIFEST
+        original = manifest.read_bytes()
+        manifest.unlink()
+        self.rejects('care-law-unreadable-or-malformed-input')
+        manifest.write_bytes(original)
+        path = self.root / (checker.care_law.REVIEW + 'review.json')
+        path.write_bytes(path.read_bytes() + b' ')
+        self.rejects('care-law-staged-byte-drift')
+
     def test_exact_source_bytes_cannot_be_rebound_as_adapted_navigation(self):
         row = next(x for x in self.manifest['files'] if x['path'].endswith('/context/standard.md'))
         row['representation'] = 'adapted-navigation'
@@ -177,7 +193,8 @@ class SocConsolidationTests(unittest.TestCase):
     def test_unselected_ancillary_and_raw_additions_reject_without_read(self):
         for path in ['sources/standard-of-care/raw/synthetic.pdf',
                      'sources/standard-of-care/neurology-current/content/articles/unselected.json',
-                     'planning/standard-of-care/incident-register/unselected.json']:
+                     'planning/standard-of-care/incident-register/unselected.json',
+                     'planning/standard-of-care/care-law/unselected.json']:
             target = self.root / path
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(SENTINEL)
@@ -233,7 +250,8 @@ class SocConsolidationTests(unittest.TestCase):
         before = {p: (self.root / p).read_bytes() for p in [
             checker.MANIFEST, *checker.EXPECTED, checker.ancillary.MANIFEST, *checker.ancillary.EXPECTED,
             checker.authority.MANIFEST, *checker.authority.EXPECTED,
-                         checker.incident.MANIFEST, *checker.incident.EXPECTED]}
+                         checker.incident.MANIFEST, *checker.incident.EXPECTED,
+                         checker.care_law.MANIFEST, *checker.care_law.EXPECTED]}
         checker.verify(self.root)
         after = {p: (self.root / p).read_bytes() for p in before}
         self.assertEqual(before, after)

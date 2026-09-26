@@ -1,10 +1,12 @@
 # Staging consolidation — working records, not acceptance
 
 [SOC core](soc-core.md), #406/#407, [ancillary](soc-ancillary.md), #421/#422, and
-[authority/Q03](soc-authority.md), #423/#424, are staged. The current scoped
-addition is the [SOC-I01 incident/departure apparatus](soc-incident.md), #425:
-nine unchanged files and 112 entries with their original classifications and
-unresolved evidence status. The register below remains the dated #384 audit;
+[authority/Q03](soc-authority.md), #423/#424, and
+[incident/departure apparatus](soc-incident.md), #425/#426, are staged. The current
+scoped addition is the [initial care-law source/review core](soc-care-law.md), #427:
+eight unchanged files with 256 prose units, 41 source records and 34 review
+schedules. Later integration/reference passes remain separate. The register below
+remains the dated #384 audit;
 these later increments do not claim that the entire development branch has
 merged or its claims are verified.
 
