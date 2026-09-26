@@ -22,6 +22,9 @@ _ancillary_spec.loader.exec_module(ancillary)
 _authority_spec = importlib.util.spec_from_file_location('huey_soc_authority', Path(__file__).with_name('soc_authority.py'))
 authority = importlib.util.module_from_spec(_authority_spec)
 _authority_spec.loader.exec_module(authority)
+_incident_spec = importlib.util.spec_from_file_location('huey_soc_incident', Path(__file__).with_name('soc_incident.py'))
+incident = importlib.util.module_from_spec(_incident_spec)
+_incident_spec.loader.exec_module(incident)
 MANIFEST = 'planning/consolidation/soc-core.json'
 # Frozen reviewed import selection; extending it requires another scoped review.
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -218,7 +221,7 @@ def verify(root=ROOT, source_objects=False):
         paths = {path.decode() for path in listed.split(b'\0') if path}
         expected = {path for path in EXPECTED if any(path.startswith(scope + '/') for scope in SCOPES)}
         # A fixed separately validated slice, never an arbitrary path exemption.
-        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED)
+        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED) | set(incident.EXPECTED)
         require(paths == expected, 'source-tree-coverage')
         data = {}
         for row in value['files']:
@@ -240,6 +243,10 @@ def verify(root=ROOT, source_objects=False):
             authority_result = authority.verify(root, source_objects=source_objects)
         except authority.Invalid as error:
             raise Invalid('authority-' + str(error)) from None
+        try:
+            incident_result = incident.verify(root, source_objects=source_objects)
+        except incident.Invalid as error:
+            raise Invalid('incident-' + str(error)) from None
         # Execute only the reviewed, byte-pinned existing local checker.
         environment = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
         command = [sys.executable, str(root / 'planning/standard-of-care/check_support.py'),
@@ -256,12 +263,14 @@ def verify(root=ROOT, source_objects=False):
         raise
     except (OSError, UnicodeError, ValueError, TypeError, KeyError, IndexError):
         raise Invalid('unreadable-or-malformed-input') from None
-    return {'files': 60, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
-            'exact_copies': 58, 'adapted_navigation_files': 2,
-            'original_git_objects_checked': 60 if source_objects else 0,
+    return {'files': 69, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
+            'incident_files': 9, 'exact_copies': 67, 'adapted_navigation_files': 2,
+            'original_git_objects_checked': 69 if source_objects else 0,
             'prior_navigation_objects_checked': (ancillary_result['prior_navigation_objects_checked'] +
-                                                 authority_result['prior_navigation_objects_checked']),
-            'predecessor_manifest_objects_checked': authority_result['predecessor_manifest_objects_checked'],
+                                                 authority_result['prior_navigation_objects_checked'] +
+                                                 incident_result['prior_navigation_objects_checked']),
+            'predecessor_manifest_objects_checked': (authority_result['predecessor_manifest_objects_checked'] +
+                                                      incident_result['predecessor_manifest_objects_checked']),
             'authored_text_exports': 12, 'atlas_principles': 23,
             'initial_claim_targets': 188, 'substantial_support_targets': 111,
             'ancillary_claim_targets': ancillary_result['scoped_claims'],
@@ -270,6 +279,10 @@ def verify(root=ROOT, source_objects=False):
             'authority_scalar_fields': authority_result['scalar_fields'],
             'authority_relationship_targets': authority_result['relationship_targets'],
             'authority_substantial_field_targets': authority_result['substantial_field_targets'],
+            'registered_incident_entries': incident_result['registered_entries'],
+            'incident_registration_classes': incident_result['registration_classes'],
+            'incident_declared_source_aliases': incident_result['declared_source_aliases'],
+            'incident_used_source_aliases': incident_result['used_source_aliases'],
             'limits': LIMITS}
 
 

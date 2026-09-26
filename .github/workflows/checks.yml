@@ -175,6 +175,9 @@ jobs:
           python3 scripts/soc_authority.py
           python3 planning/standard-of-care/authority-q03/verify.py
           python3 -m unittest discover -s planning/standard-of-care/authority-q03 -p 'test_verify.py' -v
+          python3 scripts/soc_incident.py
+          python3 planning/standard-of-care/incident-register/verify.py
+          python3 -m unittest discover -s planning/standard-of-care/incident-register -p 'test_verify.py' -v
       - name: Framing declarations and lexical research consistency
         run: |
           python3 scripts/framing.py cases planning/framing-cases.json

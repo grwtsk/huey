@@ -21,6 +21,16 @@ and #144/#145/#176 retain unresolved edition, access, service, relationship,
 rights and applicability questions. These are references for later evidence
 assessment, not new reader evidence bindings or authenticated authority.
 
+Update under #425: the [incident/departure apparatus](soc-incident.md) brings
+SOC-I001–112 and their detailed issue links into staging. Its classifications
+preserve reported departures, safeguards, questions and context rather than
+findings. Twenty-one aliases include six historical document descriptions and
+15 links to existing staged text; underlying private originals are not read or
+copied here. The register's source-reading and test statements remain historical.
+No new evidence ID, certificate, live issue-body snapshot or paragraph binding
+is created. Use these existing entry IDs for separately reviewed relationships
+through the current intake/vault boundary; #306/#307 retain their distinct work.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake

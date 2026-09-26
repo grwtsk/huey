@@ -3,7 +3,24 @@
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
 
-## Authority-register consolidation update — #423
+## Incident/departure consolidation update — #425
+
+The [SOC-I01 apparatus](../consolidation/soc-incident.md) preserves nine exact
+files and [112 individually addressable entries](incident-register/index.md):
+43 reported departures, 40 unresolved safeguards, 14 investigative questions,
+10 clinical review questions and five context/consequence entries. These are
+different kinds of entry, not 112 independent encounters, proved breaches or
+charges. Original reports remain recorded while evidence review stays open.
+
+The index retains SOC-I001–112 and links to the detailed issues #194–305. Its
+21 source aliases locate documentary context; they neither admit new evidence
+nor allocate literary EntityIDs. The original source-reading and test statements
+remain dated receipts. #193/#306/#307 and the individual issues retain their
+remaining work. For new evidence, use the current [intake protocol](../evidence-intake/README.md)
+and [vault handoff](../consolidation/vault-handoff.md), not the historical intake
+note as a claim that collection has begun. No raw private source is copied here.
+
+## Authority-register consolidation — #423
 
 The [SOC-Q03 source/review pair](../consolidation/soc-authority.md) adds the exact
 twelve-entry [authority register](../../sources/standard-of-care/neurology-current/content/authority-quotes.json)
@@ -16,8 +33,9 @@ The 271 scalar-field locations, 89 field-level support targets, 68 unreviewed
 conceptual references and 14 separately stated propositions have different
 denominators. They are not a total of proved events or breaches. The twelve-unit
 argument remains a candidate with no new chapter or ReadingPage assignment.
-Current navigation is linked to the exact prior #421 state; imported source,
-review and historical consolidation receipts remain unchanged.
+The recorded #423 navigation transition retains the exact prior #421 state;
+#425 extends it without rewriting either historical manifest. Imported source,
+review and prior consolidation receipts remain unchanged.
 
 ## Ancillary consolidation — #421
 
@@ -52,8 +70,8 @@ twelve text exports, three context artifacts and normalized Atlas in staging.
 selected paths, adapted navigation and deferred layers. Source bytes and claim
 rows remain those of public PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
-care-law and incident work remain outside these consolidations. The ancillary
-and authority additions are explicit and separately pinned under #421/#423.
+care-law work remains outside these consolidations. The ancillary, authority and
+incident additions are explicit and separately pinned under #421/#423/#425.
 
 ## Claim and argument coverage
 

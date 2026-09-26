@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only checks for nine pinned Q03 files and an explicit navigation successor.
+"""Read-only checks for nine pinned Q03 files and their historical navigation receipt.
 
 Historical citation/inspection results are preserved, not rerun. This checker
 does not fetch external sources, export data, activate metadata or grant authority.
@@ -23,6 +23,7 @@ require, read, blob, json_data, git = (copy_checks.require, copy_checks.read, co
                                      copy_checks.json_data, copy_checks.git)
 MANIFEST = 'planning/consolidation/soc-authority.json'
 CORE_MANIFEST = 'planning/consolidation/soc-core.json'
+HISTORICAL_MANIFEST_BLOB = '135e3cea37bd629e46e21e5c49b635aa0e1f86ad'
 REVIEW = 'planning/standard-of-care/authority-q03/'
 SOURCE = 'sources/standard-of-care/neurology-current/content/authority-quotes.json'
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -59,7 +60,9 @@ SUMMARY = {'source_bytes': 15994, 'source_lines': 351, 'source_entries': 12,
            'official_index_only': 2, 'text_unverified': 1, 'semantic_truth_certified': False}
 LIMITS = ('Pinned copy bytes, historical source-reading dispositions, claim/reference consistency and '
           'explicit navigation lineage only; no fresh citation research, media inspection, source authentication, '
-          'disclosure authority, factual clearance, manuscript admission or complete corpus coverage.')
+          'disclosure authority, factual clearance, manuscript admission or complete corpus coverage. '
+          'Navigation is the fixed historical receipt; run soc_consolidation.py '
+          'for current navigation and combined SOC file coverage.')
 
 
 def validate_manifest(value):
@@ -138,16 +141,10 @@ def validate_navigation(root, value, source_objects):
     require(blob(previous_bytes) == PREDECESSOR['blob'], 'predecessor-byte-drift')
     previous = json_data(previous_bytes)
     copy_checks.validate_manifest(previous)
-    core = json_data(read(root, CORE_MANIFEST))
     for row in value['navigationChanges']:
         parents = [item for item in previous['navigationChanges'] if item['path'] == row['path']]
         require(len(parents) == 1 and parents[0]['sourceBlob'] == row['sourceBlob'] and
                 parents[0]['stagedBlob'] == row['priorStagedBlob'], 'navigation-chain')
-        current = [item for item in core['files'] if item['path'] == row['path']]
-        require(len(current) == 1 and current[0]['sourceBlob'] == row['sourceBlob'] and
-                current[0]['stagedBlob'] == row['stagedBlob'] and
-                current[0]['representation'] == 'adapted-navigation', 'navigation-core-pin')
-        require(blob(read(root, row['path'])) == row['stagedBlob'], 'navigation-byte-drift')
         if source_objects:
             require(blob(git(root, 'show', BASIS + ':' + row['path'])) == row['priorStagedBlob'],
                     'navigation-prior-byte-drift')
@@ -159,8 +156,10 @@ def validate_navigation(root, value, source_objects):
 def verify(root=ROOT, source_objects=False):
     root = Path(root).resolve()
     try:
-        value = json_data(read(root, MANIFEST))
+        manifest_bytes = read(root, MANIFEST)
+        value = json_data(manifest_bytes)
         validate_manifest(value)
+        require(blob(manifest_bytes) == HISTORICAL_MANIFEST_BLOB, 'historical-receipt-drift')
         data = {}
         for row in value['files']:
             raw = read(root, row['path'])
@@ -185,6 +184,7 @@ def verify(root=ROOT, source_objects=False):
     return {'files': 9, 'exact_copies': 9, 'original_git_objects_checked': 9 if source_objects else 0,
             'prior_navigation_objects_checked': 2 if source_objects else 0,
             'predecessor_manifest_objects_checked': 1 if source_objects else 0,
+            'historical_navigation_receipt': True,
             'source_records': 1, 'source_bytes': 15994, 'source_entries': 12,
             'scalar_fields': 271, 'relationship_targets': 68, 'substantial_field_targets': 89,
             'propositions': 14, 'candidate_units': 12,
