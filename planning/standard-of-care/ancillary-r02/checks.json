@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "pass": "SOC-T02",
+  "kind": "actual-local-representation-checks",
+  "summary": {
+    "sources": 5,
+    "source_bytes": 24200,
+    "identity_matches": 5,
+    "nodes": 59,
+    "scalar_occurrences": 358,
+    "scoped_claims": 70,
+    "substantial_support": 16,
+    "references": 14,
+    "additional_prose_occurrences_pending": 0,
+    "external_truth_verified": false
+  },
+  "unittest_cases": 18,
+  "source_git_identities_matched": 5,
+  "full_checkout_obtained": false,
+  "full_repository_suite_run": false,
+  "external_claim_verification_performed": false,
+  "publication_authority": "SOC-PUBLIC-01 already granted",
+  "source_copy_scope": "five pinned JSON records; not image/audio bytes",
+  "commands": [
+    "python3 planning/standard-of-care/ancillary-r02/verify.py --output-dir /mnt/data/huey-advance/exports",
+    "python3 -m unittest discover -s planning/standard-of-care/ancillary-r02 -p test_*.py -v"
+  ],
+  "limits": [
+    "Checks confirm source bytes, exact-span binding and issue routing, not underlying truth.",
+    "The 24 remaining textual labels/descriptions have explicit scoped dispositions, not factual clearance.",
+    "The draft is not integrated into the manuscript and the protected ending is untouched."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "pass": "SOC-T02",
+  "status": "five-complete-source-JSON-copies",
+  "approval": "SOC-PUBLIC-01",
+  "parent_manifest": "transfer-manifest.json",
+  "parent_manifest_status": "historical first-transfer receipt; this update supersedes only the five completed ancillary rows",
+  "source_repository": "grwtsk/neurology",
+  "source_commit": "c920e426b8b6753b9f4bacf019e48010e57918c2",
+  "destination_repository": "grwtsk/huey",
+  "review_manifest": "../../planning/standard-of-care/ancillary-r02/manifest.json",
+  "work_issue": 188,
+  "source_records_completed": [
+    {
+      "source_path": "content/articles/discipline-and-punish.json",
+      "destination": "neurology-current/content/articles/discipline-and-punish.json",
+      "source_and_destination_git_blob": "17aab6ab4008a2b2873aae0b9adc5c6b177c9d7f",
+      "bytes": 5432
+    },
+    {
+      "source_path": "content/articles/neurology-cannot-undo-the-harm.json",
+      "destination": "neurology-current/content/articles/neurology-cannot-undo-the-harm.json",
+      "source_and_destination_git_blob": "2eab197970746ee67d97bcd0c7bf3d25f6a6125e",
+      "bytes": 2264
+    },
+    {
+      "source_path": "content/articles/on-dignity.json",
+      "destination": "neurology-current/content/articles/on-dignity.json",
+      "source_and_destination_git_blob": "75c80e06a66bb8edf9d9972d5c1fd3003f1d1616",
+      "bytes": 2096
+    },
+    {
+      "source_path": "content/articles/i-bledsoe-i-bled-so.json",
+      "destination": "neurology-current/content/articles/i-bledsoe-i-bled-so.json",
+      "source_and_destination_git_blob": "b120e14daf7731e4ec12dcd7603d9a90bdac28f1",
+      "bytes": 2634
+    },
+    {
+      "source_path": "content/site.json",
+      "destination": "neurology-current/content/site.json",
+      "source_and_destination_git_blob": "16b7edd3a92f5e34de821756ad0a165822481d50",
+      "bytes": 11774
+    }
+  ],
+  "remaining_ancillary": [
+    "content/articles/ethics-authority-positive-change.json",
+    "content/articles/images/i-bled-so.png",
+    "content/authority-quotes.json"
+  ],
+  "pending_presentation_records": 12,
+  "complete_conversation_capture": false,
+  "complete_corpus_verification": false,
+  "image_and_audio_bytes_included": false,
+  "claims": {
+    "namespace": "ANC-C",
+    "count": 70,
+    "substantial_support": 16,
+    "table": "../../planning/standard-of-care/ancillary-r02/claims.tsv",
+    "node_index": "../../planning/standard-of-care/ancillary-r02/nodes.tsv"
+  },
+  "source_inventory_corrections": [
+    {
+      "work": "discipline-and-punish",
+      "earlier_inventory_kind": "quote",
+      "inspected_source_type": "audio",
+      "inspected_source_category": "Composition"
+    },
+    {
+      "work": "on-dignity",
+      "inspected_source_status": "preview",
+      "template_only": true,
+      "publication_date": null
+    },
+    {
+      "work": "neurology-cannot-undo-the-harm",
+      "inspected_source_type": "article",
+      "inspected_source_visibility": "restricted",
+      "inspected_source_material": "author-authored quotation"
+    }
+  ]
+}

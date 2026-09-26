@@ -23,7 +23,8 @@ class SocConsolidationTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name).resolve()
         subprocess.run(['git', 'init', '-q', str(self.root)], check=True, capture_output=True)
-        for relative in [checker.MANIFEST, *checker.EXPECTED]:
+        for relative in [checker.MANIFEST, *checker.EXPECTED,
+                         checker.ancillary.MANIFEST, *checker.ancillary.EXPECTED]:
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)
@@ -46,11 +47,15 @@ class SocConsolidationTests(unittest.TestCase):
 
     def test_current_copy_and_claim_route_counts(self):
         result = checker.verify(self.root)
-        self.assertEqual(result['files'], 36)
-        self.assertEqual(result['exact_copies'], 34)
+        self.assertEqual(result['files'], 51)
+        self.assertEqual(result['core_files'], 36)
+        self.assertEqual(result['ancillary_files'], 15)
+        self.assertEqual(result['exact_copies'], 49)
         self.assertEqual(result['adapted_navigation_files'], 2)
         self.assertEqual(result['initial_claim_targets'], 188)
         self.assertEqual(result['substantial_support_targets'], 111)
+        self.assertEqual(result['ancillary_claim_targets'], 70)
+        self.assertEqual(result['ancillary_substantial_support_targets'], 16)
         self.assertEqual(result['original_git_objects_checked'], 0)
         self.assertIn('not upstream extraction verification', result['limits'])
         self.assertIn('disclosure authority', result['limits'])
@@ -102,6 +107,16 @@ class SocConsolidationTests(unittest.TestCase):
         self.manifest['approval'] = True
         self.save_manifest()
         self.rejects('manifest-fields')
+
+    def test_core_coverage_requires_validated_ancillary_selection(self):
+        target = self.root / checker.ancillary.MANIFEST
+        target.unlink()
+        self.rejects('ancillary-unreadable-or-malformed-input')
+
+    def test_core_check_cannot_greenlight_changed_ancillary_bytes(self):
+        target = self.root / 'planning/standard-of-care/ancillary-r02/claims.tsv'
+        target.write_text(target.read_text().replace('ANC-C001', 'ANC-C002', 1))
+        self.rejects('ancillary-staged-byte-drift')
 
     def test_exact_source_bytes_cannot_be_rebound_as_adapted_navigation(self):
         row = next(x for x in self.manifest['files'] if x['path'].endswith('/context/standard.md'))
@@ -187,7 +202,8 @@ class SocConsolidationTests(unittest.TestCase):
             self.rejects()
 
     def test_checker_leaves_source_tree_bytes_unchanged(self):
-        before = {p: (self.root / p).read_bytes() for p in [checker.MANIFEST, *checker.EXPECTED]}
+        before = {p: (self.root / p).read_bytes() for p in [
+            checker.MANIFEST, *checker.EXPECTED, checker.ancillary.MANIFEST, *checker.ancillary.EXPECTED]}
         checker.verify(self.root)
         after = {p: (self.root / p).read_bytes() for p in before}
         self.assertEqual(before, after)

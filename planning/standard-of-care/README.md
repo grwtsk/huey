@@ -1,7 +1,23 @@
-# Standards, care burden and trust — core claim apparatus
+# Standards, care burden and trust — staged claim apparatus
 
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
+
+## Ancillary consolidation update — #421
+
+The [ancillary source/review pair](../consolidation/soc-ancillary.md) now adds
+five source JSON records and the unchanged [SOC-T02 review](ancillary-r02/README.md).
+Its 70 `ANC-C` claims, 16 substantial-support flags, 59 source nodes and 24 exact
+leaf dispositions supplement the 188 core targets without renumbering or merging
+the namespaces. Scalar occurrences are JSON locations, not independent witnesses
+or new Huey literary EntityIDs. Media and source-status review remain #189/#190;
+the argument draft remains proposed under #191, with no fixed chapter assignment.
+
+SOC-T02's `checks.json`, source comparisons and three-file remainder are historical
+receipts. Later Q03 authority work exists on #122 and is still outside staging.
+Current commands, copy checks and limitations are in the new consolidation record.
+The existing core index below describes #406's original scope; its source/review
+claims are not retrospectively certified by this addition.
 
 ## Scoped source copying and staging
 
@@ -20,7 +36,8 @@ twelve text exports, three context artifacts and normalized Atlas in staging.
 selected paths, adapted navigation and deferred layers. Source bytes and claim
 rows remain those of public PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
-care-law, incident, ancillary and authority work is not silently imported.
+care-law, incident and authority work remains outside this consolidation. The
+ancillary addition is explicit and separately pinned under #421.
 
 ## Claim and argument coverage
 

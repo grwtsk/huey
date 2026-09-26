@@ -1,0 +1,69 @@
+{
+  "article": {
+    "id": "on-dignity",
+    "type": "quote",
+    "templateOnly": true,
+    "title": "On Dignity",
+    "author": "R.A. Jacob Martone",
+    "visibility": "public",
+    "slug": "on-dignity",
+    "section": "essays",
+    "section_order": 9,
+    "published_at": null,
+    "updated_at": null,
+    "status": "preview",
+    "toc": false,
+    "aliases": [],
+    "relations": []
+  },
+  "current": {
+    "documentDate": null,
+    "description": "No discovery excuses cruelty. No title outranks consent. A failing voice is not an absent mind.",
+    "source": {
+      "originalFilename": "on-dignity.txt",
+      "originalText": "“Neurology’s darkest chapters are not its destiny. No discovery excuses cruelty. No title outranks consent. A failing voice is not an absent mind. Measure progress not only by what medicine treats, but by whom it hears.”\n\n— R.A. Jacob Martone",
+      "metadata": {
+        "type": "author-authored quotation",
+        "author": "R.A. Jacob Martone",
+        "sourceNote": "Author-supplied quotation and attribution."
+      }
+    },
+    "category": "Essay",
+    "document": {
+      "units": [
+        {
+          "id": "u-001022",
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "“Neurology’s darkest chapters are not its destiny. No discovery excuses cruelty. No title outranks consent. "
+            },
+            {
+              "id": "atlas-link-dignity",
+              "type": "link",
+              "target": {
+                "work": "atlas",
+                "unit": "atlas-heading-dignity"
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "value": "A failing voice is not an absent mind."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " Measure progress not only by what medicine treats, but by whom it hears.”"
+            }
+          ]
+        }
+      ]
+    },
+    "assets": [],
+    "attachments": {
+      "units": []
+    }
+  }
+}

@@ -1,7 +1,15 @@
-# Standard-of-care working sources — core staging slice
+# Standard-of-care working sources — core and ancillary staging
 
 > [!WARNING]
 > **WORKING SOURCE CORPUS — VERIFICATION INCOMPLETE.** These files preserve attributed testimony, allegations, hypotheses, normative analysis and AI-assisted drafts. Inclusion does not establish truth or make received medical assertions safe to follow. This is not a clinical protocol, medical/legal advice, adjudication or a current risk assessment. Claims requiring review remain under [#125](https://github.com/grwtsk/huey/issues/125), [#145](https://github.com/grwtsk/huey/issues/145) and [#176](https://github.com/grwtsk/huey/issues/176).
+
+Current staging update, [#421](https://github.com/grwtsk/huey/issues/421): the
+[ancillary source/review pair](../../planning/consolidation/soc-ancillary.md)
+adds five complete source JSON records, their transfer receipt and the unchanged
+SOC-T02 review apparatus. The 70 `ANC-C` entries and 16 substantial-support flags
+remain distinct from the core `SOC-C` targets. Original source metadata is inert;
+its visibility, publication labels, routes and access settings do not configure
+Huey or establish actual disclosure, service access or factual verification.
 
 The author expressly approved this corpus under
 [SOC-PUBLIC-01](../../planning/standard-of-care/AUTHORIZATION.md).
@@ -37,15 +45,17 @@ change is included.
 [transfer-manifest.json](transfer-manifest.json) is the **historical first-pass
 receipt** on PR #122. Its branch name, copy counts, verification statements and
 pending list describe that pass, not this staging operation. Later T02/Q03 work
-on the same development branch superseded some pending rows; those layers remain
-outside this core consolidation. Earlier tests/source checks are not new results.
+on the same development branch superseded some pending rows. SOC-T02 is now staged
+through #421; its [receipt](transfer-r02.json) and [review](../../planning/standard-of-care/ancillary-r02/README.md)
+retain their historical wording. Authority/Q03 remains on #122. The old T02
+three-file remainder includes that later authority transfer; it is not a current
+whole-branch count. Earlier tests/source checks are not new results.
 
 The pinned branch retains:
 
 | Deferred layer | Existing reference and boundary |
 | --- | --- |
 | Incident/departure register | [112 entries and source-status apparatus](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/incident-register); #193/#306/#307. Entries are reports, questions, safeguards and context, not 112 proved breaches. |
-| Ancillary sources and review | [SOC-T02](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/ancillary-r02) and [transfer receipt](https://github.com/grwtsk/huey/blob/ff0499bd341de12a31b355b79867b547f19d9b16/sources/standard-of-care/transfer-r02.json). Source JSON/media classifications and 70 scoped claims need their own consolidation review. |
 | Authority source and review | [SOC-Q03](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/authority-q03) and [transfer receipt](https://github.com/grwtsk/huey/blob/ff0499bd341de12a31b355b79867b547f19d9b16/sources/standard-of-care/transfer-q03.json). Earlier quotation/access findings retain their dates and limitations. |
 | Care-law candidates and calculations | [Care-law layer](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law), including source/review schedules and later economic/communication/notice models. Candidate chapter joins are not applied manuscript edits. |
 

@@ -1,0 +1,411 @@
+{
+  "schema_version": 2,
+  "name": "GRWTSK",
+  "origin": "https://grwtsk.com",
+  "language": "en",
+  "owner": {
+    "name": "R.A. Jacob Martone"
+  },
+  "repository": "https://github.com/grwtsk/neurology",
+  "access": "reader",
+  "release": {
+    "label": "2026-09-18",
+    "generated_at": "2026-09-19T01:20:00.000Z",
+    "status": "beta",
+    "initial_release": null
+  },
+  "sections": [
+    {
+      "id": "factual-prologue",
+      "order": 1,
+      "format": "sequence",
+      "heading": {
+        "id": "u-001754",
+        "type": "heading",
+        "depth": 2,
+        "anchor": "prologue",
+        "content": [
+          {
+            "type": "text",
+            "value": "Factual Prologue"
+          }
+        ]
+      },
+      "description": {
+        "units": [
+          {
+            "id": "u-001755",
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": "The factual prologue distinguishes lived experience, eyewitness testimony, documentary evidence, disputed findings, and later interpretation. Adjudication may determine what a lawful authority concludes from that evidence; it does not determine whether an experience occurred. Readers are not asked to accept an attribution of responsibility without examination. Competing accounts should be tested against the same record."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "essays",
+      "order": 2,
+      "format": "prose",
+      "heading": {
+        "id": "u-001756",
+        "type": "heading",
+        "depth": 2,
+        "anchor": "essays",
+        "content": [
+          {
+            "type": "text",
+            "value": "Essays"
+          }
+        ]
+      },
+      "description": {
+        "units": []
+      }
+    },
+    {
+      "id": "artwork-and-sound",
+      "order": 3,
+      "format": "works",
+      "heading": {
+        "id": "u-001757",
+        "type": "heading",
+        "depth": 2,
+        "anchor": "artwork-and-sound",
+        "content": [
+          {
+            "type": "text",
+            "value": "Artwork & Sound"
+          }
+        ]
+      },
+      "description": {
+        "units": []
+      }
+    }
+  ],
+  "menu": [
+    {
+      "page": "patients"
+    },
+    {
+      "page": "clinicians"
+    },
+    {
+      "page": "authorities"
+    },
+    {
+      "page": "support"
+    },
+    {
+      "page": "terms"
+    },
+    {
+      "page": "access"
+    },
+    {
+      "label": "GitHub",
+      "resource": "repository"
+    }
+  ],
+  "types": {
+    "article": {
+      "section": "essays",
+      "label": "Essay",
+      "template": "article",
+      "schema": "Article",
+      "public_type": "article"
+    },
+    "quote": {
+      "section": "essays",
+      "label": "Quote",
+      "template": "quote",
+      "schema": "CreativeWork",
+      "public_type": "quote"
+    },
+    "image": {
+      "section": "artwork-and-sound",
+      "label": "Visual art",
+      "template": "image",
+      "schema": "VisualArtwork",
+      "public_type": "artwork"
+    },
+    "audio": {
+      "section": "artwork-and-sound",
+      "label": "Sound",
+      "template": "audio",
+      "schema": "MusicComposition",
+      "public_type": "sound"
+    }
+  },
+  "cover": {
+    "title": "Care, evidence, and the possibility of correction",
+    "description": "A patient-authored publication and resource about difficult care, evidence, ethics, accessibility, suffering, medical authority, and the improvement of medicine."
+  },
+  "access_page": {
+    "title": "Reader access",
+    "category": "Restricted collection",
+    "document": {
+      "units": [
+        {
+          "id": "u-001758",
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "Reader access protects restricted editorial and source material during beta while the public patient, clinician, source, and crisis-resource pages remain open. Enter an access code issued for the restricted collection. Possession of a code does not identify the reader."
+            }
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "units": [
+        {
+          "id": "u-001759",
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "Keep your code private. Restricted access is a distribution boundary, not a claim about any reader or person described. Read the "
+            },
+            {
+              "id": "u-001760",
+              "type": "link",
+              "href": "/terms",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "terms of use"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " before continuing."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "restricted_notice": {
+    "title": "Restricted access",
+    "document": {
+      "units": [
+        {
+          "id": "u-001761",
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "This work remains restricted during beta. Reader access limits distribution while the public resource pages remain available; permission to read or download restricted material does not grant permission to redistribute it."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "discovery": {
+    "description": {
+      "datum": "u-001748"
+    },
+    "closed_description": {
+      "units": [
+        {
+          "id": "u-6c4e812f",
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "The article, Atlas, and ethics collection currently requires Reader access. Public patient, clinician, cross-authority, crisis-support, terms, and access pages remain available without a grant."
+            }
+          ]
+        }
+      ]
+    },
+    "distinctions": {
+      "datum": "u-001749"
+    }
+  },
+  "home": {
+    "units": [
+      {
+        "id": "u-001747",
+        "type": "prose",
+        "role": "introduction",
+        "units": [
+          {
+            "id": "u-001748",
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": "This is a patient-authored publication about what it means to seek and provide care when illness, disability, trauma, uncertainty, and medical authority meet. It brings together factual context, essays, artwork, sound, an Atlas of ethical principles, and practical resource paths for patients, clinicians, families, educators, researchers, advocates, and anyone trying to make care more truthful, accessible, and humane."
+              }
+            ]
+          },
+          {
+            "id": "u-001749",
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": "The reader is not asked to accept a disputed conclusion in advance. The factual material distinguishes evidence from interpretation; the essays examine what responsible conduct may require; the Atlas and ethics architecture connect those questions to medical ethics, human rights, spiritual practice, disability access, and systems of care."
+              }
+            ]
+          },
+          {
+            "id": "u-001750",
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": "A difficult case can become a place where patients and clinicians learn how to preserve truth, dignity, agency, care, and the possibility of correction. Suffering does not need to be enlarged into crisis to deserve careful attention."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "u-3f0a8c11",
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "value": "Start with a path that matches what you need:"
+          }
+        ]
+      },
+      {
+        "id": "u-5bd2a4e7",
+        "type": "list",
+        "ordered": false,
+        "items": [
+          {
+            "id": "u-5bd2a4e7-i1",
+            "units": [
+              {
+                "id": "u-5bd2a4e7-p1",
+                "type": "paragraph",
+                "content": [
+                  {
+                    "id": "u-5bd2a4e7-l1",
+                    "type": "link",
+                    "href": "/patients",
+                    "content": [
+                      {
+                        "type": "text",
+                        "value": "For patients"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " — communication, dignity, records, accommodations, agency, and preparing for difficult care."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "u-5bd2a4e7-i2",
+            "units": [
+              {
+                "id": "u-5bd2a4e7-p2",
+                "type": "paragraph",
+                "content": [
+                  {
+                    "id": "u-5bd2a4e7-l2",
+                    "type": "link",
+                    "href": "/clinicians",
+                    "content": [
+                      {
+                        "type": "text",
+                        "value": "For clinicians"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " — uncertainty, consultation, record provenance, disability access, trauma-informed care, repair, and institutional learning."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "u-5bd2a4e7-i3",
+            "units": [
+              {
+                "id": "u-5bd2a4e7-p3",
+                "type": "paragraph",
+                "content": [
+                  {
+                    "id": "u-5bd2a4e7-l3",
+                    "type": "link",
+                    "href": "/authorities",
+                    "content": [
+                      {
+                        "type": "text",
+                        "value": "Cross-authority sources"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " — verified quotations and provenance across professional ethics, human rights, law, crisis support, and spiritual traditions."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "u-5bd2a4e7-i4",
+            "units": [
+              {
+                "id": "u-5bd2a4e7-p4",
+                "type": "paragraph",
+                "content": [
+                  {
+                    "id": "u-5bd2a4e7-l4",
+                    "type": "link",
+                    "href": "/support",
+                    "content": [
+                      {
+                        "type": "text",
+                        "value": "Support in a crisis"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " — immediate U.S. and international resource paths without treating all suffering as crisis."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "u-001751",
+        "type": "collection",
+        "section": "factual-prologue"
+      },
+      {
+        "id": "u-001752",
+        "type": "collection",
+        "section": "essays"
+      },
+      {
+        "id": "u-001753",
+        "type": "collection",
+        "section": "artwork-and-sound"
+      }
+    ]
+  }
+}
