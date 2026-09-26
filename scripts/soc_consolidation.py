@@ -19,6 +19,9 @@ ROOT = Path(__file__).resolve().parents[1]
 _ancillary_spec = importlib.util.spec_from_file_location('huey_soc_ancillary', Path(__file__).with_name('soc_ancillary.py'))
 ancillary = importlib.util.module_from_spec(_ancillary_spec)
 _ancillary_spec.loader.exec_module(ancillary)
+_authority_spec = importlib.util.spec_from_file_location('huey_soc_authority', Path(__file__).with_name('soc_authority.py'))
+authority = importlib.util.module_from_spec(_authority_spec)
+_authority_spec.loader.exec_module(authority)
 MANIFEST = 'planning/consolidation/soc-core.json'
 # Frozen reviewed import selection; extending it requires another scoped review.
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -215,7 +218,7 @@ def verify(root=ROOT, source_objects=False):
         paths = {path.decode() for path in listed.split(b'\0') if path}
         expected = {path for path in EXPECTED if any(path.startswith(scope + '/') for scope in SCOPES)}
         # A fixed separately validated slice, never an arbitrary path exemption.
-        expected |= set(ancillary.EXPECTED)
+        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED)
         require(paths == expected, 'source-tree-coverage')
         data = {}
         for row in value['files']:
@@ -233,6 +236,10 @@ def verify(root=ROOT, source_objects=False):
             ancillary_result = ancillary.verify(root, source_objects=source_objects)
         except ancillary.Invalid as error:
             raise Invalid('ancillary-' + str(error)) from None
+        try:
+            authority_result = authority.verify(root, source_objects=source_objects)
+        except authority.Invalid as error:
+            raise Invalid('authority-' + str(error)) from None
         # Execute only the reviewed, byte-pinned existing local checker.
         environment = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
         command = [sys.executable, str(root / 'planning/standard-of-care/check_support.py'),
@@ -249,14 +256,20 @@ def verify(root=ROOT, source_objects=False):
         raise
     except (OSError, UnicodeError, ValueError, TypeError, KeyError, IndexError):
         raise Invalid('unreadable-or-malformed-input') from None
-    return {'files': 51, 'core_files': 36, 'ancillary_files': 15,
-            'exact_copies': 49, 'adapted_navigation_files': 2,
-            'original_git_objects_checked': 51 if source_objects else 0,
-            'prior_navigation_objects_checked': ancillary_result['prior_navigation_objects_checked'],
+    return {'files': 60, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
+            'exact_copies': 58, 'adapted_navigation_files': 2,
+            'original_git_objects_checked': 60 if source_objects else 0,
+            'prior_navigation_objects_checked': (ancillary_result['prior_navigation_objects_checked'] +
+                                                 authority_result['prior_navigation_objects_checked']),
+            'predecessor_manifest_objects_checked': authority_result['predecessor_manifest_objects_checked'],
             'authored_text_exports': 12, 'atlas_principles': 23,
             'initial_claim_targets': 188, 'substantial_support_targets': 111,
             'ancillary_claim_targets': ancillary_result['scoped_claims'],
             'ancillary_substantial_support_targets': ancillary_result['substantial_support_targets'],
+            'authority_propositions': authority_result['propositions'],
+            'authority_scalar_fields': authority_result['scalar_fields'],
+            'authority_relationship_targets': authority_result['relationship_targets'],
+            'authority_substantial_field_targets': authority_result['substantial_field_targets'],
             'limits': LIMITS}
 
 

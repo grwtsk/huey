@@ -3,7 +3,23 @@
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
 
-## Ancillary consolidation update — #421
+## Authority-register consolidation update — #423
+
+The [SOC-Q03 source/review pair](../consolidation/soc-authority.md) adds the exact
+twelve-entry [authority register](../../sources/standard-of-care/neurology-current/content/authority-quotes.json)
+and its [historical review](authority-q03/README.md). The register's `verified_at`
+fields remain source assertions. Its earlier nine retrieved-text matches, two
+indexed-excerpt results and one unverified edition are dated research receipts,
+not fresh checks or clearance. #192 retains the remaining source-specific review.
+
+The 271 scalar-field locations, 89 field-level support targets, 68 unreviewed
+conceptual references and 14 separately stated propositions have different
+denominators. They are not a total of proved events or breaches. The twelve-unit
+argument remains a candidate with no new chapter or ReadingPage assignment.
+Current navigation is linked to the exact prior #421 state; imported source,
+review and historical consolidation receipts remain unchanged.
+
+## Ancillary consolidation — #421
 
 The [ancillary source/review pair](../consolidation/soc-ancillary.md) now adds
 five source JSON records and the unchanged [SOC-T02 review](ancillary-r02/README.md).
@@ -14,8 +30,8 @@ or new Huey literary EntityIDs. Media and source-status review remain #189/#190;
 the argument draft remains proposed under #191, with no fixed chapter assignment.
 
 SOC-T02's `checks.json`, source comparisons and three-file remainder are historical
-receipts. Later Q03 authority work exists on #122 and is still outside staging.
-Current commands, copy checks and limitations are in the new consolidation record.
+receipts. Q03 is now separately staged under #423 as described above.
+Current commands, copy checks and limitations are in each consolidation record.
 The existing core index below describes #406's original scope; its source/review
 claims are not retrospectively certified by this addition.
 
@@ -36,8 +52,8 @@ twelve text exports, three context artifacts and normalized Atlas in staging.
 selected paths, adapted navigation and deferred layers. Source bytes and claim
 rows remain those of public PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
-care-law, incident and authority work remains outside this consolidation. The
-ancillary addition is explicit and separately pinned under #421.
+care-law and incident work remain outside these consolidations. The ancillary
+and authority additions are explicit and separately pinned under #421/#423.
 
 ## Claim and argument coverage
 

@@ -112,24 +112,21 @@ class SocAncillaryTests(unittest.TestCase):
         self.save()
         self.rejects('navigation-selection')
 
-    def test_navigation_requires_exact_prior_pin_current_bytes_and_core_agreement(self):
+    def test_navigation_remains_the_exact_historical_receipt(self):
         row = self.manifest['navigationChanges'][0]
         prior = row['priorStagedBlob']
         row['priorStagedBlob'] = '0' * 40
         self.save()
         self.rejects('navigation-prior-pin')
         row['priorStagedBlob'] = prior
+        row['stagedBlob'] = 'a' * 40
         self.save()
-        target = self.root / row['path']
-        original = target.read_bytes()
-        target.write_bytes(original + SENTINEL.encode())
-        self.rejects('navigation-byte-drift')
-        target.write_bytes(original)
-        core_file = self.root / checker.CORE_MANIFEST
-        core = json.loads(core_file.read_text())
-        next(item for item in core['files'] if item['path'] == row['path'])['stagedBlob'] = 'a' * 40
-        core_file.write_text(json.dumps(core))
-        self.rejects('navigation-core-pin')
+        self.rejects('historical-receipt-drift')
+
+    def test_historical_receipt_does_not_relabel_successor_navigation(self):
+        result = checker.verify(self.root)
+        self.assertTrue(result['historical_navigation_receipt'])
+        self.assertIn('fixed historical receipt', result['limits'])
 
     def test_transfer_record_and_claim_references_remain_exact(self):
         for mutate in [
