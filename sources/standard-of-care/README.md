@@ -3,7 +3,17 @@
 > [!WARNING]
 > **WORKING SOURCE CORPUS — VERIFICATION INCOMPLETE.** These files preserve attributed testimony, allegations, hypotheses, normative analysis and AI-assisted drafts. Inclusion does not establish truth or make received medical assertions safe to follow. This is not a clinical protocol, medical/legal advice, adjudication or a current risk assessment. Claims requiring review remain under [#125](https://github.com/grwtsk/huey/issues/125), [#145](https://github.com/grwtsk/huey/issues/145) and [#176](https://github.com/grwtsk/huey/issues/176).
 
-Current staging update, [#425](https://github.com/grwtsk/huey/issues/425): the
+Current staging update, [#427](https://github.com/grwtsk/huey/issues/427): the
+[recovered care-law source/review core](../../planning/consolidation/soc-care-law.md)
+preserves eight exact files, including the cumulative editorial proposal,
+41 source records and 34 review schedules. Its 256 `HUEY-CARELAW-01` units retain
+their original namespace, kinds, source references and Huey issue owners.
+Historical inspection labels do not mean sources were retrieved in this pass.
+The 17 initial candidate joins are dated working proposals, not current chapter
+assignments or a denial of later #186 integration work. #178–#187/#145/#176 remain
+open for their substantive and manuscript work. No raw original is imported.
+
+Earlier staging, [#425](https://github.com/grwtsk/huey/issues/425): the
 [incident/departure apparatus](../../planning/consolidation/soc-incident.md)
 preserves nine unchanged files and the [112-entry index](../../planning/standard-of-care/incident-register/index.md).
 Reports, safeguards, investigative and clinical questions, and context retain
@@ -78,7 +88,7 @@ The pinned branch retains:
 
 | Deferred layer | Existing reference and boundary |
 | --- | --- |
-| Care-law candidates and calculations | [Care-law layer](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law), including source/review schedules and later economic/communication/notice models. Candidate chapter joins are not applied manuscript edits. |
+| Later care-law integration, references and calculations | [R03–R13 layer](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law), including later manuscript receipts, economic/communication/notice models and source registers. The initial eight-file recovery packet is now staged under #427; later private candidates and their public receipts require separate version-aware reconciliation. |
 
 The ethics architecture and painting image still remain outside this transfer.
 Whole presentation JSON/unit maps for the twelve prose records, automated

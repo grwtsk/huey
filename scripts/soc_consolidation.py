@@ -25,6 +25,9 @@ _authority_spec.loader.exec_module(authority)
 _incident_spec = importlib.util.spec_from_file_location('huey_soc_incident', Path(__file__).with_name('soc_incident.py'))
 incident = importlib.util.module_from_spec(_incident_spec)
 _incident_spec.loader.exec_module(incident)
+_care_law_spec = importlib.util.spec_from_file_location('huey_soc_care_law', Path(__file__).with_name('soc_care_law.py'))
+care_law = importlib.util.module_from_spec(_care_law_spec)
+_care_law_spec.loader.exec_module(care_law)
 MANIFEST = 'planning/consolidation/soc-core.json'
 # Frozen reviewed import selection; extending it requires another scoped review.
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -221,7 +224,7 @@ def verify(root=ROOT, source_objects=False):
         paths = {path.decode() for path in listed.split(b'\0') if path}
         expected = {path for path in EXPECTED if any(path.startswith(scope + '/') for scope in SCOPES)}
         # A fixed separately validated slice, never an arbitrary path exemption.
-        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED) | set(incident.EXPECTED)
+        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED) | set(incident.EXPECTED) | set(care_law.EXPECTED)
         require(paths == expected, 'source-tree-coverage')
         data = {}
         for row in value['files']:
@@ -247,6 +250,10 @@ def verify(root=ROOT, source_objects=False):
             incident_result = incident.verify(root, source_objects=source_objects)
         except incident.Invalid as error:
             raise Invalid('incident-' + str(error)) from None
+        try:
+            care_law_result = care_law.verify(root, source_objects=source_objects)
+        except care_law.Invalid as error:
+            raise Invalid('care-law-' + str(error)) from None
         # Execute only the reviewed, byte-pinned existing local checker.
         environment = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
         command = [sys.executable, str(root / 'planning/standard-of-care/check_support.py'),
@@ -263,14 +270,16 @@ def verify(root=ROOT, source_objects=False):
         raise
     except (OSError, UnicodeError, ValueError, TypeError, KeyError, IndexError):
         raise Invalid('unreadable-or-malformed-input') from None
-    return {'files': 69, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
-            'incident_files': 9, 'exact_copies': 67, 'adapted_navigation_files': 2,
-            'original_git_objects_checked': 69 if source_objects else 0,
+    return {'files': 77, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
+            'incident_files': 9, 'care_law_files': 8, 'exact_copies': 75, 'adapted_navigation_files': 2,
+            'original_git_objects_checked': 77 if source_objects else 0,
             'prior_navigation_objects_checked': (ancillary_result['prior_navigation_objects_checked'] +
                                                  authority_result['prior_navigation_objects_checked'] +
-                                                 incident_result['prior_navigation_objects_checked']),
+                                                 incident_result['prior_navigation_objects_checked'] +
+                                                 care_law_result['prior_navigation_objects_checked']),
             'predecessor_manifest_objects_checked': (authority_result['predecessor_manifest_objects_checked'] +
-                                                      incident_result['predecessor_manifest_objects_checked']),
+                                                      incident_result['predecessor_manifest_objects_checked'] +
+                                                      care_law_result['predecessor_manifest_objects_checked']),
             'authored_text_exports': 12, 'atlas_principles': 23,
             'initial_claim_targets': 188, 'substantial_support_targets': 111,
             'ancillary_claim_targets': ancillary_result['scoped_claims'],
@@ -283,6 +292,10 @@ def verify(root=ROOT, source_objects=False):
             'incident_registration_classes': incident_result['registration_classes'],
             'incident_declared_source_aliases': incident_result['declared_source_aliases'],
             'incident_used_source_aliases': incident_result['used_source_aliases'],
+            'care_law_prose_units': care_law_result['prose_units'],
+            'care_law_declared_sources': care_law_result['declared_sources'],
+            'care_law_review_rows': care_law_result['review_rows'],
+            'care_law_candidate_joins': care_law_result['candidate_section_joins'],
             'limits': LIMITS}
 
 
