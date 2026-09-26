@@ -172,6 +172,9 @@ jobs:
           python3 scripts/soc_ancillary.py
           python3 planning/standard-of-care/ancillary-r02/verify.py
           python3 -m unittest discover -s planning/standard-of-care/ancillary-r02 -p 'test_*.py' -v
+          python3 scripts/soc_authority.py
+          python3 planning/standard-of-care/authority-q03/verify.py
+          python3 -m unittest discover -s planning/standard-of-care/authority-q03 -p 'test_verify.py' -v
       - name: Framing declarations and lexical research consistency
         run: |
           python3 scripts/framing.py cases planning/framing-cases.json

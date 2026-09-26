@@ -12,6 +12,15 @@ owners. These are distinct from the 188 core targets. A media reference is not a
 copied/inspected image or recording; a source's verification/publication label is
 not an evidence clearance. The historical audit below remains unchanged.
 
+Update under #423: the [SOC-Q03 pair](soc-authority.md) preserves twelve authority
+entries and their exact field/review locators. Its 271 scalar fields, 89 support
+targets, 68 conceptual references and 14 draft propositions remain distinct.
+The source's `verified_at` values and nine/two/one historical access results are
+attributed records of prior work; no external source was rechecked here. #192
+and #144/#145/#176 retain unresolved edition, access, service, relationship,
+rights and applicability questions. These are references for later evidence
+assessment, not new reader evidence bindings or authenticated authority.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake

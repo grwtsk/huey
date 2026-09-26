@@ -82,3 +82,9 @@ does not exempt the new directory from review. The job separately runs its pinne
 historical verifier without exports and discovers its 18 tests explicitly.
 Source-copy hashes, 70 ANC claim routes and retained support/status fields do not
 establish image/audio inspection, external citation truth or source-service access.
+
+The cumulative SOC gate also requires the nine exact SOC-Q03 source/review files
+and checks the navigation transition from the unchanged ancillary receipt. The
+repository job separately runs the Q03 verifier and its 22 inherited tests.
+Historical source-inspection results and `verified_at` assertions remain dated
+metadata; this job performs no outside research or substantive clearance.

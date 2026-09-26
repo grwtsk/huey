@@ -18,6 +18,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = 'planning/consolidation/soc-ancillary.json'
 CORE_MANIFEST = 'planning/consolidation/soc-core.json'
+HISTORICAL_MANIFEST_BLOB = 'b48e8555cd650abc5e5d2b1cb76fad1b02943fba'
 REVIEW = 'planning/standard-of-care/ancillary-r02/'
 SOURCE_ROOT = 'sources/standard-of-care/neurology-current/content/'
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -67,7 +68,8 @@ SUMMARY = {'sources': 5, 'source_bytes': 24200, 'identity_matches': 5,
 LIMITS = ('Selected copy bytes, declared source/reference identities and inherited review consistency only; '
           'not source authentication, media inspection, live-target resolution, substantive verification, '
           'disclosure authority, manuscript admission or complete corpus coverage. '
-          'Run soc_consolidation.py for combined SOC file coverage.')
+          'Navigation is the fixed historical receipt; run soc_consolidation.py '
+          'for current navigation and combined SOC file coverage.')
 
 
 class Invalid(ValueError):
@@ -209,8 +211,10 @@ def validate_metadata(data):
 def verify(root=ROOT, source_objects=False):
     root = Path(root).resolve()
     try:
-        value = json_data(read(root, MANIFEST))
+        manifest_bytes = read(root, MANIFEST)
+        value = json_data(manifest_bytes)
         validate_manifest(value)
+        require(blob(manifest_bytes) == HISTORICAL_MANIFEST_BLOB, 'historical-receipt-drift')
         data = {}
         for row in value['files']:
             raw = read(root, row['path'])
@@ -220,14 +224,9 @@ def verify(root=ROOT, source_objects=False):
             if source_objects:
                 original = git(root, 'show', SOURCE_COMMIT + ':' + row['path'])
                 require(blob(original) == row['sourceBlob'] and original == raw, 'original-byte-drift')
-        core = json_data(read(root, CORE_MANIFEST))
+        # This completed navigation transition is now a fixed historical receipt.
+        # The authority successor and cumulative checker bind current navigation.
         for row in value['navigationChanges']:
-            matching = [item for item in core['files'] if item['path'] == row['path']]
-            require(len(matching) == 1, 'navigation-core-membership')
-            pinned = matching[0]
-            require(pinned['sourceBlob'] == row['sourceBlob'] and pinned['stagedBlob'] == row['stagedBlob'] and
-                    pinned['representation'] == 'adapted-navigation', 'navigation-core-pin')
-            require(blob(read(root, row['path'])) == row['stagedBlob'], 'navigation-byte-drift')
             if source_objects:
                 require(blob(git(root, 'show', BASIS + ':' + row['path'])) == row['priorStagedBlob'],
                         'navigation-prior-byte-drift')
@@ -246,6 +245,7 @@ def verify(root=ROOT, source_objects=False):
     return {'files': 15, 'exact_copies': 15,
             'original_git_objects_checked': 15 if source_objects else 0,
             'prior_navigation_objects_checked': 2 if source_objects else 0,
+            'historical_navigation_receipt': True,
             'source_records': 5, 'source_bytes': 24200, 'id_bearing_nodes': 59,
             'scalar_occurrences': 358, 'scoped_claims': 70, 'substantial_support_targets': 16,
             'source_references': 14, 'limits': LIMITS}
