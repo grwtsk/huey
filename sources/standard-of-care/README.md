@@ -1,9 +1,21 @@
-# Standard-of-care working sources — core, ancillary and authority staging
+# Standard-of-care working sources and staged review apparatus
 
 > [!WARNING]
 > **WORKING SOURCE CORPUS — VERIFICATION INCOMPLETE.** These files preserve attributed testimony, allegations, hypotheses, normative analysis and AI-assisted drafts. Inclusion does not establish truth or make received medical assertions safe to follow. This is not a clinical protocol, medical/legal advice, adjudication or a current risk assessment. Claims requiring review remain under [#125](https://github.com/grwtsk/huey/issues/125), [#145](https://github.com/grwtsk/huey/issues/145) and [#176](https://github.com/grwtsk/huey/issues/176).
 
-Current staging update, [#423](https://github.com/grwtsk/huey/issues/423): the
+Current staging update, [#425](https://github.com/grwtsk/huey/issues/425): the
+[incident/departure apparatus](../../planning/consolidation/soc-incident.md)
+preserves nine unchanged files and the [112-entry index](../../planning/standard-of-care/incident-register/index.md).
+Reports, safeguards, investigative and clinical questions, and context retain
+their original classifications and detailed issue links. These are not proved
+violations or independent-event totals. Source-reading statements are historical;
+six documentary aliases do not materialize their raw sources. The other 15 source
+references link to the already-staged context and authored-text exports.
+#193/#306/#307 and the individual issues remain their own review work. The
+[current vault handoff](../../planning/consolidation/vault-handoff.md) governs new
+evidence; this copy neither receives evidence nor changes its public boundary.
+
+Earlier staging, [#423](https://github.com/grwtsk/huey/issues/423): the
 [SOC-Q03 pair](../../planning/consolidation/soc-authority.md) preserves the complete
 [twelve-entry authority register](neurology-current/content/authority-quotes.json),
 [transfer receipt](transfer-q03.json) and seven unchanged
@@ -66,7 +78,6 @@ The pinned branch retains:
 
 | Deferred layer | Existing reference and boundary |
 | --- | --- |
-| Incident/departure register | [112 entries and source-status apparatus](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/incident-register); #193/#306/#307. Entries are reports, questions, safeguards and context, not 112 proved breaches. |
 | Care-law candidates and calculations | [Care-law layer](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law), including source/review schedules and later economic/communication/notice models. Candidate chapter joins are not applied manuscript edits. |
 
 The ethics architecture and painting image still remain outside this transfer.

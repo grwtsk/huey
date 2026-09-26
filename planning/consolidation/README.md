@@ -1,11 +1,12 @@
 # Staging consolidation — working records, not acceptance
 
-[SOC core consolidation](soc-core.md), #406/#407, and the
-[ancillary pair](soc-ancillary.md), #421/#422, are staged. The current scoped
-addition is the [SOC-Q03 authority source/review pair](soc-authority.md), #423:
-nine unchanged files from PR #122, preserving unresolved review and historical
-receipts. The register below remains the dated #384 audit; these later increments
-do not claim that the entire development branch has merged or its claims are verified.
+[SOC core](soc-core.md), #406/#407, [ancillary](soc-ancillary.md), #421/#422, and
+[authority/Q03](soc-authority.md), #423/#424, are staged. The current scoped
+addition is the [SOC-I01 incident/departure apparatus](soc-incident.md), #425:
+nine unchanged files and 112 entries with their original classifications and
+unresolved evidence status. The register below remains the dated #384 audit;
+these later increments do not claim that the entire development branch has
+merged or its claims are verified.
 
 Work: [#384](https://github.com/grwtsk/huey/issues/384). Inspected staging base:
 `ab501a00c167f6d85de59e4e22920dd3e2c5b546`, 2026-09-24. The author directed

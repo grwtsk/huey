@@ -88,3 +88,10 @@ and checks the navigation transition from the unchanged ancillary receipt. The
 repository job separately runs the Q03 verifier and its 22 inherited tests.
 Historical source-inspection results and `verified_at` assertions remain dated
 metadata; this job performs no outside research or substantive clearance.
+
+The SOC-I01 increment adds nine exact incident-register files to the cumulative
+gate and preserves the completed Q03 navigation receipt. The repository job runs
+the incident wrapper, original verifier and its 16 inherited tests explicitly.
+The 112 entry/issue links and classifications are index consistency, not verified
+encounters or findings. Source aliases are never a request to fetch private
+objects, and no live issue-body or evidence review is performed by this job.
