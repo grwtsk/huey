@@ -1,0 +1,743 @@
+{
+  "schema": "huey.evidence-source-inventory-proposal.v1",
+  "proposal_status": "USER_AUTHORIZED_ASSISTANT_DISCLOSURE_REVIEWED",
+  "certificate_status": "COMMITTED_CERTIFICATES_AND_PRIVATE_REVERSE_RECEIPTS_VERIFIED",
+  "raw_disclosure": "none",
+  "human_review": "pending",
+  "source_authentication": "not established",
+  "limits": [
+    "Source assertions remain attributed; this packet does not decide their truth.",
+    "Omission from an inspected object is not proof that an event, examination or reply did not occur.",
+    "Later findings do not alone establish identical earlier findings.",
+    "This is a bounded selection, not the complete record or a complete statement of the author’s account.",
+    "User authorized pre-release staging; human editorial review and main promotion remain separate. Certificates bind technical custody, not source truth."
+  ],
+  "count": 43,
+  "inventory": [
+    {
+      "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 4,
+      "certificate": "../../../evidence/certificates/HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00/public-v1.md"
+      ],
+      "physical_pdf_pages": 28,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-f4c81857-af90-4945-b0c4-0aa93e91c014",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-f4c81857-af90-4945-b0c4-0aa93e91c014.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 3,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-9dd97e91-2682-48ae-b537-a6feb563e023",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-9dd97e91-2682-48ae-b537-a6feb563e023.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-9dd97e91-2682-48ae-b537-a6feb563e023/public-v1.md"
+      ],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-749e50e1-3f93-4e39-a758-76898abf38e0",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-749e50e1-3f93-4e39-a758-76898abf38e0.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-7a2622f8-516a-4a9e-9cae-7c6b896b7988",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-7a2622f8-516a-4a9e-9cae-7c6b896b7988.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-c52efe9c-a709-44a3-9434-fb05464e9a02",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-c52efe9c-a709-44a3-9434-fb05464e9a02.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-c52efe9c-a709-44a3-9434-fb05464e9a02/public-v1.md"
+      ],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f/public-v1.md"
+      ],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-bc2345b1-a08f-4467-937f-4fc9587216e4",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-bc2345b1-a08f-4467-937f-4fc9587216e4.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-6f73c3c6-dc2f-4b2c-9c4c-a4ea43d0d73a",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-6f73c3c6-dc2f-4b2c-9c4c-a4ea43d0d73a.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-6f73c3c6-dc2f-4b2c-9c4c-a4ea43d0d73a/public-v1.md"
+      ],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-03a8f4d7-1df8-4523-baea-b29280a699d9",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-03a8f4d7-1df8-4523-baea-b29280a699d9.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-b6095a3d-e03b-44fb-a344-75d043ca2e91",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-b6095a3d-e03b-44fb-a344-75d043ca2e91.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 2,
+      "certificate": "../../../evidence/certificates/HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6/public-v1.md"
+      ],
+      "physical_pdf_pages": 14,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab/public-v1.md"
+      ],
+      "physical_pdf_pages": 21,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985/public-v1.md"
+      ],
+      "physical_pdf_pages": 45,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-d7fdf6a0-3b6e-4826-9ccd-515dff59b0fd",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-d7fdf6a0-3b6e-4826-9ccd-515dff59b0fd.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-d4bcdf53-dc0f-41e0-9e57-9c5bcb0d1c56",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-d4bcdf53-dc0f-41e0-9e57-9c5bcb0d1c56.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-6f36885b-dd9b-4a09-8909-ac1245ac042f",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-6f36885b-dd9b-4a09-8909-ac1245ac042f.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-3233f656-03cb-43dd-bc6a-b420a57670fd",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-3233f656-03cb-43dd-bc6a-b420a57670fd.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-b7fab3e4-b9b8-45bc-b14b-bc75f45bcf56",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-b7fab3e4-b9b8-45bc-b14b-bc75f45bcf56.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-b17ce709-4201-4c61-850b-f872cf3c794a",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-b17ce709-4201-4c61-850b-f872cf3c794a.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-ba1cc81e-2265-4f2d-965f-99c426f64786",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-ba1cc81e-2265-4f2d-965f-99c426f64786.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-54d9bb1d-94af-4109-88a4-3dddcb539324",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-54d9bb1d-94af-4109-88a4-3dddcb539324.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-98581aa7-0445-45fa-a095-1fd184479b8f",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-98581aa7-0445-45fa-a095-1fd184479b8f.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e/public-v1.md"
+      ],
+      "physical_pdf_pages": 10,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-96816067-685d-467e-8510-05f14efa7733",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-96816067-685d-467e-8510-05f14efa7733.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-6bc42546-3001-420f-a005-c772273ad2f7",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-6bc42546-3001-420f-a005-c772273ad2f7.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-16061613-4d51-4541-b48b-4e7c9ecc84b0",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_unreviewed",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-16061613-4d51-4541-b48b-4e7c9ecc84b0.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 5,
+      "transcription_method": [
+        "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-445b7153-ac92-4383-9904-d90e4986991a",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-445b7153-ac92-4383-9904-d90e4986991a.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-445b7153-ac92-4383-9904-d90e4986991a/public-v1.md"
+      ],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-c500efbc-2d10-4736-b6ed-90ef318bae49",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-c500efbc-2d10-4736-b6ed-90ef318bae49.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 3,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-9d7dd46c-83cf-470f-96d0-900b1a4a4d12",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-9d7dd46c-83cf-470f-96d0-900b1a4a4d12.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 4,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-07e60d91-fc61-4fa7-810f-4043293a7b87",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_unreviewed",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-07e60d91-fc61-4fa7-810f-4043293a7b87.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-07e60d91-fc61-4fa7-810f-4043293a7b87/public-v1.md"
+      ],
+      "physical_pdf_pages": 10,
+      "transcription_method": [
+        "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-eb1300ed-4259-447d-ad47-53c8374636f7",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_unreviewed",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-eb1300ed-4259-447d-ad47-53c8374636f7.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 4,
+      "transcription_method": [
+        "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-a629629c-5a5b-4393-9835-20d277336bbc",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_unreviewed",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-a629629c-5a5b-4393-9835-20d277336bbc.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-ef8469f5-94cd-4308-8276-3704e2620fab",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-ef8469f5-94cd-4308-8276-3704e2620fab.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7/public-v1.md"
+      ],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe/public-v1.md"
+      ],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-13dc85ed-e0cd-4531-acab-f3749d3f6671",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-13dc85ed-e0cd-4531-acab-f3749d3f6671.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 3,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-57ed32bd-207f-4e4d-944c-82c4c13632c7",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-57ed32bd-207f-4e4d-944c-82c4c13632c7.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 4,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-2f86310b-400e-451a-b3b9-fdb860655402",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-2f86310b-400e-451a-b3b9-fdb860655402.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-2f86310b-400e-451a-b3b9-fdb860655402/public-v1.md"
+      ],
+      "physical_pdf_pages": 14,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 3,
+      "certificate": "../../../evidence/certificates/HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1/public-v1.md"
+      ],
+      "physical_pdf_pages": 16,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-98a522c3-6a95-4d0a-9380-a7255595829f",
+      "type": "privately retained document",
+      "classification": "PRIVATE_SENSITIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_unreviewed",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 0,
+      "certificate": "../../../evidence/certificates/HUEY-EV-98a522c3-6a95-4d0a-9380-a7255595829f.json",
+      "public_derivatives": [],
+      "physical_pdf_pages": 1,
+      "transcription_method": [
+        "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_unreviewed",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7/public-v1.md"
+      ],
+      "physical_pdf_pages": 4,
+      "transcription_method": [
+        "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+      ]
+    },
+    {
+      "evidence_id": "HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527",
+      "type": "privately retained document",
+      "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+      "candidate_role": "source reference; certificate and private reverse receipt verified; substantive human review pending",
+      "transcription_status": "machine_typed_visual_checked",
+      "human_review": "pending",
+      "source_authenticated": false,
+      "substantive_card_count": 1,
+      "certificate": "../../../evidence/certificates/HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527.json",
+      "public_derivatives": [
+        "../../../evidence/derivatives/HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527/public-v1.md"
+      ],
+      "physical_pdf_pages": 2,
+      "transcription_method": [
+        "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+      ]
+    }
+  ],
+  "coverage_note": "One generic row per selected distinct eligible source object, including a prior intake item necessary to supply an available correction; repeated receipts and private exclusions remain outside this candidate. These references do not count as independent support merely because their IDs differ.",
+  "proposal_version": 2,
+  "certificate_commit": "ceec0095e6a4a1439285dde1ad97ba191a617382"
+}
