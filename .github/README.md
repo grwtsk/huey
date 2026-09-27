@@ -112,3 +112,12 @@ the inherited private-packet verifier; the original twelve mutation results are
 historical and are not part of this CI run. No private candidate, prose span,
 source locator or packet-selected file is read. Source links remain references,
 not current source inspection, manuscript reconciliation or evidence clearance.
+
+The CL04 public increment adds three exact files, bringing cumulative coverage to
+83 selected files. `scripts/soc_cl04.py` checks its 117 public unit mappings,
+including historical edit/chapter membership, aliases and C-ID references. Its
+archived private-packet checker is not imported or executed; the original eighteen
+mutations remain unrun. No private predecessor archive, candidate or claim text
+is read. The five prior slice manifests remain fixed historical receipts, and
+the latest wrapper binds current navigation. Checks do not renew historical
+source inspections, verify claims or reconcile the current manuscript.

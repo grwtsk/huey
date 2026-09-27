@@ -58,6 +58,18 @@ this TSV and is not run here; the [new public gate](soc-cl03.md) checks only fix
 bytes and declared index relationships. The original source/test receipts remain
 historical, with no new evidence ID, certificate or relationship disposition.
 
+Update under #431: the [CL04 public index](../standard-of-care/care-law/integration-r04.tsv)
+preserves 117 unit mappings across sixteen edits and two historical chapter
+coordinates. Its 103 C-ID references name 62 distinct care-law units; 32 rows
+explicitly have no C-ID mapping. Twelve aliases occur in 228 references. The
+trust source T remains an editorial derivative; R01 retains abstract/excerpt
+access limits, and W03/W05 remain reproduced judicial instructions. The new
+historical W06 inspection does not overwrite the earlier S13 failure. None of
+these references is a current evidence certificate, supporting-passage review or
+paragraph binding. Private text/spans and substantive source questions remain
+outside this index. The [CL04 public gate](soc-cl04.md) validates copy/index
+consistency without running the archived private checker or its eighteen cases.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake

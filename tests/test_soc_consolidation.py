@@ -28,7 +28,8 @@ class SocConsolidationTests(unittest.TestCase):
                          checker.authority.MANIFEST, *checker.authority.EXPECTED,
                          checker.incident.MANIFEST, *checker.incident.EXPECTED,
                          checker.care_law.MANIFEST, *checker.care_law.EXPECTED,
-                         checker.cl03.MANIFEST, *checker.cl03.EXPECTED]:
+                         checker.cl03.MANIFEST, *checker.cl03.EXPECTED,
+                         checker.cl04.MANIFEST, *checker.cl04.EXPECTED]:
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)
@@ -51,13 +52,19 @@ class SocConsolidationTests(unittest.TestCase):
 
     def test_current_copy_and_claim_route_counts(self):
         result = checker.verify(self.root)
-        self.assertEqual(result['files'], 80)
+        self.assertEqual(result['files'], 83)
         self.assertEqual(result['core_files'], 36)
         self.assertEqual(result['ancillary_files'], 15)
         self.assertEqual(result['authority_files'], 9)
         self.assertEqual(result['incident_files'], 9)
         self.assertEqual(result['care_law_files'], 8)
         self.assertEqual(result['cl03_files'], 3)
+        self.assertEqual(result['cl04_files'], 3)
+        self.assertEqual(result['cl04_indexed_units'], 117)
+        self.assertEqual(result['cl04_indexed_edit_groups'], 16)
+        self.assertEqual(result['cl04_distinct_carelaw_references'], 62)
+        self.assertFalse(result['cl04_private_packet_checked'])
+        self.assertFalse(result['cl04_inherited_packet_verifier_executed'])
         self.assertEqual(result['cl03_indexed_units'], 109)
         self.assertEqual(result['cl03_indexed_edit_groups'], 11)
         self.assertEqual(result['cl03_distinct_carelaw_references'], 65)
@@ -70,7 +77,7 @@ class SocConsolidationTests(unittest.TestCase):
         self.assertEqual(result['registered_incident_entries'], 112)
         self.assertEqual(result['incident_declared_source_aliases'], 21)
         self.assertEqual(result['incident_used_source_aliases'], 11)
-        self.assertEqual(result['exact_copies'], 78)
+        self.assertEqual(result['exact_copies'], 81)
         self.assertEqual(result['adapted_navigation_files'], 2)
         self.assertEqual(result['initial_claim_targets'], 188)
         self.assertEqual(result['substantial_support_targets'], 111)
@@ -179,6 +186,16 @@ class SocConsolidationTests(unittest.TestCase):
         path.write_bytes(path.read_bytes() + b' ')
         self.rejects('cl-three-staged-byte-drift')
 
+    def test_core_requires_cl04_manifest_and_rejects_changed_index(self):
+        manifest = self.root / checker.cl04.MANIFEST
+        original = manifest.read_bytes()
+        manifest.unlink()
+        self.rejects('cl-four-unreadable-or-malformed-input')
+        manifest.write_bytes(original)
+        path = self.root / (checker.cl04.REVIEW + 'integration-r04.tsv')
+        path.write_bytes(path.read_bytes() + b' ')
+        self.rejects('cl-four-staged-byte-drift')
+
     def test_exact_source_bytes_cannot_be_rebound_as_adapted_navigation(self):
         row = next(x for x in self.manifest['files'] if x['path'].endswith('/context/standard.md'))
         row['representation'] = 'adapted-navigation'
@@ -269,7 +286,8 @@ class SocConsolidationTests(unittest.TestCase):
             checker.authority.MANIFEST, *checker.authority.EXPECTED,
                          checker.incident.MANIFEST, *checker.incident.EXPECTED,
                          checker.care_law.MANIFEST, *checker.care_law.EXPECTED,
-                         checker.cl03.MANIFEST, *checker.cl03.EXPECTED]}
+                         checker.cl03.MANIFEST, *checker.cl03.EXPECTED,
+                         checker.cl04.MANIFEST, *checker.cl04.EXPECTED]}
         checker.verify(self.root)
         after = {p: (self.root / p).read_bytes() for p in before}
         self.assertEqual(before, after)
