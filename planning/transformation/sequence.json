@@ -1,0 +1,272 @@
+{
+  "schema": "huey.transformation-proposal.v1",
+  "status": "preparation-only",
+  "basisRevision": "a0022e1ce5b807500c81cd3dcc23ea5d42e5c0b9",
+  "workIssue": 363,
+  "relatedIssues": [
+    307,
+    314,
+    326,
+    377,
+    404
+  ],
+  "sourceSelection": "pending-exact-version-review",
+  "buildIntegration": "none",
+  "sequence": [
+    {
+      "coordinate": "P01",
+      "movement": "preamble",
+      "function": "Opening yard",
+      "candidateSlots": [
+        {
+          "slot": "C01",
+          "entityId": "he_691f99fa-fb98-4a4e-a05c-124913e827a6"
+        }
+      ]
+    },
+    {
+      "coordinate": "P02",
+      "movement": "preamble",
+      "function": "Early encounter",
+      "candidateSlots": [
+        {
+          "slot": "C03",
+          "entityId": "he_e7053ccc-323d-40b2-9b80-b4b7497d8e4a"
+        }
+      ]
+    },
+    {
+      "coordinate": "P03",
+      "movement": "preamble",
+      "function": "Experienced distance",
+      "candidateSlots": []
+    },
+    {
+      "coordinate": "P04",
+      "movement": "preamble",
+      "function": "Life already under way",
+      "candidateSlots": [
+        {
+          "slot": "C02",
+          "entityId": "he_639a19d5-b157-407c-ad75-49e8e3d91629"
+        }
+      ]
+    },
+    {
+      "coordinate": "P05",
+      "movement": "preamble",
+      "function": "Separate account and first record",
+      "candidateSlots": [
+        {
+          "slot": "C04",
+          "entityId": "he_b94b76d1-98e3-40ee-a279-92fe2b04399d"
+        },
+        {
+          "slot": "C05",
+          "entityId": "he_d138f203-ac49-437a-8c05-e7ee7cc4d7c2"
+        }
+      ]
+    },
+    {
+      "coordinate": "P06",
+      "movement": "preamble",
+      "function": "First supported request for protection",
+      "candidateSlots": []
+    },
+    {
+      "coordinate": "I01",
+      "movement": "interlude",
+      "function": "An account enters another setting",
+      "candidateSlots": [
+        {
+          "slot": "C05",
+          "entityId": "he_d138f203-ac49-437a-8c05-e7ee7cc4d7c2"
+        }
+      ]
+    },
+    {
+      "coordinate": "I02",
+      "movement": "interlude",
+      "function": "Further bids for care",
+      "candidateSlots": []
+    },
+    {
+      "coordinate": "I03",
+      "movement": "interlude",
+      "function": "Later remembering or reliving",
+      "candidateSlots": []
+    },
+    {
+      "coordinate": "I04",
+      "movement": "interlude",
+      "function": "Earlier history receives its own duration",
+      "candidateSlots": [
+        {
+          "slot": "C12A",
+          "entityId": "he_0dfa0c92-b67c-49e5-86a4-99924c5f3bcf"
+        }
+      ]
+    },
+    {
+      "coordinate": "I05",
+      "movement": "interlude",
+      "function": "Central compositional junction",
+      "candidateSlots": [
+        {
+          "slot": "C08A",
+          "entityId": "he_14ff11f9-8b32-476b-a931-9debc2d40f76"
+        }
+      ]
+    },
+    {
+      "coordinate": "I06",
+      "movement": "interlude",
+      "function": "Institution and response in their own words",
+      "candidateSlots": [
+        {
+          "slot": "C07",
+          "entityId": "he_39c3a6c0-4af3-4b50-97a9-666bfb92b8fb"
+        },
+        {
+          "slot": "C10",
+          "entityId": "he_fc113853-837d-493a-a041-882d5a4c125f"
+        }
+      ]
+    },
+    {
+      "coordinate": "I07",
+      "movement": "interlude",
+      "function": "Investigation and its scope",
+      "candidateSlots": [
+        {
+          "slot": "C11",
+          "entityId": "he_9af82b1f-c63c-4af8-8fa0-1df30f63328c"
+        }
+      ]
+    },
+    {
+      "coordinate": "I08",
+      "movement": "interlude",
+      "function": "Corrective labor and burden",
+      "candidateSlots": [
+        {
+          "slot": "C12",
+          "entityId": "he_4f5ab168-71e6-495c-9590-49634dcd6b63"
+        }
+      ]
+    },
+    {
+      "coordinate": "I09",
+      "movement": "interlude",
+      "function": "Formal models after narrative examples",
+      "candidateSlots": [
+        {
+          "slot": "C13",
+          "entityId": "he_fc2473c5-813d-4bf1-8173-e35ff3e942d4"
+        }
+      ]
+    },
+    {
+      "coordinate": "I10",
+      "movement": "interlude",
+      "function": "Institutional commitments as examinable standards",
+      "candidateSlots": [
+        {
+          "slot": "C10",
+          "entityId": "he_fc113853-837d-493a-a041-882d5a4c125f"
+        }
+      ]
+    },
+    {
+      "coordinate": "I11",
+      "movement": "interlude",
+      "function": "Source-dependent reciprocal correction review",
+      "candidateSlots": []
+    },
+    {
+      "coordinate": "I12",
+      "movement": "interlude",
+      "function": "Late Interlude and supplied capstone",
+      "candidateSlots": [
+        {
+          "slot": "C14",
+          "entityId": "he_861849b3-7f6b-488e-9bf8-ba331ec84b39"
+        },
+        {
+          "slot": "C14A",
+          "entityId": "he_29679c08-71fd-49be-8ac8-d20b44b9e297"
+        },
+        {
+          "slot": "C14B",
+          "entityId": "he_202e327d-164e-4483-9fcc-bd3531e2a54a"
+        },
+        {
+          "slot": "C15",
+          "entityId": "he_45655f49-467b-41f5-9836-92a8dedcb22c"
+        }
+      ]
+    },
+    {
+      "coordinate": "E01",
+      "movement": "excursion",
+      "function": "Protected narrative close",
+      "candidateSlots": [
+        {
+          "slot": "E01",
+          "entityId": "he_b0f95d46-4f4c-4412-af8d-074707b83ff5"
+        }
+      ]
+    }
+  ],
+  "retainedUnassigned": [
+    {
+      "slot": "C02A",
+      "entityId": "he_621f98a7-71f5-4459-99a8-67796c7d162e"
+    },
+    {
+      "slot": "C06",
+      "entityId": "he_4f477bae-5841-41da-be12-3021a2cb3fe0"
+    },
+    {
+      "slot": "C08",
+      "entityId": "he_05daaa10-f60b-4cf8-b86a-5ee8a0a9e232"
+    },
+    {
+      "slot": "C09",
+      "entityId": "he_7e7a25c5-2263-4993-b597-c1ccf9279c6e"
+    },
+    {
+      "slot": "place-beneath-pain",
+      "entityId": "he_ba55cdc2-2267-496f-b3c6-f6e1299721e2"
+    }
+  ],
+  "flowCandidates": [
+    {
+      "path": "manuscript/flow/the-brightness.md",
+      "identityReconciliation": "pending",
+      "slotEquivalence": "unasserted"
+    },
+    {
+      "path": "manuscript/flow/the-words-i-was-asked-to-remember.md",
+      "identityReconciliation": "pending",
+      "slotEquivalence": "unasserted"
+    },
+    {
+      "path": "manuscript/flow/on-ezekiel-radio-park.md",
+      "identityReconciliation": "pending",
+      "slotEquivalence": "unasserted"
+    }
+  ],
+  "constraints": {
+    "chapterPartition": "provisional",
+    "chronologyIsReadingOrder": false,
+    "openingAnchors": "preserve-assigned-movement-openings-once",
+    "interludeOpeningReconciliation": "pending-before-reordering-C08-or-its-anchor",
+    "earlierC12APlacement": "historically-after-C08A-candidate-before-C08A",
+    "capstone": "preserve-existing-supplied-final-section-before-excursion",
+    "ending": "complete-authorized-source-required-no-adult-coda",
+    "otherMatter": "retained-at-existing-status",
+    "privacy": "source-neutral-planning-only",
+    "actualEvidenceMappings": "none"
+  }
+}
