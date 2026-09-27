@@ -1,14 +1,94 @@
-# Huey: how to make skin color.
+# Huey
+
+> [!WARNING]
+> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This repository includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. Inclusion, a citation, a commit, an issue closure or a passing software test does not independently verify a claim. Some received medical assertions are unsupported or superseded. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Read the linked verification issues for evidence, limitations, counterevidence and corrections. Public-copy approval is not factual endorsement or acceptance of a finished edition.
 
 R.A. Jacob Martone
 
+**Public-copy approval is recorded; do not ask again.** The author expressly approved the specified standard-of-care discussion, atlas and essay collection in [issue #2's decision receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544). [Program #125](https://github.com/grwtsk/huey/issues/125), [transfer #126](https://github.com/grwtsk/huey/issues/126), [corpus audit #145](https://github.com/grwtsk/huey/issues/145), and [substantial-support queue #176](https://github.com/grwtsk/huey/issues/176) distinguish source copying from factual review. Browse the [authorized core corpus in staging](sources/standard-of-care/README.md), its [claim apparatus](planning/standard-of-care/README.md), the [core consolidation record](planning/consolidation/soc-core.md), and the [ancillary source/review pair](planning/consolidation/soc-ancillary.md). The [authority/Q03](planning/consolidation/soc-authority.md), [incident/departure](planning/consolidation/soc-incident.md) and [initial care-law source/review core](planning/consolidation/soc-care-law.md) are separately staged with exact provenance and unresolved review states. The [CL03](planning/consolidation/soc-cl03.md), [CL04](planning/consolidation/soc-cl04.md) and [CL05 public integration apparatus](planning/consolidation/soc-cl05.md) are also staged; their private manuscript packets are not imported or revalidated. CL05 preserves separate changed/retained indexes and the unresolved original-source lineage under #50. Later CL06–CL13 integration/reference layers remain on draft [PR #122](https://github.com/grwtsk/huey/pull/122). Raw clinical PDFs/records and unrelated private material remain excluded. The live Reader gate and the book's protected ending are unchanged.
+
+Every new relevant commit must include: **Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.** Do not rewrite old commit history to backdate this requirement. Earlier infrastructure descriptions below apply outside the explicitly approved corpus; they do not reopen this permission decision.
+
 Production work is tracked in [the master issue](https://github.com/grwtsk/huey/issues/1). Read [AGENTS.md](AGENTS.md) before issue-driven work. One response opens one bounded pull request; completed, checked work may merge under the author's recorded instruction. Manuscript acceptance and release remain separate.
+
+## Pre-release and evidence review
+
+Work branches → [`pre-release`](https://github.com/grwtsk/huey/tree/pre-release) → journalistic-integrity review → promotion pull request → `main`.
+
+The [promotion policy](planning/pre-release.md) and [review-record template](planning/pre-release-review.template.md) require claim-to-source tracking, a recorded disposition for contrary evidence and material uncertainty, appropriate response opportunities, disclosure checks and actual human editorial clearance of the exact proposed content. Uncleared material stays staged; a passing software check is not an evidence verdict.
+
+**Both branches are public.** Existing source-disclosure restrictions still apply. Content already on `main`, including the previously checked-in chapter, retains its existing status and is not retrospectively certified. This setup adds a manual editorial gate; server-side required-review enforcement remains [administration task #311](https://github.com/grwtsk/huey/issues/311). No automatic merge, replication or publication workflow is enabled. Setup is tracked in [#310](https://github.com/grwtsk/huey/issues/310).
+
+## Branch consolidation and evidence intake
+
+The [staging consolidation register](planning/consolidation/README.md) preserves
+public historical branch records, identifies unmerged corpus work and notes the
+existing claim/evidence references. Historical progress is not current prose or
+acceptance. The [evidence-intake protocol](planning/evidence-intake/README.md) and
+[vault handoff](planning/consolidation/vault-handoff.md) provide a tested boundary
+for reviewed public certificates from private capture. Raw restricted evidence
+stays in the vault. New evidence still needs source, claim and contrary-material
+review before any promotion; no background watch or live service is implied.
+
+## Literary entity model
+
+Huey is now directed toward a **complete working book editor**, with a separate
+publication/reader projection. The [editorial inventory foundation](planning/editorial-inventory/README.md)
+accounts for known body, front/back and unplaced material, including explicit
+unavailable slots and authorized public candidates. Publication admission does
+not determine literary existence. This metadata foundation does not yet replace
+the current reader UI or assemble ReadingPages; follow #370 and #349.
+
+`npm run inventory:check` validates coverage and source references;
+`npm run --silent inventory:emit` prints the derived machine-readable inventory;
+`npm run test:inventory` runs its deterministic checks. No prose is copied into
+the output and no private source is retrieved.
+
+The [initial editorial ReadingPage assembly](planning/editorial-pages/README.md)
+adds a persisted sequence for every known slot and separate unplaced pages. Its
+bounded compiler materializes the five current canonical/unplaced working manuscript sources;
+other candidate/support sources remain explicit references. `npm run test:pages` checks
+the parser, identity sidecar and assembly on a Unicode-17 runtime. Generated page
+output may contain authorized public prose and remains derived from Markdown.
+The existing served reader is unchanged.
+
+The [v1 literary entity contract](planning/literary-entity-model.md) defines stable
+identity, exact entity versions, occurrences and reading projections for
+[#348](https://github.com/grwtsk/huey/issues/348). Its synthetic fixtures and
+read-only checks are the foundation for #347's later implementation. Markdown,
+the current reader and source admission remain unchanged; this model does not
+establish manuscript acceptance, factual truth or kernel authority.
+
+`npm test` runs the reader suite across the declared Node engine range. Model
+changes additionally require `npm run test:model`, the separate fixture and test
+gate for a runtime exposing Unicode 17.0 (checked locally with Node 22.23.2).
+That gate fails explicitly on a different Unicode runtime; it never skips the
+model checks and reports them as passed. `npm run model:check` runs just the
+read-only fixture checker. Passing the reader suite alone does not validate the
+literary model.
+
+[Hosted repository checks](.github/README.md) run the reader, literary model,
+editorial inventory and Python checks on PRs targeting `pre-release` and staging
+pushes. Actual GitHub job statuses complement local receipts; they do not install
+required-review protection or supply human editorial clearance.
+
+## Middle-book chapter
+
+[Baptism in the Color of Rain](manuscript/02-interlude/baptism-in-the-color-of-rain.md) is checked in at the author's explicit direction, with only the first `netch` changed to `netch asheba`. The [working contents](manuscript/README.md) place this added chapter in the Interlude, between *The Ring of Umber* and *The Possibility of a Feather*. [Check-in #308](https://github.com/grwtsk/huey/issues/308) and the [placement record](planning/writing/baptism-in-the-color-of-rain.json) record this chapter-specific public-copy scope. Other private manuscript and raw clinical records remain outside this grant; the broader development and release work remain separate.
+
+## Late-Interlude chapters
+
+[On the Eve of the Last su[p, p′, p″, p‴, …]er](manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md) and [Orange After the End](manuscript/02-interlude/14b-orange-after-the-end.md) are staged public working chapters under the author's explicit [#378](https://github.com/grwtsk/huey/issues/378) instruction. They are placed after C14 and before C15 so the protected C15 → movement break → Edna close remains unchanged. Their check-in is not evidence clearance, reader admission, promotion to `main`, or finished-edition release.
+
+## Closing excursion reveal
+
+The active book title is **Huey**. Under [#380](https://github.com/grwtsk/huey/issues/380), the exact classroom question is reserved for its single authorized occurrence inside the final Edna excursion. Earlier prose and metadata may foreshadow it only indirectly; the surrounding supplied excursion remains protected and is not reconstructed by this staging change.
 
 ## Source catalog and coverage
 
-The author selected a kernel-managed durable source volume with a Reader-gated catalog/search on grwtsk.com. This repository carries only the [link-planning contract](planning/source-catalog-contract.md), [metadata aliases](sources/catalog.yaml), [service handoff](planning/source-service.json), and [source-to-book coverage ledger](planning/source-coverage.md). It does not duplicate the original corpus or implement reader permissions.
+The author selected a kernel-managed durable source volume with a Reader-gated catalog/search on grwtsk.com. For sources outside the scoped public-copy approval above, this repository carries the [link-planning contract](planning/source-catalog-contract.md), [metadata aliases](sources/catalog.yaml), [service handoff](planning/source-service.json), and [source-to-book coverage ledger](planning/source-coverage.md). These infrastructure files do not duplicate the original corpus or implement reader permissions.
 
-The service endpoint and all source bindings are currently pending. No working search route, ingested record, actual reader grant or deployment is claimed. Follow [issue #16](https://github.com/grwtsk/huey/issues/16) and its cross-repository blockers. [Issue #2](https://github.com/grwtsk/huey/issues/2) retains the remaining source-admission and disclosure boundaries; the custody architecture itself is no longer unselected.
+The service endpoint and its source bindings are currently pending. No working gated search route, ingested clinical record, actual reader grant or deployment is claimed. Follow [issue #16](https://github.com/grwtsk/huey/issues/16) and its cross-repository blockers. [Issue #2](https://github.com/grwtsk/huey/issues/2) retains remaining source-admission and disclosure boundaries outside SOC-PUBLIC-01; the custody architecture itself is no longer unselected.
 
 ```sh
 python3 -m pip install -r requirements-checks.txt
@@ -19,4 +99,26 @@ python3 scripts/catalog.py check
 
 `python3 scripts/catalog.py render` prints the deterministic ledger. `python3 scripts/catalog.py link A01` returns a pending result until inspected service/alias bindings exist. These commands do not query a service, grant access or publish content.
 
-No manuscript passages, literary anchors or private records are stored here by these infrastructure changes.
+No manuscript passages, literary anchors or private records were stored by those earlier infrastructure changes. The later approved SOC source copies are separately identified above.
+
+## Current framing correction
+
+Read [RF-01](planning/relational-framing.md) and the [resume instruction](planning/framing-resume.md) before drafting from earlier packets. The author describes the geometry of people, identity, evidence and decisions, not a claim of racism or a defense against that label. Original sources retain their words; current derivatives preserve the later clarification. [Issue #98](https://github.com/grwtsk/huey/issues/98) governs the correction, [#99](https://github.com/grwtsk/huey/issues/99) its workflow checks, and [#100](https://github.com/grwtsk/huey/issues/100) its manuscript repairs.
+
+Local checks for the bounded declaration/scanner tool are documented in RF-01. They do not guarantee semantic fidelity. The [coverage register](planning/framing-coverage.json) records actual issue/PR correction references, not a live completion service. No public manuscript permission beyond the actual scoped grant is implied.
+
+## Lexical and conceptual research
+
+[LG-01](research/lexical-geometry/README.md) maps race, is, -ism, -ist, racism and racist across lexical history, grammar, philosophy, social theory, identity and normative frameworks. Its [source register](research/lexical-geometry/sources.md), [structured atlas](research/lexical-geometry/atlas.json) and [continuing coverage](research/lexical-geometry/coverage.md) preserve actual access, attributed disagreements and unresolved work. The atlas is public-source research, not a classification of the book's participants. See [#102](https://github.com/grwtsk/huey/issues/102) and [#103](https://github.com/grwtsk/huey/issues/103).
+
+```sh
+python3 scripts/lexical_geometry.py validate
+python3 scripts/lexical_geometry.py check
+python3 -m unittest discover -s tests -p 'test_lexical_geometry.py' -v
+```
+
+These are integrity checks, not a substitute for reading or a claim that all pertinent authorities have been exhausted. The hosted workflow also runs them; no source service is activated.
+
+## Author-supplied capstone
+
+The [placement contract](planning/capstone-placement.md) records the author's concluding self-examination and open reader address at the end of Chapter 15, immediately before the existing excursion. The [Smith/antiracist comparison](research/lexical-geometry/confession-reader-dialogue.md) cites the distinct public sources. RF-01 protects actual self-attribution as well as protection from imposed labels; it is not a prohibition on the author's supplied words. The private capstone source and proposed prose are not part of the SOC public-copy scope. Full-chapter integration remains #51.

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "0932d39f4328ef61f7e5a2b5b3ebe4ede7fe234be9e5dec3cb9bce8a3a3dd068",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 16
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "https://github.com/grwtsk/huey/issues/200",
+      "locator": "pp4–5; analytical card ha_1b00960d-1e14-49ec-842a-398b12ff59db",
+      "relationship": "unresolved",
+      "contribution": "Source states: The author’s later letter disputes the recorded gait and coordination examination, says some tests were not performed, and describes requiring wall support. Joint comparison: Presents the attributed conflict over gait documentation. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+      "does_not_establish": "Which account is accurate, misconduct, causation or liability. Identity of the encounter across the differing dates is not established by the link."
+    },
+    {
+      "target": "https://github.com/grwtsk/huey/issues/201",
+      "locator": "pp4–5; analytical card ha_1b00960d-1e14-49ec-842a-398b12ff59db",
+      "relationship": "unresolved",
+      "contribution": "Source states: The author’s later letter disputes the recorded gait and coordination examination, says some tests were not performed, and describes requiring wall support. Joint comparison: Presents the attributed conflict over tandem walking and wall support. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+      "does_not_establish": "An independently established reconstruction of the encounter. Identity of the encounter across the differing dates is not established by the link."
+    },
+    {
+      "target": "SOC-C009",
+      "locator": "p8; analytical card ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+      "relationship": "context",
+      "contribution": "Source states: The later patient letter quotes the 6 cm value and says a follow-up inquiry established it was wrong. Joint comparison: Preserves the printed value, the author’s later account and the already-available attributed correction to 6 mm.",
+      "does_not_establish": "A formal amendment of the original radiology report, independent image measurement, message authenticity or clinical implications."
+    },
+    {
+      "target": "SOC-C002",
+      "locator": "p15; pp2,13; analytical card ha_3ab55f6a-63fb-4c54-b71f-b881cc728877",
+      "relationship": "limits",
+      "contribution": "Source states: The letter says quoted passages were modified through automated means for readability and says their meaning was unchanged. Observed: The letter gives a January 2019 encounter date in one passage and a January 2013 appointment date in another. Joint comparison: Distinguishes later modified quotation from original source text.",
+      "does_not_establish": "Verbatim fidelity of the modified passages."
+    },
+    {
+      "target": "SOC-C004",
+      "locator": "p15; pp2,13; analytical card ha_3ab55f6a-63fb-4c54-b71f-b881cc728877",
+      "relationship": "unresolved",
+      "contribution": "Source states: The letter says quoted passages were modified through automated means for readability and says their meaning was unchanged. Observed: The letter gives a January 2019 encounter date in one passage and a January 2013 appointment date in another. Joint comparison: Preserves differing displayed dates.",
+      "does_not_establish": "Which date was intended or whether the letter was delivered."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T05:07:51.098579Z",
+  "public_exposure_basis": "UNKNOWN"
+}

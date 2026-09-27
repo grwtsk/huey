@@ -1,0 +1,84 @@
+{
+  "schema": "huey.soc-cl05.v1",
+  "basisRevision": "3e3e7a2a1cdb2c2ea82d37bd5c2c1d5abb178d50",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176",
+    "https://github.com/grwtsk/huey/issues/177",
+    "https://github.com/grwtsk/huey/issues/186",
+    "https://github.com/grwtsk/huey/issues/50",
+    "https://github.com/grwtsk/huey/issues/178",
+    "https://github.com/grwtsk/huey/issues/179",
+    "https://github.com/grwtsk/huey/issues/180",
+    "https://github.com/grwtsk/huey/issues/181",
+    "https://github.com/grwtsk/huey/issues/182",
+    "https://github.com/grwtsk/huey/issues/183",
+    "https://github.com/grwtsk/huey/issues/184",
+    "https://github.com/grwtsk/huey/issues/185",
+    "https://github.com/grwtsk/huey/issues/187",
+    "https://github.com/grwtsk/huey/issues/28",
+    "https://github.com/grwtsk/huey/issues/433"
+  ],
+  "notice": "This selection preserves the public CL05 receipt, changed/retained unit indexes and archived private-packet checker. Historical integration and test assertions remain dated records, not a current manuscript reconciliation, private-packet check, author acceptance or findings. Retained review labels are non-authoritative historical metadata; the four source-lineage-open rows remain unresolved. The archived checker is neither imported nor executed. Aliases and issue links are references, not evidence retrieval, authentication or grants. No new evidence, manuscript admission, complete corpus transfer or promotion is supplied.",
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "sourceMetadataActive": false,
+  "newEvidenceReceived": false,
+  "newExternalCollectionPerformed": false,
+  "substantiveVerificationPerformed": false,
+  "liveIssueBodiesVerified": false,
+  "privatePacketChecked": false,
+  "inheritedPacketVerifierExecuted": false,
+  "manuscriptReconciliationPerformed": false,
+  "fullCorpusTransferComplete": false,
+  "authorityFromReferences": false,
+  "files": [
+    {
+      "path": "planning/standard-of-care/care-law/integration-r05.md",
+      "sourceBlob": "cba8f9d53f586a1768b1f19fe8af69df10f35247",
+      "stagedBlob": "cba8f9d53f586a1768b1f19fe8af69df10f35247",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/integration-r05.tsv",
+      "sourceBlob": "8ba0960fc144f37592e67d0423a46c52b3534918",
+      "stagedBlob": "8ba0960fc144f37592e67d0423a46c52b3534918",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/integration-r05-retained.tsv",
+      "sourceBlob": "e801bc17d7505440354cbda95076f7d2a17e23ba",
+      "stagedBlob": "e801bc17d7505440354cbda95076f7d2a17e23ba",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/verify_integration_r05.py",
+      "sourceBlob": "f1ce756a5a37ed3f2f7870566d1dfbb76bc0a384",
+      "stagedBlob": "f1ce756a5a37ed3f2f7870566d1dfbb76bc0a384",
+      "representation": "exact"
+    }
+  ],
+  "predecessorManifest": {
+    "path": "planning/consolidation/soc-cl04.json",
+    "blob": "84e055e1d14de693d70d54427d5cb85a6293c08d"
+  },
+  "navigationChanges": [
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "priorStagedBlob": "03cce13c7abc8454207337cf6881641826256b4c",
+      "stagedBlob": "d248821ef0769eb19c1323eccf15aa7a274da323"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "priorStagedBlob": "e7710421ba5edae9dd101e1f8ba6d753a6ded5f6",
+      "stagedBlob": "5e494a0f9723e3d009a14fbb1b3b045024545ba4"
+    }
+  ]
+}

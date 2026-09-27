@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "SOC-Q03-transfer",
+  "approval": "SOC-PUBLIC-01",
+  "supersedes": {
+    "manifest": "transfer-manifest.json",
+    "pending_source_path": "content/authority-quotes.json"
+  },
+  "source_repository": "grwtsk/neurology",
+  "source_commit": "c920e426b8b6753b9f4bacf019e48010e57918c2",
+  "source_path": "content/authority-quotes.json",
+  "source_blob": "69f35715a28dc800250959ee2a19cf67bfa91e90",
+  "destination": "neurology-current/content/authority-quotes.json",
+  "destination_blob": "69f35715a28dc800250959ee2a19cf67bfa91e90",
+  "copy_type": "byte-identical-complete-json",
+  "bytes": 15994,
+  "entries": 12,
+  "source_originals_modified": false,
+  "live_site_modified": false,
+  "raw_clinical_records_included": false,
+  "review": "../../planning/standard-of-care/authority-q03/README.md",
+  "verification_issues": [
+    192,
+    144,
+    145,
+    176
+  ],
+  "ancillary_remaining": [
+    "content/articles/ethics-authority-positive-change.json",
+    "content/articles/images/i-bled-so.png"
+  ],
+  "other_remaining": [
+    "Full presentation JSON for twelve prose exports",
+    "Automated whole-prose source comparisons",
+    "Complete conversation capture",
+    "Complete atomic assertion and semantic source review"
+  ],
+  "factual_verification_complete": false,
+  "manuscript_status": "candidate-only",
+  "disclaimer": "Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings."
+}

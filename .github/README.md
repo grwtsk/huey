@@ -1,0 +1,131 @@
+# Hosted repository checks
+
+At the author's explicit request, [Huey checks](workflows/checks.yml) runs on pull
+requests targeting `pre-release` and pushes to `pre-release`. GitHub reports the
+actual job results on the PR. PR jobs test GitHub's proposed merge commit; the run
+records that commit and the PR head. No path filter hides checks on metadata-only
+changes. A newer run cancels superseded work for the same PR or branch.
+
+| Check | Scope |
+| --- | --- |
+| Reader (Node 22.12.0) | `npm test`, content generation, tracked-file drift; first declared Node engine floor. |
+| Reader (Node 24.0.0) | Same checks at the second declared engine floor. |
+| Reader (Node 22.23.2) | Same checks plus dependency installation and actual Vite build. |
+| Literary model and editorial inventory | `npm run test:model`, `npm run test:inventory`, `npm run test:pages`, `npm run test:routes`, alias continuity against the PR base/previous staging head, full registered public-object coverage, selected-source page materialization and deterministic emission. |
+| Python repository checks and whitespace | Python 3.12.14 with `requirements-checks.txt`, full unittest discovery, book/catalog/framing/lexical checks, historical consolidation, public evidence certificate/index checks and changed-file whitespace. |
+
+The literary-model job pins Node 22.23.2, which exposes Unicode 17.0. The validator
+fails on a mismatched segmentation runtime. It remains a separate gate from the
+ordinary reader suite and does not narrow `package.json`'s declared engine range.
+These three reader versions are samples, not exhaustive runtime compatibility.
+
+The inventory job fetches full repository history plus the two exact public
+working commits already recorded in the source audit (PRs #319 and #122). It
+checks each registry pin's path/blob and requires every registered public source
+object to be available. This is deliberately stricter than ordinary offline
+inventory use, where missing objects remain `unavailable-on-this-client` without
+erasing literary slots. New source revisions need reviewed scope and an update to
+the explicit fetch list when they are outside the fetched history. Restricted
+remainder and unavailable prose stay unmaterialized; no private store is queried.
+
+Actions are pinned to full commit SHAs. Jobs use ephemeral GitHub-hosted Ubuntu
+24.04 runners, read-only repository permission, no persisted Git credentials and
+ten-minute timeouts. No deployment, artifact upload, custom status writer,
+schedule, external notification or privileged `pull_request_target` job is added.
+Logs contain check results, not an uploaded manuscript bundle.
+
+There is no reviewed npm lockfile. The build uses
+`npm install --package-lock=false --no-audit --no-fund`; Vite is directly pinned,
+but transitive resolution is not reproducible yet (#315). No cache or `npm ci`
+claim substitutes for that missing lockfile.
+
+These statuses are software checks, not required-check branch protection,
+authenticated human approval, manuscript acceptance, factual verification,
+source/evidence clearance, full Unicode conformance, browser/native accessibility
+certification, deployment or release. Native enforcement remains #311. Hosted
+availability does not replace local verification; failures or unavailable runs
+must be reported as such. The workflow makes no billing or spending-limit changes.
+
+For local reproduction, run the commands in the workflow with its stated runtimes
+and source objects. Workflow syntax can additionally be checked with
+`actionlint .github/workflows/checks.yml`. Report that separately from an actual
+GitHub-hosted run.
+
+The literary-model job also runs `npm run test:traversal` and
+`npm run test:paragraphs` for the derived traversal payload and exact legacy/stable
+paragraph correspondence, builds
+the explicit editorial mode, and checks that build over loopback HTTP with
+Playwright 1.58.0 Chromium. This includes history, deep links, input cancellation
+and paragraph current/exact links, focus, context choice, evidence adjacency and
+browser accessibility properties; it is not native VoiceOver/physical touch
+or an accessibility certification. The existing admitted editor/evidence browser
+suite also runs over loopback HTTP. Ordinary reader builds assert that the
+editorial `traversal.json` and `paragraphs.json` payloads are absent. Neither build
+is uploaded or deployed.
+
+The repository job validates the selectively consolidated historical records and
+the public evidence index/certificates, with synthetic hostile cases in normal
+unittest discovery. It never queries the private vault. Cross-repository vault
+export/reverse-receipt checks are separately reported local synthetic checks,
+not part of hosted CI. Schema conformity, hashes and a claimed review field
+cannot establish disclosure permission, authentic testimony or evidentiary truth.
+
+The repository job also checks the selected SOC core copy manifest and the
+initial claim/support register. Its original 24 tests live under
+`planning/standard-of-care`, so the workflow runs that discovery explicitly in
+addition to the root suite. These checks preserve source and claim status; they
+do not repeat original-source extraction, authenticate recorded permission, or
+perform factual/clinical/legal review.
+
+The SOC coverage check also requires the exact 15-file ancillary addition; it
+does not exempt the new directory from review. The job separately runs its pinned
+historical verifier without exports and discovers its 18 tests explicitly.
+Source-copy hashes, 70 ANC claim routes and retained support/status fields do not
+establish image/audio inspection, external citation truth or source-service access.
+
+The cumulative SOC gate also requires the nine exact SOC-Q03 source/review files
+and checks the navigation transition from the unchanged ancillary receipt. The
+repository job separately runs the Q03 verifier and its 22 inherited tests.
+Historical source-inspection results and `verified_at` assertions remain dated
+metadata; this job performs no outside research or substantive clearance.
+
+The SOC-I01 increment adds nine exact incident-register files to the cumulative
+gate and preserves the completed Q03 navigation receipt. The repository job runs
+the incident wrapper, original verifier and its 16 inherited tests explicitly.
+The 112 entry/issue links and classifications are index consistency, not verified
+encounters or findings. Source aliases are never a request to fetch private
+objects, and no live issue-body or evidence review is performed by this job.
+
+The initial care-law increment requires eight exact files and preserves the
+incident receipt as historical. Its wrapper runs the pinned verifier's in-memory
+structural inspection and all 21 invalid mutations without exporting prose.
+The cumulative selection is 77 files, with no care-law directory exemption.
+Source inspection labels and the original verifier's fixed partial-checkout
+limitation are historical; fresh execution results belong to each run. These
+checks do not retrieve external authorities, access the private packets required
+by later R03–R13 verifiers, activate candidate joins or establish source support.
+
+The CL03 public increment adds three exact files, taking cumulative coverage to
+80 selected files. The repository job runs `scripts/soc_cl03.py` for the public
+TSV's units, edits, aliases, owners and C-ID references. It never imports or runs
+the inherited private-packet verifier; the original twelve mutation results are
+historical and are not part of this CI run. No private candidate, prose span,
+source locator or packet-selected file is read. Source links remain references,
+not current source inspection, manuscript reconciliation or evidence clearance.
+
+The CL04 public increment adds three exact files, bringing cumulative coverage to
+83 selected files. `scripts/soc_cl04.py` checks its 117 public unit mappings,
+including historical edit/chapter membership, aliases and C-ID references. Its
+archived private-packet checker is not imported or executed; the original eighteen
+mutations remain unrun. No private predecessor archive, candidate or claim text
+is read. The five prior slice manifests remain fixed historical receipts, and
+the latest wrapper binds current navigation. Checks do not renew historical
+source inspections, verify claims or reconcile the current manuscript.
+
+The CL05 public increment adds four exact files, bringing cumulative coverage to
+87 selected files. `scripts/soc_cl05.py` checks both indexes (78 changed and 189
+retained rows), their different passage/reference fields and the four explicitly
+open source-lineage rows under #50. It never imports or runs the archived checker
+or its twenty-two private mutation cases. All six prior manifests remain fixed;
+the latest gate validates current navigation. Review-state labels stay historical
+metadata rather than source authentication, human clearance or manuscript acceptance.

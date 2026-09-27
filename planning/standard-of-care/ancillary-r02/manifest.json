@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "pass": "SOC-T02",
+  "approval": "SOC-PUBLIC-01",
+  "repository": "grwtsk/huey",
+  "source_repository": "grwtsk/neurology",
+  "source_commit": "c920e426b8b6753b9f4bacf019e48010e57918c2",
+  "base_commit": "27247c2a1c7aa4b262285d1c187172f243ac9a43",
+  "issue": 188,
+  "source_root": "sources/standard-of-care/neurology-current/content",
+  "records": {
+    "audio": {
+      "path": "articles/discipline-and-punish.json",
+      "git_blob": "17aab6ab4008a2b2873aae0b9adc5c6b177c9d7f",
+      "bytes": 5432
+    },
+    "harm": {
+      "path": "articles/neurology-cannot-undo-the-harm.json",
+      "git_blob": "2eab197970746ee67d97bcd0c7bf3d25f6a6125e",
+      "bytes": 2264
+    },
+    "dignity": {
+      "path": "articles/on-dignity.json",
+      "git_blob": "75c80e06a66bb8edf9d9972d5c1fd3003f1d1616",
+      "bytes": 2096
+    },
+    "painting": {
+      "path": "articles/i-bledsoe-i-bled-so.json",
+      "git_blob": "b120e14daf7731e4ec12dcd7603d9a90bdac28f1",
+      "bytes": 2634
+    },
+    "site": {
+      "path": "site.json",
+      "git_blob": "16b7edd3a92f5e34de821756ad0a165822481d50",
+      "bytes": 11774
+    }
+  },
+  "verification_issues": [
+    144,
+    145,
+    175,
+    188,
+    189,
+    190
+  ],
+  "argument_issue": 191,
+  "disclaimer": "Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.",
+  "source_originals_modified": false,
+  "raw_clinical_records_included": false,
+  "external_research_performed": false,
+  "media_bytes_copied": false,
+  "image_git_blob": "e47598b1b80fd9dc6e34110ad5a16635d7e3b514",
+  "image_bytes": 2157346,
+  "ancillary_files_remaining": [
+    "content/articles/ethics-authority-positive-change.json",
+    "content/articles/images/i-bled-so.png",
+    "content/authority-quotes.json"
+  ],
+  "full_prose_presentation_json_pending": 12,
+  "full_conversation_capture_complete": false,
+  "whole_corpus_semantic_review_complete": false,
+  "remaining_work_issues": [
+    126,
+    127,
+    144,
+    145,
+    176,
+    189,
+    190
+  ]
+}

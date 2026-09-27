@@ -1,0 +1,75 @@
+{
+  "review_id": "FM-01.r1",
+  "date": "2026-09-27",
+  "repository": "grwtsk/huey",
+  "target_branch": "pre-release",
+  "base_commit": "aa2b374ee6f8c1945bf4ecdbe84dc86ea2ce29f1",
+  "status": "author_approved_for_pre_release_incorporation",
+  "approval": {
+    "source": "author message in the sequential Huey project chat following FM-01.r1",
+    "exact_message": "score 87/100. Please create and issue to add orientation at the outset. Advance",
+    "reviewer": "R.A. Jacob Martone",
+    "score": 87,
+    "score_denominator": 100,
+    "score_kind": "author_editorial_assessment_not_completion_or_truth_probability",
+    "scope": "reviewed FM-01.r1 prose and bounded supporting records on pre-release",
+    "orientation_followup": 438,
+    "orientation_implemented": false,
+    "independent_evidence_authentication": false,
+    "main_promotion": false,
+    "edition_release": false
+  },
+  "reviewed_artifact": {
+    "name": "front-matter.md",
+    "sha256": "32782ef736119ed80c4683515bff12e098c9ff0911ecee915ae58a5233e2ca11",
+    "encoding": "UTF-8",
+    "canonicalization": "Split title, note/advisory, and preface at the two inter-page separators; no prose change. Platform-specific chat citation markup is absent from the reviewed artifact; support is mapped separately."
+  },
+  "prior_preface": {
+    "original_path": "manuscript/front/preface.md",
+    "blob_sha": "7c5b87446e97c2666054d915f52252d989201aa8",
+    "preserved_path": "planning/sequential-review/FM-01.r1/prior-preface.md",
+    "preservation": "same Git blob, no edits"
+  },
+  "canonical_files": [
+    {
+      "path": "manuscript/front/01-title-page.md",
+      "git_blob_sha": "cb56c8fdc69752cea1fff1381353038dfc626e3a",
+      "sha256": "dbc147e54a20805295ffec76ba5b0523d13c0fa7a1e8b13191f74876f1afe996"
+    },
+    {
+      "path": "manuscript/front/02-author-note.md",
+      "git_blob_sha": "5109fcc9cc4c7001fe9111f09e6e21c714e6d4c9",
+      "sha256": "94c853ed172e92ec2454f2d61061ee0fe62234e5d13cb08e9395a3e0f073fa19"
+    },
+    {
+      "path": "manuscript/front/preface.md",
+      "git_blob_sha": "38cb27c6174e0931741d59de7b7db6251a17a285",
+      "sha256": "0442cc3dc1f6108d9b981ee22d307ae17496e7a1f67547eae820d40f2b23304b"
+    }
+  ],
+  "related_issues": [13, 17, 18, 34, 35, 36, 55, 65, 67, 397, 438],
+  "source_change_map": "source-map.md",
+  "next_review": "P01.r1 / opening yard / historical C01",
+  "checks_at_preparation": [
+    "Re-read live pre-release; base remained aa2b374ee6f8c1945bf4ecdbe84dc86ea2ce29f1",
+    "Matched original local review artifact against its recorded SHA-256",
+    "Split and exactly reassembled the review artifact without prose changes",
+    "Computed UTF-8 byte lengths, SHA-256 values and Git blob SHAs for the three canonical files",
+    "Read the applicable branch, framing, front-matter and source-provenance instructions"
+  ],
+  "limitations": [
+    "Full checkout and repository test suite unavailable in this turn: attempted public git clone failed because the container could not resolve github.com; connector access works",
+    "No full-book render, pagination, audio, or complete front-matter integration test claimed",
+    "Existing scripts/book.py behavior and book.yaml narrative admission remain unchanged",
+    "Private source-to-certificate joins are not inferred from opaque public entries; unresolved reconciliation remains under existing evidence review",
+    "Earlier source-check claims remain dated review history, not newly repeated authentication",
+    "Post-merge receipt belongs in the PR discussion after actual success"
+  ],
+  "pending": [
+    "Orientation wording and author review under #438",
+    "Optional front matter and rights metadata decisions",
+    "Exact source/claim reconciliation and publication-level factual review",
+    "Complete-edition front-matter integration and packaging acceptance"
+  ]
+}

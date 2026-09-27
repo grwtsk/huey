@@ -1,0 +1,100 @@
+{
+  "schema": "huey.soc-authority.v1",
+  "basisRevision": "628f7d30fcbaff625a07cb7f46d937a5c670668a",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/126",
+    "https://github.com/grwtsk/huey/issues/144",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176",
+    "https://github.com/grwtsk/huey/issues/192",
+    "https://github.com/grwtsk/huey/issues/423"
+  ],
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "sourceMetadataActive": false,
+  "newEvidenceReceived": false,
+  "substantiveVerificationPerformed": false,
+  "externalResearchPerformed": false,
+  "fullCorpusTransferComplete": false,
+  "authorityFromReferences": false,
+  "notice": "This selection preserves the public authority register, historical source-reading record and candidate argument. Prior source dates, inspection results and verification labels remain historical assertions, not new research or authority. Source metadata is documentary; references do not authenticate a grant. No new evidence, manuscript admission, factual clearance or promotion is supplied.",
+  "files": [
+    {
+      "path": "planning/standard-of-care/authority-q03/README.md",
+      "sourceBlob": "4979b693f53f76a91062ebbd069e1b929860379e",
+      "stagedBlob": "4979b693f53f76a91062ebbd069e1b929860379e",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/authority-q03/argument-draft.md",
+      "sourceBlob": "547fe80c68a05b345df322c34e928a9b78ab373d",
+      "stagedBlob": "547fe80c68a05b345df322c34e928a9b78ab373d",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/authority-q03/claims.tsv",
+      "sourceBlob": "a490a34d58e36067d2e468e88533ae1cbc0f7954",
+      "stagedBlob": "a490a34d58e36067d2e468e88533ae1cbc0f7954",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/authority-q03/fields.tsv",
+      "sourceBlob": "2540429f1591da3f88a5dd389ed88ef0a4933390",
+      "stagedBlob": "2540429f1591da3f88a5dd389ed88ef0a4933390",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/authority-q03/review.json",
+      "sourceBlob": "8f8bf5d45a97154dea8183395e11faaecaaa8426",
+      "stagedBlob": "8f8bf5d45a97154dea8183395e11faaecaaa8426",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/authority-q03/test_verify.py",
+      "sourceBlob": "d50f552410419da61e4c9b240a946fef9488894c",
+      "stagedBlob": "d50f552410419da61e4c9b240a946fef9488894c",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/authority-q03/verify.py",
+      "sourceBlob": "f8192b0055e1f803900a7a00f5f0972c96c27c6e",
+      "stagedBlob": "f8192b0055e1f803900a7a00f5f0972c96c27c6e",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/authority-quotes.json",
+      "sourceBlob": "69f35715a28dc800250959ee2a19cf67bfa91e90",
+      "stagedBlob": "69f35715a28dc800250959ee2a19cf67bfa91e90",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/transfer-q03.json",
+      "sourceBlob": "8720d1c4190e2c4a7cdaa578605f409099e9ab34",
+      "stagedBlob": "8720d1c4190e2c4a7cdaa578605f409099e9ab34",
+      "representation": "exact"
+    }
+  ],
+  "predecessorManifest": {
+    "path": "planning/consolidation/soc-ancillary.json",
+    "blob": "b48e8555cd650abc5e5d2b1cb76fad1b02943fba"
+  },
+  "navigationChanges": [
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "priorStagedBlob": "ac41c51e475fab0d871026b95d8c10ce60d4fb85",
+      "stagedBlob": "a0cb5b02f4c23d282966ebc8e0fb2062193ca059"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "priorStagedBlob": "d78ea8f83c8d13ae5ecc3f5d1f56777a78570510",
+      "stagedBlob": "89a114487af1cfb4da2826658092ec4d47a588fe"
+    }
+  ]
+}

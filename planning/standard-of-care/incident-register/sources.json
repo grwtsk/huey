@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "JUL26": {
+      "title": "Patient Authority, Restricted Consent, Unsafe-Care Refusal and Preservation Statement",
+      "document_date": "2026-07-26",
+      "pages": 10,
+      "location": "Supplied conversation/Project PDF; raw bytes not republished",
+      "scope": "Source testimony, allegations, requests and legal theories. July 7 delivered-object identity remains unresolved; do not backdate this object."
+    },
+    "AUG04": {
+      "title": "Follow-Up to July 7 Record-Entry Statement",
+      "document_date": "2026-08-04",
+      "pages": 9,
+      "location": "Supplied conversation/Project PDF; raw bytes not republished",
+      "scope": "Source report of delivery, symptoms, encounter, record dispute, response gaps, burden and requests; not independent proof of all events."
+    },
+    "SOURCE-NOTICE": {
+      "title": "Notice of Behavioral Expectations and Conditions for Continued Care",
+      "document_date": "2026-09-09",
+      "pages": 3,
+      "location": "Supplied UCSF Weill Institute for Neurosciences scanned PDF; pages visually read",
+      "scope": "Institutional wording, offers, refusals and conditional discharge. No presumed authorship from letterhead; signature OR MyChart agreement."
+    },
+    "SEP10": {
+      "title": "Patient-Authored Record Preservation and Amendment",
+      "document_date": "2026-09-10",
+      "pages": 43,
+      "location": "Supplied conversation/Project PDF; all 33 numbered sections read",
+      "scope": "Source historical allegations, reported symptoms and requests; legal theories retain separate predicates. Original underlying clinical records are not newly collected."
+    },
+    "SEP17": {
+      "title": "Patient-authored response to September 9 notice, Bledsoe recipient version",
+      "document_date": "2026-09-17",
+      "pages": 11,
+      "location": "Supplied conversation/Project PDF, with 16 other recipient-addressed versions",
+      "scope": "One response family, not 17 independent witnesses or 17 proof-of-receipt events. Bledsoe version read in full; every variant is not claimed independently byte-identical."
+    },
+    "OVERVIEW": {
+      "title": "Clinical Standard of Care: Medical Trauma and Associated Psychiatric Comorbidities",
+      "pages": 2,
+      "location": "Supplied informational PDF",
+      "scope": "Received AI-assisted overview and its disclaimer, not a validated clinical protocol or proof that its named interventions were required."
+    },
+    "CHAT": {
+      "title": "Standards, pain, clinical hypotheses and corrections, burden and trust discussion",
+      "location": "../../../sources/standard-of-care/context/thread-dossier.md",
+      "scope": "Source-aware dossier plus actual current conversation; not an automated verbatim complete chat export."
+    },
+    "STANDARD": {
+      "title": "Standard",
+      "location": "../../../sources/standard-of-care/context/standard.md",
+      "scope": "Approved draft argument; source citations/applicability retain verification owners."
+    },
+    "TRUST": {
+      "title": "The trust I had already given",
+      "location": "../../../sources/standard-of-care/context/the-trust-i-had-already-given.md",
+      "scope": "Approved testimony-based draft; not an external authentication of internal experience."
+    },
+    "PROLOGUE-BEFORE": {
+      "title": "Before the Examination: The Patient Who Arrived at Stanford",
+      "location": "../../../sources/standard-of-care/neurology-text/before-the-examination-the-patient-who-arrived-at-stanford.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "Context before encounter; no additional new event inferred; mapped to I001-014 and I100-102.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROLOGUE-ORIGIN": {
+      "title": "January 24, 2019: The Origin Point",
+      "location": "../../../sources/standard-of-care/neurology-text/january-24-2019-the-origin-point.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I001-013, I006/I083 consent and causation kept separate.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROLOGUE-TRANSFER": {
+      "title": "From Stanford to UCSF: The Transfer Was Part of the History",
+      "location": "../../../sources/standard-of-care/neurology-text/from-stanford-to-ucsf-the-transfer-was-part-of-the-history.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I013-014 and I015-022; helpful action not erased.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROLOGUE-EVIDENCE": {
+      "title": "What Must Be Explained: Evidence, Witnesses, and the Honest-Mistake Hypothesis",
+      "location": "../../../sources/standard-of-care/neurology-text/what-must-be-explained-evidence-witnesses-and-the-honest-mistake-hypothesis.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I007-012, I024-025, I076-084, I110; Board action not finding.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-WRITING": {
+      "title": "Writing as the Act of Care",
+      "location": "../../../sources/standard-of-care/neurology-text/writing-as-the-act-of-care.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I097-103, I111; expression and help remain context, not proof of clinical causation.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-THREAT": {
+      "title": "When Care Becomes the Threat",
+      "location": "../../../sources/standard-of-care/neurology-text/when-care-becomes-the-threat.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I019-021, I044-068, I084; legal and experiential abandonment remain separate.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-GOODNESS": {
+      "title": "The Unordinary Test of Goodness",
+      "location": "../../../sources/standard-of-care/neurology-text/the-unordinary-test-of-goodness.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I100-107; normative argument, not incident multiplication.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-PERSISTENCE": {
+      "title": "His Test Is His, My Persistence Is Mine",
+      "location": "../../../sources/standard-of-care/neurology-text/his-test-is-his-my-persistence-is-mine.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I097-102, I107; persistence is not adequacy certification.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-AWARENESS": {
+      "title": "Awareness and the Social Contract",
+      "location": "../../../sources/standard-of-care/neurology-text/awareness-and-the-social-contract.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I104 and I103; no inferred current incapacity or new directive.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-COMMUNICATION": {
+      "title": "Communication Changed Risk",
+      "location": "../../../sources/standard-of-care/neurology-text/communication-changed-risk.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I103; historical September 15 account, not current risk finding.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-COMPARISON": {
+      "title": "Worse Than a Rapist",
+      "location": "../../../sources/standard-of-care/neurology-text/worse-than-a-rapist.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I044-047; trauma comparison not an allegation of rape by Bledsoe.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    },
+    "PROSE-LAURELS": {
+      "title": "Medicine Worthy of Its Laurels",
+      "location": "../../../sources/standard-of-care/neurology-text/medicine-worthy-of-its-laurels.md",
+      "review": "Complete authored-text export read this pass at 2960dd3f5b4a6446e1fc7a7c0e70bfa8c04d9922",
+      "disposition": "I097-107; professional/normative synthesis and historical crisis context.",
+      "scope": "Not full presentation JSON or independent verification of underlying events."
+    }
+  },
+  "publication_scope": "Approved SOC discussion/essay-derived index only; raw PDFs not included. New evidence is not automatically approved for public disclosure."
+}

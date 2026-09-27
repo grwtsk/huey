@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "SOC-PUBLIC-01",
+  "status": "granted",
+  "authority_type": "explicit-user-message",
+  "exact_user_message": "This is approval!!! Track claims with issues and items that need substantial support. Add a prominent disclaimer ti the readme and on commit messages.",
+  "context": "Direct response to the public-copy question about the specified discussion, atlas and essay collection; raw clinical records and unrelated private material were expressly excluded from that question.",
+  "decision_receipt": "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+  "destination_repository": "grwtsk/huey",
+  "destination_visibility": "public",
+  "scope": [
+    "standard-of-care discussion and its drafts/corrections",
+    "inventoried current atlas and essay corpus from grwtsk/neurology",
+    "associated claim, source and verification apparatus"
+  ],
+  "excluded": [
+    "raw clinical PDFs and records",
+    "unrelated private material",
+    "credential or access-token disclosure",
+    "changes to the live website Reader gate",
+    "finished-edition release",
+    "legal waiver or clinical action"
+  ],
+  "conditions": [
+    "prominent README disclaimer",
+    "disclaimer in new relevant commit messages",
+    "issue-linked claims and substantial-support work"
+  ],
+  "research_completion_required_for_draft_transfer": false,
+  "another_approval_required_for_this_scope": false,
+  "broader_source_permission_issue": 2,
+  "transfer_issue": 126,
+  "substantial_support_issue": 176,
+  "approval_is_not_factual_verification": true
+}
