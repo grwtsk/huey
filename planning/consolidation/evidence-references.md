@@ -46,6 +46,18 @@ IDs nor the existing source fingerprints become evidence certificates or current
 reader bindings. New evidence must receive a separately reviewed relationship
 through the current intake/vault protocol.
 
+Update under #429: the [CL03 public index](../standard-of-care/care-law/integration-r03.tsv)
+preserves 109 unit mappings across eleven edits. Its 78 references name 65
+distinct care-law IDs; 56 rows explicitly contain `-` for no C-ID mapping, not
+missing evidence or omission of a literary entity. The 13 source aliases describe
+author direction, baseline, three source families and eight public authorities.
+Aliases, edit IDs and issue owners do not bind current paragraphs or certify
+source support. Private spans, locators, candidate text and source assessments
+remain in the separate author-review packet. The original verifier does not read
+this TSV and is not run here; the [new public gate](soc-cl03.md) checks only fixed
+bytes and declared index relationships. The original source/test receipts remain
+historical, with no new evidence ID, certificate or relationship disposition.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake

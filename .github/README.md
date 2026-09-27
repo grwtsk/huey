@@ -104,3 +104,11 @@ Source inspection labels and the original verifier's fixed partial-checkout
 limitation are historical; fresh execution results belong to each run. These
 checks do not retrieve external authorities, access the private packets required
 by later R03–R13 verifiers, activate candidate joins or establish source support.
+
+The CL03 public increment adds three exact files, taking cumulative coverage to
+80 selected files. The repository job runs `scripts/soc_cl03.py` for the public
+TSV's units, edits, aliases, owners and C-ID references. It never imports or runs
+the inherited private-packet verifier; the original twelve mutation results are
+historical and are not part of this CI run. No private candidate, prose span,
+source locator or packet-selected file is read. Source links remain references,
+not current source inspection, manuscript reconciliation or evidence clearance.

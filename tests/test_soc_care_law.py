@@ -22,8 +22,7 @@ class SocCareLawTests(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name).resolve()
-        self.paths = [checker.MANIFEST, checker.CORE_MANIFEST, checker.PREDECESSOR['path'],
-                      *checker.EXPECTED, *checker.NAVIGATION]
+        self.paths = [checker.MANIFEST, checker.PREDECESSOR['path'], *checker.EXPECTED]
         for relative in self.paths:
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -130,18 +129,17 @@ class SocCareLawTests(unittest.TestCase):
         self.save()
         self.rejects('navigation-selection')
 
-    def test_current_navigation_requires_endpoint_and_core_agreement(self):
-        row = self.manifest['navigationChanges'][0]
-        path = self.root / row['path']
-        original = path.read_bytes()
-        path.write_bytes(original + b' ')
-        self.rejects('navigation-byte-drift')
-        path.write_bytes(original)
-        core_path = self.root / checker.CORE_MANIFEST
-        core = json.loads(core_path.read_text())
-        next(r for r in core['files'] if r['path'] == row['path'])['stagedBlob'] = 'a' * 40
-        core_path.write_text(json.dumps(core))
-        self.rejects('navigation-core-pin')
+    def test_historical_navigation_receipt_cannot_be_rewritten(self):
+        self.manifest['navigationChanges'][0]['stagedBlob'] = 'a' * 40
+        self.save()
+        self.rejects('historical-receipt-drift')
+
+    def test_standalone_uses_historical_receipt_without_current_navigation(self):
+        result = checker.verify(self.root)
+        self.assertTrue(result['historical_navigation_receipt'])
+        self.assertIn('for current navigation', result['limits'])
+        self.assertFalse((self.root / checker.CORE_MANIFEST).exists())
+        self.assertTrue(all(not (self.root / p).exists() for p in checker.NAVIGATION))
 
     def test_historical_dates_access_failures_and_adoption_limits_remain(self):
         changes = [
@@ -200,7 +198,7 @@ class SocCareLawTests(unittest.TestCase):
         self.rejects('git-input-unavailable', lambda: checker.verify(self.root, source_objects=True))
 
     def test_no_source_locators_external_repositories_or_exports_are_opened(self):
-        # Fixture holds just eight packet files and three receipts/navigation inputs.
+        # Fixture holds only eight packet files and two historical receipts.
         # The public/external/source-origin locators remain documentary strings.
         before = {p: (self.root / p).read_bytes() for p in self.paths}
         with patch.object(checker, 'read', wraps=checker.read) as read:
