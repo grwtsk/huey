@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-d4bcdf53-dc0f-41e0-9e57-9c5bcb0d1c56",
+  "certificate_version": 1,
+  "classification": "PRIVATE_SENSITIVE",
+  "public_title": "Privately retained source; substantive review pending",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": []
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "fdbca5198ac39c2712007e3f3c9d8dd50295d4fc49f08bc9bb73bbddc1b10736",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 2
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:21.513803Z",
+  "public_exposure_basis": "UNKNOWN"
+}

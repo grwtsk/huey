@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "chapter_id": "C08A",
+  "title": "Baptism in the Color of Rain",
+  "author": "R.A. Jacob Martone",
+  "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+  "status": "author-directed public check-in; working manuscript",
+  "work_issue": 308,
+  "source": {
+    "kind": "immediately preceding conversation response, woven from the two supplied stories",
+    "capture": "faithful manual transcription; not an independently exported chat artifact",
+    "surface_story": "Baptism in the Color of Rain",
+    "backing_story": "After August",
+    "change": {
+      "from": "netch",
+      "to": "netch asheba",
+      "occurrence": 1,
+      "retain_italics": true,
+      "other_narrative_changes": false
+    }
+  },
+  "placement": {
+    "author_instruction": "a chapter to appear in the middle of the book",
+    "movement": "Interlude",
+    "after": {
+      "id": "C08",
+      "title": "The Ring of Umber",
+      "issue": 44
+    },
+    "before": {
+      "id": "C09",
+      "title": "The Possibility of a Feather",
+      "issue": 45
+    },
+    "adjacency_status": "editorial implementation of the middle-book instruction",
+    "operation": "insert; do not replace or renumber existing stable IDs",
+    "chapter_sequence": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C08A",
+      "C09",
+      "C10",
+      "C11",
+      "C12",
+      "C13",
+      "C14",
+      "C15"
+    ],
+    "movements": [
+      "Preamble",
+      "Interlude",
+      "Excursion: Edna"
+    ],
+    "protected_closing_changed": false,
+    "full_book_assembly_performed": false
+  },
+  "admission": {
+    "authority": "explicit current user request; transcribed receipt in issue #308 and issue #2",
+    "destination": "https://github.com/grwtsk/huey",
+    "scope": "this complete chapter with the one requested correction and supporting placement metadata",
+    "raw_clinical_records_authorized": false,
+    "other_private_manuscript_authorized": false,
+    "replication_activation_authorized": false,
+    "deployment_authorized": false,
+    "finished_edition_release_authorized": false
+  },
+  "content_identity": {
+    "encoding": "UTF-8",
+    "line_endings": "LF",
+    "bytes": 23456,
+    "lines": 537,
+    "section_breaks": 8,
+    "git_blob_sha": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+    "sha256": "3fee7775b29b7d5d4cf637a427f80dfb914b57c1dc91717fc91928a38a860fab"
+  },
+  "verification_scope": "text fidelity, one requested edit, placement and file integrity; not independent verification of the narrated events",
+  "disclaimer": "Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings."
+}

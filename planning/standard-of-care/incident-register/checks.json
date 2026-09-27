@@ -1,0 +1,40 @@
+{
+  "pass": "SOC-I01",
+  "repository": "grwtsk/huey",
+  "date": "2026-09-22",
+  "register_issue": 193,
+  "individual_issues": {
+    "first": 194,
+    "last": 305,
+    "count": 112
+  },
+  "classes": {
+    "reported_departure": 43,
+    "unresolved_safeguard": 40,
+    "investigative_question": 14,
+    "clinical_review_question": 10,
+    "context_consequence": 5
+  },
+  "commands": [
+    "python3 verify.py",
+    "python3 -m unittest discover -s . -p 'test_verify.py' -v"
+  ],
+  "unit_tests_passed": 16,
+  "test_scope": "Local index, source alias, classification, link rendering and incomplete-status consistency; not semantic or clinical/legal verification.",
+  "first_test_run": "One wording-only publication-boundary fixture mismatch corrected; final run passed all 16.",
+  "full_repository_suite": "not-run; partial checkout only",
+  "new_external_evidence_collection": "not-started",
+  "source_reading": "Main supplied documentary families and twelve authored-text exports read separately from tests.",
+  "all_incidents_enumerated": false,
+  "remaining_owners": [
+    306,
+    307,
+    145,
+    126,
+    127,
+    144,
+    192,
+    176
+  ],
+  "disclaimer": "Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings."
+}

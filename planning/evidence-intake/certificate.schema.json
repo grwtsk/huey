@@ -1,0 +1,416 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grwtsk/huey/planning/evidence-intake/certificate.schema.json",
+  "title": "Huey Public Evidence Certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "certificate_version",
+    "classification",
+    "public_title",
+    "evidence_type",
+    "custody",
+    "integrity",
+    "transcription",
+    "description",
+    "relationships",
+    "review",
+    "limits",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^HUEY-EV-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "certificate_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "supersedes_certificate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "PUBLIC_OPEN",
+        "PUBLIC_ALREADY_DISCLOSED",
+        "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+        "PRIVATE_SENSITIVE"
+      ]
+    },
+    "public_title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "evidence_type": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "displayed_dates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "intake_date_utc": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "public_exposure_basis": {
+      "enum": [
+        "EXACT_OBJECT_PUBLIC",
+        "COMPLETE_CONTENT_PUBLIC",
+        "SAME_FACTS_PUBLIC",
+        "NO_PUBLIC_PRECEDENT",
+        "UNKNOWN"
+      ]
+    },
+    "custody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_custody",
+        "public_raw_path",
+        "public_derivative_paths"
+      ],
+      "properties": {
+        "raw_custody": {
+          "enum": [
+            "huey_public",
+            "private_repository"
+          ]
+        },
+        "public_raw_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_derivative_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "public_sha256",
+            "private_salted_commitment"
+          ]
+        },
+        "raw_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "raw_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "commitment_scheme": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "sha256-salted-v1",
+            null
+          ]
+        },
+        "public_commitment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mime_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page_frame_row_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "transcription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "public",
+        "method",
+        "path",
+        "sha256_or_commitment"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "machine_typed_unreviewed",
+            "machine_typed_visual_checked",
+            "human_transcription_verified",
+            "not_applicable"
+          ]
+        },
+        "public": {
+          "type": "boolean"
+        },
+        "method": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha256_or_commitment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "complete": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "uncertainty_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "description": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public",
+        "path",
+        "status"
+      ],
+      "properties": {
+        "public": {
+          "type": "boolean"
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "machine_described_unreviewed",
+            "machine_described_checked",
+            "human_reviewed",
+            "withheld"
+          ]
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target",
+          "relationship",
+          "locator",
+          "contribution",
+          "does_not_establish"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "relationship": {
+            "enum": [
+              "supports",
+              "contradicts",
+              "limits",
+              "context",
+              "duplicate",
+              "same_source_family",
+              "supersedes",
+              "provenance_only",
+              "unresolved"
+            ]
+          },
+          "locator": {
+            "type": "string"
+          },
+          "contribution": {
+            "type": "string"
+          },
+          "does_not_establish": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "machine",
+        "human",
+        "source_authenticated",
+        "public_disclosure_reviewed"
+      ],
+      "properties": {
+        "machine": {
+          "type": "string"
+        },
+        "human": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_authenticated": {
+          "type": "boolean"
+        },
+        "public_disclosure_reviewed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "redactions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "limits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "active",
+        "superseded",
+        "withdrawn_public_derivative",
+        "blocked"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "custody": {
+            "properties": {
+              "raw_custody": {
+                "const": "huey_public"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "integrity": {
+            "properties": {
+              "mode": {
+                "const": "public_sha256"
+              },
+              "raw_sha256": {
+                "type": "string"
+              },
+              "public_commitment": {
+                "type": "null"
+              },
+              "commitment_scheme": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        "required": [
+          "public_exposure_basis"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "custody": {
+            "properties": {
+              "raw_custody": {
+                "const": "private_repository"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "integrity": {
+            "properties": {
+              "mode": {
+                "const": "private_salted_commitment"
+              },
+              "raw_sha256": {
+                "type": "null"
+              },
+              "public_commitment": {
+                "type": "string"
+              },
+              "commitment_scheme": {
+                "const": "sha256-salted-v1"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

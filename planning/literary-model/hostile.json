@@ -1,0 +1,322 @@
+{
+  "model": "huey-literary-model/1",
+  "cases": [
+    {
+      "name": "duplicate-stable-id",
+      "error": "DUPLICATE_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",13,"id"],"value":"he_aa865119-f8f6-4127-a42b-c382b020e4e0"}
+      ]
+    },
+    {
+      "name": "equal-word-occurrence-collapse",
+      "error": "OWNERSHIP",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",11,"state","spans",1,"id"],"value":"he_aa865119-f8f6-4127-a42b-c382b020e4e0"}
+      ]
+    },
+    {
+      "name": "equal-grapheme-occurrence-collapse",
+      "error": "OWNERSHIP",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",13,"state","spans",0,"id"],"value":"he_7014f9ae-ed0b-496f-a1b8-842c471e9570"}
+      ]
+    },
+    {
+      "name": "two-owning-parents",
+      "error": "OWNERSHIP",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",8,"state","children"],"value":["he_4190caf4-732c-4db1-8c71-35129beb7a44"]}
+      ]
+    },
+    {
+      "name": "malformed-version",
+      "error": "VERSION_FORMAT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"version"],"value":"hev1:xyz"}
+      ]
+    },
+    {
+      "name": "stale-version",
+      "error": "VERSION_MISMATCH",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"state","text"],"value":"the the?"}
+      ]
+    },
+    {
+      "name": "ordinal-is-not-identity",
+      "error": "ENTITY_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"id"],"value":"p0001"}
+      ]
+    },
+    {
+      "name": "path-is-not-identity",
+      "error": "ENTITY_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"id"],"value":"manuscript/chapter.md"}
+      ]
+    },
+    {
+      "name": "route-is-not-identity",
+      "error": "ENTITY_ID",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",9,"id"],"value":"/huey/chapter/1"}
+      ]
+    },
+    {
+      "name": "combining-cluster-split",
+      "error": "GRAPHEME_BOUNDARY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","spans",0,"end"],"value":1}
+      ]
+    },
+    {
+      "name": "emoji-cluster-split",
+      "error": "GRAPHEME_BOUNDARY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","spans",1,"end"],"value":5}
+      ]
+    },
+    {
+      "name": "code-unit-surrogate-split",
+      "error": "GRAPHEME_BOUNDARY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","spans",1,"end"],"value":4}
+      ]
+    },
+    {
+      "name": "missing-presence",
+      "error": "SHAPE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",3,"state"],"value":{"optional":true,"children":[]}}
+      ]
+    },
+    {
+      "name": "required-matter-omitted",
+      "error": "PRESENCE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",4,"state","optional"],"value":false}
+      ]
+    },
+    {
+      "name": "pending-with-represented-content",
+      "error": "PRESENCE_CONTENT",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",3,"state","children"],"value":["he_4190caf4-732c-4db1-8c71-35129beb7a44"]}
+      ]
+    },
+    {
+      "name": "unknown-reference",
+      "error": "DANGLING_REFERENCE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",8,"state","children"],"value":["he_66c7126c-6096-40a5-97ee-ad63c9c5f055"]}
+      ]
+    },
+    {
+      "name": "ownership-cycle",
+      "error": "CONTAINMENT_CYCLE",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":[]},
+        {"path":["snapshots",0,"entities",21,"state","children"],"value":[]},
+        {"path":["snapshots",0,"entities",7,"state","children"],"value":["he_43bdf1c6-8b89-4c73-80fa-3c29f4827955"]},
+        {"path":["snapshots",0,"entities",8,"state","children"],"value":["he_4bb0a1a4-c4d3-40bc-aa68-c5528297804e"]}
+      ]
+    },
+    {
+      "name": "page-is-not-chapter",
+      "error": "CONTAINMENT_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":["he_c24d3bad-e0e6-44d3-a893-c1e863cea4ec"]}
+      ]
+    },
+    {
+      "name": "kind-reused-across-snapshots",
+      "error": "KIND_CHANGED",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",1,"entities",9,"kind"],"value":"Sentence"}
+      ]
+    },
+    {
+      "name": "multi-cluster-grapheme",
+      "error": "GRAPHEME_COUNT",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",17,"state","text"],"value":"ab"},
+        {"path":["snapshots",0,"entities",10,"state","spans"],"value":[]}
+      ]
+    },
+    {
+      "name": "unpaired-surrogate",
+      "error": "UNICODE_SCALAR",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",0,"entities",10,"state","text"],"value":"\ud800"}
+      ]
+    },
+    {
+      "name": "unknown-lineage-state",
+      "error": "LINEAGE_ENDPOINT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"from",0,"version"],"value":"hev1:0000000000000000000000000000000000000000000000000000000000000000"}
+      ]
+    },
+    {
+      "name": "same-state-is-not-revision",
+      "error": "LINEAGE_CONTEXT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",3,"lineage",0,"to",0],"value":{"id":"he_4190caf4-732c-4db1-8c71-35129beb7a44","version":"hev1:cc47e0ec03bed06830656a721fc7a0558e510e3a58da002ba14737e3b4f89003"}}
+      ]
+    },
+    {
+      "name": "lineage-wrong-snapshot",
+      "error": "LINEAGE_CONTEXT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"beforeSnapshot"],"value":"revised"}
+      ]
+    },
+    {
+      "name": "non-string-lineage-version",
+      "error": "ENDPOINT",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"from",0,"version"],"value":["hev1:cc47e0ec03bed06830656a721fc7a0558e510e3a58da002ba14737e3b4f89003"]}
+      ]
+    },
+    {
+      "name": "non-string-entity-kind",
+      "error": "ENTITY_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",0,"kind"],"value":["Work"]}
+      ]
+    },
+    {
+      "name": "unchanged-root-is-not-move",
+      "error": "LINEAGE_MOVE",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",2,"lineage",0,"from"],"value":[{"id":"he_aed237e0-3a5c-40a8-9c0b-f35eedc42efe","version":"hev1:229758578e1df78f36c605ad9b52b596ef9769bd6a05c65c4d04b56012b47268"}]},
+        {"path":["snapshots",2,"lineage",0,"to"],"value":[{"id":"he_aed237e0-3a5c-40a8-9c0b-f35eedc42efe","version":"hev1:229758578e1df78f36c605ad9b52b596ef9769bd6a05c65c4d04b56012b47268"}]}
+      ]
+    },
+    {
+      "name": "revision-is-not-move",
+      "error": "LINEAGE",
+      "reseal": false,
+      "edits": [
+        {"path":["snapshots",3,"lineage",0,"kind"],"value":"move"}
+      ]
+    },
+    {
+      "name": "body-cannot-directly-own-chapter",
+      "error": "CONTAINMENT_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_6e247469-000f-4006-99a9-779ea1618d23","kind":"Chapter","state":{"children":[]},"version":"hev1:82920217edab4b55405406f191076179a0a56c8e8a8e1a9aacf5d35f801ec7e1"}},
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":["he_6e247469-000f-4006-99a9-779ea1618d23"]}
+      ]
+    },
+    {
+      "name": "body-cannot-directly-own-section",
+      "error": "CONTAINMENT_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_c60743e8-0d2f-4644-8b41-62d846b4c3d5","kind":"Section","state":{"children":[]},"version":"hev1:1f75daacc9efbf198818bfdc9047255c44d51fade970c01dad604d5956bae2f3"}},
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":["he_c60743e8-0d2f-4644-8b41-62d846b4c3d5"]}
+      ]
+    },
+    {
+      "name": "body-cannot-directly-own-block",
+      "error": "CONTAINMENT_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_0d2d9a9e-f7be-4781-9a40-ce5013e2555e","kind":"Block","state":{"format":"plain","text":"Synthetic block"},"version":"hev1:f98614e0a9d5a842f19dd256e5040d8a77e06b3e375485c98be1d34b3ac1c162"}},
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":["he_0d2d9a9e-f7be-4781-9a40-ce5013e2555e"]}
+      ]
+    },
+    {
+      "name": "body-cannot-directly-own-paragraph",
+      "error": "CONTAINMENT_KIND",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_14fe78a0-bbf1-4ef8-87fc-7d1fd15deda5","kind":"Paragraph","state":{"text":"Synthetic paragraph","spans":[]},"version":"hev1:29c34bb5fb8f3a3deb7a4fb90d148b0233368c80e2f34aaea699182528ab6e33"}},
+        {"path":["snapshots",0,"entities",2,"state","children"],"value":["he_14fe78a0-bbf1-4ef8-87fc-7d1fd15deda5"]}
+      ]
+    },
+    {
+      "name": "duplicate-detached-work",
+      "error": "ENTITY_CARDINALITY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_6e247469-000f-4006-99a9-779ea1618d23","kind":"Work","state":{"children":[]},"version":"hev1:c9a73a0e2e81584859455f5dc431de4a0487bd7d3b23875425dce8598d8c5eab"}}
+      ]
+    },
+    {
+      "name": "duplicate-detached-frontmatter",
+      "error": "ENTITY_CARDINALITY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_c60743e8-0d2f-4644-8b41-62d846b4c3d5","kind":"FrontMatter","state":{"children":[]},"version":"hev1:3861fd010dfebde4abe28c0ddf598310daaea5badc7efbea4d651637b5726cba"}}
+      ]
+    },
+    {
+      "name": "duplicate-detached-body",
+      "error": "ENTITY_CARDINALITY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_0d2d9a9e-f7be-4781-9a40-ce5013e2555e","kind":"Body","state":{"children":[]},"version":"hev1:112ee6dec363625c1666620eca3ad1954e9261b8aa9c2d11f95978d1e00c9c54"}}
+      ]
+    },
+    {
+      "name": "two-bodies-owned-by-work",
+      "error": "ENTITY_CARDINALITY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_74429041-0dea-4204-9748-bd6f63b9fa87","kind":"Body","state":{"children":[]},"version":"hev1:785e0623a8db71baa5887e0aafae48ca528122d1814c43abea5d5f459b341925"}},
+        {"path":["snapshots",0,"entities",0,"state","children"],"value":["he_e622bd73-eb61-41aa-b763-39acdf56b428","he_96df27aa-5886-4df0-8cdc-c47e2465e166","he_74429041-0dea-4204-9748-bd6f63b9fa87"]}
+      ]
+    },
+    {
+      "name": "duplicate-detached-backmatter",
+      "error": "ENTITY_CARDINALITY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_5d8f498c-4f7e-4282-ae65-4f0dcf605e05","kind":"BackMatter","state":{"children":[]},"version":"hev1:52d397588dd25b372cb79f514984d49e7374135ddcacf8ea6c922b1a2602e6a8"}},
+        {"path":["snapshots",0,"entities",23],"value":{"id":"he_a2ec960c-4fc7-4506-a8af-f7ba248687ea","kind":"BackMatter","state":{"children":[]},"version":"hev1:46c8baae1225989a0035ef2933326dcbca2dde745eea1e9b7dc201a518fd6155"}}
+      ]
+    },
+    {
+      "name": "four-movements-including-detached-roots",
+      "error": "ENTITY_CARDINALITY",
+      "reseal": true,
+      "edits": [
+        {"path":["snapshots",0,"entities",22],"value":{"id":"he_bcfa2470-80ca-456c-bc59-9399da0f02d3","kind":"Movement","state":{"children":[]},"version":"hev1:1c8845853e75353b760947133611f3acf587b9c29ea75cb6ba8b93ea0c1203e5"}},
+        {"path":["snapshots",0,"entities",23],"value":{"id":"he_84dc73cd-7406-41bb-b66a-37c0e0ec9bef","kind":"Movement","state":{"children":[]},"version":"hev1:84fb2694c0f88a4072287d01b683d0a99299c0a99c35e37dab394dc9fc757481"}},
+        {"path":["snapshots",0,"entities",24],"value":{"id":"he_89febf1e-2c3e-4419-b651-08a050e844ab","kind":"Movement","state":{"children":[]},"version":"hev1:f8e899133b7d8fe293dfec5a79b8e7ac9b21ef2f472e1cb6a92dcfec726f103b"}}
+      ]
+    }
+  ]
+}

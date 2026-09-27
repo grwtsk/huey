@@ -1,0 +1,37 @@
+{
+  "profile": "RF-01",
+  "task_frame": "relational_description",
+  "truth_access": "open_to_contributions",
+  "identity_policy": "preserve_supplied",
+  "source_policy": "preserve_originals",
+  "unknown_policy": "keep_explicit",
+  "evidence_policy": "proposition_specific_symmetric",
+  "motive_prerequisite": false,
+  "operator_prerequisite": false,
+  "label_prerequisite": false,
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "author_report"
+    },
+    {
+      "id": "S2",
+      "kind": "institutional_record"
+    },
+    {
+      "id": "S3",
+      "kind": "historical_hypothesis"
+    }
+  ],
+  "relations": [
+    {
+      "id": "R1",
+      "status": "reported",
+      "source_refs": [
+        "S1"
+      ],
+      "operator_status": "unknown",
+      "classification_status": "unknown"
+    }
+  ]
+}

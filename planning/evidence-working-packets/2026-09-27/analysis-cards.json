@@ -1,0 +1,742 @@
+{
+  "schema": "huey.evidence-analysis-proposal.v1",
+  "format_status": "proposal format, not an official certificate or linkage schema",
+  "proposal_status": "USER_AUTHORIZED_ASSISTANT_DISCLOSURE_REVIEWED",
+  "certificate_status": "COMMITTED_CERTIFICATES_AND_PRIVATE_REVERSE_RECEIPTS_VERIFIED",
+  "raw_disclosure": "none",
+  "human_review": "pending",
+  "source_authentication": "not established",
+  "limits": [
+    "Source assertions remain attributed; this packet does not decide their truth.",
+    "Omission from an inspected object is not proof that an event, examination or reply did not occur.",
+    "Later findings do not alone establish identical earlier findings.",
+    "This is a bounded selection, not the complete record or a complete statement of the author’s account.",
+    "User authorized pre-release staging; human editorial review and main promotion remain separate. Certificates bind technical custody, not source truth."
+  ],
+  "cards": [
+    {
+      "card_id": "ha_e6f6ac3a-84a2-4a98-852c-a7d0b9002969",
+      "title": "Documented eye examination has a specific scope",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+          "locator": "pp25–27; examination p26",
+          "attribution": "Source states",
+          "statement": "The attributed January 2019 examination says the examiner could not appreciate papilledema on funduscopic examination, records cranial nerves 2–12 as tested and intact, and records no dysmetria. The plan states no indication of an underlying neurological disorder."
+        },
+        {
+          "evidence_id": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+          "locator": "pp6–9",
+          "attribution": "Source states",
+          "statement": "A scanned representation contains the overlapping examination note, including its eye-examination and neurological-examination statements."
+        }
+      ],
+      "observed_omissions": [
+        "The inspected note does not separately name pursuit, saccade or ocular-tracking procedures or measurements. It refers to a review-of-systems questionnaire that is not present in these objects."
+      ],
+      "limits_and_uncertainties": [
+        "The papilledema wording must not be expanded into a separately documented normal tracking test.",
+        "Missing documentation does not establish that a procedure was omitted. The record alone does not resolve the disputed encounter.",
+        "The two representations are overlapping source content, not independent examinations."
+      ],
+      "questions_for_review": [
+        "Can the original questionnaire and complete examination record clarify the documented procedures?",
+        "What contemporaneous evidence distinguishes what was recorded from what was actually performed?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C009",
+          "locator": "examination and questionnaire reference",
+          "relationship": "limits",
+          "contribution": "Identifies specific available and missing documentation.",
+          "does_not_establish": "Performance or nonperformance of an unmentioned procedure; clinical adequacy or liability."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated encounter",
+          "value": "2019-01-22"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_1b00960d-1e14-49ec-842a-398b12ff59db",
+      "title": "The examination record and the author’s later account conflict",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+          "locator": "p26",
+          "attribution": "Source states",
+          "statement": "The attributed examination records normal gait and station, normal tandem walking, a negative Romberg result, and no dysmetria on the named coordination tests."
+        },
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "pp4–5",
+          "attribution": "Source states",
+          "statement": "The author’s later letter disputes the recorded gait and coordination examination, says some tests were not performed, and describes requiring wall support."
+        }
+      ],
+      "observed_omissions": [
+        "Neither representation supplies a recording of the encounter, an independently authenticated witness account, or a native examination audit history."
+      ],
+      "limits_and_uncertainties": [
+        "The conflicting accounts must remain separately attributed. A later letter is evidence of the author’s account, not independent corroboration of each event.",
+        "The institutional record is not assumed to settle the dispute merely because it is a clinical record.",
+        "The reproduced clinical note identifies January 22, 2019, while existing review issues #200 and #201 identify January 24, 2019. This source-to-registry date conflict remains unresolved; these proposed links do not silently equate the dates or establish that both descriptions concern the same encounter."
+      ],
+      "questions_for_review": [
+        "Which individual recorded tests are expressly disputed, and which remain unaddressed?",
+        "What additional contemporaneous source could resolve each disagreement without treating silence as agreement?",
+        "What original source or explicit correction resolves January 22 in the clinical note versus January 24 in the existing review issues?"
+      ],
+      "relationships": [
+        {
+          "target": "https://github.com/grwtsk/huey/issues/200",
+          "locator": "source p26; later letter pp4–5",
+          "relationship": "unresolved",
+          "contribution": "Presents the attributed conflict over gait documentation. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+          "does_not_establish": "Which account is accurate, misconduct, causation or liability. Identity of the encounter across the differing dates is not established by the link."
+        },
+        {
+          "target": "https://github.com/grwtsk/huey/issues/201",
+          "locator": "source p26; later letter pp4–5",
+          "relationship": "unresolved",
+          "contribution": "Presents the attributed conflict over tandem walking and wall support. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+          "does_not_establish": "An independently established reconstruction of the encounter. Identity of the encounter across the differing dates is not established by the link."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated encounter",
+          "value": "2019-01-22"
+        },
+        {
+          "kind": "letter-displayed date",
+          "value": "2020-05-28"
+        },
+        {
+          "kind": "existing public review targets #200 and #201 state a different encounter date",
+          "value": "2019-01-24"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_2ee9d562-e6b8-4490-bd1d-2257c0ce87bd",
+      "title": "Childhood visual findings include both difficulties and normal results",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7",
+          "locator": "pp1–2",
+          "attribution": "Source states",
+          "statement": "The childhood evaluation records poor tracking in both eyes, jerky movements and loss of the target. Its narrative describes lagging behind and then darting ahead of a moving target. It also records normal acuity, color vision and ocular health, with other normal or mixed findings."
+        },
+        {
+          "evidence_id": "HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7",
+          "locator": "p4",
+          "attribution": "Observed",
+          "statement": "The additional service form contains marked code areas and an unmarked printed nystagmus option."
+        }
+      ],
+      "observed_omissions": [
+        "The historical document contains no molecular diagnosis and does not show what records a later examiner possessed."
+      ],
+      "limits_and_uncertainties": [
+        "An unmarked printed option is not a positive finding.",
+        "The historical findings are not by themselves a retrospective SCA14 diagnosis or proof of what was visible during a later encounter.",
+        "Some service-form handwriting and cropped material remain uncertain."
+      ],
+      "questions_for_review": [
+        "Which findings are directly observed examination results and which are reported history?",
+        "Which later comparison uses the same type of examination, and which requires qualified interpretation?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C007",
+          "locator": "pp1–4",
+          "relationship": "context",
+          "contribution": "Locates a historical source with positive, normal and mixed visual findings.",
+          "does_not_establish": "Specific causation, a retrospective disease diagnosis, or later clinician access."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-displayed evaluation year; month/day omitted",
+          "value": "1987"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_5fde953e-8db1-4921-abe3-3881b31253d6",
+      "title": "Later specialist notes document specific ocular findings",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab",
+          "locator": "pp4–7",
+          "attribution": "Source states",
+          "statement": "The August 2019 notes record ocular dysmetria and hypermetric saccades. The attending description also says there was no sustained nystagmus and full version."
+        },
+        {
+          "evidence_id": "HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab",
+          "locator": "p10",
+          "attribution": "Source states",
+          "statement": "The September 2019 note records brief vertical nystagmus on upward and downward gaze, none on horizontal gaze, slightly hypermetric saccades, limb dysmetria and unsteady wide-based gait."
+        }
+      ],
+      "observed_omissions": [
+        "These later notes do not directly record the earlier disputed encounter. Their genetic-testing plans are not the later molecular report."
+      ],
+      "limits_and_uncertainties": [
+        "Normal and negative findings must accompany the abnormal findings.",
+        "Differences across encounters are chronologically relevant but do not establish identical earlier findings, an omitted examination, causation or a standard-of-care conclusion.",
+        "Repeated history inside the notes does not create independent observations."
+      ],
+      "questions_for_review": [
+        "What differs in time, examination method and source status between the earlier and later records?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C007",
+          "locator": "pp4–7,10",
+          "relationship": "context",
+          "contribution": "Adds dated, attributed examination observations to the chronology.",
+          "does_not_establish": "An exact reconstruction of an earlier examination or proof of a specific genetic subtype."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated encounters",
+          "value": "2019-08 and 2019-09"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_6e6be933-0e8c-41c7-8b9a-887683874561",
+      "title": "A physical therapist records observable functional impairment",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985",
+          "locator": "pp9–12; assessment p10",
+          "attribution": "Source states",
+          "statement": "The June 2019 physical-therapy assessment describes balance and gait impairment, immediate posterior loss of balance with narrowed stance, unsafe wall-supported walking and transfers, and high fall risk. It describes improved short-distance mobility with trained use of an assistive device."
+        },
+        {
+          "evidence_id": "HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985",
+          "locator": "pp9,12",
+          "attribution": "Observed",
+          "statement": "The packet preserves an original note and an addendum as separately labelled versions."
+        }
+      ],
+      "observed_omissions": [
+        "The assessment does not establish what the earlier examiner saw or supply a molecular diagnosis."
+      ],
+      "limits_and_uncertainties": [
+        "The note contains both reported history and the therapist’s attributed objective assessment; these are different source contributions.",
+        "Improvement with assistance does not establish normal unaided function or resolution of the underlying condition.",
+        "An addendum is not by itself evidence of improper alteration."
+      ],
+      "questions_for_review": [
+        "Which statements are direct observations, and which explicitly derive from the patient or chart?",
+        "What changed between the preserved note versions?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C007",
+          "locator": "pp9–12",
+          "relationship": "context",
+          "contribution": "Provides later functional examination documentation by a physical therapist.",
+          "does_not_establish": "The same impairment at a different date, a particular cause, or liability."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated assessment",
+          "value": "2019-06-19"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_6b5c7c04-de82-458b-9714-01792cc539ea",
+      "title": "A normal electrodiagnostic conclusion includes an express limitation",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+          "locator": "pp13–14; conclusion and comment p13",
+          "attribution": "Source states",
+          "statement": "The electrodiagnostic report describes normal motor and sensory nerve-conduction studies and states that there is no evidence of a significant neurogenic process. Its comment expressly states that mild sensory radiculopathy or ulnar neuropathy can yield normal EMG/NCS."
+        }
+      ],
+      "observed_omissions": [
+        "The passage does not claim to exclude every neurological disorder or explain every symptom."
+      ],
+      "limits_and_uncertainties": [
+        "The normal conclusion and its limitation must be carried together. This card describes the report’s scope; it is not a new medical interpretation or diagnosis."
+      ],
+      "questions_for_review": [
+        "Was the report later quoted with its limiting comment intact?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C009",
+          "locator": "pp13–14",
+          "relationship": "limits",
+          "contribution": "Preserves the test report’s stated scope and caveat.",
+          "does_not_establish": "Exclusion of every neurological disease or a cause for every symptom."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated study",
+          "value": "2019-03-04"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_3cd79c62-3bb8-42a7-9b1b-22620738c2d8",
+      "title": "A cervical report’s visualized-brain statement is not a whole-brain assessment",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+          "locator": "pp20–21",
+          "attribution": "Source states",
+          "statement": "The cervical MRI report describes its cervical-spine sequences and says the visualized brain is normal. It also reports mild cervical degenerative changes without significant canal or foraminal narrowing."
+        }
+      ],
+      "observed_omissions": [
+        "This report does not supply a complete brain MRI protocol or a quantitative cerebellar assessment."
+      ],
+      "limits_and_uncertainties": [
+        "The phrase about the visualized brain must retain the scope of its named examination.",
+        "This card does not independently review imaging pixels or infer what could have been detected."
+      ],
+      "questions_for_review": [
+        "Is a separate brain study available for the relevant date, and what did that study actually cover?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C009",
+          "locator": "pp20–21",
+          "relationship": "limits",
+          "contribution": "Prevents a scoped report statement from being expanded into an unprovided examination.",
+          "does_not_establish": "Normality of all brain structures or absence of every neurological disease."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated study",
+          "value": "2018-11-26"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_3ebfb4b3-9719-4e6c-8857-8df6e05f5ecc",
+      "title": "The molecular report’s certainty terms must remain unchanged",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-07e60d91-fc61-4fa7-810f-4043293a7b87",
+          "locator": "pp1–2; method limitations pp5–7",
+          "attribution": "Source states",
+          "statement": "The report associates a PRKCG finding with SCA14 and classifies it as likely pathogenic. Its interpretation says the finding is likely consistent with the reported phenotype. A separate finding is classified as a variant of uncertain significance, with an explicit statement that it does not establish a molecular diagnosis for that finding."
+        }
+      ],
+      "observed_omissions": [
+        "The report does not independently verify every clinical feature supplied to the laboratory or connect each childhood finding to the reported result."
+      ],
+      "limits_and_uncertainties": [
+        "Likely pathogenic must not be rewritten as pathogenic. A variant of uncertain significance must not be converted into a diagnosis.",
+        "The exact variant, inheritance details, relatives’ results and unrelated genomic content are omitted from this proposal.",
+        "This is a historical source interpretation, not a current reclassification or independent diagnosis."
+      ],
+      "questions_for_review": [
+        "Are later clinical interpretations or laboratory reclassifications available as separate dated sources?",
+        "Which claims concern the report’s words and which require an additional clinical inference?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C006",
+          "locator": "pp1–2,5–7",
+          "relationship": "context",
+          "contribution": "Retains the original report’s interpretive categories and caveats in a bounded paraphrase.",
+          "does_not_establish": "Every symptom’s cause, a retrospective examination finding, or current variant classification."
+        }
+      ],
+      "chronology": []
+    },
+    {
+      "card_id": "ha_a347a28e-344f-4d0b-bfd9-808ee9b9ad01",
+      "title": "An imaging report documents a stone but not the remembered pain–appearance exchange",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-9dd97e91-2682-48ae-b537-a6feb563e023",
+          "locator": "p1",
+          "attribution": "Source states",
+          "statement": "The report describes a proximal ureteral stone with obstruction-related findings and records back pain in its clinical history."
+        }
+      ],
+      "observed_omissions": [
+        "This object contains no urologist examination narrative, pain score or observation that the patient looked comfortable. It contains no original imaging series."
+      ],
+      "limits_and_uncertainties": [
+        "The absence of the remembered exchange from this report does not disprove that exchange or the reported pain.",
+        "Other negative imaging findings do not establish absence of symptoms."
+      ],
+      "questions_for_review": [
+        "Can the corresponding urology encounter note or contemporaneous message locate the remembered observation?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C009",
+          "locator": "p1",
+          "relationship": "limits",
+          "contribution": "Separates an available imaging report from a still-unlocated encounter narrative.",
+          "does_not_establish": "The patient’s appearance, pain intensity, or whether the exchange occurred."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated study",
+          "value": "2012-07-05"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_392e63ad-cdf0-43b6-ac80-f1f83b9d4b8a",
+      "title": "Same-day imaging reports retain different interpretations",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f",
+          "locator": "p1",
+          "attribution": "Source states",
+          "statement": "The radiograph report presumes that a pelvic density represents a previously described stone."
+        },
+        {
+          "evidence_id": "HUEY-EV-c52efe9c-a709-44a3-9434-fb05464e9a02",
+          "locator": "p1",
+          "attribution": "Source states",
+          "statement": "The same-day CT report explicitly compares the plain films and describes the lateral calcifications seen on those films as appearing to be phleboliths. It records no identified ureteral stone or hydronephrosis and retains small renal calcifications."
+        }
+      ],
+      "observed_omissions": [
+        "The packet does not provide the imaging series or an independent image review. The CT report itself does provide an interpretation of the same-day plain-film calcifications."
+      ],
+      "limits_and_uncertainties": [
+        "The source terms presume and appear preserve uncertainty.",
+        "The later report’s negative ureteral finding does not establish absence of renal calcifications or symptoms.",
+        "These are related studies with shared comparison material, not independent confirmation of an identical proposition."
+      ],
+      "questions_for_review": [
+        "What can inspection of the actual images add to the CT report’s stated explanation of the plain-film finding?"
+      ],
+      "relationships": [
+        {
+          "target": "HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f",
+          "locator": "both reports p1",
+          "relationship": "limits",
+          "contribution": "The CT interpretation limits a categorical reading of the radiograph’s presumption.",
+          "does_not_establish": "An independent adjudication of the imaging or symptom absence."
+        },
+        {
+          "target": "SOC-C009",
+          "locator": "both reports p1",
+          "relationship": "context",
+          "contribution": "Preserves the radiograph’s presumption and the CT report’s explicit comparative interpretation while identifying the unavailable imaging series.",
+          "does_not_establish": "A resolved diagnosis beyond the reports’ own wording."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated study date for both reports",
+          "value": "2012-07-19"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+      "title": "A printed measurement has an acknowledged correction in correspondence",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7",
+          "locator": "p1",
+          "attribution": "Source states",
+          "statement": "The report prints approximately 6 cm of one vertebral displacement twice. It also describes a separate 3 mm displacement and says the findings are unchanged with flexion and extension."
+        },
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "p8",
+          "attribution": "Source states",
+          "statement": "The later patient letter quotes the 6 cm value and says a follow-up inquiry established it was wrong."
+        },
+        {
+          "evidence_id": "HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527",
+          "locator": "p1; reply displayed 2019-06-12 at 12:29 PM",
+          "attribution": "Source attributes",
+          "statement": "The portal thread attributes a reply to a nurse practitioner acknowledging a typographical error in the radiology report and stating that it should be 6 mm."
+        }
+      ],
+      "observed_omissions": [
+        "The inspected sources do not supply an amended original radiology report or source imaging pixels. The correcting correspondence is available and must be included in the comparison."
+      ],
+      "limits_and_uncertainties": [
+        "Preserve the original report’s printed 6 cm and the correspondence’s 6 mm correction as separate source statements.",
+        "The attributed nurse-practitioner reply documents a correspondence correction; it is not an original radiology amendment or an independent image measurement.",
+        "A portal PDF does not by itself authenticate message authorship, source-system completeness or delivery history."
+      ],
+      "questions_for_review": [
+        "Was the original radiology report formally amended, and can the original or amended report and images be matched to this correspondence?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C009",
+          "locator": "report p1; later letter p8; correspondence p1, 12:29 PM reply",
+          "relationship": "context",
+          "contribution": "Preserves the printed value, the author’s later account and the already-available attributed correction to 6 mm.",
+          "does_not_establish": "A formal amendment of the original radiology report, independent image measurement, message authenticity or clinical implications."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-stated imaging date",
+          "value": "2019-06-06"
+        },
+        {
+          "kind": "source-displayed correcting reply",
+          "value": "2019-06-12 12:29 PM; this reply does not itself state a timezone"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_3ab55f6a-63fb-4c54-b71f-b881cc728877",
+      "title": "A later letter’s quotations and dates need source-level reconciliation",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "p15",
+          "attribution": "Source states",
+          "statement": "The letter says quoted passages were modified through automated means for readability and says their meaning was unchanged."
+        },
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "pp2,13",
+          "attribution": "Observed",
+          "statement": "The letter gives a January 2019 encounter date in one passage and a January 2013 appointment date in another."
+        }
+      ],
+      "observed_omissions": [
+        "The letter does not embed the original quoted messages or supply a correction explaining the date difference."
+      ],
+      "limits_and_uncertainties": [
+        "The author’s assertion that meaning was unchanged does not make the passages exact quotations.",
+        "Do not silently choose a date or treat the later letter as the original clinical record.",
+        "Delivery, receipt and response are not demonstrated by the document’s existence."
+      ],
+      "questions_for_review": [
+        "Which quoted passages can be matched directly to their original dated sources?",
+        "Can the date discrepancy be resolved by a separate correction or contemporaneous record?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C002",
+          "locator": "p15",
+          "relationship": "limits",
+          "contribution": "Distinguishes later modified quotation from original source text.",
+          "does_not_establish": "Verbatim fidelity of the modified passages."
+        },
+        {
+          "target": "SOC-C004",
+          "locator": "pp2,13",
+          "relationship": "unresolved",
+          "contribution": "Preserves differing displayed dates.",
+          "does_not_establish": "Which date was intended or whether the letter was delivered."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "letter-displayed date",
+          "value": "2020-05-28"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_f959623b-b2f3-4851-bb9e-b909c44b789f",
+      "title": "File naming and document dates are different kinds of evidence",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-6f73c3c6-dc2f-4b2c-9c4c-a4ea43d0d73a",
+          "locator": "pp1–2",
+          "attribution": "Source states",
+          "statement": "The report’s signature and collection/result fields show a July 2014 study date."
+        },
+        {
+          "evidence_id": "HUEY-EV-6f73c3c6-dc2f-4b2c-9c4c-a4ea43d0d73a",
+          "locator": "private acquisition metadata; sensitive filename withheld",
+          "attribution": "Observed",
+          "statement": "A separately preserved filename suggests a different year."
+        }
+      ],
+      "observed_omissions": [
+        "The received object does not explain the naming discrepancy or authenticate when the filename was assigned."
+      ],
+      "limits_and_uncertainties": [
+        "A filename is not a substitute for a displayed study date.",
+        "Collection time, report time, print time, filesystem time and intake time remain distinct; none alone establishes delivery or review.",
+        "The sensitive filename and precise filesystem metadata are intentionally absent from this proposal."
+      ],
+      "questions_for_review": [
+        "Which source should anchor an event timeline, and which date belongs only to the derivative or custody history?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C004",
+          "locator": "pp1–2; filename discrepancy represented without the filename",
+          "relationship": "limits",
+          "contribution": "Separates the displayed study date from acquisition naming.",
+          "does_not_establish": "Why the discrepancy arose or an independently authenticated event date."
+        }
+      ],
+      "chronology": [
+        {
+          "kind": "source-displayed collection date",
+          "value": "2014-07-25"
+        }
+      ]
+    },
+    {
+      "card_id": "ha_6366bcd2-47ca-4c4e-b6da-ab7be0730bed",
+      "title": "A correspondence export contains a draft and a workflow status, not proof of every downstream action",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e",
+          "locator": "p5",
+          "attribution": "Observed",
+          "statement": "One displayed entry is explicitly marked as a draft."
+        },
+        {
+          "evidence_id": "HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e",
+          "locator": "pp4,9–10",
+          "attribution": "Source states",
+          "statement": "The export shows a referenced attachment and later request-resolution messages. An author message says a benefits application was submitted."
+        }
+      ],
+      "observed_omissions": [
+        "The named attachment bytes, outside-thread correspondence, complete transport headers, benefits adjudication and payment proof are not included."
+      ],
+      "limits_and_uncertainties": [
+        "A draft is not proof of transmission. A resolved request label is not a benefit award.",
+        "A displayed attachment name and approximate size cannot establish the identity or receipt of attachment bytes.",
+        "Missing correspondence does not establish that no reply or follow-through occurred."
+      ],
+      "questions_for_review": [
+        "Can native message headers and the actual attachment resolve transmission and source identity?",
+        "Which downstream action has its own dated evidence?"
+      ],
+      "relationships": [
+        {
+          "target": "SOC-C002",
+          "locator": "p5",
+          "relationship": "limits",
+          "contribution": "Separates draft status from transmitted correspondence.",
+          "does_not_establish": "Sending or receipt."
+        },
+        {
+          "target": "SOC-C009",
+          "locator": "pp4,9–10",
+          "relationship": "limits",
+          "contribution": "Identifies which workflow stages and materials are absent.",
+          "does_not_establish": "No response, no action, no benefit approval or no payment."
+        }
+      ],
+      "chronology": []
+    },
+    {
+      "card_id": "ha_321066f5-d9a6-4496-bae3-c03c579fe025",
+      "title": "Different representations do not create independent corroboration",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+      "sources": [
+        {
+          "evidence_id": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+          "locator": "complete object; p9 annotation",
+          "attribution": "Observed",
+          "statement": "The received scan contains an incremental annotation update."
+        },
+        {
+          "evidence_id": "HUEY-EV-2f86310b-400e-451a-b3b9-fdb860655402",
+          "locator": "complete object; all rendered pages",
+          "attribution": "Observed",
+          "statement": "The other received PDF is the earlier byte prefix. Its rendered pages match the corresponding visible pages, but it lacks that later annotation object."
+        },
+        {
+          "evidence_id": "HUEY-EV-445b7153-ac92-4383-9904-d90e4986991a",
+          "locator": "p1",
+          "attribution": "Observed",
+          "statement": "A laboratory result appears in one export."
+        },
+        {
+          "evidence_id": "HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe",
+          "locator": "p1",
+          "attribution": "Observed",
+          "statement": "A second export contains the same result identifiers and values with different print representation. The identifiers themselves are withheld."
+        }
+      ],
+      "observed_omissions": [
+        "These representations do not identify who made an update, why it was made, or provide independent repeat testing."
+      ],
+      "limits_and_uncertainties": [
+        "Different byte objects, filenames or delivery receipts do not by themselves establish independent sources.",
+        "A source-family relationship is more precise than calling every variant an exact duplicate.",
+        "No editing motive or misconduct is inferred from the incremental update."
+      ],
+      "questions_for_review": [
+        "Which comparison concerns raw byte identity, matching rendered content, repeated report content, or a genuinely independent observation?"
+      ],
+      "relationships": [
+        {
+          "target": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+          "locator": "other scan complete object and matching pages",
+          "relationship": "same_source_family",
+          "contribution": "Preserves the distinction between the earlier PDF and its incremental update.",
+          "does_not_establish": "Who edited it, why, authenticity or independent corroboration."
+        },
+        {
+          "target": "SOC-C005",
+          "locator": "scan versions and repeated laboratory-result exports",
+          "relationship": "limits",
+          "contribution": "Prevents repeated representations from being counted as independent observations.",
+          "does_not_establish": "Source truth or the completeness of the upstream record."
+        }
+      ],
+      "chronology": []
+    }
+  ],
+  "proposal_version": 2,
+  "supersedes_proposal_version": 1,
+  "revision_note": "Corrects source qualifications, adds an available correcting correspondence, and preserves an unresolved source-to-review-target date discrepancy.",
+  "certificate_commit": "ceec0095e6a4a1439285dde1ad97ba191a617382"
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "huey.soc-ancillary.v1",
+  "basisRevision": "fe1b8a55df7f687b7ef652e5e9bbfc5e5b6cc594",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/126",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176",
+    "https://github.com/grwtsk/huey/issues/188",
+    "https://github.com/grwtsk/huey/issues/189",
+    "https://github.com/grwtsk/huey/issues/190",
+    "https://github.com/grwtsk/huey/issues/191",
+    "https://github.com/grwtsk/huey/issues/421"
+  ],
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "sourceMetadataActive": false,
+  "mediaBytesImported": false,
+  "newEvidenceReceived": false,
+  "substantiveVerificationPerformed": false,
+  "fullCorpusTransferComplete": false,
+  "authorityFromReferences": false,
+  "notice": "This selection preserves five public working-source JSON records and their historical review apparatus. Source metadata remains documentary, the draft remains unassigned, and earlier checks remain dated receipts. Reference URLs and approval fields do not authenticate or grant authority. No media payload, new evidence, source verification, manuscript admission, complete corpus clearance or promotion is supplied.",
+  "files": [
+    {
+      "path": "planning/standard-of-care/ancillary-r02/README.md",
+      "sourceBlob": "ac67c14c532f4f88e450c7c89006ea7e048953a7",
+      "stagedBlob": "ac67c14c532f4f88e450c7c89006ea7e048953a7",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/argument-draft.md",
+      "sourceBlob": "67426c44ad2c9d2eceed30abe19ca2081aa8c136",
+      "stagedBlob": "67426c44ad2c9d2eceed30abe19ca2081aa8c136",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/checks.json",
+      "sourceBlob": "6b8717a6e0c8597bcfe8d1f65b478df0eae15e56",
+      "stagedBlob": "6b8717a6e0c8597bcfe8d1f65b478df0eae15e56",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/claims.tsv",
+      "sourceBlob": "b36a2f6b8a3fe5762530cbee26ea2395232019b6",
+      "stagedBlob": "b36a2f6b8a3fe5762530cbee26ea2395232019b6",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/leaf-dispositions.tsv",
+      "sourceBlob": "0d14cb282b2855812378054db39d1db450474c5f",
+      "stagedBlob": "0d14cb282b2855812378054db39d1db450474c5f",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/manifest.json",
+      "sourceBlob": "f9c4d41c654563fcad7a4336d3cf402a0a5bb0aa",
+      "stagedBlob": "f9c4d41c654563fcad7a4336d3cf402a0a5bb0aa",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/nodes.tsv",
+      "sourceBlob": "e9713dc0cff8646d68361e08ba2a2843aaf0440e",
+      "stagedBlob": "e9713dc0cff8646d68361e08ba2a2843aaf0440e",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/test_verify.py",
+      "sourceBlob": "ab4294b1df0f6e270b6cff8552aba168bec5c6fa",
+      "stagedBlob": "ab4294b1df0f6e270b6cff8552aba168bec5c6fa",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/ancillary-r02/verify.py",
+      "sourceBlob": "43eea7523e4bad25d8e07851a1b903fa1920cb1e",
+      "stagedBlob": "43eea7523e4bad25d8e07851a1b903fa1920cb1e",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/articles/discipline-and-punish.json",
+      "sourceBlob": "17aab6ab4008a2b2873aae0b9adc5c6b177c9d7f",
+      "stagedBlob": "17aab6ab4008a2b2873aae0b9adc5c6b177c9d7f",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/articles/i-bledsoe-i-bled-so.json",
+      "sourceBlob": "b120e14daf7731e4ec12dcd7603d9a90bdac28f1",
+      "stagedBlob": "b120e14daf7731e4ec12dcd7603d9a90bdac28f1",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/articles/neurology-cannot-undo-the-harm.json",
+      "sourceBlob": "2eab197970746ee67d97bcd0c7bf3d25f6a6125e",
+      "stagedBlob": "2eab197970746ee67d97bcd0c7bf3d25f6a6125e",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/articles/on-dignity.json",
+      "sourceBlob": "75c80e06a66bb8edf9d9972d5c1fd3003f1d1616",
+      "stagedBlob": "75c80e06a66bb8edf9d9972d5c1fd3003f1d1616",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/neurology-current/content/site.json",
+      "sourceBlob": "16b7edd3a92f5e34de821756ad0a165822481d50",
+      "stagedBlob": "16b7edd3a92f5e34de821756ad0a165822481d50",
+      "representation": "exact"
+    },
+    {
+      "path": "sources/standard-of-care/transfer-r02.json",
+      "sourceBlob": "58d03675db0d138a0664914056e688f30e1a722f",
+      "stagedBlob": "58d03675db0d138a0664914056e688f30e1a722f",
+      "representation": "exact"
+    }
+  ],
+  "navigationChanges": [
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "priorStagedBlob": "faff3cdb745e34523821e7c14dbce007f14ec77e",
+      "stagedBlob": "ac41c51e475fab0d871026b95d8c10ce60d4fb85"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "priorStagedBlob": "c85a13efa6b02ed1de0c2d8aea58ab958d97e4ee",
+      "stagedBlob": "d78ea8f83c8d13ae5ecc3f5d1f56777a78570510"
+    }
+  ]
+}

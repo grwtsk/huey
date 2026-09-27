@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-07e60d91-fc61-4fa7-810f-4043293a7b87",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-07e60d91-fc61-4fa7-810f-4043293a7b87/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "4a26ff51b952aa22a04b07f9e3c41e84a027496e9ac25439b49a5e44a820430a",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 10
+  },
+  "transcription": {
+    "status": "machine_typed_unreviewed",
+    "public": false,
+    "method": [
+      "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C006",
+      "locator": "pp1–2; method limitations pp5–7; analytical card ha_3ebfb4b3-9719-4e6c-8857-8df6e05f5ecc",
+      "relationship": "context",
+      "contribution": "Source states: The report associates a PRKCG finding with SCA14 and classifies it as likely pathogenic. Its interpretation says the finding is likely consistent with the reported phenotype. A separate finding is classified as a variant of uncertain significance, with an explicit statement that it does not establish a molecular diagnosis for that finding. Joint comparison: Retains the original report’s interpretive categories and caveats in a bounded paraphrase.",
+      "does_not_establish": "Every symptom’s cause, a retrospective examination finding, or current variant classification."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:27.555911Z",
+  "public_exposure_basis": "UNKNOWN"
+}

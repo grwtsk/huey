@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "substantial_support_issue": 176,
+  "approval": "SOC-PUBLIC-01",
+  "disclaimer_marker": "Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.",
+  "levels": [
+    "attribution",
+    "integrity",
+    "primary-source",
+    "substantial",
+    "reasoning"
+  ],
+  "substantial_support_definition": "A complex causal, individual clinical, historical institutional, legal-application or quantitative proposition requiring original evidence, counterevidence and/or qualified review; not a judgment that the proposition is false.",
+  "automatic_verification": false,
+  "initial_claim_count": 188,
+  "substantial_count": 111,
+  "atomic_corpus_review_complete": false
+}

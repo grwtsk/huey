@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "3b3c83c510e49a168da44d77ec78a9124668ecba6742f7081a9949307efd35b1",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 1
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C005",
+      "locator": "p1; analytical card ha_321066f5-d9a6-4496-bae3-c03c579fe025",
+      "relationship": "limits",
+      "contribution": "Observed: A second export contains the same result identifiers and values with different print representation. The identifiers themselves are withheld. Joint comparison: Prevents repeated representations from being counted as independent observations.",
+      "does_not_establish": "Source truth or the completeness of the upstream record."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:29.906785Z",
+  "public_exposure_basis": "UNKNOWN"
+}

@@ -1,0 +1,90 @@
+{
+  "article": {
+    "id": "i-bledsoe-i-bled-so",
+    "type": "image",
+    "title": "I BLED SO",
+    "author": "R.A. Jacob Martone",
+    "visibility": "public",
+    "slug": "i-bledsoe-i-bled-so",
+    "section": "artwork-and-sound",
+    "section_order": 1,
+    "published_at": "2026-09-15T23:56:56.050Z",
+    "updated_at": "2026-09-16T06:59:08.828Z",
+    "status": "published",
+    "toc": false,
+    "aliases": [],
+    "relations": [
+      {
+        "id": "relation-art-writing",
+        "type": "related_to",
+        "target": "writing-as-the-act-of-care",
+        "label": "Related essay on making and communication"
+      },
+      {
+        "id": "relation-art-atlas",
+        "type": "related_to",
+        "target": "atlas",
+        "label": "Ethical Atlas"
+      }
+    ],
+    "medium": "painting"
+  },
+  "current": {
+    "documentDate": null,
+    "category": "Reaction painting",
+    "description": "A reaction painting that gives visible form to pain, using image and texture as a means of communication.",
+    "source": {
+      "originalFilename": "i-bled-so.txt",
+      "metadata": {
+        "type": "author-supplied artwork",
+        "author": "R.A. Jacob Martone",
+        "sourceNote": "Author-supplied artwork, image, and title. Caption prepared with editorial assistance as a means of communication. No creation date was supplied."
+      }
+    },
+    "document": {
+      "units": [
+        {
+          "id": "u-000740",
+          "type": "figure",
+          "asset": "asset-image",
+          "alt": "A monochrome painting on textured paper in a brushed gray frame and broad light mat: a dense black painted form within a pale gray wash, inverted lettering above, and an RA signature near the lower right.",
+          "caption": [
+            {
+              "id": "u-000741",
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "A reaction painting that gives visible form to pain, using image and texture as a means of communication."
+                }
+              ]
+            }
+          ],
+          "credit": [
+            {
+              "id": "u-000742",
+              "type": "paragraph",
+              "role": "credit",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "R.A. Jacob Martone"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "assets": [
+      {
+        "id": "asset-image",
+        "type": "image",
+        "sourcePath": "images/i-bled-so.png"
+      }
+    ],
+    "attachments": {
+      "units": []
+    }
+  }
+}

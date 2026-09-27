@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-d634c71b-8d75-4e22-b2d2-e3eccbdc1946",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Synthetic custody protocol test — fictional object",
+  "evidence_type": "synthetic_fixture",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-d634c71b-8d75-4e22-b2d2-e3eccbdc1946/public-v1.txt"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "fa69f44bd5eec743526a52aadd0b1b8172d4d1a91dde616b2caadbc852e799a8"
+  },
+  "transcription": {
+    "status": "machine_typed_unreviewed",
+    "public": false,
+    "method": [
+      "Private transcription retained; independent review pending"
+    ],
+    "path": null,
+    "sha256_or_commitment": null
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [],
+  "review": {
+    "machine": "Local integrity checks; source authentication and substantive review remain pending",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Fictional engineering fixture only; no real person, medical event, or Huey factual claim is represented.",
+    "A certificate binds bytes and review status; it is not source authentication."
+  ],
+  "status": "active"
+}

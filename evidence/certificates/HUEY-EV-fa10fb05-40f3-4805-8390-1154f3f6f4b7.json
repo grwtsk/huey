@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-fa10fb05-40f3-4805-8390-1154f3f6f4b7/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "dfb2e80a7d4c77cfdc428b667ed83d60d707e0373bc3dfe7d8842dc422ca1831",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 4
+  },
+  "transcription": {
+    "status": "machine_typed_unreviewed",
+    "public": false,
+    "method": [
+      "Complete private transcription retained; matching prior machine-assisted review reused according to private provenance record; no new human transcription verification asserted."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C007",
+      "locator": "pp1–2; p4; analytical card ha_2ee9d562-e6b8-4490-bd1d-2257c0ce87bd",
+      "relationship": "context",
+      "contribution": "Source states: The childhood evaluation records poor tracking in both eyes, jerky movements and loss of the target. Its narrative describes lagging behind and then darting ahead of a moving target. It also records normal acuity, color vision and ocular health, with other normal or mixed findings. Observed: The additional service form contains marked code areas and an unmarked printed nystagmus option. Joint comparison: Locates a historical source with positive, normal and mixed visual findings.",
+      "does_not_establish": "Specific causation, a retrospective disease diagnosis, or later clinician access."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T05:07:51.848574Z",
+  "public_exposure_basis": "UNKNOWN"
+}
