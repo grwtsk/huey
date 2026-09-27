@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-a9dbcf2f-ba86-4c2d-9a91-b853149bf985/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "43a9cc173598a4508244f80b2cb0e058b18deeef4a5c01bc6414422731c58ea7",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 45
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C007",
+      "locator": "pp9–12; assessment p10; pp9,12; analytical card ha_6e6be933-0e8c-41c7-8b9a-887683874561",
+      "relationship": "context",
+      "contribution": "Source states: The June 2019 physical-therapy assessment describes balance and gait impairment, immediate posterior loss of balance with narrowed stance, unsafe wall-supported walking and transfers, and high fall risk. It describes improved short-distance mobility with trained use of an assistive device. Observed: The packet preserves an original note and an addendum as separately labelled versions. Joint comparison: Provides later functional examination documentation by a physical therapist.",
+      "does_not_establish": "The same impairment at a different date, a particular cause, or liability."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:19.845017Z",
+  "public_exposure_basis": "UNKNOWN"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+  "derivatives": [
+    {
+      "path": "evidence/derivatives/HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6/public-v1.md",
+      "sha256": "1739a301961810c3c23bc5069fb1916680b984ec728dce1094eb6f93f8325bdb",
+      "bytes": 4396
+    }
+  ],
+  "limits": "Sanitized derivatives are not raw originals or independent corroboration."
+}

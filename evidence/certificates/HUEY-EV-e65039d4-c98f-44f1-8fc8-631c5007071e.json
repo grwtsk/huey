@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "2e86f95557eae995f7e2594cb64fedfd463d33626e41d4a83175c2af6f336093",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 10
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C002",
+      "locator": "p5; pp4,9–10; analytical card ha_6366bcd2-47ca-4c4e-b6da-ab7be0730bed",
+      "relationship": "limits",
+      "contribution": "Observed: One displayed entry is explicitly marked as a draft. Source states: The export shows a referenced attachment and later request-resolution messages. An author message says a benefits application was submitted. Joint comparison: Separates draft status from transmitted correspondence.",
+      "does_not_establish": "Sending or receipt."
+    },
+    {
+      "target": "SOC-C009",
+      "locator": "p5; pp4,9–10; analytical card ha_6366bcd2-47ca-4c4e-b6da-ab7be0730bed",
+      "relationship": "limits",
+      "contribution": "Observed: One displayed entry is explicitly marked as a draft. Source states: The export shows a referenced attachment and later request-resolution messages. An author message says a benefits application was submitted. Joint comparison: Identifies which workflow stages and materials are absent.",
+      "does_not_establish": "No response, no action, no benefit approval or no payment."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:24.458360Z",
+  "public_exposure_basis": "UNKNOWN"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "6f8e666d33e3fb8575c14111af151f5b1e0162b3747e5b0e07477622c8619528",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 2
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C009",
+      "locator": "p1; analytical card ha_392e63ad-cdf0-43b6-ac80-f1f83b9d4b8a",
+      "relationship": "context",
+      "contribution": "Source states: The radiograph report presumes that a pelvic density represents a previously described stone. Joint comparison: Preserves the radiograph’s presumption and the CT report’s explicit comparative interpretation while identifying the unavailable imaging series.",
+      "does_not_establish": "A resolved diagnosis beyond the reports’ own wording."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:15.838941Z",
+  "public_exposure_basis": "UNKNOWN"
+}
