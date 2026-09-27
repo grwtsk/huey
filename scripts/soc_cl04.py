@@ -20,6 +20,7 @@ Invalid = predecessor.Invalid
 require, read, blob, json_data, git = (predecessor.require, predecessor.read, predecessor.blob,
                                      predecessor.json_data, predecessor.git)
 MANIFEST = 'planning/consolidation/soc-cl04.json'
+HISTORICAL_MANIFEST_BLOB = '84e055e1d14de693d70d54427d5cb85a6293c08d'
 CORE_MANIFEST = 'planning/consolidation/soc-core.json'
 REVIEW = 'planning/standard-of-care/care-law/'
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -69,7 +70,9 @@ LIMITS = ('Pinned public copy bytes, TSV unit/reference membership and navigatio
           'no private-packet access or reconstruction, archived packet checker execution, historical '
           'mutation rerun, source/alias dereferencing, fresh research, source authentication, '
           'findings, disclosure authority, manuscript reconciliation, acceptance or complete corpus '
-          'coverage. Counts describe index registrations, not independent events or verified claims.')
+          'coverage. Counts describe index registrations, not independent events or verified claims. '
+          'Navigation is the fixed historical receipt; run soc_consolidation.py for current navigation '
+          'and cumulative coverage.')
 
 
 def validate_manifest(value):
@@ -151,16 +154,10 @@ def validate_navigation(root, value, source_objects):
     require(blob(previous_bytes) == PREDECESSOR['blob'], 'predecessor-byte-drift')
     previous = json_data(previous_bytes)
     predecessor.validate_manifest(previous)
-    core = json_data(read(root, CORE_MANIFEST))
     for row in value['navigationChanges']:
         parents = [item for item in previous['navigationChanges'] if item['path'] == row['path']]
         require(len(parents) == 1 and parents[0]['sourceBlob'] == row['sourceBlob'] and
                 parents[0]['stagedBlob'] == row['priorStagedBlob'], 'navigation-chain')
-        current = [item for item in core['files'] if item['path'] == row['path']]
-        require(len(current) == 1 and current[0]['sourceBlob'] == row['sourceBlob'] and
-                current[0]['stagedBlob'] == row['stagedBlob'] and
-                current[0]['representation'] == 'adapted-navigation', 'navigation-core-pin')
-        require(blob(read(root, row['path'])) == row['stagedBlob'], 'navigation-byte-drift')
         if source_objects:
             require(blob(git(root, 'show', BASIS + ':' + row['path'])) == row['priorStagedBlob'],
                     'navigation-prior-byte-drift')
@@ -172,8 +169,10 @@ def validate_navigation(root, value, source_objects):
 def verify(root=ROOT, source_objects=False):
     root = Path(root).resolve()
     try:
-        value = json_data(read(root, MANIFEST))
+        manifest_bytes = read(root, MANIFEST)
+        value = json_data(manifest_bytes)
         validate_manifest(value)
+        require(blob(manifest_bytes) == HISTORICAL_MANIFEST_BLOB, 'historical-receipt-drift')
         raw = {}
         for row in value['files']:
             content = read(root, row['path'])
@@ -191,6 +190,7 @@ def verify(root=ROOT, source_objects=False):
     return {'files': 3, 'exact_copies': 3, 'original_git_objects_checked': 3 if source_objects else 0,
             'prior_navigation_objects_checked': 2 if source_objects else 0,
             'predecessor_manifest_objects_checked': 1 if source_objects else 0,
+            'historical_navigation_receipt': True,
             'namespace': 'HUEY-CL04', 'indexed_units': 117, 'indexed_edit_groups': 16,
             'historical_chapter_counts': dict(CHAPTER_COUNTS),
             'source_aliases': 12, 'source_alias_references': 228, 'carelaw_references': 103,

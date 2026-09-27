@@ -3,6 +3,23 @@
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
 
+## CL05 public integration apparatus — #433
+
+The [CL05 consolidation](../consolidation/soc-cl05.md) adds four unchanged public
+files: the [historical receipt](care-law/integration-r05.md), separate
+[78-row changed](care-law/integration-r05.tsv) and
+[189-row retained](care-law/integration-r05-retained.tsv) indexes, and archived
+private-packet checker. Eleven edit groups, 44 retained paragraph groups, eleven
+source aliases and 51 C IDs preserve historical relationships, not current prose
+integration or source support. Chapter/paragraph coordinates remain working locators.
+
+R089–R092/P023 preserve their original-source lineage gap under #50 with source B
+only. Other retained review labels do not supply human clearance. The public
+wrapper checks fixed bytes and both indexes without running the private checker
+or its twenty-two historical mutations. #50/#186/#145/#176 and source owners stay
+open. All six prior slice manifests remain unchanged; CL05 extends navigation
+lineage. Later CL06–CL13 work remains separate.
+
 ## CL04 public integration receipt — #431
 
 The [CL04 consolidation](../consolidation/soc-cl04.md) adds exactly three unchanged
@@ -120,9 +137,9 @@ twelve text exports, three context artifacts and normalized Atlas in staging.
 selected paths, adapted navigation and deferred layers. Source bytes and claim
 rows remain those of public PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
-later CL05–CL13 integration/reference work remains outside these consolidations.
-The ancillary, authority, incident, initial care-law, CL03 and CL04 additions
-are explicit and separately pinned under #421/#423/#425/#427/#429/#431.
+later CL06–CL13 integration/reference work remains outside these consolidations.
+The ancillary, authority, incident, initial care-law, CL03, CL04 and CL05 additions
+are explicit and separately pinned under #421/#423/#425/#427/#429/#431/#433.
 
 ## Claim and argument coverage
 
