@@ -1,0 +1,77 @@
+{
+  "schema": "huey.soc-cl03.v1",
+  "basisRevision": "94893a187cf83f44868563da3b9d0b98d7f30d5f",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176",
+    "https://github.com/grwtsk/huey/issues/177",
+    "https://github.com/grwtsk/huey/issues/186",
+    "https://github.com/grwtsk/huey/issues/46",
+    "https://github.com/grwtsk/huey/issues/47",
+    "https://github.com/grwtsk/huey/issues/178",
+    "https://github.com/grwtsk/huey/issues/179",
+    "https://github.com/grwtsk/huey/issues/180",
+    "https://github.com/grwtsk/huey/issues/181",
+    "https://github.com/grwtsk/huey/issues/182",
+    "https://github.com/grwtsk/huey/issues/183",
+    "https://github.com/grwtsk/huey/issues/184",
+    "https://github.com/grwtsk/huey/issues/185",
+    "https://github.com/grwtsk/huey/issues/429"
+  ],
+  "notice": "This selection preserves the public CL03 receipt, unit index and archived private-packet checker. Historical integration and test assertions remain dated records, not a current manuscript reconciliation, private-packet check, author acceptance or findings. The archived checker is neither imported nor executed. Aliases and issue links are references, not evidence retrieval, authentication or grants. No new evidence, manuscript admission, complete corpus transfer or promotion is supplied.",
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "sourceMetadataActive": false,
+  "newEvidenceReceived": false,
+  "newExternalCollectionPerformed": false,
+  "substantiveVerificationPerformed": false,
+  "liveIssueBodiesVerified": false,
+  "privatePacketChecked": false,
+  "inheritedPacketVerifierExecuted": false,
+  "manuscriptReconciliationPerformed": false,
+  "fullCorpusTransferComplete": false,
+  "authorityFromReferences": false,
+  "files": [
+    {
+      "path": "planning/standard-of-care/care-law/integration-r03.md",
+      "sourceBlob": "84c310e405d5bc68a46c73caefcf4ce2d4499536",
+      "stagedBlob": "84c310e405d5bc68a46c73caefcf4ce2d4499536",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/integration-r03.tsv",
+      "sourceBlob": "0b8463675bec3854fe4476855ca8750983010d14",
+      "stagedBlob": "0b8463675bec3854fe4476855ca8750983010d14",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/verify_integration_r03.py",
+      "sourceBlob": "12c24e1d5ca68c094a0e7dd68c9c7ad325ac1792",
+      "stagedBlob": "12c24e1d5ca68c094a0e7dd68c9c7ad325ac1792",
+      "representation": "exact"
+    }
+  ],
+  "predecessorManifest": {
+    "path": "planning/consolidation/soc-care-law.json",
+    "blob": "6916238cc748dc86a34f5d5523117fe43635074a"
+  },
+  "navigationChanges": [
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "priorStagedBlob": "0e9e3c45d8c5bd7a5a4c1a2f76088cdadc80370e",
+      "stagedBlob": "8d859ab2d5446354f4c206656b7799a21f8a8847"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "priorStagedBlob": "051dc6595f7322e4f9002523f8f71402eb053f25",
+      "stagedBlob": "6cce5970681deb00d013be053b9f92ec9a937daa"
+    }
+  ]
+}

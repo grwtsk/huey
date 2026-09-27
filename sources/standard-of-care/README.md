@@ -3,7 +3,16 @@
 > [!WARNING]
 > **WORKING SOURCE CORPUS — VERIFICATION INCOMPLETE.** These files preserve attributed testimony, allegations, hypotheses, normative analysis and AI-assisted drafts. Inclusion does not establish truth or make received medical assertions safe to follow. This is not a clinical protocol, medical/legal advice, adjudication or a current risk assessment. Claims requiring review remain under [#125](https://github.com/grwtsk/huey/issues/125), [#145](https://github.com/grwtsk/huey/issues/145) and [#176](https://github.com/grwtsk/huey/issues/176).
 
-Current staging update, [#427](https://github.com/grwtsk/huey/issues/427): the
+Current staging update, [#429](https://github.com/grwtsk/huey/issues/429): the
+[CL03 public receipt/index/checker](../../planning/consolidation/soc-cl03.md)
+preserves three exact files. The index links 109 historical units through eleven
+edit groups, 13 source aliases and 65 distinct care-law IDs. It contains no
+private candidate prose, spans or fingerprints. The inherited checker requires
+that private packet and is not executed by the public check. Historical source
+reads, manuscript reconstruction and twelve mutation results are not repeated;
+#186/#145/#176 and substantive evidence work remain open.
+
+Earlier staging, [#427](https://github.com/grwtsk/huey/issues/427): the
 [recovered care-law source/review core](../../planning/consolidation/soc-care-law.md)
 preserves eight exact files, including the cumulative editorial proposal,
 41 source records and 34 review schedules. Its 256 `HUEY-CARELAW-01` units retain
@@ -88,7 +97,7 @@ The pinned branch retains:
 
 | Deferred layer | Existing reference and boundary |
 | --- | --- |
-| Later care-law integration, references and calculations | [R03–R13 layer](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law), including later manuscript receipts, economic/communication/notice models and source registers. The initial eight-file recovery packet is now staged under #427; later private candidates and their public receipts require separate version-aware reconciliation. |
+| Later care-law integration, references and calculations | [R04–R13 layer](https://github.com/grwtsk/huey/tree/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/care-law), including later manuscript receipts, economic/communication/notice models and source registers. The initial eight-file recovery packet and three public CL03 files are staged under #427/#429; private candidates and later public receipts require separate version-aware reconciliation. |
 
 The ethics architecture and painting image still remain outside this transfer.
 Whole presentation JSON/unit maps for the twelve prose records, automated

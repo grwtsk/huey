@@ -3,6 +3,22 @@
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
 
+## CL03 public integration receipt — #429
+
+The [CL03 consolidation](../consolidation/soc-cl03.md) adds exactly three public
+files: the [historical receipt](care-law/integration-r03.md), its
+[109-unit index](care-law/integration-r03.tsv) and the original private-packet
+checker. Eleven edit groups, 13 source aliases and 65 distinct recovered C IDs
+remain linked to their original Huey owners. These are historical relationships,
+not new manuscript edits, source retrieval or verified findings.
+
+The new public checker validates the fixed copy and TSV without importing or
+running the private-packet checker. CL03's original twelve mutation tests and
+source checks remain dated receipts. Exact private manuscript comparison and
+current application remain #186; chapter coordinates remain mutable under #404.
+Later CL04–CL13 work is separate. The care-law core manifest stays unchanged;
+the new receipt extends its navigation lineage.
+
 ## Recovered care-law core — #427
 
 The [care-law consolidation](../consolidation/soc-care-law.md) preserves the
@@ -88,9 +104,9 @@ twelve text exports, three context artifacts and normalized Atlas in staging.
 selected paths, adapted navigation and deferred layers. Source bytes and claim
 rows remain those of public PR #122 at
 `ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
-later care-law integration/reference work remains outside these consolidations.
-The ancillary, authority, incident and initial care-law additions are explicit
-and separately pinned under #421/#423/#425/#427.
+later CL04–CL13 integration/reference work remains outside these consolidations.
+The ancillary, authority, incident, initial care-law and public CL03 additions
+are explicit and separately pinned under #421/#423/#425/#427/#429.
 
 ## Claim and argument coverage
 
