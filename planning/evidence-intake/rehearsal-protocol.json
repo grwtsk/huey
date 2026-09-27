@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "protocol_id": "HUEY-SYNTHETIC-CERTIFICATE-REVERSE-RECEIPT-v1",
+  "public_repository": "grwtsk/huey",
+  "contract_ref": "refs/heads/main",
+  "scope": "built_in_synthetic_fixture_only",
+  "certificate_schema": "planning/evidence-intake/certificate.schema.json",
+  "index": {
+    "path": "evidence/index.tsv",
+    "encoding": "UTF-8",
+    "delimiter": "TAB",
+    "one_row_per_evidence_id": true,
+    "certificate_and_row_same_commit": true,
+    "row_must_match_certificate": ["classification", "public_title", "evidence_type", "raw_custody", "certificate", "public_raw_or_derivative", "transcription_public", "review_state", "related_issues", "status"]
+  },
+  "privacy": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "integrity_mode": "private_salted_commitment",
+    "required_integrity_fields": ["mode", "public_commitment", "commitment_scheme"],
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "full_transcript_and_description": "private_only",
+    "salts_and_private_fingerprints": "private_only",
+    "private_paths_filenames_identifiers_relationships": "private_only",
+    "private_repository_locator": "private_only",
+    "quarantine_certificate_allowed": false,
+    "unsafe_existence_certificate_allowed": false,
+    "separate_exact_object_disclosure_review_required": true,
+    "reviewed_derivative_bytes_must_match_manifest": true,
+    "scan_public_paths_blobs_commit_diff_and_message": true,
+    "fresh_private_repository_check_before_each_write": true,
+    "public_fallback": false
+  },
+  "reverse_receipt": {
+    "private_admission_commit_required_first": true,
+    "prepared_export_is_certification": false,
+    "prepared_export_is_receipt": false,
+    "public_repository": "grwtsk/huey",
+    "public_commit": "exact_full_40_lowercase_hex_commit_sha",
+    "read_artifacts_from": "that_commit_only",
+    "verify_before_private_receipt": ["certificate_schema", "active_certificate", "evidence_id", "classification", "public_commitment", "private_raw_custody", "exactly_one_matching_index_row", "derivative_membership_sha256_and_bytes", "public_transcript_binding", "public_privacy_scan"],
+    "required_fields": ["evidence_id", "huey_repository", "huey_certificate_path", "huey_commit", "public_commitment", "recorded_at"],
+    "receipt_storage": "private_only",
+    "append_private_custody_event_with_actual_huey_commit": true,
+    "advance_certified_and_indexed_only_after_verification": true,
+    "human_review_and_authentication_implied": false
+  },
+  "authority": {
+    "preflight_authorizes_remote_write_or_deploy": false,
+    "preflight_enables_real_evidence_admission": false,
+    "historical_or_isolated_test_is_actual_main_receipt": false
+  }
+}
