@@ -1,1 +1,2 @@
 evidence_id	classification	public_title	evidence_type	raw_custody	certificate	public_raw_or_derivative	transcription_public	review_state	related_issues	status
+HUEY-EV-d634c71b-8d75-4e22-b2d2-e3eccbdc1946	PRIVATE_RAW_PUBLIC_DERIVATIVE	Synthetic custody protocol test — fictional object	synthetic_fixture	private_repository	evidence/certificates/HUEY-EV-d634c71b-8d75-4e22-b2d2-e3eccbdc1946.json	evidence/derivatives/HUEY-EV-d634c71b-8d75-4e22-b2d2-e3eccbdc1946/public-v1.txt	false	machine_checked;human_pending		active
