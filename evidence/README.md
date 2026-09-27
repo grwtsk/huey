@@ -45,3 +45,8 @@ symlinks. See the protocol's executable boundary for description-hash limitation
 private commitments, corrections and semantic privacy review.
 
 An empty public evidence directory or missing public raw object never means that no evidence exists. It may mean the raw item is private, quarantined, not admitted, not yet processed, or outside the public-disclosure scope.
+
+After a reviewed certificate exists, the separate
+[linkage ledger](../planning/evidence-linkage/README.md) can pin one of its
+relationships to an existing claim/incident and exact literary occurrence.
+It does not change this certificate schema, perform intake or populate the reader.

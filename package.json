@@ -36,6 +36,9 @@
     "build:editorial": "npm run traversal:generate && npm run paragraphs:generate && npm run build --workspace @huey/reader -- --mode editorial",
     "paragraphs:check": "node scripts/paragraph_bindings.mjs check",
     "paragraphs:generate": "node scripts/paragraph_bindings.mjs generate",
-    "test:paragraphs": "npm run paragraphs:check && node --test tests/paragraph-bindings.test.mjs"
+    "test:paragraphs": "npm run paragraphs:check && node --test tests/paragraph-bindings.test.mjs",
+    "evidence:check": "node scripts/evidence_linkage.mjs check",
+    "evidence:index": "node scripts/evidence_linkage.mjs emit",
+    "test:evidence-linkage": "npm run evidence:check && node --test tests/evidence-linkage.test.mjs"
   }
 }

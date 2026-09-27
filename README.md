@@ -30,6 +30,12 @@ for reviewed public certificates from private capture. Raw restricted evidence
 stays in the vault. New evidence still needs source, claim and contrary-material
 review before any promotion; no background watch or live service is implied.
 
+The [transformation preparation](planning/transformation/README.md) records a
+provisional reading sequence with existing literary identities and a separate
+[evidence-linkage contract](planning/evidence-linkage/README.md). It prepares
+reviewed certificate-to-claim-to-paragraph links without changing the manuscript
+order or importing private records. Missing public links remain pending.
+
 ## Literary entity model
 
 Huey is now directed toward a **complete working book editor**, with a separate
