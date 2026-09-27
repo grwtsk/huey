@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-f51068c3-5325-4ee8-9c47-07e7f4f08bab/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "3a1d158bf62eebd4eb71e12e68481146b57b3b5f9745549e557875fea7034880",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 21
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C007",
+      "locator": "pp4–7; p10; analytical card ha_5fde953e-8db1-4921-abe3-3881b31253d6",
+      "relationship": "context",
+      "contribution": "Source states: The August 2019 notes record ocular dysmetria and hypermetric saccades. The attending description also says there was no sustained nystagmus and full version. Source states: The September 2019 note records brief vertical nystagmus on upward and downward gaze, none on horizontal gaze, slightly hypermetric saccades, limb dysmetria and unsteady wide-based gait. Joint comparison: Adds dated, attributed examination observations to the chronology.",
+      "does_not_establish": "An exact reconstruction of an earlier examination or proof of a specific genetic subtype."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:18.572997Z",
+  "public_exposure_basis": "UNKNOWN"
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "a2a2b24f3fb522af677a877e1e7204361fbd7fba14d7b12b4e2154ee5010d0cb",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 28
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C009",
+      "locator": "pp25–27; examination p26; analytical card ha_e6f6ac3a-84a2-4a98-852c-a7d0b9002969",
+      "relationship": "limits",
+      "contribution": "Source states: The attributed January 2019 examination says the examiner could not appreciate papilledema on funduscopic examination, records cranial nerves 2–12 as tested and intact, and records no dysmetria. The plan states no indication of an underlying neurological disorder. Joint comparison: Identifies specific available and missing documentation.",
+      "does_not_establish": "Performance or nonperformance of an unmentioned procedure; clinical adequacy or liability."
+    },
+    {
+      "target": "https://github.com/grwtsk/huey/issues/200",
+      "locator": "p26; analytical card ha_1b00960d-1e14-49ec-842a-398b12ff59db",
+      "relationship": "unresolved",
+      "contribution": "Source states: The attributed examination records normal gait and station, normal tandem walking, a negative Romberg result, and no dysmetria on the named coordination tests. Joint comparison: Presents the attributed conflict over gait documentation. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+      "does_not_establish": "Which account is accurate, misconduct, causation or liability. Identity of the encounter across the differing dates is not established by the link."
+    },
+    {
+      "target": "https://github.com/grwtsk/huey/issues/201",
+      "locator": "p26; analytical card ha_1b00960d-1e14-49ec-842a-398b12ff59db",
+      "relationship": "unresolved",
+      "contribution": "Source states: The attributed examination records normal gait and station, normal tandem walking, a negative Romberg result, and no dysmetria on the named coordination tests. Joint comparison: Presents the attributed conflict over tandem walking and wall support. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+      "does_not_establish": "An independently established reconstruction of the encounter. Identity of the encounter across the differing dates is not established by the link."
+    },
+    {
+      "target": "SOC-C009",
+      "locator": "pp13–14; conclusion and comment p13; analytical card ha_6b5c7c04-de82-458b-9714-01792cc539ea",
+      "relationship": "limits",
+      "contribution": "Source states: The electrodiagnostic report describes normal motor and sensory nerve-conduction studies and states that there is no evidence of a significant neurogenic process. Its comment expressly states that mild sensory radiculopathy or ulnar neuropathy can yield normal EMG/NCS. Joint comparison: Preserves the test report’s stated scope and caveat.",
+      "does_not_establish": "Exclusion of every neurological disease or a cause for every symptom."
+    },
+    {
+      "target": "SOC-C009",
+      "locator": "pp20–21; analytical card ha_3cd79c62-3bb8-42a7-9b1b-22620738c2d8",
+      "relationship": "limits",
+      "contribution": "Source states: The cervical MRI report describes its cervical-spine sequences and says the visualized brain is normal. It also reports mild cervical degenerative changes without significant canal or foraminal narrowing. Joint comparison: Prevents a scoped report statement from being expanded into an unprovided examination.",
+      "does_not_establish": "Normality of all brain structures or absence of every neurological disease."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:12.297178Z",
+  "public_exposure_basis": "UNKNOWN"
+}
