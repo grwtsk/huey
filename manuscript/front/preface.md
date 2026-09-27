@@ -2,712 +2,160 @@
 
 ## The Distance That Must Remain
 
-A person enters another person before entering a record.
+A person can leave a room. A sentence can remain.
 
-I think this is where the trouble begins.
+It can reach the next room first. Someone who has never met the person may read it, remember it, and begin an encounter with an account already in mind. Something useful has crossed a distance. Something has also been left behind: the occasion, the hesitation, the question that produced the answer, the possibility that the answer was not finished.
 
-Not because perception is wrong.
+I have come to care about what remains attached to a sentence when it travels.
 
-Because perception is necessary.
+A record is necessary partly because no one can be everywhere. It lets one person learn from another without beginning again. I need that help. I cannot reliably carry the whole history of my body into every encounter through speech. But a sentence can become more authoritative as its circumstances become less visible. It may eventually be asked to stand for someone who has never been given a workable way to answer it.
 
-I cannot know you without perceiving you. You cannot know me without receiving something of me: a face, a sentence, a hesitation, a body moving strangely through a room, a story told too quickly or too slowly, a hand, a silence, a name.
+That is where I want to begin: with the distance between a person and the account of that person.
 
-Something crosses.
+Not a distance so great that understanding becomes impossible. Enough room for the account to remain attributable and incomplete: someone observed this, someone reported that, someone interpreted what was said. Here is what the instrument measured. Here is what a later reader inherited. Here is where the sources disagree.
 
-Then something happens to what crossed.
+The person has not been exhausted by the description.
 
-You remember it.
+I write from inside a difficulty that can be hard to see from the other side of a conversation. Sometimes I understand what I need to qualify before I can make the qualification audible. Sometimes the work is earlier still: receiving the question, deciding which part of the history it concerns, keeping its terms in view while I assemble an answer. A clear voice would not perform all that work for me. More time to pronounce a sentence would not always be the same help as time to form it.
 
-You describe it.
+Writing gives me a place to return. The question can remain before me. I can notice that an answer is true about one occasion and incomplete about another. I can add what would otherwise arrive after the exchange has moved on. The words do not become infallible because I have typed them. They become more available for examination.
 
-You decide what it meant.
+A failing motor channel is not, by itself, evidence of a failing mind. I have needed that distinction. But I do not want to build a refuge whose entrance is another test of intelligence. A person whose cognition is impaired still matters. So does a person who cannot assemble an account this way, cannot correct a record unaided, or cannot demonstrate understanding on demand. The purpose of assistance cannot be to discover who has earned the right to receive it.
 
-Perhaps you write it down.
+Neither can my wife's assistance make her an extension of me. She has been beside me in circumstances that matter to this history. What she saw, what I felt, what I later told her, and what she would choose to say are related without becoming one voice. Her presence must not be reduced to support when she witnessed an event; her life must not be reduced to evidence when I need a witness.
 
-And once it is written down, another person can receive your perception without ever receiving me.
+The same boundary protects the physician. His expertise does not give him my interior life. My experience does not give me his. I can describe what I remember hearing without supplying the thought that preceded it. I can dispute an examination note without pretending that every finding in it is false. I can allege that contact was unwanted without claiming to know, merely from the force of that experience, everything the other person perceived.
 
-Then another.
+Those distinctions do not make the questions smaller. They make it possible to ask them of someone besides myself.
 
-A physician.
+* * *
 
-A nurse.
+I have made severe allegations about medical conduct. I have also asked for clinical explanations, communication that I can use, and preservation of what I reported. Those requests do different work. An investigation may establish or defeat an allegation. An examination may identify a need that should be addressed while that investigation remains unfinished. A correction may make the next encounter more accurate without settling the cause of everything that came before it.
 
-A clerk.
+I do not want care to wait for a verdict. Neither do I want the provision of care to stand in for an answer about what happened.
 
-An investigator.
+This inquiry reaches beyond one physician and one room. It concerns Stanford Health Care, UCSF and the University of California, Saint Agnes Medical Center, the Medical Board of California, and the public and professional bodies whose responsibilities may intersect with theirs. Their names do not combine into one actor. A department, a healthcare institution, a university, a licensing board, and a court do not know the same things or possess the same powers. Their connections have to be followed, not presumed.
 
-A judge.
+Yet I am the person who has to move among them.
 
-A machine.
+That difference of scale matters. A question can leave one office without reaching someone authorized to answer it. A referral can be entered without becoming a usable encounter. A complaint can receive a disposition while a related clinical question remains open. To understand what happened, I need more than the name of the procedure. I need to know what the procedure received, what it examined, and where its responsibility ended.
 
-A reader.
+Some limits will be legitimate. Some decisions may prove better grounded than I understood. A fair account must leave room for those findings. But a boundary drawn around a task does not tell me what became of the person whose need crossed it.
 
-A child not yet born when the first encounter occurred.
+A boundary may divide responsibility. It must not make responsibility disappear.
 
-Each may encounter a representation whose durability exceeds the moment from which it came.
+For a long time, preservation seemed to be the urgent task. Keep the words, the dates, the original entry, the objection to it. Keep enough of the path that another person could return and examine it. I still need that work. But a perfectly preserved record can describe a person dying. Preservation cannot become the whole answer to someone who needs care.
 
-This is useful.
+The stakes are in the life that continues while the account is being assembled: movement, speech, pain, the ability to obtain help, the practical conditions under which another day can be lived. I have reported difficulties involving swallowing and breathing as well. Their causes and clinical significance require assessment; their place in my account is not merely to lend urgency to an argument. There is a body for which the next step may matter before the history has been resolved.
 
-It is also dangerous.
+The question of care and the question of accountability must be allowed to proceed together without impersonating one another.
 
-A person can leave a room.
+* * *
 
-A sentence can remain.
+Following a record requires attention to small differences in origin.
 
-And so I have begun to wonder whether one of the fundamental questions of human life is not merely how we see one another, but what must happen after seeing so that perception does not become possession.
+Suppose one finding is copied into several later notes. The copies can show where the finding traveled. They do not, merely by multiplying, become several independent observations of the original event. A later clinician may also perform a new examination; that contribution deserves its own place. The task is to distinguish inheritance from observation, not to distrust everything that arrives afterward.
 
-What must remain intact?
+My own writing is subject to the same rule. Repeating an account in another letter may establish that I communicated it again. It does not produce another witness. Addressing a letter does not establish delivery; delivery does not tell me who understood which part of it. Where the next step is unknown, I need to leave the connection open rather than draw it with a sentence that moves too smoothly.
 
-The first answer is almost embarrassingly small.
+The name for this attention to origins is *provenance*. It begins with ordinary questions. Who said this? When? From what opportunity to know? What did the next person receive? What was added? What was lost?
 
-The distance.
+Its purpose is practical. If a qualification has disappeared, someone should be able to find where it belonged. If a conclusion rests on a copy, the reader should know that. If a new observation contradicts my account, it should remain new and remain available. A more favorable record would not necessarily be a more truthful one.
 
-The distance between the person and the representation of the person must remain intact.
+The mathematics in this book begins near that difficulty. A coordinate chart describes a region without becoming the space it describes. Several descriptions can be useful, but their relationships must be specified. I am interested in what survives a change of view, and in what a representation loses when it makes different situations look the same. Before that interest can become a proof, the objects, assumptions, and permitted conclusions have to be stated.
 
-Not large.
+No equation can supply the witness I do not have. No diagram of a possible route establishes that a document took it. The usefulness of the mathematics will lie in making such questions more exact, not in making an uncertain history look inevitable.
 
-Not hostile.
+The same care belongs to comparisons across human experience. Race does not become a metaphor for disability; disability does not make histories of racial violence interchangeable with mine. A shared mechanism, where one can be shown, is a reason to examine the relationship more closely. It is not permission to take another person's history as evidence of what happened to me.
 
-Not an abyss in which knowledge becomes impossible.
+I want to know how credibility, access, suspicion, and work are distributed. Who can use the ordinary procedure? Who has to explain why the ordinary procedure cannot receive them? Whose uncertainty prompts another question, and whose becomes a reason to stop asking? These questions need evidence at the scale of the claim. They do not need to be abandoned because the first explanation remains unsettled.
 
-Only enough distance for the representation to remain capable of saying:
+Nor is uncertainty always a reason to leave conditions unchanged. A current communication problem may be identifiable before its entire history is known. Someone may be able to preserve a disputed qualification, ask a question differently, or make the next handoff usable without first deciding every allegation attached to it.
 
-I am about him.
+That is one of the possibilities I want the book to keep open: correction that begins before certainty is complete.
 
-I came from her.
+* * *
 
-I was observed here.
+The work of correction has a history too.
 
-I was written then.
+In my correspondence I have proposed that some of the complexity now visible in my writing was generated earlier, where comparatively small questions about communication, preparation, consent, and responsibility were left unresolved. That is a claim to examine, not a cause to assign to every difficult page. Some work belongs to necessary investigation. Some arises from my own choices. Some may have been avoidable closer to its source.
 
-I was interpreted by this person.
+The distinction matters because the accumulated work can become visible only when it reaches the patient. Someone receives a long letter. The length is immediately apparent. The missing answer that helped produce it may be several encounters away. Before length becomes a description of the writer, I want to ask what the writer has had to keep carrying.
 
-I was copied from that source.
+An institution can distribute tasks among offices. A person must still live the interval between them. My wife can help, but her help does not create an inexhaustible reserve of time, attention, or willingness. Nor does an employee cease to be finite because an institution pays for the hours. The object is not to move avoidable work from one exhausted person to another. It is to identify what need not have been generated.
 
-I may be accurate.
+I have called part of this inquiry the *brachistochrone of care*. The classical mathematical problem concerns the quickest descent of a particle under gravity along a frictionless path, rather than the path of shortest length. I borrow the distinction between distance and time, not a solution for human life. A person is not a falling particle, and an institution does not operate under one known force.
 
-I may be incomplete.
+The question the image brings back is simple enough: does the route that is shortest on the institution's diagram actually bring this person to adequate help sooner? Preparation may take time and still reduce a longer reconstruction afterward. Whether it does so, and at what cost, must be tested. A mathematical name cannot make the saving real.
 
-I may be wrong.
+Care must dilate with demand. I mean that as an obligation to examine what a process asks of a person and what assistance makes the demand bearable, not as a physical law or a promise of unlimited resources. Greater need may require changed arrangements, shared work, or a different responsible service. The response cannot be measured only by how little the institution had to change.
 
-I am not the person.
+In my September response to UCSF, I asked whether the institution “has complied, and will comply, with those same principles.” I had been asked to comply with standards governing continued care. The question was whether the standards also governed the conduct through which care would be made available.
 
-That small distance may be one of the load-bearing structures of civilization.
+Reciprocity does not put us in identical positions. A patient is responsible for conduct toward other people. A physician undertakes professional work. An institution controls processes the patient cannot repair alone. Each needs scrutiny suited to the power and responsibility actually held. My vulnerability does not make every sentence I write fair. Their authority does not make every characterization they record a fact.
 
-Remove it and the chart becomes the patient.
+Among the institutional statements I bring to this inquiry is Saint Agnes Medical Center's definition of integrity: “We are faithful to who we say we are.” The sentence offers a test, not a result. What would fidelity require here, from this person, in this role, with this knowledge? What would show that the institution had met it? What would require a correction in my account?
 
-The diagnosis becomes the body.
+I am not asking these institutions to become less capable of their work. I am asking what greater fidelity to that work would look like when doing it becomes difficult. More careful medicine, not less medicine. More exact inquiry, not an easier verdict. More usable protection, not another declaration that protection exists.
 
-The accusation becomes the accused.
+The demand reaches me as well. If I ask others to distinguish my words from their interpretation, I must distinguish their words from mine. If I ask them to preserve evidence that challenges a judgment, I must permit that evidence to change my own.
 
-The credential becomes the truth.
+* * *
 
-The institution becomes the event.
+I keep returning to accompaniment because it names something preservation alone cannot do.
 
-The model becomes the world.
+To accompany someone is not necessarily to agree, to remain physically near forever, or to acquire authority through having helped. It is to take seriously the responsibility one has actually undertaken, including the work of explaining its limits and, where the role requires it, helping the next part of care become possible. A departure can be responsible. Staying can become coercive. Neither distance nor proximity tells the whole story.
 
-The photograph becomes the person who once stood before the lens.
+A door is not safe merely because it is open. What happens after the person crosses its threshold? Can a question still be asked? Can an answer be qualified? Can the person pause, refuse, or change a decision without the change being mistaken for the disappearance of every other need?
 
-The archive becomes the dead.
+An earlier yes must not become captivity. Welcome must not become ownership. Inability to interrupt quickly must not do the work of permission.
 
-The generated voice becomes the woman who can no longer speak.
+These questions also enter my faith. In the Annunciation, I return to Mary receiving a message whose consequences are immense, and to the fact that the person receiving it has not disappeared. That is what I am trying to attend to: reception without reduction to a surface on which another's purpose acts. This is my reading of the encounter, not a way of deciding another person's choices by analogy.
 
-The representation stops pointing.
+The question becomes especially difficult where the language of protection is used in arguments about mothers and children. Moral certainty can be spoken at a distance from the person who must bear its consequences. I want to know what those making the demand are prepared to carry. A mother must not disappear into a vessel, a child into an argument, or a physician into an instrument of everyone else's certainty. Their different positions require more attention, not a phrase that makes them interchangeable.
 
-It begins replacing.
+I cannot ask a finite person to bear an infinite moral demand while calling the refusal to help a principle. Nor can I promise that attending faithfully will remove every conflict. There may be no answer that restores innocence, no complete repair, no reconciliation available. Responsibility still has to take a form in what one person does next for, or refrains from doing to, another.
 
-I have lived inside that difference.
+Above the place where I write is an icon of Christ Pantocrator. The image looks outward while I look at the screen. Recognizing the wood and pigment does not empty the image of meaning for me. Its meaning reaches beyond those materials without allowing me to mistake them for the person represented.
 
-A failing motor channel is not a failing mind.
+I do not make a medical record into an icon by noticing the resemblance. I find in my own practice of looking a reminder that representation can matter without becoming possession. An image can direct attention beyond itself. A record should be able to do that too.
 
-A sentence that reaches the room badly may still have been formed clearly before it entered speech.
+So should this book.
 
-A hallway walk may be real without being the whole of walking.
+* * *
 
-A medical note may contain genuine observation and still contain something I dispute.
+I select the scenes. I decide what stands beside what. Two events placed close together can seem connected before I have shown a connection. A severe sentence at the end of a paragraph can give a person no room to be anything beyond it. The ability to arrange an account is a kind of power, and suffering has not relieved me of responsibility for how I use it.
 
-My wife's memory is not mine simply because we stood in the same room.
+An innocent explanation for part of this history must remain possible where the evidence permits it. If one is established, the corresponding claim must change. That would not require me to conclude that every experience was false. Neither should my experience require another human being to become nothing but the act I allege.
 
-My testimony is not hers because she loves me.
+I do not want to replace an institutional monopoly on description with one of my own.
 
-A physician's expertise does not grant him my interior life.
+There is a form of dominion in deciding that another person's representation is all the person will be allowed to become. The image of empire enters here: people made governable through descriptions they cannot answer. It is an image of that ambition, not an equivalence among the different histories the book encounters. The particular exercise of power still has to be examined.
 
-My interior life does not grant me his.
+The answering image is a city. It needs records, professions, laws, categories, boundaries, and people able to act. But those arrangements should remain answerable to the lives they organize. The stranger need not become native before being received. The wounded need not become eloquent before being heard. The family need not become an unpaid department before a handoff can occur. The physician need not be imagined omnipotent before a failure can be examined.
 
-An institution may preserve all of these things and still fail if it removes the edges between them.
+Such a city would need correction. It would also need to remember enough of its changes that the next person could understand them. An earlier entry, a dispute, and a later correction have different dates. Keeping their relationship visible is more truthful than making the present version appear to have been the only one.
 
-The edges matter.
+Even remembrance needs boundaries. A recording preserves an utterance; it does not restore the whole person who spoke it. A generated continuation must not quietly acquire the authority of that person's actual words. The dead must remain distinguishable from the things we can make their traces say. The living must remain free to answer differently from the version we have kept.
 
-This I saw.
-
-This she saw.
-
-This he wrote.
-
-This the instrument measured.
-
-This was copied.
-
-This was inferred.
-
-This was remembered.
-
-This was alleged.
-
-This remains unknown.
-
-This belongs to medicine.
-
-This belongs to investigation.
-
-This belongs to law.
-
-This belongs to conscience.
-
-This belongs to God.
-
-I once thought these distinctions were defensive.
-
-A way of surviving the record.
-
-I no longer think that is sufficient.
-
-They are also a form of care.
-
-To preserve the boundary around another person's words is to resist the temptation to become their author.
-
-To preserve uncertainty is to refuse the counterfeit kindness of certainty.
-
-To preserve disagreement is to allow two persons to remain in the room when a system would prefer only one clean answer.
-
-That may be why the mathematics began to matter to me.
-
-A geometric object can be represented in more than one chart.
-
-The charts can overlap.
-
-They can translate.
-
-One may reveal something another obscures.
-
-But the chart is not thereby the space.
-
-Change coordinates and the underlying thing need not disappear.
-
-This seems obvious in mathematics.
-
-It becomes strangely difficult when the object is a human being.
-
-We let one frame arrive first.
-
-Then we forget it was a frame.
-
-The problem becomes worse when the frame can reproduce itself.
-
-A sentence enters a record.
-
-Another note inherits it.
-
-Another clinician reads it.
-
-Another system classifies it.
-
-Another summary compresses it.
-
-A machine finds the repeated proposition.
-
-Repetition begins to resemble corroboration.
-
-The representation acquires descendants.
-
-The person may have none of the same reach.
-
-This is why provenance matters.
-
-Not provenance as a technical decoration attached after the important work is finished.
-
-Provenance as moral structure.
-
-Who said this?
-
-Who saw it?
-
-Who did not?
-
-What changed between the event and the entry?
-
-What survived?
-
-What was omitted?
-
-What was inherited?
-
-What was independently observed?
-
-What can still be corrected?
-
-What cannot yet be known?
-
-And perhaps most importantly:
-
-Can the person still answer?
-
-A system that preserves a representation but destroys the represented person's capacity to answer has not preserved the human relation.
-
-It has preserved only one side of it.
-
-This is true of records.
-
-It is true of medicine.
-
-It is true of law.
-
-It is true of machines.
-
-It is true of memory.
-
-It is true of love.
-
-Love may know someone very well.
-
-Love still does not get to become the person it loves.
-
-That is part of love's discipline.
-
-I have been thinking lately about accompaniment.
-
-The word has entered this book from another door.
-
-Accompaniment does not mean agreement.
-
-It does not mean ownership.
-
-It does not mean that one person acquires authority over another by remaining near them.
-
-It means something more difficult.
-
-I will not make your vulnerability the occasion of my disappearance.
-
-I will stay near enough that when the burden changes, someone remains capable of noticing that it changed.
-
-This applies to the patient.
-
-It applies to the mother.
-
-It applies to the child as that child's status is being argued, believed, feared, hoped for, or examined.
-
-It applies to the physician.
-
-It applies to the family.
-
-It applies to the institution that would prefer to divide responsibility into boxes and then discover that no box contains the person who needed help.
-
-A boundary may divide responsibility.
-
-It must not make responsibility disappear.
-
-This is one of the newer sentences in Huey.
-
-It has changed the direction of the book.
-
-For a long time I was concerned with preservation.
-
-Preserve the words.
-
-Preserve the dates.
-
-Preserve the provenance.
-
-Preserve what was reported before another interpretation swallowed it.
-
-I still believe all of that.
-
-But preservation is not the final purpose.
-
-A perfectly preserved record can describe a person dying.
-
-The purpose is care.
-
-And care introduces another requirement.
-
-The system must be able to carry its own complexity.
-
-If one department cannot act, where does the responsibility go?
-
-If one physician cannot provide what is needed, who can receive the handoff?
-
-If the handoff fails, who knows?
-
-If the patient cannot use the expected channel, where does the burden of translation properly belong?
-
-If an institution requires enormous labor from the person merely to correct the institution's misunderstanding, whose difficulty is being measured?
-
-These questions appear administrative until someone is bleeding.
-
-Then the abstraction falls.
-
-This is the brachistochrone of care.
-
-The fastest path to the truth is often not the shortest line between two policies.
-
-It descends first toward the person.
-
-The body.
-
-The room.
-
-The mother.
-
-The frightened doctor.
-
-The child.
-
-The man who cannot make his mouth keep pace with his mind.
-
-The woman whose answer changed after the question changed.
-
-The person who said yes yesterday and must remain a person capable of saying something different tomorrow.
-
-An earlier yes cannot become captivity.
-
-Welcome cannot become ownership.
-
-Dependence cannot become surrender.
-
-Presence cannot become permission.
-
-Silence cannot be manufactured into assent merely because the system moved faster than the human being could interrupt it.
-
-Those distinctions are not obstacles to care.
-
-They are part of what care is.
-
-Mary has entered Huey here.
-
-Not only as an image.
-
-Not only as theology.
-
-As a test of reception.
-
-The Annunciation is an extraordinary scene of a message arriving without the receiver becoming merely a surface upon which the message acts.
-
-There is reception.
-
-There is mystery.
-
-There is consequence.
-
-There is also a person.
-
-That is the contrast that interests me.
-
-Reception or management.
-
-Accompaniment or abandonment.
-
-Refuge or coercion.
-
-A door through which someone can enter, or a mechanism that closes around the person once she has crossed its threshold.
-
-I do not think a safe door is defined merely by being open.
-
-An open door can lead into a trap.
-
-The deeper question is whether the person remains a person on both sides of it.
-
-Whether she can still speak.
-
-Whether she can still be heard.
-
-Whether changing circumstances can still matter.
-
-Whether the burden created by everyone else's moral certainty is carried only by the person with the least power to refuse it.
-
-Whether those who demand sacrifice have entered the work of carrying it.
-
-This is not peculiar to one human controversy.
-
-It is a general law of systems.
-
-The more a system asks from a person, the more seriously the system must examine what it is prepared to carry.
-
-Care must dilate with demand.
-
-Otherwise our highest language can become a machine for moving burdens downward.
-
-The same is true of medicine.
-
-A physician is not sovereign.
-
-But neither is the physician merely a valve through which institutional procedure passes.
-
-The physician is also a person.
-
-A person entrusted with judgment.
-
-A person operating inside constraints.
-
-A person who may know what to do.
-
-A person who may not.
-
-A person who may need help.
-
-A person whose failure may be personal, structural, or both.
-
-If a doctor cannot act alone, the answer cannot always be to pretend that no action belongs to anyone.
-
-The next path must exist.
-
-Accompaniment requires continuity of responsibility without requiring omnipotence from any one participant.
-
-This may be one reason I have become suspicious of every system that makes itself easier to administer by making the human being harder to see.
-
-The patient becomes the diagnosis.
-
-The mother becomes a vessel.
-
-The child becomes an argument.
-
-The physician becomes a function.
-
-The family becomes a resource.
-
-The institution becomes an abstraction.
-
-The public becomes a denominator.
-
-Soon no one is left.
-
-Only representations of interests moving against one another.
-
-Perhaps this is empire in its smallest form.
-
-Not armies.
-
-Not flags.
-
-The conversion of persons into manageable representations.
-
-There is another form.
-
-The form I am trying to understand.
-
-A city.
-
-I do not mean a city without records, categories, laws, medicine, machines, boundaries, or authority.
-
-Such a city would not survive the morning.
-
-I mean a city in which these things remember what they are for.
-
-The record serves the person.
-
-The law knows its jurisdiction.
-
-The physician retains judgment.
-
-The patient retains authorship.
-
-The institution carries its share of complexity.
-
-The machine preserves provenance.
-
-The archive marks where knowledge ends.
-
-The stranger does not have to become native before being received.
-
-The wounded do not have to become eloquent before being heard.
-
-The dead are permitted to remain absent without our counterfeiting them back into speech.
-
-The living are permitted to change.
-
-And the person who enters one frame may later enter another without the first frame claiming eternal jurisdiction over everything that follows.
-
-This requires correction.
-
-Not erasure.
-
-Correction is one of the ways a system proves that it knows the difference between itself and reality.
-
-A system incapable of correction has begun to worship its own representation.
-
-So the earlier state remains.
-
-Then the disagreement.
-
-Then the correction.
-
-Then the reason.
-
-History is not destroyed to make the present cleaner.
-
-The lineage stays visible.
-
-This is true in a medical record.
-
-It is true in a manuscript.
-
-It is true in a human life.
-
-I do not wish to become the person I was before everything happened.
-
-That person no longer exists.
-
-I do not wish to become merely the representation produced by everything that happened either.
-
-That would be another kind of death.
-
-I want the possibility of becoming.
-
-This may be the final thing that must remain intact.
-
-Not identity as a frozen object.
-
-Not memory as perfect replay.
-
-Possibility.
+What I want preserved, finally, is not only an account of who someone has been. It is room for the person whose life continues beyond the account.
 
 The future tense of the person.
 
-A representation describes.
+That future need not contain recovery to deserve protection. It need not contain work, eloquence, a new discovery, or a lesson useful to anyone else. I can miss what my body once did without making those abilities the measure of the life that remains. I can want the past examined without asking every remaining hour to become evidence.
 
-A person may answer.
+I want a book in which anger can be heard without being made sovereign, in which love can remain possible without being compulsory. Finding meaning after injury does not make the injury necessary. Forgiveness, where it comes, does not alter what happened. Love need not reopen a door that should remain closed. Distance, refusal, and lawful accountability can remain available without requiring a person to surrender the humanity of someone whose conduct is being examined.
 
-A representation persists.
+I do not know what each reader will find possible. I cannot make that discovery a condition of belonging here.
 
-A person may repent.
+Nor can the final pages settle the responsibilities left open by the earlier ones. An ending belongs to a book. Other people, records, and unanswered questions continue beyond it.
 
-A representation repeats.
+For now, the task is nearer. When an account passes from one person to another, keep its source and its limits visible. Leave room for a correction that changes it. Leave room for someone who cannot answer in the manner expected, and for someone whose answer is not the one we hoped to hear.
 
-A person may surprise you.
-
-A representation can be copied without change.
-
-A person can suffer, forgive, refuse, reconsider, misunderstand, learn, deteriorate, recover, love someone unexpected, become responsible for something unforeseen, and ask a question no model of the earlier person contained.
-
-That excess is not noise.
-
-It is part of personhood.
-
-No system should be trusted with a human being if it cannot preserve room for that excess.
-
-Perhaps that is why I am writing beneath the Pantocrator.
-
-The icon looks outward while I look at a screen.
-
-Above me is an image.
-
-I know it is an image.
-
-That does not make the image meaningless.
-
-Its power depends partly upon precisely this distinction.
-
-The wood is not Christ.
-
-The pigment is not Christ.
-
-The representation does not become worthless because it is not the person represented.
-
-It becomes a threshold.
-
-It points.
-
-It participates without pretending to exhaust.
-
-Perhaps our records should learn that humility.
-
-Perhaps our machines should.
-
-Perhaps medicine should.
-
-Perhaps writers should.
-
-Perhaps I should.
-
-Because this book is also a representation.
-
-Of doctors.
-
-Of my wife.
-
-Of my children.
-
-Of the dead.
-
-Of myself.
-
-If I demand that every other system preserve the distance between a person and an account of that person, then Huey must preserve it too.
-
-I may testify.
-
-I may remember.
-
-I may measure.
-
-I may accuse.
-
-I may forgive.
-
-I may reason.
-
-I may be wrong.
-
-I may correct myself.
-
-But I may not transform another human being into the role they occupy in my argument.
-
-Neither may the reader transform me into mine.
-
-So when one human being passes through another human being's perception and from there into systems capable of preserving what was perceived, what must remain intact?
-
-The person.
-
-But that answer is too easy.
-
-More precisely:
-
-the person's authorship of self;
-
-the body's reality;
-
-the provenance of what has been said about them;
-
-the distinction between observation and interpretation;
-
-the right to answer;
-
-the right to disagree;
-
-the right to change;
-
-the continuity of consent;
-
-the possibility of refusal;
-
-the relationships that cannot be reduced to fields;
-
-the burdens that belong to others and must not quietly be pushed downward;
-
-the responsibility that must survive administrative division;
-
-the unknown that no amount of confidence is permitted to counterfeit;
-
-and the future in which the represented person may yet become something the representation could not predict.
-
-All of these depend upon one small mercy.
-
-The representation must know that it is a representation.
+The representation must remain recognizable as a representation. That responsibility belongs to those of us who make it, preserve it, and use it.
 
 The distance must remain.
 
-Not so far that we cannot reach one another.
+Not so far that we cannot reach one another. Just far enough that when I look at you, remember you, write you down, and carry what I have written into another room, there is still a door through which you yourself may enter.
 
-Just far enough that when I look at you, and remember you, and write you down, and carry what I have written into another room, there is still somewhere in the world a door through which you yourself may enter.
-
-And when you do,
-
-I must be willing to look up.
+And when you do, I must be willing to look up.
