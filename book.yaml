@@ -56,10 +56,13 @@
       "movement": "preamble",
       "title": "The Room",
       "path": "manuscript/01-preamble/03-the-room.md",
-      "status": "planned",
-      "include": false,
+      "status": "staged_public",
+      "include": true,
       "order_status": "working_projection_not_final",
-      "title_status": "working_title_not_final"
+      "title_status": "working_title_not_final",
+      "review_id": "P02.r1",
+      "work_issue": 39,
+      "date_followup_issue": 442
     },
     {
       "id": "C04",
