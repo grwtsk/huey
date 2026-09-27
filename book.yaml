@@ -20,10 +20,13 @@
       "movement": "preamble",
       "title": "The Feather",
       "path": "manuscript/01-preamble/01-the-feather.md",
-      "status": "planned",
-      "include": false,
+      "status": "staged_public",
+      "include": true,
       "order_status": "working_projection_not_final",
-      "title_status": "working_title_not_final"
+      "title_status": "working_title_not_final",
+      "review_id": "P01.r1",
+      "work_issue": 37,
+      "style_followup_issue": 440
     },
     {
       "id": "C02",

@@ -10,11 +10,13 @@ A score is an author review observation, not a completion percentage or factual 
 
 ## Current record
 
-- FM-01.r1: author approved for pre-release incorporation, 87/100; [receipt](FM-01.r1/receipt.json); [source/change map](FM-01.r1/source-map.md).
+- FM-01.r1: incorporated through #439 at `b223607addfbc96d8e0250bbb65f0c2b9809c790`, author score 87/100; [receipt](FM-01.r1/receipt.json); [source/change map](FM-01.r1/source-map.md).
+- P01.r1 / historical C01: author approved for pre-release incorporation, 87/100; [receipt](P01.r1/receipt.json); [source/change map](P01.r1/source-map.md). Exact canonical text matches the reviewed artifact. Resumes historical PR #83 rather than duplicating it; actual merge confirmation belongs in that PR's discussion.
 - [#438](https://github.com/grwtsk/huey/issues/438): add concrete outset orientation; open, separate wording review required.
-- Next review: P01.r1, the opening yard / The Feather, retaining historical identity C01 and its source/anchor provenance. The public C01 file is a structural placeholder; retrieve the actual supplied reading-copy text before revision. The next candidate stays in chat until reviewed.
+- [#440](https://github.com/grwtsk/huey/issues/440): make remembrance gentler and more poetic; open, separate wording review required. Apply its preference to newly presented candidates without silently changing P01.r1.
+- Next review: P02.r1 / historical C03, the reported Stanford encounter, working title The Room. Retrieve the actual supplied prose and relevant dated sources. The next candidate stays in chat until reviewed.
 
-The current chat sequence places the reported Stanford encounter after the yard, with a clear change of time and setting. No unreviewed downstream chapter is reordered, overwritten, or made public by this front-matter commit. Keep C02 and other existing functions for source-grounded relocation and later review rather than silently deleting them.
+The current chat sequence places the reported Stanford encounter after the yard, with a clear change of time and setting. No unreviewed downstream chapter is reordered, overwritten, or made public by this incorporation. Keep C02 and other existing functions for source-grounded relocation and later review rather than silently deleting them. C01 is admitted in book.yaml; unreviewed placeholders remain excluded and the emitted subset is not a completed book.
 
 ## Continuity
 
