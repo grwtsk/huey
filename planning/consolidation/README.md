@@ -4,10 +4,12 @@
 [authority/Q03](soc-authority.md), #423/#424, and
 [incident/departure apparatus](soc-incident.md), #425/#426, and
 [initial care-law core](soc-care-law.md), #427/#428, and
-[CL03 public apparatus](soc-cl03.md), #429/#430, are staged. The current scoped
-addition is the [CL04 public receipt/index/checker](soc-cl04.md), #431: three
-unchanged files with 117 historical unit mappings. The private packet is not
-accessed and its checker is not run. Later CL05–CL13 passes remain separate. The register below
+[CL03 public apparatus](soc-cl03.md), #429/#430, and
+[CL04 public apparatus](soc-cl04.md), #431/#432, are staged. The current scoped
+addition is the [CL05 public receipt/indexes/checker](soc-cl05.md), #433: four
+unchanged files with 78 changed and 189 retained historical unit mappings. The
+private packet is not accessed and its checker is not run. Later CL06–CL13 passes
+remain separate. The register below
 remains the dated #384 audit;
 these later increments do not claim that the entire development branch has
 merged or its claims are verified.

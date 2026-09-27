@@ -121,3 +121,11 @@ mutations remain unrun. No private predecessor archive, candidate or claim text
 is read. The five prior slice manifests remain fixed historical receipts, and
 the latest wrapper binds current navigation. Checks do not renew historical
 source inspections, verify claims or reconcile the current manuscript.
+
+The CL05 public increment adds four exact files, bringing cumulative coverage to
+87 selected files. `scripts/soc_cl05.py` checks both indexes (78 changed and 189
+retained rows), their different passage/reference fields and the four explicitly
+open source-lineage rows under #50. It never imports or runs the archived checker
+or its twenty-two private mutation cases. All six prior manifests remain fixed;
+the latest gate validates current navigation. Review-state labels stay historical
+metadata rather than source authentication, human clearance or manuscript acceptance.

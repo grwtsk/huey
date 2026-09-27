@@ -70,6 +70,17 @@ paragraph binding. Private text/spans and substantive source questions remain
 outside this index. The [CL04 public gate](soc-cl04.md) validates copy/index
 consistency without running the archived private checker or its eighteen cases.
 
+Update under #433: CL05 preserves separate [changed-unit](../standard-of-care/care-law/integration-r05.tsv)
+and [retained-unit](../standard-of-care/care-law/integration-r05-retained.tsv)
+indexes: 78 and 189 rows. The changed index has 86 references to 51 distinct C IDs
+and fourteen explicit unmapped rows. Both indexes contain 482 references to eleven
+aliases; retained rows do not supply additional C mappings. R089–R092/P023 retain
+source B only, owner #50 and the explicit original-source lineage gap. The other
+185 retained review labels are historical metadata, not human clearance. Source
+meditation, theological reading, ethics, law and literary analogy remain distinct.
+The [CL05 public gate](soc-cl05.md) preserves those relationships without private
+text/spans, source authentication or execution of the archived checker/22 mutations.
+
 This is an index of **existing references and their limits**, not a new claim
 verification ledger or a finding about participants. Work #384; substantive
 mapping remains [#314](https://github.com/grwtsk/huey/issues/314), intake
