@@ -180,6 +180,7 @@ jobs:
           python3 -m unittest discover -s planning/standard-of-care/incident-register -p 'test_verify.py' -v
           python3 scripts/soc_care_law.py
           python3 scripts/soc_cl03.py
+          python3 scripts/soc_cl04.py
       - name: Framing declarations and lexical research consistency
         run: |
           python3 scripts/framing.py cases planning/framing-cases.json

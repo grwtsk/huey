@@ -31,6 +31,9 @@ _care_law_spec.loader.exec_module(care_law)
 _cl03_spec = importlib.util.spec_from_file_location('huey_soc_cl03', Path(__file__).with_name('soc_cl03.py'))
 cl03 = importlib.util.module_from_spec(_cl03_spec)
 _cl03_spec.loader.exec_module(cl03)
+_cl04_spec = importlib.util.spec_from_file_location('huey_soc_cl04', Path(__file__).with_name('soc_cl04.py'))
+cl04 = importlib.util.module_from_spec(_cl04_spec)
+_cl04_spec.loader.exec_module(cl04)
 MANIFEST = 'planning/consolidation/soc-core.json'
 # Frozen reviewed import selection; extending it requires another scoped review.
 SOURCE_COMMIT = 'ff0499bd341de12a31b355b79867b547f19d9b16'
@@ -227,7 +230,7 @@ def verify(root=ROOT, source_objects=False):
         paths = {path.decode() for path in listed.split(b'\0') if path}
         expected = {path for path in EXPECTED if any(path.startswith(scope + '/') for scope in SCOPES)}
         # A fixed separately validated slice, never an arbitrary path exemption.
-        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED) | set(incident.EXPECTED) | set(care_law.EXPECTED) | set(cl03.EXPECTED)
+        expected |= set(ancillary.EXPECTED) | set(authority.EXPECTED) | set(incident.EXPECTED) | set(care_law.EXPECTED) | set(cl03.EXPECTED) | set(cl04.EXPECTED)
         require(paths == expected, 'source-tree-coverage')
         data = {}
         for row in value['files']:
@@ -261,6 +264,10 @@ def verify(root=ROOT, source_objects=False):
             cl03_result = cl03.verify(root, source_objects=source_objects)
         except cl03.Invalid as error:
             raise Invalid('cl-three-' + str(error)) from None
+        try:
+            cl04_result = cl04.verify(root, source_objects=source_objects)
+        except cl04.Invalid as error:
+            raise Invalid('cl-four-' + str(error)) from None
         # Execute only the reviewed, byte-pinned existing local checker.
         environment = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
         command = [sys.executable, str(root / 'planning/standard-of-care/check_support.py'),
@@ -277,18 +284,20 @@ def verify(root=ROOT, source_objects=False):
         raise
     except (OSError, UnicodeError, ValueError, TypeError, KeyError, IndexError):
         raise Invalid('unreadable-or-malformed-input') from None
-    return {'files': 80, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
-            'incident_files': 9, 'care_law_files': 8, 'cl03_files': 3, 'exact_copies': 78, 'adapted_navigation_files': 2,
-            'original_git_objects_checked': 80 if source_objects else 0,
+    return {'files': 83, 'core_files': 36, 'ancillary_files': 15, 'authority_files': 9,
+            'incident_files': 9, 'care_law_files': 8, 'cl03_files': 3, 'cl04_files': 3, 'exact_copies': 81, 'adapted_navigation_files': 2,
+            'original_git_objects_checked': 83 if source_objects else 0,
             'prior_navigation_objects_checked': (ancillary_result['prior_navigation_objects_checked'] +
                                                  authority_result['prior_navigation_objects_checked'] +
                                                  incident_result['prior_navigation_objects_checked'] +
                                                  care_law_result['prior_navigation_objects_checked'] +
-                                                 cl03_result['prior_navigation_objects_checked']),
+                                                 cl03_result['prior_navigation_objects_checked'] +
+                                                 cl04_result['prior_navigation_objects_checked']),
             'predecessor_manifest_objects_checked': (authority_result['predecessor_manifest_objects_checked'] +
                                                       incident_result['predecessor_manifest_objects_checked'] +
                                                       care_law_result['predecessor_manifest_objects_checked'] +
-                                                      cl03_result['predecessor_manifest_objects_checked']),
+                                                      cl03_result['predecessor_manifest_objects_checked'] +
+                                                      cl04_result['predecessor_manifest_objects_checked']),
             'authored_text_exports': 12, 'atlas_principles': 23,
             'initial_claim_targets': 188, 'substantial_support_targets': 111,
             'ancillary_claim_targets': ancillary_result['scoped_claims'],
@@ -310,6 +319,11 @@ def verify(root=ROOT, source_objects=False):
             'cl03_distinct_carelaw_references': cl03_result['distinct_carelaw_references'],
             'cl03_private_packet_checked': cl03_result['private_packet_checked'],
             'cl03_inherited_packet_verifier_executed': cl03_result['inherited_packet_verifier_executed'],
+            'cl04_indexed_units': cl04_result['indexed_units'],
+            'cl04_indexed_edit_groups': cl04_result['indexed_edit_groups'],
+            'cl04_distinct_carelaw_references': cl04_result['distinct_carelaw_references'],
+            'cl04_private_packet_checked': cl04_result['private_packet_checked'],
+            'cl04_inherited_packet_verifier_executed': cl04_result['inherited_packet_verifier_executed'],
             'limits': LIMITS}
 
 
