@@ -1,0 +1,49 @@
+{
+  "review_id": "P03.r1",
+  "working_title": "The Distance",
+  "status": "rejected_for_complete_replacement",
+  "author": "R.A. Jacob Martone",
+  "instruction_source": "Direct author response in the ongoing Huey sequential-review chat",
+  "instruction_text": "Add and issue to completly replace this. The distance talks about something else. Advance",
+  "author_score": null,
+  "replacement_issue": 443,
+  "canonical_admission": false,
+  "decision_scope": "Record the rejection, retain the unresolved position and continue to the next portion. Do not stage the rejected candidate as accepted prose.",
+  "rejected_interpretation": "The assistant treated distance as years, family life and recovery separating earlier injury from a later encounter. The author states that the intended subject is different.",
+  "intended_subject_status": "not established by the inspected sources; retrieve the author's actual account, without a substitute interpretation",
+  "preservation": "The candidate and its original pre-review record remain unchanged on their existing conversation surface. No rejected sensitive prose or private-source locators are copied into public Git.",
+  "affected_continuity": [
+    "The P02 distance passages and related source/sequence notes require review for the same interpretive dependency. Prior accepted prose and original sources remain unchanged pending an exact reviewed correction.",
+    "The adapted-life material has its own historical C02 and source basis. Do not use that material as evidence for the rejected distance interpretation."
+  ],
+  "related_issues": [
+    39,
+    38,
+    18,
+    19,
+    21,
+    440,
+    442
+  ],
+  "next_review": {
+    "review_id": "P04.r1",
+    "historical_chapter_id": "C02",
+    "working_title": "A Life Already Under Way",
+    "source_basis": "Existing C02 in the supplied reading copy and the separately attributable patient-authored life-affected account",
+    "status": "to be presented in chat; not admitted by this decision"
+  },
+  "unchanged_scope": [
+    "book.yaml",
+    "manuscript prose",
+    "editorial inventory and source pins",
+    "raw evidence and existing certificates",
+    "historical review records"
+  ],
+  "base_commit": "c522a198ad85af821470ab2efd6f7c99ea9417de",
+  "limitations": [
+    "No replacement subject invented",
+    "No source authentication or final factual clearance",
+    "No main promotion or edition release"
+  ],
+  "merge_status_at_creation": "pending; actual outcome belongs in the pull-request receipt"
+}
