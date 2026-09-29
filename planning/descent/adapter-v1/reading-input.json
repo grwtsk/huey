@@ -1,0 +1,236 @@
+{
+  "format": "H447-A01/v1",
+  "binding": {
+    "id": "H447-READ-01",
+    "huey_commit": "8acb47425c10ba1df4d0f87c313e79d980adad8a",
+    "chapter_path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+    "chapter_blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+    "chapter_sha256": "3fee7775b29b7d5d4cf637a427f80dfb914b57c1dc91717fc91928a38a860fab",
+    "crosswalk_sha256": "99cf4e24438d668e9c28ccbda1f365c8265be622b65d695a77956a873b15c46e",
+    "cards_sha256": "ebf9f9026f3e7b9f136a7b1db71e5a90026be8515168f125211ac761c1caa332"
+  },
+  "formal_contract": {
+    "id": "H447-JET-01/v1",
+    "raw_orders": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "coordinate": "theta real t",
+    "evaluation_guard": "t0 >= 0",
+    "normalization": "raw",
+    "orientation": "(-1)^(k*(k-1)/2)",
+    "positive_rank_limit": 4,
+    "all_rank_status": "refuted_at_recorded_local_checkpoint",
+    "verification": "existing local proof logs inspected; not rerun, main-accepted, or released"
+  },
+  "records": {
+    "prepared": {
+      "paragraph": "he_aea5e89a-f270-4eb7-b26d-a5bfc91872f6",
+      "context_lines": [
+        83,
+        139
+      ],
+      "source_group_id": "C08A-public-01",
+      "status": "author-narrated preparation",
+      "text": "The doctor prepared transfer papers and arrangements; the narrator says she told his wife that she would leave.",
+      "limit": "Preparation and notice to the wife do not themselves establish completed care or notice to the narrator."
+    },
+    "apology": {
+      "paragraph": "he_aea5e89a-f270-4eb7-b26d-a5bfc91872f6",
+      "context_lines": [
+        113,
+        139
+      ],
+      "source_group_id": "C08A-public-01",
+      "status": "author-attributed recollection",
+      "text": "The account preserves an immediate apology and the narrator’s recollection of its quality.",
+      "limit": "Neither the apology nor the reported absence cancels the other."
+    },
+    "access": {
+      "paragraph": "he_aea5e89a-f270-4eb7-b26d-a5bfc91872f6",
+      "context_lines": [
+        83,
+        139
+      ],
+      "source_group_id": "C08A-public-01",
+      "status": "author report of absence",
+      "text": "The narrator reports that he no longer had access to a primary-care physician and remained without care.",
+      "limit": "The report is retained as supplied; it does not establish every unseen institutional step."
+    },
+    "routing": {
+      "paragraph": "he_56dbed58-0d0e-48a7-9bdc-98c165d3ecc9",
+      "context_lines": [
+        141,
+        175
+      ],
+      "source_group_id": "C08A-public-01",
+      "status": "author-stated request",
+      "text": "He asks that his report be received as his report and passed to someone who can respond.",
+      "limit": "This is distinct from requiring the recipient to agree with a classification or decide the law."
+    },
+    "authority": {
+      "paragraph": "he_56dbed58-0d0e-48a7-9bdc-98c165d3ecc9",
+      "context_lines": [
+        141,
+        175
+      ],
+      "source_group_id": "C08A-public-01",
+      "status": "unresolved in narrated account",
+      "text": "The narrator says he does not know the staff member’s training or authority.",
+      "limit": "Unknown remains unknown; no inference of zero authority, intent, or absence of the encounter."
+    },
+    "ha_b3bcabe3-cf94-47db-9596-13b23a155b4c": {
+      "paragraph": null,
+      "context_lines": null,
+      "source_group_id": "ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+      "status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "text": "A printed measurement has an acknowledged correction in correspondence",
+      "limit": "Separate contextual comparison; no corroboration of the C08A event.",
+      "source_card": {
+        "card_id": "ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+        "title": "A printed measurement has an acknowledged correction in correspondence",
+        "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+        "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+        "sources": [
+          {
+            "evidence_id": "HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7",
+            "locator": "p1",
+            "attribution": "Source states",
+            "statement": "The report prints approximately 6 cm of one vertebral displacement twice. It also describes a separate 3 mm displacement and says the findings are unchanged with flexion and extension."
+          },
+          {
+            "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+            "locator": "p8",
+            "attribution": "Source states",
+            "statement": "The later patient letter quotes the 6 cm value and says a follow-up inquiry established it was wrong."
+          },
+          {
+            "evidence_id": "HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527",
+            "locator": "p1; reply displayed 2019-06-12 at 12:29 PM",
+            "attribution": "Source attributes",
+            "statement": "The portal thread attributes a reply to a nurse practitioner acknowledging a typographical error in the radiology report and stating that it should be 6 mm."
+          }
+        ],
+        "observed_omissions": [
+          "The inspected sources do not supply an amended original radiology report or source imaging pixels. The correcting correspondence is available and must be included in the comparison."
+        ],
+        "limits_and_uncertainties": [
+          "Preserve the original report’s printed 6 cm and the correspondence’s 6 mm correction as separate source statements.",
+          "The attributed nurse-practitioner reply documents a correspondence correction; it is not an original radiology amendment or an independent image measurement.",
+          "A portal PDF does not by itself authenticate message authorship, source-system completeness or delivery history."
+        ],
+        "questions_for_review": [
+          "Was the original radiology report formally amended, and can the original or amended report and images be matched to this correspondence?"
+        ],
+        "relationships": [
+          {
+            "target": "SOC-C009",
+            "locator": "report p1; later letter p8; correspondence p1, 12:29 PM reply",
+            "relationship": "context",
+            "contribution": "Preserves the printed value, the author’s later account and the already-available attributed correction to 6 mm.",
+            "does_not_establish": "A formal amendment of the original radiology report, independent image measurement, message authenticity or clinical implications."
+          }
+        ],
+        "chronology": [
+          {
+            "kind": "source-stated imaging date",
+            "value": "2019-06-06"
+          },
+          {
+            "kind": "source-displayed correcting reply",
+            "value": "2019-06-12 12:29 PM; this reply does not itself state a timezone"
+          }
+        ]
+      }
+    },
+    "ha_321066f5-d9a6-4496-bae3-c03c579fe025": {
+      "paragraph": null,
+      "context_lines": null,
+      "source_group_id": "ha_321066f5-d9a6-4496-bae3-c03c579fe025",
+      "status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "text": "Different representations do not create independent corroboration",
+      "limit": "Separate contextual comparison; no corroboration of the C08A event.",
+      "source_card": {
+        "card_id": "ha_321066f5-d9a6-4496-bae3-c03c579fe025",
+        "title": "Different representations do not create independent corroboration",
+        "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+        "representation": "Assistant paraphrase; not a verbatim transcript or certificate",
+        "sources": [
+          {
+            "evidence_id": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+            "locator": "complete object; p9 annotation",
+            "attribution": "Observed",
+            "statement": "The received scan contains an incremental annotation update."
+          },
+          {
+            "evidence_id": "HUEY-EV-2f86310b-400e-451a-b3b9-fdb860655402",
+            "locator": "complete object; all rendered pages",
+            "attribution": "Observed",
+            "statement": "The other received PDF is the earlier byte prefix. Its rendered pages match the corresponding visible pages, but it lacks that later annotation object."
+          },
+          {
+            "evidence_id": "HUEY-EV-445b7153-ac92-4383-9904-d90e4986991a",
+            "locator": "p1",
+            "attribution": "Observed",
+            "statement": "A laboratory result appears in one export."
+          },
+          {
+            "evidence_id": "HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe",
+            "locator": "p1",
+            "attribution": "Observed",
+            "statement": "A second export contains the same result identifiers and values with different print representation. The identifiers themselves are withheld."
+          }
+        ],
+        "observed_omissions": [
+          "These representations do not identify who made an update, why it was made, or provide independent repeat testing."
+        ],
+        "limits_and_uncertainties": [
+          "Different byte objects, filenames or delivery receipts do not by themselves establish independent sources.",
+          "A source-family relationship is more precise than calling every variant an exact duplicate.",
+          "No editing motive or misconduct is inferred from the incremental update."
+        ],
+        "questions_for_review": [
+          "Which comparison concerns raw byte identity, matching rendered content, repeated report content, or a genuinely independent observation?"
+        ],
+        "relationships": [
+          {
+            "target": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+            "locator": "other scan complete object and matching pages",
+            "relationship": "same_source_family",
+            "contribution": "Preserves the distinction between the earlier PDF and its incremental update.",
+            "does_not_establish": "Who edited it, why, authenticity or independent corroboration."
+          },
+          {
+            "target": "SOC-C005",
+            "locator": "scan versions and repeated laboratory-result exports",
+            "relationship": "limits",
+            "contribution": "Prevents repeated representations from being counted as independent observations.",
+            "does_not_establish": "Source truth or the completeness of the upstream record."
+          }
+        ],
+        "chronology": []
+      }
+    }
+  },
+  "views": {
+    "sender": [
+      "prepared",
+      "apology"
+    ],
+    "recipient": [
+      "access",
+      "prepared",
+      "apology"
+    ],
+    "next_action": [
+      "routing",
+      "authority",
+      "access"
+    ]
+  }
+}
