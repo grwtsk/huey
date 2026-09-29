@@ -1,0 +1,55 @@
+Proposed new movement — H448-P01/r1. Newly drafted present reflection; not an accepted autobiographical statement. Adjacent prose is unchanged C08A.
+
+*Existing entry context:*
+
+My presence changed where they looked.
+
+They noticed the *netch*. Then they turned their attention to her.
+
+I do not claim that these doctors were racist. I claim the shape of what I saw, and that the shape was grotesque.
+
+The woman had not begun to need care in the interval between those two looks. The father had not become more deserving of an answer. The baby had not become more newborn.
+
+I had entered.
+
+That was the change I could see.
+
+And because I was the one who had entered, because I could stand there and watch attention pass through me toward the person who had needed it before I arrived, I have never been able to remember that room without also remembering how little I had brought into it.
+
+Only myself.
+
+Only the person they happened to recognize.
+
+*New movement:*
+
+Anna Julia Cooper does not begin *A Voice from the South* by asking whether someone will speak kindly about Black women. In the opening of her 1892 book, she casts the national discussion as a trial already crowded with advocates. Arguments have been made. Evidence has been arranged. A judgment is taking shape. The Black woman has scarcely been consulted. Cooper enters as an author with something to say about the proceeding itself: who has been allowed to describe the life being judged.
+
+Even an advocate can leave that life unheard. In Cooper's account, neither a white spokesman nor a Black man can be expected to reproduce a Black woman's voice adequately. Good intentions do not remove the difference between speaking for a person and attending to what she has to say. The book adds a voice to the discussion and changes the discussion by doing so. Its author is not waiting for a place in someone else's testimony.
+
+Her essay on women's higher education gives that voice room to be amused. She describes professors admitting women to college as if they were experimenting with something liable to blow up the buildings. The students arrive. The buildings endure. Women take the more demanding course, and the names of the courses begin to look sillier than the women studying in them. The joke belongs to Cooper. She lets the apprehension of learned men become ridiculous without making women's learning a grim performance staged to reassure them.
+
+The education she wants is larger than admission. A woman may earn her living, study, make friends, enjoy a book. Cooper writes of the pleasure that an enlarged intellectual life can take in the natural world. A bud, a storm, a work of literature need not matter because a man has brought them to her. Marriage remains important in the essay, but it cannot carry the whole weight of a woman's possible life. She has capacities to develop and work of her own to give.
+
+Then Cooper interrupts the generous picture she has been drawing. Progress for women in general has not answered her question about Black women. She has written to colleges asking how many have completed their bachelor's course. The replies are small enough to count individually. She asks about continuation beyond high school. She considers the encouragement a student can actually find, the time she has, and the money with which she might remain in school. A celebration of educated women would have let the essay finish sooner. The inquiry will not.
+
+She turns to her own schooling. The institution prepares teachers and candidates for the ministry. Classes are arranged for the latter; she is expected to attend them. She describes wanting more to learn, and then an invitation to study Greek. Opportunity is present. So is the difference between a boy whose declared intention to enter the ministry brings encouragement and support, and a girl teaching in the summer and working after school to pay her board. She also describes active discouragement. The announcement that she intends to go to college meets incredulity and dismay. Being wanted in a classroom has not meant having her ambition taken seriously.
+
+Cooper challenges Black men whose gallantry coexists with resistance to women's intellectual ambition. A pedestal offers a poor place to put a desk. She addresses teachers and fellow workers committed to the advancement of Black people, asking them to raise money and establish scholarships. Her demand is for the material support that makes continued study possible, more for girls without less for boys.
+
+Cooper often assigns reason a masculine character and sympathy a feminine one; she imagines their cooperation repairing a world organized around force. She also insists that both capacities belong in each person's education: boys need tenderness, girls strength and self-reliance. Still, she gives those capacities gendered origins. Her essay preserves an encounter that troubles the division. She recounts Mary A. Livermore's account of boys spoiling a Chinese laundry worker's work, and the contempt with which Livermore treats the man. Cooper admires Livermore and tries to reconcile that response with her confidence in the woman's deeper sympathy. I cannot make the ugly response disappear by repeating the confidence. Her attempt to reconcile it with her theory remains visible. Cooper is reasoning, defending a position, answering objections. Reducing her to a sentence I can agree with would conceal the work.
+
+What changes my reading is the turn from the open classroom to the means of staying in it. Recognition is an event. A course of study requires more than an event. Her question follows the girl after she has been permitted to enter, into the hours she must work and the bill she must pay. It gives learning a duration, a cost, and a purpose belonging to the learner.
+
+I return to the room in Chicago with a different question from the one my entrance can answer. I was the white man the doctors noticed. Their attention turned toward the mother. That is the relation I witnessed. But whether the parents could set the questions once that attention arrived is another matter. My account of where the doctors looked does not supply an account of what either parent was then able to say. I must leave that distinction visible instead of allowing my effective presence to complete the scene for them.
+
+Cooper's student is not this mother. The book's argument about Black women's education has its own institutions to address and its own work still to demand. What I can carry back is a more exact responsibility for the account I am making. An opening is consequential; so is what becomes possible through it. The person who opens a route does not acquire the speech, the work, or the future of the person using it.
+
+Cooper leaves a similar convenience unavailable to the people she addresses. They can applaud a girl and continue to leave her unsupported. They can praise womanhood while withholding the conditions for a woman to think. Her own Christian and communal purposes remain in the demand: educated women will work as teachers, make homes, and contribute to the life of their people. Her essay gives its readers something more demanding than a favorable opinion to hold: money to raise, scholarships to establish, a student's intellectual ambition to take seriously. Beyond the gratifying moment of welcome, there is a life with work of its own to do.
+
+*Existing return, retaining its movement break:*
+
+---
+
+Before that room, before the wedding, before I had met the woman who would become my wife, there was a day shortly after August, when twelve leaves had turned and the year had begun, almost without announcement, to move toward something else.
+
+I was walking through Irving Park.
