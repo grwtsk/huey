@@ -68,10 +68,28 @@ not independent source authentication or a human editorial decision.
 
 Formal verification, original-source authentication, complete history/chronology
 reconciliation, R06–R13 reconciliation, current legal/clinical research, whole-book
-semantic review, editorial browser/model suites, print/EPUB/audio proofs and human
-acceptance were **not** performed by this tranche. Hosted status must be read from
-the actual PR; this local receipt claims no hosted result. Main promotion and
-release are not cleared.
+semantic review, editorial browser proofs, print/EPUB/audio proofs and human
+acceptance were **not** performed by this tranche. Main promotion and release
+are not cleared.
+
+## Hosted and editorial follow-up
+
+PR #457 at head `0c132e6a2e57d38cf580c586a1be3ecc49163d67` ran
+[Huey checks 36502880564](https://github.com/grwtsk/huey/actions/runs/36502880564).
+All three Reader jobs and the Python repository job passed. The literary job
+passed its model/inventory steps, then failed during `npm run test:pages` with
+`EDITORIAL_PAGES: source role differs from placement`. Subsequent editorial
+steps did not execute. The hosted run is **not an all-checks pass**.
+
+Local follow-up: `npm run test:model` passed all 53 tests; `npm run test:pages`
+reproduced the placement error before its test runner. The error is already
+documented by #441, including the front MatterUnit versus book-group condition
+and the later source-plan reconciliation still required. None of
+`scripts/editorial_pages.mjs`, `planning/editorial-inventory/registry.json`,
+`planning/editorial-pages/plan.json` or `book.yaml` differs from the inspected
+base in this PR. No check was bypassed or weakened. The PR remains open, and
+this follow-up changes only the source packet's status documentation. A later
+hosted run must be reported at its own head rather than inheriting this result.
 
 ## Reproduce the bounded reference check
 

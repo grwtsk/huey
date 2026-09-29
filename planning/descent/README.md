@@ -56,7 +56,7 @@ The current private-repository instructions and #133/#134/#139 and #219/#220/#22
 were read. They supply task scope and unresolved obligations, not completed source
 comparison or a newly verified theorem. Both repositories were confirmed private.
 An existing formal worker was active; this task did not enter its candidate,
-launch verification there, consume a new allowance or change either repository.
+launch verification there, consume a new allowance or change either repository tree.
 
 The usable evidence return in this tranche is the **already admitted** Huey packet:
 its draft/completion distinction, available correction, date/quotation conflicts
@@ -82,3 +82,8 @@ The next ready action is that bounded #447 preparation, while #446's later-layer
 reconciliation continues under its existing owners. No new human decision is
 needed to do either. Exact prose acceptance, main promotion and release remain
 separate actions with their existing review requirements.
+
+PR #457's first hosted run passed the ordinary Reader/Python jobs and failed at
+the existing #441 editorial assembly mismatch. That engineering obligation stays
+with #441; it does not invalidate the selected source comparison or require an
+author decision. The PR remains open; no staging merge is claimed by this record.
