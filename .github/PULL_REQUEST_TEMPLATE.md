@@ -50,3 +50,20 @@ Use `Closes #N` only when all of work issue N is complete. For partial work use 
 - [ ] Limited automated checks and the actual semantic reread are reported separately; no guarantee or human approval is inferred.
 
 Read `planning/relational-framing.md` and #98–#100. The author has already supplied this correction.
+
+## MBD-01 — the life this work leaves possible
+
+Read `planning/many-beautiful-days/README.md` and #465. In the existing scope and
+verification discussion, identify the concrete participation, time, independent
+voice or future choice this change preserves. Point to the actual passage or
+operation; do not add a slogan, a numerical beauty score or a new mandatory
+family scene. A narrowly technical change may serve a person by preserving a
+source, making a correction reusable or allowing a reader to stop and return.
+
+Keep Rahel's supplied observations, the AI-assisted letter, new narrator writing,
+research and actual human decisions distinct. Protect Lia's independent future
+and Black thinkers' and creators' own projects; neither exists to vindicate the
+narrator. Joy is not an access criterion, a cure or an acquittal. The public text
+context does not authorize raw family media, private clinical sources, voice
+cloning, canonical insertion, main promotion or a second ending. Existing gates
+remain; no additional consent ceremony or proof of ordinary life is required.
