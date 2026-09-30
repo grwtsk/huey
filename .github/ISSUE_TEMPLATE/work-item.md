@@ -30,3 +30,13 @@ One PR, inspected head SHA, test commands/results, merge result if complete, unr
 - [ ] Limited automated checks and the actual semantic reread are reported separately; no guarantee or human approval is inferred.
 
 Read `planning/relational-framing.md` and #98–#100. The author has already supplied this correction.
+
+## MBD-01: concrete purpose within this scope
+
+Read `planning/many-beautiful-days/README.md` and #465. Explain in the scope above
+what this task should leave a person free to do, understand, correct, pause or
+choose. Tie it to an actual passage or operation. Reuse existing source and
+verification fields; do not create another approval cycle, family questionnaire,
+score or required scene. A task may protect attribution or usable time without
+adding family prose. Preserve separate people, sources, dates and future choices;
+ordinary pleasure is not a cure, an acquittal or a qualification for care.
