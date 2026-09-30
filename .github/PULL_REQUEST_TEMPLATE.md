@@ -50,3 +50,12 @@ Use `Closes #N` only when all of work issue N is complete. For partial work use 
 - [ ] Limited automated checks and the actual semantic reread are reported separately; no guarantee or human approval is inferred.
 
 Read `planning/relational-framing.md` and #98–#100. The author has already supplied this correction.
+
+## Trust review — #464
+Read `TRUST.md` and the affected issue's trust addendum. Record only the applicable relations, proportionate to the change:
+
+- What is entrusted, who retains agency, which actor/channel carries the next act, and who bears its burden?
+- Which source, consent, notice, operation or review states must remain distinct in every affected view?
+- What concrete result was verified; what remains a request, proposal, assumption or unknown; and how can correction or a safe pause occur?
+
+Keep severe source testimony and material counterevidence. Preserve role/jurisdiction distinctions, the $8.76/$10.46 scenario separation, H447-D01's narrator-service condition and the protected ending where relevant. Do not create a parallel claim registry, repeated author-permission chores or a universal trust score. A successful implementation check does not certify clinical safety, legal liability, historical truth or human acceptance.
