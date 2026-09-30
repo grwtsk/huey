@@ -1,0 +1,51 @@
+{
+  "id": "RHP-01",
+  "recorded_on": "2026-09-30",
+  "repository": "grwtsk/huey",
+  "parent_issue": 466,
+  "life_context_issue": 465,
+  "base_ref": "pre-release",
+  "inspected_base": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+  "status": "planning-and-issue-creation",
+  "native_dependencies_created": false,
+  "canonical_prose_changed": false,
+  "source_notes": "source-review.md",
+  "contract": "README.md",
+  "tasks": [
+    {"issue": 467, "role": "personal-reception-and-chronology", "inputs": [], "stage": "prepare-now"},
+    {"issue": 468, "role": "distinct-patristic-voices", "inputs": [], "stage": "prepare-now"},
+    {"issue": 469, "role": "king-rhetorical-architecture", "inputs": [], "stage": "prepare-now"},
+    {"issue": 470, "role": "rhetorical-position-map", "inputs": [467, 469], "stage": "map-available-sources-now"},
+    {"issue": 471, "role": "water-and-exact-word-source", "inputs": [468, 469], "stage": "retrieve-and-map-now"},
+    {"issue": 472, "role": "prophecy-and-uncertainty", "inputs": [], "stage": "prepare-now"},
+    {"issue": 473, "role": "literary-unit-foreshadowing", "inputs": [467, 468, 469, 470, 471, 472], "stage": "inventory-now-bind-selected-inputs-later"},
+    {"issue": 474, "role": "exact-pre-water-convergence", "inputs": [470, 471, 472, 473], "stage": "prepare-now-exact-splice-after-anchor"},
+    {"issue": 475, "role": "rhetorical-and-cross-format-review", "inputs": [473, 474], "stage": "fixtures-now-exact-review-after-candidate"}
+  ],
+  "dependency_semantics": "Inputs indicate consumption of selected results, not full-issue completion gates. Parent indexes never block child preparation.",
+  "pending_source": {
+    "token": "juice",
+    "attribution": "as my wife would say",
+    "referent_status": "unresolved",
+    "water_locator": "PRE-WATER",
+    "water_locator_status": "not-yet-located",
+    "owner_issue": 471,
+    "splice_issue": 474,
+    "normalization_authorized": false
+  },
+  "interpretation": {
+    "phrase": "beautiful days ahead",
+    "author_term": "prophecy",
+    "status": "author-supplied-spiritual-literary-interpretation",
+    "forecast_verified": false,
+    "reader_assent_inferred": false
+  },
+  "coverage_distinctions": {
+    "old_issue_annotations": 465,
+    "literary_unit_dispositions": 473,
+    "cross_format_review": 475,
+    "whole_book_rewrite_claimed": false
+  },
+  "preserved": ["RF-01", "PR-01", "three-movements", "C08A-mixing-chamber", "world-first-composition", "exact-capstone-and-Edna-close", "independent-source-voices", "private-source-boundaries"],
+  "verification_limits": ["partial-local-materialization", "no-complete-repository-suite", "no-audio-listening", "no-native-accessibility-certification", "no-human-prose-acceptance", "no-main-promotion"]
+}
