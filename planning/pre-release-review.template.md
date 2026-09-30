@@ -102,3 +102,21 @@ NOT PERFORMED.
 Main promotion is not finished-edition release or authorization to replicate,
 deploy, contact participants or disclose other sources. Native rule enforcement
 remains separately tracked in #311; this record is a manual editorial instrument.
+
+## Trust carried by this presentation — #464
+
+Read [TRUST.md](../TRUST.md). For the actual changed passages or operations, record
+what is entrusted, whose agency remains intact, the responsible actor/channel,
+where the burden lands, and what observable act or correction supports reliance.
+Preserve distinct source, notice, consent, implementation and review states across
+text, listening, exports and fallbacks. Reuse the existing claim ledger above.
+
+Record relevant counterpressure and any still-unanswered question. Do not convert
+requests into completed care, the $8.76 illustration into a fee or the older $10.46
+scenario, institutional affiliation into a transmission path, or a clinical/access
+need into a demand to win historical adjudication first. Preserve actual source
+severity, H447-D01's narrator-service condition and the protected narrative close.
+
+Trust review scope, actual reading and remaining limits: NOT RECORDED.
+This section creates no additional human consent requirement for already-authorized
+routine work and supplies no approval or universal trust score.
