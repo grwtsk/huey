@@ -28,7 +28,7 @@ Basil the Great and Gregory of Nyssa remain named primary-text research tasks un
 
 ## Author reception and current manuscript
 
-The author's present message supplies the Boozer/Edna classroom introduction, the rhetorical connection to the slight rise, the exact wife-attributed token and the new prophetic interpretation of beautiful days ahead. No independent classroom authentication is claimed or required before preserving his account as testimony.
+The author's present messages supply the Boozer/Edna classroom introduction, the rhetorical connection to the slight rise, the exact wife-attributed token, the new prophetic interpretation of beautiful days ahead, and an additional childhood memory: Edna taught him to walk and helped him down stairs leading from near the library to near the classroom door. No independent classroom authentication is claimed or required before preserving his account as testimony. The wording **near** is retained as spatial uncertainty. No step count, exact floor plan, bodily support method, diagnosis, age or reason for the walking instruction has been supplied.
 
 Inspected manuscript base: `664f9b62d70d7f24e2519918357ec262d86eb6c4` on pre-release. The Feather, blob `a3524efe6a57739e324f8eecda7566b9378b08ed`, locates its rise in Wiesbaden. C08A, blob `e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1`, supplies existing crossings of attention, hands, water, language and naming. Selected C14A portions and the returned portions of C14B and The Place Beneath Pain were read for context; this is not a full-book or full-source audit. The Words I Was Asked to Remember was also read as an existing source on reception and inheritance.
 
