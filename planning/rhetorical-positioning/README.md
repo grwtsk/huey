@@ -8,6 +8,8 @@ Bring inherited sacred language into the reach of an ordinary act. The saints' v
 
 The author now supplies the personal reception: Thelma Berlack Boozer, remembered as Edna, introduced him to I Have a Dream in a classroom near the nation's capital. Preserve it as his testimony. The existing Feather locates its slight rise in Wiesbaden; keep those scenes distinct. Their relation belongs to the later act of recognition, not an invented shared place, lesson or date.
 
+The author now adds a second, literal memory: **Edna taught him to walk. She helped him down the stairs that led from near the library to near the door of their classroom.** Preserve the modest spatial uncertainty in *near* and preserve the action as testimony. Do not invent the number of stairs, which side she stood on, whether she held a hand or arm, the exact age, a diagnosis, why walking required instruction, or a complete floor plan. This memory makes walking, descent and teaching materially connected before they become later literary motifs. It may resonate with later loss of walking, but it must not be written as destiny, causal prophecy or a sentimental equivalence.
+
 Rahel's **beautiful days ahead** is the fulcrum. The author's new word **prophecy** carries its full first-person spiritual force. The mother's voice must not be inflated into a public oration. The preceding argument supplies the weight; her ordinary words carry the possibility of a future that the argument cannot guarantee. Preserve the original letter and the later interpretation separately.
 
 Let each prior inquiry sharpen what is at stake: partial perception, a body in pain, a record that outlasts its author, a failed or uncertain reply, authority divided across institutions, finite time, technological power, mortality and care that may still be performed. Collective uncertainty does not mean identical knowledge, power, fear or responsibility. Every **we** must leave the actual participants and the reader visible.
@@ -33,6 +35,8 @@ The [machine-readable map](program.json) records stages, not native GitHub depen
 ## Foreshadowing through the work
 
 In the Preamble, let the small change of view and the difficulty of receiving a word remain the child's experience. The adult can later recognize their relation to judgment. Do not install his later theology, mathematics or political understanding in the child's mind.
+
+Where the childhood source enters, let **walking be taught before walking becomes an abstraction**: a teacher and child moving down actual stairs, from near a library toward near a classroom door. The scene should remain ordinary enough to bear later meanings without being forced to announce them. A later reader may remember it when walking becomes difficult or impossible; the childhood scene itself does not know that future.
 
 At C08A, work through the existing crossings: attention reaching a mother, another person's strength at a door, a call already being made, a hand delivering a sentence, water and rescue, rain and Rahel's entrance into the narrator's life. These are distinct acts with distinct people. They do not become one event because the motifs recur.
 
