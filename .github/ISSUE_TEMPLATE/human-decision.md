@@ -27,3 +27,8 @@ Actual instruction source/origin, date, scope, version, permitted action/destina
 
 ## RF-01 scope check
 Read the current master and #98 before creating this question. Do not ask the author to reapprove the relational-framing correction, prove a racism label, or repeat supplied testimony. Unknown motive/operator/classification does not prevent preserving a supported relation. This issue must identify a genuinely new consequential action, not substitute accusation or defense for the author's task. Existing privacy and exact-prose acceptance remain separate.
+
+## Trust without capture — #464
+Read `TRUST.md`. Explain why this is a genuinely new decision after retrieving prior instructions and available sources. Preserve a written, paced route to understand, qualify, refuse or defer; a support person does not inherit the decision. Distinguish receipt from comprehension, agreement from execution, and one authorized use from every later use.
+
+Do not make the author repeat trauma, reopen a settled choice, or approve each routine metadata operation within an existing grant. Do not manufacture assent from silence, dependency, an owner-account comment, a green check or completion of this form. Keep only the affected consequential action blocked.
