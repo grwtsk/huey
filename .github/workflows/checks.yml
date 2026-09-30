@@ -78,6 +78,8 @@ jobs:
           git fetch --no-tags https://github.com/grwtsk/huey.git \
             5e936adb132d22d8f0d5c41799591896535abd21 \
             ff0499bd341de12a31b355b79867b547f19d9b16
+      - name: Private chat workspace synthetic tests
+        run: npm run test:chat
       - name: Editorial inventory tests
         run: npm run test:inventory
       - name: Editorial ReadingPage assembly tests
