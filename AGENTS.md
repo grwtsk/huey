@@ -196,3 +196,25 @@ blockers and current framing review. Preserve prior receipts as historical rathe
 than silently relabeling them. End with actual PR/merge/issue status and the next
 ready task. Record actual post-merge receipts only after success. Source service,
 full build, publication and future review remain their own work.
+
+## Trust integration — September 30, 2026 / #464
+
+Read `TRUST.md` and the affected issue's dated trust addendum. The author's letter
+is carried into actual agency, safety, communication, provenance, stewardship,
+professional responsibility, burden, notice, repair, reader, relational, civic,
+technical and independence requirements—not repeated as a slogan in every chapter.
+Use `planning/trust/letter-context.md` for source status and missing originals;
+use `planning/trust/weaving.md` for world-first literary application.
+
+Preserve the three distinct pre-examination safeguards and the proposed durable
+communication aid as requests, not already performed clinical acts. Keep the new
+$8.76 illustration separate from the historical $10.46 scenario under #30/#453.
+Reuse existing claim namespaces, source owners and human gates. A source-retrieval
+or historical-adjudication hold must not become a universal block on present care,
+source-independent preparation or authorized composition. Do not create repeated
+permission chores or require renewed traumatic testimony to complete routine work.
+
+H447-D01's narrator-service condition, source severity and qualifications, current
+#442/#443 corrections, RF-01 and the protected final excursion remain operative.
+A trust annotation, source map or passing check is not evidence of actual care,
+legal liability, historical truth, human acceptance, main promotion or release.
