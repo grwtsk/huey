@@ -27,3 +27,14 @@ Actual instruction source/origin, date, scope, version, permitted action/destina
 
 ## RF-01 scope check
 Read the current master and #98 before creating this question. Do not ask the author to reapprove the relational-framing correction, prove a racism label, or repeat supplied testimony. Unknown motive/operator/classification does not prevent preserving a supported relation. This issue must identify a genuinely new consequential action, not substitute accusation or defense for the author's task. Existing privacy and exact-prose acceptance remain separate.
+
+## MBD-01: preserve the person's time and future choice
+
+Read `planning/many-beautiful-days/README.md` and #465. Explain why the proposed
+action needs a new human choice rather than already delegated source retrieval,
+drafting, verification or engineering. Reuse actual covering decisions. Do not
+ask the family for another anecdote to prove ordinary life or a named virtue.
+Keep the author's authority distinct from Rahel's or Lia's assent; a typed
+signature, assisted letter, silence or a parent's hopes cannot supply another
+person's decision. Preserve pause and a later qualification without treating
+fatigue or delay as agreement. This section adds no new standing approval gate.
