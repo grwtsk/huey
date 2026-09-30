@@ -29,3 +29,8 @@ Reasoning, evidence locator, reviewer and date:
 Remaining limits and dependent issues:
 
 Publication of an approved working source is separate from factual clearance. First-person experience does not need external certification to be preserved. Do not infer motive, guilt, clinical causation or lack of action from the mere absence of a record in the working set.
+
+## Trust and the consequence of the proposition — #464
+Apply `TRUST.md` without adding a second claim ID. Identify who may rely on this proposition, what action it could change, which source/notice/consent states must remain distinct, and how a correction reaches affected derivatives. Name the evidence that could materially change the disposition.
+
+Preserve the author's actual severity and supplied identity without upgrading allegation into adjudication or replacing testimony with an invented self-rebuke. Retrieving an available source is the reviewer's work; unnecessary traumatic retelling is not an acceptance test. A pending historical finding does not by itself block a separately supportable present safety or access request.
