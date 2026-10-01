@@ -168,6 +168,15 @@
     "love_as_invariant": true,
     "forgiveness_required": false,
     "reconciliation_required": false,
-    "manuscript_acceptance": false
+    "manuscript_acceptance": false,
+    "coverage_register": "love-issue-coverage.json",
+    "coverage_snapshot": {
+      "open_issues": 368,
+      "commented": 15,
+      "self_integrated": 8,
+      "standard_linked": 345,
+      "thread_annotation_complete": false,
+      "every_issue_has_disposition": true
+    }
   }
 }
