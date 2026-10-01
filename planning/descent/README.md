@@ -2,6 +2,10 @@
 
 **Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.**
 
+The map and status below retain the 2026-09-29 handoff. The dated continuation
+at the end supersedes its status only; original source pins and analysis remain
+unchanged.
+
 Coordination: [#456](https://github.com/grwtsk/huey/issues/456), under
 [#445](https://github.com/grwtsk/huey/issues/445). This is the working dependency
 map for this program, not a new claim registry or acceptance system.
@@ -87,3 +91,50 @@ PR #457's first hosted run passed the ordinary Reader/Python jobs and failed at
 the existing #441 editorial assembly mismatch. That engineering obligation stays
 with #441; it does not invalidate the selected source comparison or require an
 author decision. The PR remains open; no staging merge is claimed by this record.
+
+## 2026-10-01 15:00 UTC continuation
+
+Current staging input: `43a1fc9fcac8c04f4eefa1b7a8bfeb917eeb8e8d`.
+The existing #457 branch incorporates that input by a history-preserving merge
+at `e3bff17fad633264e52cbfc043b321af2f2ebe4f`. The bounded crossing map and its
+reading remain separate from later composition; neither has been replaced by
+#462 or #461.
+
+The former #441 assembly blocker is resolved by the integrated #463/#477 repair
+(merge `bdbef69f07da16c32c037e94992e5128a02d7d25`) and #462 support registration
+(merge `9589946cba2dcc3fe155b65588be5e72fd9d0a1b`). #441 is closed for that
+bounded engineering scope. Its earlier failure receipts above and in
+[verification.md](verification.md) remain historical; their test results do not
+transfer to this resumed candidate.
+
+#461's exact five-file H448-P01/r1 movement is separately staged at merge
+`3edd78677b972b495c5949f426d643f1de8b1a88`. It remains support-only, unadopted
+and outside the selected reading copy: no canonical C08A insertion, first-person
+adoption, settled placement or literary acceptance follows from that merge.
+#460 remains the separate adapter PR. The earlier instruction to begin its
+preparation is superseded as a next-action status, without a new formal claim
+or verification result in this crosswalk.
+
+The [current compatibility check](verification.md#current-compatibility-check)
+resolves all twelve historical public pins. Ten current input blobs are unchanged;
+the paragraph plan and inventory have evolved, while the selected C08A
+registration and seven exact paragraph spans remain compatible. Five selected
+card edges retain their original references, relationships and review status;
+Atlas/claim/owner identities, three distinct incident targets and R25 remain
+consistent. This is a source-binding result, not source authentication or support
+for an unrelated event.
+
+Full current C08A, the three selected public essay exports and selected
+Atlas/claim/incident/care-law/card material were reread against the unchanged map
+and reading. The bounded comparison preserves separate agency, ordinary life,
+care and harm, attributed correction, conflicting accounts and local unknowns.
+Private originals were not read; the complete protected-close source was
+unavailable for comparison. No whole-book, formal, clinical/legal or human
+acceptance review is claimed.
+
+Next: complete fresh combined verification of this resumed #457 candidate and
+record its actual head/results before any eligible staging integration. Keep
+#446 open for the remaining corpus and R06–R13/history joins; #447/#448 and their
+source/composition owners retain their own criteria. Current author-supplied
+consolidation authority covers eligible checked staging only. Main promotion,
+canonical adoption and release remain separate; no #457 merge is claimed here.
