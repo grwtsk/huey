@@ -237,8 +237,8 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
     try {
       const url = new URL(req.url, 'http://localhost'), route = url.pathname;
       boundary(req, route === '/__grwtsk/session' ? null : token);
-      const getRoutes = ['/__grwtsk/session', '/__grwtsk/catalog', '/__grwtsk/read', '/__grwtsk/review', '/__grwtsk/handoff', '/__grwtsk/issues', '/__grwtsk/chat'];
-      const postRoutes = ['/__grwtsk/propose', '/__grwtsk/decide', '/__grwtsk/link', '/__grwtsk/chat'];
+      const getRoutes = ['/__grwtsk/session', '/__grwtsk/catalog', '/__grwtsk/read', '/__grwtsk/inspect', '/__grwtsk/review', '/__grwtsk/handoff', '/__grwtsk/issues', '/__grwtsk/chat'];
+      const postRoutes = ['/__grwtsk/propose', '/__grwtsk/decide', '/__grwtsk/resume-source', '/__grwtsk/link', '/__grwtsk/chat'];
       check(getRoutes.includes(route) || postRoutes.includes(route), 'unknown endpoint', 404);
       check(req.method === 'GET' && getRoutes.includes(route) || req.method === 'POST' && postRoutes.includes(route), 'method unavailable', 405);
       let result;
@@ -249,6 +249,8 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
           result = workspace.propose({ ...input, actor, session });
         } else if (route === '/__grwtsk/decide') {
           fields(input, ['operationId', 'reviewDigest', 'approvalRef', 'status']); result = workspace.decide(input);
+        } else if (route === '/__grwtsk/resume-source') {
+          fields(input, ['id', 'reviewDigest', 'decisionRef', 'key']); result = workspace.resumeSource(input);
         } else if (route === '/__grwtsk/link') {
           fields(input, ['operationId', 'url']); result = workspace.link(input.operationId, input.url);
         } else {
@@ -267,10 +269,14 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
             observedReaderAdmission: item?.observedReaderAdmission ?? null,
             sourceStatus: item?.canonicalState ?? null, issues: item?.issues ?? [], publicationAnnotation: item?.publicationAnnotation ?? null,
             sources: meta.sources.filter(s => s.targets.includes(slot.key)).map(s => ({ key: s.key, role: s.role, extent: s.extent, access: s.access, revision: s.revision, path: s.path, scopeRefs: s.scopeRefs })) }; }),
-          paragraphs: listing.paragraphs.map(p => ({ ...p, privateOperation: state.decisions.filter(d => d.status === 'applied-private' && state.proposals.some(op => op.id === d.operationId && op.target === p.id)).at(-1)?.operationId ?? null })),
+          paragraphs: listing.paragraphs.map(p => {
+            const retired = state.reconciliations?.filter(r => r.target === p.id).at(-1)?.retiredOperationIds ?? [];
+            return { ...p, privateOperation: state.decisions.filter(d => d.status === 'applied-private' && !retired.includes(d.operationId) && state.proposals.some(op => op.id === d.operationId && op.target === p.id)).at(-1)?.operationId ?? null };
+          }),
           operations: state.proposals.map(op => ({ id: op.id, target: op.target, createdAt: op.createdAt, status: state.decisions.find(d => d.operationId === op.id)?.status ?? 'proposed-private' })),
           authority: 'source/publication labels are observations, not permissions or acceptance; overlay freshness is checked when a paragraph is read' };
       } else if (route === '/__grwtsk/read') result = workspace.read(query(url, 'id'));
+      else if (route === '/__grwtsk/inspect') result = workspace.inspect(query(url, 'id'));
       else if (route === '/__grwtsk/review') result = workspace.review(query(url, 'id'));
       else if (route === '/__grwtsk/handoff') result = workspace.handoff(query(url, 'id'));
       else if (route === '/__grwtsk/chat') { check(!url.search, 'chat accepts no query'); result = chatView(thread.state()); }

@@ -203,6 +203,133 @@ class GrwtskBrowserTests(unittest.TestCase):
         finally:
             page.unroute("**/__grwtsk/chat")
 
+    def test_07_stale_private_edit_can_be_compared_and_resumed_without_losing_history(self):
+        # Seed a synthetic earlier-revision overlay in this disposable private
+        # store. The real checked host now has a newer basis, with source bytes
+        # untouched. No repository file or author workspace is mutated.
+        value = subprocess.check_output(["node", "--input-type=module", "-e", """
+          import {ChatWorkspace,loadSnapshot} from './scripts/chat_workspace.mjs';
+          const [root,store] = process.argv.slice(1);
+          const historical = loadSnapshot(root);
+          const entity = historical.entries.filter(e=>e.slot==='C08A')[1];
+          historical.basis = 'sha256:'+'0'.repeat(64); historical.revision = '0'.repeat(40);
+          const workspace = new ChatWorkspace({root,store,snapshot:()=>historical});
+          const current = workspace.read(entity.id);
+          const op = workspace.propose({id:entity.id,baseVersion:current.version,beforeDigest:current.rawDigest,
+            after:'Synthetic historical private contribution for recovery.',key:'synthetic-history',
+            actor:'synthetic-browser-test',session:'synthetic-browser-session',requestRef:'synthetic earlier revision'});
+          workspace.decide({operationId:op.id,reviewDigest:op.digest,status:'applied-private',approvalRef:'synthetic historical apply'});
+          console.log(JSON.stringify({id:entity.id,raw:entity.raw,version:entity.version,operationId:op.id}));
+        """, str(ROOT), self.store], cwd=ROOT, text=True)
+        historical = json.loads(value)
+        state_file = Path(self.store) / "workspace.json"
+        original = json.loads(state_file.read_text())
+        context = self.browser.new_context(viewport={"width": 390, "height": 844})
+        try:
+            page = context.new_page()
+            errors = []
+            page.on("pageerror", lambda error: errors.append(str(error)))
+            path = f"/huey/paragraph/{historical['id']}"
+            page.goto(self.url + path)
+            page.get_by_role("button", name="Grwtsk", exact=True).click()
+            comparison = page.get_by_role("region", name="Stale private edit comparison")
+            comparison.wait_for(state="visible")
+            blocks = comparison.locator("pre")
+            self.assertEqual(blocks.nth(0).inner_text(), historical["raw"])
+            self.assertEqual(blocks.nth(1).inner_text(), "Synthetic historical private contribution for recovery.")
+            self.assertEqual(blocks.nth(2).inner_text(), historical["raw"])
+            self.assertTrue(page.get_by_label("Working paragraph (Markdown)").is_disabled())
+            self.assertTrue(page.get_by_role("button", name="Ask Grwtsk", exact=True).is_disabled())
+            self.assertEqual(page.locator(f"[data-entity-id='{historical['id']}']").inner_text(), historical["raw"])
+            page.get_by_role("button", name="Refresh comparison", exact=True).click()
+            page.wait_for_function("!document.querySelector('#grwtsk-panel').hasAttribute('aria-busy')")
+            self.assertTrue(comparison.is_visible())
+            page.get_by_role("button", name="Resume from current source", exact=True).click()
+            comparison.wait_for(state="hidden")
+            page.wait_for_function("!document.querySelector('#grwtsk-working-text').disabled")
+            self.assertEqual(page.get_by_label("Working paragraph (Markdown)").input_value(), historical["raw"])
+            retained = json.loads(state_file.read_text())
+            for key in ["proposals", "decisions", "links"]:
+                self.assertEqual(retained[key], original[key])
+            self.assertEqual(len(retained["reconciliations"]), 1)
+            self.assertIn(historical["operationId"], retained["reconciliations"][0]["retiredOperationIds"])
+            page.get_by_text("Retained private history", exact=True).click()
+            page.get_by_text("Earlier private edit · retained after source resume", exact=True).click()
+            page.get_by_text("Synthetic historical private contribution for recovery.", exact=True).last.wait_for(state="visible")
+            # A new edit requires its own exact review; the old result is never
+            # silently reapplied to the newly resumed source.
+            editor = page.get_by_label("Working paragraph (Markdown)")
+            editor.fill("Synthetic fresh edit after explicit source recovery.")
+            page.get_by_role("button", name="Review change", exact=True).click()
+            page.locator(".grwtsk-review").wait_for(state="visible")
+            self.assertEqual(page.locator(".grwtsk-review pre").nth(0).inner_text(), historical["raw"])
+            page.get_by_role("button", name="Apply to private copy", exact=True).click()
+            page.get_by_text("Applied to the private working copy.", exact=False).wait_for()
+            page.reload()
+            page.get_by_role("button", name="Grwtsk", exact=True).click()
+            page.wait_for_function("!document.querySelector('#grwtsk-working-text').disabled")
+            self.assertFalse(page.locator(".grwtsk-recovery").is_visible())
+            self.assertEqual(page.get_by_label("Working paragraph (Markdown)").input_value(), "Synthetic fresh edit after explicit source recovery.")
+            self.assertEqual(errors, [])
+        finally:
+            context.close()
+
+    def test_08_source_unavailable_after_resume_preserves_receipt_and_disables_editing(self):
+        value = subprocess.check_output(["node", "--input-type=module", "-e", """
+          import {ChatWorkspace,loadSnapshot} from './scripts/chat_workspace.mjs';
+          const [root,store] = process.argv.slice(1), historical = loadSnapshot(root);
+          const entity = historical.entries.filter(e=>e.slot==='C08A')[2];
+          historical.basis = 'sha256:'+'1'.repeat(64); historical.revision = '1'.repeat(40);
+          const workspace = new ChatWorkspace({root,store,snapshot:()=>historical});
+          const current = workspace.read(entity.id);
+          const op = workspace.propose({id:entity.id,baseVersion:current.version,beforeDigest:current.rawDigest,
+            after:'Synthetic historical contribution for an unavailable-source race.',key:'synthetic-unavailable-race',
+            actor:'synthetic-browser-test',session:'synthetic-browser-session',requestRef:'synthetic historical context'});
+          workspace.decide({operationId:op.id,reviewDigest:op.digest,status:'applied-private',approvalRef:'synthetic historical apply'});
+          console.log(JSON.stringify({id:entity.id,operationId:op.id}));
+        """, str(ROOT), self.store], cwd=ROOT, text=True)
+        historical = json.loads(value)
+        context = self.browser.new_context()
+        try:
+            page = context.new_page()
+            errors = []
+            page.on("pageerror", lambda error: errors.append(str(error)))
+            resumed = []
+
+            def resume_request(route):
+                response = route.fetch()
+                self.assertEqual(response.status, 200)
+                resumed.append(response.json())
+                route.fulfill(response=response)
+
+            def inspect_request(route):
+                response = route.fetch()
+                value = response.json()
+                if resumed:
+                    # Explicitly synthetic UI race response: the real resume
+                    # receipt was committed, then the selected source vanished.
+                    value.update(status="unavailable", current=None, source=None,
+                                 conflict="Synthetic post-resume source unavailable")
+                route.fulfill(response=response, json=value)
+
+            page.route("**/__grwtsk/resume-source", resume_request)
+            page.route(f"**/__grwtsk/inspect?id={historical['id']}", inspect_request)
+            page.goto(self.url + f"/huey/paragraph/{historical['id']}")
+            page.get_by_role("button", name="Grwtsk", exact=True).click()
+            page.get_by_role("region", name="Stale private edit comparison").wait_for(state="visible")
+            page.get_by_role("button", name="Resume from current source", exact=True).click()
+            page.get_by_text("Private source-resume receipt retained.", exact=False).wait_for()
+            self.assertTrue(page.get_by_label("Working paragraph (Markdown)").is_disabled())
+            self.assertTrue(page.get_by_role("button", name="Ask Grwtsk", exact=True).is_disabled())
+            self.assertEqual(page.get_by_label("Working paragraph (Markdown)").input_value(), "")
+            self.assertEqual(len(resumed), 1)
+            retained = json.loads((Path(self.store) / "workspace.json").read_text())
+            self.assertTrue(any(r["target"] == historical["id"] for r in retained["reconciliations"]))
+            self.assertTrue(any(p["id"] == historical["operationId"] for p in retained["proposals"]))
+            self.assertEqual(errors, [])
+        finally:
+            context.close()
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
