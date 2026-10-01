@@ -5,6 +5,8 @@ if (location.pathname === '/huey' || location.pathname.startsWith('/huey/')) {
 } else {
   const reader = await import('./main.mjs');
   await import('./editor.mjs');
+  const { mountAdmittedNavigation } = await import('./navigation-ui.mjs');
+  await mountAdmittedNavigation(reader, { editorial: import.meta.env?.MODE === 'editorial' });
   if (import.meta.env?.MODE === 'editorial') {
     try {
       const response = await fetch('/data/paragraphs.json', { cache: 'no-store', credentials: 'omit' });
