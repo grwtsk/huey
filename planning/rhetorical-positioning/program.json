@@ -147,5 +147,27 @@
       470
     ],
     "status": "author-supplied-testimony-not-independently-authenticated"
+  },
+  "love_program": {
+    "id": "LOVE-01",
+    "parent_issue": 478,
+    "status": "planning-and-issue-integration",
+    "author_direction": "Trust, respect and admiration are carried through Edna's actions so that love remains the governing human relation through the end.",
+    "edna_preferred_classroom_name": "author-supplied testimony",
+    "children": {
+      "source_and_name": 479,
+      "trust": 480,
+      "respect": 481,
+      "admiration": 482,
+      "utterance_audit": 483,
+      "racial_geometry": 484,
+      "protected_ending": 485,
+      "issue_standard_saturation": 486
+    },
+    "saturation_mode": "issue-specific relational consequence, not repeated slogan",
+    "love_as_invariant": true,
+    "forgiveness_required": false,
+    "reconciliation_required": false,
+    "manuscript_acceptance": false
   }
 }
