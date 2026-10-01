@@ -76,6 +76,41 @@ migration stages remain open. Existing stores without a recovery collection
 remain readable; the new collection is written only by an explicit workspace
 transaction. There is no automatic recovery or background retry.
 
+## Saved proposal queue — #359 continuation, 2026-10-01
+
+**Saved paragraph changes** reads already-persisted proposals and decisions for
+only the selected visible paragraph. Each request returns at most twenty metadata
+rows; **Show older changes** pages explicitly through that paragraph's history.
+The list contains local state, ordering, timestamps and compatibility notices;
+exact wording appears only after **Review saved change** rereads the saved diff.
+Reloading does not restore textarea text, apply a proposal or retry a request.
+
+This increment reuses the existing approved `workspace.json` profile on the
+restricted outside-Git surface. It adds no draft collection, browser storage,
+service worker, private asset or public payload. Unreviewed typing remains in
+memory, with a native reload/leave warning while that text is not represented by
+a saved proposal. The browser may still lose memory on a crash; durable unsaved
+draft retention requires its own storage/minimization policy under #359.
+
+Typing remains available while a private request is pending. Returned inspections,
+reviews and decisions preserve newer textarea input. A saved diff cannot be
+applied over a differing draft; that draft needs its own review or an explicit
+**Discard unreviewed text** action. Authenticated editor requests stop waiting
+after thirty seconds. A lost or timed-out reply confirms no new receipt in the
+browser, even if the server already processed the request. Inspect the saved
+queue manually when connected; there is no background resend or application.
+A confirmed proposal, decision or source-resume receipt stays confirmed when a
+subsequent review/source read fails; the panel names the unavailable read separately.
+The initial read-only bridge-session discovery remains separate from that timeout.
+
+**Cancel proposal** records a terminal local decision after exact review. It does
+not erase history or reverse an already-applied change; amendments require a new
+proposal. Queue rows and actual private receipts never imply remote acknowledgment,
+authenticated author approval, canonical source mutation or literary acceptance.
+Stale or unavailable source, changed versions and competing edits still block
+application. Kernel #153/#125, authoritative reconciliation and #359's broader
+offline/queued synchronization remain open.
+
 ## Existing Codex host, without another provider
 
 Ask Grwtsk captures the selected entity, exact source/working basis, message and

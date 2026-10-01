@@ -164,9 +164,12 @@ export class ChatWorkspace {
     check(['proposals', 'decisions', 'links'].every(k => Array.isArray(data[k])), 'invalid private state');
     for (const op of data.proposals) check(op.digest === hash(Object.fromEntries(Object.entries(op).filter(([k]) => k !== 'digest'))), 'proposal integrity mismatch');
     check(new Set(data.proposals.map(p => p.id)).size === data.proposals.length && new Set(data.proposals.map(p => p.key)).size === data.proposals.length, 'duplicate proposal identity or key');
-    for (const op of data.proposals) {
+    for (const [index, op] of data.proposals.entries()) {
       check(/^op_[0-9a-f-]{36}$/.test(op.id) && new RegExp(profile.entityID).test(op.target) && nonempty(op.key), 'invalid proposal identity');
       check(op.kind === 'ReplaceInscription' && op.schema === 'huey.private-chat-proposal.v1' && [op.actor, op.session, op.requestRef].every(nonempty), 'invalid proposal provenance');
+      check(op.clientSequence === index + 1 && Number.isSafeInteger(op.clientSequence)
+        && typeof op.createdAt === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(op.createdAt) && Number.isFinite(Date.parse(op.createdAt)),
+      'invalid persisted proposal sequence or creation time');
       check(hash(op.before) === op.beforeDigest && seal({ id: op.target, kind: 'Paragraph', state: paragraph(op.after).state }).version === op.afterVersion, 'invalid proposal wording or version');
     }
     check(new Set(data.decisions.map(d => d.operationId)).size === data.decisions.length, 'duplicate decision');
@@ -218,6 +221,30 @@ export class ChatWorkspace {
   read(id) {
     const snap = this.snapshot(), data = this.state();
     return { basis: snap.basis, revision: snap.revision, ...this.current(id, data, snap), evidence: 'source references only; private changes inherit no evidence or admission' };
+  }
+  proposalQueue({ id, beforeSequence, limit = 20 } = {}) {
+    check(typeof id === 'string' && new RegExp(profile.entityID).test(id), 'valid requested paragraph identity required');
+    check(Number.isSafeInteger(limit) && limit >= 1 && limit <= 20, 'queue limit must be 1–20');
+    check(beforeSequence === undefined || Number.isSafeInteger(beforeSequence) && beforeSequence > 0,
+      'queue cursor must be a positive exclusive sequence');
+    const data = this.state(), snap = this.snapshot();
+    const saved = data.proposals.filter(op => op.target === id);
+    check(saved.length || snap.entries.some(entry => entry.id === id), 'paragraph unavailable or unmapped with no saved private work');
+    let current = null, currentConflict = null;
+    try { current = this.current(id, data, snap); } catch (error) { currentConflict = error.message; }
+    const retired = new Set(latestReconciliation(data, id)?.retiredOperationIds ?? []);
+    const eligible = saved.filter(op => beforeSequence === undefined || op.clientSequence < beforeSequence)
+      .sort((a, b) => b.clientSequence - a.clientSequence);
+    const operations = eligible.slice(0, limit).map(op => {
+      const decision = data.decisions.find(item => item.operationId === op.id);
+      const conflict = decision ? null : currentConflict ?? (op.basis !== snap.basis
+        || op.baseVersion !== current.version || op.beforeDigest !== current.rawDigest ? 'CHAT_WORKSPACE: stale proposal; source/overlay changed' : null);
+      return { id: op.id, target: op.target, clientSequence: op.clientSequence, createdAt: op.createdAt,
+        status: decision?.status ?? 'proposed-private', retired: retired.has(op.id), conflict };
+    });
+    return { target: id, basis: snap.basis, revision: snap.revision, operations,
+      nextBeforeSequence: eligible.length > operations.length ? operations.at(-1).clientSequence : null,
+      authority: 'local private queue; no remote/literary acceptance' };
   }
   inspect(id) { return this.inspection(id, this.state(), this.snapshot()); }
   inspection(id, data, snap) {
@@ -391,6 +418,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     if (command === 'list' && args.length <= 2) result = ws.list(target);
     else if (command === 'read' && args.length === 2) result = ws.read(target);
     else if (command === 'inspect' && args.length === 2) result = ws.inspect(target);
+    else if (command === 'proposal-queue' && args.length === 1) result = ws.proposalQueue(input());
     else if (command === 'resume-source' && args.length === 1) result = ws.resumeSource(input());
     else if (command === 'search' && args.length === 1) result = ws.search(input());
     else if (command === 'propose' && args.length === 1) result = ws.propose(input());
@@ -399,7 +427,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     else if (command === 'link' && args.length === 3) result = ws.link(target, extra);
     else if (command === 'source-preview' && args.length === 2) result = ws.sourcePreview(target);
     else if (command === 'handoff' && args.length === 2) result = ws.handoff(target);
-    else throw new Error('usage: chat_workspace.mjs --store /restricted/outside/git [list [slot]|read ID|inspect ID|resume-source < JSON|search < JSON|propose < JSON|review OP|decide < JSON|link OP URL|source-preview OP|handoff OP]');
+    else throw new Error('usage: chat_workspace.mjs --store /restricted/outside/git [list [slot]|read ID|inspect ID|proposal-queue < JSON|resume-source < JSON|search < JSON|propose < JSON|review OP|decide < JSON|link OP URL|source-preview OP|handoff OP]');
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

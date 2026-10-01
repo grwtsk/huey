@@ -365,3 +365,145 @@ test('source preview after recovery includes only active applied edits and prese
   snap.basis = old.basis;
   assert.throws(() => f.ws.sourcePreview(old.id), /retired private operation/);
 });
+
+test('proposal queue is a bounded read-only view without wording or proposal fingerprints', t => {
+  const f = fixture(t), file = join(f.store, 'workspace.json');
+  assert.deepEqual(f.ws.proposalQueue({ id }), { target: id, basis: 'synthetic-basis', revision: 'a'.repeat(40),
+    operations: [], nextBeforeSequence: null, authority: 'local private queue; no remote/literary acceptance' });
+  assert.equal(existsSync(file), false);
+  const op = f.propose(), before = readFileSync(file, 'utf8'), snapshot = f.ws.snapshot;
+  let calls = 0;
+  f.ws.snapshot = () => {
+    calls++; const snap = snapshot();
+    snap.entries.push({ id: id2, get raw() { throw new Error('Unselected paragraph must not be read'); } });
+    return snap;
+  };
+  const queue = f.ws.proposalQueue({ id });
+  assert.equal(calls, 1);
+  assert.deepEqual(queue.operations, [{ id: op.id, target: id, clientSequence: 1, createdAt: op.createdAt,
+    status: 'proposed-private', retired: false, conflict: null }]);
+  const listing = JSON.stringify(queue);
+  for (const privateValue of [op.before, op.after, op.baseVersion, op.afterVersion, op.beforeDigest, op.digest, op.source.path, op.source.blob])
+    assert.equal(listing.includes(privateValue), false);
+  assert.equal(readFileSync(file, 'utf8'), before);
+  for (const limit of [0, 21, 1.5, '2', null, Infinity]) assert.throws(() => f.ws.proposalQueue({ id, limit }), /limit/);
+  for (const beforeSequence of [0, -1, 1.5, '2', null, Infinity]) assert.throws(() => f.ws.proposalQueue({ id, beforeSequence }), /cursor/);
+  assert.throws(() => f.ws.proposalQueue({ id: 'not-an-entity' }), /identity/);
+  assert.throws(() => f.ws.proposalQueue({ id: 'he_00000000-0000-4000-8000-000000000003' }), /no saved private work/);
+});
+
+test('newest-first exclusive pagination follows global sequence and isolates the requested target', t => {
+  const f = fixture(t);
+  f.mutate(s => { s.entries.push({ ...s.entries[0], id: id2,
+    version: seal({ id: id2, kind: 'Paragraph', state: parseEditorialMarkdown(raw)[0].state }).version }); });
+  const own = [], foreign = [];
+  for (let i = 0; i < 25; i++) {
+    own.push(f.propose({ key: `own-${i}`, after: `Synthetic private revision ${i}.` }));
+    if (i % 3 === 0) {
+      const other = f.ws.read(id2);
+      foreign.push(f.propose({ id: id2, baseVersion: other.version, beforeDigest: other.rawDigest,
+        key: `foreign-${i}`, after: `Another synthetic private revision ${i}.` }));
+    }
+  }
+  const file = join(f.store, 'workspace.json'), before = readFileSync(file, 'utf8');
+  assert.equal(f.ws.proposalQueue({ id }).operations.length, 20);
+  let beforeSequence, pages = 0; const gathered = [];
+  do {
+    const queue = f.ws.proposalQueue({ id, limit: 7, ...(beforeSequence === undefined ? {} : { beforeSequence }) });
+    assert.equal(queue.operations.every(op => op.target === id), true);
+    gathered.push(...queue.operations); pages++;
+    if (queue.nextBeforeSequence !== null) assert.equal(queue.nextBeforeSequence, queue.operations.at(-1).clientSequence);
+    beforeSequence = queue.nextBeforeSequence;
+  } while (beforeSequence !== null);
+  assert.equal(pages, 4);
+  assert.deepEqual(gathered.map(op => op.id), [...own].reverse().map(op => op.id));
+  assert.equal(new Set(gathered.map(op => op.id)).size, own.length);
+  assert.equal(gathered.every((op, i) => !i || op.clientSequence < gathered[i - 1].clientSequence), true);
+  assert.deepEqual(f.ws.proposalQueue({ id: id2 }).operations.map(op => op.id), [...foreign].reverse().map(op => op.id));
+  assert.deepEqual(f.ws.proposalQueue({ id, beforeSequence: 1 }).operations, []);
+  assert.equal(readFileSync(file, 'utf8'), before);
+});
+
+test('a persisted proposal surviving a lost response and reload can be reviewed and cancelled exactly once', t => {
+  const f = fixture(t); writeFileSync(join(f.root, 'source.md'), raw);
+  const op = f.propose(), proposals = structuredClone(f.ws.state().proposals);
+  const reopened = new ChatWorkspace({ root: f.root, store: f.store, snapshot: f.ws.snapshot });
+  const row = reopened.proposalQueue({ id }).operations[0], review = reopened.review(row.id);
+  assert.deepEqual(review.diff, { before: raw, after: op.after });
+  const decision = { operationId: row.id, reviewDigest: review.reviewDigest,
+    approvalRef: 'Synthetic explicit local Cancel click', status: 'cancelled' };
+  const receipt = reopened.decide(decision);
+  const again = new ChatWorkspace({ root: f.root, store: f.store, snapshot: f.ws.snapshot });
+  assert.deepEqual(again.decide(decision), receipt);
+  assert.equal(again.proposalQueue({ id }).operations[0].status, 'cancelled');
+  assert.equal(again.state().decisions.length, 1); assert.deepEqual(again.state().proposals, proposals);
+  assert.equal(again.read(id).raw, raw); assert.equal(readFileSync(join(f.root, 'source.md'), 'utf8'), raw);
+  assert.throws(() => again.decide({ ...decision, approvalRef: 'A different cancel reference' }), /different decision/);
+});
+
+test('stale and unavailable pending work stays recoverable without substituting source text', t => {
+  const f = fixture(t), op = f.propose(), proposals = structuredClone(f.ws.state().proposals);
+  f.mutate(s => { s.basis = 'changed-repository'; });
+  assert.match(f.ws.proposalQueue({ id }).operations[0].conflict, /stale/);
+  assert.throws(() => f.decide(op), /stale/);
+  f.mutate(s => { s.entries = []; });
+  const queue = f.ws.proposalQueue({ id });
+  assert.equal(queue.operations[0].status, 'proposed-private'); assert.equal(queue.operations[0].retired, false);
+  assert.match(queue.operations[0].conflict, /unavailable/);
+  assert.match(f.ws.review(op.id).conflict, /unavailable/);
+  const receipt = f.decide(op, { status: 'cancelled', approvalRef: 'Synthetic cancel of unavailable saved work' });
+  assert.equal(receipt.effect, 'no text effect');
+  assert.equal(f.ws.proposalQueue({ id }).operations[0].status, 'cancelled');
+  assert.equal(f.ws.proposalQueue({ id }).operations[0].conflict, null);
+  assert.deepEqual(f.ws.state().proposals, proposals); assert.throws(() => f.ws.read(id), /unavailable/);
+});
+
+test('pending conflicts bind exact wording and competing private effects while terminal status remains immutable', t => {
+  const f = fixture(t), applied = f.propose(), competing = f.propose({ key: 'competing', after: 'Competing synthetic proposal.' });
+  f.decide(applied);
+  let queue = f.ws.proposalQueue({ id });
+  assert.equal(queue.operations[0].id, competing.id); assert.match(queue.operations[0].conflict, /stale/);
+  assert.equal(queue.operations[1].status, 'applied-private'); assert.equal(queue.operations[1].conflict, null);
+  const fresh = f.propose({ key: 'fresh', after: 'Fresh synthetic proposal based on the private result.' });
+  queue = f.ws.proposalQueue({ id }); assert.equal(queue.operations[0].id, fresh.id); assert.equal(queue.operations[0].conflict, null);
+  f.mutate(s => { s.entries[0].raw = `*${raw}*`; });
+  queue = f.ws.proposalQueue({ id }); assert.match(queue.operations[0].conflict, /overlay is stale/);
+  assert.equal(queue.operations[2].status, 'applied-private'); assert.equal(queue.operations[2].conflict, null);
+});
+
+test('apply-versus-cancel races preserve the first terminal result and exact retries', t => {
+  for (const firstStatus of ['applied-private', 'cancelled']) {
+    const f = fixture(t), op = f.propose();
+    const receipt = f.decide(op, { status: firstStatus });
+    assert.throws(() => f.decide(op, { status: firstStatus === 'applied-private' ? 'cancelled' : 'applied-private' }), /different decision/);
+    assert.deepEqual(f.decide(op, { status: firstStatus }), receipt);
+    assert.equal(f.ws.proposalQueue({ id }).operations[0].status, firstStatus);
+    assert.equal(f.ws.state().decisions.length, 1);
+    assert.equal(f.ws.read(id).raw, firstStatus === 'applied-private' ? op.after : raw);
+  }
+});
+
+test('queue retirement remains separate from immutable application and fresh pending work', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old);
+  f.mutate(s => { s.basis = 'new-repository-basis'; }); resume(f);
+  const fresh = f.propose({ key: 'fresh', after: 'A fresh candidate after the source resume.' });
+  assert.deepEqual(f.ws.proposalQueue({ id }).operations.map(op => [op.id, op.status, op.retired, op.conflict]),
+    [[fresh.id, 'proposed-private', false, null], [old.id, 'applied-private', true, null]]);
+  assert.equal(f.ws.state().decisions[0].status, 'applied-private'); assert.equal(f.ws.state().reconciliations.length, 1);
+  assert.equal(f.ws.inspect(id).history[0].after, old.after);
+});
+
+test('persisted global sequencing and creation dates cannot be rewritten into queue metadata', t => {
+  const f = fixture(t); f.propose(); f.propose({ key: 'second', after: 'Another synthetic saved proposal.' });
+  const file = join(f.store, 'workspace.json'), original = f.ws.state();
+  for (const mutate of [op => { op.clientSequence = 2; }, op => { op.clientSequence = 0; },
+    op => { op.clientSequence = '1'; }, op => { op.createdAt = 'Untrusted text is not a queue timestamp'; }]) {
+    const corrupted = structuredClone(original); mutate(corrupted.proposals[0]);
+    rehashReceipt(corrupted.proposals[0]); writeFileSync(file, JSON.stringify(corrupted));
+    assert.throws(() => f.ws.proposalQueue({ id }), /sequence or creation time/);
+  }
+  const reversed = structuredClone(original); reversed.proposals.reverse(); writeFileSync(file, JSON.stringify(reversed));
+  assert.throws(() => f.ws.proposalQueue({ id }), /sequence or creation time/);
+  writeFileSync(file, JSON.stringify(original));
+  assert.deepEqual(f.ws.proposalQueue({ id }).operations.map(op => op.clientSequence), [2, 1]);
+});

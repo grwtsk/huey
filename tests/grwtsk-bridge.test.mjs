@@ -155,6 +155,48 @@ test('recovery refuses drift after comparison and cannot replace unavailable sou
   assert.equal(readFileSync(f.sourceFile, 'utf8'), f.wording);
 });
 
+test('selected private queue survives uncertain responses and immutable cancellation without exposing wording', async t => {
+  const f = await fixture(t), first = (await f.propose()).value;
+  const second = (await f.propose({ key: 'saved-2', after: 'Another synthetic saved candidate.' })).value;
+  const saved = await f.call(`/__grwtsk/queue?id=${id}&limit=1`);
+  assert.equal(saved.status, 200); assert.equal(saved.value.target, id);
+  assert.deepEqual(saved.value.operations.map(op => op.id), [second.id]);
+  assert.equal(saved.value.operations[0].status, 'proposed-private');
+  assert.equal(saved.value.operations[0].conflict, null);
+  for (const wording of [raw, first.after, second.after, first.beforeDigest, first.source.path]) assert.equal(JSON.stringify(saved.value).includes(wording), false);
+  const older = await f.call(`/__grwtsk/queue?id=${id}&limit=1&beforeSequence=${saved.value.nextBeforeSequence}`);
+  assert.deepEqual(older.value.operations.map(op => op.id), [first.id]); assert.equal(older.value.nextBeforeSequence, null);
+  const review = (await f.call(`/__grwtsk/review?id=${second.id}`)).value;
+  assert.equal(review.diff.after, second.after);
+  const cancelled = await f.decide(second, { status: 'cancelled', approvalRef: 'Synthetic explicit cancellation' });
+  assert.equal(cancelled.status, 200);
+  assert.deepEqual((await f.decide(second, { status: 'cancelled', approvalRef: 'Synthetic explicit cancellation' })).value, cancelled.value);
+  assert.equal((await f.decide(second)).status, 409);
+  const reloaded = (await f.call(`/__grwtsk/queue?id=${id}`)).value;
+  assert.equal(reloaded.operations[0].status, 'cancelled');
+  assert.equal((await f.call(`/__grwtsk/read?id=${id}`)).value.raw, raw);
+  assert.equal((await f.call(`/__grwtsk/review?id=${second.id}`)).value.diff.after, second.after);
+  f.mutate(s => { s.basis = 'changed-queue-basis'; });
+  const stale = (await f.call(`/__grwtsk/queue?id=${id}`)).value;
+  assert.match(stale.operations.find(op => op.id === first.id).conflict, /stale/);
+  f.mutate(s => { s.entries = []; });
+  const unavailable = (await f.call(`/__grwtsk/queue?id=${id}`)).value;
+  assert.match(unavailable.operations.find(op => op.id === first.id).conflict, /unavailable|unmapped/);
+  assert.equal(readFileSync(f.sourceFile, 'utf8'), f.wording);
+});
+
+test('queue query and target scope are bounded under the existing local capability', async t => {
+  const f = await fixture(t); await f.propose();
+  assert.equal((await f.call(`/__grwtsk/queue?id=${id}`, { headers: { 'X-Huey-Session': 'wrong' } })).status, 403);
+  for (const query of [`id=${id}&id=${id2}`, `id=${id}&path=/etc/passwd`, `id=${id}&limit=21`, `id=${id}&limit=0`,
+    `id=${id}&beforeSequence=-1`, `id=${id}&beforeSequence=1.2`, `id=${id}&limit=1&limit=2`, 'id=../../private', '']) {
+    assert.equal((await f.call('/__grwtsk/queue?' + query)).status, 400);
+  }
+  assert.equal((await f.call(`/__grwtsk/queue?id=${id2}`)).value.operations.length, 0);
+  assert.equal((await f.call(`/__grwtsk/queue?id=${id}&limit=2&beforeSequence=1`)).value.operations.length, 0);
+  assert.equal((await f.call('/__grwtsk/queue', { method: 'POST', data: { id } })).status, 405);
+});
+
 test('bounded JSON rejects arbitrary paths, actor spoofing, multi-block replacement and inauthentic acceptance status', async t => {
   const f = await fixture(t);
   assert.equal((await f.propose({ actor: 'author' })).status, 400);
