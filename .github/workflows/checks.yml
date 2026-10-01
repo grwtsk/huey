@@ -116,6 +116,7 @@ jobs:
           done
           HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/traversal_browser_test.py
           HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/paragraph_browser_test.py
+          HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/navigation_browser_test.py
       - name: Existing admitted editor and evidence browser checks
         run: /tmp/huey-browser-venv/bin/python reader/tests/browser_test.py
       - name: Opt-in private Grwtsk editor over loopback HTTP

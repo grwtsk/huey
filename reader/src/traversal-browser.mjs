@@ -2,6 +2,7 @@ import { createTraversal, EdgeIntent } from './traversal.mjs';
 import { formatEntityRoute } from './routes.mjs';
 import { resolveParagraphLocation, paragraphLinks, validateParagraphBindings, lookupEvidenceBinding } from './paragraphs.mjs';
 import { paragraphHashRoute } from './text.mjs';
+import { mountBookNavigation, contentsWithLocators } from './navigation-ui.mjs';
 
 const node = (tag, text, className = '') => {
   const element = document.createElement(tag);
@@ -19,6 +20,7 @@ const skip = node('a', 'Skip to the page', 'skip-link'); skip.href = '#book';
 // Traversal is read-only until the separate editor/draft migration preserves edits.
 document.body.replaceChildren(skip, main, live);
 let traversal, pages, current, projection, targets, bindings = null, paragraphLocation = null, composing = false, pointerDown = false, wheelArmed = false;
+let navigation = null;
 const edges = { previous: new EdgeIntent(), next: new EdgeIntent() };
 const cancel = () => { wheelArmed = false; Object.values(edges).forEach(edge => edge.cancel()); };
 const atEdge = direction => direction === 'previous' ? scrollY <= 2
@@ -86,6 +88,9 @@ function render({ focus = false, resetScroll = false, fromHistory = false } = {}
   const r = current.resolution;
   if (r.redirectTo) history.replaceState(history.state, '', r.redirectTo);
   const page = current.pageId ? pages.get(current.pageId) : null;
+  navigation?.update({ pageId: current.pageId, sequence: current.sequence, index: current.index,
+    total: current.sequence === 'unplaced' ? traversal.unplacedOrder.length : traversal.readingOrder.length,
+    previous: current.previous && pathFor(current.previous), next: current.next && pathFor(current.next) });
   main.replaceChildren();
   main.dataset.pageId = current.pageId ?? '';
   main.dataset.outcome = r.status;
@@ -182,7 +187,7 @@ function render({ focus = false, resetScroll = false, fromHistory = false } = {}
 }
 function navigate(path) {
   if (traversal.locate(path).resolution.status === 'invalid-route') return;
-  if (path === address()) return;
+  if (path === address()) { main.querySelector('h1')?.focus({ preventScroll: true }); return; }
   history.pushState(null, '', path);
   render({ focus: true, resetScroll: true });
 }
@@ -248,6 +253,9 @@ try {
   pages = new Map(payload.pages.map(page => [page.id, page]));
   const ids = [...traversal.readingOrder, ...traversal.unplacedOrder];
   if (pages.size !== ids.length || !ids.every(id => pages.has(id))) throw new Error('Incomplete');
+  navigation = mountBookNavigation({ groups: contentsWithLocators(payload),
+    orders: { book: traversal.readingOrder, unplaced: traversal.unplacedOrder }, navigate,
+    notice: 'Working book · available, partial, restricted and unresolved sections remain visible. Unplaced material is separate from the book sequence.' });
   render();
   // Private editing exists only on an explicitly enabled local development
   // bridge. Static/public projections retain their read-only traversal.
