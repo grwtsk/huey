@@ -8,10 +8,11 @@ import { fileURLToPath } from 'node:url';
 import { ChatWorkspace, loadSnapshot } from './chat_workspace.mjs';
 import { loadInventory, safePath, validateRegistry } from './editorial_inventory.mjs';
 import { canonical, profile } from './literary_model.mjs';
+import { DraftCheckpointError } from './draft_checkpoint.mjs';
 
 export const GRWTSK_CLIENT = 'huey-grwtsk-editor/1';
 const exec = promisify(execFile);
-const MAX_BODY = 262144, MAX_THREAD = 16 * 1024 * 1024;
+const MAX_BODY = 262144, MAX_DRAFT_BODY = 1024 * 1024, MAX_THREAD = 16 * 1024 * 1024;
 const entityID = new RegExp(profile.entityID);
 const requestID = /^request_[0-9a-f-]{36}$/;
 const hash = value => `sha256:${createHash('sha256').update(canonical(value)).digest('hex')}`;
@@ -86,7 +87,8 @@ export function createCheckedSnapshotReader(root = ROOT) {
 function inspectPrivate(path, directory = false) {
   const stat = lstatSync(path);
   check(!stat.isSymbolicLink() && (directory ? stat.isDirectory() : stat.isFile() && stat.nlink === 1), 'unsafe private thread entry');
-  check(stat.uid === process.getuid() && (stat.mode & 0o077) === 0, 'private thread must be owned by this user with no group/other permissions');
+  check(stat.uid === process.getuid() && (stat.mode & 0o7777) === (directory ? 0o700 : 0o600),
+    'private thread permissions must be exactly owner-only 0700 directories and 0600 files');
   check(directory || stat.size <= MAX_THREAD, 'private thread exceeds size limit');
 }
 class PrivateThread {
@@ -186,17 +188,17 @@ async function readPublicIssue(number, root) {
     comments: issue.comments.map(c => ({ body: typeof c.body === 'string' ? c.body : '', url: typeof c.url === 'string' ? c.url : null })) };
 }
 
-function body(req) {
+function body(req, maximum = MAX_BODY) {
   check(/^application\/json(?:;\s*charset=utf-8)?$/i.test(req.headers['content-type'] ?? ''), 'JSON content type required', 415);
   check(!req.headers['content-encoding'] || req.headers['content-encoding'] === 'identity', 'encoded request body unsupported', 415);
   const declared = req.headers['content-length'];
-  check(declared === undefined || /^\d+$/.test(declared) && Number(declared) <= MAX_BODY, 'request body exceeds size limit', 413);
+  check(declared === undefined || /^\d+$/.test(declared) && Number(declared) <= maximum, 'request body exceeds size limit', 413);
   return new Promise((done, fail) => {
     let bytes = 0, chunks = [], finished = false;
     req.on('data', chunk => {
       if (finished) return;
       bytes += chunk.length;
-      if (bytes > MAX_BODY) { finished = true; chunks = []; const error = new Error('GRWTSK: request body exceeds size limit'); error.status = 413; fail(error); return; }
+      if (bytes > maximum) { finished = true; chunks = []; const error = new Error('GRWTSK: request body exceeds size limit'); error.status = 413; fail(error); return; }
       chunks.push(chunk);
     });
     req.on('end', () => {
@@ -237,13 +239,13 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
     try {
       const url = new URL(req.url, 'http://localhost'), route = url.pathname;
       boundary(req, route === '/__grwtsk/session' ? null : token);
-      const getRoutes = ['/__grwtsk/session', '/__grwtsk/catalog', '/__grwtsk/read', '/__grwtsk/inspect', '/__grwtsk/queue', '/__grwtsk/review', '/__grwtsk/handoff', '/__grwtsk/issues', '/__grwtsk/chat'];
-      const postRoutes = ['/__grwtsk/propose', '/__grwtsk/decide', '/__grwtsk/resume-source', '/__grwtsk/link', '/__grwtsk/chat'];
+      const getRoutes = ['/__grwtsk/session', '/__grwtsk/catalog', '/__grwtsk/read', '/__grwtsk/inspect', '/__grwtsk/draft', '/__grwtsk/draft-index', '/__grwtsk/queue', '/__grwtsk/review', '/__grwtsk/handoff', '/__grwtsk/issues', '/__grwtsk/chat'];
+      const postRoutes = ['/__grwtsk/propose', '/__grwtsk/decide', '/__grwtsk/resume-source', '/__grwtsk/draft-save', '/__grwtsk/draft-discard', '/__grwtsk/draft-restore', '/__grwtsk/link', '/__grwtsk/chat'];
       check(getRoutes.includes(route) || postRoutes.includes(route), 'unknown endpoint', 404);
       check(req.method === 'GET' && getRoutes.includes(route) || req.method === 'POST' && postRoutes.includes(route), 'method unavailable', 405);
       let result;
       if (req.method === 'POST') {
-        check(!url.search, 'query parameters unavailable for POST'); const input = await body(req);
+        check(!url.search, 'query parameters unavailable for POST'); const input = await body(req, route === '/__grwtsk/draft-save' ? MAX_DRAFT_BODY : MAX_BODY);
         if (route === '/__grwtsk/propose') {
           fields(input, ['id', 'baseVersion', 'beforeDigest', 'after', 'requestRef', 'key']);
           result = workspace.propose({ ...input, actor, session });
@@ -251,6 +253,13 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
           fields(input, ['operationId', 'reviewDigest', 'approvalRef', 'status']); result = workspace.decide(input);
         } else if (route === '/__grwtsk/resume-source') {
           fields(input, ['id', 'reviewDigest', 'decisionRef', 'key']); result = workspace.resumeSource(input);
+        } else if (route === '/__grwtsk/draft-save') {
+          fields(input, ['id', 'basis', 'revision', 'sourceVersion', 'baseVersion', 'beforeDigest', 'privateOperation', 'draft', 'key', 'expectedDigest', 'generation']);
+          result = workspace.saveDraft(input);
+        } else if (route === '/__grwtsk/draft-discard') {
+          fields(input, ['id', 'expectedDigest', 'generation']); result = workspace.discardDraft(input);
+        } else if (route === '/__grwtsk/draft-restore') {
+          fields(input, ['id', 'checkpointDigest', 'generation']); result = workspace.restoreDraft(input);
         } else if (route === '/__grwtsk/link') {
           fields(input, ['operationId', 'url']); result = workspace.link(input.operationId, input.url);
         } else {
@@ -277,6 +286,8 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
           authority: 'source/publication labels are observations, not permissions or acceptance; overlay freshness is checked when a paragraph is read' };
       } else if (route === '/__grwtsk/read') result = workspace.read(query(url, 'id'));
       else if (route === '/__grwtsk/inspect') result = workspace.inspect(query(url, 'id'));
+      else if (route === '/__grwtsk/draft') result = workspace.inspectDraft(query(url, 'id'));
+      else if (route === '/__grwtsk/draft-index') { check(!url.search, 'draft index accepts no query'); result = workspace.draftIndex(); }
       else if (route === '/__grwtsk/queue') {
         const keys = [...url.searchParams.keys()];
         check(keys.every(key => ['id', 'beforeSequence', 'limit'].includes(key)) && new Set(keys).size === keys.length && url.searchParams.has('id'), 'invalid queue query');
@@ -307,7 +318,9 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
     } catch (error) {
       const status = error.status ?? (/stale|locked|already has a different|idempotency/i.test(error.message) ? 409 : 400);
       // File/child-process errors can contain host paths; keep those out of HTTP.
-      respond({ error: /^(?:GRWTSK|CHAT_WORKSPACE|EDITORIAL_INVENTORY):/.test(error.message) ? error.message : 'GRWTSK: local context unavailable; inspect the local host without inferring state' }, status);
+      respond({ error: error instanceof DraftCheckpointError ? `CHAT_WORKSPACE: ${error.code}`
+        : /^(?:GRWTSK|CHAT_WORKSPACE|EDITORIAL_INVENTORY):/.test(error.message) ? error.message
+          : 'GRWTSK: local context unavailable; inspect the local host without inferring state' }, status);
     }
   };
 }

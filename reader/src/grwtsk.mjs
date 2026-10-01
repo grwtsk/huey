@@ -41,7 +41,9 @@ export async function mountGrwtsk({ main, projection }) {
       return value;
     } finally { clearTimeout(timeout); }
   };
-  let catalog = await request('catalog');
+  let catalog, catalogUnavailable = false;
+  try { catalog = await request('catalog'); }
+  catch { catalogUnavailable = true; catalog = { paragraphs: [], slots: [], revision: null }; }
   const toggle = button('Grwtsk'); toggle.id = 'grwtsk-toggle';
   toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-controls', 'grwtsk-panel');
   const panel = make('aside', undefined, 'grwtsk-panel'); panel.id = 'grwtsk-panel'; panel.hidden = true;
@@ -80,6 +82,20 @@ export async function mountGrwtsk({ main, projection }) {
   queueSection.append(make('summary', 'Saved paragraph changes'),
     make('p', 'Private proposals and decisions only. Unsaved typing remains in this tab; saved changes confer no remote or literary acceptance.', 'grwtsk-note'),
     loadQueue, queueStatus, queueBody, olderQueue);
+  const draftSection = make('section'); draftSection.id = 'grwtsk-drafts';
+  draftSection.setAttribute('aria-label', 'Saved unreviewed draft');
+  const saveDraft = button('Save draft'), replaceDraft = button('Replace saved draft'); replaceDraft.hidden = true;
+  const loadDraft = button('Load saved draft'), restoreDraft = button('Restore saved draft'), discardDraft = button('Discard saved draft');
+  const findDrafts = button('Find saved drafts'), draftIndex = make('div');
+  const draftStatus = make('p', 'Explicit local recovery for C08A. Nothing is saved or restored automatically.', 'grwtsk-note');
+  draftStatus.setAttribute('role', 'status');
+  const draftComparison = make('details'); draftComparison.hidden = true;
+  const draftBefore = make('pre'), draftText = make('pre'), draftBindings = make('dl');
+  draftBefore.id = 'grwtsk-draft-before'; draftText.id = 'grwtsk-draft-text';
+  draftComparison.append(make('summary', 'Exact saved draft'), draftBindings, make('h4', 'Saved base'), draftBefore,
+    make('h4', 'Saved unfinished text'), draftText);
+  draftSection.append(make('h3', 'Saved unreviewed draft'), draftStatus, saveDraft, replaceDraft, loadDraft,
+    findDrafts, draftIndex, draftComparison, restoreDraft, discardDraft);
   const issueInput = make('input'); issueInput.type = 'text'; issueInput.placeholder = '358, 360';
   const issuesButton = button('Load issue context'), issueBody = make('div');
   const issueSection = make('details'); issueSection.append(make('summary', 'Issues and blockers'),
@@ -93,16 +109,23 @@ export async function mountGrwtsk({ main, projection }) {
   const send = button('Ask Grwtsk'), refresh = button('Check reply');
   const chatSection = make('section'); chatSection.append(make('h3', 'Private chat'), messages,
     field('Message for the existing Codex assistant', message), send, refresh);
-  panel.append(header, scope, status, context, provenance, editLabel, reviewButton, refreshSelection,
+  panel.append(header, scope, status, context, provenance, editLabel, draftSection, reviewButton, refreshSelection,
     reviewSection, recoverySection, historySection, queueSection, issueSection, handoffSection, chatSection);
   document.body.append(toggle, panel);
   let selected = null, current = null, operation = null, review = null, recovery = null, dirty = false, loading = false, selectionTicket = 0, inputGeneration = 0, restorePending = false, selectionPending = null;
   const records = new Map(catalog.paragraphs.map(item => [item.id, item]));
   let queueCursor = null, queueTarget = null;
+  let checkpoint = null, checkpointCompatibility = null, checkpointTarget = null, checkpointGeneration = null, checkpointEligible = false, checkpointConfirmed = false;
+  let retainedDraftTarget = null;
   const note = text => { status.textContent = text; };
   const visibleSelection = () => Boolean(current && main.querySelector(`.traversal-paragraph[data-entity-id="${current.id}"]`));
   const selectedVisible = () => Boolean(selected && main.querySelector(`.traversal-paragraph[data-entity-id="${selected}"]`));
-  const unstoredDraft = () => dirty && (!operation || operation.after !== editor.value);
+  const checkpointContextMatches = () => Boolean(checkpoint && current && checkpoint.target === current.id
+    && checkpoint.basis === current.basis && checkpoint.revision === current.revision
+    && checkpoint.baseVersion === current.version && checkpoint.sourceVersion === current.sourceVersion
+    && checkpoint.beforeDigest === current.rawDigest && checkpoint.privateOperation === (current.privateOperation ?? null));
+  const checkpointMatches = () => checkpointConfirmed && checkpointContextMatches() && checkpoint.draft === editor.value;
+  const unstoredDraft = () => dirty && (!operation || operation.after !== editor.value) && !checkpointMatches();
   window.addEventListener('beforeunload', event => {
     if (!unstoredDraft()) return;
     event.preventDefault(); event.returnValue = '';
@@ -127,6 +150,21 @@ export async function mountGrwtsk({ main, projection }) {
     loadQueue.disabled = loading || !selectedVisible();
     olderQueue.disabled = loading || !selectedVisible() || queueTarget !== selected || !queueCursor;
     for (const control of queueBody.querySelectorAll('button')) control.disabled = loading || !selectedVisible() || queueTarget !== selected;
+    const shownDraft = checkpointTarget === selected && Boolean(checkpoint);
+    if (shownDraft && current && checkpointCompatibility?.status === 'current' && !checkpointContextMatches()) {
+      checkpointCompatibility = { status: current ? 'stale' : 'unavailable', reasons: ['DISPLAYED_CONTEXT_CHANGED'] };
+      draftStatus.textContent = `Saved draft retained · ${current ? 'stale context' : 'source unavailable'}. Load the exact comparison again before recovery.`;
+    }
+    saveDraft.hidden = shownDraft; replaceDraft.hidden = !shownDraft;
+    const draftSource = visible && current.slot === 'C08A' && !recovery
+      && (checkpointTarget !== selected || checkpointGeneration === null || checkpointEligible);
+    saveDraft.disabled = replaceDraft.disabled = loading || !draftSource || !dirty;
+    loadDraft.disabled = loading || !selectedVisible() && retainedDraftTarget !== selected;
+    findDrafts.disabled = loading;
+    for (const control of draftIndex.querySelectorAll('button')) control.disabled = loading || dirty;
+    restoreDraft.disabled = loading || !visible || recovery || !shownDraft || !checkpointConfirmed || !checkpointEligible
+      || checkpointCompatibility?.status !== 'current' || dirty;
+    discardDraft.disabled = loading || !shownDraft;
     if (current && !visible) {
       note('Previous paragraph is outside this view. Return to it or discard its unreviewed text before selecting an available paragraph.');
     } else if (visible && status.textContent.startsWith('Previous paragraph is outside this view.')) {
@@ -171,6 +209,12 @@ export async function mountGrwtsk({ main, projection }) {
     }
   }
   function showInspection(id, value) {
+    retainedDraftTarget = null;
+    if (checkpointTarget !== id) {
+      checkpoint = null; checkpointCompatibility = null; checkpointGeneration = null; checkpointTarget = null;
+      checkpointEligible = checkpointConfirmed = false; draftComparison.hidden = true; draftBefore.textContent = draftText.textContent = '';
+      draftStatus.textContent = 'Load this paragraph’s saved draft explicitly. Nothing is restored automatically.';
+    }
     if (queueTarget !== id) {
       queueBody.replaceChildren(); queueCursor = null; queueTarget = null; olderQueue.hidden = true;
       queueStatus.textContent = 'Load this paragraph’s saved changes. Nothing is restored or applied automatically.';
@@ -245,6 +289,117 @@ export async function mountGrwtsk({ main, projection }) {
   };
   const discard = button('Discard unreviewed text'); editLabel.after(discard);
   discard.onclick = () => { if (current && !loading) { inputGeneration += 1; editor.value = current.raw; dirty = false; reviewButton.disabled = true; reviewSection.hidden = true; operation = null; review = null; note('Unreviewed text discarded; existing history retained.'); availability(); } };
+  function showDraft(id, value) {
+    checkpointTarget = id; checkpoint = value.checkpoint; checkpointCompatibility = value.compatibility;
+    checkpointConfirmed = Boolean(checkpoint);
+    checkpointGeneration = value.generation; checkpointEligible = value.eligible;
+    draftComparison.hidden = !checkpoint;
+    draftBefore.textContent = checkpoint?.before ?? ''; draftText.textContent = checkpoint?.draft ?? '';
+    draftBindings.replaceChildren();
+    if (checkpoint) for (const [label, saved] of [ ['Saved entity', checkpoint.target],
+      ['Saved source version', checkpoint.sourceVersion], ['Saved private working version', checkpoint.baseVersion],
+      ['Saved repository revision', checkpoint.revision], ['Saved repository basis', checkpoint.basis],
+      ['Saved private operation', checkpoint.privateOperation ?? 'No applied private operation'] ]) {
+      draftBindings.append(make('dt', label), make('dd', saved));
+    }
+    if (!checkpoint) draftStatus.textContent = value.eligible
+      ? 'No saved unreviewed draft for this paragraph. Save is explicit.'
+      : 'Draft recovery is unavailable for this source/version. Existing editing and source permissions remain separate.';
+    else draftStatus.textContent = `Saved privately at ${checkpoint.createdAt} · ${value.compatibility.status}. ${value.compatibility.status === 'current'
+      ? 'Inspect the exact text; restore only when the textarea has no unreviewed changes.'
+      : 'Retained for comparison only. Restore is blocked; no automatic rebase runs.'}`;
+    availability();
+  }
+  async function inspectDraft(id) {
+    const value = await request(`draft?id=${encodeURIComponent(id)}`);
+    if (selected !== id || !selectedVisible() && retainedDraftTarget !== id) return null;
+    showDraft(id, value); return value;
+  }
+  loadDraft.onclick = guarded(async () => { if (selected && (selectedVisible() || retainedDraftTarget === selected)) await inspectDraft(selected); });
+  findDrafts.onclick = guarded(async () => {
+    const index = await request('draft-index'); draftIndex.replaceChildren();
+    if (!index.checkpoints.length) draftIndex.append(make('p', 'No saved unreviewed drafts.', 'grwtsk-note'));
+    for (const entry of index.checkpoints) {
+      const row = make('div'); row.append(make('p', `${entry.target} · saved ${entry.createdAt}`, 'grwtsk-note'));
+      const inspect = button('Inspect saved draft');
+      inspect.onclick = guarded(async () => {
+        if (dirty) return;
+        const ticket = ++selectionTicket, generation = inputGeneration;
+        const value = await request(`draft?id=${encodeURIComponent(entry.target)}`);
+        if (ticket !== selectionTicket || generation !== inputGeneration || dirty) {
+          note('New textarea input retained. No saved draft selection replaced it.'); return;
+        }
+        selected = entry.target; current = null; recovery = null; operation = null; review = null;
+        retainedDraftTarget = selected; editor.value = ''; editor.disabled = true;
+        reviewSection.hidden = recoverySection.hidden = historySection.hidden = true;
+        provenanceBody.replaceChildren(make('p', 'Retained private checkpoint only. Select its current reading paragraph before restoring or editing.'));
+        context.textContent = `Retained private paragraph ${selected} · current reading selection is paused`;
+        showDraft(selected, value);
+        note('Saved draft inspected privately. No source text was substituted into the book or textarea; restoration requires the current visible reading selection.');
+      });
+      row.append(inspect); draftIndex.append(row);
+    }
+  });
+  const persistDraft = replace => guarded(async () => {
+    if (!current || !visibleSelection() || recovery || !dirty) return;
+    const id = selected, generation = inputGeneration, wording = editor.value, basis = { ...current };
+    if (checkpointTarget !== id || checkpointGeneration === null) {
+      const inspected = await inspectDraft(id);
+      if (!inspected) return;
+      if (inspected.checkpoint) {
+        note('A saved draft already exists. Its exact text is shown; replacement requires a separate Replace saved draft action.'); return;
+      }
+    }
+    if (selected !== id || !visibleSelection() || !checkpointEligible) return;
+    if (replace !== Boolean(checkpoint)) return;
+    checkpointConfirmed = false;
+    draftStatus.textContent = 'Saving the selected draft. No new receipt is confirmed; keep textarea text until the result is known.';
+    let result;
+    try {
+      result = await request('draft-save', { id, basis: basis.basis, revision: basis.revision,
+        sourceVersion: basis.sourceVersion, baseVersion: basis.version, beforeDigest: basis.rawDigest,
+        privateOperation: basis.privateOperation ?? null, draft: wording, key: crypto.randomUUID(),
+        expectedDigest: replace ? checkpoint.digest : null, generation: checkpointGeneration });
+    } catch (error) {
+      draftStatus.textContent = 'Save outcome unavailable. Displayed checkpoint data may be older; inspect manually before relying on it. Textarea text is retained.';
+      throw error;
+    }
+    if (selected !== id) return;
+    showDraft(id, { checkpoint: result.checkpoint, generation: result.generation, eligible: result.eligible ?? false,
+      compatibility: result.compatibility ?? { status: 'unknown', reasons: [] } });
+    note(generation !== inputGeneration || editor.value !== wording
+      ? 'Earlier draft saved privately; newer typing remains in this tab and has not been saved.'
+      : 'Draft saved privately for explicit recovery. It is unreviewed; source, evidence and literary acceptance are unchanged.');
+  });
+  saveDraft.onclick = persistDraft(false); replaceDraft.onclick = persistDraft(true);
+  restoreDraft.onclick = guarded(async () => {
+    if (!checkpoint || !current || dirty || recovery || !visibleSelection() || checkpointTarget !== selected) return;
+    const id = selected, generation = inputGeneration, wording = editor.value, ticket = selectionTicket;
+    const result = await request('draft-restore', { id, checkpointDigest: checkpoint.digest, generation: checkpointGeneration });
+    if (selected !== id || ticket !== selectionTicket || generation !== inputGeneration || editor.value !== wording || !visibleSelection()) {
+      note('Saved draft was checked, but newer typing or navigation was retained. Nothing was restored; load and review it again manually.'); return;
+    }
+    inputGeneration += 1; editor.value = result.draft; dirty = editor.value !== current.raw;
+    operation = null; review = null; reviewSection.hidden = true;
+    note('Saved unreviewed text restored to the textarea only. Review a fresh exact change before applying it to the private copy.');
+  });
+  discardDraft.onclick = guarded(async () => {
+    if (!checkpoint || checkpointTarget !== selected) return;
+    const id = selected;
+    checkpointConfirmed = false;
+    draftStatus.textContent = 'Discard request pending. Textarea text is retained; saved checkpoint state is unconfirmed.';
+    let result;
+    try { result = await request('draft-discard', { id, expectedDigest: checkpoint.digest, generation: checkpointGeneration }); }
+    catch (error) {
+      draftStatus.textContent = 'Discard outcome unavailable. Do not rely on the older displayed checkpoint; load its current state manually. Textarea text is retained.';
+      throw error;
+    }
+    if (selected !== id) return;
+    showDraft(id, { checkpoint: null, generation: result.generation, eligible: checkpointEligible,
+      compatibility: { status: 'unavailable', reasons: [] } });
+    note(result.status === 'discarded' ? 'Saved draft discarded. Current textarea text and immutable private history remain unchanged.'
+      : 'No saved draft is present. No earlier discard receipt is inferred; textarea text and history remain unchanged.');
+  });
   refreshComparison.onclick = guarded(async () => { if (selected && !dirty) await select(selected, true); });
   refreshSelection.onclick = guarded(async () => { if (selected && !dirty) await select(selected, true); });
   resume.onclick = guarded(async () => {
@@ -421,7 +576,9 @@ export async function mountGrwtsk({ main, projection }) {
   async function restorePage() {
     const ticket = ++restoreTicket;
     const notice = main.querySelector('.traversal-notice');
-    if (notice) notice.textContent = 'Private working editor · source and literary acceptance remain separate';
+    if (notice) notice.textContent = catalogUnavailable
+      ? 'Current editing source unavailable · retained private drafts can be inspected separately'
+      : 'Private working editor · source and literary acceptance remain separate';
     for (const paragraph of main.querySelectorAll('.traversal-paragraph[data-entity-id]')) {
       if (!records.has(paragraph.dataset.entityId)) continue;
       const inspected = await request(`inspect?id=${encodeURIComponent(paragraph.dataset.entityId)}`);
@@ -451,5 +608,6 @@ export async function mountGrwtsk({ main, projection }) {
   }
   new MutationObserver(scheduleRestore).observe(main, { childList: true });
   await guarded(restorePage)();
+  if (catalogUnavailable) note('Current source catalog is unavailable. Find saved drafts for private inspection; editing and restoration stay blocked without a current reading selection.');
   return true;
 }

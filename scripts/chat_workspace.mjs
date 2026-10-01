@@ -4,9 +4,11 @@ import { existsSync, lstatSync, realpathSync, readFileSync, writeFileSync, mkdir
 import { resolve, dirname, relative, isAbsolute, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { isProxy } from 'node:util/types';
 import { loadInventory, gitBlob, safePath } from './editorial_inventory.mjs';
 import { parseEditorialMarkdown } from './editorial_markdown.mjs';
 import { canonical, seal, profile } from './literary_model.mjs';
+import { validateDraftCheckpointCollection, assessDraftCheckpointCompatibility } from './draft_checkpoint.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const check = (ok, message) => { if (!ok) throw new Error(`CHAT_WORKSPACE: ${message}`); };
@@ -14,6 +16,46 @@ const validLink = url => typeof url === 'string' && /^https:\/\/github\.com\/grw
 const nonempty = value => typeof value === 'string' && value.trim().length > 0 && value.length <= 1000;
 const hash = value => `sha256:${createHash('sha256').update(typeof value === 'string' ? value : canonical(value)).digest('hex')}`;
 const DIGEST = /^sha256:[a-f0-9]{64}$/;
+const draftPolicy = JSON.parse(readFileSync(new URL('../planning/grwtsk-draft-retention.json', import.meta.url), 'utf8'));
+const DRAFT_SCOPE = { slot: 'C08A', path: 'manuscript/02-interlude/baptism-in-the-color-of-rain.md',
+  blob: 'e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1', grantRef: 'https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575' };
+const UUID = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
+const OP_ID = /^op_[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/;
+const draftCheck = (condition, code, status = 400) => {
+  if (!condition) { const error = new Error(`CHAT_WORKSPACE: ${code}`); error.code = code; error.status = status; throw error; }
+};
+function draftFields(value, required) {
+  draftCheck(value !== null && typeof value === 'object' && !isProxy(value)
+    && Object.getPrototypeOf(value) === Object.prototype, 'DRAFT_REQUEST_INVALID');
+  const keys = Reflect.ownKeys(value);
+  draftCheck(keys.length === required.length && required.every(key => keys.includes(key))
+    && keys.every(key => { const d = Object.getOwnPropertyDescriptor(value, key); return d.enumerable && Object.hasOwn(d, 'value'); }),
+  'DRAFT_REQUEST_INVALID');
+}
+const draftPattern = (value, pattern) => typeof value === 'string' && pattern.test(value);
+const validGeneration = value => Number.isSafeInteger(value) && value >= 0 && !Object.is(value, -0);
+const draftGeneration = data => data.draftCheckpointGeneration ?? 0;
+const draftCollection = data => data.draftCheckpoints ?? { schema: draftPolicy.collectionSchema, checkpoints: [] };
+function draftEnabled() {
+  // Runtime revocation is observed even by an already-running local server.
+  // This fixed public configuration path cannot be selected by an HTTP client.
+  let live;
+  try { live = JSON.parse(readFileSync(new URL('../planning/grwtsk-draft-retention.json', import.meta.url), 'utf8')); }
+  catch { return false; }
+  return live.status === 'local-explicit' && live.runtimePersistenceEnabled === true
+    && live.schema === draftPolicy.schema && live.checkpointSchema === draftPolicy.checkpointSchema
+    && live.collectionSchema === draftPolicy.collectionSchema
+    && JSON.stringify(live.checkpointFields) === JSON.stringify(draftPolicy.checkpointFields)
+    && JSON.stringify(live.collectionFields) === JSON.stringify(draftPolicy.collectionFields)
+    && Object.entries(draftPolicy.limits).every(([key, value]) => live.limits?.[key] === value)
+    && Object.entries(DRAFT_SCOPE).every(([key, value]) => live.runtimeSourceScope?.[key] === value);
+}
+const draftEligible = current => Boolean(draftEnabled() && current?.slot === DRAFT_SCOPE.slot
+  && current.source?.path === DRAFT_SCOPE.path && current.source?.blob === DRAFT_SCOPE.blob);
+const nextDraftGeneration = data => {
+  const generation = draftGeneration(data);
+  draftCheck(generation < Number.MAX_SAFE_INTEGER, 'DRAFT_GENERATION_EXHAUSTED', 409); return generation + 1;
+};
 const RESUME_EFFECT = 'local source baseline resumed; prior private work retained unchanged';
 const RESUME_AUTHORITY = 'local working-copy decision; no source write or literary acceptance';
 const within = (parent, child) => { const p = relative(parent, child); return p === '' || (!isAbsolute(p) && p !== '..' && !p.startsWith(`..${sep}`)); };
@@ -130,7 +172,8 @@ export function loadSnapshot(root = ROOT) {
 function inspectPrivate(path, directory = false) {
   const stat = lstatSync(path);
   check(!stat.isSymbolicLink() && (directory ? stat.isDirectory() : stat.isFile() && stat.nlink === 1), 'unsafe private store entry');
-  check(stat.uid === process.getuid() && (stat.mode & 0o077) === 0, 'private store must be owned by this user with no group/other permissions');
+  check(stat.uid === process.getuid() && (stat.mode & 0o7777) === (directory ? 0o700 : 0o600),
+    'private store permissions must be exactly owner-only 0700 directories and 0600 files');
 }
 
 export class ChatWorkspace {
@@ -159,7 +202,10 @@ export class ChatWorkspace {
     inspectPrivate(this.store, true);
     if (!existsSync(this.file)) return { schema: 'huey.private-chat-workspace.v1', repository: this.root, proposals: [], decisions: [], links: [], reconciliations: [] };
     inspectPrivate(this.file);
-    const data = JSON.parse(readFileSync(this.file, 'utf8'));
+    const bytes = readFileSync(this.file, 'utf8');
+    let data;
+    try { data = JSON.parse(bytes); } catch { throw new Error('CHAT_WORKSPACE: invalid private state JSON'); }
+    check(data !== null && typeof data === 'object' && !Array.isArray(data), 'invalid private state');
     check(data.schema === 'huey.private-chat-workspace.v1' && data.repository === this.root, 'store belongs to another repository or schema');
     check(['proposals', 'decisions', 'links'].every(k => Array.isArray(data[k])), 'invalid private state');
     for (const op of data.proposals) check(op.digest === hash(Object.fromEntries(Object.entries(op).filter(([k]) => k !== 'digest'))), 'proposal integrity mismatch');
@@ -182,9 +228,16 @@ export class ChatWorkspace {
     // persists the new collection; existing histories are never relabelled.
     if (!Object.hasOwn(data, 'reconciliations')) data.reconciliations = [];
     validateReconciliations(data);
+    const hasDrafts = Object.hasOwn(data, 'draftCheckpoints'), hasGeneration = Object.hasOwn(data, 'draftCheckpointGeneration');
+    draftCheck(hasDrafts === hasGeneration, 'DRAFT_STATE_INVALID');
+    if (hasDrafts) {
+      draftCheck(validGeneration(data.draftCheckpointGeneration), 'DRAFT_STATE_INVALID');
+      validateDraftCheckpointCollection(data.draftCheckpoints);
+      draftCheck(data.draftCheckpointGeneration > 0 || data.draftCheckpoints.checkpoints.length === 0, 'DRAFT_STATE_INVALID');
+    }
     return data;
   }
-  transaction(fn) {
+  transaction(fn, { skipUnchanged = false, readSnapshot = true } = {}) {
     inspectPrivate(this.store, true);
     const lock = resolve(this.store, 'workspace.lock');
     let fd;
@@ -192,7 +245,11 @@ export class ChatWorkspace {
     const tmp = resolve(this.store, `${randomUUID()}.tmp`);
     try {
       const data = this.state();
-      const result = fn(data, this.snapshot());
+      const previous = skipUnchanged ? JSON.stringify(data) : null;
+      // Only explicit checkpoint discard uses a state-only transaction. Source
+      // failure never supplies a substitute basis to proposal/save/restore work.
+      const result = fn(data, readSnapshot ? this.snapshot() : null);
+      if (skipUnchanged && JSON.stringify(data) === previous) return result;
       writeFileSync(tmp, `${JSON.stringify(data, null, 2)}\n`, { flag: 'wx', mode: 0o600 });
       renameSync(tmp, this.file);
       return result;
@@ -221,6 +278,107 @@ export class ChatWorkspace {
   read(id) {
     const snap = this.snapshot(), data = this.state();
     return { basis: snap.basis, revision: snap.revision, ...this.current(id, data, snap), evidence: 'source references only; private changes inherit no evidence or admission' };
+  }
+  draftView(id, data, snap, checkpoint) {
+    const available = snap.entries.some(entry => entry.id === id);
+    let current = null;
+    try { current = { basis: snap.basis, revision: snap.revision, ...this.current(id, data, snap) }; } catch { /* Retain checkpoint only. */ }
+    const compatibility = checkpoint ? current ? assessDraftCheckpointCompatibility(checkpoint, current)
+      : { status: available ? 'stale' : 'unavailable', reasons: [available ? 'WORKING_CONTEXT_STALE' : 'SOURCE_UNAVAILABLE'] }
+      : { status: 'unavailable', reasons: ['NO_CHECKPOINT'] };
+    return { checkpoint, compatibility, eligible: draftEligible(current), generation: draftGeneration(data) };
+  }
+  inspectDraft(id) {
+    draftCheck(draftPattern(id, new RegExp(profile.entityID)), 'DRAFT_TARGET_INVALID');
+    const data = this.state(), collection = draftCollection(data);
+    const checkpoint = collection.checkpoints.find(item => item.target === id) ?? null;
+    let snap;
+    try { snap = this.snapshot(); }
+    catch {
+      draftCheck(checkpoint, 'DRAFT_CURRENT_UNAVAILABLE', 409);
+      return { checkpoint, compatibility: { status: 'unavailable', reasons: ['SOURCE_UNAVAILABLE'] },
+        eligible: false, generation: draftGeneration(data) };
+    }
+    draftCheck(checkpoint || snap.entries.some(entry => entry.id === id), 'DRAFT_TARGET_UNAVAILABLE');
+    return this.draftView(id, data, snap, checkpoint);
+  }
+  draftIndex() {
+    const data = this.state();
+    return { generation: draftGeneration(data), checkpoints: draftCollection(data).checkpoints
+      .map(({ target, createdAt }) => ({ target, createdAt })) };
+  }
+  saveDraft(request) {
+    const required = ['id', 'basis', 'revision', 'sourceVersion', 'baseVersion', 'beforeDigest', 'privateOperation',
+      'draft', 'key', 'expectedDigest', 'generation'];
+    draftFields(request, required);
+    draftCheck(draftPattern(request.id, new RegExp(profile.entityID)) && draftPattern(request.key, UUID)
+      && draftPattern(request.basis, DIGEST) && draftPattern(request.revision, /^[a-f0-9]{40}$/)
+      && draftPattern(request.sourceVersion, new RegExp(profile.entityVersion))
+      && draftPattern(request.baseVersion, new RegExp(profile.entityVersion)) && draftPattern(request.beforeDigest, DIGEST)
+      && (request.privateOperation === null || draftPattern(request.privateOperation, OP_ID))
+      && (request.expectedDigest === null || draftPattern(request.expectedDigest, DIGEST)) && validGeneration(request.generation)
+      && typeof request.draft === 'string' && request.draft.isWellFormed()
+      && request.draft.length <= draftPolicy.limits.maxDraftCodeUnits, 'DRAFT_REQUEST_INVALID');
+    draftCheck(draftEnabled(), 'DRAFT_STORAGE_DISABLED', 403);
+    return this.transaction((data, snap) => {
+      const collection = draftCollection(data), requestDigest = hash(request);
+      const retry = collection.checkpoints.find(item => item.key === request.key);
+      if (retry) {
+        draftCheck(retry.requestDigest === requestDigest, 'DRAFT_IDEMPOTENCY_CONFLICT', 409);
+        return { ...this.draftView(retry.target, data, snap, retry), effect: 'saved local checkpoint only; no application or acceptance' };
+      }
+      draftCheck(request.generation === draftGeneration(data), 'DRAFT_GENERATION_CHANGED', 409);
+      const previous = collection.checkpoints.find(item => item.target === request.id) ?? null;
+      draftCheck(previous ? request.expectedDigest === previous.digest : request.expectedDigest === null, 'DRAFT_CHECKPOINT_CHANGED', 409);
+      let current;
+      try { current = { basis: snap.basis, revision: snap.revision, ...this.current(request.id, data, snap) }; }
+      catch { draftCheck(false, 'DRAFT_CURRENT_UNAVAILABLE', 409); }
+      draftCheck(draftEligible(current), 'DRAFT_SOURCE_INELIGIBLE', 403);
+      draftCheck(request.basis === current.basis && request.revision === current.revision
+        && request.sourceVersion === current.sourceVersion && request.baseVersion === current.version
+        && request.beforeDigest === current.rawDigest && request.privateOperation === (current.privateOperation ?? null),
+      'DRAFT_CURRENT_CHANGED', 409);
+      const checkpoint = { schema: draftPolicy.checkpointSchema, id: `draft_${randomUUID()}`, key: request.key, requestDigest,
+        target: request.id, basis: current.basis, revision: current.revision, baseVersion: current.version,
+        sourceVersion: current.sourceVersion, beforeDigest: current.rawDigest, before: current.raw, draft: request.draft,
+        privateOperation: current.privateOperation ?? null, createdAt: new Date().toISOString() };
+      checkpoint.digest = hash(checkpoint);
+      const next = { schema: collection.schema, checkpoints: previous ? collection.checkpoints.map(item => item.target === request.id ? checkpoint : item)
+        : [...collection.checkpoints, checkpoint] };
+      validateDraftCheckpointCollection(next);
+      draftCheck(draftEnabled(), 'DRAFT_STORAGE_DISABLED', 403);
+      const generation = nextDraftGeneration(data); data.draftCheckpoints = next; data.draftCheckpointGeneration = generation;
+      return { ...this.draftView(checkpoint.target, data, snap, checkpoint), effect: 'saved local checkpoint only; no application or acceptance' };
+    }, { skipUnchanged: true });
+  }
+  discardDraft(request) {
+    draftFields(request, ['id', 'expectedDigest', 'generation']);
+    draftCheck(draftPattern(request.id, new RegExp(profile.entityID)) && draftPattern(request.expectedDigest, DIGEST)
+      && validGeneration(request.generation), 'DRAFT_REQUEST_INVALID');
+    draftCheck(draftEnabled(), 'DRAFT_STORAGE_DISABLED', 403);
+    return this.transaction(data => {
+      const collection = draftCollection(data), checkpoint = collection.checkpoints.find(item => item.target === request.id);
+      if (!checkpoint) return { status: 'absent', generation: draftGeneration(data), effect: 'observed local absence only; no previous discard receipt inferred' };
+      draftCheck(request.generation === draftGeneration(data) && request.expectedDigest === checkpoint.digest, 'DRAFT_CHECKPOINT_CHANGED', 409);
+      const next = { schema: collection.schema, checkpoints: collection.checkpoints.filter(item => item.target !== request.id) };
+      validateDraftCheckpointCollection(next);
+      draftCheck(draftEnabled(), 'DRAFT_STORAGE_DISABLED', 403);
+      const generation = nextDraftGeneration(data); data.draftCheckpoints = next; data.draftCheckpointGeneration = generation;
+      return { status: 'discarded', generation, effect: 'local checkpoint removed only; working text and immutable history unchanged' };
+    }, { skipUnchanged: true, readSnapshot: false });
+  }
+  restoreDraft(request) {
+    draftFields(request, ['id', 'checkpointDigest', 'generation']);
+    draftCheck(draftPattern(request.id, new RegExp(profile.entityID)) && draftPattern(request.checkpointDigest, DIGEST)
+      && validGeneration(request.generation), 'DRAFT_REQUEST_INVALID');
+    const data = this.state(), snap = this.snapshot(), checkpoint = draftCollection(data).checkpoints.find(item => item.target === request.id);
+    draftCheck(checkpoint && request.generation === draftGeneration(data) && request.checkpointDigest === checkpoint.digest, 'DRAFT_CHECKPOINT_CHANGED', 409);
+    let current;
+    try { current = { basis: snap.basis, revision: snap.revision, ...this.current(request.id, data, snap) }; }
+    catch { draftCheck(false, 'DRAFT_CURRENT_UNAVAILABLE', 409); }
+    draftCheck(draftEligible(current), 'DRAFT_SOURCE_INELIGIBLE', 403);
+    draftCheck(assessDraftCheckpointCompatibility(checkpoint, current).status === 'current', 'DRAFT_CURRENT_CHANGED', 409);
+    return { checkpointDigest: checkpoint.digest, draft: checkpoint.draft };
   }
   proposalQueue({ id, beforeSequence, limit = 20 } = {}) {
     check(typeof id === 'string' && new RegExp(profile.entityID).test(id), 'valid requested paragraph identity required');
