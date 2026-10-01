@@ -1,6 +1,7 @@
 /** Preparation-only draft contract. No store, writer, restoration or operation adapter. */
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { isProxy } from 'node:util/types';
 import { canonical, profile, seal } from './literary_model.mjs';
 import { parseEditorialMarkdown } from './editorial_markdown.mjs';
 
@@ -9,7 +10,8 @@ export class DraftCheckpointError extends Error {
 }
 const fail = code => { throw new DraftCheckpointError(code); };
 const check = (condition, code) => { if (!condition) fail(code); };
-const plain = value => value !== null && typeof value === 'object' && Object.getPrototypeOf(value) === Object.prototype;
+const plain = value => value !== null && typeof value === 'object' && !isProxy(value)
+  && Object.getPrototypeOf(value) === Object.prototype;
 const hash = value => `sha256:${createHash('sha256').update(value, 'utf8').digest('hex')}`;
 const digestPattern = /^sha256:[a-f0-9]{64}$/;
 const revisionPattern = /^[a-f0-9]{40}$/;
@@ -99,7 +101,8 @@ export function validateDraftCheckpointCollection(collection) {
   fields(collection, policy.collectionFields, 'INVALID_COLLECTION_SHAPE');
   check(collection.schema === policy.collectionSchema, 'INVALID_COLLECTION_SCHEMA');
   const checkpoints = collection.checkpoints;
-  check(Array.isArray(checkpoints) && Object.getPrototypeOf(checkpoints) === Array.prototype, 'INVALID_CHECKPOINT_ARRAY');
+  check(!isProxy(checkpoints) && Array.isArray(checkpoints) && Object.getPrototypeOf(checkpoints) === Array.prototype,
+    'INVALID_CHECKPOINT_ARRAY');
   check(checkpoints.length <= policy.limits.maxCheckpoints, 'CHECKPOINT_COUNT_EXCEEDED');
   const keys = Reflect.ownKeys(checkpoints);
   check(keys.length === checkpoints.length + 1 && keys.includes('length')

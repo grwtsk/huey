@@ -228,3 +228,26 @@ test('unavailable and malformed current context cannot substitute historical dra
   const corrupted = { ...saved, draft: 'Synthetic unreconciled draft mutation' };
   errorCode(() => assessDraftCheckpointCompatibility(corrupted, null), 'CHECKPOINT_DIGEST_MISMATCH');
 });
+
+test('live and revoked proxies fail with fixed codes before any object, current or array trap executes', () => {
+  const saved = checkpoint();
+  let traps = 0;
+  const trap = () => { traps++; throw new Error('Synthetic private proxy text must never escape'); };
+  const handler = { get: trap, getPrototypeOf: trap, ownKeys: trap, getOwnPropertyDescriptor: trap };
+  const cases = [
+    [saved, value => validateDraftCheckpoint(value), 'INVALID_CHECKPOINT_SHAPE'],
+    [collection([saved]), value => validateDraftCheckpointCollection(value), 'INVALID_COLLECTION_SHAPE'],
+    [[saved], value => validateDraftCheckpointCollection(collection(value)), 'INVALID_CHECKPOINT_ARRAY'],
+    [current(saved), value => assessDraftCheckpointCompatibility(saved, value), 'INVALID_CURRENT_CONTEXT'],
+  ];
+  for (const [target, validate, code] of cases) {
+    errorCode(() => validate(new Proxy(target, handler)), code);
+    const revoked = Proxy.revocable(target, handler); revoked.revoke();
+    errorCode(() => validate(revoked.proxy), code);
+  }
+  assert.equal(traps, 0);
+  // A selected element proxy must also fail before descriptor or value access;
+  // a normal JSON array does not make its elements trustworthy objects.
+  errorCode(() => validateDraftCheckpointCollection(collection([new Proxy(saved, handler)])), 'INVALID_CHECKPOINT_SHAPE');
+  assert.equal(traps, 0);
+});
