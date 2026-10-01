@@ -106,7 +106,7 @@ But from the place where I lay, she was gone.
 
 I no longer had access to a primary-care physician.
 
-A considerable part of a year can pass inside the work of getting through a day. Then another part passes. An absence becomes familiar without becoming safe. I learned to work around it as I worked around a joint that would no longer bend: by asking more of everything that still could.
+A considerable part of a year can pass inside the work of getting through a day. Then another part passes. I learned to work around the absence as I worked around a joint that would no longer bend, asking more of everything that still could. The arrangement became familiar. There was still no doctor.
 
 Well over a year had passed before I spoke to my wife about the concern. She called the doctor.
 
@@ -138,7 +138,7 @@ Yes.
 
 I called.
 
-At one end of the telephone was a woman answering for the institution. At the other was a man whose speech could sound drunken because his body could not reliably deliver the words his mind had formed.
+At one end of the telephone was a woman answering for the institution. At the other was a man trying to deliver the words his mind had formed. They were words I knew. Getting them across asked something else of me, and the effort could sound drunken.
 
 I was doing my best.
 
@@ -156,13 +156,11 @@ Those were the words I used. I was invoking what I understood to be a requiremen
 
 As I understood her response, this was not her job. It belonged to medicine. She was staff.
 
-Perhaps she had not been authorized to receive such a concern. Perhaps no one had told her where to put it, whom to notify, or how to respond when a patient called with a serious word in a difficult voice. I do not know what the institution had trained or empowered her to do.
-
-I know that I had called the institution and reached her.
+I do not know what the institution had trained or empowered her to do with a serious word arriving in a difficult voice. I know that I had called the institution and reached her.
 
 She was not my physician. She was the person answering through the route by which I was supposed to reach care.
 
-I needed my report received as my report and passed to someone who could respond. I did not need her to agree that abandonment had occurred. I did not need her to decide the law. I needed the fact that I was reporting an absence of care not to disappear between us.
+I needed my report received as my report and passed to someone who could respond. I was asking her to pass on an absence of care I was reporting, not to decide whether abandonment had occurred or settle the law. I needed my words to arrive somewhere they could be answered.
 
 In Chicago, I had entered a room and attention had followed me toward a woman who was bleeding.
 
@@ -206,7 +204,7 @@ I cannot tell you whether the look and the test were connected. I can tell you w
 
 Pain.
 
-I had been in pain for more than two decades. Several conditions, not one, had become entangled in the life I was trying to live. I had reasons for care that required neither invention nor embellishment.
+I had been in pain for more than two decades. Several conditions, not one, had become entangled in the life I was trying to live.
 
 I received no relief that day.
 
@@ -226,13 +224,13 @@ The keys themselves do not hurt me. The accumulating stiffness does.
 
 A sentence has a physical cost that is not visible in the sentence.
 
-You can read this much faster than I can make it. By the time you reach the end of a paragraph, the pauses in which I rubbed my wrist have disappeared. The words draw together. The hand that delivered them falls out of sight.
+You can read this much faster than I can make it. By the time you reach the end of a paragraph, the pauses in which I rubbed my wrist have disappeared. The words draw together, carrying you past the places where I had to stop. You do not have to wait for my hand.
 
 It is the hand that touched the car door.
 
 Scarcely more than a touch then, too.
 
-But I must not give that smallness the wrong meaning. The biker pulled the door away. I did not. These fingers deliver the words now. The fact that the movement is small does not tell you how much of the work belongs to it.
+The biker pulled the door away. I did not. These fingers deliver the words now, and the smallness of their movement tells you little of what it asks of me.
 
 There is also something I can only call pain memory.
 
@@ -248,7 +246,7 @@ What is worse than a single stone?
 
 The memory of a hundred.
 
-That is what I call ten: the present pain with the old pain gathering around it, my body recognizing what may be beginning before I am ready to endure it again.
+That is what I call ten: the present pain with the old pain gathering around it. My body recognizes what may be beginning before I am ready to endure it again. The scale asks where I am now; my answer has a history.
 
 As I write, I am at three.
 
