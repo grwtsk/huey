@@ -19,6 +19,7 @@ function rehash(checkpoint) {
 function checkpoint(n = 1, overrides = {}) {
   const target = overrides.target ?? `he_${uuid(n)}`, before = overrides.before ?? raw;
   return rehash({ schema: policy.checkpointSchema, id: `draft_${uuid(n)}`, key: uuid(n), target,
+    requestDigest: 'sha256:' + 'c'.repeat(64),
     basis: 'sha256:' + 'a'.repeat(64), revision: 'b'.repeat(40), baseVersion: version(target, before),
     sourceVersion: version(target, raw), beforeDigest: hash(before), before, draft: 'An unfinished synthetic draft *',
     privateOperation: null, createdAt: '2026-10-01T10:02:00.000Z', ...overrides });
@@ -36,8 +37,10 @@ function freeze(value) {
   return value;
 }
 
-test('public policy and all pure validation results remain preparation-only and payload-free', () => {
-  assert.equal(policy.status, 'preparation-only'); assert.equal(policy.runtimePersistenceEnabled, false);
+test('public policy explicitly scopes local storage while pure validation results remain payload-free', () => {
+  assert.equal(policy.status, 'local-explicit'); assert.equal(policy.runtimePersistenceEnabled, true);
+  assert.equal(policy.runtimeSourceScope.slot, 'C08A');
+  assert.equal(policy.authority.humanAcceptance, false); assert.equal(policy.authority.canonicalWrite, false);
   const saved = freeze(checkpoint()), envelope = freeze(collection([saved])), context = freeze(current(saved));
   const before = JSON.stringify({ saved, envelope, context });
   assert.equal(validateDraftCheckpoint(saved), true); assert.equal(validateDraftCheckpoint(saved), true);
@@ -103,6 +106,7 @@ test('identities, date, scope fields and whole-checkpoint digest are validated w
   for (const [field, value, code] of [
     ['schema', 'other', 'INVALID_CHECKPOINT_SCHEMA'], ['id', 'draft_' + uuid(10).toUpperCase(), 'INVALID_CHECKPOINT_ID'],
     ['key', 'synthetic-secret-key', 'INVALID_CHECKPOINT_KEY'], ['target', 'he_' + uuid(1).replace('-4000-', '-5000-'), 'INVALID_CHECKPOINT_TARGET'],
+    ['requestDigest', 'synthetic-private-request', 'INVALID_REQUEST_DIGEST'],
     ['basis', 'synthetic-private-basis', 'INVALID_CHECKPOINT_BASIS'], ['revision', 'z'.repeat(40), 'INVALID_CHECKPOINT_REVISION'],
     ['sourceVersion', 'wrong-version', 'INVALID_SOURCE_VERSION'], ['privateOperation', 'op_arbitrary', 'INVALID_PRIVATE_OPERATION'],
     ['createdAt', '2026-10-01T10:02:00Z', 'INVALID_CHECKPOINT_DATE'], ['createdAt', '2026-02-30T10:02:00.000Z', 'INVALID_CHECKPOINT_DATE'],

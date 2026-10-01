@@ -1,4 +1,4 @@
-/** Preparation-only draft contract. No store, writer, restoration or operation adapter. */
+/** Pure draft contract validation. No store, writer, restoration or operation adapter. */
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { isProxy } from 'node:util/types';
@@ -18,7 +18,7 @@ const revisionPattern = /^[a-f0-9]{40}$/;
 const uuid = '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}';
 const checkpointID = new RegExp(`^draft_${uuid}$`), keyPattern = new RegExp(`^${uuid}$`), operationID = new RegExp(`^op_${uuid}$`);
 const entityID = new RegExp(profile.entityID), entityVersion = new RegExp(profile.entityVersion);
-const expectedCheckpointFields = ['schema', 'id', 'key', 'target', 'basis', 'revision', 'baseVersion', 'sourceVersion',
+const expectedCheckpointFields = ['schema', 'id', 'key', 'requestDigest', 'target', 'basis', 'revision', 'baseVersion', 'sourceVersion',
   'beforeDigest', 'before', 'draft', 'privateOperation', 'createdAt', 'digest'];
 const expectedCollectionFields = ['schema', 'checkpoints'];
 
@@ -26,10 +26,11 @@ function loadPolicy() {
   let value;
   try { value = JSON.parse(readFileSync(new URL('../planning/grwtsk-draft-retention.json', import.meta.url), 'utf8')); }
   catch { fail('INVALID_DRAFT_POLICY'); }
-  check(value?.schema === 'huey.private-draft-retention-policy.v1' && value.status === 'preparation-only'
-    && value.runtimePersistenceEnabled === false, 'INVALID_DRAFT_POLICY');
-  check(value.checkpointSchema === 'huey.private-draft-checkpoint.v1'
-    && value.collectionSchema === 'huey.private-draft-checkpoint-collection.v1'
+  check(value?.schema === 'huey.private-draft-retention-policy.v2' && (value.status === 'preparation-only'
+    && value.runtimePersistenceEnabled === false || value.status === 'local-explicit' && typeof value.runtimePersistenceEnabled === 'boolean'),
+  'INVALID_DRAFT_POLICY');
+  check(value.checkpointSchema === 'huey.private-draft-checkpoint.v2'
+    && value.collectionSchema === 'huey.private-draft-checkpoint-collection.v2'
     && JSON.stringify(value.checkpointFields) === JSON.stringify(expectedCheckpointFields)
     && JSON.stringify(value.collectionFields) === JSON.stringify(expectedCollectionFields), 'INVALID_DRAFT_POLICY');
   const limits = value.limits;
@@ -71,6 +72,7 @@ export function validateDraftCheckpoint(checkpoint) {
   check(checkpoint.schema === policy.checkpointSchema, 'INVALID_CHECKPOINT_SCHEMA');
   pattern(checkpoint.id, checkpointID, 'INVALID_CHECKPOINT_ID');
   pattern(checkpoint.key, keyPattern, 'INVALID_CHECKPOINT_KEY');
+  pattern(checkpoint.requestDigest, digestPattern, 'INVALID_REQUEST_DIGEST');
   pattern(checkpoint.target, entityID, 'INVALID_CHECKPOINT_TARGET');
   pattern(checkpoint.basis, digestPattern, 'INVALID_CHECKPOINT_BASIS');
   pattern(checkpoint.revision, revisionPattern, 'INVALID_CHECKPOINT_REVISION');

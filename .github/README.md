@@ -63,10 +63,10 @@ suite also runs over loopback HTTP. Ordinary reader builds assert that the
 editorial `traversal.json` and `paragraphs.json` payloads are absent. Neither build
 is uploaded or deployed.
 
-The literary-model job runs `npm run test:drafts` against the preparation-only
-#359 draft-retention contract. Its shape, raw/version binding, capacity and context
-cases use synthetic data. The validator accesses no private store and activates
-no writer, restore, retention, source disclosure or acceptance mechanism.
+The literary-model job runs `npm run test:drafts` against the #359 checkpoint
+contract and disposable-store transactions. Shape, raw/version binding, capacity,
+context, competing writers and failure cases use synthetic data. Hosted checks
+access no author's private store and grant no source disclosure or acceptance.
 
 The repository job validates the selectively consolidated historical records and
 the public evidence index/certificates, with synthetic hostile cases in normal

@@ -1,10 +1,10 @@
 {
-  "schema": "huey.private-draft-retention-policy.v1",
-  "status": "preparation-only",
+  "schema": "huey.private-draft-retention-policy.v2",
+  "status": "local-explicit",
   "ownerIssue": "https://github.com/grwtsk/huey/issues/359",
-  "checkpointSchema": "huey.private-draft-checkpoint.v1",
-  "collectionSchema": "huey.private-draft-checkpoint-collection.v1",
-  "runtimePersistenceEnabled": false,
+  "checkpointSchema": "huey.private-draft-checkpoint.v2",
+  "collectionSchema": "huey.private-draft-checkpoint-collection.v2",
+  "runtimePersistenceEnabled": true,
   "actions": [
     "explicit-save",
     "explicit-replace",
@@ -16,6 +16,7 @@
     "schema",
     "id",
     "key",
+    "requestDigest",
     "target",
     "basis",
     "revision",
@@ -40,6 +41,14 @@
     "maxCheckpointsPerTarget": 1
   },
   "encoding": "compact JSON.stringify(collection) followed by one LF; UTF-8 bytes",
+  "capacityScope": "logical draftCheckpoints envelope inside existing root-bound workspace.json; immutable proposal/decision/link/reconciliation history is outside this cap",
+  "runtimeSourceScope": {
+    "slot": "C08A",
+    "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+    "blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+    "grantRef": "https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575",
+    "interpretation": "initial exact local storage eligibility under an already reviewed public source grant; metadata and scopeRefs grant no permission"
+  },
   "draftSyntax": "well-formed Unicode; unfinished, empty or multi-block Markdown allowed; no normalization",
   "baseSyntax": "exact supported Markdown paragraph; raw digest and literary version both checked",
   "retention": {
@@ -48,7 +57,9 @@
     "overflow": "reject without changing the previous collection",
     "replace": "explicit action with exact expected prior checkpoint digest",
     "discard": "explicit action with exact expected prior checkpoint digest",
-    "history": "checkpoint replacement/discard affects only this unreviewed draft; immutable proposals, decisions and source-resume history remain"
+    "history": "checkpoint replacement/discard affects only this unreviewed draft; immutable proposals, decisions and source-resume history remain",
+    "generation": "one persisted safe-integer draftCheckpointGeneration fences every explicit mutation; requests bind generation and expected prior digest, so a late save cannot recreate a discarded checkpoint; empty envelope and generation survive final discard",
+    "idempotency": "same-key exact requestDigest retry returns only the identical still-active checkpoint; no deleted draft text or tombstone journal is retained"
   },
   "writerRequirements": {
     "destination": "existing restricted store outside every Git checkout on the authorized local host",
@@ -59,7 +70,7 @@
     "unsafeEntries": "reject symlink, hard link, nonregular or permissive entries",
     "transaction": "exclusive writer lock and same-directory atomic replacement; unresolved lock blocks writes",
     "missingConfiguration": "fail closed; no browser, checkout or public fallback",
-    "powerLossDurability": "not supplied by this preparatory contract",
+    "powerLossDurability": "not supplied by local atomic replacement",
     "sourceScope": "existing exact source/version/action/destination grant; schema and compatible context supply no new permission"
   },
   "recovery": {
@@ -74,6 +85,7 @@
     "payload": "only the strict selected-paragraph checkpoint fields; no whole source, issue bodies, chat, credentials, provider or approval fields",
     "baseCopy": "only the exact paragraph needed for before/draft comparison",
     "outputs": "neutral status/reason/count/size only; no payload or private fingerprints in public logs, receipts or issue handoffs",
+    "privateIndex": "explicit authenticated local index returns at most 20 saved target identities and creation timestamps for user-selected retained inspection; no base, draft, versions, digests, locators or automatic payload loading",
     "replication": false
   },
   "authority": {

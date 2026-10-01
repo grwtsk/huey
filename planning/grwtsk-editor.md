@@ -85,12 +85,12 @@ The list contains local state, ordering, timestamps and compatibility notices;
 exact wording appears only after **Review saved change** rereads the saved diff.
 Reloading does not restore textarea text, apply a proposal or retry a request.
 
-This increment reuses the existing approved `workspace.json` profile on the
-restricted outside-Git surface. It adds no draft collection, browser storage,
-service worker, private asset or public payload. Unreviewed typing remains in
-memory, with a native reload/leave warning while that text is not represented by
-a saved proposal. The browser may still lose memory on a crash; durable unsaved
-draft retention requires its own storage/minimization policy under #359.
+That increment reused the existing `workspace.json` profile on the restricted
+outside-Git surface and added no draft collection. The later explicit checkpoint
+increment below supersedes its in-memory-only recovery behavior for the exact
+eligible C08A source. Other unstored typing remains in memory, with a native
+reload/leave warning. There is no browser storage, service worker, private asset
+or public payload.
 
 Typing remains available while a private request is pending. Returned inspections,
 reviews and decisions preserve newer textarea input. A saved diff cannot be
@@ -111,58 +111,82 @@ Stale or unavailable source, changed versions and competing edits still block
 application. Kernel #153/#125, authoritative reconciliation and #359's broader
 offline/queued synchronization remain open.
 
-## Preparatory draft-retention contract — #359, 2026-10-01
+## Draft-retention preparation — historical #556 receipt
 
-The [machine-readable policy](grwtsk-draft-retention.json) and
-[read-only validator](../scripts/draft_checkpoint.mjs) define the proposed next
-storage profile before it is implemented. **Runtime persistence is disabled.**
-This increment supplies no Save/Restore control or checkpoint file; unreviewed
-text still lives in the tab and can be lost in a crash. A valid fixture or policy
-record cannot activate storage, authenticate permission or satisfy #359.
+[PR #556](https://github.com/grwtsk/huey/pull/556) defined a preparation-only
+contract with persistence disabled. That status applied to its exact tested
+revision, `f35925e7d944a61bfbef975978344371f26244e5`. The original receipt and
+contract remain in Git history. The v2 explicit checkpoint increment below
+supersedes the v1 disabled runtime status; no earlier result is relabelled as a
+writer or recovery test.
 
-The proposed profile keeps at most twenty checkpoints, one per selected paragraph,
-and at most one MiB for the complete compact JSON envelope plus its trailing LF.
-Both the exact base and unfinished draft have a 100,000 UTF-16-code-unit limit.
-These are engineering capacity bounds, not manuscript length requirements. Overflow
-must reject the new action while retaining the previous checkpoint and textarea;
-there is no automatic eviction, expiry, replacement or deletion. Save, replace,
-inspect, restore and discard must be explicit. Replacement/discard must compare
-the exact previous checkpoint digest; the preparatory validator does not implement
-those transactions or claim power-loss durability.
+## Explicit selected-paragraph checkpoints — #359 continuation
 
-A checkpoint would retain only the selected paragraph's exact base needed for
-comparison, unfinished text, opaque identity, source/working bindings, timestamp,
-request key and integrity digest. Unknown fields are rejected. It cannot carry a
-whole source, issue/chat copies, filesystem paths, provider configuration,
-credentials, approval or publication metadata. Source and private working
-versions remain distinct. Raw base bytes are checked separately from the literary
-version, so an inscription-equivalent Markdown change can still make recovery
-stale. Unfinished, empty and multi-block draft text is preserved without requiring
-it to parse as an applicable paragraph. Validation never normalizes that text.
+**Save draft** stores unfinished text for the selected eligible paragraph in the
+existing restricted, repository-bound `workspace.json`. It creates no public
+payload, browser storage or new destination. Initial runtime scope is only the
+unchanged C08A source pinned by path and blob under the existing
+[chapter-specific record](https://github.com/grwtsk/huey/issues/2#issuecomment-5782472575).
+Server-owned source selection enforces that finite boundary; an issue reference,
+client assertion or policy cannot authenticate a new grant. Other sources retain
+the existing private editor behavior and require their actual scoped record
+before checkpoint activation is widened.
 
-Compatibility assessment takes a separately trusted current selected-paragraph
-context. Changed identity, basis, revision, source version, working version, raw
-wording or private-operation binding means stale; unavailable source means
-unavailable. Stale/unavailable work remains inspectable privately and must never
-be rebased, restored over current text or substituted for source automatically.
-Future explicit restoration must preserve intervening textarea input and still
-require a fresh exact proposal/review/decision before private application.
+**Load saved draft** explicitly inspects only the selected paragraph. It displays
+the exact retained base and unfinished text, source/working bindings and current,
+stale or unavailable compatibility. Loading never replaces textarea text. **Find saved drafts** reads at most twenty
+private metadata rows without loading their wording. **Inspect saved draft**
+selects a retained checkpoint explicitly, including when the source catalog fails
+or its paragraph is no longer mapped. That inspection pauses current editing;
+no historical text is substituted into the reading copy. Source/plan failure
+still blocks save and restore. Exact discard remains a state-only transaction.
+**Restore saved draft** performs a fresh server check and restores text only to
+an unchanged, clean textarea for the same visible selection. Intervening typing
+or navigation prevents restoration. Stale/unavailable drafts remain inspectable
+privately but cannot be restored or substituted for current source. Restored text
+requires a separate fresh proposal, exact diff and explicit private application;
+it conveys no literary acceptance, evidence or public source mutation.
 
-The future writer must verify the applicable exact source/version/action/destination
-scope and reuse the existing outside-Git realpath/owner/mode and unsafe-entry
-checks, exclusive lock and atomic replacement. Missing configuration
-must fail closed. It must preserve all immutable proposal, decision and
-source-resume history. Filesystem isolation is not encryption; an OS-account owner
-can forge a self-consistent record. Integrity and version checks identify bytes,
-not authorship, consent, source truth or acceptance. The present pure validator
-checks shape, integrity, capacity and context only; it performs no filesystem,
-permission, durability, transaction, network or source-grant verification.
+**Replace saved draft** requires inspection of the existing checkpoint and its
+exact prior digest. **Discard saved draft** removes only that shown checkpoint;
+it preserves textarea text and all immutable proposals, decisions, links and
+source-resume history. **Discard unreviewed text** remains a separate textarea
+action. No background save, expiry, eviction, retry, rebase or restoration runs.
+A lost response establishes no new receipt in the browser: inspect manually.
+Confirmed save replies for earlier input do not mark newer typing as saved.
+While save/discard outcome is unknown, older displayed checkpoint data cannot
+suppress the reload warning or enable restore; manual inspection reconciles it.
 
-`npm run test:drafts` exercises explicitly synthetic hostile cases without private
-store access. Public diagnostics contain neutral codes/counts/sizes only. Real
-draft storage, compare-and-swap, crash/reload recovery and UI failure behavior
-remain the next #359 implementation stage; #360 and kernel authority retain their
-separate conditions. No new source or recipient is admitted by this preparation.
+The [machine-readable profile](grwtsk-draft-retention.json) bounds the logical
+checkpoint envelope to twenty rows, one per target, and one MiB of compact
+`JSON.stringify(envelope)` plus LF in UTF-8. This bound excludes the existing
+immutable workspace history, which is preserved under its prior profile. Exact
+base and unfinished draft each have a 100,000 UTF-16-code-unit limit; drafts may
+be empty, unfinished or multi-block without normalization. These engineering
+bounds impose no manuscript quota. Overflow rejects the action while retaining
+previous stored bytes and textarea text. Unknown fields and executable objects
+are rejected. Raw Markdown, source version, private working version and applied
+operation remain separately bound.
+
+One shared workspace lock serializes source/private-overlay and checkpoint
+transactions. Creation, replacement and discard compare a persisted generation;
+a discarded checkpoint leaves a neutral generation fence, not its deleted text.
+A delayed pre-discard save cannot recreate that draft. Exact same-key retries
+return the still-present checkpoint; changed request payloads fail. Missing or
+unsafe store configuration, unresolved locks, invalid generation and changed
+context fail closed. A live policy revocation disables new draft writes and
+restoration; policy metadata itself grants no source permission. Atomic same-directory replacement preserves old state on
+pre-commit failure. An interrupted writer requires local inspection; no automatic
+lock removal occurs. This does not promise power-loss durability or encryption.
+An OS-account owner can forge a self-consistent record; digests identify bytes,
+not authorship, consent, truth or human assent.
+
+`npm run test:drafts` covers the contract and real disposable-store transactions;
+`reader/tests/grwtsk_browser_test.py` exercises explicit recovery through actual
+loopback HTTP and Chromium using synthetic edits. No test activates real-data
+intake or authoritative synchronization. #359's broader offline/remote states,
+#360 and kernel #153/#125 retain their separate conditions. Native accessibility,
+physical touch/IME, live model streaming and encrypted retention remain separate.
 
 ## Existing Codex host, without another provider
 
