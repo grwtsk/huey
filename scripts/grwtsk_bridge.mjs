@@ -237,7 +237,7 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
     try {
       const url = new URL(req.url, 'http://localhost'), route = url.pathname;
       boundary(req, route === '/__grwtsk/session' ? null : token);
-      const getRoutes = ['/__grwtsk/session', '/__grwtsk/catalog', '/__grwtsk/read', '/__grwtsk/inspect', '/__grwtsk/review', '/__grwtsk/handoff', '/__grwtsk/issues', '/__grwtsk/chat'];
+      const getRoutes = ['/__grwtsk/session', '/__grwtsk/catalog', '/__grwtsk/read', '/__grwtsk/inspect', '/__grwtsk/queue', '/__grwtsk/review', '/__grwtsk/handoff', '/__grwtsk/issues', '/__grwtsk/chat'];
       const postRoutes = ['/__grwtsk/propose', '/__grwtsk/decide', '/__grwtsk/resume-source', '/__grwtsk/link', '/__grwtsk/chat'];
       check(getRoutes.includes(route) || postRoutes.includes(route), 'unknown endpoint', 404);
       check(req.method === 'GET' && getRoutes.includes(route) || req.method === 'POST' && postRoutes.includes(route), 'method unavailable', 405);
@@ -277,6 +277,17 @@ export function createGrwtskMiddleware({ root = ROOT, store, snapshot, inventory
           authority: 'source/publication labels are observations, not permissions or acceptance; overlay freshness is checked when a paragraph is read' };
       } else if (route === '/__grwtsk/read') result = workspace.read(query(url, 'id'));
       else if (route === '/__grwtsk/inspect') result = workspace.inspect(query(url, 'id'));
+      else if (route === '/__grwtsk/queue') {
+        const keys = [...url.searchParams.keys()];
+        check(keys.every(key => ['id', 'beforeSequence', 'limit'].includes(key)) && new Set(keys).size === keys.length && url.searchParams.has('id'), 'invalid queue query');
+        const integer = name => {
+          const raw = url.searchParams.get(name);
+          if (raw === null) return undefined;
+          check(/^[1-9]\d*$/.test(raw) && Number.isSafeInteger(Number(raw)), 'invalid queue sequence or limit');
+          return Number(raw);
+        };
+        result = workspace.proposalQueue({ id: url.searchParams.get('id'), beforeSequence: integer('beforeSequence'), limit: integer('limit') });
+      }
       else if (route === '/__grwtsk/review') result = workspace.review(query(url, 'id'));
       else if (route === '/__grwtsk/handoff') result = workspace.handoff(query(url, 'id'));
       else if (route === '/__grwtsk/chat') { check(!url.search, 'chat accepts no query'); result = chatView(thread.state()); }

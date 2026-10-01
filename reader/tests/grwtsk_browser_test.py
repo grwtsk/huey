@@ -11,7 +11,7 @@ import subprocess
 import tempfile
 import time
 import unittest
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as BrowserTimeout
 
 ROOT = Path(__file__).resolve().parents[2]
 REPLACEMENT = "Synthetic private working paragraph for the editor test."
@@ -328,6 +328,324 @@ class GrwtskBrowserTests(unittest.TestCase):
             self.assertTrue(any(p["id"] == historical["operationId"] for p in retained["proposals"]))
             self.assertEqual(errors, [])
         finally:
+            context.close()
+
+    def test_09_saved_review_and_cancellation_survive_reload(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        page.wait_for_function("!document.querySelector('#grwtsk-panel').hasAttribute('aria-busy')")
+        original = editor.input_value()
+        candidate = "Synthetic saved proposal recovered after reload."
+        editor.fill(candidate)
+        page.get_by_role("button", name="Review change", exact=True).click()
+        page.locator(".grwtsk-review").wait_for(state="visible")
+        state_file = Path(self.store) / "workspace.json"
+        saved = json.loads(state_file.read_text())
+        operation = saved["proposals"][-1]
+        page.reload()
+        page.get_by_role("button", name="Grwtsk", exact=True).click()
+        page.wait_for_function("!document.querySelector('#grwtsk-working-text').disabled")
+        self.assertEqual(editor.input_value(), original)
+        page.get_by_text("Saved paragraph changes", exact=True).click()
+        page.get_by_role("button", name="Load saved changes", exact=True).click()
+        row = page.locator(f".grwtsk-queue-entry[data-operation-id='{operation['id']}']")
+        row.wait_for()
+        self.assertIn("proposed-private", row.inner_text())
+        row.get_by_role("button", name="Review saved change", exact=True).click()
+        page.locator(".grwtsk-review").wait_for(state="visible")
+        self.assertEqual(page.locator(".grwtsk-review pre").nth(0).inner_text(), original)
+        self.assertEqual(page.locator(".grwtsk-review pre").nth(1).inner_text(), candidate)
+        self.assertEqual(editor.input_value(), original)
+        page.get_by_role("button", name="Cancel proposal", exact=True).click()
+        page.get_by_text("Decision retained; working text unchanged.", exact=True).wait_for()
+        page.reload()
+        page.get_by_role("button", name="Grwtsk", exact=True).click()
+        page.wait_for_function("!document.querySelector('#grwtsk-working-text').disabled")
+        page.get_by_text("Saved paragraph changes", exact=True).click()
+        page.get_by_role("button", name="Load saved changes", exact=True).click()
+        row.wait_for()
+        self.assertIn("cancelled", row.inner_text())
+        row.get_by_role("button", name="Review saved change", exact=True).click()
+        page.locator(".grwtsk-review").wait_for(state="visible")
+        self.assertTrue(page.get_by_role("button", name="Apply to private copy", exact=True).is_disabled())
+        self.assertTrue(page.get_by_role("button", name="Cancel proposal", exact=True).is_disabled())
+        retained = json.loads(state_file.read_text())
+        self.assertEqual(len(retained["proposals"]), len(saved["proposals"]))
+        self.assertTrue(any(d["operationId"] == operation["id"] and d["status"] == "cancelled" for d in retained["decisions"]))
+        self.assertEqual(editor.input_value(), original)
+
+    def test_10_lost_response_has_manual_queue_recovery_without_duplicate_or_invented_receipt(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        candidate = "Synthetic proposal whose HTTP acknowledgment was lost."
+        before_count = len(json.loads((Path(self.store) / "workspace.json").read_text())["proposals"])
+
+        def lose_response(route):
+            response = route.fetch()
+            self.assertEqual(response.status, 200)
+            route.abort("failed")
+
+        page.route("**/__grwtsk/propose", lose_response)
+        try:
+            editor.fill(candidate)
+            page.get_by_role("button", name="Review change", exact=True).click()
+            page.get_by_text("Private request unavailable; no new receipt was confirmed.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), candidate)
+            self.assertFalse(editor.is_disabled())
+            saved = json.loads((Path(self.store) / "workspace.json").read_text())
+            self.assertEqual(len(saved["proposals"]), before_count + 1)
+            operation = saved["proposals"][-1]
+            page.get_by_role("button", name="Load saved changes", exact=True).click()
+            row = page.locator(f".grwtsk-queue-entry[data-operation-id='{operation['id']}']")
+            row.wait_for()
+            row.get_by_role("button", name="Review saved change", exact=True).click()
+            page.locator(".grwtsk-review").wait_for(state="visible")
+            self.assertEqual(editor.input_value(), candidate)
+            page.get_by_role("button", name="Apply to private copy", exact=True).click()
+            page.get_by_text("Applied to the private working copy.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), candidate)
+            self.assertEqual(len(json.loads((Path(self.store) / "workspace.json").read_text())["proposals"]), before_count + 1)
+        finally:
+            page.unroute("**/__grwtsk/propose")
+
+    def test_11_typing_while_proposal_is_pending_and_reviewing_saved_diff_preserves_newer_draft(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        delayed = []
+        page.route("**/__grwtsk/propose", lambda route: delayed.append(route))
+        try:
+            editor.fill("Synthetic older draft submitted for review.")
+            page.get_by_role("button", name="Review change", exact=True).click()
+            page.wait_for_timeout(100)
+            self.assertEqual(len(delayed), 1)
+            self.assertFalse(editor.is_disabled())
+            newer = "Synthetic newer draft typed during the pending request."
+            editor.fill(newer)
+            delayed[0].continue_()
+            page.get_by_text("Working text changed while reviewing.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), newer)
+            operation = json.loads((Path(self.store) / "workspace.json").read_text())["proposals"][-1]
+            page.get_by_role("button", name="Load saved changes", exact=True).click()
+            row = page.locator(f".grwtsk-queue-entry[data-operation-id='{operation['id']}']")
+            row.wait_for()
+            row.get_by_role("button", name="Review saved change", exact=True).click()
+            page.get_by_text("Saved diff shown; your current draft is retained.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), newer)
+            self.assertTrue(page.get_by_role("button", name="Apply to private copy", exact=True).is_disabled())
+            page.get_by_role("button", name="Cancel proposal", exact=True).click()
+            page.get_by_text("Private decision retained; newer or unapplied draft text remains", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), newer)
+            page.get_by_role("button", name="Discard unreviewed text", exact=True).click()
+        finally:
+            page.unroute("**/__grwtsk/propose")
+
+    def test_12_typing_while_private_application_is_pending_requires_another_review(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        accepted = "Synthetic explicitly reviewed private application."
+        editor.fill(accepted)
+        page.get_by_role("button", name="Review change", exact=True).click()
+        page.locator(".grwtsk-review").wait_for(state="visible")
+        delayed = []
+        page.route("**/__grwtsk/decide", lambda route: delayed.append(route))
+        try:
+            page.get_by_role("button", name="Apply to private copy", exact=True).click()
+            page.wait_for_timeout(100)
+            self.assertEqual(len(delayed), 1)
+            self.assertFalse(editor.is_disabled())
+            newer = "Synthetic new text typed while the previous application is pending."
+            editor.fill(newer)
+            delayed[0].continue_()
+            page.get_by_text("Private decision retained; newer or unapplied draft text remains", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), newer)
+            self.assertEqual(page.locator(f"[data-entity-id='{self.entity['id']}']").inner_text(), accepted)
+            self.assertFalse(page.locator(".grwtsk-review").is_visible())
+            self.assertTrue(page.get_by_role("button", name="Review change", exact=True).is_enabled())
+            page.get_by_role("button", name="Discard unreviewed text", exact=True).click()
+            self.assertEqual(editor.input_value(), accepted)
+        finally:
+            page.unroute("**/__grwtsk/decide")
+
+    def test_13_native_reload_guard_preserves_unstored_private_draft(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        wording = "Synthetic unreviewed private text protected from reload."
+        editor.fill(wording)
+        dialogs = []
+
+        def keep_draft(dialog):
+            dialogs.append(dialog.type)
+            dialog.dismiss()
+
+        page.on("dialog", keep_draft)
+        try:
+            with self.assertRaises(BrowserTimeout):
+                page.reload(timeout=1000, wait_until="domcontentloaded")
+            self.assertEqual(dialogs, ["beforeunload"])
+            self.assertEqual(editor.input_value(), wording)
+            page.get_by_role("button", name="Discard unreviewed text", exact=True).click()
+        finally:
+            page.remove_listener("dialog", keep_draft)
+
+    def test_14_private_queue_timeout_keeps_typing_and_does_not_retry(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        page.clock.install()
+        delayed = []
+        page.route("**/__grwtsk/queue?*", lambda route: delayed.append(route))
+        try:
+            page.get_by_role("button", name="Load saved changes", exact=True).click()
+            page.wait_for_timeout(100)
+            self.assertEqual(len(delayed), 1)
+            wording = "Synthetic draft typed while queue access is unavailable."
+            self.assertFalse(editor.is_disabled())
+            editor.fill(wording)
+            page.clock.fast_forward(30001)
+            page.get_by_text("Private request unavailable; no new receipt was confirmed.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), wording)
+            self.assertFalse(editor.is_disabled())
+            self.assertTrue(page.get_by_role("button", name="Load saved changes", exact=True).is_enabled())
+            page.clock.fast_forward(60000)
+            self.assertEqual(len(delayed), 1)
+            self.assertIn("Private queue unavailable", page.locator("#grwtsk-queue").inner_text())
+            page.get_by_role("button", name="Discard unreviewed text", exact=True).click()
+        finally:
+            for route in delayed:
+                route.abort("failed")
+            page.unroute("**/__grwtsk/queue?*")
+
+    def test_15_confirmed_decision_is_not_downgraded_by_a_failed_followup_read(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        candidate = "Synthetic confirmed private change with unavailable follow-up read."
+        editor.fill(candidate)
+        page.get_by_role("button", name="Review change", exact=True).click()
+        page.locator(".grwtsk-review").wait_for(state="visible")
+        page.route("**/__grwtsk/inspect?*", lambda route: route.abort("failed"))
+        try:
+            page.get_by_role("button", name="Apply to private copy", exact=True).click()
+            page.get_by_text("Private decision applied-private is confirmed; current source refresh is unavailable.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), candidate)
+            self.assertTrue(page.get_by_role("button", name="Apply to private copy", exact=True).is_disabled())
+            saved = json.loads((Path(self.store) / "workspace.json").read_text())
+            self.assertEqual(saved["decisions"][-1]["status"], "applied-private")
+            self.assertEqual(saved["proposals"][-1]["after"], candidate)
+        finally:
+            page.unroute("**/__grwtsk/inspect?*")
+        page.get_by_role("button", name="Discard unreviewed text", exact=True).click()
+        page.get_by_role("button", name="Refresh selection", exact=True).click()
+        page.get_by_text("Private working overlay loaded.", exact=True).wait_for()
+        self.assertEqual(editor.input_value(), candidate)
+
+    def test_16_saved_proposal_is_not_downgraded_by_an_unavailable_review(self):
+        page = self.page
+        editor = page.get_by_label("Working paragraph (Markdown)")
+        candidate = "Synthetic saved proposal with an unavailable exact review."
+        editor.fill(candidate)
+        page.route("**/__grwtsk/review?*", lambda route: route.abort("failed"))
+        try:
+            page.get_by_role("button", name="Review change", exact=True).click()
+            page.get_by_text("Proposal saved privately; exact review is unavailable.", exact=False).wait_for()
+            self.assertEqual(editor.input_value(), candidate)
+            self.assertFalse(page.locator(".grwtsk-review").is_visible())
+            saved = json.loads((Path(self.store) / "workspace.json").read_text())
+            operation = saved["proposals"][-1]
+            self.assertEqual(operation["after"], candidate)
+            self.assertFalse(any(d["operationId"] == operation["id"] for d in saved["decisions"]))
+        finally:
+            page.unroute("**/__grwtsk/review?*")
+        page.get_by_role("button", name="Load saved changes", exact=True).click()
+        row = page.locator(f".grwtsk-queue-entry[data-operation-id='{operation['id']}']")
+        row.wait_for()
+        row.get_by_role("button", name="Review saved change", exact=True).click()
+        page.locator(".grwtsk-review").wait_for(state="visible")
+        page.get_by_role("button", name="Cancel proposal", exact=True).click()
+        page.get_by_text("Private decision retained; newer or unapplied draft text remains", exact=False).wait_for()
+        page.get_by_role("button", name="Discard unreviewed text", exact=True).click()
+
+    def test_17_confirmed_source_resume_survives_failed_inspection_until_manual_refresh(self):
+        value = subprocess.check_output(["node", "--input-type=module", "-e", """
+          import {ChatWorkspace,loadSnapshot} from './scripts/chat_workspace.mjs';
+          const [root,store] = process.argv.slice(1), historical = loadSnapshot(root);
+          const entity = historical.entries.filter(e=>e.slot==='C08A')[3];
+          historical.basis = 'sha256:'+'2'.repeat(64); historical.revision = '2'.repeat(40);
+          const workspace = new ChatWorkspace({root,store,snapshot:()=>historical});
+          const current = workspace.read(entity.id);
+          const op = workspace.propose({id:entity.id,baseVersion:current.version,beforeDigest:current.rawDigest,
+            after:'Synthetic earlier private contribution for a failed refresh.',key:'synthetic-resume-refresh-failure',
+            actor:'synthetic-browser-test',session:'synthetic-browser-session',requestRef:'synthetic historical context'});
+          workspace.decide({operationId:op.id,reviewDigest:op.digest,status:'applied-private',approvalRef:'synthetic historical apply'});
+          console.log(JSON.stringify({id:entity.id,operationId:op.id}));
+        """, str(ROOT), self.store], cwd=ROOT, text=True)
+        historical = json.loads(value)
+        state_file = Path(self.store) / "workspace.json"
+        before = json.loads(state_file.read_text())
+        context = self.browser.new_context()
+        try:
+            page = context.new_page()
+            page.set_default_timeout(12000)
+            errors, receipts, failed_inspections = [], [], []
+            page.on("pageerror", lambda error: errors.append(str(error)))
+
+            def resume_request(route):
+                response = route.fetch()
+                self.assertEqual(response.status, 200)
+                receipts.append(response.json())
+                route.fulfill(response=response)
+
+            def inspect_request(route):
+                if receipts:
+                    failed_inspections.append(route.request.url)
+                    route.abort("failed")
+                else:
+                    route.continue_()
+
+            page.route("**/__grwtsk/resume-source", resume_request)
+            inspect_pattern = f"**/__grwtsk/inspect?id={historical['id']}"
+            page.route(inspect_pattern, inspect_request)
+            page.goto(self.url + f"/huey/paragraph/{historical['id']}")
+            page.get_by_role("button", name="Grwtsk", exact=True).click()
+            comparison = page.get_by_role("region", name="Stale private edit comparison")
+            comparison.wait_for(state="visible")
+            exact_source = comparison.locator("pre").nth(2).inner_text()
+            page.get_by_role("button", name="Resume from current source", exact=True).click()
+            page.get_by_text("Private source-resume receipt is confirmed; current source refresh is unavailable.", exact=False).wait_for()
+            self.assertTrue(comparison.is_visible())
+            self.assertTrue(page.get_by_label("Working paragraph (Markdown)").is_disabled())
+            self.assertTrue(page.get_by_role("button", name="Ask Grwtsk", exact=True).is_disabled())
+            self.assertEqual(page.get_by_label("Working paragraph (Markdown)").input_value(), exact_source)
+            self.assertEqual(len(receipts), 1)
+            self.assertEqual(len(failed_inspections), 1)
+            retained = json.loads(state_file.read_text())
+            for key in ["proposals", "decisions", "links"]:
+                self.assertEqual(retained[key], before[key])
+            self.assertEqual(len(retained["reconciliations"]), len(before["reconciliations"]) + 1)
+            self.assertEqual(retained["reconciliations"][-1]["id"], receipts[0]["id"])
+            self.assertIn(historical["operationId"], receipts[0]["retiredOperationIds"])
+            page.get_by_text("Retained private history", exact=True).click()
+            page.get_by_text("Applied private edit", exact=True).click()
+            page.get_by_text("Synthetic earlier private contribution for a failed refresh.", exact=True).last.wait_for(state="visible")
+            # Advancing local timers must not retry either a confirmed mutation
+            # or its failed read. Recovery remains an explicit user action.
+            page.clock.install()
+            page.clock.fast_forward(60000)
+            self.assertEqual(len(receipts), 1)
+            self.assertEqual(len(failed_inspections), 1)
+            self.assertEqual(json.loads(state_file.read_text()), retained)
+            page.unroute(inspect_pattern, inspect_request)
+            page.get_by_role("button", name="Refresh selection", exact=True).click()
+            page.get_by_text("Exact source paragraph loaded.", exact=True).wait_for()
+            self.assertFalse(comparison.is_visible())
+            self.assertTrue(page.get_by_label("Working paragraph (Markdown)").is_enabled())
+            self.assertEqual(page.get_by_label("Working paragraph (Markdown)").input_value(), exact_source)
+            page.get_by_text("Earlier private edit · retained after source resume", exact=True).click()
+            page.get_by_text("Synthetic earlier private contribution for a failed refresh.", exact=True).last.wait_for(state="visible")
+            self.assertEqual(json.loads(state_file.read_text()), retained)
+            self.assertEqual(len(receipts), 1)
+            self.assertEqual(errors, [])
+        finally:
+            # Every intercepted request is immediately continued, fulfilled or
+            # aborted above; no delayed route survives the disposable context.
             context.close()
 
 

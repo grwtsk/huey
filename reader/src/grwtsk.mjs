@@ -21,15 +21,25 @@ export async function mountGrwtsk({ main, projection }) {
   } catch { return false; }
   if (!session.token) return false;
   const request = async (path, data) => {
-    const response = await fetch(`/__grwtsk/${path}`, {
-      method: data === undefined ? 'GET' : 'POST', credentials: 'omit', cache: 'no-store',
-      headers: { 'X-Huey-Client': CLIENT, 'X-Huey-Session': session.token,
-        ...(data === undefined ? {} : { 'Content-Type': 'application/json' }) },
-      ...(data === undefined ? {} : { body: JSON.stringify(data) })
-    });
-    const value = await response.json();
-    if (!response.ok) throw new Error(value.error ?? 'Private workspace request failed.');
-    return value;
+    let response;
+    const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), 30000);
+    try {
+      try {
+        response = await fetch(`/__grwtsk/${path}`, {
+          method: data === undefined ? 'GET' : 'POST', credentials: 'omit', cache: 'no-store', signal: controller.signal,
+          headers: { 'X-Huey-Client': CLIENT, 'X-Huey-Session': session.token,
+            ...(data === undefined ? {} : { 'Content-Type': 'application/json' }) },
+          ...(data === undefined ? {} : { body: JSON.stringify(data) })
+        });
+      } catch {
+        throw new Error('Private request unavailable; no new receipt was confirmed. Draft text remains in this tab. Check saved changes when the connection returns; no background retry runs.');
+      }
+      let value;
+      try { value = await response.json(); }
+      catch { throw new Error('Private response unavailable; no new receipt was confirmed. Keep your draft and inspect saved changes manually.'); }
+      if (!response.ok) throw new Error(value.error ?? 'Private workspace request failed.');
+      return value;
+    } finally { clearTimeout(timeout); }
   };
   let catalog = await request('catalog');
   const toggle = button('Grwtsk'); toggle.id = 'grwtsk-toggle';
@@ -64,6 +74,12 @@ export async function mountGrwtsk({ main, projection }) {
   const historySection = make('details'), historyBody = make('div');
   historySection.hidden = true;
   historySection.append(make('summary', 'Retained private history'), historyBody);
+  const queueSection = make('details'), queueBody = make('div'), queueStatus = make('p', 'Choose a paragraph to inspect its saved changes.', 'grwtsk-note');
+  queueSection.id = 'grwtsk-queue'; queueStatus.setAttribute('role', 'status');
+  const loadQueue = button('Load saved changes'), olderQueue = button('Show older changes'); olderQueue.hidden = true;
+  queueSection.append(make('summary', 'Saved paragraph changes'),
+    make('p', 'Private proposals and decisions only. Unsaved typing remains in this tab; saved changes confer no remote or literary acceptance.', 'grwtsk-note'),
+    loadQueue, queueStatus, queueBody, olderQueue);
   const issueInput = make('input'); issueInput.type = 'text'; issueInput.placeholder = '358, 360';
   const issuesButton = button('Load issue context'), issueBody = make('div');
   const issueSection = make('details'); issueSection.append(make('summary', 'Issues and blockers'),
@@ -78,22 +94,29 @@ export async function mountGrwtsk({ main, projection }) {
   const chatSection = make('section'); chatSection.append(make('h3', 'Private chat'), messages,
     field('Message for the existing Codex assistant', message), send, refresh);
   panel.append(header, scope, status, context, provenance, editLabel, reviewButton, refreshSelection,
-    reviewSection, recoverySection, historySection, issueSection, handoffSection, chatSection);
+    reviewSection, recoverySection, historySection, queueSection, issueSection, handoffSection, chatSection);
   document.body.append(toggle, panel);
   let selected = null, current = null, operation = null, review = null, recovery = null, dirty = false, loading = false, selectionTicket = 0, inputGeneration = 0, restorePending = false, selectionPending = null;
   const records = new Map(catalog.paragraphs.map(item => [item.id, item]));
+  let queueCursor = null, queueTarget = null;
   const note = text => { status.textContent = text; };
   const visibleSelection = () => Boolean(current && main.querySelector(`.traversal-paragraph[data-entity-id="${current.id}"]`));
+  const selectedVisible = () => Boolean(selected && main.querySelector(`.traversal-paragraph[data-entity-id="${selected}"]`));
+  const unstoredDraft = () => dirty && (!operation || operation.after !== editor.value);
+  window.addEventListener('beforeunload', event => {
+    if (!unstoredDraft()) return;
+    event.preventDefault(); event.returnValue = '';
+  });
   const pinnedParagraph = () => {
     const route = parseRouteAddress(location.pathname);
     return Boolean(route.version && records.has(route.id));
   };
   function availability() {
     const visible = visibleSelection();
-    editor.disabled = loading || !visible || Boolean(recovery);
+    editor.disabled = !visible || Boolean(recovery);
     reviewButton.disabled = loading || !visible || !dirty || Boolean(recovery);
     send.disabled = loading || !visible || dirty || Boolean(recovery);
-    apply.disabled = loading || !visible || !review || Boolean(review.conflict || review.decision || recovery);
+    apply.disabled = loading || !visible || !review || Boolean(review.conflict || review.decision || recovery) || dirty && editor.value !== review.diff.after;
     reject.disabled = cancel.disabled = loading || !review || Boolean(review.decision);
     issuesButton.disabled = refresh.disabled = loading;
     handoffButton.disabled = loading || !operation;
@@ -101,6 +124,9 @@ export async function mountGrwtsk({ main, projection }) {
     resume.disabled = loading || !visible || !recovery || dirty;
     refreshComparison.disabled = loading || !visible || !recovery || dirty;
     refreshSelection.disabled = loading || dirty || !selected || !main.querySelector(`.traversal-paragraph[data-entity-id="${selected}"]`);
+    loadQueue.disabled = loading || !selectedVisible();
+    olderQueue.disabled = loading || !selectedVisible() || queueTarget !== selected || !queueCursor;
+    for (const control of queueBody.querySelectorAll('button')) control.disabled = loading || !selectedVisible() || queueTarget !== selected;
     if (current && !visible) {
       note('Previous paragraph is outside this view. Return to it or discard its unreviewed text before selecting an available paragraph.');
     } else if (visible && status.textContent.startsWith('Previous paragraph is outside this view.')) {
@@ -145,6 +171,10 @@ export async function mountGrwtsk({ main, projection }) {
     }
   }
   function showInspection(id, value) {
+    if (queueTarget !== id) {
+      queueBody.replaceChildren(); queueCursor = null; queueTarget = null; olderQueue.hidden = true;
+      queueStatus.textContent = 'Load this paragraph’s saved changes. Nothing is restored or applied automatically.';
+    }
     showHistory(value);
     if (value.status === 'unavailable') {
       selected = id; current = null; recovery = null; operation = null; review = null;
@@ -171,9 +201,10 @@ export async function mountGrwtsk({ main, projection }) {
   async function select(id, force = false) {
     if (!records.has(id) || !main.querySelector(`.traversal-paragraph[data-entity-id="${id}"]`) || !force && id === selected && current) return;
     if (dirty) { note('Review or discard the current paragraph change before selecting another paragraph.'); return; }
-    const ticket = ++selectionTicket;
+    const ticket = ++selectionTicket, generation = inputGeneration;
     const value = await request(`inspect?id=${encodeURIComponent(id)}`);
     if (ticket !== selectionTicket || !main.querySelector(`.traversal-paragraph[data-entity-id="${id}"]`)) return;
+    if (generation !== inputGeneration && dirty) { note('New draft text retained. Finish its review or discard it before changing selection.'); return; }
     showInspection(id, value);
   }
   function choose(id) {
@@ -221,7 +252,11 @@ export async function mountGrwtsk({ main, projection }) {
     const id = selected;
     await request('resume-source', { id, reviewDigest: recovery.reviewDigest, key: crypto.randomUUID(),
       decisionRef: `Local editor Resume from current source click at ${new Date().toISOString()}; private view only` });
-    await select(id, true);
+    try { await select(id, true); }
+    catch {
+      note('Private source-resume receipt is confirmed; current source refresh is unavailable. Previous edits and draft text are retained. Refresh the comparison or selection manually before continuing.');
+      return;
+    }
     if (selected !== id || !current || recovery || !visibleSelection()) {
       note('Private source-resume receipt retained. The selection changed again; inspect the current source or comparison before continuing.');
       return;
@@ -246,34 +281,97 @@ export async function mountGrwtsk({ main, projection }) {
     const generation = inputGeneration, id = current.id, wording = editor.value;
     const proposed = await request('propose', { id, baseVersion: current.version, beforeDigest: current.rawDigest,
       after: wording, key: crypto.randomUUID(), requestRef: 'local editor review request' });
-    const reviewed = await request(`review?id=${encodeURIComponent(proposed.id)}`);
+    let reviewed;
+    try { reviewed = await request(`review?id=${encodeURIComponent(proposed.id)}`); }
+    catch {
+      note('Proposal saved privately; exact review is unavailable. Draft text is retained. Load saved changes manually to review the known proposal before applying it.');
+      return;
+    }
     if (generation !== inputGeneration || selected !== id || editor.value !== wording) throw new Error('Working text changed while reviewing. Review the current text again.');
     operation = proposed; review = reviewed;
     before.textContent = review.diff.before; after.textContent = review.diff.after;
     disposition.textContent = review.conflict ?? 'Proposed private change. Source, evidence and acceptance are unchanged.';
     apply.disabled = Boolean(review.conflict || review.decision); reject.disabled = Boolean(review.decision); cancel.disabled = Boolean(review.decision);
     reviewSection.hidden = false;
+    queueBody.replaceChildren(); queueCursor = null; olderQueue.hidden = true;
+    queueStatus.textContent = 'Proposal saved privately. Load saved changes to refresh the queue.';
   });
+  const openSavedReview = (id, operationId) => guarded(async () => {
+    if (selected !== id || !selectedVisible()) return;
+    const reviewed = await request(`review?id=${encodeURIComponent(operationId)}`);
+    if (selected !== id || !selectedVisible() || reviewed.operation.target !== id) return;
+    // Showing a persisted diff must never overwrite a newer textarea draft.
+    operation = reviewed.operation; review = reviewed;
+    before.textContent = reviewed.diff.before; after.textContent = reviewed.diff.after;
+    disposition.textContent = reviewed.conflict ?? (reviewed.decision ? `${reviewed.decision.status} · ${reviewed.decision.effect}` : 'Saved private proposal. Review this exact diff before applying or cancelling.');
+    reviewSection.hidden = false;
+    note(dirty && editor.value !== operation.after ? 'Saved diff shown; your current draft is retained. Application is blocked while that draft differs.' : 'Saved change loaded for exact review. No text was restored or applied automatically.');
+  });
+  async function readQueue(append = false) {
+    if (!selectedVisible()) return;
+    const id = selected, cursor = append ? queueCursor : null;
+    queueStatus.textContent = 'Reading the private queue; no new acknowledgment or acceptance is inferred.';
+    let saved;
+    try {
+      saved = await request(`queue?id=${encodeURIComponent(id)}&limit=20${cursor ? `&beforeSequence=${cursor}` : ''}`);
+    } catch (error) {
+      queueStatus.textContent = 'Private queue unavailable. Existing displayed rows may be older; draft text is retained. Retry manually when connected.';
+      throw error;
+    }
+    if (selected !== id || !selectedVisible()) return;
+    if (!append || queueTarget !== id) queueBody.replaceChildren();
+    queueTarget = id; queueCursor = saved.nextBeforeSequence;
+    for (const entry of saved.operations) {
+      const row = make('div', undefined, 'grwtsk-queue-entry'); row.dataset.operationId = entry.id;
+      row.append(make('p', `Change ${entry.clientSequence} · ${entry.status}${entry.retired ? ' · retired from active view' : ''}`),
+        make('p', entry.createdAt, 'grwtsk-note'));
+      if (entry.conflict) row.append(make('p', entry.conflict, 'grwtsk-note'));
+      const inspect = button('Review saved change'); inspect.onclick = openSavedReview(id, entry.id);
+      row.append(inspect); queueBody.append(row);
+    }
+    olderQueue.hidden = !queueCursor;
+    queueStatus.textContent = `${queueBody.children.length} saved change${queueBody.children.length === 1 ? '' : 's'} shown for this paragraph · local private state at ${saved.revision}. Exact review rechecks current compatibility.`;
+  }
+  loadQueue.onclick = guarded(() => readQueue());
+  olderQueue.onclick = guarded(() => readQueue(true));
   const decide = status => guarded(async () => {
     if (!operation || !review || status === 'applied-private' && !visibleSelection()) return;
-    const receipt = await request('decide', { operationId: operation.id, reviewDigest: review.reviewDigest,
+    if (status === 'applied-private' && dirty && editor.value !== review.diff.after) return;
+    const id = selected, generation = inputGeneration, priorReview = review;
+    const preserveDraft = dirty;
+    const receipt = await request('decide', { operationId: operation.id, reviewDigest: priorReview.reviewDigest,
       status, approvalRef: `Local editor ${status} click at ${new Date().toISOString()}; working-copy effect only` });
     disposition.textContent = `${receipt.status} · ${receipt.effect}`;
-    review = { ...review, decision: receipt }; apply.disabled = reject.disabled = cancel.disabled = true;
-    const inspection = await request(`inspect?id=${encodeURIComponent(selected)}`);
+    if (generation === inputGeneration) review = { ...priorReview, decision: receipt };
+    queueBody.replaceChildren(); queueCursor = null; olderQueue.hidden = true;
+    queueStatus.textContent = 'Private decision saved. Load saved changes to refresh the queue.';
+    let inspection;
+    try { inspection = await request(`inspect?id=${encodeURIComponent(id)}`); }
+    catch {
+      note(`Private decision ${receipt.status} is confirmed; current source refresh is unavailable. Draft text and the saved decision are retained. Inspect saved changes manually, then preserve or discard the draft before refreshing selection.`);
+      return;
+    }
     if (inspection.status !== 'current') {
+      if (dirty || generation !== inputGeneration) {
+        operation = null; review = null; reviewSection.hidden = true;
+        note('Private decision retained. Source changed while draft text remains in this tab; refresh only after preserving or discarding that draft.');
+        return;
+      }
       dirty = false;
-      showInspection(selected, inspection);
+      showInspection(id, inspection);
       note('Private decision retained. Current source changed; compare retained history before continuing.');
       return;
     }
     current = inspection.current; showHistory(inspection);
-    editor.value = current.raw; dirty = false; reviewButton.disabled = true; showState();
+    if (!preserveDraft && generation === inputGeneration) editor.value = current.raw;
+    dirty = editor.value !== current.raw;
+    if (generation !== inputGeneration) { operation = null; review = null; reviewSection.hidden = true; }
+    showState();
     if (receipt.status === 'applied-private' && !pinnedParagraph()) {
       const visible = main.querySelector(`[data-entity-id="${selected}"]`);
       if (visible) { visible.textContent = current.raw; visible.dataset.privateOverlay = 'true'; }
     }
-    note(receipt.status === 'applied-private' ? 'Applied to the private working copy. Literary acceptance and source handoff remain separate.' : 'Decision retained; working text unchanged.');
+    note(dirty ? 'Private decision retained; newer or unapplied draft text remains in this tab and requires its own review.' : receipt.status === 'applied-private' ? 'Applied to the private working copy. Literary acceptance and source handoff remain separate.' : 'Decision retained; working text unchanged.');
   });
   apply.onclick = decide('applied-private'); reject.onclick = decide('rejected'); cancel.onclick = decide('cancelled');
   issuesButton.onclick = guarded(async () => {
