@@ -1,0 +1,5225 @@
+{
+  "id": "LOVE-01-COVERAGE",
+  "generated_on": "2026-09-30",
+  "repository": "grwtsk/huey",
+  "baseline_query": "open issues created 2026-09-19 through 2026-10-01 UTC; 2026-09-22 union of ascending and descending 100-result windows",
+  "open_issue_count": 368,
+  "parent_issue": 478,
+  "saturation_issue": 486,
+  "source_standard": "love-invariant.md",
+  "status_note": "Every baseline issue has a category-specific LOVE-01 disposition in this register. Only entries marked commented have an issue-thread receipt; standard-linked entries are not represented as individually commented.",
+  "counts": {
+    "commented": 15,
+    "standard-linked": 345,
+    "self-integrated": 8
+  },
+  "entries": [
+    {
+      "issue": 1,
+      "title": "[CONTROL] HUEY-000 — Production charter and master issue index",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "commented",
+      "comment_receipt": 5922116185
+    },
+    {
+      "issue": 2,
+      "title": "[HUMAN] HUEY-H01 — Authorize source custody and disclosure boundaries",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 3,
+      "title": "[HUMAN] HUEY-H02 — Resolve anchor-memory status without inventing recollection",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 4,
+      "title": "[HUMAN] HUEY-H03 — Approve participant representation and separately attributable testimony",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 5,
+      "title": "[HUMAN] HUEY-H04 — Approve sensitive factual framing and independent review scope",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 6,
+      "title": "[HUMAN] HUEY-H05 — Decide publication rights, imprint and edition metadata",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 7,
+      "title": "[HUMAN] HUEY-H06 — Choose dedication, epigraph and acknowledgments",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 8,
+      "title": "[HUMAN] HUEY-H07 — Select narration and authorize any voice use",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 9,
+      "title": "[HUMAN] HUEY-H08 — Set evidence cutoff and authorize external requests individually",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 10,
+      "title": "[HUMAN] HUEY-H09 — Accept Preamble movement at a named manuscript version",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 11,
+      "title": "[HUMAN] HUEY-H10 — Accept Interlude movement and the approach to the excursion",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 12,
+      "title": "[HUMAN] HUEY-H11 — Accept the reserved closing text and final reading experience",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 13,
+      "title": "[HUMAN] HUEY-H12 — Accept front matter, back matter and public packaging",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 14,
+      "title": "[HUMAN] HUEY-H13 — Authorize release of an exact edition to named destinations",
+      "category": "human-agency",
+      "love_owners": [
+        481,
+        486
+      ],
+      "application": "Preserve the human decision as human; no workflow output, silence, model inference or admiration manufactures assent.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 17,
+      "title": "[WORK] HUEY-W03 — Scaffold manuscript, planning and reproducible builds without auto-publication",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 18,
+      "title": "[WORK] HUEY-W04 — Create relational evidence, statement, quotation and provenance ledgers",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 19,
+      "title": "[WORK] HUEY-W05 — Build the three-clock scene map and narrative continuity plan",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 20,
+      "title": "[WORK] HUEY-W06 — Lock narrative anchors and implement the PR-01 reveal firewall",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 21,
+      "title": "[WORK] HUEY-W07 — Adapt every supplied essay through an explicit coverage and change map",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 22,
+      "title": "[WORK] HUEY-W08 — Verify the opening's historical, geographic and film context",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 23,
+      "title": "[WORK] HUEY-W09 — Verify classroom attribution without rewriting the remembered encounter",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 24,
+      "title": "[WORK] HUEY-W10 — Audit medical and communication research at its actual scope",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 25,
+      "title": "[WORK] HUEY-W11 — Reconcile original clinical documents, dates and longitudinal measurements",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 26,
+      "title": "[WORK] HUEY-W12 — Distinguish investigation scope, witness contact and legal standards",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 27,
+      "title": "[WORK] HUEY-W13 — Verify institutional context and preserve counterevidence",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 28,
+      "title": "[WORK] HUEY-W14 — Verify philosophical and theological references without imposing a voice",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 29,
+      "title": "[WORK] HUEY-W15 — Audit mathematical analogies, color constructions and evidential thresholds",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 30,
+      "title": "[WORK] HUEY-W16 — Recompute economic examples and distinguish scenarios from observed costs",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 31,
+      "title": "[WORK] HUEY-W17 — Prepare qualified-review and right-of-reply packets without sending them",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 32,
+      "title": "[WORK] HUEY-W18 — Create quotation, image, audio and software rights registers",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 33,
+      "title": "[WORK] HUEY-W19 — Design cover, spine and catalog copy without revealing the closing discovery",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 34,
+      "title": "[FRONT] HUEY-F01 — Prepare half-title, title page and copyright/edition page",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 35,
+      "title": "[FRONT] HUEY-F02 — Draft a brief author/source note and reader advisory",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 36,
+      "title": "[FRONT] HUEY-F03 — Build contents, movement openings and optional preliminaries",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 37,
+      "title": "[CHAPTER] HUEY-C01 — Preamble / The Feather",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 38,
+      "title": "[CHAPTER] HUEY-C02 — Preamble / A Life Already Under Way",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 39,
+      "title": "[CHAPTER] HUEY-C03 — Preamble / The Room",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 40,
+      "title": "[CHAPTER] HUEY-C04 — Preamble / The Other Person in the Room",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 41,
+      "title": "[CHAPTER] HUEY-C05 — Preamble / The Note That Arrived First",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 42,
+      "title": "[CHAPTER] HUEY-C06 — Preamble / One Physician, Two Chairs",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 43,
+      "title": "[CHAPTER] HUEY-C07 — Preamble / A Page of My Own",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 44,
+      "title": "[CHAPTER] HUEY-C08 — Interlude / The Ring of Umber",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 45,
+      "title": "[CHAPTER] HUEY-C09 — Interlude / The Possibility of a Feather",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 46,
+      "title": "[CHAPTER] HUEY-C10 — Interlude / The Instruments Already in the Room",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 47,
+      "title": "[CHAPTER] HUEY-C11 — Interlude / Insufficiently Examined",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 48,
+      "title": "[CHAPTER] HUEY-C12 — Interlude / The Human Cost",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 49,
+      "title": "[CHAPTER] HUEY-C13 — Interlude / Four Chambers",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 50,
+      "title": "[CHAPTER] HUEY-C14 — Interlude / Under the Pantocrator",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 51,
+      "title": "[CHAPTER] HUEY-C15 — Interlude / A Different Last Page",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 52,
+      "title": "[EXCURSION] HUEY-C16 — Preserve Edna as the complete narrative close",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 53,
+      "title": "[ASSEMBLY] HUEY-A01 — Assemble and revise the Preamble movement",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 54,
+      "title": "[ASSEMBLY] HUEY-A02 — Assemble and revise the Interlude movement",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 55,
+      "title": "[ASSEMBLY] HUEY-A03 — Perform the full-book developmental and emotional-continuity pass",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "commented",
+      "comment_receipt": 5922119195
+    },
+    {
+      "issue": 56,
+      "title": "[BACK] HUEY-B01 — Compile chapter endnotes and an inspected bibliography",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 57,
+      "title": "[BACK] HUEY-B02 — Prepare chronology, source limitations and reproducible method appendices",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 58,
+      "title": "[BACK] HUEY-B03 — Build a non-spoiling glossary and final-page index",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 59,
+      "title": "[BACK] HUEY-B04 — Prepare acknowledgments, contributor information and colophon",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 60,
+      "title": "[PRODUCTION] HUEY-P01 — Design and render the complete print interior",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 61,
+      "title": "[PRODUCTION] HUEY-P02 — Build validated EPUB, accessible HTML and review exports",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 62,
+      "title": "[PRODUCTION] HUEY-P03 — Budget spoken text and verify the 6–8-hour runtime",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 63,
+      "title": "[PRODUCTION] HUEY-P04 — Produce, proof and master the authorized spoken edition",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 64,
+      "title": "[QUALITY] HUEY-Q01 — Implement structural, provenance, privacy and approval checks",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 65,
+      "title": "[QUALITY] HUEY-Q02 — Complete edition-wide factual, legal-context and privacy review",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 66,
+      "title": "[QUALITY] HUEY-Q03 — Copyedit for voice, rhythm, attribution and consistency",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 67,
+      "title": "[QUALITY] HUEY-Q04 — Test accessibility for both the authoring process and the reader",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 68,
+      "title": "[QUALITY] HUEY-Q05 — Proof the complete edition across print, digital and audio",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 69,
+      "title": "[RELEASE] HUEY-R01 — Prepare immutable edition manifests and execute only an approved release",
+      "category": "rights-release",
+      "love_owners": [
+        481,
+        482,
+        485,
+        486
+      ],
+      "application": "Public value and admiration never override consent, rights, privacy or exact release authority; preserve the same human relation in every edition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 70,
+      "title": "[WORKFLOW] HUEY-X01 — Make issue execution resumable, dependency-aware and auditable",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 71,
+      "title": "[MAINTENANCE] HUEY-X02 — Preserve corrections, later evidence and edition history",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 96,
+      "title": "[EDITORIAL] Preserve the author's new clarification of identity, recognition and evidentiary purpose",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 98,
+      "title": "[CORRECTION] Preserve relational description without imposing a racism-claim frame",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922117958
+    },
+    {
+      "issue": 100,
+      "title": "[EDITORIAL] Repair current prose and derived reviews after the relational-framing correction",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 103,
+      "title": "[RESEARCH] Extend LG-01 primary-text, multilingual and jurisdictional coverage",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 108,
+      "title": "[STORY] EX-01 — Develop the first reserved experiential piece",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 109,
+      "title": "[STORY] EX-02 — Develop the second reserved experiential piece",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 110,
+      "title": "[STORY] EX-03 — Develop the third reserved experiential piece",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 111,
+      "title": "[STORY] EX-04 — Preserve and later develop the fourth experiential reference",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 113,
+      "title": "[STORY] EX-05 — Preserve and develop the fifth experiential account",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 115,
+      "title": "[EXPRESSION] Preserve soft transitions and the narrator's intentional development of perspective",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 116,
+      "title": "[EXPRESSION] Preserve shared imagery, referential continuity and who makes an abstraction",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 119,
+      "title": "[SOURCE] Preserve anticipatory correspondence status and resolve dispatch-dependent fields",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 123,
+      "title": "[SOURCE/EDITORIAL] Preserve established communication practice and reciprocal reception",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 124,
+      "title": "[EDITORIAL/RESEARCH] Successive care, law and trust passes with sentence-level support",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 125,
+      "title": "[CONTROL] SOC-00 — Standards, care burden and trust: argument and verification program",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 126,
+      "title": "[TRANSFER] SOC-T01 — Approved public corpus copied; ancillary representations and audit remain",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 127,
+      "title": "[VERIFY] SOC-V01 — Source provenance, conversation completeness and citation repair",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 128,
+      "title": "[VERIFY] SOC-V02 — Every meaning of standard and the authority of each definition",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 129,
+      "title": "[VERIFY] SOC-V03 — Pain-limited function, observation sampling and diagnostic interpretation",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 130,
+      "title": "[VERIFY] SOC-V04 — Immobility prevention without universal treatment mandates",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 131,
+      "title": "[VERIFY] SOC-V05 — Trauma-informed delivery, adapted treatment and neuropalliative scope",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 132,
+      "title": "[VERIFY] SOC-V06 — Medication claims by indication, diagnosis and safety context",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 133,
+      "title": "[VERIFY] SOC-V07 — Genetic identifiers, variant classifications and actual follow-up",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 134,
+      "title": "[VERIFY] SOC-V08 — Mitochondrial mechanisms, drug precautions, supplements and magnesium assays",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 135,
+      "title": "[VERIFY] SOC-V09 — Joint laxity, tissue fragility, safe handling and rehabilitation",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 136,
+      "title": "[VERIFY] SOC-V10 — Recurrent stones, hydration, metabolic testing and emergency limits",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 137,
+      "title": "[VERIFY] SOC-V11 — Medication/exertion observations without an invented stone mechanism",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 138,
+      "title": "[VERIFY] SOC-V12 — Effective communication, modifications and actual institutional decisions",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 139,
+      "title": "[VERIFY] SOC-V13 — Referrals, accepted handoffs and responsibility across institutional boundaries",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 140,
+      "title": "[VERIFY] SOC-V14 — Consent, records, legal predicates and limits of institutional review",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 141,
+      "title": "[VERIFY] SOC-V15 — Patient/support-person workload, its origin and its costs",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 142,
+      "title": "[VERIFY] SOC-V16 — Reciprocal professionalism, conditions of care and independent review",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 143,
+      "title": "[VERIFY] SOC-V17 — Prior trust, endurance and the origin of communication barriers",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 144,
+      "title": "[VERIFY] SOC-V18 — Atlas principles, article-unit links and cross-authority support",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 145,
+      "title": "[VERIFY] SOC-V19 — Full-corpus source-unit coverage and transfer integrity",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 146,
+      "title": "[ARGUMENT] SOC-A01 — Custom describes conduct; a standard evaluates it",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 147,
+      "title": "[ARGUMENT] SOC-A02 — The professional standard belongs to the actual circumstances",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 148,
+      "title": "[ARGUMENT] SOC-A03 — Standard procedure does not create a standard patient",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 149,
+      "title": "[ARGUMENT] SOC-A04 — Grammar and fluent performance are not standards of human credibility",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 150,
+      "title": "[ARGUMENT] SOC-A05 — A measurement must fit the life it purports to describe",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 151,
+      "title": "[ARGUMENT] SOC-A06 — Proof for a verdict is not the entry threshold for care",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 152,
+      "title": "[ARGUMENT] SOC-A07 — Ability to move does not establish tolerability or sustainable function",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 153,
+      "title": "[ARGUMENT] SOC-A08 — Prevention and relief are concurrent work, not substitutes",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 154,
+      "title": "[ARGUMENT] SOC-A09 — Investigate the report without silently replacing it with its interpretation",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 155,
+      "title": "[ARGUMENT] SOC-A10 — Trauma treatment and trauma-informed care are different responsibilities",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 156,
+      "title": "[ARGUMENT] SOC-A11 — Specialties may divide work without leaving the patient to repair the divisions",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 157,
+      "title": "[ARGUMENT] SOC-A12 — Take a medication observation seriously without inventing its explanation",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 158,
+      "title": "[ARGUMENT] SOC-A13 — Genetic uncertainty requires follow-through, not certainty or dismissal",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 159,
+      "title": "[ARGUMENT] SOC-A14 — Renal care and activity observations need individualized investigation",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 160,
+      "title": "[ARGUMENT] SOC-A15 — Participation must not become substitution for multiple professions",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 161,
+      "title": "[ARGUMENT] SOC-A16 — Family support is not an institutional staffing plan",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 162,
+      "title": "[ARGUMENT] SOC-A17 — Process-generated complexity must not be attributed to the patient by default",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 163,
+      "title": "[ARGUMENT] SOC-A18 — Efficiency must account for work and cost shifted outside the institution",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 164,
+      "title": "[ARGUMENT] SOC-A19 — The standard of living includes the usable life consumed by obtaining care",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 165,
+      "title": "[ARGUMENT] SOC-A20 — Preserving agency does not mean leaving the patient alone with the system",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 166,
+      "title": "[ARGUMENT] SOC-A21 — A reliable record preserves provenance, disagreement and correction",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 167,
+      "title": "[ARGUMENT] SOC-A22 — Professional standards must be reciprocal, not merely standards of tone",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 168,
+      "title": "[ARGUMENT] SOC-A23 — Ambiguity in conditions of care has consequences for access and continuity",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 169,
+      "title": "[ARGUMENT] SOC-A24 — Ask what institutional concern became action",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 170,
+      "title": "[ARGUMENT] SOC-A25 — Follow the decisions rather than predetermine the level of blame",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 171,
+      "title": "[ARGUMENT] SOC-A26 — The history of trust must precede the history of defensive scrutiny",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 172,
+      "title": "[ARGUMENT] SOC-A27 — Endurance measures burden, not adequate care or eligibility for it",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 173,
+      "title": "[ARGUMENT] SOC-A28 — Describing a barrier does not make the patient its author",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 174,
+      "title": "[ARGUMENT] SOC-A29 — Rebuild trust through completed responsibilities, not a demand for further endurance",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 175,
+      "title": "[ARGUMENT] SOC-A30 — Moral standards must bear the weight of conduct without deciding disputed facts",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 176,
+      "title": "[VERIFY] SOC-S01 — Substantial-support queue and claim-level evidence dispositions",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 178,
+      "title": "[VERIFY] Care-law chronology, examination findings and quotation provenance",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 179,
+      "title": "[VERIFY] Care-law clinical deterioration, referral failure and continuity",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 180,
+      "title": "[VERIFY] Care-law communication, consent, portal continuity and the notice",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 181,
+      "title": "[VERIFY] Care-law itemized records, preservation and downstream reliance",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 182,
+      "title": "[VERIFY] Care-law reporting predicates and element-specific criminal review",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 183,
+      "title": "[VERIFY] Care-law institutional responsibility, conflicts and accepted handoffs",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 184,
+      "title": "[VERIFY] Care-law jurisdiction, historical rules and remedy-specific deadlines",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 185,
+      "title": "[VERIFY] Care-law consequences, transferred burdens, trust and the common good",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 186,
+      "title": "[INTEGRATION] Apply the care-law corpus to Huey's chapters and evidence apparatus",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 187,
+      "title": "[PROVENANCE] Resolve July document identity and September notice chronology",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 189,
+      "title": "[VERIFY] SOC-S02 — Artwork, composition and quotation provenance without causal overreach",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 190,
+      "title": "[VERIFY] SOC-S03 — Preserve source status and resolve citation targets",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 191,
+      "title": "[ARGUMENT] SOC-A31 — Making, painting and composition as communication without diagnostic substitution",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 192,
+      "title": "[VERIFY] SOC-Q03 — Preserve the authority register and inspect its twelve cited texts",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 193,
+      "title": "[REGISTER] SOC-I01 — Individual reported departures, explicit issues, evidence collection next",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 194,
+      "title": "[REPORTED] SOC-I001 — Altered-sound complaint answered dismissively",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 195,
+      "title": "[REPORTED] SOC-I002 — Neurological history repeatedly redirected to shoulder",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 196,
+      "title": "[REPORTED] SOC-I003 — Rapid successive knee-reflex strikes",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 197,
+      "title": "[REPORTED] SOC-I004 — Hostile escalation during neurological examination",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 198,
+      "title": "[SAFEGUARD] SOC-I005 — Immediate response to new bilateral leg pain",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 199,
+      "title": "[REPORTED] SOC-I006 — Continued physical contact without consent",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 200,
+      "title": "[REPORTED] SOC-I007 — Disputed normal gait and station entry",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 201,
+      "title": "[REPORTED] SOC-I008 — Normal tandem entry conflicts with reported wall support",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 202,
+      "title": "[REPORTED] SOC-I009 — Disputed heel-and-toe walking representation",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 203,
+      "title": "[REPORTED] SOC-I010 — Disputed negative Romberg entry",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 204,
+      "title": "[REPORTED] SOC-I011 — Finger-to-nose examination recorded but denied as performed",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 205,
+      "title": "[REPORTED] SOC-I012 — Heel-to-shin examination recorded but denied as performed",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 206,
+      "title": "[REPORTED] SOC-I013 — Stanford aftermath left encounter and record disputes unresolved",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 207,
+      "title": "[SAFEGUARD] SOC-I014 — Preserve why Stanford care moved to UCSF",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 208,
+      "title": "[REPORTED] SOC-I015 — No individualized explanation of rapid functional collapse",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 209,
+      "title": "[REPORTED] SOC-I016 — Recalled “Leave me out of it” response to deterioration question",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 210,
+      "title": "[SAFEGUARD] SOC-I017 — Clarify recalled use of “penetration”",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 211,
+      "title": "[REPORTED] SOC-I018 — Clinically important information withheld after loss of safe disclosure",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 212,
+      "title": "[REPORTED] SOC-I019 — Referred Psychiatry pathway remained inaccessible or unsafe",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 213,
+      "title": "[REPORTED] SOC-I020 — Return for referral help answered as “go elsewhere”",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 214,
+      "title": "[REPORTED] SOC-I021 — Psychiatry’s written threat to terminate MyChart access",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 215,
+      "title": "[REPORTED] SOC-I022 — Missing durable primary-care and longitudinal observation",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 216,
+      "title": "[SAFEGUARD] SOC-I023 — Reconcile office gait with habitual daily function",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 217,
+      "title": "[SAFEGUARD] SOC-I024 — Preserve wife’s eyewitness role separately from support",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 218,
+      "title": "[SAFEGUARD] SOC-I025 — Preserve longitudinal observations separately from caregiver commentary",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 219,
+      "title": "[REPORTED] SOC-I026 — Telephone dysarthria interpreted as intoxication or unreliability",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 220,
+      "title": "[REPORTED] SOC-I027 — Substance-use suspicion added a condition of care",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 221,
+      "title": "[REPORTED] SOC-I028 — Communication disability not reliably carried in longitudinal records",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 222,
+      "title": "[REPORTED] SOC-I029 — Closed “night terrors” question left nocturnal symptoms unqualified",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 223,
+      "title": "[REPORTED] SOC-I030 — Misgendering in the medical record",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 224,
+      "title": "[REPORTED] SOC-I031 — Preferred name Jacob not consistently represented",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 225,
+      "title": "[REPORTED] SOC-I032 — Religious identity reduced to an inaccurate record label",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 226,
+      "title": "[INQUIRY] SOC-I033 — Malingering characterization: source, transmission and later use",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 227,
+      "title": "[INQUIRY] SOC-I034 — Independent examination of possible divided loyalty",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 228,
+      "title": "[REPORTED] SOC-I035 — Pregabalin/gabapentin communication and coordination failure",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 229,
+      "title": "[REPORTED] SOC-I036 — Absence of effective pain management",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 230,
+      "title": "[SAFEGUARD] SOC-I037 — Response to historical vomiting-blood and ibuprofen report",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 231,
+      "title": "[SAFEGUARD] SOC-I038 — Defined response route for swallowing difficulty",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 232,
+      "title": "[SAFEGUARD] SOC-I039 — Defined response route for breathing difficulty",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 233,
+      "title": "[SAFEGUARD] SOC-I040 — Fatigue, vertigo, speech and overload: unresolved response inventory",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 234,
+      "title": "[REPORTED] SOC-I041 — July submission: no attributable entry confirmation or location",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 235,
+      "title": "[REPORTED] SOC-I042 — July submission lacked a clinical response by the August follow-up",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 236,
+      "title": "[REPORTED] SOC-I043 — Prior patient qualifications recast as newly imposed boundaries",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 237,
+      "title": "[REPORTED] SOC-I044 — Trauma comparison detached from clinical context",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 238,
+      "title": "[REPORTED] SOC-I045 — Trauma quotation associated with threats without specified threatening act",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 239,
+      "title": "[INQUIRY] SOC-I046 — Who transmitted and used the private clinical quotation",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 240,
+      "title": "[REPORTED] SOC-I047 — Earlier reports of a harmful care relationship lacked an adequate answer",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 241,
+      "title": "[REPORTED] SOC-I048 — Blanket assent combined with disputed factual and accommodation terms",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 242,
+      "title": "[REPORTED] SOC-I049 — Conditional discharge while material wording remained disputed",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 243,
+      "title": "[SAFEGUARD] SOC-I050 — Correction is not a transfer request or refusal of legitimate conditions",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 244,
+      "title": "[SAFEGUARD] SOC-I051 — Evaluate narrowed communication needs separately from broad-format refusal",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 245,
+      "title": "[REPORTED] SOC-I052 — Verbal clinician input maintained despite need for written questions",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 246,
+      "title": "[SAFEGUARD] SOC-I053 — Specify how additional time supports processing and qualification",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 247,
+      "title": "[SAFEGUARD] SOC-I054 — A route for delayed material qualifications after the visit",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 248,
+      "title": "[SAFEGUARD] SOC-I055 — Device permission without a usable communication process",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 249,
+      "title": "[REPORTED] SOC-I056 — Pre-visit agenda declined; patient agenda offered only at visit",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 250,
+      "title": "[SAFEGUARD] SOC-I057 — Advance identification of encounter participants and roles",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 251,
+      "title": "[SAFEGUARD] SOC-I058 — Feasible quiet and interruption reduction after silence guarantee refused",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 252,
+      "title": "[SAFEGUARD] SOC-I059 — Explanation, consent checkpoints and a usable slow stop signal",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 253,
+      "title": "[SAFEGUARD] SOC-I060 — Resolve cross-service MyChart continuity before relying on standard channels",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 254,
+      "title": "[SAFEGUARD] SOC-I061 — Portal usability is separate from account continuity",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 255,
+      "title": "[SAFEGUARD] SOC-I062 — Durable accessible delivery of the ordinary after-visit summary",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 256,
+      "title": "[SAFEGUARD] SOC-I063 — In-person neurological need not answered by telehealth availability",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 257,
+      "title": "[SAFEGUARD] SOC-I064 — Emergency access needs reliable longitudinal communication information",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 258,
+      "title": "[SAFEGUARD] SOC-I065 — Preserve clinical relevance while keeping adjudication separate",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 259,
+      "title": "[SAFEGUARD] SOC-I066 — Identify who made the notice’s factual and accommodation decisions",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 260,
+      "title": "[SAFEGUARD] SOC-I067 — Define future noncompliance and discharge-review procedure",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 261,
+      "title": "[SAFEGUARD] SOC-I068 — Independent review and direct participation must be verifiable",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 262,
+      "title": "[SAFEGUARD] SOC-I069 — Preserve correspondence separately from deciding chart amendments",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 263,
+      "title": "[SAFEGUARD] SOC-I070 — California addendum route and linkage to disputed items",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 264,
+      "title": "[SAFEGUARD] SOC-I071 — Item-specific HIPAA amendment and disagreement disposition",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 265,
+      "title": "[SAFEGUARD] SOC-I072 — Preserve originals, versions, routing and audit history",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 266,
+      "title": "[SAFEGUARD] SOC-I073 — Traceable preparation before a clinical encounter",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 267,
+      "title": "[SAFEGUARD] SOC-I074 — Source attribution and actual accommodation during the encounter",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 268,
+      "title": "[SAFEGUARD] SOC-I075 — Post-encounter assessment, uncertainty and continuing responsibility",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 269,
+      "title": "[INQUIRY] SOC-I076 — Injury-reporting predicates and actual reporting response",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 270,
+      "title": "[INQUIRY] SOC-I077 — Dependent-adult reporting eligibility and response",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 271,
+      "title": "[INQUIRY] SOC-I078 — Knowing false representation versus ordinary record inaccuracy",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 272,
+      "title": "[INQUIRY] SOC-I079 — Fraudulent creation or alteration of a medical record",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 273,
+      "title": "[INQUIRY] SOC-I080 — Witness or victim dissuasion from protected reporting",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 274,
+      "title": "[INQUIRY] SOC-I081 — Destruction, erasure or concealment to prevent evidence production",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 275,
+      "title": "[INQUIRY] SOC-I082 — Affirmative assistance after an alleged completed felony",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 276,
+      "title": "[INQUIRY] SOC-I083 — Injury causation and the serious-bodily-injury theory",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 277,
+      "title": "[INQUIRY] SOC-I084 — Functional stranding versus legal abandonment",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 278,
+      "title": "[REPORTED] SOC-I085 — Broad pain-form response interpreted as psychosis rather than clarified",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 279,
+      "title": "[SAFEGUARD] SOC-I086 — Preserve pain-limited standing rather than paralysis or total immobility",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 280,
+      "title": "[CLINICAL QUESTION] SOC-I087 — Pain investigation and relief alongside immobility prevention",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 281,
+      "title": "[CLINICAL QUESTION] SOC-I088 — Individualized clot-risk assessment and prevention decision",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 282,
+      "title": "[CLINICAL QUESTION] SOC-I089 — Skin, repositioning and support-surface assessment",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 283,
+      "title": "[CLINICAL QUESTION] SOC-I090 — Joint laxity, safe handling and functional maintenance",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 284,
+      "title": "[CLINICAL QUESTION] SOC-I091 — Coordinated neurological and psychiatric care with pacing",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 285,
+      "title": "[CLINICAL QUESTION] SOC-I092 — PRKCG/SCA14 result explanation and genetics follow-through",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 286,
+      "title": "[CLINICAL QUESTION] SOC-I093 — SLC4A1 VUS identity and follow-up without wrong-gene substitution",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 287,
+      "title": "[CLINICAL QUESTION] SOC-I094 — Separate mitochondrial finding and conditional follow-up",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 288,
+      "title": "[CLINICAL QUESTION] SOC-I095 — Recurrent stones, hematuria and metabolic assessment",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 289,
+      "title": "[CLINICAL QUESTION] SOC-I096 — Medication/exertion pattern and changes in stone episodes",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 290,
+      "title": "[REPORTED] SOC-I097 — Patient carrying displaced clinical, legal and coordination work",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 291,
+      "title": "[REPORTED] SOC-I098 — Family support carrying institutional communication and coordination burdens",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 292,
+      "title": "[REPORTED] SOC-I099 — Corrective work generated by process failures attributed to patient complexity",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 293,
+      "title": "[CONTEXT] SOC-I100 — Lifetime trust before later protective boundaries",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 294,
+      "title": "[CONTEXT] SOC-I101 — Endurance and persistence do not certify adequate care",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 295,
+      "title": "[CONTEXT] SOC-I102 — Family, work, worship and ordinary-life consequences",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 296,
+      "title": "[CONTEXT] SOC-I103 — September 15 crisis and reported help from accessible communication",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 297,
+      "title": "[SAFEGUARD] SOC-I104 — Preserve expressed intentions across altered awareness",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 298,
+      "title": "[INQUIRY] SOC-I105 — Keep unsupported received medical instructions out of failure counts",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 299,
+      "title": "[SAFEGUARD] SOC-I106 — Reciprocal specificity, professionalism and correction",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 300,
+      "title": "[SAFEGUARD] SOC-I107 — Trust repair through completed responsibilities",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 301,
+      "title": "[SAFEGUARD] SOC-I108 — Tie requested response periods to exact objects and receipts",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 302,
+      "title": "[INQUIRY] SOC-I109 — Preserve earlier endangerment and conditional injury theories without inventing events",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 303,
+      "title": "[CONTEXT] SOC-I110 — Medical Board submission and interviews: scope and actual disposition",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 304,
+      "title": "[REPORTED] SOC-I111 — Unsupported testimony process repeatedly reopens trauma",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 305,
+      "title": "[SAFEGUARD] SOC-I112 — Role-based privacy safeguards and item-specific restriction decisions",
+      "category": "rights-release",
+      "love_owners": [
+        481,
+        482,
+        485,
+        486
+      ],
+      "application": "Public value and admiration never override consent, rights, privacy or exact release authority; preserve the same human relation in every edition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 306,
+      "title": "[COVERAGE] SOC-I01 — Reconcile every source unit and later occurrence with the incident register",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 307,
+      "title": "[EVIDENCE NEXT] SOC-I01 — Receive evidence against explicit entries without rewriting testimony",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 311,
+      "title": "[ADMIN] Enforce the pre-release promotion policy with GitHub branch rules",
+      "category": "rights-release",
+      "love_owners": [
+        481,
+        482,
+        485,
+        486
+      ],
+      "application": "Public value and admiration never override consent, rights, privacy or exact release authority; preserve the same human relation in every edition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 313,
+      "title": "[WORK] Vite reading and listening interface on pre-release",
+      "category": "rights-release",
+      "love_owners": [
+        481,
+        482,
+        485,
+        486
+      ],
+      "application": "Public value and admiration never override consent, rights, privacy or exact release authority; preserve the same human relation in every edition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 314,
+      "title": "[EVIDENCE] Complete paragraph-to-claim/source mapping for the reader",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 315,
+      "title": "[CHECK] Resolve Vite dependencies and verify native browser narration",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 320,
+      "title": "[VERIFY] Reconcile internal labels in the cited 2025 clinic-versus-daily-life gait study",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 324,
+      "title": "[ARGUMENT] Reciprocal Effective Notice — symmetric standards for knowledge, communication and the medical record",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 325,
+      "title": "[VERIFY] Reciprocal notice — build the bidirectional notice-state, provenance and legal-authority matrix",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 326,
+      "title": "[PHASE] After C02A and C12A — populate evidence and give every argument concrete factual weight",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 327,
+      "title": "[ARGUMENT] Institutional economies of trust — UCSF, UC, the Medical Board and California",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 328,
+      "title": "[CHAPTER] C02A — untitled experiential chapter / death of the author's mother",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 329,
+      "title": "[CHAPTER] C12A — untitled experiential chapter / the author's rape",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 330,
+      "title": "[PROVENANCE] Dan Martone relationship, correspondence and recalled financial-architecture conversation",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 331,
+      "title": "[PLACEMENT] Who Holds the Trust? — exact chapter candidate and integration decision",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 332,
+      "title": "[CAPSTONE] Braid societal responsibility of language into Chapter 15 confession",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 337,
+      "title": "[SOURCE/EVIDENCE] “Poisoned Without a Poisoner” — preserve testimony and establish the evidentiary record",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 338,
+      "title": "[EVIDENCE] Statins in mitochondrial disease — establish the medical-literature record",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 339,
+      "title": "[EVIDENCE] Reconstruct medication, mitochondrial-disease, renal, stone, and exertional timeline",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 340,
+      "title": "[EVIDENCE] Establish the Bledsoe referral record and whether the specialist loop was ever opened or closed",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 341,
+      "title": "[EVIDENCE] Doctor-to-doctor collaboration, continuity, referral, and closed-loop duties",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 342,
+      "title": "[EVIDENCE] Test causation: stones, statin myotoxicity, rhabdomyolysis, myoglobinuria, and kidney injury",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 343,
+      "title": "[EVIDENCE] Reconstruct distributed responsibility — who knew what, when, and who owned the next action",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 344,
+      "title": "[EDITORIAL] Determine canonical placement of “The Place Beneath Pain”",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 345,
+      "title": "[EDITORIAL] Run continuity read for “The Place Beneath Pain” against the Interlude arc",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 347,
+      "title": "[ARCHITECTURE] Entity-addressable book, reading pages, editorial operations and Construct bridge",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 353,
+      "title": "[STRUCTURE] Compile human-readable Markdown into the Huey literary entity graph",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 354,
+      "title": "[SHARDING] Define logical sharding manifests without a file-per-word repository",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 355,
+      "title": "[MATERIALIZATION] Round-trip literary entities to deterministic reviewable Markdown",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 356,
+      "title": "[ORDER] Model reorderable membership as explicit editorial sequence operations",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 357,
+      "title": "[PRESENTATION] Store typography and color as relative presentation relations",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 358,
+      "title": "[EDITORIAL OPS] Freeze the Huey EditorialOperation schema and lineage rules",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 359,
+      "title": "[CLIENT QUEUE] Implement bounded offline-capable editorial operation queue",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 360,
+      "title": "[SYNC] Resolve queued edits against current server state with stale/conflict semantics",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 361,
+      "title": "[GIT MATERIALIZER] Materialize accepted editorial effects into reviewable Huey Git changes",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 362,
+      "title": "[CONSTRUCT] HUEY-CONSTRUCT-01 structural bridge fixture and conformance harness",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 363,
+      "title": "[PROVENANCE] Connect literary occurrences and paragraphs to versioned source ranges",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 364,
+      "title": "[MIGRATION] Migrate the current pre-release reader incrementally to entity/page architecture",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 365,
+      "title": "[TEST] Hostile, Unicode, accessibility and concurrency suite for the entity editor",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 366,
+      "title": "[CONTENTS] Build the table of contents as a live index over stable literary entities",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 367,
+      "title": "[ORIGIN] Define and later activate grwtsk.com -> /huey canonical entry routing",
+      "category": "technical-production",
+      "love_owners": [
+        481,
+        483,
+        485,
+        486
+      ],
+      "application": "Make respect technical: preserve identity, accessibility, source order, qualifications and the protected ending across operations and generated forms.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 368,
+      "title": "[LINEAGE] Preserve entity history across split, join, replacement and retirement",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 370,
+      "title": "[ASSEMBLY] Materialize the complete working Huey as an ordered editorial ReadingPage sequence",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 382,
+      "title": "[ADMIN] Remove retired subtitle from repository description",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 386,
+      "title": "[SOURCE/NARRATIVE] Stage safety-response letter and make its care pivot explicit",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 388,
+      "title": "[PROGRAM] Integrate Open the Door for Mary into Huey through the life–safety–accompaniment bridge",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 389,
+      "title": "[SOURCE] Build a provenance-preserving Huey entry for the entire Open the Door for Mary repository",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 390,
+      "title": "[CONCEPT] Define the full life–consent–accompaniment spectrum and potentiated birth",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 391,
+      "title": "[RESEARCH] Test the protective-availability hypothesis: capability, consent, maternal safety and continued pregnancy",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 392,
+      "title": "[WORK] Model the doctor as accompanist: clinical agency, consent, escalation and reciprocal burden",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 393,
+      "title": "[MODEL] Extend reciprocal burden across mother, child, family, doctor, health system, community and state",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 394,
+      "title": "[ASSEMBLY] Carry the Mary bridge through #386 into the late Interlude and C15 construction turn",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 395,
+      "title": "[EVIDENCE] Verify conception/personhood domains, protective availability, obstetric safety and postpartum refuge before promotion",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 396,
+      "title": "[PROGRAM] Recenter Huey on the rank-three shelf geometry with Baptism as the mixing chamber",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 398,
+      "title": "[CENTERPIECE] Compose a Baptism-centered continuous flow before chapter partition",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "commented",
+      "comment_receipt": 5922120421
+    },
+    {
+      "issue": 399,
+      "title": "[GEOMETRY] Bind rank-three plot coordinates to Grassmannian charts, brachistochrone descent and intertwinings",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 400,
+      "title": "[THEOLOGY] Make the Five Mysteries vertical pillars through the shelf scene",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 401,
+      "title": "[RHYTHM] Implement red/orange/green motion, Le Ballon Rouge rhythm, φ scale and incense/bell prosody",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 402,
+      "title": "[ASSEMBLY] Partition the Baptism-centered flow only after the whole relational arc exists",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 411,
+      "title": "[STORY] Incorporate the child / red-slide / train scene from the legacy shadows-to-light source",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 412,
+      "title": "[STORY] Incorporate Sam's braid / care / heritage scene without inventing interior testimony",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 413,
+      "title": "[STORY] Incorporate the father / birth / record / family-loss narrative with strict provenance",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 414,
+      "title": "[STORY] Incorporate the Missoula journey as a belonging / pace / conformity counterframe",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 415,
+      "title": "[SELF/VOICE] Locate the self-based legacy narrative and incorporate disability / imagination / writing with author provenance",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 416,
+      "title": "[MATH/VOICE] Salvage the legacy Richard prime-zero meditation as intuition, not proof",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 417,
+      "title": "[CIVIC] Mine the legacy Trinity Vision for Radio Park civic context without importing unsupported policy claims",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 438,
+      "title": "[FRONT] Add concrete reader orientation at the outset (FM-01 follow-up)",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 440,
+      "title": "[STYLE] Make remembrance gentler and more poetic (P01 follow-up)",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 441,
+      "title": "[EDITORIAL BUILD] Reconcile sequential-review sources with stable ReadingPage plans",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 442,
+      "title": "[REVISION] The Room: use only the encounter date established by the after-visit summary",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 443,
+      "title": "[REPLACE] P03 / The Distance — replace completely; restore the author's intended subject",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 445,
+      "title": "[PROGRAM] The evil that endures: algebraic-jet middle and forceful descent to care",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "commented",
+      "comment_receipt": 5922122675
+    },
+    {
+      "issue": 446,
+      "title": "[DESCENT H1] Map existing Atlas, essays, care-law units and evidence cards into one source-history crosswalk",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 447,
+      "title": "[DESCENT H2] Define the algebraic-jet middle through Baptism's actual crossings",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 448,
+      "title": "[DESCENT H3] Compose the recursive shells and the return to one actionable act of care",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 449,
+      "title": "[DESCENT H4] Extend lexical geometry into a complete in-corpus word and unworded-position concordance",
+      "category": "model-formal",
+      "love_owners": [
+        481,
+        483,
+        484,
+        486
+      ],
+      "application": "Keep the abstraction answerable to provenance and limits; no model or geometry may silently become the person or establish an event by analogy.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 450,
+      "title": "[DESCENT H5] Build the University–California–San Francisco–saint–Stanford philosophy source atlas",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 451,
+      "title": "[DESCENT H6] Develop the Zara Yacob–Descartes lineage and branch-by-branch philosophical resolutions",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 452,
+      "title": "[DESCENT H7] Carry jurisdiction-specific diligence into the narrative without losing the governing rule",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 453,
+      "title": "[DESCENT H8] Make $10.46 the auditable cost pivot without pricing dignity or inventing expenditure",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 454,
+      "title": "[DESCENT H9] Test reader agency, contrary evidence and the protected release into Edna",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 455,
+      "title": "[DESCENT H10] Preserve jet, source and argument identity through Markdown, HTML, LaTeX and listening views",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 456,
+      "title": "[DESCENT H11] Maintain the cross-repository dependency map and prepare the next discussion packet",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 458,
+      "title": "[BLACK THOUGHT] Thelma Berlack Boozer's intellectual work, Black feminist journalism and institutional authorship",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922124185
+    },
+    {
+      "issue": 459,
+      "title": "[BLACK THOUGHT] A Different World: episode-level intellectual history, creator agency and the 2026 continuation",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 464,
+      "title": "[TRUST] Carry the September 30 letter through every open Huey issue and governing standard",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 465,
+      "title": "[LIFE] Many beautiful days ahead — carry Rahel’s letter through Huey’s open work and standards",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922125480
+    },
+    {
+      "issue": 466,
+      "title": "[RHETORIC] Saints, Dream, classroom, water — balance Huey on beautiful days ahead",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922127075
+    },
+    {
+      "issue": 467,
+      "title": "[RHETORIC R1] Preserve Boozer → King → narrator reception and the distinct slight-rise memory",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922128619
+    },
+    {
+      "issue": 468,
+      "title": "[RHETORIC R2] Give the saints distinct voices that descend from profession into service",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 469,
+      "title": "[RHETORIC R3] Carry King's full architecture of promise, urgency, shared work and future—not a borrowed refrain",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 470,
+      "title": "[RHETORIC R4] Turn the slight rise, monument, bed, table and basin into changes of position",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922129858
+    },
+    {
+      "issue": 471,
+      "title": "[RHETORIC R5] Trace water from prophetic justice and rain to Peter; preserve “juice” without invented correction",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "standard-linked",
+      "comment_receipt": null
+    },
+    {
+      "issue": 472,
+      "title": "[RHETORIC R6] Make Rahel's prophecy the fulcrum: beautiful days ahead under collective uncertainty",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922131325
+    },
+    {
+      "issue": 473,
+      "title": "[RHETORIC R7] Saturate every literary unit with positioned foreshadowing and concrete consequence",
+      "category": "literary",
+      "love_owners": [
+        479,
+        482,
+        483,
+        485,
+        486
+      ],
+      "application": "Let action precede interpretation; preserve admiration without possession, source-aware severity, and a path by which love is legible before the protected close.",
+      "integration_status": "commented",
+      "comment_receipt": 5922134106
+    },
+    {
+      "issue": 474,
+      "title": "[RHETORIC R8] Compose the convergence immediately before the giving-water moment",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922135612
+    },
+    {
+      "issue": 475,
+      "title": "[RHETORIC R9] Preserve rhetorical position, separate voices and uncertainty across every edition",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "commented",
+      "comment_receipt": 5922136751
+    },
+    {
+      "issue": 478,
+      "title": "[LOVE] Edna’s enacted trust, respect and admiration — love as Huey’s invariant",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "commented",
+      "comment_receipt": 5922110855
+    },
+    {
+      "issue": 479,
+      "title": "[LOVE L1] Preserve Edna’s classroom name, actions and source boundaries",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 480,
+      "title": "[LOVE L2] Make trust an enacted relation: entrusting without surrender",
+      "category": "accountability",
+      "love_owners": [
+        480,
+        481,
+        484,
+        486
+      ],
+      "application": "Accountability remains exact and source-bound; love does not suspend scrutiny, and scrutiny does not permit dehumanization.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 481,
+      "title": "[LOVE L3] Make respect visible as reception, attribution, consent and room for correction",
+      "category": "care-research",
+      "love_owners": [
+        480,
+        481,
+        483,
+        486
+      ],
+      "application": "Make trust and respect operational through usable participation, accurate reception, consent, correction and evidence that can change the account.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 482,
+      "title": "[LOVE L4] Carry admiration without idealization, possession or borrowed authority",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 483,
+      "title": "[LOVE L5] Audit every utterance in Huey for love, hate, provenance and relational consequence",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 484,
+      "title": "[LOVE L6] Examine provenance and the geometry of racism without making hate the whole person",
+      "category": "source-provenance",
+      "love_owners": [
+        479,
+        481,
+        486
+      ],
+      "application": "Keep speaker, source, version, correction and contrary material distinct; a representation never acquires the person.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 485,
+      "title": "[LOVE L7] Let the protected Edna ending reveal love without explaining it afterward",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    },
+    {
+      "issue": 486,
+      "title": "[LOVE L8] Saturate every open Huey issue, standard and edition with LOVE-01",
+      "category": "general",
+      "love_owners": [
+        480,
+        481,
+        482,
+        483,
+        486
+      ],
+      "application": "Apply LOVE-01 through the issue's actual work: scoped trust, preserved authorship, admiration without possession, and personhood that exceeds any single proposition.",
+      "integration_status": "self-integrated",
+      "comment_receipt": null
+    }
+  ]
+}
