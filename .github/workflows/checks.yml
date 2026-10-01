@@ -118,6 +118,10 @@ jobs:
           HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/paragraph_browser_test.py
       - name: Existing admitted editor and evidence browser checks
         run: /tmp/huey-browser-venv/bin/python reader/tests/browser_test.py
+      - name: Opt-in private Grwtsk editor over loopback HTTP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: /tmp/huey-browser-venv/bin/python reader/tests/grwtsk_browser_test.py
       - name: Route alias continuity against the previous projection
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}

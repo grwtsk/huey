@@ -3,6 +3,9 @@
 WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.
 
 This is a local host adapter for the author's requested chat-driven editing flow.
+The later [private Grwtsk editor increment](grwtsk-editor.md) connects this adapter
+to the local editorial reading surface; the original CLI scope below remains
+historical and does not establish live model streaming or manuscript acceptance.
 The existing assistant supplies reasoning and performs explicit commands. There is
 no second model, API key, conversation endpoint, hosted server or background agent.
 It contributes a **private, single-paragraph ReplaceInscription rehearsal** to
