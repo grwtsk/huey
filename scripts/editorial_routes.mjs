@@ -80,7 +80,11 @@ export function buildEditorialRouteProjection({ assembly, bindings, previousBind
       id: entity.id, kind: entity.kind, version: access === 'available' ? entity.version ?? null : null,
       access, unresolved: slots.some(id => {
         const slot = slotById.get(id);
-        return ['pending', 'absent'].includes(slot.presence) || slot.editorialMaterialization === 'placeholder';
+        // An available candidate can make a slot present/partial without
+        // supplying selected children. Do not report that empty projection as
+        // resolved, or confuse it with a materialized partial source.
+        return ['pending', 'absent'].includes(slot.presence) || slot.editorialMaterialization === 'placeholder'
+          || (slot.presence === 'present' && records.get(slot.entityId).state.children.length === 0);
       }),
       pageIds: [...pageIds.get(entity.id)], slotIds: slots,
     };
