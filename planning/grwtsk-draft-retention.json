@@ -1,0 +1,88 @@
+{
+  "schema": "huey.private-draft-retention-policy.v1",
+  "status": "preparation-only",
+  "ownerIssue": "https://github.com/grwtsk/huey/issues/359",
+  "checkpointSchema": "huey.private-draft-checkpoint.v1",
+  "collectionSchema": "huey.private-draft-checkpoint-collection.v1",
+  "runtimePersistenceEnabled": false,
+  "actions": [
+    "explicit-save",
+    "explicit-replace",
+    "inspect-selected",
+    "explicit-restore",
+    "explicit-discard"
+  ],
+  "checkpointFields": [
+    "schema",
+    "id",
+    "key",
+    "target",
+    "basis",
+    "revision",
+    "baseVersion",
+    "sourceVersion",
+    "beforeDigest",
+    "before",
+    "draft",
+    "privateOperation",
+    "createdAt",
+    "digest"
+  ],
+  "collectionFields": [
+    "schema",
+    "checkpoints"
+  ],
+  "limits": {
+    "maxCheckpoints": 20,
+    "maxCollectionBytes": 1048576,
+    "maxBaseCodeUnits": 100000,
+    "maxDraftCodeUnits": 100000,
+    "maxCheckpointsPerTarget": 1
+  },
+  "encoding": "compact JSON.stringify(collection) followed by one LF; UTF-8 bytes",
+  "draftSyntax": "well-formed Unicode; unfinished, empty or multi-block Markdown allowed; no normalization",
+  "baseSyntax": "exact supported Markdown paragraph; raw digest and literary version both checked",
+  "retention": {
+    "automaticExpiry": false,
+    "automaticEviction": false,
+    "overflow": "reject without changing the previous collection",
+    "replace": "explicit action with exact expected prior checkpoint digest",
+    "discard": "explicit action with exact expected prior checkpoint digest",
+    "history": "checkpoint replacement/discard affects only this unreviewed draft; immutable proposals, decisions and source-resume history remain"
+  },
+  "writerRequirements": {
+    "destination": "existing restricted store outside every Git checkout on the authorized local host",
+    "repositoryBinding": "existing workspace realpath binding; no client-selected path",
+    "directoryMode": "0700",
+    "fileMode": "0600",
+    "ownership": "current OS user",
+    "unsafeEntries": "reject symlink, hard link, nonregular or permissive entries",
+    "transaction": "exclusive writer lock and same-directory atomic replacement; unresolved lock blocks writes",
+    "missingConfiguration": "fail closed; no browser, checkout or public fallback",
+    "powerLossDurability": "not supplied by this preparatory contract",
+    "sourceScope": "existing exact source/version/action/destination grant; schema and compatible context supply no new permission"
+  },
+  "recovery": {
+    "load": "explicit selected-entity inspection; never automatic restore",
+    "current": "exact target, basis, revision, source version, working version, raw base and private-operation binding",
+    "stale": "retained comparison only; no automatic rebase or application",
+    "unavailable": "retained inspection only; source cannot be substituted",
+    "newerTextarea": "retain; explicit restore cannot overwrite intervening typing",
+    "application": "separate fresh proposal, exact diff and explicit private decision"
+  },
+  "privacy": {
+    "payload": "only the strict selected-paragraph checkpoint fields; no whole source, issue bodies, chat, credentials, provider or approval fields",
+    "baseCopy": "only the exact paragraph needed for before/draft comparison",
+    "outputs": "neutral status/reason/count/size only; no payload or private fingerprints in public logs, receipts or issue handoffs",
+    "replication": false
+  },
+  "authority": {
+    "checkpoint": "local unreviewed recovery data",
+    "permissionEngine": false,
+    "sourceTruth": false,
+    "humanAcceptance": false,
+    "canonicalWrite": false,
+    "remoteAcknowledgment": false,
+    "publication": false
+  }
+}
