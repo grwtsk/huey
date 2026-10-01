@@ -80,6 +80,12 @@ jobs:
             ff0499bd341de12a31b355b79867b547f19d9b16
       - name: Private chat workspace synthetic tests
         run: npm run test:chat
+      - name: Install exact existing reconciliation contracts outside the checkout
+        run: npm run contracts:install -- "$RUNNER_TEMP/huey-chat-contracts"
+      - name: Source handoff against existing upstream contracts
+        env:
+          HUEY_CONTRACT_ROOT: ${{ runner.temp }}/huey-chat-contracts
+        run: npm run test:handoff
       - name: Editorial inventory tests
         run: npm run test:inventory
       - name: Editorial ReadingPage assembly tests

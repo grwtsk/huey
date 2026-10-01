@@ -126,16 +126,12 @@ A full-file patch can include unchanged source text; its disclosure review must
 cover the whole payload. Use it as an inspectable materialization input, not proof
 that publication metadata has been reconciled.
 
-Concrete remaining canonical-write work: combine the source patch with a complete
-old-ID → new-range correspondence (including nonparagraph blocks), retain page and
-route identity, update the selected source revision/blob and range sidecar
-atomically, and invalidate/reconcile old evidence bindings instead of inheriting
-them. The existing #377 API validates a proposed correspondence but explicitly
-has no apply command; #463 fixes the complete assembly but does not add a writer.
-The next bounded engineering increment can connect these existing contracts to an
-atomic source-plus-sidecar transaction and an explicit reviewed Git commit receipt.
-That is implementation work; only actual content disclosure and editorial
-acceptance require the separate human decisions already described.
+A complete checked source-and-sidecar **draft candidate** can now be prepared by
+[the exact-source handoff adapter](chat-source-handoff.md). It consumes the existing
+#377 contract, verifies the complete #463-equivalent assembly, and uses a real
+source-checkpoint commit to avoid a self-referential source pin. It preserves
+historical reader admission separately. The host still verifies actual approval
+and performs the explicit GitHub publication steps; no automatic write is enabled.
 
 ## GitHub handoff
 
