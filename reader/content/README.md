@@ -1,6 +1,7 @@
 # Reader content contract
 
-This directory contains only public-authorized metadata. A schema check proves
+This directory contains public-authorized metadata and, only when explicitly
+configured, immutable snapshots of already admitted public bytes under `admitted/`. A schema check proves
 consistency, not permission, historical truth or editorial clearance. Reuse claim
 and source IDs from existing research ledgers; do not create independent-looking
 copies of the same source to inflate corroboration.
@@ -81,3 +82,27 @@ orphan paragraph IDs, unexpected fields, unsafe URLs and stale digests fail
 compilation. The current ledger intentionally has no invented evidence entries;
 complete coverage is tracked in #314. The source and its current presentation
 remain distinct throughout the journalistic review process.
+
+## Historical admitted snapshots during working edits
+
+A working-source edit does not renew admission or inherit evidence. An admitted
+manifest entry may add `snapshotPath`, exactly
+`reader/content/admitted/<its-existing-blob>.md`, to retain its original admitted
+bytes. This file is a content-addressed, noncanonical publication input, never a
+second editable prose master or an independent evidence source. Keep the original
+`path`, `revision`, `blob`, `admission`, `mappingIssue` and exact evidence ledger.
+
+The compiler requires an exact regular, non-symlink path, exact blob and valid UTF-8.
+A missing or mismatching configured snapshot fails closed, with no working-file
+fallback. Without `snapshotPath`, the original working-file digest guard is
+unchanged. Repeated edits preserve the existing historical snapshot. The compiler
+still emits only the same admitted content; `snapshotPath` is not added to the
+release payload or used as the historical source URL.
+
+The working-source path/blob no longer matches the admitted pin after an edit, so
+paragraph bindings must remain absent for the new working source until separately
+reviewed. Old evidence stays attached to old admitted bytes only. Chapter-level
+`observedReaderAdmission` is a manifest observation, not acceptance of the new
+working blob. Preparing a snapshot does not grant disclosure, editorial acceptance,
+main promotion or release. Any new public source batch must pass its actual
+exact-payload authorization before the first Git object upload.

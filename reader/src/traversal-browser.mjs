@@ -249,6 +249,18 @@ try {
   const ids = [...traversal.readingOrder, ...traversal.unplacedOrder];
   if (pages.size !== ids.length || !ids.every(id => pages.has(id))) throw new Error('Incomplete');
   render();
+  // Private editing exists only on an explicitly enabled local development
+  // bridge. Static/public projections retain their read-only traversal.
+  if (import.meta.env?.DEV) {
+    try {
+      const { mountGrwtsk } = await import('./grwtsk.mjs');
+      if (await mountGrwtsk({ main, projection })) {
+        main.querySelector('.traversal-notice').textContent = 'Private working editor · source and literary acceptance remain separate';
+      }
+    } catch {
+      live.textContent = 'Private editor unavailable. The source reading copy remains available.';
+    }
+  }
 } catch {
   main.replaceChildren(node('h1', 'Editorial traversal unavailable'), node('p', 'This build does not contain a usable editorial projection. The admitted reading copy remains separate.'));
   const a = node('a', 'Open admitted reading copy'); a.href = '/'; main.append(a);
