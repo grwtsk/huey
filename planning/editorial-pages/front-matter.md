@@ -1,5 +1,7 @@
 # Front-matter integration contract v1
 
+Current #441 source-plan migration: [front matter and P01/P02 reconciliation](441-reconciliation.md). The initial checkpoint counts and pending-source descriptions below remain historical; the linked record identifies the newly materialized sources and retained identities.
+
 [#349](https://github.com/grwtsk/huey/issues/349) integrates front matter into the
 complete editorial sequence introduced by #370. `loadAssembly()` now includes
 `frontMatter`, with schema `huey.editorial-front-matter.v1`. The read-only

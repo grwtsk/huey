@@ -1,0 +1,24 @@
+{
+  "candidate": "H448-P01/r1",
+  "owner": "#448",
+  "review": "#454",
+  "status": "authored and transcription-grounded agent review; restricted; human editorial/public-copy disposition pending",
+  "source_path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+  "source_blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+  "source_plan_revision": "0eae39f74d6fb6f4a391f3a358a75be1d95b2f6e",
+  "insert_after": {
+    "paragraph": "he_d5c32707-4699-48ee-a946-7f61211fdb6d",
+    "text": "Only the person they happened to recognize.",
+    "utf16_start": 2270,
+    "utf16_end": 2313
+  },
+  "return_before_existing_break_then": {
+    "paragraph": "he_2ef0bbda-b16f-4be2-beb6-73886b325074",
+    "text": "Before that room, before the wedding, before I had met the woman who would become my wife, there was a day shortly after August, when twelve leaves had turned and the year had begun, almost without announcement, to move toward something else.",
+    "utf16_start": 2320,
+    "utf16_end": 2562
+  },
+  "projection": "Provisional C08A insertion. No paragraph IDs modified; no chapter cut settled; no public manuscript file edited.",
+  "requested_public_destination": "manuscript/flow/h448-p01-cooper.md with companion notes under planning/descent/h448-p01/; later bounded PR to pre-release, not this adapter PR",
+  "representation": "Cooper paraphrase and proposed present reflection. No quotation or new autobiographical memory is asserted."
+}

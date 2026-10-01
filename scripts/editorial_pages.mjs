@@ -44,7 +44,16 @@ function context(inventory) {
     const slot = slots.get(source.targets[0]);
     requireThat(!bySlot.has(slot.key) && slot.sources.includes(source.key), 'ambiguous selected source');
     requireThat(slot.canonicalPath === source.path && slot.presence === 'present', 'selected source is not present working manuscript');
-    requireThat(source.role === 'unplaced' ? slot.group === 'unplaced' : slot.group === 'book', 'source role differs from placement');
+    // Selection does not turn matter into a body chapter. Require the same
+    // role/group/kind/path relationship even for an unavailable source.
+    const manuscriptPath = safePath(source.path) && source.path.startsWith('manuscript/');
+    const compatible = source.role === 'unplaced'
+      ? slot.group === 'unplaced' && slot.kind === 'Chapter' && source.path.startsWith('manuscript/unplaced/')
+      : slot.group === 'book'
+        ? slot.kind === 'Chapter' && !/^manuscript\/(front|back|unplaced|flow)\//.test(source.path)
+        : ['front', 'back'].includes(slot.group) && slot.kind === 'MatterUnit'
+          && source.path.startsWith(`manuscript/${slot.group}/`);
+    requireThat(manuscriptPath && compatible, 'source role, kind or path differs from placement');
     bySlot.set(slot.key, source);
   }
   return { slots, sources, ids, selected, bySlot };

@@ -27,8 +27,14 @@ let book, chapters, sourceMap, stableParagraphBindings = null;
 export function enableStableParagraphLinks(value) {
   stableParagraphBindings = validateParagraphBindings(value);
   if (book && parseRoute(location.hash).kind === 'evidence') applyRoute();
+  announcePosition();
 }
 let activeIndex = 0, paragraphNodes = [], positions = [], items = [];
+// Navigation observes the admitted source position, never editable DOM wording.
+export function readingState() {
+  return { book, item: items[activeIndex] ?? null, bindings: stableParagraphBindings };
+}
+function announcePosition() { window.dispatchEvent(new Event('huey-reading-position')); }
 let lastSpeaking = null, raf = 0;
 let returnFocus = null;
 let timeline = null, scrub = null;
@@ -178,8 +184,10 @@ document.addEventListener('click', event => { if (!$('options').contains(event.t
 
 function setActive(index) {
   if (!items[index]) return;
+  const changed = activeIndex !== index;
   activeIndex = index;
   showPosition();
+  if (changed) announcePosition();
 }
 function measure() {
   document.documentElement.style.setProperty('--header-height', `${document.querySelector('.reader-title').offsetHeight}px`);
@@ -192,7 +200,8 @@ function trackScroll() {
   raf = requestAnimationFrame(() => {
     raf = 0;
     if (!positions.length || dialog.open) return;
-    const point = window.scrollY + document.querySelector('.reader-title').offsetHeight + 45;
+    const navigationBottom = document.getElementById('book-navigation')?.getBoundingClientRect().bottom ?? 0;
+    const point = window.scrollY + Math.max(document.querySelector('.reader-title').offsetHeight + 45, navigationBottom + 16);
     let lo = 0, hi = positions.length - 1;
     while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (positions[mid] <= point) lo = mid; else hi = mid - 1; }
     setActive(lo);
@@ -259,6 +268,7 @@ function render() {
   narrator.setItems(items);
   setActive(0);
   $('book').setAttribute('aria-busy', 'false');
+  announcePosition();
   refreshVoices();
   measure();
   document.fonts?.ready.then(measure);

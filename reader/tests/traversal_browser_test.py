@@ -389,8 +389,42 @@ class TraversalBrowserTests(unittest.TestCase):
                      if self.targets[entity_id]["access"] == "available"
                      and not self.pages[entity_id]["blocks"])
         self.open(page_path(empty))
-        expect(self.page.locator(".page-outcome")).to_have_text("No selected prose is materialized on this page.")
+        expect(self.page.locator("#book")).to_have_attribute("data-outcome", "unresolved")
+        expect(self.page.locator(".page-outcome")).to_have_text("This part of the work remains unresolved.")
         self.assertEqual(self.page.locator(".traversal-paragraph").count(), 0)
+
+    def test_23_newly_materialized_units_keep_their_prior_page_aliases(self):
+        expected = {
+            "/huey/page/front-title": "he_b3e840bc-7a2b-49fc-bbee-c1b14d025803",
+            "/huey/page/front-preface": "he_3ba7abbe-27a7-4810-ad87-61054157d476",
+            "/huey/page/c01": "he_92a4658e-94a7-4a83-a6aa-18b50c55abe2",
+            "/huey/page/c03": "he_7f1c4d0d-a725-44db-b86e-d36e8fe276c9",
+        }
+        for alias, entity_id in expected.items():
+            with self.subTest(alias=alias):
+                self.open(alias)
+                self.assert_page(entity_id)
+                expect(self.page.locator("#book")).to_have_attribute("data-outcome", "resolved")
+                self.assertEqual(urlsplit(self.page.url).path, page_path(entity_id))
+                paragraphs = [block for block in self.pages[entity_id]["blocks"] if block["kind"] == "Paragraph"]
+                self.assertGreater(len(paragraphs), 0)
+                self.assertEqual(self.page.locator(".traversal-paragraph").count(), len(paragraphs))
+                self.page.reload()
+                self.assert_page(entity_id)
+
+    def test_24_front_matter_precedes_body_without_absorbing_shared_candidate(self):
+        slots = {slot["id"]: slot for slot in self.payload["routes"]["slots"]}
+        front = [entity_id for entity_id in self.order
+                 if all(slots[slot_id]["group"] == "front" for slot_id in self.targets[entity_id]["slotIds"])]
+        self.assertEqual(len(front), 20)
+        self.assertEqual(front, self.order[:len(front)])
+        self.open(page_path(front[-1]))
+        expect(self.page.locator("#book")).to_have_attribute("data-outcome", "unresolved")
+        self.assertEqual(self.page.locator(".traversal-paragraph").count(), 0)
+        self.next_link().click()
+        self.assert_page("he_92a4658e-94a7-4a83-a6aa-18b50c55abe2")
+        self.page.go_back()
+        self.assert_page(front[-1])
 
 
 if __name__ == "__main__":

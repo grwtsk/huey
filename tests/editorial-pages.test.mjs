@@ -58,6 +58,25 @@ function prepare({ text = chapter, maxBlocks = 2 } = {}) {
   const plan = createPlan({ ...data, allocateId: allocator(), maxBlocks });
   return { ...data, plan };
 }
+function prepareMatter() {
+  const data = fixture();
+  for (const [key, group, text] of [
+    ['front-title', 'front', '# Synthetic title\n\nA synthetic title paragraph.\n'],
+    ['back-note', 'back', '# Synthetic note\n\nA synthetic reference paragraph.\n'],
+  ]) {
+    const sourceKey = `${key}-source`, path = `manuscript/${group}/${key}.md`;
+    const slot = data.input.registry.slots.find(row => row.key === key);
+    Object.assign(slot, { presence: 'present', unmaterializedAccess: null, sources: [sourceKey] });
+    data.input.registry.sources.push(makeSource(sourceKey, path, text, 'canonical', [key]));
+    data.input.trackedPaths.push(path);
+    data.input.files[path] = text;
+    data.input.sourceAvailability[sourceKey] = true;
+    data.sourceTexts[sourceKey] = text;
+  }
+  data.inventory = buildInventory(data.input);
+  const plan = createPlan({ ...data, allocateId: allocator(), maxBlocks: 2 });
+  return { ...data, plan };
+}
 const assemble = data => buildAssembly({ inventory: data.inventory, plan: data.plan, sourceTexts: data.sourceTexts });
 const record = (assembly, entityId) => assembly.entityRecords.find(row => row.id === entityId);
 const paragraphRecords = assembly => assembly.entityRecords.filter(row => row.kind === 'Paragraph');
@@ -102,6 +121,100 @@ test('assembly is an exact validated model snapshot with front/body/back order',
   assert.deepEqual(record(out, id(5)).state.children, [id(9)]);
   assert.equal(out.entityRecords.filter(row => row.kind === 'Movement').length, 3);
   assert.ok(out.entityRecords.every(row => /^hev1:[a-f0-9]{64}$/.test(row.version)));
+});
+
+test('canonical front and back matter materialize as MatterUnits without changing body or workspace ownership', () => {
+  const data = prepareMatter();
+  Object.defineProperty(data.sourceTexts, 'candidate', { get() { throw new Error('Candidate bytes must not be loaded'); } });
+  Object.defineProperty(data.sourceTexts, 'support', { get() { throw new Error('Support bytes must not be loaded'); } });
+  const out = assemble(data);
+  const order = out.readingOrder.map(pageId => data.plan.pages.find(page => page.id === pageId).slot);
+  assert.deepEqual([...new Set(order)], ['front-title', 'C01', 'C02', 'C03', 'back-note']);
+  assert.equal(out.frontMatter.entryPageId, data.plan.pages.find(page => page.slot === 'front-title').id);
+  assert.equal(out.frontMatter.firstBodyPageId, data.plan.pages.find(page => page.slot === 'C01').id);
+  assert.deepEqual(record(out, id(2)).state.children, [id(8)]);
+  assert.deepEqual(record(out, id(4)).state.children, [id(12)]);
+  assert.deepEqual(record(out, id(3)).state.children, [id(5), id(6), id(7)]);
+  assert.deepEqual(record(out, id(5)).state.children, [id(9)]);
+  for (const [slotKey, entityId] of [['front-title', id(8)], ['back-note', id(12)]]) {
+    const sourceKey = `${slotKey}-source`;
+    const source = data.plan.sources.find(row => row.sourceKey === sourceKey);
+    assert.equal(record(out, entityId).kind, 'MatterUnit');
+    assert.deepEqual(record(out, entityId).state.children, source.blocks.map(block => block.id));
+    assert.ok(source.blocks.every(block => record(out, block.id)));
+    assert.equal(out.sourceMappings.filter(row => row.sourceKey === sourceKey).length, source.blocks.length);
+  }
+  assert.equal(record(out, id(9)).kind, 'Chapter');
+  assert.equal(record(out, id(13)).kind, 'Chapter');
+  assert.deepEqual(out.workspace.unplacedPages, data.plan.unplacedOrder);
+  assert.ok(data.plan.unplacedOrder.every(pageId => !out.readingOrder.includes(pageId)));
+  assert.deepEqual(data.plan.sources.map(row => row.sourceKey).sort(), ['back-note-source', 'canonical', 'front-title-source', 'unplaced']);
+  assert.ok(out.entityRecords.filter(row => row.kind === 'Movement').every(row => !row.state.children.includes(id(8)) && !row.state.children.includes(id(12)) && !row.state.children.includes(id(13))));
+});
+
+for (const deniedBy of ['source', 'slot']) {
+  for (const access of ['restricted', 'unavailable-on-this-client']) {
+    test(`canonical front matter with ${deniedBy} access ${access} retains page and block identities without reading text`, () => {
+      const data = prepareMatter(), before = assemble(data);
+      const sourceKey = 'front-title-source';
+      const target = deniedBy === 'source' ? data.inventory.sources.find(row => row.key === sourceKey) : data.inventory.slots.find(row => row.key === 'front-title');
+      target.access = access;
+      Object.defineProperty(data.sourceTexts, sourceKey, { get() { throw new Error('Front matter bytes must not be read'); } });
+      const out = assemble(data);
+      const blocks = data.plan.sources.find(row => row.sourceKey === sourceKey).blocks;
+      assert.equal(out.modelValidation, 'deferred-unavailable-source');
+      assert.deepEqual(out.readingOrder, before.readingOrder);
+      assert.deepEqual(pageRecords(out), pageRecords(before));
+      assert.deepEqual(record(out, id(8)), record(before, id(8)));
+      assert.deepEqual(out.unmaterializedEntities.filter(row => row.sourceKey === sourceKey).map(row => row.id), blocks.map(row => row.id));
+      assert.ok(blocks.every(block => !record(out, block.id)));
+      assert.ok(out.sourceMappings.every(row => row.sourceKey !== sourceKey));
+      assert.ok(paragraphRecords(out).some(row => row.state.text === 'A synthetic reference paragraph.'));
+      assert.ok(paragraphRecords(out).some(row => row.state.text === 'The same.'));
+    });
+  }
+}
+
+for (const [name, sourceKey, changes] of [
+  ['canonical front source classified as body', 'front-title-source', { group: 'book' }],
+  ['canonical back source classified as unplaced', 'back-note-source', { group: 'unplaced' }],
+  ['canonical body source classified as front', 'canonical', { group: 'front' }],
+  ['unplaced source classified as body', 'unplaced', { group: 'book' }],
+  ['front source with Chapter kind', 'front-title-source', { kind: 'Chapter', optional: null }],
+  ['body source with MatterUnit kind', 'canonical', { kind: 'MatterUnit', optional: false }],
+  ['unplaced source with MatterUnit kind', 'unplaced', { kind: 'MatterUnit', optional: false }],
+]) test(`rejects selected-source placement: ${name}`, () => {
+  const data = prepareMatter();
+  const source = data.inventory.sources.find(row => row.key === sourceKey);
+  Object.assign(data.inventory.slots.find(row => row.key === source.targets[0]), changes);
+  assert.throws(() => assemble(data));
+});
+
+for (const [sourceKey, path] of [
+  ['front-title-source', 'manuscript/back/title.md'],
+  ['back-note-source', 'manuscript/front/note.md'],
+  ['canonical', 'manuscript/front/chapter.md'],
+  ['canonical', 'manuscript/back/chapter.md'],
+  ['canonical', 'manuscript/unplaced/chapter.md'],
+  ['canonical', 'manuscript/flow/chapter.md'],
+  ['canonical', 'planning/chapter.md'],
+  ['unplaced', 'manuscript/01.md'],
+  ['front-title-source', 'manuscript/front/../back/title.md'],
+  ['canonical', '/manuscript/01.md'],
+]) test(`rejects selected-source path ${sourceKey}: ${path}`, () => {
+  const data = prepareMatter();
+  const source = data.inventory.sources.find(row => row.key === sourceKey);
+  source.path = path;
+  data.inventory.slots.find(row => row.key === source.targets[0]).canonicalPath = path;
+  data.plan.sources.find(row => row.sourceKey === sourceKey).path = path;
+  assert.throws(() => assemble(data), /source role, kind or path differs from placement/);
+});
+
+test('canonical front sources reject ambiguous targets before materializing any text', () => {
+  const data = prepareMatter();
+  data.inventory.sources.find(row => row.key === 'front-title-source').targets.push('back-note');
+  Object.defineProperty(data.sourceTexts, 'front-title-source', { get() { throw new Error('Ambiguous bytes must not be read'); } });
+  assert.throws(() => assemble(data), /source must select one known slot/);
 });
 
 test('equal-valued paragraph occurrences retain distinct opaque stable identities', () => {

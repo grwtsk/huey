@@ -1,5 +1,7 @@
 # Editorial ReadingPage assembly v1
 
+Current #441 source-plan migration: [front matter and P01/P02 reconciliation](441-reconciliation.md). The initial checkpoint counts and pending-source descriptions below remain historical; the linked record identifies the newly materialized sources and retained identities.
+
 Bounded initial assembly for [#370](https://github.com/grwtsk/huey/issues/370),
 with the first block ingestion increment of [#353](https://github.com/grwtsk/huey/issues/353).
 The [editorial inventory](../editorial-inventory/README.md) remains the account of
