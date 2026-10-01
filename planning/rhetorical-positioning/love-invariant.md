@@ -120,6 +120,12 @@ PR-01 remains in force for the protected classroom question, response and termin
 
 #464 and #465 remain distinct source programs. Trust from the September 30 UCSF letter and Rahel's *many beautiful days ahead* enter LOVE-01 through their own provenance rather than being blended into Edna's testimony.
 
+## Open-issue saturation register
+
+The current baseline is indexed in [love-issue-coverage.json](love-issue-coverage.json). It records a LOVE-01 disposition for every open issue in the declared snapshot and distinguishes three states: individually commented, self-integrated LOVE-01 issue, and standard-linked without an issue-thread comment. A standard-linked row is coverage, not a claim that a comment was posted.
+
+The initial generated baseline contains **368 open issues**. At generation, 15 had individual LOVE-01 comments, eight were self-integrated children, and 345 were standard-linked for later thread-level propagation.
+
 ## Acceptance discipline
 
 Saturation is not achieved by adding the same paragraph everywhere. A source task, clinical task, legal task, mathematical task, software task, rights task and literary task each require a different consequence.
