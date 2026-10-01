@@ -23,7 +23,15 @@ export default ({ mode }) => ({
       for (const filename of ['traversal.json', 'paragraphs.json']) this.emitFile({ type: 'asset', fileName: `data/${filename}`,
         source: readFileSync(new URL(`./generated-editorial/data/${filename}`, import.meta.url)) });
     }
-  }] : [],
+  }, ...(process.env.HUEY_PRIVATE_STORE ? [{
+    name: 'huey-private-grwtsk',
+    async configureServer(server) {
+      const { createGrwtskMiddleware } = await import('../scripts/grwtsk_bridge.mjs');
+      server.middlewares.use(createGrwtskMiddleware({
+        root: fileURLToPath(new URL('..', import.meta.url)), store: process.env.HUEY_PRIVATE_STORE
+      }));
+    }
+  }] : [])] : [],
   server: {
     host: '127.0.0.1', port: 5173, strictPort: true,
     allowedHosts: ['localhost'],

@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir, realpath, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, realpath, rm, lstat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -79,7 +79,7 @@ export async function compileBook(root = repoRoot, configDir = resolve(readerRoo
   const ids = new Set(), labels = new Set(), usedAnnotations = new Set();
   const chapters = [];
   for (const c of manifest.chapters) {
-    keys(c, ['id', 'label', 'title', 'movement', 'status', 'workIssue', 'path', 'blob', 'revision', 'admission', 'mappingIssue'], 'chapter');
+    keys(c, ['id', 'label', 'title', 'movement', 'status', 'workIssue', 'path', 'blob', 'revision', 'admission', 'mappingIssue', 'snapshotPath'], 'chapter');
     assert(/^[A-Z][A-Z0-9]*$/.test(c.id) && !ids.has(c.id), 'Duplicate or invalid chapter ID'); ids.add(c.id);
     assert(/^[0-9]+[A-Z]?$|^E$/.test(c.label) && !labels.has(c.label), 'Duplicate or invalid chapter label'); labels.add(c.label);
     text(c.title, 'chapter title');
@@ -87,7 +87,7 @@ export async function compileBook(root = repoRoot, configDir = resolve(readerRoo
     https(c.workIssue, 'chapter issue');
     assert(['admitted', 'unavailable'].includes(c.status), 'Unknown admission status');
     if (c.status === 'unavailable') {
-      assert(!c.path && !c.blob && !c.revision, 'Unavailable content must not contain payload locators');
+      assert(!c.path && !c.blob && !c.revision && !c.snapshotPath, 'Unavailable content must not contain payload locators');
       chapters.push({ id: c.id, label: c.label, title: c.title, movement: c.movement,
         status: 'unavailable', workIssue: c.workIssue, blocks: [], paragraphCount: 0 });
       continue;
@@ -95,9 +95,21 @@ export async function compileBook(root = repoRoot, configDir = resolve(readerRoo
     assert(/^manuscript\/(01-preamble|02-interlude|03-excursion)\/[a-z0-9-]+\.md$/.test(c.path), 'Path outside allowed manuscript directories');
     assert(/^[a-f0-9]{40}$/.test(c.blob) && /^[a-f0-9]{40}$/.test(c.revision), 'Chapter version must be pinned');
     https(c.admission, 'admission receipt'); https(c.mappingIssue, 'mapping issue');
-    const actual = await realpath(resolve(root, c.path));
-    const rel = relative(await realpath(resolve(root, 'manuscript')), actual);
-    assert(rel && !rel.startsWith(`..${sep}`) && rel !== '..' && !rel.startsWith(sep), 'Manuscript symlink escaped allowlist');
+    // A working-source revision does not renew publication admission. An
+    // explicit content-addressed snapshot can retain the exact historical
+    // admitted bytes with their original source/admission/evidence provenance.
+    let actual;
+    if (c.snapshotPath !== undefined) {
+      assert(c.snapshotPath === `reader/content/admitted/${c.blob}.md`, 'Invalid admitted snapshot path');
+      const path = resolve(root, c.snapshotPath), info = await lstat(path);
+      assert(info.isFile() && !info.isSymbolicLink(), 'Admitted snapshot must be a regular file');
+      actual = await realpath(path);
+      assert(actual === resolve(await realpath(root), c.snapshotPath), 'Admitted snapshot escaped exact path');
+    } else {
+      actual = await realpath(resolve(root, c.path));
+      const rel = relative(await realpath(resolve(root, 'manuscript')), actual);
+      assert(rel && !rel.startsWith(`..${sep}`) && rel !== '..' && !rel.startsWith(sep), 'Manuscript symlink escaped allowlist');
+    }
     const bytes = await readFile(actual);
     assert(gitBlob(bytes) === c.blob, `Chapter ${c.id} changed: update admission/version and paragraph mappings before serving`);
     const source = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
@@ -115,7 +127,8 @@ export async function compileBook(root = repoRoot, configDir = resolve(readerRoo
     const annotations = Object.fromEntries(Object.entries(ledger.paragraphs).filter(([id]) => id.startsWith(`${c.id}-p`)));
     Object.keys(annotations).forEach(id => usedAnnotations.add(id));
     attachEvidence(paragraphs, annotations, sources, c);
-    chapters.push({ ...c, ...parsed, sourceUrl });
+    const { snapshotPath, ...admittedChapter } = c; // Storage detail is not a new release-payload field.
+    chapters.push({ ...admittedChapter, ...parsed, sourceUrl });
   }
   assert(Object.keys(ledger.paragraphs).every(id => usedAnnotations.has(id)), 'Annotations refer to an unavailable chapter');
   assert(chapters.some(c => c.status === 'admitted'), 'No admitted text to read');
