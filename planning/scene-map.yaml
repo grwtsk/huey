@@ -1,0 +1,490 @@
+{
+  "format": "huey.scene-map.partial.v1",
+  "encoding": "JSON subset of YAML, following book.yaml; no new parser or permission engine",
+  "status": "partial_source_bound_reading_annotations",
+  "owner_issue": 19,
+  "refs": [
+    18,
+    21,
+    55,
+    66,
+    98,
+    115,
+    116,
+    378,
+    404,
+    454,
+    465,
+    540
+  ],
+  "basis": {
+    "staging_revision": "7aa59a8359e3654a9cebb3bbef9a17f4ca2e86a8",
+    "review_date_utc": "2026-10-01",
+    "authority": "Current overnight consolidation instruction; #19 source/event returns; #115/#116; #404 mutable projection; RF-01 and LOVE-01/#540.",
+    "public_scope": "Existing public-36 only, #378 and PR #379. No omitted/restricted source or reserved-content reconstruction.",
+    "source": {
+      "sourceKey": "public-36",
+      "revision": "cfb7082ffab6ef5e238dd8830b95810c13e120e1",
+      "path": "manuscript/02-interlude/14b-orange-after-the-end.md",
+      "blob": "b586ba457b7a71f91cd8f0f9d896698b88e02ca3"
+    },
+    "coordinate_plan": "planning/editorial-pages/plan.json",
+    "coordinate_plan_blob": "9b9911fde421ac39dabbfedb972e17e224b353ce",
+    "working_slot": "C14B",
+    "slot_status": "mutable_editorial_locator_not_final_chapter_identity"
+  },
+  "coverage": {
+    "read": "Complete current public C14B working text; focused comparison of ten clock segments. The preceding argument hinge was reread without extending this map to it.",
+    "mapped": "Ten finite public segments, not every scene or all source assertions.",
+    "not_covered": "Other chapter scene maps, unavailable manuscript, complete protected close, private originals, independent event verification, audio orientation and whole-book acceptance.",
+    "manuscript_changed": false,
+    "reader_admission_changed": false,
+    "prose_before_after": "No prose edit: before and after remain the exact source blob above. This packet is a new derived annotation, not a replacement source or parallel evidence ledger."
+  },
+  "clock_rules": [
+    "Event, document, report, receipt, recollection, composition, repository commit and reader-discovery times remain distinct. A Git timestamp binds a repository operation, not event or composition time.",
+    "A tense change or developing perspective is not automatically an error. No sentence-by-sentence clock uniformity, hard seams, child-voice freeze or imposed adult lesson.",
+    "Preserve attribution, shared particulars, general categories, contrary material and the possibility of correction. Do not infer another person’s interior state from the narrator’s imagination.",
+    "Orthodox Christian Love governs the strategic argument and every local device. Personhood and ordinary life precede the use of an encounter as an argument.",
+    "The initial draft-present is not an independently verified observation at the packet date. An anticipated event must not become a completed event through metadata.",
+    "No protected question, response, terminal line, omitted mechanism or restricted locator/fingerprint is indexed or reconstructed here."
+  ],
+  "segments": [
+    {
+      "id": "T01",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Initial narrating frame",
+      "source_range": {
+        "line_start": 139,
+        "line_end": 191,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_47cedaa8-78a4-444f-b57f-6cc1babd4c9c",
+        "last_entity": "he_c2b3fcce-922a-4b6c-986c-74fa31b00b3c",
+        "paragraph_count": 27,
+        "utf16_start": 3916,
+        "utf16_end": 5235,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Undated situation as attributed in the public working account.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Ongoing source-present with remembered associations; no calendar date supplied."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 1,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "The reader receives an ongoing frame before the later afterward formulations.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Narrator attributes the situation and his associations; the packet does not independently observe the event or another person’s interior state.",
+      "return_kind": "introduced_particular",
+      "affected_join": "T06 and T10 return to this source frame.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T02",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "General reflection",
+      "source_range": {
+        "line_start": 193,
+        "line_end": 249,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_81ce2cb1-c214-4b7f-bf09-3ca4ce7b6c9f",
+        "last_entity": "he_b99a8fe8-a1ac-45f8-b10f-84e7fc518afa",
+        "paragraph_count": 29,
+        "utf16_start": 5237,
+        "utf16_end": 6597,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "General and modal possibilities; no particular dated event established.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Adult reflection generalizes from the source frame."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 2,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "The passage expands the frame; general propositions do not establish event chronology.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "A general account of relation and separation must not be converted into knowledge attributed to another person.",
+      "return_kind": "general_category",
+      "affected_join": "T02 -> T03 changes the register from general reflection to first-person knowledge.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T03",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "First-person knowledge hinge",
+      "source_range": {
+        "line_start": 251,
+        "line_end": 295,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_a934a6fb-3487-4318-bc09-653da45d7558",
+        "last_entity": "he_75709602-770b-4aba-865c-b085cbb67920",
+        "paragraph_count": 23,
+        "utf16_start": 6599,
+        "utf16_end": 7514,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "A before/after model is supplied; its actual temporal relation to T01 remains unresolved.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "General mourning discourse moves into retrospective self-knowledge, most distinctly at lines 293-295."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 3,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "An aftermath reading is available; anticipation or intentional time folding also remain available.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "First-person knowledge is attributed to the working narrator. It is not declared invented, independently verified, or merely hypothetical by this map.",
+      "return_kind": "unresolved_general_to_particular",
+      "affected_join": "T01 -> T02 -> T03, then T03 -> T04; compare T06, T08, T09 and T10 before deciding.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T04",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Influence and inheritance",
+      "source_range": {
+        "line_start": 297,
+        "line_end": 381,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_9b8bb0e7-e528-4acb-b310-ad36f5b584b8",
+        "last_entity": "he_83a51aee-f405-45aa-948d-fbd78c73d028",
+        "paragraph_count": 43,
+        "utf16_start": 7516,
+        "utf16_end": 9718,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Influence already possible in the source-present; illustrative aftermath is not a dated event.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Present reflection and generic comparison; later interpretation connects to the preceding chapter."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 4,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "Offers a reading that does not require completed loss: relation can already alter a future.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Preserve personhood and influence without turning a person into a copy or possession. This is the source’s argument, not a verified account of a future event.",
+      "return_kind": "new_adult_interpretation",
+      "affected_join": "T03 -> T04 and the current C14A -> C14B argument join. No C14A passage is indexed here.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T05",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Remembering and later interpretation",
+      "source_range": {
+        "line_start": 595,
+        "line_end": 747,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_9af4eb48-8c02-4716-ab36-52e463c38496",
+        "last_entity": "he_dd59f586-4ada-4411-9ef4-e30b5c244ce0",
+        "paragraph_count": 77,
+        "utf16_start": 14092,
+        "utf16_end": 16901,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Undated remembered encounter; the wording implies an encounter earlier than remembering, without an absolute date.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Adult remembering and evaluating; remembered speech retains its supplied recollection status."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 5,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "A remembered encounter is developed into reflection. Later conceptual use must not be backdated as knowledge in the encounter.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Public first-person recollection remains distinct from independently recorded dialogue or a witness’s separately supplied account. Ordinary giving retains its own purpose before its use in an argument.",
+      "return_kind": "remembered_particular_with_new_interpretation",
+      "affected_join": "T05 supplies a particular to which later relational comparisons can return; no invented second encounter or speaker.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T06",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Return to the initial frame",
+      "source_range": {
+        "line_start": 827,
+        "line_end": 847,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_1ce68f37-6146-4519-bf1c-91b7bd28c152",
+        "last_entity": "he_aa020bec-e936-4d21-8fe0-2e93f74d1a1d",
+        "paragraph_count": 11,
+        "utf16_start": 18490,
+        "utf16_end": 18869,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Returns to the undated source-present; anticipated consequences coexist with it.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Ongoing and anticipatory registers together."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 6,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "Re-establishes the opening frame and limits an inference of completed chronology from T03.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Care and presence are attributed to the narrator; no new act, memory, motive, consent or assurance is supplied by the map.",
+      "return_kind": "same_particular_as_framed_by_source",
+      "affected_join": "T01 -> T06 -> T10; material counterpressure for T03 and T07.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T07",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Afterward perspective",
+      "source_range": {
+        "line_start": 1007,
+        "line_end": 1039,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_33517c86-2a1a-4a10-a743-e9bf270db69c",
+        "last_entity": "he_8a4a17ef-b4aa-4a94-be81-8884e9c89900",
+        "paragraph_count": 17,
+        "utf16_start": 22497,
+        "utf16_end": 23235,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Projected afterward or retrospective relation remains unresolved; no event date acquired.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Afterward perspective within the developing argument."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 7,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "Can be ordinary projected-future grammar. Text alone does not establish a chronology error.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Keep the difference between a projected viewpoint and an established event; do not assert another person’s current status.",
+      "return_kind": "variation_of_T03",
+      "affected_join": "Compare T07 with T08’s conditional frame and T09’s explicit future distinction.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T08",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Conditional future",
+      "source_range": {
+        "line_start": 1053,
+        "line_end": 1109,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_60473d2e-41ec-4ec9-868d-df5ca3ceecbf",
+        "last_entity": "he_d186904f-bdf3-42d3-a7a2-202db5debf1a",
+        "paragraph_count": 29,
+        "utf16_start": 23492,
+        "utf16_end": 25016,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Explicitly conditional future; no completed external event established by the condition.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Imagined future and archive perspective."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 8,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "Retrospective-looking formulations can sit inside a future projection. This materially limits the stronger aftermath reading.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Preserve the source’s limits on reconstruction and its distinction between a person and an archive; no simulation or counterfeit testimony is generated.",
+      "return_kind": "new_future_projection",
+      "affected_join": "T07 -> T08 -> T09; preserve the condition beside the statements that depend on it.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T09",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Present influence and future change",
+      "source_range": {
+        "line_start": 1111,
+        "line_end": 1135,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_53e5f2de-2565-4e03-b7bd-a75a9aa58740",
+        "last_entity": "he_6908d7de-6ec9-4081-9b09-c6bbcc9d383e",
+        "paragraph_count": 13,
+        "utf16_start": 25018,
+        "utf16_end": 25428,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Present influence in the attributed narrating frame is distinguished from an explicit future change.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Present self-observation plus explicit future."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 9,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "Strong counterpressure against treating every earlier afterward formulation as completed chronology.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "The source claims the narrator’s alteration; this does not authenticate an external event or require the reader to share a conclusion.",
+      "return_kind": "return_with_temporal_distinction",
+      "affected_join": "T09 bears on T03 and T07; later wording helps interpretation but does not establish that every earlier transition is perceptible.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    },
+    {
+      "id": "T10",
+      "kind": "bounded_clock_segment_not_new_scene",
+      "label": "Final return within the public chapter",
+      "source_range": {
+        "line_start": 1175,
+        "line_end": 1183,
+        "line_convention": "one_based_inclusive",
+        "first_entity": "he_80cda6f0-2681-495b-acf9-0c55f993beb6",
+        "last_entity": "he_da8c84cf-e142-4d08-bc39-7f8bd18e3335",
+        "paragraph_count": 5,
+        "utf16_start": 26464,
+        "utf16_end": 26652,
+        "offset_convention": "zero_based_half_open"
+      },
+      "event_time": {
+        "calendar_date": null,
+        "certainty": "not_established_by_this_public_version",
+        "reading": "Returns to the ongoing source frame and anticipatory feeling.",
+        "status": "attributed_working_account_not_independent_event_verification"
+      },
+      "remembering_composing_time": {
+        "calendar_date": null,
+        "certainty": "register_observed_composing_date_unknown",
+        "reading": "Ongoing and anticipatory registers."
+      },
+      "reader_discovery": {
+        "segment_ordinal": 10,
+        "order_basis": "relative_source_order_not_fixed_page_or_chapter_order",
+        "reading": "Confirms the framing intention without resolving every intermediate transition.",
+        "knowledge_then_vs_later": "No experiencing-self knowledge is inferred merely from the later narrating vocabulary."
+      },
+      "location_time_limits": "No additional location, event date, document date, report date or receipt date inferred. Preserve any supplied place within the unchanged source.",
+      "viewpoint_and_agency": "Keep anticipatory feeling distinct from an assertion that the anticipated event has occurred. No claim about circumstances today is added.",
+      "return_kind": "same_particular_as_framed_by_source",
+      "affected_join": "T01 -> T06 -> T10; confirms counterpressure relevant to T03.",
+      "editorial_disposition": "retain_unchanged_pending_bounded_source_and_orientation_review"
+    }
+  ],
+  "interpretive_alternatives": [
+    {
+      "id": "A",
+      "reading": "Anticipatory or general mourning",
+      "would_change_conclusion": "If composing context supports this, retrospective-looking forms can remain. Test whether the local transition carries this reading without flattening the prose."
+    },
+    {
+      "id": "B",
+      "reading": "Intentional folding of narrating positions",
+      "would_change_conclusion": "If source lineage or supplied intention establishes the movement, retain it and review reader orientation rather than uniform tense."
+    },
+    {
+      "id": "C",
+      "reading": "Distinct remembered experience or referent",
+      "would_change_conclusion": "Only actual source context can establish a distinct event or referent. The map supplies neither. Rebind only the joins that actually depend on a demonstrated distinction."
+    },
+    {
+      "id": "D",
+      "reading": "Revision-layer mixing",
+      "would_change_conclusion": "Only actual source versions can establish different composing frames. If established, preserve both originals and clarify only the dependent adaptation."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q1",
+      "owner_issue": 18,
+      "question": "What available composing context or version lineage establishes the temporal position and referent of T03 relative to T01, T04, T06, T08, T09 and T10?",
+      "blocks": "A source-grounded prose clarification at T02 -> T03 and any dependent afterward join; not this map, the existing reading copy or independent engineering.",
+      "unblocks_when": "Actual permitted source/version/context is compared; dates, attribution and contrary passages are recorded separately. If it remains unavailable, the prose remains unchanged and uncertainty remains visible."
+    },
+    {
+      "id": "Q2",
+      "owner_issue": 19,
+      "question": "On an ordered textual reread, can a reader perceive the T02 -> T03 movement and retain the T01 frame while reading T04 and the later returns?",
+      "blocks": "Claiming this local continuity question resolved. A later actual narration review remains under #62/#67.",
+      "unblocks_when": "Record the actual ordered comprehension check against the exact source version, including a no-change outcome or the lightest source-supported clarification with exact before/after lineage."
+    }
+  ],
+  "correction_route": {
+    "owners": {
+      "source_context": 18,
+      "time_and_scene_map": 19,
+      "wording_and_lineage": 66,
+      "textual_and_audio_orientation": [
+        115,
+        116,
+        62,
+        67
+      ],
+      "adaptation_and_destinations": 21
+    },
+    "human_gates": "#3 only if comparison exposes a genuinely material memory choice; #9 only for an affected cutoff/outside action. #2-#14 remain separate. This packet neither asks for a retelling nor supplies assent.",
+    "invalidation": "Changed source/blob/paragraph mapping invalidates these coordinate bindings. A corrected date, referent or narrating position reopens only actual dependent joins. Preserve this annotation and source history; do not silently relabel them.",
+    "possible_repair": "First establish the source relation, then retain intentional development or use the lightest already-supported image/action/temporal cue. No fabricated bridge, dialogue, memory, motive, finding, absolution or explanation after the protected ending.",
+    "dependency_links": "Textual owner/action/unblocking records only; no native GitHub dependency claimed."
+  }
+}
