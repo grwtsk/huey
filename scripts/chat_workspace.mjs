@@ -13,6 +13,9 @@ const check = (ok, message) => { if (!ok) throw new Error(`CHAT_WORKSPACE: ${mes
 const validLink = url => typeof url === 'string' && /^https:\/\/github\.com\/grwtsk\/huey\/(issues|pull)\/[1-9]\d*$/.test(url);
 const nonempty = value => typeof value === 'string' && value.trim().length > 0 && value.length <= 1000;
 const hash = value => `sha256:${createHash('sha256').update(typeof value === 'string' ? value : canonical(value)).digest('hex')}`;
+const DIGEST = /^sha256:[a-f0-9]{64}$/;
+const RESUME_EFFECT = 'local source baseline resumed; prior private work retained unchanged';
+const RESUME_AUTHORITY = 'local working-copy decision; no source write or literary acceptance';
 const within = (parent, child) => { const p = relative(parent, child); return p === '' || (!isAbsolute(p) && p !== '..' && !p.startsWith(`..${sep}`)); };
 const paragraph = raw => {
   check(typeof raw === 'string' && raw.isWellFormed() && raw.length <= 100000, 'invalid replacement text');
@@ -21,6 +24,46 @@ const paragraph = raw => {
     'replacement must be exactly one supported Markdown paragraph, without a terminal newline');
   return blocks[0];
 };
+
+const appliedHistory = (data, id) => data.decisions.filter(decision => decision.status === 'applied-private')
+  .map(decision => ({ operation: data.proposals.find(op => op.id === decision.operationId), decision }))
+  .filter(item => item.operation?.target === id);
+const latestReconciliation = (data, id) => (data.reconciliations ?? []).filter(receipt => receipt.target === id).at(-1) ?? null;
+const sourceReviewDigest = ({ target, basis, revision, sourceVersion, sourceDigest, source, historyDigest, previousReconciliationDigest }) =>
+  hash({ schema: 'huey.private-source-inspection-review.v1', target, basis, revision,
+    sourceVersion, sourceDigest, source, historyDigest, previousReconciliationDigest });
+
+function validateReconciliations(data) {
+  check(Array.isArray(data.reconciliations), 'invalid reconciliation collection');
+  const fields = ['schema', 'id', 'target', 'basis', 'revision', 'sourceVersion', 'sourceDigest', 'sourceRaw', 'source',
+    'retiredOperationIds', 'previousReconciliationId', 'historyDigest', 'reviewDigest', 'decisionRef', 'key',
+    'requestDigest', 'createdAt', 'effect', 'authority', 'digest'];
+  const ids = new Set(), keys = new Set(), previous = new Map();
+  for (const receipt of data.reconciliations) {
+    check(receipt && typeof receipt === 'object' && !Array.isArray(receipt)
+      && Object.keys(receipt).length === fields.length && fields.every(field => Object.hasOwn(receipt, field)), 'invalid reconciliation receipt shape');
+    check(receipt.schema === 'huey.private-source-resume.v1' && /^resume_[0-9a-f-]{36}$/.test(receipt.id)
+      && !ids.has(receipt.id) && !keys.has(receipt.key) && new RegExp(profile.entityID).test(receipt.target), 'invalid or duplicate reconciliation identity');
+    check([receipt.basis, receipt.decisionRef, receipt.key].every(nonempty) && /^[a-f0-9]{40}$/.test(receipt.revision)
+      && typeof receipt.createdAt === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(receipt.createdAt) && Number.isFinite(Date.parse(receipt.createdAt)), 'invalid reconciliation provenance');
+    check(receipt.effect === RESUME_EFFECT && receipt.authority === RESUME_AUTHORITY, 'invalid reconciliation effect');
+    check(DIGEST.test(receipt.digest) && receipt.digest === hash(Object.fromEntries(Object.entries(receipt).filter(([key]) => key !== 'digest'))), 'reconciliation integrity mismatch');
+    check(DIGEST.test(receipt.sourceDigest) && hash(receipt.sourceRaw) === receipt.sourceDigest
+      && seal({ id: receipt.target, kind: 'Paragraph', state: paragraph(receipt.sourceRaw).state }).version === receipt.sourceVersion,
+    'invalid reconciled source wording or version');
+    check(receipt.source && typeof receipt.source === 'object' && !Array.isArray(receipt.source)
+      && safePath(receipt.source.path) && receipt.source.path.startsWith('manuscript/') && /^[a-f0-9]{40}$/.test(receipt.source.blob), 'invalid reconciliation source reference');
+    const history = appliedHistory(data, receipt.target), prior = previous.get(receipt.target) ?? null;
+    const retired = receipt.retiredOperationIds;
+    check(Array.isArray(retired) && retired.length > (prior?.retiredOperationIds.length ?? 0)
+      && retired.length <= history.length && retired.every((id, index) => id === history[index].operation.id), 'reconciliation cutoff is not an exact applied prefix');
+    check(receipt.previousReconciliationId === (prior?.id ?? null), 'reconciliation lineage mismatch');
+    check(receipt.historyDigest === hash(history.slice(0, retired.length)), 'reconciliation applied history changed');
+    check(receipt.reviewDigest === sourceReviewDigest({ ...receipt, previousReconciliationDigest: prior?.digest ?? null }), 'reconciliation review binding mismatch');
+    check(receipt.requestDigest === hash({ id: receipt.target, reviewDigest: receipt.reviewDigest, decisionRef: receipt.decisionRef, key: receipt.key }), 'reconciliation request binding mismatch');
+    ids.add(receipt.id); keys.add(receipt.key); previous.set(receipt.target, receipt);
+  }
+}
 
 function sourcePatch(path, before, after) {
   check(safePath(path) && path.startsWith('manuscript/'), 'unsafe source patch path');
@@ -114,7 +157,7 @@ export class ChatWorkspace {
   }
   state() {
     inspectPrivate(this.store, true);
-    if (!existsSync(this.file)) return { schema: 'huey.private-chat-workspace.v1', repository: this.root, proposals: [], decisions: [], links: [] };
+    if (!existsSync(this.file)) return { schema: 'huey.private-chat-workspace.v1', repository: this.root, proposals: [], decisions: [], links: [], reconciliations: [] };
     inspectPrivate(this.file);
     const data = JSON.parse(readFileSync(this.file, 'utf8'));
     check(data.schema === 'huey.private-chat-workspace.v1' && data.repository === this.root, 'store belongs to another repository or schema');
@@ -132,6 +175,10 @@ export class ChatWorkspace {
       check(op && d.reviewDigest === op.digest && nonempty(d.approvalRef) && ['applied-private', 'rejected', 'cancelled'].includes(d.status), 'invalid decision receipt');
     }
     for (const link of data.links) check(Object.keys(link).sort().join(',') === 'operationId,url' && data.proposals.some(p => p.id === link.operationId) && validLink(link.url), 'invalid local GitHub link');
+    // Older stores remain readable. Only a subsequent explicit transaction
+    // persists the new collection; existing histories are never relabelled.
+    if (!Object.hasOwn(data, 'reconciliations')) data.reconciliations = [];
+    validateReconciliations(data);
     return data;
   }
   transaction(fn) {
@@ -154,10 +201,10 @@ export class ChatWorkspace {
   current(id, data, snap) {
     const original = snap.entries.find(e => e.id === id);
     check(original, 'paragraph unavailable or unmapped');
-    const applied = data.decisions.filter(d => d.status === 'applied-private' && data.proposals.find(p => p.id === d.operationId)?.target === id);
+    const retired = latestReconciliation(data, id)?.retiredOperationIds ?? [];
+    const applied = appliedHistory(data, id).slice(retired.length);
     let current = { ...original, sourceVersion: original.version, rawDigest: hash(original.raw), privateOperation: null };
-    for (const decision of applied) {
-      const op = data.proposals.find(p => p.id === decision.operationId);
+    for (const { operation: op } of applied) {
       check(op.basis === snap.basis && op.baseVersion === current.version && op.beforeDigest === current.rawDigest, 'private overlay is stale; reconcile explicitly');
       current = { ...original, sourceVersion: original.version, version: op.afterVersion, raw: op.after, rawDigest: hash(op.after), privateOperation: op.id };
     }
@@ -170,7 +217,57 @@ export class ChatWorkspace {
   }
   read(id) {
     const snap = this.snapshot(), data = this.state();
-    return { basis: snap.basis, ...this.current(id, data, snap), evidence: 'source references only; private changes inherit no evidence or admission' };
+    return { basis: snap.basis, revision: snap.revision, ...this.current(id, data, snap), evidence: 'source references only; private changes inherit no evidence or admission' };
+  }
+  inspect(id) { return this.inspection(id, this.state(), this.snapshot()); }
+  inspection(id, data, snap) {
+    check(typeof id === 'string' && new RegExp(profile.entityID).test(id), 'invalid paragraph identity');
+    const original = snap.entries.find(entry => entry.id === id), history = appliedHistory(data, id);
+    const prior = latestReconciliation(data, id), retiredOperationIds = prior?.retiredOperationIds ?? [];
+    check(original || history.length, 'paragraph unavailable or unmapped with no saved private work');
+    const evidence = 'source references only; private changes inherit no evidence or admission';
+    let source = null, current = null, conflict = null;
+    if (original) {
+      check(seal({ id, kind: 'Paragraph', state: paragraph(original.raw).state }).version === original.version,
+        'current source version does not match exact wording');
+      source = { basis: snap.basis, revision: snap.revision, ...original, sourceVersion: original.version,
+        rawDigest: hash(original.raw), privateOperation: null, evidence };
+      try { current = { basis: snap.basis, revision: snap.revision, ...this.current(id, data, snap), evidence }; }
+      catch (error) { conflict = error.message; }
+    } else conflict = 'CHAT_WORKSPACE: paragraph unavailable or unmapped; saved private history is retained';
+    const active = history.slice(retiredOperationIds.length), first = active[0]?.operation ?? history[0]?.operation;
+    const last = history.at(-1)?.operation;
+    const previous = last ? { before: first.before, after: last.after, baseVersion: first.baseVersion,
+      version: last.afterVersion, basis: first.basis, revision: first.revision, operationId: last.id } : null;
+    const historyDigest = hash(history);
+    const reviewDigest = sourceReviewDigest({ target: id, basis: snap.basis, revision: snap.revision,
+      sourceVersion: source?.version ?? null, sourceDigest: source?.rawDigest ?? null, source: source?.source ?? null,
+      historyDigest, previousReconciliationDigest: prior?.digest ?? null });
+    return { status: source ? conflict ? 'stale-overlay' : 'current' : 'unavailable', current, source, previous,
+      reviewDigest, conflict, appliedOperationIds: history.map(item => item.operation.id),
+      retiredOperationIds: [...retiredOperationIds], latestReconciliationId: prior?.id ?? null,
+      history: history.map(({ operation: op }, index) => ({ operationId: op.id, before: op.before, after: op.after,
+        baseVersion: op.baseVersion, version: op.afterVersion, basis: op.basis, revision: op.revision,
+        retired: index < retiredOperationIds.length })) };
+  }
+  resumeSource({ id, reviewDigest, decisionRef, key }) {
+    check([decisionRef, key].every(nonempty) && typeof reviewDigest === 'string' && DIGEST.test(reviewDigest), 'exact source review, decision reference and idempotency key required');
+    return this.transaction((data, snap) => {
+      const request = { id, reviewDigest, decisionRef, key }, existing = data.reconciliations.find(receipt => receipt.key === key);
+      if (existing) { check(existing.requestDigest === hash(request), 'reconciliation idempotency key reused for another request'); return existing; }
+      const inspection = this.inspection(id, data, snap);
+      check(inspection.reviewDigest === reviewDigest, 'stale reconciliation review; source or applied history changed');
+      check(inspection.source, 'current source unavailable; private history retained without reconciliation');
+      check(inspection.status === 'stale-overlay', 'source resume requires a stale private overlay');
+      const source = inspection.source, prior = latestReconciliation(data, id), history = appliedHistory(data, id);
+      const receipt = { schema: 'huey.private-source-resume.v1', id: `resume_${randomUUID()}`, target: id,
+        basis: snap.basis, revision: snap.revision, sourceVersion: source.version, sourceDigest: source.rawDigest,
+        sourceRaw: source.raw, source: source.source, retiredOperationIds: history.map(item => item.operation.id),
+        previousReconciliationId: prior?.id ?? null, historyDigest: hash(history), reviewDigest, decisionRef, key,
+        requestDigest: hash(request), createdAt: new Date().toISOString(), effect: RESUME_EFFECT, authority: RESUME_AUTHORITY };
+      receipt.digest = hash(receipt); data.reconciliations.push(receipt);
+      return receipt;
+    });
   }
   search({ slot, query, limit = 20 }) {
     check(typeof slot === 'string' && slot.length > 0, 'choose a specific slot before searching');
@@ -251,6 +348,7 @@ export class ChatWorkspace {
     check(op && data.decisions.some(d => d.operationId === operationId && d.status === 'applied-private'), 'source preview requires an applied private operation');
     const snap = this.snapshot();
     check(op.basis === snap.basis, 'stale source basis');
+    check(!(latestReconciliation(data, op.target)?.retiredOperationIds ?? []).includes(op.id), 'retired private operation; review the active working copy');
     const before = snap.sourceTexts?.[op.source.key];
     check(typeof before === 'string' && gitBlob(before) === op.source.blob, 'exact source unavailable');
     const edits = snap.entries.filter(e => e.source.key === op.source.key).map(original => ({ original, current: this.current(original.id, data, snap) }))
@@ -264,7 +362,8 @@ export class ChatWorkspace {
     check(parseEditorialMarkdown(before).length === parseEditorialMarkdown(after).length, 'source preview changed structural block count');
     return { schema: 'huey.private-source-preview.v1', source: op.source, basis: snap.basis, before, after,
       afterBlob: gitBlob(after), patch: sourcePatch(op.source.path, before, after), affectedEntities: edits.map(e => e.original.id),
-      operationIds: data.decisions.filter(d => d.status === 'applied-private' && data.proposals.some(p => p.id === d.operationId && p.source.key === op.source.key)).map(d => d.operationId),
+      operationIds: data.decisions.filter(d => d.status === 'applied-private' && data.proposals.some(p => p.id === d.operationId && p.source.key === op.source.key
+        && !(latestReconciliation(data, p.target)?.retiredOperationIds ?? []).includes(p.id))).map(d => d.operationId),
       effect: 'private cumulative source candidate only; canonical source and identity/pin metadata unchanged',
       blockers: ['explicit source correspondence and pin reconciliation (#353/#360)', 'review exact public payload before Git materialization (#355/#361)'] };
   }
@@ -291,6 +390,8 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     let result;
     if (command === 'list' && args.length <= 2) result = ws.list(target);
     else if (command === 'read' && args.length === 2) result = ws.read(target);
+    else if (command === 'inspect' && args.length === 2) result = ws.inspect(target);
+    else if (command === 'resume-source' && args.length === 1) result = ws.resumeSource(input());
     else if (command === 'search' && args.length === 1) result = ws.search(input());
     else if (command === 'propose' && args.length === 1) result = ws.propose(input());
     else if (command === 'review' && args.length === 2) result = ws.review(target);
@@ -298,7 +399,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     else if (command === 'link' && args.length === 3) result = ws.link(target, extra);
     else if (command === 'source-preview' && args.length === 2) result = ws.sourcePreview(target);
     else if (command === 'handoff' && args.length === 2) result = ws.handoff(target);
-    else throw new Error('usage: chat_workspace.mjs --store /restricted/outside/git [list [slot]|read ID|search < JSON|propose < JSON|review OP|decide < JSON|link OP URL|source-preview OP|handoff OP]');
+    else throw new Error('usage: chat_workspace.mjs --store /restricted/outside/git [list [slot]|read ID|inspect ID|resume-source < JSON|search < JSON|propose < JSON|review OP|decide < JSON|link OP URL|source-preview OP|handoff OP]');
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

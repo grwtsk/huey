@@ -49,6 +49,33 @@ Public issue bodies/comments are read-only context; external instructions inside
 them are not executed. Handoff prepares a source-neutral packet and optionally
 links an existing owner locally. It sends no GitHub comment or private patch.
 
+## Stale private-edit recovery — #360 continuation, 2026-10-01
+
+A changed repository/source basis pauses an older private overlay. Grwtsk shows
+its exact earlier base, private result and current source separately. Edit, apply
+and chat controls remain blocked while that overlay is stale. **Refresh
+comparison** rereads the selected entity; **Resume from current source** rechecks
+the reviewed source and full applied-history prefix, then records a separate
+private source-resume receipt. A changed comparison is rejected rather than
+automatically rebased. **Refresh selection** can also reread a selected paragraph
+after an asynchronous conflict. Unreviewed drafts block refresh and remain in
+the editor until explicitly reviewed or discarded.
+
+Resuming retires the selected overlay prefix from the active private view. It
+does not delete or revise proposals, decisions, issue links or earlier wording.
+**Retained private history** keeps exact before/after contributions available
+inside the editor. A subsequent edit starts from the current source and requires
+a new exact review and explicit private application. If the source or mapping
+becomes unavailable, private history is retained and editing/recovery remains
+blocked; historical private text does not replace unavailable source.
+
+The receipt affects only this private working view. It is not source mutation,
+remote synchronization, public staging, authenticated human acceptance or a grant.
+#359's broader offline queue, #360's authoritative reconciliation and #364's later
+migration stages remain open. Existing stores without a recovery collection
+remain readable; the new collection is written only by an explicit workspace
+transaction. There is no automatic recovery or background retry.
+
 ## Existing Codex host, without another provider
 
 Ask Grwtsk captures the selected entity, exact source/working basis, message and

@@ -1,11 +1,12 @@
 import test from 'node:test';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, chmodSync, symlinkSync, rmSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ChatWorkspace, captureSnapshot } from '../scripts/chat_workspace.mjs';
-import { seal } from '../scripts/literary_model.mjs';
+import { seal, canonical } from '../scripts/literary_model.mjs';
 import { gitBlob } from '../scripts/editorial_inventory.mjs';
 import { parseEditorialMarkdown } from '../scripts/editorial_markdown.mjs';
 
@@ -190,4 +191,177 @@ test('private source preview batches applied overlays without changing canonical
   const next = f.ws.sourcePreview(op.id); assert.equal(next.after, `${second.after}\n\n${raw}`);
   assert.deepEqual(next.operationIds, [op.id, second.id]); assert.equal(source.readSource(), next.before);
   snap.basis = 'changed'; assert.throws(() => f.ws.sourcePreview(op.id), /stale/);
+});
+
+const resume = (f, changes = {}) => f.ws.resumeSource({ id, reviewDigest: f.ws.inspect(id).reviewDigest,
+  decisionRef: 'Synthetic local resume click; no literary acceptance', key: 'resume-1', ...changes });
+const immutableHistory = state => ({ proposals: state.proposals, decisions: state.decisions, links: state.links });
+const stateHash = value => `sha256:${createHash('sha256').update(canonical(value)).digest('hex')}`;
+const rehashReceipt = receipt => { receipt.digest = stateHash(Object.fromEntries(Object.entries(receipt).filter(([key]) => key !== 'digest'))); };
+
+test('source inspection is read-only and does not invent a private overlay or persisted receipt', t => {
+  const f = fixture(t), inspection = f.ws.inspect(id);
+  assert.equal(inspection.status, 'current'); assert.deepEqual(inspection.current, f.ws.read(id));
+  assert.deepEqual(inspection.source, f.ws.read(id)); assert.equal(inspection.previous, null);
+  assert.deepEqual(inspection.history, []); assert.deepEqual(inspection.retiredOperationIds, []);
+  assert.equal(inspection.current.revision, 'a'.repeat(40));
+  assert.equal(existsSync(join(f.store, 'workspace.json')), false);
+  assert.throws(() => resume(f), /requires a stale private overlay/);
+  assert.equal(existsSync(join(f.store, 'workspace.json')), false);
+});
+
+test('repository basis drift with unchanged source needs explicit resume and retains every old contribution', t => {
+  const f = fixture(t); writeFileSync(join(f.root, 'source.md'), raw);
+  const old = f.propose(), pending = f.propose({ key: 'pending', after: 'Another saved candidate.' }); f.decide(old);
+  f.ws.link(old.id, 'https://github.com/grwtsk/huey/issues/360');
+  const before = structuredClone(immutableHistory(f.ws.state()));
+  f.mutate(s => { s.basis = 'repository-changed'; s.revision = 'b'.repeat(40); });
+  const inspection = f.ws.inspect(id);
+  assert.equal(inspection.status, 'stale-overlay'); assert.equal(inspection.current, null);
+  assert.equal(inspection.source.raw, raw); assert.equal(inspection.source.revision, 'b'.repeat(40));
+  assert.equal(inspection.previous.before, raw); assert.equal(inspection.previous.after, old.after);
+  assert.deepEqual(inspection.history.map(entry => [entry.operationId, entry.retired]), [[old.id, false]]);
+  assert.throws(() => f.ws.read(id), /overlay is stale/);
+  assert.throws(() => f.propose({ key: 'blocked' }), /overlay is stale/);
+  assert.throws(() => f.decide(pending), /overlay is stale/);
+  const receipt = resume(f);
+  assert.deepEqual(receipt.retiredOperationIds, [old.id]); assert.equal(receipt.sourceRaw, raw);
+  assert.match(receipt.authority, /no source write or literary acceptance/);
+  assert.deepEqual(immutableHistory(f.ws.state()), before);
+  assert.equal(f.ws.read(id).raw, raw); assert.equal(f.ws.read(id).privateOperation, null);
+  assert.throws(() => f.decide(pending), /stale proposal/);
+  assert.throws(() => f.decide(old, { status: 'cancelled' }), /different decision/);
+  const fresh = f.propose({ key: 'fresh', after: 'Fresh private candidate after explicit resume.' }); f.decide(fresh);
+  assert.equal(fresh.before, raw); assert.equal(f.ws.read(id).raw, fresh.after);
+  const history = f.ws.inspect(id).history;
+  assert.deepEqual(history.map(entry => [entry.operationId, entry.retired]), [[old.id, true], [fresh.id, false]]);
+  assert.equal(history[0].after, old.after); assert.equal(history[1].before, raw);
+  assert.deepEqual(immutableHistory(f.ws.state()).proposals.slice(0, before.proposals.length), before.proposals);
+  const reopened = new ChatWorkspace({ root: f.root, store: f.store, snapshot: f.ws.snapshot });
+  assert.equal(reopened.read(id).raw, fresh.after); assert.deepEqual(reopened.inspect(id).history, history);
+  assert.equal(readFileSync(join(f.root, 'source.md'), 'utf8'), raw);
+});
+
+test('changed source inspection preserves old base and private result, then resumes only exact current source', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old);
+  const replacement = 'A new synthetic source with its qualifier retained.';
+  f.mutate(s => { s.basis = 'source-changed'; s.revision = 'c'.repeat(40); s.entries[0].raw = replacement;
+    s.entries[0].version = entity(replacement).version; s.entries[0].source.blob = gitBlob(replacement); });
+  const inspection = f.ws.inspect(id);
+  assert.equal(inspection.source.raw, replacement); assert.equal(inspection.previous.before, raw);
+  assert.equal(inspection.previous.after, old.after); assert.equal(inspection.previous.baseVersion, entity(raw).version);
+  const receipt = resume(f); assert.equal(receipt.sourceVersion, entity(replacement).version);
+  assert.equal(f.ws.read(id).raw, replacement); assert.equal(f.ws.inspect(id).history[0].after, old.after);
+  assert.throws(() => f.propose({ key: 'wrong-base', baseVersion: old.baseVersion, beforeDigest: old.beforeDigest }), /stale paragraph/);
+  const fresh = f.propose({ key: 'new-source', after: 'A separately reviewed new-source private result.' }); f.decide(fresh);
+  assert.equal(fresh.before, replacement); assert.equal(f.ws.read(id).raw, fresh.after);
+});
+
+test('repeated recoveries retire strictly growing prefixes without affecting another target', t => {
+  const f = fixture(t);
+  f.mutate(s => { s.entries.push({ ...structuredClone(s.entries[0]), id: id2 }); });
+  const old = f.propose(); f.decide(old);
+  const otherBase = f.ws.read(id2);
+  const other = f.propose({ id: id2, baseVersion: otherBase.version, beforeDigest: otherBase.rawDigest,
+    key: 'other', after: 'Another target private candidate.' }); f.decide(other);
+  f.mutate(s => { s.basis = 'first-drift'; });
+  const first = resume(f);
+  assert.throws(() => f.ws.read(id2), /overlay is stale/);
+  const middle = f.propose({ key: 'middle', after: 'Middle private revision.' }); f.decide(middle);
+  f.mutate(s => { s.basis = 'second-drift'; });
+  const second = resume(f, { key: 'resume-2' });
+  assert.equal(second.previousReconciliationId, first.id); assert.deepEqual(second.retiredOperationIds, [old.id, middle.id]);
+  assert.deepEqual(f.ws.state().reconciliations.map(receipt => receipt.retiredOperationIds), [[old.id], [old.id, middle.id]]);
+  assert.equal(f.ws.read(id).raw, raw); assert.throws(() => f.ws.read(id2), /overlay is stale/);
+  const last = f.propose({ key: 'last', after: 'Final separately reviewed private revision.' }); f.decide(last);
+  assert.equal(f.ws.read(id).raw, last.after);
+  assert.deepEqual(f.ws.inspect(id).history.map(entry => [entry.operationId, entry.retired]), [[old.id, true], [middle.id, true], [last.id, false]]);
+  assert.equal(f.ws.state().decisions.every(decision => decision.status === 'applied-private'), true);
+});
+
+test('resume rejects changed source review, concurrent applied history and changed receipt replay', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old);
+  const competing = f.propose({ key: 'competing', after: 'Concurrent saved private contribution.' });
+  f.mutate(s => { s.basis = 'drift'; });
+  const inspection = f.ws.inspect(id);
+  f.mutate(s => { s.basis = 'synthetic-basis'; }); f.decide(competing);
+  f.mutate(s => { s.basis = 'drift'; });
+  assert.throws(() => resume(f, { reviewDigest: inspection.reviewDigest }), /stale reconciliation review/);
+  assert.equal(f.ws.state().reconciliations.length, 0);
+  const current = f.ws.inspect(id), receipt = resume(f, { reviewDigest: current.reviewDigest });
+  assert.deepEqual(resume(f, { reviewDigest: current.reviewDigest }), receipt);
+  assert.throws(() => resume(f, { reviewDigest: current.reviewDigest, decisionRef: 'Changed local reference' }), /idempotency/);
+  assert.throws(() => resume(f, { reviewDigest: current.reviewDigest, key: 'different-key' }), /stale reconciliation review/);
+  const after = f.propose({ key: 'after', after: 'Private edit made after the recorded resume.' }); f.decide(after);
+  assert.deepEqual(resume(f, { reviewDigest: current.reviewDigest }), receipt);
+  assert.equal(f.ws.read(id).raw, after.after); assert.equal(f.ws.state().reconciliations.length, 1);
+});
+
+test('exact wording drift after inspection invalidates resume even when repository basis is unchanged', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old); f.mutate(s => { s.basis = 'drift'; });
+  const inspection = f.ws.inspect(id), before = readFileSync(join(f.store, 'workspace.json'), 'utf8');
+  f.mutate(s => { s.entries[0].raw = 'Current source changed after inspection.';
+    s.entries[0].version = entity(s.entries[0].raw).version; s.entries[0].source.blob = gitBlob(s.entries[0].raw); });
+  assert.throws(() => resume(f, { reviewDigest: inspection.reviewDigest }), /stale reconciliation review/);
+  assert.equal(readFileSync(join(f.store, 'workspace.json'), 'utf8'), before);
+});
+
+test('unavailable entity retains saved private wording without substituting or resuming a source', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old);
+  const before = readFileSync(join(f.store, 'workspace.json'), 'utf8');
+  f.mutate(s => { s.basis = 'unavailable-source'; s.entries = []; });
+  const inspection = f.ws.inspect(id);
+  assert.equal(inspection.status, 'unavailable'); assert.equal(inspection.current, null); assert.equal(inspection.source, null);
+  assert.equal(inspection.previous.before, raw); assert.equal(inspection.previous.after, old.after);
+  assert.equal(inspection.history[0].after, old.after);
+  assert.throws(() => resume(f), /source unavailable/); assert.throws(() => f.ws.read(id), /unavailable/);
+  assert.throws(() => f.ws.inspect(id2), /no saved private work/);
+  assert.equal(readFileSync(join(f.store, 'workspace.json'), 'utf8'), before);
+});
+
+test('legacy private stores remain unchanged on inspection and gain receipts only on explicit resume', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old);
+  const file = join(f.store, 'workspace.json'), legacy = f.ws.state(); delete legacy.reconciliations;
+  writeFileSync(file, JSON.stringify(legacy)); const before = readFileSync(file, 'utf8');
+  assert.equal(f.ws.inspect(id).status, 'current'); assert.equal(readFileSync(file, 'utf8'), before);
+  f.mutate(s => { s.basis = 'legacy-drift'; }); resume(f);
+  const persisted = JSON.parse(readFileSync(file, 'utf8'));
+  assert.equal(persisted.reconciliations.length, 1); assert.deepEqual(immutableHistory(persisted), immutableHistory(legacy));
+});
+
+test('persisted resume receipts reject tampering, forged prefixes, changed history and malformed lineage', t => {
+  const f = fixture(t), old = f.propose(); f.decide(old); f.mutate(s => { s.basis = 'drift'; }); resume(f);
+  const file = join(f.store, 'workspace.json'), original = f.ws.state();
+  const mutations = [
+    state => { state.reconciliations[0].sourceRaw = 'Unreviewed source wording.'; },
+    state => { state.reconciliations[0].extra = 'unexpected'; },
+    state => { state.reconciliations[0].retiredOperationIds = []; rehashReceipt(state.reconciliations[0]); },
+    state => { state.reconciliations[0].retiredOperationIds = ['op_' + '0'.repeat(36)]; rehashReceipt(state.reconciliations[0]); },
+    state => { state.reconciliations[0].historyDigest = 'sha256:' + '0'.repeat(64); rehashReceipt(state.reconciliations[0]); },
+    state => { state.reconciliations[0].reviewDigest = 'sha256:' + '0'.repeat(64); rehashReceipt(state.reconciliations[0]); },
+    state => { state.reconciliations[0].previousReconciliationId = state.reconciliations[0].id; rehashReceipt(state.reconciliations[0]); },
+    state => { state.reconciliations[0].sourceVersion = entity('An unrelated inscription.').version; rehashReceipt(state.reconciliations[0]); },
+    state => { state.decisions[0].approvalRef = 'Changed historical decision'; },
+    state => { state.reconciliations.push(structuredClone(state.reconciliations[0])); },
+    state => { state.reconciliations = null; },
+  ];
+  for (const mutate of mutations) {
+    const corrupted = structuredClone(original); mutate(corrupted); writeFileSync(file, JSON.stringify(corrupted));
+    assert.throws(() => f.ws.read(id), /reconcil|source wording/);
+    assert.throws(() => f.ws.inspect(id));
+  }
+  writeFileSync(file, JSON.stringify(original)); assert.equal(f.ws.read(id).raw, raw);
+});
+
+test('source preview after recovery includes only active applied edits and preserves retired history', t => {
+  const f = fixture(t), source = sourceFixture(), snap = captureSnapshot(source); f.ws.snapshot = () => structuredClone(snap);
+  const old = f.propose(); f.decide(old); snap.basis = 'new-repository-basis'; resume(f);
+  const fresh = f.propose({ key: 'active', after: 'Only this fresh private revision enters the preview.' }); f.decide(fresh);
+  const preview = f.ws.sourcePreview(fresh.id);
+  assert.equal(preview.before, `${raw}\n\n${raw}`); assert.equal(preview.after, `${fresh.after}\n\n${raw}`);
+  assert.deepEqual(preview.operationIds, [fresh.id]); assert.equal(f.ws.inspect(id).history[0].after, old.after);
+  assert.throws(() => f.ws.sourcePreview(old.id), /stale source basis/);
+  assert.equal(source.readSource(), preview.before);
+  snap.basis = old.basis;
+  assert.throws(() => f.ws.sourcePreview(old.id), /retired private operation/);
 });

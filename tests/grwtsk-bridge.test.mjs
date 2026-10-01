@@ -106,6 +106,55 @@ test('HTTP stale checks reject altered source basis and competing local edits', 
   assert.equal(readFileSync(f.sourceFile, 'utf8'), f.wording);
 });
 
+test('private recovery exposes three versions and resumes source without rewriting applied history', async t => {
+  const f = await fixture(t), op = (await f.propose()).value;
+  await f.decide(op);
+  const original = JSON.parse(readFileSync(join(f.store, 'workspace.json'), 'utf8'));
+  f.mutate(s => { s.basis = 'changed-basis'; s.revision = 'c'.repeat(40); });
+  const inspection = await f.call(`/__grwtsk/inspect?id=${id}`);
+  assert.equal(inspection.status, 200); assert.equal(inspection.value.status, 'stale-overlay');
+  assert.equal(inspection.value.previous.before, raw);
+  assert.equal(inspection.value.previous.after, op.after);
+  assert.equal(inspection.value.source.raw, raw);
+  assert.equal(inspection.value.source.revision, 'c'.repeat(40));
+  assert.equal(inspection.value.current, null);
+  const input = { id, reviewDigest: inspection.value.reviewDigest, decisionRef: 'Synthetic explicit resume click', key: 'recovery-1' };
+  assert.equal((await f.call('/__grwtsk/resume-source', { method: 'POST', data: input, headers: { Origin: 'http://evil.test' } })).status, 403);
+  assert.equal((await f.call('/__grwtsk/resume-source', { method: 'POST', data: { ...input, actor: 'author' } })).status, 400);
+  const resumed = await f.call('/__grwtsk/resume-source', { method: 'POST', data: input });
+  assert.equal(resumed.status, 200);
+  assert.deepEqual((await f.call('/__grwtsk/resume-source', { method: 'POST', data: input })).value, resumed.value);
+  assert.equal((await f.call('/__grwtsk/resume-source', { method: 'POST', data: { ...input, decisionRef: 'Changed decision' } })).status, 409);
+  const current = (await f.call(`/__grwtsk/read?id=${id}`)).value;
+  assert.equal(current.raw, raw); assert.equal(current.privateOperation, null);
+  assert.equal((await f.call('/__grwtsk/catalog')).value.paragraphs[0].privateOperation, null);
+  const retained = JSON.parse(readFileSync(join(f.store, 'workspace.json'), 'utf8'));
+  for (const key of ['proposals', 'decisions', 'links']) assert.deepEqual(retained[key], original[key]);
+  assert.equal(retained.reconciliations.length, 1);
+  const next = (await f.propose({ key: 'after-resume', after: 'Synthetic new private edit after explicit recovery.' })).value;
+  assert.equal((await f.decide(next)).status, 200);
+  assert.equal((await f.call(`/__grwtsk/read?id=${id}`)).value.raw, next.after);
+  assert.equal(readFileSync(f.sourceFile, 'utf8'), f.wording);
+});
+
+test('recovery refuses drift after comparison and cannot replace unavailable source with private text', async t => {
+  const f = await fixture(t), op = (await f.propose()).value;
+  await f.decide(op); f.mutate(s => { s.basis = 'drift-1'; });
+  const inspected = (await f.call(`/__grwtsk/inspect?id=${id}`)).value;
+  const input = { id, reviewDigest: inspected.reviewDigest, decisionRef: 'Synthetic comparison', key: 'drifting-recovery' };
+  f.mutate(s => { s.basis = 'drift-2'; });
+  assert.equal((await f.call('/__grwtsk/resume-source', { method: 'POST', data: input })).status, 409);
+  assert.equal((await f.call(`/__grwtsk/read?id=${id}`)).status, 409);
+  const refreshed = (await f.call(`/__grwtsk/inspect?id=${id}`)).value;
+  assert.notEqual(refreshed.reviewDigest, inspected.reviewDigest);
+  f.mutate(s => { s.entries = []; });
+  const unavailable = (await f.call(`/__grwtsk/inspect?id=${id}`)).value;
+  assert.equal(unavailable.status, 'unavailable'); assert.equal(unavailable.source, null); assert.equal(unavailable.current, null);
+  assert.equal(unavailable.previous.after, op.after);
+  assert.notEqual((await f.call('/__grwtsk/resume-source', { method: 'POST', data: { ...input, reviewDigest: refreshed.reviewDigest } })).status, 200);
+  assert.equal(readFileSync(f.sourceFile, 'utf8'), f.wording);
+});
+
 test('bounded JSON rejects arbitrary paths, actor spoofing, multi-block replacement and inauthentic acceptance status', async t => {
   const f = await fixture(t);
   assert.equal((await f.propose({ actor: 'author' })).status, 400);
