@@ -1,5 +1,15 @@
 # H448-P01/r1 support-source registration
 
+## 2026-10-01 continuation — supersedes the historical failure below
+
+The original registration and combined-candidate receipt below describes the
+`dbed69840eda011d0b5c1861eec4919d3078b76b` candidate. Its next assembly failure
+is historical: #463 is now integrated through #477 into `pre-release` at
+`bdbef69f07da16c32c037e94992e5128a02d7d25`. The resumed #462 branch includes that
+staging revision through a history-preserving merge. Current checks belong to
+the exact resumed head and its PR receipt, not to the older result below.
+The registration still selects no chapter or reading position and accepts no prose.
+
 Bounded engineering integration under [#441](https://github.com/grwtsk/huey/issues/441),
 separate from the exact five-file prose staging in [#461](https://github.com/grwtsk/huey/pull/461).
 Working draft; claim verification incomplete. Registration is not manuscript
