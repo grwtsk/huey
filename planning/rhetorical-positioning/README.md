@@ -70,4 +70,9 @@ This branch contains only a planning contract, source notes and task map. It del
 
 Mechanical checks establish only declared structure and file identity. Source-aware reading and the author's actual exact-text review remain necessary. No software result certifies the prophecy, historical testimony, theology, consent or literary effect.
 
+
+## LOVE-01 extension
+
+The author's September 30 instruction now extends RHP-01 through [LOVE-01](love-invariant.md), tracked in #478–#486. Edna's remembered teaching and assistance supply the action grammar for trust, respect and admiration across the book. The related source and utterance audits preserve provenance and personhood while the manuscript examines racialized relations and hostility. This extension does not change PR-01 or authorize manuscript acceptance.
+
 WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.
