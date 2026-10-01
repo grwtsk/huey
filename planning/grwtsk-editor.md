@@ -111,6 +111,59 @@ Stale or unavailable source, changed versions and competing edits still block
 application. Kernel #153/#125, authoritative reconciliation and #359's broader
 offline/queued synchronization remain open.
 
+## Preparatory draft-retention contract — #359, 2026-10-01
+
+The [machine-readable policy](grwtsk-draft-retention.json) and
+[read-only validator](../scripts/draft_checkpoint.mjs) define the proposed next
+storage profile before it is implemented. **Runtime persistence is disabled.**
+This increment supplies no Save/Restore control or checkpoint file; unreviewed
+text still lives in the tab and can be lost in a crash. A valid fixture or policy
+record cannot activate storage, authenticate permission or satisfy #359.
+
+The proposed profile keeps at most twenty checkpoints, one per selected paragraph,
+and at most one MiB for the complete compact JSON envelope plus its trailing LF.
+Both the exact base and unfinished draft have a 100,000 UTF-16-code-unit limit.
+These are engineering capacity bounds, not manuscript length requirements. Overflow
+must reject the new action while retaining the previous checkpoint and textarea;
+there is no automatic eviction, expiry, replacement or deletion. Save, replace,
+inspect, restore and discard must be explicit. Replacement/discard must compare
+the exact previous checkpoint digest; the preparatory validator does not implement
+those transactions or claim power-loss durability.
+
+A checkpoint would retain only the selected paragraph's exact base needed for
+comparison, unfinished text, opaque identity, source/working bindings, timestamp,
+request key and integrity digest. Unknown fields are rejected. It cannot carry a
+whole source, issue/chat copies, filesystem paths, provider configuration,
+credentials, approval or publication metadata. Source and private working
+versions remain distinct. Raw base bytes are checked separately from the literary
+version, so an inscription-equivalent Markdown change can still make recovery
+stale. Unfinished, empty and multi-block draft text is preserved without requiring
+it to parse as an applicable paragraph. Validation never normalizes that text.
+
+Compatibility assessment takes a separately trusted current selected-paragraph
+context. Changed identity, basis, revision, source version, working version, raw
+wording or private-operation binding means stale; unavailable source means
+unavailable. Stale/unavailable work remains inspectable privately and must never
+be rebased, restored over current text or substituted for source automatically.
+Future explicit restoration must preserve intervening textarea input and still
+require a fresh exact proposal/review/decision before private application.
+
+The future writer must verify the applicable exact source/version/action/destination
+scope and reuse the existing outside-Git realpath/owner/mode and unsafe-entry
+checks, exclusive lock and atomic replacement. Missing configuration
+must fail closed. It must preserve all immutable proposal, decision and
+source-resume history. Filesystem isolation is not encryption; an OS-account owner
+can forge a self-consistent record. Integrity and version checks identify bytes,
+not authorship, consent, source truth or acceptance. The present pure validator
+checks shape, integrity, capacity and context only; it performs no filesystem,
+permission, durability, transaction, network or source-grant verification.
+
+`npm run test:drafts` exercises explicitly synthetic hostile cases without private
+store access. Public diagnostics contain neutral codes/counts/sizes only. Real
+draft storage, compare-and-swap, crash/reload recovery and UI failure behavior
+remain the next #359 implementation stage; #360 and kernel authority retain their
+separate conditions. No new source or recipient is admitted by this preparation.
+
 ## Existing Codex host, without another provider
 
 Ask Grwtsk captures the selected entity, exact source/working basis, message and

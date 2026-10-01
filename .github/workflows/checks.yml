@@ -80,6 +80,8 @@ jobs:
             ff0499bd341de12a31b355b79867b547f19d9b16
       - name: Private chat workspace synthetic tests
         run: npm run test:chat
+      - name: Preparatory private draft-retention contract (synthetic only)
+        run: npm run test:drafts
       - name: Install exact existing reconciliation contracts outside the checkout
         run: npm run contracts:install -- "$RUNNER_TEMP/huey-chat-contracts"
       - name: Source handoff against existing upstream contracts
