@@ -1,0 +1,102 @@
+{
+  "schema": "huey.soc-incident.v1",
+  "basisRevision": "4156b4fba4a57394b9aae54e5104694d622861b5",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176",
+    "https://github.com/grwtsk/huey/issues/193",
+    "https://github.com/grwtsk/huey/issues/306",
+    "https://github.com/grwtsk/huey/issues/307",
+    "https://github.com/grwtsk/huey/issues/425"
+  ],
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "sourceMetadataActive": false,
+  "newEvidenceReceived": false,
+  "newExternalCollectionPerformed": false,
+  "substantiveVerificationPerformed": false,
+  "liveIssueBodiesVerified": false,
+  "allIncidentsEnumerated": false,
+  "fullCorpusTransferComplete": false,
+  "authorityFromReferences": false,
+  "notice": "This selection preserves the public initial incident register and its historical preparation records. Entries, classes, source aliases and issue links are documentary registration, not findings, independently established events or current live-issue certification. Source locations are not opened; reference URLs and approval labels do not authenticate or grant authority. No evidence collection, source verification, manuscript admission, exhaustive coverage or promotion is supplied.",
+  "files": [
+    {
+      "path": "planning/standard-of-care/incident-register/README.md",
+      "sourceBlob": "da427355843b097398cac1ae54eeaa934008d87c",
+      "stagedBlob": "da427355843b097398cac1ae54eeaa934008d87c",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/checks.json",
+      "sourceBlob": "040e24fb5a629d9b22dfadc81adb94208ed1093f",
+      "stagedBlob": "040e24fb5a629d9b22dfadc81adb94208ed1093f",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/coverage.md",
+      "sourceBlob": "7692b71f0429224f1559f8d9538427f2cfce4ad3",
+      "stagedBlob": "7692b71f0429224f1559f8d9538427f2cfce4ad3",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/evidence-intake.md",
+      "sourceBlob": "bf7bdd58ffe45cfaf62104d20db5b24eba1045bf",
+      "stagedBlob": "bf7bdd58ffe45cfaf62104d20db5b24eba1045bf",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/index.md",
+      "sourceBlob": "b527766413d0136af80c827216d3ed70c1009d5c",
+      "stagedBlob": "b527766413d0136af80c827216d3ed70c1009d5c",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/register.json",
+      "sourceBlob": "923bd664d4415a270787f7345e08cfc36c9656ed",
+      "stagedBlob": "923bd664d4415a270787f7345e08cfc36c9656ed",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/sources.json",
+      "sourceBlob": "74b6c77a388117d7fb615460c042fa378857e342",
+      "stagedBlob": "74b6c77a388117d7fb615460c042fa378857e342",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/test_verify.py",
+      "sourceBlob": "27874b499647cfd118983f01b44c50d15fb752d2",
+      "stagedBlob": "27874b499647cfd118983f01b44c50d15fb752d2",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/incident-register/verify.py",
+      "sourceBlob": "1d87b082528e9541519660666a30092be5b16b01",
+      "stagedBlob": "1d87b082528e9541519660666a30092be5b16b01",
+      "representation": "exact"
+    }
+  ],
+  "predecessorManifest": {
+    "path": "planning/consolidation/soc-authority.json",
+    "blob": "135e3cea37bd629e46e21e5c49b635aa0e1f86ad"
+  },
+  "navigationChanges": [
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "priorStagedBlob": "a0cb5b02f4c23d282966ebc8e0fb2062193ca059",
+      "stagedBlob": "62245d9acbbf34314f107e41883dff5fce5a6102"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "priorStagedBlob": "89a114487af1cfb4da2826658092ec4d47a588fe",
+      "stagedBlob": "e849ce858c20672b83fcf417aabf530bc34e5726"
+    }
+  ]
+}

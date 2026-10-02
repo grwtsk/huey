@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { buildInventory, gitBlob, loadInventory } from '../scripts/editorial_inventory.mjs';
 import { buildAssembly, createPlan } from '../scripts/editorial_pages.mjs';
 import { parseEditorialMarkdown } from '../scripts/editorial_markdown.mjs';
@@ -291,12 +292,13 @@ test('source-only delimiter edit cannot silently validate an old raw-paragraph e
   assert.equal(Object.hasOwn(result, 'evidence'), false);
 });
 
-test('current selected public sources support explicit no-op reconciliation of all 481 blocks and 471 paragraphs', async () => {
-  const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
-  const inventory = loadInventory(), plan = JSON.parse(read('planning/editorial-pages/plan.json'));
-  const sourceTexts = Object.fromEntries(plan.sources.map(row => [row.sourceKey, read(row.path)]));
+async function assertPublicNoop({ inventory, plan, sourceTexts, bindings }, expected) {
   const before = { inventory, plan, sourceTexts }, first = assemble(before);
-  const bindings = JSON.parse(read('planning/routes/bindings.json'));
+  // Pin each selected source and its exact coverage, not merely a lower bound or
+  // a total derived from the same plan under test. Source additions need review.
+  assert.deepEqual(plan.sources.map(source => ({ key: source.sourceKey,
+    blocks: source.blocks.length,
+    paragraphs: source.blocks.filter(block => block.kind === 'Paragraph').length })), expected);
   const routes = buildEditorialRouteProjection({ assembly: first, bindings });
   const evidenceBefore = await compileBook();
   let checkedBlocks = 0, checkedParagraphs = 0;
@@ -308,11 +310,66 @@ test('current selected public sources support explicit no-op reconciliation of a
     assert.deepEqual(next.entityRecords, first.entityRecords);
     assert.deepEqual(next.sourceMappings, first.sourceMappings);
     assert.deepEqual(buildEditorialRouteProjection({ assembly: next, bindings }), routes);
-    assert.ok(result.changes.every(row => row.state === 'unchanged'));
+    assert.deepEqual(result.changes.map(row => ({ id: row.entityId, kind: row.kind })),
+      selected.blocks.map(block => ({ id: block.id, kind: block.kind })));
+    assert.ok(result.changes.every(row => row.state === 'unchanged' && row.beforeVersion === row.afterVersion));
     checkedBlocks += result.changes.length;
     checkedParagraphs += result.changes.filter(row => row.kind === 'Paragraph').length;
   }
-  assert.equal(checkedBlocks, 481);
-  assert.equal(checkedParagraphs, 471);
+  assert.equal(checkedBlocks, expected.reduce((sum, source) => sum + source.blocks, 0));
+  assert.equal(checkedParagraphs, expected.reduce((sum, source) => sum + source.paragraphs, 0));
   assert.deepEqual(await compileBook(), evidenceBefore, 'reader admission and evidence remain independently compiled');
+}
+
+// Keep the original PR's 481-block / 471-paragraph regression reproducible after
+// the working corpus expands. Read only explicitly scoped existing public Git
+// objects, without checkout writes, moving branch tips, network or lazy fetching.
+const historicalBasis = 'a1f85c6d7df5339f686c9d6f25e8af4e2841552a';
+const root = new URL('../', import.meta.url);
+const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8',
+  stdio: ['ignore', 'pipe', 'pipe'],
+  env: { ...process.env, GIT_NO_LAZY_FETCH: '1', GIT_TERMINAL_PROMPT: '0' } });
+const historical = path => git(['show', `${historicalBasis}:${path}`]);
+const read = path => readFileSync(new URL(path, root), 'utf8');
+const historicalCoverage = [
+  { key: 'public-01', blocks: 269, paragraphs: 260 },
+  { key: 'public-02', blocks: 212, paragraphs: 211 },
+];
+
+test('original public basis retains explicit no-op reconciliation of all 481 blocks and 471 paragraphs', async () => {
+  const registry = JSON.parse(historical('planning/editorial-inventory/registry.json'));
+  const book = JSON.parse(historical('book.yaml'));
+  const reader = JSON.parse(historical('reader/content/book.json'));
+  const trackedPaths = git(['ls-tree', '-r', '--name-only', '-z', historicalBasis, '--', 'manuscript'])
+    .split('\0').filter(path => path.endsWith('.md'));
+  const paths = [...new Set([...book.items.map(item => item.path),
+    ...registry.sources.filter(source => ['canonical', 'unplaced'].includes(source.role)).map(source => source.path)])];
+  const files = Object.fromEntries(paths.map(path => [path, trackedPaths.includes(path) ? historical(path) : null]));
+  const sourceAvailability = Object.fromEntries(registry.sources.map(source => {
+    assert.equal(git(['rev-parse', `${source.revision}:${source.path}`]).trim(), source.blob,
+      `historical public pin must remain exact: ${source.key}`);
+    git(['cat-file', '-e', source.blob]);
+    return [source.key, true];
+  }));
+  const inventory = buildInventory({ registry, book, reader, trackedPaths, files, sourceAvailability });
+  const plan = JSON.parse(historical('planning/editorial-pages/plan.json'));
+  const sourceTexts = Object.fromEntries(plan.sources.map(source => [source.sourceKey, historical(source.path)]));
+  const bindings = JSON.parse(historical('planning/routes/bindings.json'));
+  await assertPublicNoop({ inventory, plan, sourceTexts, bindings }, historicalCoverage);
+});
+
+test('current selected public sources retain explicit no-op reconciliation of all 2140 blocks and 2067 paragraphs', async () => {
+  const inventory = loadInventory(), plan = JSON.parse(read('planning/editorial-pages/plan.json'));
+  const sourceTexts = Object.fromEntries(plan.sources.map(source => [source.sourceKey, read(source.path)]));
+  const bindings = JSON.parse(read('planning/routes/bindings.json'));
+  await assertPublicNoop({ inventory, plan, sourceTexts, bindings }, [
+    ...historicalCoverage,
+    { key: 'public-35', blocks: 827, paragraphs: 786 },
+    { key: 'public-36', blocks: 603, paragraphs: 602 },
+    { key: 'public-37', blocks: 4, paragraphs: 1 },
+    { key: 'public-38', blocks: 81, paragraphs: 74 },
+    { key: 'sequential-fm01-title', blocks: 2, paragraphs: 1 },
+    { key: 'sequential-p01', blocks: 65, paragraphs: 61 },
+    { key: 'sequential-p02', blocks: 77, paragraphs: 71 },
+  ]);
 });

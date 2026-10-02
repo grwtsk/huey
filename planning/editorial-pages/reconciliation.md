@@ -137,8 +137,15 @@ Run `npm run test:reconcile` on the assembly's Unicode-17 runtime (tested Node
 22.23.2 / ICU 78.2). Synthetic checks cover variable-length revisions, shifted
 ranges, file moves, equal-valued occurrences, markup/Unicode/CRLF fidelity,
 stale metadata/versions, denied reads and rejected structural changes. Real-source
-compatibility uses an unchanged before/after snapshot of the selected C08A and
-unplaced sources; it does not revise or newly authorize either manuscript.
+compatibility preserves the original 481-block / 471-paragraph C08A and unplaced
+regression using immutable public basis
+`a1f85c6d7df5339f686c9d6f25e8af4e2841552a`. A separate current-corpus check covers
+all nine selected public sources: 2,140 blocks / 2,067 Paragraphs. Each source's
+exact block/paragraph coverage is asserted, and unchanged before/after snapshots
+retain every identity, version, source mapping, route and page membership. The
+historical check reads existing public Git objects without network or checkout
+writes; it does not copy fixtures or turn historical sources into current ones.
+Neither check revises or newly authorizes manuscript content.
 Hosted checks run this suite separately from the reader's broader Node range.
 
 #353 and #370 remain open for further authorized-source ingestion and

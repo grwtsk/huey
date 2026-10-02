@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-9dd97e91-2682-48ae-b537-a6feb563e023",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-9dd97e91-2682-48ae-b537-a6feb563e023/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "ca5984cfed9fb719ab7ac088dc11a4bc92a62422c08ac9bda18f5ca58ff97940",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 2
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C009",
+      "locator": "p1; analytical card ha_a347a28e-344f-4d0b-bfd9-808ee9b9ad01",
+      "relationship": "limits",
+      "contribution": "Source states: The report describes a proximal ureteral stone with obstruction-related findings and records back pain in its clinical history. Joint comparison: Separates an available imaging report from a still-unlocated encounter narrative.",
+      "does_not_establish": "The patient’s appearance, pain intensity, or whether the exchange occurred."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:14.183997Z",
+  "public_exposure_basis": "UNKNOWN"
+}

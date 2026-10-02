@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "8269cb60b7f7494e1221b227e8b01538d274611c671890ccb449deb7ac98d12f",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 1
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C009",
+      "locator": "p1; analytical card ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+      "relationship": "context",
+      "contribution": "Source states: The report prints approximately 6 cm of one vertebral displacement twice. It also describes a separate 3 mm displacement and says the findings are unchanged with flexion and extension. Joint comparison: Preserves the printed value, the author’s later account and the already-available attributed correction to 6 mm.",
+      "does_not_establish": "A formal amendment of the original radiology report, independent image measurement, message authenticity or clinical implications."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:29.517961Z",
+  "public_exposure_basis": "UNKNOWN"
+}

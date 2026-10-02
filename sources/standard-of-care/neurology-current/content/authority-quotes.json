@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-18",
+  "quotations": [
+    {
+      "id": "quote-wma-cordoba",
+      "type": "quotation",
+      "text": "The patient-physician relationship is a moral activity that arises from the obligation of the physician to alleviate suffering and respect the patient’s beliefs and autonomy.",
+      "authority_type": "professional-ethics",
+      "tradition_or_domain": "medicine",
+      "author_or_body": "World Medical Association",
+      "work": "WMA Declaration of Cordoba on Patient-Physician Relationship",
+      "locator": "Preamble",
+      "translation_or_version": null,
+      "jurisdiction": "international-professional",
+      "authority_level": "professional declaration",
+      "source_url": "https://www.wma.net/policies-post/wma-declaration-of-cordoba-on-patient-physician-relationship/",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-beneficence",
+        "principle-autonomy",
+        "principle-stewardship",
+        "principle-compassion"
+      ],
+      "ethics_nodes": [
+        "ethics-beneficence",
+        "ethics-autonomy",
+        "ethics-fiduciary-responsibility",
+        "ethics-respect-for-persons"
+      ],
+      "context_note": "The declaration describes the patient-physician relationship as a moral relationship grounded in care, beliefs, autonomy, trust, and shared decision making.",
+      "use_note": "Use to illuminate the moral character of professional relationship; not to adjudicate any disputed clinical encounter.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-un-udhr-dignity",
+      "type": "quotation",
+      "text": "All human beings are born free and equal in dignity and rights.",
+      "authority_type": "human-rights",
+      "tradition_or_domain": "human rights",
+      "author_or_body": "United Nations",
+      "work": "Universal Declaration of Human Rights",
+      "locator": "Article 1",
+      "translation_or_version": null,
+      "jurisdiction": "international",
+      "authority_level": "United Nations declaration",
+      "source_url": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-dignity",
+        "principle-justice"
+      ],
+      "ethics_nodes": [
+        "ethics-respect-for-persons",
+        "ethics-justice",
+        "ethics-equitable-access"
+      ],
+      "context_note": "Article 1 states a universal human-rights premise about dignity and equality.",
+      "use_note": "Use as a human-rights reference for dignity and equality; not as a substitute for jurisdiction-specific law.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-doj-equal-access",
+      "type": "quotation",
+      "text": "full and equal access to their health care services and facilities",
+      "authority_type": "disability-law",
+      "tradition_or_domain": "disability access",
+      "author_or_body": "U.S. Department of Justice",
+      "work": "Access to Medical Care for Individuals with Mobility Disabilities",
+      "locator": "Services and Facilities",
+      "translation_or_version": null,
+      "jurisdiction": "United States",
+      "authority_level": "federal civil-rights technical assistance",
+      "source_url": "https://www.ada.gov/resources/medical-care-mobility/",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-justice",
+        "principle-dignity",
+        "principle-autonomy"
+      ],
+      "ethics_nodes": [
+        "ethics-disability-access",
+        "ethics-equitable-access",
+        "ethics-respect-for-persons"
+      ],
+      "context_note": "DOJ guidance explains ADA and, where applicable, Section 504 accessibility duties for medical settings, including reasonable modifications.",
+      "use_note": "U.S.-jurisdiction legal guidance only; educational context, not individualized legal advice.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-988-heard-cared",
+      "type": "quotation",
+      "text": "You deserve to feel heard and cared about anytime, anywhere, 24/7/365.",
+      "authority_type": "crisis-support",
+      "tradition_or_domain": "crisis support",
+      "author_or_body": "988 Suicide & Crisis Lifeline",
+      "work": "988 Suicide & Crisis Lifeline",
+      "locator": "Homepage",
+      "translation_or_version": null,
+      "jurisdiction": "United States and territories",
+      "authority_level": "official U.S. crisis-service resource",
+      "source_url": "https://988lifeline.org/",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-compassion",
+        "principle-beneficence",
+        "principle-hope"
+      ],
+      "ethics_nodes": [
+        "ethics-beneficence",
+        "ethics-continuity-of-care",
+        "ethics-respect-for-persons"
+      ],
+      "context_note": "The Lifeline describes support as available for emotional distress and other difficult moments; a person does not have to be suicidal to contact 988.",
+      "use_note": "Use to describe a U.S. support option, not as evidence that crisis intervention is appropriate for every person who is suffering.",
+      "evidentiary_use": "conceptual-context-only",
+      "crisis": {
+        "geography": "United States and territories",
+        "hours": "24/7/365",
+        "access_modes": [
+          "call 988",
+          "text 988",
+          "chat at 988lifeline.org",
+          "videophone and other Deaf/Hard-of-Hearing access"
+        ],
+        "cost": "free",
+        "confidentiality": "officially described by 988 as confidential; confidential is not the same as anonymous",
+        "accessibility_url": "https://988lifeline.org/deaf-hard-of-hearing-hearing-loss/"
+      }
+    },
+    {
+      "id": "quote-christian-truth",
+      "type": "quotation",
+      "text": "Rejoiceth not in iniquity, but rejoiceth in the truth;",
+      "authority_type": "christian-scripture",
+      "tradition_or_domain": "Christian scripture",
+      "author_or_body": "The Bible",
+      "work": "1 Corinthians",
+      "locator": "13:6",
+      "translation_or_version": "King James Version (KJV)",
+      "jurisdiction": "scriptural",
+      "authority_level": "Christian scripture; KJV public-domain translation",
+      "source_url": "https://www.biblegateway.com/passage/?search=1+Corinthians+13%3A6&version=KJV",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-love",
+        "principle-truthfulness"
+      ],
+      "ethics_nodes": [
+        "ethics-veracity",
+        "ethics-beneficence"
+      ],
+      "context_note": "The verse appears within a larger passage describing love. The quotation is used here specifically for the relation between love and truth.",
+      "use_note": "Spiritual correspondence only; never evidence for a disputed historical or professional claim.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-jewish-neighbor",
+      "type": "quotation",
+      "text": "Love your fellow as yourself.",
+      "authority_type": "jewish-scripture",
+      "tradition_or_domain": "Jewish scripture / Torah",
+      "author_or_body": "Torah",
+      "work": "Leviticus",
+      "locator": "19:18",
+      "translation_or_version": "JPS, 1985 (Tanakh: The Holy Scriptures)",
+      "jurisdiction": "scriptural",
+      "authority_level": "Jewish scripture; textual repository",
+      "source_url": "https://www.sefaria.org/Leviticus.19.18?lang=bi&ven=english%7CTanakh%3A_The_Holy_Scriptures%2C_published_by_JPS",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-love",
+        "principle-mercy",
+        "principle-dignity"
+      ],
+      "ethics_nodes": [
+        "ethics-respect-for-persons",
+        "ethics-nonmaleficence"
+      ],
+      "context_note": "The JPS 1985 verse also prohibits vengeance and bearing a grudge against one’s countrymen. Jewish interpretation is not collapsed into Christian uses of the same textual source.",
+      "use_note": "Spiritual correspondence only; not a claim of doctrinal equivalence or factual proof.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-islam-preserve-life",
+      "type": "quotation",
+      "text": "whoever saves a life, it will be as if they saved all of humanity.",
+      "authority_type": "islamic-scripture",
+      "tradition_or_domain": "Islamic scripture",
+      "author_or_body": "Qur'an",
+      "work": "Surah Al-Ma'idah",
+      "locator": "5:32",
+      "translation_or_version": "The Clear Quran, Dr. Mustafa Khattab, as displayed by Quran.com",
+      "jurisdiction": "scriptural",
+      "authority_level": "Islamic scripture; Quran.com textual presentation",
+      "source_url": "https://quran.com/5/32",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-beneficence",
+        "principle-nonmaleficence",
+        "principle-hope"
+      ],
+      "ethics_nodes": [
+        "ethics-beneficence",
+        "ethics-nonmaleficence"
+      ],
+      "context_note": "The quoted phrase is part of a verse framed as an ordinance for the Children of Israel and must not be detached from that context.",
+      "use_note": "Spiritual correspondence about preservation of life; not a universal clinical directive for a particular person.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-buddhist-non-hatred",
+      "type": "quotation",
+      "text": "Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased.",
+      "authority_type": "buddhist-teaching",
+      "tradition_or_domain": "Buddhist moral teaching",
+      "author_or_body": "Dhammapada",
+      "work": "Yamakavagga: Pairs",
+      "locator": "Verse 5",
+      "translation_or_version": "Acharya Buddharakkhita translation",
+      "jurisdiction": "scriptural / teaching",
+      "authority_level": "Buddhist canonical teaching in cited translation",
+      "source_url": "https://www.accesstoinsight.org/tipitaka/kn/dhp/dhp.01.budd.html",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-mercy",
+        "principle-nonmaleficence",
+        "principle-love"
+      ],
+      "ethics_nodes": [
+        "ethics-nonmaleficence",
+        "ethics-proportionate-intervention"
+      ],
+      "context_note": "Verse 5 appears among teachings on hatred, retaliation, and the mental conditions that sustain conflict.",
+      "use_note": "Use to illuminate restraint and non-retaliation; not to erase accountability or factual disagreement.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-wma-geneva-dignity",
+      "type": "quotation",
+      "text": "I WILL RESPECT the autonomy and dignity of my patient;",
+      "authority_type": "professional-ethics",
+      "tradition_or_domain": "medicine",
+      "author_or_body": "World Medical Association",
+      "work": "WMA Declaration of Geneva",
+      "locator": "Physician's Pledge, item 3",
+      "translation_or_version": "2017 amendment",
+      "jurisdiction": "international-professional",
+      "authority_level": "professional pledge",
+      "source_url": "https://www.wma.net/policies-post/wma-declaration-of-geneva/decl-of-geneva-v-2017/",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-autonomy",
+        "principle-dignity",
+        "principle-service"
+      ],
+      "ethics_nodes": [
+        "ethics-autonomy",
+        "ethics-respect-for-persons",
+        "ethics-fiduciary-responsibility"
+      ],
+      "context_note": "The current pledge pairs patient autonomy and dignity within a broader professional commitment to health, human life, confidentiality, conscience, and human rights.",
+      "use_note": "Professional ethical context; not a finding about any individual physician.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-un-crpd-health",
+      "type": "quotation",
+      "text": "the right to the enjoyment of the highest attainable standard of health without discrimination on the basis of disability",
+      "authority_type": "human-rights",
+      "tradition_or_domain": "disability rights",
+      "author_or_body": "United Nations",
+      "work": "Convention on the Rights of Persons with Disabilities",
+      "locator": "Article 25 — Health",
+      "translation_or_version": null,
+      "jurisdiction": "international treaty",
+      "authority_level": "United Nations disability-rights treaty",
+      "source_url": "https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-25-health.html",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-dignity",
+        "principle-justice",
+        "principle-autonomy"
+      ],
+      "ethics_nodes": [
+        "ethics-disability-access",
+        "ethics-equitable-access",
+        "ethics-informed-consent"
+      ],
+      "context_note": "Article 25 addresses health access, non-discrimination, informed consent, professional training, and equal quality of care for persons with disabilities.",
+      "use_note": "International human-rights context; implementation and enforceability depend on jurisdiction.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-ama-patient-rights",
+      "type": "quotation",
+      "text": "To courtesy, respect, dignity, and timely, responsive attention to their needs.",
+      "authority_type": "professional-ethics",
+      "tradition_or_domain": "medicine",
+      "author_or_body": "American Medical Association",
+      "work": "AMA Code of Medical Ethics Opinion 1.1.3 — Patient Rights",
+      "locator": "Right 1",
+      "translation_or_version": null,
+      "jurisdiction": "United States professional ethics",
+      "authority_level": "professional ethics opinion",
+      "source_url": "https://code-medical-ethics.ama-assn.org/ethics-opinions/patient-rights",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-dignity",
+        "principle-autonomy",
+        "principle-fidelity"
+      ],
+      "ethics_nodes": [
+        "ethics-respect-for-persons",
+        "ethics-autonomy",
+        "ethics-continuity-of-care"
+      ],
+      "context_note": "The opinion presents patient rights within a mutually respectful patient-physician alliance and also addresses information, decision making, privacy, records, second opinions, and continuity.",
+      "use_note": "Professional ethical guidance; not legal advice and not an adjudication of alleged misconduct.",
+      "evidentiary_use": "conceptual-context-only"
+    },
+    {
+      "id": "quote-who-health-right",
+      "type": "quotation",
+      "text": "The enjoyment of the highest attainable standard of health is one of the fundamental rights of every human being",
+      "authority_type": "international-health",
+      "tradition_or_domain": "global health",
+      "author_or_body": "World Health Organization",
+      "work": "Constitution of the World Health Organization",
+      "locator": "Preamble principles",
+      "translation_or_version": null,
+      "jurisdiction": "international",
+      "authority_level": "WHO founding constitution",
+      "source_url": "https://www.who.int/about/governance/constitution",
+      "verified_at": "2026-09-18",
+      "principles": [
+        "principle-dignity",
+        "principle-justice",
+        "principle-beneficence"
+      ],
+      "ethics_nodes": [
+        "ethics-equitable-access",
+        "ethics-beneficence",
+        "ethics-respect-for-persons"
+      ],
+      "context_note": "The WHO Constitution places this principle among foundational commitments concerning health, international cooperation, public participation, and governmental responsibility.",
+      "use_note": "Global-health and human-rights context; not a guarantee of a particular treatment or individualized legal entitlement.",
+      "evidentiary_use": "conceptual-context-only"
+    }
+  ]
+}

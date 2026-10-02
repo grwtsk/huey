@@ -1,0 +1,732 @@
+{
+  "format": "Huey descent consumer crosswalk, version 1",
+  "status": "authored-editorial-map; source-grounded; human-editorial-acceptance-not-asserted",
+  "owner_issue": 446,
+  "coordination_issue": 456,
+  "consumer_issues": [
+    447,
+    448
+  ],
+  "base_commit": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+  "scope": "Seven existing C08A crossings and selected public context; not the complete #446 corpus.",
+  "source_review": "Complete C08A and selected exported essays read; selected Atlas principles, claim rows, incident rows, historical care-law row and public analytical cards compared. No underlying private original reread or new formal verification.",
+  "sources": [
+    {
+      "key": "baptism",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "manuscript/02-interlude/baptism-in-the-color-of-rain.md",
+      "blob": "e28d4b10c74f8ed6ec6e66b5131e0b25ab5479e1",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "paragraphs",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/editorial-pages/plan.json",
+      "blob": "b095207b23733f373b5127f3cf2d541f6a12248a",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "inventory",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/editorial-inventory/registry.json",
+      "blob": "d99baaa5c0f59498035ada1040d42d1bc6325f55",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "atlas",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "sources/standard-of-care/neurology-current/content/articles/atlas.json",
+      "blob": "f0060ba32231f6f08399ea174dc279dc2556ecff",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "writing",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "sources/standard-of-care/neurology-text/writing-as-the-act-of-care.md",
+      "blob": "0912ed8d49013843361c55fb38ed6250915618c8",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "transfer",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "sources/standard-of-care/neurology-text/from-stanford-to-ucsf-the-transfer-was-part-of-the-history.md",
+      "blob": "51cb89235f6f8b8d704677e482384edb9e924d3f",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "communication",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "sources/standard-of-care/neurology-text/communication-changed-risk.md",
+      "blob": "2b80501728777f87ada72180972cdbbe453597ef",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "claims",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/standard-of-care/claims.tsv",
+      "blob": "f5a0a2e7b02dad2f94288c0d1b877bd4216db94e",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "incidents",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/standard-of-care/incident-register/register.json",
+      "blob": "923bd664d4415a270787f7345e08cfc36c9656ed",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "care_law",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/standard-of-care/care-law/review.json",
+      "blob": "37afba552dbc405090764616ddcd6a52f5872e54",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "cards",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/evidence-working-packets/2026-09-27/analysis-cards.json",
+      "blob": "1e2e0414265653e7a550ddea77a9eceaeeef7327",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    },
+    {
+      "key": "consolidation",
+      "repository": "grwtsk/huey",
+      "revision": "664f9b62d70d7f24e2519918357ec262d86eb6c4",
+      "path": "planning/consolidation/soc-cl05.json",
+      "blob": "ffd029800cc09152863005cad0c0719b7d47c34b",
+      "access": "inspected-public-Huey-copy",
+      "allowed_use": "Public pre-release source-reference and editorial comparison; no additional raw-source disclosure or acceptance."
+    }
+  ],
+  "crossings": [
+    {
+      "key": "attention",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_bd82fcff-5ae7-440f-9e63-5ba4c235fa00",
+        "entity_kind": "Paragraph",
+        "line": 27,
+        "context_lines": [
+          3,
+          43
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 1545,
+          "end": 1583,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "In the narrated birth room, the direction of attention changes after the narrator enters; the mother already needs care.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-dignity",
+          "principle-witness"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        308,
+        65,
+        66
+      ],
+      "does_not_establish": "The clinicians' thoughts, an independently verified reconstruction or proof supplied by the Atlas."
+    },
+    {
+      "key": "separate-agency",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_135d668a-35fd-4006-a134-032b7055711f",
+        "entity_kind": "Paragraph",
+        "line": 65,
+        "context_lines": [
+          57,
+          79
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 3366,
+          "end": 3607,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "The narrator separates his slipping finger from the biker's removal of the door.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-witness",
+          "principle-truthfulness"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [
+          "SOC-C005"
+        ],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        127,
+        308
+      ],
+      "does_not_establish": "Shared authorship of an act from proximity in time, or an additional witness from another representation."
+    },
+    {
+      "key": "prepared-transfer",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_aea5e89a-f270-4eb7-b26d-a5bfc91872f6",
+        "entity_kind": "Paragraph",
+        "line": 123,
+        "context_lines": [
+          83,
+          175
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 6126,
+          "end": 6197,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "Prepared transfer, attributed apology and reported continuing lack of care coexist in the same account.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-fidelity",
+          "principle-stewardship"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [
+          "SOC-C113",
+          "SOC-C114",
+          "SOC-C115",
+          "SOC-C116",
+          "SOC-C117",
+          "SOC-C118",
+          "SOC-C119",
+          "SOC-C120",
+          "SOC-C121"
+        ],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        139,
+        308
+      ],
+      "does_not_establish": "The actual internal routing, a legal abandonment finding, or identity with the Stanford-to-UCSF transfer."
+    },
+    {
+      "key": "receive-the-report",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_56dbed58-0d0e-48a7-9bdc-98c165d3ecc9",
+        "entity_kind": "Paragraph",
+        "line": 165,
+        "context_lines": [
+          141,
+          175
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 7833,
+          "end": 8098,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "The narrator distinguishes receiving and routing his report from deciding its legal or clinical classification.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-custody-of-another-persons-words",
+          "principle-prudence"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [
+          "SOC-C101",
+          "SOC-C106",
+          "SOC-C107"
+        ],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        138,
+        183,
+        308
+      ],
+      "does_not_establish": "The staff member's actual training, authority, motive or downstream action."
+    },
+    {
+      "key": "work-in-the-sentence",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_6388e1ec-09d7-4ed4-baa5-8d50ae9b2420",
+        "entity_kind": "Paragraph",
+        "line": 227,
+        "context_lines": [
+          215,
+          259
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 10973,
+          "end": 11040,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "The narrator describes effort and pauses that are not visible in the readable sentence.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-dignity",
+          "principle-patience"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [
+          "SOC-C134",
+          "SOC-C138",
+          "SOC-C142"
+        ],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        141,
+        30,
+        453
+      ],
+      "does_not_establish": "Measured hours, a dollar valuation, a general clinical effect or a present risk assessment."
+    },
+    {
+      "key": "unobserved-outcome",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_8a9b0a97-28c9-4e41-8f74-43b865bd2758",
+        "entity_kind": "Paragraph",
+        "line": 279,
+        "context_lines": [
+          263,
+          283
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 13174,
+          "end": 13216,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "The narrator preserves what he saw while leaving the ambulance outcome outside his observation.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-truthfulness"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        308,
+        65,
+        66
+      ],
+      "does_not_establish": "The passenger's outcome; an unknown outcome does not erase the narrated rescue actions."
+    },
+    {
+      "key": "fractional-stroke",
+      "consumer_issues": [
+        447,
+        448
+      ],
+      "narrative": {
+        "source": "baptism",
+        "inventory_source": "public-01",
+        "entity_id": "he_3c8d3f3e-985e-4c47-ae99-23c38ed8333c",
+        "entity_kind": "Paragraph",
+        "line": 393,
+        "context_lines": [
+          381,
+          435
+        ],
+        "relationship": "exact_source",
+        "scope": "Author-narrated account; source passage inspected, events not independently verified in this task.",
+        "source_span": {
+          "start": 17773,
+          "end": 17865,
+          "convention": "Existing editorial plan offsets; use its parser convention."
+        }
+      },
+      "selected_proposition": "The fractional stroke is an exact literary occurrence explained in the next paragraph as remembered movement.",
+      "atlas": {
+        "source": "atlas",
+        "principle_ids": [
+          "principle-truthfulness"
+        ],
+        "relationship": "context",
+        "limit": "Authorial ethical comparison; not event corroboration or doctrinal equivalence. Inherited u-* rendering targets are not materialized by this map."
+      },
+      "claim_targets": {
+        "source": "claims",
+        "ids": [],
+        "relationship": "context",
+        "limit": "Existing review questions; source does not thereby support a different event."
+      },
+      "review_issues": [
+        29,
+        399,
+        447
+      ],
+      "does_not_establish": "A definition of the requested 1/(2π) claim, a derivation or equivalence with a formal coordinate. Seven selected crossings are not seven derivative entries."
+    }
+  ],
+  "edges": [
+    {
+      "from": "transfer",
+      "to": "prepared-transfer",
+      "relationship": "context",
+      "locator": "Complete exported essay; discussion of what crossed the institutional boundary",
+      "contribution": "Separate authored transfer account supplies a related provenance and responsibility question.",
+      "does_not_establish": "Same event, shared actor, independent support for C08A, or new notice/receipt proof."
+    },
+    {
+      "from": "writing",
+      "to": "work-in-the-sentence",
+      "relationship": "context",
+      "locator": "Complete exported essay; communication and participation discussion",
+      "contribution": "Authorial account connects the ability to write with continued participation in a dated crisis.",
+      "does_not_establish": "General efficacy, current crisis state, measured typing cost or independent corroboration."
+    },
+    {
+      "from": "communication",
+      "to": "receive-the-report",
+      "relationship": "context",
+      "locator": "Complete exported essay; communication distinguished from agreement",
+      "contribution": "Preserves authorial distinction between a usable exchange and endorsement.",
+      "does_not_establish": "New medical finding, guaranteed safety or historical causal proof."
+    },
+    {
+      "from": "care_law",
+      "to": "receive-the-report",
+      "relationship": "context",
+      "locator": "HUEY-CARELAW-01 review row R25; C236,C237,C238,C239; owner #183",
+      "contribution": "Existing historical review separates clinical care questions and allegation routing.",
+      "does_not_establish": "Fresh examination of its original authorities, current legal applicability or performed routing."
+    },
+    {
+      "from": "cards",
+      "card_id": "ha_6366bcd2-47ca-4c4e-b6da-ab7be0730bed",
+      "to": "prepared-transfer",
+      "relationship": "context",
+      "contribution": "Separate documentary comparison distinguishes draft and workflow status from proved transmission or downstream action.",
+      "does_not_establish": "Corroboration of the C08A transfer, no response, no action or benefits outcome.",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "source_references": [
+        {
+          "evidence_id": "HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e",
+          "locator": "p5"
+        },
+        {
+          "evidence_id": "HUEY-EV-e65039d4-c98f-44f1-8fc8-631c5007071e",
+          "locator": "pp4,9–10"
+        }
+      ],
+      "existing_relationships": [
+        {
+          "target": "SOC-C002",
+          "locator": "p5",
+          "relationship": "limits",
+          "contribution": "Separates draft status from transmitted correspondence.",
+          "does_not_establish": "Sending or receipt."
+        },
+        {
+          "target": "SOC-C009",
+          "locator": "pp4,9–10",
+          "relationship": "limits",
+          "contribution": "Identifies which workflow stages and materials are absent.",
+          "does_not_establish": "No response, no action, no benefit approval or no payment."
+        }
+      ]
+    },
+    {
+      "from": "cards",
+      "card_id": "ha_321066f5-d9a6-4496-bae3-c03c579fe025",
+      "to": "separate-agency",
+      "relationship": "context",
+      "contribution": "A separate source-family comparison prevents counting representations as independent observations.",
+      "does_not_establish": "New witness to the wreck or identity between literary agents and document versions.",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "source_references": [
+        {
+          "evidence_id": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+          "locator": "complete object; p9 annotation"
+        },
+        {
+          "evidence_id": "HUEY-EV-2f86310b-400e-451a-b3b9-fdb860655402",
+          "locator": "complete object; all rendered pages"
+        },
+        {
+          "evidence_id": "HUEY-EV-445b7153-ac92-4383-9904-d90e4986991a",
+          "locator": "p1"
+        },
+        {
+          "evidence_id": "HUEY-EV-45e5b5ab-0fda-4b5c-9602-a45e2673aefe",
+          "locator": "p1"
+        }
+      ],
+      "existing_relationships": [
+        {
+          "target": "HUEY-EV-5e096ff4-798d-40b4-b333-62b3999349b6",
+          "locator": "other scan complete object and matching pages",
+          "relationship": "same_source_family",
+          "contribution": "Preserves the distinction between the earlier PDF and its incremental update.",
+          "does_not_establish": "Who edited it, why, authenticity or independent corroboration."
+        },
+        {
+          "target": "SOC-C005",
+          "locator": "scan versions and repeated laboratory-result exports",
+          "relationship": "limits",
+          "contribution": "Prevents repeated representations from being counted as independent observations.",
+          "does_not_establish": "Source truth or the completeness of the upstream record."
+        }
+      ]
+    },
+    {
+      "from": "cards",
+      "card_id": "ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+      "to": "prepared-transfer",
+      "relationship": "context",
+      "contribution": "Counterpressure for later descent: preserve an available attributed correction alongside the original printed value.",
+      "does_not_establish": "Amended radiology report, independent measurement, message authentication, or correction of every error.",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "source_references": [
+        {
+          "evidence_id": "HUEY-EV-b86a6fbc-1e4c-4e19-bf17-386c074fefd7",
+          "locator": "p1"
+        },
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "p8"
+        },
+        {
+          "evidence_id": "HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527",
+          "locator": "p1; reply displayed 2019-06-12 at 12:29 PM"
+        }
+      ],
+      "existing_relationships": [
+        {
+          "target": "SOC-C009",
+          "locator": "report p1; later letter p8; correspondence p1, 12:29 PM reply",
+          "relationship": "context",
+          "contribution": "Preserves the printed value, the author’s later account and the already-available attributed correction to 6 mm.",
+          "does_not_establish": "A formal amendment of the original radiology report, independent image measurement, message authenticity or clinical implications."
+        }
+      ]
+    },
+    {
+      "from": "cards",
+      "card_id": "ha_1b00960d-1e14-49ec-842a-398b12ff59db",
+      "to": "transfer",
+      "relationship": "unresolved",
+      "contribution": "Do not silently equate the January 22 record date and January 24 source/review-target date while constructing continuity.",
+      "does_not_establish": "Which account is accurate, one encounter rather than two, or two encounters rather than one.",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "source_references": [
+        {
+          "evidence_id": "HUEY-EV-4c1840d6-a559-4f20-9b43-4ec6bb84de00",
+          "locator": "p26"
+        },
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "pp4–5"
+        }
+      ],
+      "existing_relationships": [
+        {
+          "target": "https://github.com/grwtsk/huey/issues/200",
+          "locator": "source p26; later letter pp4–5",
+          "relationship": "unresolved",
+          "contribution": "Presents the attributed conflict over gait documentation. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+          "does_not_establish": "Which account is accurate, misconduct, causation or liability. Identity of the encounter across the differing dates is not established by the link."
+        },
+        {
+          "target": "https://github.com/grwtsk/huey/issues/201",
+          "locator": "source p26; later letter pp4–5",
+          "relationship": "unresolved",
+          "contribution": "Presents the attributed conflict over tandem walking and wall support. The proposed linkage retains the unresolved January 22 versus January 24 source/registry date conflict.",
+          "does_not_establish": "An independently established reconstruction of the encounter. Identity of the encounter across the differing dates is not established by the link."
+        }
+      ]
+    },
+    {
+      "from": "cards",
+      "card_id": "ha_3ab55f6a-63fb-4c54-b71f-b881cc728877",
+      "to": "receive-the-report",
+      "relationship": "context",
+      "contribution": "Separate methodological comparison: later modified quotations cannot acquire verbatim status; letter existence does not establish receipt.",
+      "does_not_establish": "A quotation or source-family finding about the C08A telephone passage; which date was intended in the letter, unchanged meaning independently checked, or delivery.",
+      "review_status": "assistant_source_and_disclosure_checked_human_editorial_review_pending",
+      "source_references": [
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "p15"
+        },
+        {
+          "evidence_id": "HUEY-EV-2ed31ea8-b7a8-4f08-8c24-c79a810b04a1",
+          "locator": "pp2,13"
+        }
+      ],
+      "existing_relationships": [
+        {
+          "target": "SOC-C002",
+          "locator": "p15",
+          "relationship": "limits",
+          "contribution": "Distinguishes later modified quotation from original source text.",
+          "does_not_establish": "Verbatim fidelity of the modified passages."
+        },
+        {
+          "target": "SOC-C004",
+          "locator": "pp2,13",
+          "relationship": "unresolved",
+          "contribution": "Preserves differing displayed dates.",
+          "does_not_establish": "Which date was intended or whether the letter was delivered."
+        }
+      ]
+    }
+  ],
+  "return_to_care": {
+    "source": "incidents",
+    "relationship": "unresolved",
+    "targets": [
+      {
+        "id": "SOC-I056",
+        "number": 56,
+        "issue": 249,
+        "function": "Pre-visit agenda and narrower routing of patient material"
+      },
+      {
+        "id": "SOC-I057",
+        "number": 57,
+        "issue": 250,
+        "function": "Advance participant identification and roles"
+      },
+      {
+        "id": "SOC-I073",
+        "number": 73,
+        "issue": 266,
+        "function": "Preparation actually performed"
+      }
+    ],
+    "proposed_chart_flag": "A proposed action only; no actual chart entry, receipt or implementation is asserted.",
+    "limit": "These targets remain distinct; shared practical purpose does not make their requests or completion evidence interchangeable."
+  },
+  "deferred": [
+    {
+      "source": "Public PR #122 at ff0499bd341de12a31b355b79867b547f19d9b16",
+      "scope": "R06–R13 later care-law/calculation/reference layers",
+      "status": "Not consumed or reconciled in this slice; staged CL05 is not completion of later layers."
+    },
+    {
+      "source": "Public PR #319 at 5e936adb132d22d8f0d5c41799591896535abd21",
+      "scope": "Alternative C08A and earlier-chapter proposals",
+      "status": "Not adopted; fresh crosswalk review required if canonical paragraph membership changes."
+    },
+    {
+      "source": "formal-research #219/#220/#223/#225",
+      "scope": "Literal jet, normalization and permitted formal handoff",
+      "status": "No formal result or private proof artifact exported in this slice."
+    },
+    {
+      "source": "neurology #133/#134/#139",
+      "scope": "Private source history and unresolved date/quotation joins",
+      "status": "Open obligations; existing public cards reused without new raw intake or a new handoff-completion claim."
+    }
+  ]
+}

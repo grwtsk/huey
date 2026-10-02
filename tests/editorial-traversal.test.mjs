@@ -22,36 +22,43 @@ const denyRead = (object, key) => Object.defineProperty(object, key, {
   configurable: true, enumerable: true, get() { throw new Error(`Forbidden read: ${key}`); },
 });
 
-test('all 74 persisted pages remain in their 60-page book and 14-page unplaced sequences', () => {
+test('all 178 persisted pages remain in their 164-page book and 14-page unplaced sequences', () => {
   assert.equal(payload.schema, 'huey.editorial-traversal.v1');
   assert.deepEqual(payload.readingOrder, assembly.readingOrder);
   assert.deepEqual(payload.unplacedOrder, assembly.workspace.unplacedPages);
-  assert.equal(payload.readingOrder.length, 60);
+  assert.equal(payload.readingOrder.length, 164);
   assert.equal(payload.unplacedOrder.length, 14);
-  assert.equal(payload.pages.length, 74);
+  assert.equal(payload.pages.length, 178);
   assert.deepEqual(payload.pages.map(page => page.id), [...payload.readingOrder, ...payload.unplacedOrder]);
   assert.ok(payload.unplacedOrder.every(id => !payload.readingOrder.includes(id)));
   assert.deepEqual(project(assembly), payload, 'derivation has no clock, allocator, or layout dependency');
   assert.deepEqual(loadTraversalPayload(), payload, 'loader selects the same checked inputs');
 });
 
-test('every known literary slot is visible, including all pending front matter at the beginning', () => {
+test('every known literary slot is visible, including mixed pending and staged front matter at the beginning', () => {
   const projectedSlots = new Set(payload.pages.flatMap(page => target(payload, page.id).slotIds));
-  assert.equal(projectedSlots.size, 45);
+  assert.equal(projectedSlots.size, 47);
   assert.deepEqual([...projectedSlots].sort(), assembly.inventory.slots.map(slot => slot.entityId).sort());
   assert.equal(payload.routes.entryPageId, payload.readingOrder[0]);
   assert.equal(payload.routes.entryPageId, assembly.frontMatter.entryPageId);
-  const front = payload.pages.slice(0, 15);
-  assert.deepEqual(front.map(page => page.label), assembly.frontMatter.matterUnits.map(unit => unit.label));
-  assert.ok(front.every(page => page.blocks.length === 0));
-  assert.ok(front.every(page => target(payload, page.id).unresolved));
-  assert.equal(payload.pages.filter(page => page.blocks.length === 0).length, 43);
+  const front = assembly.frontMatter.pages.map(row => payload.pages.find(page => page.id === row.pageId));
+  assert.equal(front.length, 20);
+  assert.deepEqual([...new Set(front.map(page => page.label))], assembly.frontMatter.matterUnits.map(unit => unit.label));
+  const materializedUnits = assembly.inventory.slots.filter(row => ['front-title', 'front-preface'].includes(row.key));
+  for (const page of front) {
+    const routeTarget = target(payload, page.id);
+    const materialized = materializedUnits.some(unit => routeTarget.slotIds.includes(unit.entityId));
+    assert.equal(page.blocks.length > 0, materialized);
+    assert.equal(routeTarget.unresolved, !materialized);
+  }
+  assert.equal(payload.readingOrder[front.length], assembly.frontMatter.firstBodyPageId);
+  assert.equal(payload.pages.filter(page => page.blocks.length === 0).length, 38);
 });
 
 test('available inscription keeps exact stable IDs, text, and member order', () => {
   const materialized = blocks(payload);
-  assert.equal(materialized.length, 481);
-  assert.equal(materialized.filter(block => block.kind === 'Paragraph').length, 471);
+  assert.equal(materialized.length, 2140);
+  assert.equal(materialized.filter(block => block.kind === 'Paragraph').length, 2067);
   assert.equal(new Set(materialized.map(block => block.id)).size, materialized.length);
   for (const page of payload.pages) {
     if (target(payload, page.id).access !== 'available') continue;

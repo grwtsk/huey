@@ -1,0 +1,71 @@
+{
+  "article": {
+    "id": "neurology-cannot-undo-the-harm",
+    "title": "Neurology Cannot Undo the Harm",
+    "author": "R.A. Jacob Martone",
+    "type": "article",
+    "visibility": "restricted",
+    "slug": "neurology-cannot-undo-the-harm",
+    "section": "essays",
+    "section_order": 9,
+    "published_at": "2026-09-14T23:50:37.848Z",
+    "updated_at": "2026-09-14T23:50:37.848Z",
+    "status": "published",
+    "toc": true,
+    "aliases": [],
+    "relations": []
+  },
+  "current": {
+    "documentDate": "2026-09-14",
+    "eventDate": null,
+    "source": {
+      "originalFilename": "neurology-cannot-undo-the-harm.txt",
+      "originalText": "“Neurology cannot undo the harm done in the pursuit of knowledge, but it can refuse to repeat it—by listening to its patients and making their dignity, rather than its authority, the measure of progress.”\n\n— R.A. Jacob Martone",
+      "metadata": {
+        "type": "author-authored quotation",
+        "author": "R.A. Jacob Martone",
+        "sourceNote": "Author-approved text supplied for the initial publication."
+      }
+    },
+    "category": "Essay",
+    "description": "A reflection on neurological care, trauma, and the enduring consequences of harm.",
+    "document": {
+      "units": [
+        {
+          "id": "u-001019",
+          "type": "blockquote",
+          "role": "featured",
+          "units": [
+            {
+              "id": "u-001020",
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "“Neurology cannot undo the harm done in the pursuit of knowledge, but it can refuse to repeat it—by listening to its patients and making their dignity, rather than its authority, the measure of progress.”"
+                }
+              ]
+            }
+          ],
+          "attribution": [
+            {
+              "id": "u-001021",
+              "type": "paragraph",
+              "role": "credit",
+              "content": [
+                {
+                  "type": "text",
+                  "value": "— R.A. Jacob Martone"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "assets": [],
+    "attachments": {
+      "units": []
+    }
+  }
+}

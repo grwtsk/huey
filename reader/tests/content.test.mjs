@@ -92,3 +92,30 @@ test('content compiler rejects changed chapter bytes and restricted locators', a
     await assert.rejects(compileBook(root,config),/Restricted source locator/);
   } finally { await rm(root,{recursive:true,force:true}); }
 });
+
+test('explicit admitted snapshot keeps old text/evidence while working source changes', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'huey-admitted-snapshot-'));
+  try {
+    const config = join(root, 'reader/content'); await mkdir(config, { recursive: true });
+    await mkdir(join(root, 'manuscript/01-preamble'), { recursive: true });
+    const raw = '# Example\n\nOriginal synthetic wording.\n';
+    const c = { id:'C01', label:'1', title:'Example', movement:'Preamble', status:'admitted', workIssue:'https://example.com/1', mappingIssue:'https://example.com/2', path:'manuscript/01-preamble/example.md', blob:gitBlob(raw), revision:'1'.repeat(40), admission:'https://example.com/original-approval' };
+    c.snapshotPath = `reader/content/admitted/${c.blob}.md`;
+    await mkdir(join(config, 'admitted')); await writeFile(join(root, c.snapshotPath), raw);
+    await writeFile(join(root, c.path), '# Example\n\nDifferent unreviewed working wording.\n');
+    const manifest = {schemaVersion:1,title:'Example',author:'Test',notice:'Synthetic fixture.',chapters:[c]};
+    await writeFile(join(config,'book.json'), JSON.stringify(manifest));
+    await writeFile(join(config,'evidence.json'), JSON.stringify({schemaVersion:1,sources:[],paragraphs:{}}));
+    const result = await compileBook(root, config);
+    assert.equal(result.chapters[0].blocks.find(b => b.type === 'paragraph').text, 'Original synthetic wording.');
+    assert.equal(result.chapters[0].admission, c.admission); assert.equal(result.chapters[0].revision, c.revision);
+    await writeFile(join(root, c.snapshotPath), raw.replace('Original', 'Tampered'));
+    await assert.rejects(compileBook(root, config), /changed/);
+    await rm(join(root, c.snapshotPath)); await assert.rejects(compileBook(root, config));
+    await writeFile(join(root, c.snapshotPath), raw);
+    for (const path of ['../escape.md', `reader/content/admitted/${'0'.repeat(40)}.md`, `${c.snapshotPath}/../other.md`]) {
+      await writeFile(join(config,'book.json'), JSON.stringify({...manifest, chapters:[{...c,snapshotPath:path}]}));
+      await assert.rejects(compileBook(root, config), /snapshot path/);
+    }
+  } finally { await rm(root, {recursive:true,force:true}); }
+});

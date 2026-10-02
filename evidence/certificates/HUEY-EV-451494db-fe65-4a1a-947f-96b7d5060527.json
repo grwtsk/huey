@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-451494db-fe65-4a1a-947f-96b7d5060527/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "1d4e968eb453fd90f323a30fc0dfe249505eda3dcb843e1b5403612716a1f971",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 2
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "SOC-C009",
+      "locator": "p1; reply displayed 2019-06-12 at 12:29 PM; analytical card ha_b3bcabe3-cf94-47db-9596-13b23a155b4c",
+      "relationship": "context",
+      "contribution": "Source attributes: The portal thread attributes a reply to a nurse practitioner acknowledging a typographical error in the radiology report and stating that it should be 6 mm. Joint comparison: Preserves the printed value, the author’s later account and the already-available attributed correction to 6 mm.",
+      "does_not_establish": "A formal amendment of the original radiology report, independent image measurement, message authenticity or clinical implications."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-23T11:22:59.311836Z",
+  "public_exposure_basis": "UNKNOWN"
+}

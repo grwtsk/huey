@@ -9,6 +9,34 @@ Keeping the traversal read-only avoids discarding unsaved local edits when chang
 pages. The [#352 adapter](../routes/paragraphs.md) adds paragraph focus/permalink
 runtime; #364 owns editor migration.
 
+## Author-requested usable navigation — 2026-10-01
+
+The author's direct request to navigate through the book supersedes the earlier
+absence of persistent navigation controls. Both reading surfaces now have a small
+Previous / Contents / Next control. Contents searches existing public titles and
+working route locators, groups front matter, book, back matter and unplaced
+material, and offers a native ReadingPage number jump in the editorial build.
+It includes every known slot, with access/materialization status and no prose
+previews. Unavailable pages remain in sequence; unplaced pages have separate
+numbers and boundaries. Browser Back/Forward retains the existing route behavior.
+
+In the admitted view, exact reconciled C08A page jumps use existing source-bound
+hash routes without rebuilding the editable DOM. Contents links to other working
+sections enter their existing editorial routes. The working-book handoff binds
+the visible source paragraph's exact entity/version, only after validating the
+requested legacy chapter/blob/ordinal and current membership. Missing or stale
+addresses offer only a general book entry, without claiming a paragraph match.
+Unsaved local text or formatting anywhere in the editable root keeps its original
+tab; working-book navigation opens separately. Refresh/leaving protection uses
+the browser's native unsaved-change guard. This is protection for in-memory drafts,
+not durable draft storage or manuscript application.
+
+The current selected projection has 164 ordered and 14 unplaced ReadingPages,
+covering 47 slots. These are working reading units, not final print pagination or
+a claim that all book prose is present. The earlier coverage below is historical.
+The opt-in [private Grwtsk editor](../grwtsk-editor.md) remains a separate editing
+layer on the editorial surface; this change grants no new materialization.
+
 ## Selected order and content
 
 `createTraversal({routes, readingOrder, unplacedOrder})` snapshots checked route
@@ -36,7 +64,7 @@ candidate/support prose and source fingerprints are not copied. Metadata checks
 are not authenticated permissions. The existing source loader and recorded scope
 remain responsible for what can enter the authorized assembly.
 
-Current coverage is 60 book pages (15 front), 14 unplaced pages, 45 slots and 481
+Coverage at the original #351 delivery was 60 book pages (15 front), 14 unplaced pages, 45 slots and 481
 materialized blocks, including 471 Paragraphs. Forty-three pages have no materialized
 blocks. The available selected text is the current public C08A and unplaced chapter;
 public alternative candidates remain references upstream. Partial chapter slots
@@ -68,7 +96,7 @@ pagination, source admission or manuscript acceptance follows from navigation.
   selected current snapshot. Missing exact page versions display no prose.
 - No navigation creates an EditorialOperation, storage write, Git effect or grant.
 
-The new view has no fixed title, chapter rail or transport toolbar. The existing
+The original view had no fixed title, chapter rail or transport toolbar. The existing
 editable admitted view keeps its seven primary controls. A small in-flow context
 link explicitly enters Unplaced; book traversal never enters it automatically.
 A skip link, named navigation landmarks, visible focus, heading focus and polite
@@ -121,6 +149,7 @@ npm run preview            # serve that bundle at http://127.0.0.1:4173/huey
 npm test
 npm run test:traversal
 HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 python3 reader/tests/traversal_browser_test.py
+HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 python3 reader/tests/navigation_browser_test.py
 ```
 
 The browser check requires Playwright 1.58.0 and its Chromium installation. It runs

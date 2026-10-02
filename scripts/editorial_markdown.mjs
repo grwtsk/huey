@@ -65,7 +65,15 @@ function inline(raw, source) {
     let innerEnd;
     let type;
     let url;
-    if (char === '*' || char === '`') {
+    if (raw.startsWith('\\(', cursor)) {
+      innerStart = cursor + 2;
+      innerEnd = raw.indexOf('\\)', innerStart);
+      if (innerEnd < 0) fail('UNSUPPORTED_INLINE', line);
+      const content = raw.slice(innerStart, innerEnd);
+      if (!content || /[\r\n]/.test(content)) fail('UNSUPPORTED_INLINE', line);
+      type = 'latex-inline';
+      end = innerEnd + 2;
+    } else if (char === '*' || char === '`') {
       const delimiter = char === '*' && raw[cursor + 1] === '*' ? '**' : char;
       if (raw[cursor + delimiter.length] === char) fail('UNSUPPORTED_INLINE', line);
       innerStart = cursor + delimiter.length;
@@ -125,6 +133,7 @@ export function parseEditorialMarkdown(text) {
     let format;
     if (chunk.length === 1 && heading(raw)) format = 'markdown-heading';
     else if (chunk.length === 1 && thematic(raw)) format = 'markdown-thematic-break';
+    else if (chunk[0].text.trim() === '\\[' && chunk.at(-1).text.trim() === '\\]') format = 'latex-display';
     else if (/^ {0,3}<!--(?:[^-]|-(?!->))*-->[ \t]*$/.test(raw)) format = 'markdown-comment';
     if (format) {
       blocks.push({ kind: 'Block', state: { format, text: raw }, source });

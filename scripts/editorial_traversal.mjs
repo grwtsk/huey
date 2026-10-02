@@ -9,7 +9,7 @@ const BINDINGS = 'planning/routes/bindings.json';
 const OUTPUT = 'reader/generated-editorial/data/traversal.json';
 const STRUCTURE = new Set(['Work', 'FrontMatter', 'Body', 'BackMatter', 'MatterUnit',
   'Movement', 'Chapter', 'ChapterPart', 'Section']);
-const FORMATS = new Set(['markdown-heading', 'markdown-thematic-break', 'markdown-comment']);
+const FORMATS = new Set(['markdown-heading', 'markdown-thematic-break', 'markdown-comment', 'latex-display']);
 const requireThat = (condition, message) => { if (!condition) throw new Error(`EDITORIAL_TRAVERSAL: ${message}`); };
 
 /**

@@ -1,11 +1,11 @@
-# Huey: how to make skin color.
+# Huey
 
 > [!WARNING]
 > **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This repository includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. Inclusion, a citation, a commit, an issue closure or a passing software test does not independently verify a claim. Some received medical assertions are unsupported or superseded. This is not a clinical guideline, medical or legal advice, or an adjudicated finding. Read the linked verification issues for evidence, limitations, counterevidence and corrections. Public-copy approval is not factual endorsement or acceptance of a finished edition.
 
 R.A. Jacob Martone
 
-**Public-copy approval is recorded; do not ask again.** The author expressly approved the specified standard-of-care discussion, atlas and essay collection in [issue #2's decision receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544). [Program #125](https://github.com/grwtsk/huey/issues/125), [transfer #126](https://github.com/grwtsk/huey/issues/126), [corpus audit #145](https://github.com/grwtsk/huey/issues/145), and [substantial-support queue #176](https://github.com/grwtsk/huey/issues/176) distinguish source copying from factual review. Browse the [approved working corpus on the existing development branch](https://github.com/grwtsk/huey/tree/writing/55-development-r01/sources/standard-of-care) and [PR #122](https://github.com/grwtsk/huey/pull/122). Raw clinical PDFs/records and unrelated private material remain excluded. The live Reader gate and the book's protected ending are unchanged.
+**Public-copy approval is recorded; do not ask again.** The author expressly approved the specified standard-of-care discussion, atlas and essay collection in [issue #2's decision receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544). [Program #125](https://github.com/grwtsk/huey/issues/125), [transfer #126](https://github.com/grwtsk/huey/issues/126), [corpus audit #145](https://github.com/grwtsk/huey/issues/145), and [substantial-support queue #176](https://github.com/grwtsk/huey/issues/176) distinguish source copying from factual review. Browse the [authorized core corpus in staging](sources/standard-of-care/README.md), its [claim apparatus](planning/standard-of-care/README.md), the [core consolidation record](planning/consolidation/soc-core.md), and the [ancillary source/review pair](planning/consolidation/soc-ancillary.md). The [authority/Q03](planning/consolidation/soc-authority.md), [incident/departure](planning/consolidation/soc-incident.md) and [initial care-law source/review core](planning/consolidation/soc-care-law.md) are separately staged with exact provenance and unresolved review states. The [CL03](planning/consolidation/soc-cl03.md), [CL04](planning/consolidation/soc-cl04.md) and [CL05 public integration apparatus](planning/consolidation/soc-cl05.md) are also staged; their private manuscript packets are not imported or revalidated. CL05 preserves separate changed/retained indexes and the unresolved original-source lineage under #50. Later CL06–CL13 integration/reference layers remain on draft [PR #122](https://github.com/grwtsk/huey/pull/122). Raw clinical PDFs/records and unrelated private material remain excluded. The live Reader gate and the book's protected ending are unchanged.
 
 Every new relevant commit must include: **Disclaimer: Working draft; claim verification incomplete; not medical/legal advice or adjudicated findings.** Do not rewrite old commit history to backdate this requirement. Earlier infrastructure descriptions below apply outside the explicitly approved corpus; they do not reopen this permission decision.
 
@@ -18,6 +18,17 @@ Work branches → [`pre-release`](https://github.com/grwtsk/huey/tree/pre-releas
 The [promotion policy](planning/pre-release.md) and [review-record template](planning/pre-release-review.template.md) require claim-to-source tracking, a recorded disposition for contrary evidence and material uncertainty, appropriate response opportunities, disclosure checks and actual human editorial clearance of the exact proposed content. Uncleared material stays staged; a passing software check is not an evidence verdict.
 
 **Both branches are public.** Existing source-disclosure restrictions still apply. Content already on `main`, including the previously checked-in chapter, retains its existing status and is not retrospectively certified. This setup adds a manual editorial gate; server-side required-review enforcement remains [administration task #311](https://github.com/grwtsk/huey/issues/311). No automatic merge, replication or publication workflow is enabled. Setup is tracked in [#310](https://github.com/grwtsk/huey/issues/310).
+
+## Branch consolidation and evidence intake
+
+The [staging consolidation register](planning/consolidation/README.md) preserves
+public historical branch records, identifies unmerged corpus work and notes the
+existing claim/evidence references. Historical progress is not current prose or
+acceptance. The [evidence-intake protocol](planning/evidence-intake/README.md) and
+[vault handoff](planning/consolidation/vault-handoff.md) provide a tested boundary
+for reviewed public certificates from private capture. Raw restricted evidence
+stays in the vault. New evidence still needs source, claim and contrary-material
+review before any promotion; no background watch or live service is implied.
 
 ## Literary entity model
 
@@ -35,8 +46,8 @@ the output and no private source is retrieved.
 
 The [initial editorial ReadingPage assembly](planning/editorial-pages/README.md)
 adds a persisted sequence for every known slot and separate unplaced pages. Its
-bounded compiler materializes the two current working manuscript sources; other
-candidate/support sources remain explicit references. `npm run test:pages` checks
+bounded compiler materializes the five current canonical/unplaced working manuscript sources;
+other candidate/support sources remain explicit references. `npm run test:pages` checks
 the parser, identity sidecar and assembly on a Unicode-17 runtime. Generated page
 output may contain authorized public prose and remains derived from Markdown.
 The existing served reader is unchanged.
@@ -64,6 +75,14 @@ required-review protection or supply human editorial clearance.
 ## Middle-book chapter
 
 [Baptism in the Color of Rain](manuscript/02-interlude/baptism-in-the-color-of-rain.md) is checked in at the author's explicit direction, with only the first `netch` changed to `netch asheba`. The [working contents](manuscript/README.md) place this added chapter in the Interlude, between *The Ring of Umber* and *The Possibility of a Feather*. [Check-in #308](https://github.com/grwtsk/huey/issues/308) and the [placement record](planning/writing/baptism-in-the-color-of-rain.json) record this chapter-specific public-copy scope. Other private manuscript and raw clinical records remain outside this grant; the broader development and release work remain separate.
+
+## Late-Interlude chapters
+
+[On the Eve of the Last su[p, p′, p″, p‴, …]er](manuscript/02-interlude/14a-on-the-eve-of-the-last-super.md) and [Orange After the End](manuscript/02-interlude/14b-orange-after-the-end.md) are staged public working chapters under the author's explicit [#378](https://github.com/grwtsk/huey/issues/378) instruction. They are placed after C14 and before C15 so the protected C15 → movement break → Edna close remains unchanged. Their check-in is not evidence clearance, reader admission, promotion to `main`, or finished-edition release.
+
+## Closing excursion reveal
+
+The active book title is **Huey**. Under [#380](https://github.com/grwtsk/huey/issues/380), the exact classroom question is reserved for its single authorized occurrence inside the final Edna excursion. Earlier prose and metadata may foreshadow it only indirectly; the surrounding supplied excursion remains protected and is not reconstructed by this staging change.
 
 ## Source catalog and coverage
 

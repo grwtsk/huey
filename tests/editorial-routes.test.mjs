@@ -25,11 +25,13 @@ const denyRead = (object, key) => Object.defineProperty(object, key, {
 
 test('all existing literary and page IDs remain addressable without allocation', () => {
   const expected = [...assembly.entityRecords, ...assembly.unmaterializedEntities].map(row => row.id).sort();
-  assert.equal(expected.length, 607);
+  // The explicit #441 migration adds 225 blocks and 13 pages to the retained
+  // baseline; route projection itself allocates no identities.
+  assert.equal(expected.length, 2134 + 225 + 13);
   assert.deepEqual(catalog.targets.map(row => row.id).sort(), expected);
-  assert.equal(catalog.slots.length, 45);
-  assert.equal(catalog.targets.filter(row => row.kind === 'ReadingPage').length, 74);
-  assert.equal(catalog.targets.filter(row => row.kind === 'Paragraph').length, 471);
+  assert.equal(catalog.slots.length, 47);
+  assert.equal(catalog.targets.filter(row => row.kind === 'ReadingPage').length, 165 + 13);
+  assert.equal(catalog.targets.filter(row => row.kind === 'Paragraph').length, 1860 + 207);
   assert.deepEqual(project(assembly), catalog, 'derivation is deterministic');
 });
 
@@ -47,17 +49,41 @@ test('/huey selects the pending first page without skipping to admitted prose', 
   assert.notEqual(result.entityId, paragraphPage.id);
 });
 
-test('all fifteen front-matter units and their page aliases survive pending access', () => {
+test('all fifteen front-matter units and their page aliases survive mixed pending and staged presence', () => {
   const slots = catalog.slots.filter(row => row.group === 'front');
+  const present = new Map([
+    ['front-title', { materialization: 'full', status: 'resolved', pages: 1 }],
+    ['front-preface', { materialization: 'full', status: 'resolved', pages: 6 }],
+    ['front-author-source-note', { materialization: 'partial', status: 'unresolved', pages: 1 }],
+    ['front-content-advisory', { materialization: 'partial', status: 'unresolved', pages: 1 }],
+  ]);
+  const firstBodyIndex = assembly.readingOrder.indexOf(assembly.frontMatter.firstBodyPageId);
+  const frontPages = assembly.readingOrder.slice(0, firstBodyIndex);
   assert.equal(slots.length, 15);
+  assert.equal(firstBodyIndex, 15 + 5, 'the preface adds five front pages without adding MatterUnits');
+  assert.deepEqual(frontPages, assembly.frontMatter.pages.map(page => page.pageId));
   assert.deepEqual(slots.map(row => row.id), assembly.frontMatter.matterUnits.map(row => row.entityId));
   for (const slot of slots) {
+    const inventorySlot = assembly.inventory.slots.find(row => row.entityId === slot.id);
+    const expected = present.get(inventorySlot.key);
     const item = target(catalog, slot.id);
     assert.equal(item.kind, 'MatterUnit');
-    assert.equal(slot.presence, 'pending');
-    assert.equal(item.pageIds.length, 1);
-    assert.ok(assembly.readingOrder.slice(0, 15).includes(item.pageIds[0]));
-    assert.equal(resolveRouteAddress(route(item), catalog).entityId, slot.id);
+    assert.equal(slot.presence, expected ? 'present' : 'pending');
+    assert.equal(slot.editorialMaterialization, expected?.materialization ?? 'placeholder');
+    assert.equal(slot.observedReaderAdmission, 'not-listed');
+    assert.equal(item.unresolved, expected?.status !== 'resolved', `${inventorySlot.key} resolution state`);
+    assert.equal(item.pageIds.length, expected?.pages ?? 1);
+    assert.deepEqual(item.pageIds, assembly.frontMatter.pages
+      .filter(page => page.matterUnitIds.includes(slot.id)).map(page => page.pageId));
+    assert.ok(item.pageIds.every(id => frontPages.includes(id)));
+    const result = resolveRouteAddress(route(item), catalog);
+    assert.equal(result.entityId, slot.id);
+    assert.equal(result.status, expected?.status ?? 'unavailable');
+    const pageAlias = `/huey/page/${inventorySlot.key}`;
+    assert.equal(resolveRouteAddress(pageAlias, catalog).entityId, item.pageIds[0]);
+    for (const pageId of item.pageIds) {
+      assert.equal(resolveRouteAddress(route(target(catalog, pageId)), catalog).status, expected?.status ?? 'unavailable');
+    }
   }
 });
 
@@ -118,8 +144,15 @@ test('labels, paths, and explicit reading order changes cannot regenerate aliase
     slot.label = 'Synthetic renamed title';
     slot.canonicalPath = 'manuscript/synthetic-renamed.md';
   }
-  // Keep the entry fixed while swapping two pages already in the Body segment.
-  [changed.readingOrder[15], changed.readingOrder[16]] = [changed.readingOrder[16], changed.readingOrder[15]];
+  // Keep both entry and first Body page fixed while swapping later Body pages.
+  const bodyStart = changed.readingOrder.indexOf(changed.frontMatter.firstBodyPageId);
+  assert.ok(bodyStart > 0);
+  const first = bodyStart + 1, second = bodyStart + 2;
+  for (const index of [first, second]) {
+    assert.ok(target(catalog, changed.readingOrder[index]).slotIds.every(id =>
+      catalog.slots.find(slot => slot.id === id).group === 'book'));
+  }
+  [changed.readingOrder[first], changed.readingOrder[second]] = [changed.readingOrder[second], changed.readingOrder[first]];
   const after = project(changed);
   assert.deepEqual(after.aliases, catalog.aliases);
   assert.deepEqual(after.targets.map(row => row.id), catalog.targets.map(row => row.id));

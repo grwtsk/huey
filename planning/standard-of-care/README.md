@@ -1,0 +1,200 @@
+# Standards, care burden and trust — staged claim apparatus
+
+> [!WARNING]
+> **WORKING DRAFT — CLAIM VERIFICATION INCOMPLETE.** This material includes attributed testimony, allegations, hypotheses, normative arguments and AI-assisted drafts. A citation, commit, issue closure or passing software test is not independent verification. Received medical assertions and subsequent assistant corrections may contain errors. This is not a clinical guideline, medical/legal advice or an adjudicated finding. Permission to copy working sources is not factual endorsement or acceptance of a finished edition.
+
+## CL05 public integration apparatus — #433
+
+The [CL05 consolidation](../consolidation/soc-cl05.md) adds four unchanged public
+files: the [historical receipt](care-law/integration-r05.md), separate
+[78-row changed](care-law/integration-r05.tsv) and
+[189-row retained](care-law/integration-r05-retained.tsv) indexes, and archived
+private-packet checker. Eleven edit groups, 44 retained paragraph groups, eleven
+source aliases and 51 C IDs preserve historical relationships, not current prose
+integration or source support. Chapter/paragraph coordinates remain working locators.
+
+R089–R092/P023 preserve their original-source lineage gap under #50 with source B
+only. Other retained review labels do not supply human clearance. The public
+wrapper checks fixed bytes and both indexes without running the private checker
+or its twenty-two historical mutations. #50/#186/#145/#176 and source owners stay
+open. All six prior slice manifests remain unchanged; CL05 extends navigation
+lineage. Later CL06–CL13 work remains separate.
+
+## CL04 public integration receipt — #431
+
+The [CL04 consolidation](../consolidation/soc-cl04.md) adds exactly three unchanged
+public files: the [historical receipt](care-law/integration-r04.md), its
+[117-unit index](care-law/integration-r04.tsv) and archived private-packet checker.
+Sixteen edit groups retain their chapter coordinates, six index owners, twelve
+source aliases and 62 distinct C IDs. These references preserve historical work;
+they do not apply prose to the current manuscript or establish source support.
+
+The public wrapper checks fixed bytes and the seven-column TSV. It never imports
+or executes the archived checker or reads its private CL04/CL03 packets. The
+original eighteen mutation results and source reads remain dated. Derivative,
+abstract/excerpt and reproduced-instruction limits remain explicit; #186/#145/#176
+and source owners stay open. CL03's manifest is unchanged historical provenance;
+CL04 extends navigation lineage. Later CL05–CL13 work remains separate.
+
+## CL03 public integration receipt — #429
+
+The [CL03 consolidation](../consolidation/soc-cl03.md) adds exactly three public
+files: the [historical receipt](care-law/integration-r03.md), its
+[109-unit index](care-law/integration-r03.tsv) and the original private-packet
+checker. Eleven edit groups, 13 source aliases and 65 distinct recovered C IDs
+remain linked to their original Huey owners. These are historical relationships,
+not new manuscript edits, source retrieval or verified findings.
+
+The new public checker validates the fixed copy and TSV without importing or
+running the private-packet checker. CL03's original twelve mutation tests and
+source checks remain dated receipts. Exact private manuscript comparison and
+current application remain #186; chapter coordinates remain mutable under #404.
+Later CL04–CL13 work is separate. The care-law core manifest stays unchanged;
+the new receipt extends its navigation lineage.
+
+## Recovered care-law core — #427
+
+The [care-law consolidation](../consolidation/soc-care-law.md) preserves the
+original eight-file [recovery packet](care-law/README.md): 256 prose units in
+`HUEY-CARELAW-01`, 41 source records, 34 review schedules, ten before/after edits
+and 17 candidate section joins. These counts describe different kinds of record;
+they are not a total of verified facts or additions to the SOC/ANC/Q03/incident
+counts. Sources, contrary material, questions and incomplete review remain linked.
+
+The packet's inspection labels, test statements and operational directions are
+historical. Current staging policy governs this bounded copy; #122 remains draft.
+Its initial `candidate-joins-not-applied` map does not deny the later private
+integration work recorded in #186. Those later receipts remain a separate slice,
+and #404 governs today's mutable chapter projections. Nothing here applies prose,
+creates a ReadingPage or provides manuscript acceptance. #178–#187/#145/#176
+retain their remaining review work. The exact incident manifest remains unchanged;
+the new care-law receipt extends its navigation lineage.
+
+## Incident/departure consolidation — #425
+
+The [SOC-I01 apparatus](../consolidation/soc-incident.md) preserves nine exact
+files and [112 individually addressable entries](incident-register/index.md):
+43 reported departures, 40 unresolved safeguards, 14 investigative questions,
+10 clinical review questions and five context/consequence entries. These are
+different kinds of entry, not 112 independent encounters, proved breaches or
+charges. Original reports remain recorded while evidence review stays open.
+
+The index retains SOC-I001–112 and links to the detailed issues #194–305. Its
+21 source aliases locate documentary context; they neither admit new evidence
+nor allocate literary EntityIDs. The original source-reading and test statements
+remain dated receipts. #193/#306/#307 and the individual issues retain their
+remaining work. For new evidence, use the current [intake protocol](../evidence-intake/README.md)
+and [vault handoff](../consolidation/vault-handoff.md), not the historical intake
+note as a claim that collection has begun. No raw private source is copied here.
+
+## Authority-register consolidation — #423
+
+The [SOC-Q03 source/review pair](../consolidation/soc-authority.md) adds the exact
+twelve-entry [authority register](../../sources/standard-of-care/neurology-current/content/authority-quotes.json)
+and its [historical review](authority-q03/README.md). The register's `verified_at`
+fields remain source assertions. Its earlier nine retrieved-text matches, two
+indexed-excerpt results and one unverified edition are dated research receipts,
+not fresh checks or clearance. #192 retains the remaining source-specific review.
+
+The 271 scalar-field locations, 89 field-level support targets, 68 unreviewed
+conceptual references and 14 separately stated propositions have different
+denominators. They are not a total of proved events or breaches. The twelve-unit
+argument remains a candidate with no new chapter or ReadingPage assignment.
+The recorded #423 navigation transition retains the exact prior #421 state;
+#425 extends it without rewriting either historical manifest. Imported source,
+review and prior consolidation receipts remain unchanged.
+
+## Ancillary consolidation — #421
+
+The [ancillary source/review pair](../consolidation/soc-ancillary.md) now adds
+five source JSON records and the unchanged [SOC-T02 review](ancillary-r02/README.md).
+Its 70 `ANC-C` claims, 16 substantial-support flags, 59 source nodes and 24 exact
+leaf dispositions supplement the 188 core targets without renumbering or merging
+the namespaces. Scalar occurrences are JSON locations, not independent witnesses
+or new Huey literary EntityIDs. Media and source-status review remain #189/#190;
+the argument draft remains proposed under #191, with no fixed chapter assignment.
+
+SOC-T02's `checks.json`, source comparisons and three-file remainder are historical
+receipts. Q03 is now separately staged under #423 as described above.
+Current commands, copy checks and limitations are in each consolidation record.
+The existing core index below describes #406's original scope; its source/review
+claims are not retrospectively certified by this addition.
+
+## Scoped source copying and staging
+
+The author approved public copies of the specified discussion, Atlas and essay
+collection. [AUTHORIZATION.md](AUTHORIZATION.md), [approval.json](approval.json)
+and [#2's receipt](https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544)
+retain the exact scope and instruction. These are recorded permission context,
+not authenticated runtime Instruction/Grant objects. No new permission question
+is needed for this same scope. Raw clinical records and unrelated private material
+remain excluded; evidence review and finished-edition decisions stay separate.
+
+The [core source index](../../sources/standard-of-care/README.md) now provides the
+twelve text exports, three context artifacts and normalized Atlas in staging.
+[#406](https://github.com/grwtsk/huey/issues/406) and the
+[consolidation record](../consolidation/soc-core.md) identify exact source pins,
+selected paths, adapted navigation and deferred layers. Source bytes and claim
+rows remain those of public PR #122 at
+`ff0499bd341de12a31b355b79867b547f19d9b16`. The whole development PR remains draft;
+later CL06–CL13 integration/reference work remains outside these consolidations.
+The ancillary, authority, incident, initial care-law, CL03, CL04 and CL05 additions
+are explicit and separately pinned under #421/#423/#425/#427/#429/#431/#433.
+
+## Claim and argument coverage
+
+[registry.json](registry.json) links **30 argument issues (#146–#175)** to **19
+initial verification issues (#127–#145)**. [claims.tsv](claims.tsv) names **188
+initial targets**, each with its existing issue and support level. **111 require
+substantial support**, coordinated under [#176](https://github.com/grwtsk/huey/issues/176).
+[support-policy.json](support-policy.json) defines these review categories.
+
+The register is an initial topic decomposition, not a sentence-level source map.
+A count, valid issue link or named support level is not a finding. A substantial
+flag does not make a proposition false; an unflagged proposition is not thereby
+true. First-person experience remains attributable testimony. Normative arguments
+and metaphors need reasoning/provenance review, not invented empirical proof.
+
+Every additional material proposition discovered needs a stable child ID, exact
+source/version/locator, speaker and proposition type, covering verification issue,
+supporting and contrary material, contextual limits and next action. Split compound
+targets before factual clearance. [#145](https://github.com/grwtsk/huey/issues/145)
+and [#176](https://github.com/grwtsk/huey/issues/176) remain open. Link new evidence
+through the [existing intake protocol](../evidence-intake/README.md); a deposited
+item or public certificate does not mark a claim verified or update reader evidence
+automatically (#307/#314).
+
+The original registry's `source_permission_issue: 2` identifies the recorded scope.
+It is not a current blocker for SOC-PUBLIC-01. C180's historical restricted-manifest
+reference concerns version identity; the grant permits this specified public
+manifest. Private clinical-record locators remain excluded. The checkers validate
+that these recorded assertions remain internally consistent; they do not
+independently authenticate the author instruction or permission.
+
+## Reproduction and historical receipts
+
+```sh
+python3 planning/standard-of-care/check_registry.py
+python3 planning/standard-of-care/check_support.py --message-file .gitmessage
+python3 -m unittest discover -s planning/standard-of-care -p 'test_*.py' -v
+python3 scripts/soc_consolidation.py
+```
+
+Every new relevant commit must include the exact trailer in [.gitmessage](../../.gitmessage)
+and [DISCLAIMER.md](DISCLAIMER.md). The [claim issue template](../../.github/ISSUE_TEMPLATE/claim-verification.md)
+retains source/counterevidence requirements. No local Git configuration or hook is
+installed by adding the template. Hosted checks execute these consistency checks;
+a green result is not substantive clearance or human review.
+
+The original planning README reported 24 local tests in an earlier partial
+workspace, and prior Atlas reconstruction/hash checks. Those are **historical
+receipts**, available at the [pinned original README](https://github.com/grwtsk/huey/blob/ff0499bd341de12a31b355b79867b547f19d9b16/planning/standard-of-care/README.md).
+Current commands, tested candidate and actual results are recorded in this
+consolidation PR. Matching the public exports to PR #122 does not repeat their
+original extraction or compare them to inaccessible original source JSON.
+
+Current RF-01, title/PR-01, Human–System direction and working chapter projections
+govern later adaptation. Do not turn source testimony into a new blanket framing,
+freeze candidate chapter joins as final identity, or replace an original source
+with a preferred synthesis. No manuscript acceptance, evidence clearance, main
+promotion, deployment or release follows from this staging consolidation.

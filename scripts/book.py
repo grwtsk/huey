@@ -61,19 +61,24 @@ def validate(manifest: dict | None = None) -> list[str]:
     if source_root.resolve() != (ROOT / "manuscript").resolve():
         errors.append("canonical_source_root must be manuscript")
 
-    target = manifest.get("word_target", {})
-    if target.get("min") != 80000 or target.get("max") != 114000:
-        errors.append("narrative word target must remain 80,000-114,000")
+    horizon = manifest.get("word_horizon", {})
+    if horizon.get("approximate_words") != 120000:
+        errors.append("narrative word horizon must remain approximately 120,000 unless author direction changes it")
+    if horizon.get("binding") is not False:
+        errors.append("narrative word horizon must remain nonbinding")
 
-    movement = target.get("movement_envelopes", {})
-    minimum = sum(int(movement.get(name, {}).get("min", 0)) for name in ("preamble", "interlude", "excursion"))
-    maximum = sum(int(movement.get(name, {}).get("max", 0)) for name in ("preamble", "interlude", "excursion"))
-    if minimum != target.get("min") or maximum != target.get("max"):
-        errors.append("movement envelopes must sum to the overall word target")
-
-    excursion = movement.get("excursion", {})
-    if excursion.get("min") != 600 or excursion.get("max") != 600:
-        errors.append("the supplied short excursion must not be expanded to satisfy the word target")
+    composition = manifest.get("composition_policy", {})
+    if composition.get("mode") != "world_first_flow_then_argument_cuts":
+        errors.append("composition mode must remain world-first flow then argument cuts")
+    if composition.get("chapter_order_status") != "working_projection_not_final":
+        errors.append("chapter order must be marked as a working projection")
+    if composition.get("chapter_title_status") != "working_projection_not_final":
+        errors.append("chapter titles must be marked as working projections")
+    flow_root = ROOT / composition.get("flow_root", "")
+    if flow_root.resolve() != (ROOT / "manuscript" / "flow").resolve():
+        errors.append("flow_root must be manuscript/flow")
+    if not flow_root.exists():
+        errors.append("manuscript/flow must exist")
 
     ids: set[str] = set()
     paths: set[str] = set()
@@ -86,6 +91,12 @@ def validate(manifest: dict | None = None) -> list[str]:
         if rel in paths:
             errors.append(f"duplicate item path: {rel}")
         paths.add(rel)
+
+        if item.get("order_status") != "working_projection_not_final":
+            errors.append(f"{item_id}: order must be marked as a working projection")
+        title_status = item.get("title_status", "")
+        if "working" not in title_status or "final" not in title_status:
+            errors.append(f"{item_id}: title must be explicitly marked as working/not final")
 
         path = ROOT / rel
         if path.suffix.lower() != ".md":
@@ -152,8 +163,11 @@ def count_report(manifest: dict | None = None) -> dict:
         items.append({"id": item["id"], "words": count, "path": item["path"]})
 
     return {
-        "scope": manifest["word_target"]["scope"],
-        "target": {"min": manifest["word_target"]["min"], "max": manifest["word_target"]["max"]},
+        "scope": manifest["word_horizon"]["scope"],
+        "horizon": {
+            "approximate_words": manifest["word_horizon"]["approximate_words"],
+            "binding": manifest["word_horizon"]["binding"],
+        },
         "included_words": total,
         "by_movement": by_movement,
         "items": items,
@@ -182,6 +196,8 @@ def main() -> int:
                         item["id"],
                         item["movement"],
                         item["status"],
+                        item["order_status"],
+                        item["title_status"],
                         "include" if item["include"] else "hold",
                         item["path"],
                     )

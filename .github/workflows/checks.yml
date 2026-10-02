@@ -78,6 +78,16 @@ jobs:
           git fetch --no-tags https://github.com/grwtsk/huey.git \
             5e936adb132d22d8f0d5c41799591896535abd21 \
             ff0499bd341de12a31b355b79867b547f19d9b16
+      - name: Private chat workspace synthetic tests
+        run: npm run test:chat
+      - name: Private draft-checkpoint contract and transactions (synthetic only)
+        run: npm run test:drafts
+      - name: Install exact existing reconciliation contracts outside the checkout
+        run: npm run contracts:install -- "$RUNNER_TEMP/huey-chat-contracts"
+      - name: Source handoff against existing upstream contracts
+        env:
+          HUEY_CONTRACT_ROOT: ${{ runner.temp }}/huey-chat-contracts
+        run: npm run test:handoff
       - name: Editorial inventory tests
         run: npm run test:inventory
       - name: Editorial ReadingPage assembly tests
@@ -110,8 +120,13 @@ jobs:
           done
           HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/traversal_browser_test.py
           HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/paragraph_browser_test.py
+          HUEY_TRAVERSAL_URL=http://127.0.0.1:4173 /tmp/huey-browser-venv/bin/python reader/tests/navigation_browser_test.py
       - name: Existing admitted editor and evidence browser checks
         run: /tmp/huey-browser-venv/bin/python reader/tests/browser_test.py
+      - name: Opt-in private Grwtsk editor over loopback HTTP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: /tmp/huey-browser-venv/bin/python reader/tests/grwtsk_browser_test.py
       - name: Route alias continuity against the previous projection
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
@@ -161,6 +176,29 @@ jobs:
           python3 scripts/book.py validate
           python3 scripts/catalog.py validate
           python3 scripts/catalog.py check
+      - name: Historical consolidation and public evidence boundary
+        run: |
+          python3 scripts/consolidation.py
+          python3 planning/evidence-intake/verify_public_evidence.py
+      - name: Authorized SOC core and claim-support consistency
+        run: |
+          python3 scripts/soc_consolidation.py
+          python3 planning/standard-of-care/check_registry.py
+          python3 planning/standard-of-care/check_support.py --message-file .gitmessage
+          python3 -m unittest discover -s planning/standard-of-care -p 'test_*.py' -v
+          python3 scripts/soc_ancillary.py
+          python3 planning/standard-of-care/ancillary-r02/verify.py
+          python3 -m unittest discover -s planning/standard-of-care/ancillary-r02 -p 'test_*.py' -v
+          python3 scripts/soc_authority.py
+          python3 planning/standard-of-care/authority-q03/verify.py
+          python3 -m unittest discover -s planning/standard-of-care/authority-q03 -p 'test_verify.py' -v
+          python3 scripts/soc_incident.py
+          python3 planning/standard-of-care/incident-register/verify.py
+          python3 -m unittest discover -s planning/standard-of-care/incident-register -p 'test_verify.py' -v
+          python3 scripts/soc_care_law.py
+          python3 scripts/soc_cl03.py
+          python3 scripts/soc_cl04.py
+          python3 scripts/soc_cl05.py
       - name: Framing declarations and lexical research consistency
         run: |
           python3 scripts/framing.py cases planning/framing-cases.json

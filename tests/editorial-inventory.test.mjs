@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { buildInventory, contentState, gitBlob, loadInventory, serializeInventory } from '../scripts/editorial_inventory.mjs';
@@ -169,6 +169,84 @@ test('unapplied public supporting corpus is visible as workspace resources', () 
   assert.equal(output.slots.length, 6);
 });
 
+test('pre-partition manuscript flow is classified as a support resource rather than a chapter', () => {
+  const input = fixture();
+  input.registry.sources.push(makeSource('flow-resource', 'manuscript/flow/example.md', 'Synthetic flow', 'support', []));
+  input.sourceAvailability['flow-resource'] = true;
+  input.trackedPaths.push('manuscript/flow/example.md');
+  const output = buildInventory(input);
+  assert.deepEqual(output.editorialWorkspace.resources, ['flow-resource']);
+  assert.equal(output.slots.length, 6);
+  assert.ok(!output.slots.some(row => row.key === 'flow-resource'));
+});
+
+test('both newly tracked flow resources remain outside ownership and order without reading prose', () => {
+  const registry = JSON.parse(readFileSync(new URL('../planning/editorial-inventory/registry.json', import.meta.url), 'utf8'));
+  const paths = ['manuscript/flow/the-brightness.md', 'manuscript/flow/the-words-i-was-asked-to-remember.md'];
+  const input = fixture(), before = buildInventory(input);
+  const resources = paths.map(path => {
+    const matches = registry.sources.filter(source => source.path === path);
+    assert.equal(matches.length, 1, `exactly one reference for ${path}`);
+    const source = structuredClone(matches[0]);
+    assert.equal(source.role, 'support');
+    assert.equal(source.extent, 'partial');
+    assert.deepEqual(source.targets, []);
+    input.registry.sources.push(source);
+    input.trackedPaths.push(path);
+    input.sourceAvailability[source.key] = true;
+    Object.defineProperty(input.files, path, { get() { throw new Error('Flow prose must not be read'); } });
+    return source;
+  });
+  const after = buildInventory(input);
+  assert.deepEqual(after.editorialWorkspace.resources, resources.map(source => source.key));
+  assert.deepEqual(after.ownership, before.ownership);
+  assert.deepEqual(after.slots, before.slots);
+  assert.deepEqual(after.sources.slice(-2), resources.map(source => ({ ...source, access: 'available' })));
+  for (const source of resources) {
+    const missingReference = { ...input, registry: { ...input.registry, sources: input.registry.sources.filter(row => row.key !== source.key) } };
+    assert.throws(() => buildInventory(missingReference), error => error.message === `EDITORIAL_INVENTORY: unclassified tracked manuscript: ${source.path}`);
+  }
+});
+
+test('tracked H448 draft requires its exact support registration without acquiring ownership', () => {
+  const registry = JSON.parse(readFileSync(new URL('../planning/editorial-inventory/registry.json', import.meta.url), 'utf8'));
+  const path = 'manuscript/flow/h448-p01-cooper.md';
+  const matches = registry.sources.filter(source => source.path === path);
+  assert.equal(matches.length, 1);
+  const source = structuredClone(matches[0]);
+  assert.equal(source.role, 'support');
+  assert.equal(source.extent, 'full');
+  assert.equal(source.revision, '1769ec26df3bc30ea309d102912dd63f78a10227');
+  assert.equal(source.blob, '2423bebc56fe75d44b4ce0b724d2dc0924b5b65e');
+  assert.deepEqual(source.targets, []);
+  assert.ok(!registry.supportPaths.includes(path));
+
+  const input = fixture(), before = buildInventory(input);
+  const bookBefore = structuredClone(input.book), readerBefore = structuredClone(input.reader);
+  input.trackedPaths.push(path);
+  assert.throws(() => buildInventory(input), error => error.message === `EDITORIAL_INVENTORY: unclassified tracked manuscript: ${path}`);
+  input.registry.sources.push(source);
+  input.sourceAvailability[source.key] = true;
+  Object.defineProperty(input.files, path, { get() { throw new Error('Support prose must not be read or emitted'); } });
+  const after = buildInventory(input);
+  assert.deepEqual(after.editorialWorkspace.resources, [source.key]);
+  assert.deepEqual(after.sources.at(-1), { ...source, access: 'available' });
+  assert.deepEqual(after.ownership, before.ownership);
+  assert.deepEqual(after.slots, before.slots);
+  assert.deepEqual(input.book, bookBefore);
+  assert.deepEqual(input.reader, readerBefore);
+  assert.equal(after.coverage.trackedManuscriptFiles, before.coverage.trackedManuscriptFiles + 1);
+  assert.deepEqual(JSON.parse(serializeInventory(after)).slots, before.slots);
+});
+
+test('manuscript support resources cannot escape the flow namespace', () => {
+  const input = fixture();
+  input.registry.sources.push(makeSource('bad-flow-resource', 'manuscript/elsewhere.md', 'Synthetic flow', 'support', []));
+  input.sourceAvailability['bad-flow-resource'] = true;
+  input.trackedPaths.push('manuscript/elsewhere.md');
+  assert.throws(() => buildInventory(input), /manuscript support source must live under manuscript\/flow/);
+});
+
 test('unavailable public Git artifacts stay inventoried without fake availability', () => {
   const input = fixture(); input.sourceAvailability.candidate = false;
   const output = buildInventory(input);
@@ -261,6 +339,44 @@ test('placeholder detection does not call comments or empty files completed pros
   for (const text of ['', ' \n', '<!-- Pending -->', '<!-- one -->\n<!-- two -->']) assert.equal(contentState(text), 'comment-placeholder');
   assert.equal(contentState(null), 'missing');
   assert.equal(contentState('<!-- status -->\n# Synthetic text'), 'present-content');
+});
+
+test('Git loader rejects a newly tracked flow until it has a support-source pin', () => {
+  const root = mkdtempSync(join(tmpdir(), 'huey-tracked-flow-'));
+  const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+  const write = (path, text) => { mkdirSync(join(root, path, '..'), { recursive: true }); writeFileSync(join(root, path), text); };
+  try {
+    const input = fixture();
+    const path = 'manuscript/flow/new-working-draft.md', text = 'SYNTHETIC_FLOW_NOT_FOR_BOOK_EMISSION\n';
+    for (const [path, text] of Object.entries(input.files)) write(path, text);
+    write('manuscript/README.md', '# Synthetic support');
+    write('planning/writing/proposal.md', 'Synthetic partial');
+    git(['init', '-q']); git(['add', '.']);
+    git(['-c', 'user.name=Synthetic Test', '-c', 'user.email=test@example.invalid', 'commit', '-qm', 'Synthetic inventory fixture']);
+    const head = git(['rev-parse', 'HEAD']).trim();
+    input.registry.basisRevision = head; input.registry.sources.forEach(source => source.revision = head);
+    const saveRegistry = () => write('planning/editorial-inventory/registry.json', JSON.stringify(input.registry));
+    saveRegistry(); write('book.yaml', JSON.stringify(input.book)); write('reader/content/book.json', JSON.stringify(input.reader));
+    const before = loadInventory(root);
+    write(path, text);
+    assert.deepEqual(loadInventory(root), before); // Untracked preparation is not tracked coverage.
+    git(['add', path]);
+    assert.throws(() => loadInventory(root), error => error.message === `EDITORIAL_INVENTORY: unclassified tracked manuscript: ${path}`);
+    git(['-c', 'user.name=Synthetic Test', '-c', 'user.email=test@example.invalid', 'commit', '-qm', 'Track synthetic flow']);
+    input.registry.sources.push({ ...makeSource('new-flow', path, text, 'support', []), revision: git(['rev-parse', 'HEAD']).trim() });
+    saveRegistry();
+    const after = loadInventory(root);
+    assert.deepEqual(after.editorialWorkspace.resources, ['new-flow']);
+    assert.equal(after.sources.at(-1).access, 'available');
+    assert.deepEqual(after.ownership, before.ownership);
+    assert.deepEqual(after.slots, before.slots);
+    assert.ok(!serializeInventory(after).includes(text.trim()));
+    assert.equal(readFileSync(join(root, 'book.yaml'), 'utf8'), JSON.stringify(input.book));
+    assert.equal(readFileSync(join(root, 'reader/content/book.json'), 'utf8'), JSON.stringify(input.reader));
+    input.registry.sources.at(-1).targets = ['C01'];
+    saveRegistry();
+    assert.throws(() => loadInventory(root), /invalid targets for new-flow/);
+  } finally { rmSync(root, { recursive: true, force: true }); }
 });
 
 test('Git loader inspects pinned metadata, rejects drift and never follows a symlink', () => {

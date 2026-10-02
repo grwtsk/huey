@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "evidence_id": "HUEY-EV-c52efe9c-a709-44a3-9434-fb05464e9a02",
+  "certificate_version": 1,
+  "classification": "PRIVATE_RAW_PUBLIC_DERIVATIVE",
+  "public_title": "Privately retained source with analytical context",
+  "evidence_type": "document",
+  "displayed_dates": [],
+  "custody": {
+    "raw_custody": "private_repository",
+    "public_raw_path": null,
+    "public_derivative_paths": [
+      "evidence/derivatives/HUEY-EV-c52efe9c-a709-44a3-9434-fb05464e9a02/public-v1.md"
+    ]
+  },
+  "integrity": {
+    "mode": "private_salted_commitment",
+    "raw_sha256": null,
+    "commitment_scheme": "sha256-salted-v1",
+    "public_commitment": "2eb2de0ba5e336a840535e90dcba39df99e270212199f6c94981d464685ca581",
+    "mime_type": "application/pdf",
+    "page_frame_row_count": 2
+  },
+  "transcription": {
+    "status": "machine_typed_visual_checked",
+    "public": false,
+    "method": [
+      "Complete private transcription retained with version history; recorded machine visual comparison; human review pending."
+    ],
+    "path": null,
+    "sha256_or_commitment": null,
+    "complete": true
+  },
+  "description": {
+    "public": false,
+    "path": null,
+    "status": "withheld"
+  },
+  "relationships": [
+    {
+      "target": "HUEY-EV-24ea8c1d-b81e-4f3b-a620-0db256d46e2f",
+      "locator": "p1; analytical card ha_392e63ad-cdf0-43b6-ac80-f1f83b9d4b8a",
+      "relationship": "limits",
+      "contribution": "Source states: The same-day CT report explicitly compares the plain films and describes the lateral calcifications seen on those films as appearing to be phleboliths. It records no identified ureteral stone or hydronephrosis and retains small renal calcifications. Joint comparison: The CT interpretation limits a categorical reading of the radiograph’s presumption.",
+      "does_not_establish": "An independent adjudication of the imaging or symptom absence."
+    },
+    {
+      "target": "SOC-C009",
+      "locator": "p1; analytical card ha_392e63ad-cdf0-43b6-ac80-f1f83b9d4b8a",
+      "relationship": "context",
+      "contribution": "Source states: The same-day CT report explicitly compares the plain films and describes the lateral calcifications seen on those films as appearing to be phleboliths. It records no identified ureteral stone or hydronephrosis and retains small renal calcifications. Joint comparison: Preserves the radiograph’s presumption and the CT report’s explicit comparative interpretation while identifying the unavailable imaging series.",
+      "does_not_establish": "A resolved diagnosis beyond the reports’ own wording."
+    }
+  ],
+  "review": {
+    "machine": "Private package integrity and recorded whole-object inspection checked; selected derivative wording and privacy reviewed by assistants. Human editorial review and source authentication remain pending.",
+    "human": null,
+    "source_authenticated": false,
+    "public_disclosure_reviewed": true
+  },
+  "limits": [
+    "Raw original, complete transcription and description remain private.",
+    "Source identity, content truth and human editorial review are not established by this certificate.",
+    "The bounded derivative and its omissions do not represent the complete record; copies are not independent corroboration."
+  ],
+  "status": "active",
+  "intake_date_utc": "2026-09-27T04:56:15.454980Z",
+  "public_exposure_basis": "UNKNOWN"
+}

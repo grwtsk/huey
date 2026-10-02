@@ -1,0 +1,15 @@
+id	proposition	reviews	type	verification_issue	disposition
+Q03-C01	The WMA Cordoba declaration identifies physician duties concerning relief of suffering and patient beliefs and autonomy.	Q03-R01	professional-ethical-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C02	Cordoba addresses undue administrative/economic/political interference with the relationship.	Q03-R01	professional-ethical-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C03	AMA Opinion 1.1.3 describes physicians as patient advocates.	Q03-R11	professional-ethical-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C04	AMA Opinion 1.1.3 right 9 addresses coordination of medically indicated care.	Q03-R11	professional-ethical-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C05	AMA Opinion 1.1.3 right 9 addresses notice and reasonable help with alternatives when treatment is discontinued.	Q03-R11	professional-ethical-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C06	DOJ mobility guidance says a provider cannot require the patient to bring someone to help at examination.	Q03-R03	technical-assistance-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C07	DOJ mobility guidance directs communication to the patient rather than automatically to the companion.	Q03-R03	technical-assistance-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C08	DOJ mobility guidance addresses trained staff and equipment as ways to protect staff while providing equal services.	Q03-R03	technical-assistance-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C09	The source Geneva URL is a proposed-revision document, although its quoted pledge sentence matches the adopted declaration.	Q03-R09	citation-version	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C10	The adopted Geneva declaration includes attention to physicians own health and ability to provide care.	Q03-R09	professional-ethical-source	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C11	The WHO principle continues beyond the excerpt with nondiscrimination language.	Q03-R12	textual-context	https://github.com/grwtsk/huey/issues/192	supported-in-current-source
+Q03-C12	Institutional and family work should be distinguished from patient participation.	Q03-R03 Q03-R11	normative-argument	https://github.com/grwtsk/huey/issues/160	reasoning-not-empirical-finding
+Q03-C13	Current duties should be examined without treating a cited standard as proof of historical nonperformance.	Q03-R01 Q03-R03 Q03-R11	methodological-rule	https://github.com/grwtsk/huey/issues/142	reasoning-not-case-verdict
+Q03-C14	A published professional commitment does not establish that a particular physician has fulfilled or violated it.	Q03-R01 Q03-R09	methodological-rule	https://github.com/grwtsk/huey/issues/144	reasoning-not-case-verdict

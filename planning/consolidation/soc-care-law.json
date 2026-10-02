@@ -1,0 +1,104 @@
+{
+  "schema": "huey.soc-care-law.v1",
+  "basisRevision": "b71676df74adefd5b0811ae9671b9382075a022f",
+  "sourceRepository": "grwtsk/huey",
+  "sourcePR": 122,
+  "sourceCommit": "ff0499bd341de12a31b355b79867b547f19d9b16",
+  "scopeRefs": [
+    "https://github.com/grwtsk/huey/issues/2#issuecomment-5771600544",
+    "https://github.com/grwtsk/huey/issues/125",
+    "https://github.com/grwtsk/huey/issues/145",
+    "https://github.com/grwtsk/huey/issues/176",
+    "https://github.com/grwtsk/huey/issues/177",
+    "https://github.com/grwtsk/huey/issues/178",
+    "https://github.com/grwtsk/huey/issues/179",
+    "https://github.com/grwtsk/huey/issues/180",
+    "https://github.com/grwtsk/huey/issues/181",
+    "https://github.com/grwtsk/huey/issues/182",
+    "https://github.com/grwtsk/huey/issues/183",
+    "https://github.com/grwtsk/huey/issues/184",
+    "https://github.com/grwtsk/huey/issues/185",
+    "https://github.com/grwtsk/huey/issues/186",
+    "https://github.com/grwtsk/huey/issues/187",
+    "https://github.com/grwtsk/huey/issues/427"
+  ],
+  "notice": "This selection preserves the public recovered care-law source/review packet. Prior source inspections, review assertions and candidate chapter joins remain historical records, not fresh research, findings, an applied manuscript revision or current chapter instructions. Source locations are not opened; reference URLs and approval labels do not authenticate or grant authority. No new evidence, substantive verification, manuscript admission, complete corpus transfer or promotion is supplied.",
+  "sourceCopyOnly": true,
+  "manuscriptAdmission": false,
+  "sourceMetadataActive": false,
+  "newEvidenceReceived": false,
+  "newExternalCollectionPerformed": false,
+  "substantiveVerificationPerformed": false,
+  "liveIssueBodiesVerified": false,
+  "manuscriptReconciliationPerformed": false,
+  "fullCorpusTransferComplete": false,
+  "authorityFromReferences": false,
+  "files": [
+    {
+      "path": "planning/standard-of-care/care-law/AGENTS.md",
+      "sourceBlob": "e88ad0c81532f4d40a3fa3f86e3bd41cf8597be0",
+      "stagedBlob": "e88ad0c81532f4d40a3fa3f86e3bd41cf8597be0",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/README.md",
+      "sourceBlob": "2b91525c6ccbe2721e9e256ac11a5e697961c990",
+      "stagedBlob": "2b91525c6ccbe2721e9e256ac11a5e697961c990",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/revision.md",
+      "sourceBlob": "64f4d21a930f2710cbef844e2d8becc87ecc27a2",
+      "stagedBlob": "64f4d21a930f2710cbef844e2d8becc87ecc27a2",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/sources.json",
+      "sourceBlob": "85b776078e7cccd4bee5742a3c6ea6a5ef3eed30",
+      "stagedBlob": "85b776078e7cccd4bee5742a3c6ea6a5ef3eed30",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/review.json",
+      "sourceBlob": "37afba552dbc405090764616ddcd6a52f5872e54",
+      "stagedBlob": "37afba552dbc405090764616ddcd6a52f5872e54",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/lineage.json",
+      "sourceBlob": "3386ffe463e9bb3417b656f4b678ecfa2a3d4bf5",
+      "stagedBlob": "3386ffe463e9bb3417b656f4b678ecfa2a3d4bf5",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/book-integration.json",
+      "sourceBlob": "51d97df010caf666c2ed64fb4bf311784f46648d",
+      "stagedBlob": "51d97df010caf666c2ed64fb4bf311784f46648d",
+      "representation": "exact"
+    },
+    {
+      "path": "planning/standard-of-care/care-law/verify.py",
+      "sourceBlob": "567608306fedf8aa6c3c8b2a995a8c85634575ef",
+      "stagedBlob": "567608306fedf8aa6c3c8b2a995a8c85634575ef",
+      "representation": "exact"
+    }
+  ],
+  "predecessorManifest": {
+    "path": "planning/consolidation/soc-incident.json",
+    "blob": "0e0618cad3e16dd918be64f0fa0859a11ec6b36c"
+  },
+  "navigationChanges": [
+    {
+      "path": "planning/standard-of-care/README.md",
+      "sourceBlob": "8b0980ce6e7b0835829ebbd8ab64d194d42b9380",
+      "priorStagedBlob": "62245d9acbbf34314f107e41883dff5fce5a6102",
+      "stagedBlob": "0e9e3c45d8c5bd7a5a4c1a2f76088cdadc80370e"
+    },
+    {
+      "path": "sources/standard-of-care/README.md",
+      "sourceBlob": "ab5be50cb8658598ddec064424aaf38e554ea39a",
+      "priorStagedBlob": "e849ce858c20672b83fcf417aabf530bc34e5726",
+      "stagedBlob": "051dc6595f7322e4f9002523f8f71402eb053f25"
+    }
+  ]
+}
