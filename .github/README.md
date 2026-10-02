@@ -51,7 +51,9 @@ and source objects. Workflow syntax can additionally be checked with
 `actionlint .github/workflows/checks.yml`. Report that separately from an actual
 GitHub-hosted run.
 
-The literary-model job also runs `npm run test:traversal` and
+The literary-model job also runs `npm run test:reconcile` for explicit source
+correspondence, retained identity and frozen page boundaries, using synthetic
+revisions plus the unchanged selected public sources. It runs `npm run test:traversal` and
 `npm run test:paragraphs` for the derived traversal payload and exact legacy/stable
 paragraph correspondence, builds
 the explicit editorial mode, and checks that build over loopback HTTP with

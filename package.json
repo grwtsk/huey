@@ -37,6 +37,7 @@
     "paragraphs:check": "node scripts/paragraph_bindings.mjs check",
     "paragraphs:generate": "node scripts/paragraph_bindings.mjs generate",
     "test:paragraphs": "npm run paragraphs:check && node --test tests/paragraph-bindings.test.mjs",
+    "test:reconcile": "node --test tests/editorial-reconcile.test.mjs",
     "chat": "node scripts/chat_workspace.mjs",
     "test:chat": "node --test tests/chat-workspace.test.mjs tests/grwtsk-bridge.test.mjs",
     "test:handoff": "node --test tests/chat-handoff.test.mjs",
